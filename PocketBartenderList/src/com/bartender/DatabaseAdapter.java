@@ -26,6 +26,11 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		//create drink type tbl
 		db.execSQL(Drink.sqlCreateDrinkTypeTable);
 		createTypesData(db);
+		//create drinks
+		db.execSQL(Drink.sqlCreateDrinksTable);
+		DrinkInserts di = new DrinkInserts();
+		db.execSQL(di.sqlInsertDrinks);
+		
 	}
 
 	@Override
@@ -33,8 +38,9 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		  Log.w(getClass().getSimpleName(), "Upgrading database from version " + oldVersion + " to "
 	                + newVersion + ", which will destroy all old data");
 		  
-	        db.execSQL("DROP TABLE IF EXISTS " + Drink.SQL_TYPE_TABLE_NAME );
-	        onCreate(db);
+		  db.execSQL("DROP TABLE IF EXISTS " + Drink.SQL_TYPE_TABLE_NAME );
+		  db.execSQL("DROP TABLE IF EXISTS " + Drink.SQL_DRINK_TABLE_NAME );
+	      onCreate(db);
 	}
 
 	/**
