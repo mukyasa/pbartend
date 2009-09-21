@@ -24,9 +24,11 @@ public class PocketBartenderList extends ListActivity {
     private void initComponents() {
     	
     	drink.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-    	Cursor recordscCursor = drink.retrieveAll();
+    	//Cursor recordscCursor = drink.retrieveAllDrinktypes();
+    	Cursor recordscCursor = drink.retrieveAllDrinks();
     	startManagingCursor(recordscCursor);
-    	String[] from = new String[] { Drink.COL_TYPE };
+    	//String[] from = new String[] { Drink.COL_TYPE };
+    	String[] from = new String[] { Drink.COL_ROW_DRINK_NAME };
 		int[] to = new int[] { R.id.tfDrinkType};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
 				R.layout.type_row, recordscCursor, from, to);
