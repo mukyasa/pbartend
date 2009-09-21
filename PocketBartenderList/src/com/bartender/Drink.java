@@ -28,12 +28,13 @@ public class Drink {
 	public static final String SQL_DRINK_TABLE_NAME = "tblDrinks";
 	public static final String sqlCreateDrinkTypeTable = "CREATE TABLE "
 			+ SQL_TYPE_TABLE_NAME + " "
-			+ " (_id integer primary key autoincrement, " + COL_TYPE
-			+ " text not null, " + COL_ID + " int not null); ";
+			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
+			+ COL_TYPE + " text not null, " 
+			+ COL_ID + " int not null); ";
 
 	public static final String sqlCreateDrinksTable = "CREATE TABLE "
 			+ SQL_DRINK_TABLE_NAME 
-			+ " ("
+			+ " ("+COL_ROW_ID+" integer primary key autoincrement, "
 			+ COL_ROW_DRINK_NAME+" VARCHAR(255), "
 			+ COL_ROW_DRINK_TYPE+" INT, " 
 			+ COL_ROW_GLASS+" VARCHAR(255), "
@@ -51,9 +52,19 @@ public class Drink {
 	 * 
 	 * @return
 	 */
-	public Cursor retrieveAll() {
+	public Cursor retrieveAllDrinktypes() {
 		Cursor cursor = sqliteDatabase.query(SQL_TYPE_TABLE_NAME, new String[] {
 				COL_ROW_ID, COL_TYPE }, null, null, null, null, null);
+
+		return cursor;
+	}
+	
+	/**
+	 * gets all records for name
+	 */
+	public Cursor retrieveAllDrinks() {
+		Cursor cursor = sqliteDatabase.query(SQL_DRINK_TABLE_NAME, new String[] {
+				COL_ROW_ID, COL_ROW_DRINK_NAME }, null, null, null, null, null);
 
 		return cursor;
 	}
