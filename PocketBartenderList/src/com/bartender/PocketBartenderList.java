@@ -1,22 +1,37 @@
 package com.bartender;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 public class PocketBartenderList extends ListActivity {
     /** Called when the activity is first created. */
+	public static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
+	private static final int INTENT_NEXT_SCREEN = 0;
 	private DatabaseAdapter myDatabaseAdapter;
-	Drink drink = new Drink();
+	private Drink drink = new Drink();
+	private Intent intent;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_list); //main is my list screen
         myDatabaseAdapter = DatabaseAdapter.getInstance(this);
+        intent = new Intent(this, Details.class);
         initComponents();
     }
+    
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		Log.v(getClass().getSimpleName(), "id=" + id);
+		intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
+		startActivityForResult(intent, INTENT_NEXT_SCREEN);
+	}
     
     /**
      * init screen list
