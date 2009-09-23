@@ -1,5 +1,7 @@
 package com.bartender;
 
+import com.bartender.dao.DrinkDAO;
+
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,7 +16,7 @@ public class PocketBartenderList extends ListActivity {
 	public static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
 	private static final int INTENT_NEXT_SCREEN = 0;
 	private DatabaseAdapter myDatabaseAdapter;
-	private Drink drink = new Drink();
+	private DrinkDAO drink = new DrinkDAO();
 	private Intent intent;
 	
     @Override
@@ -43,7 +45,7 @@ public class PocketBartenderList extends ListActivity {
     	Cursor recordscCursor = drink.retrieveAllDrinks();
     	startManagingCursor(recordscCursor);
     	//String[] from = new String[] { Drink.COL_TYPE };
-    	String[] from = new String[] { Drink.COL_ROW_DRINK_NAME };
+    	String[] from = new String[] { DrinkDAO.COL_ROW_DRINK_NAME };
 		int[] to = new int[] { R.id.tfDrinkType};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
 				R.layout.type_row, recordscCursor, from, to);
