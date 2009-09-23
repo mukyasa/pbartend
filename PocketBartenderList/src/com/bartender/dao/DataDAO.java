@@ -31,6 +31,8 @@ public class DataDAO{
 			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
 			+ COL_TYPE + " text not null, " 
 			+ COL_ID + " int not null); ";
+	
+	public static final String sqlGetDrinkDetailById ="SELECT * FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt.id where d.id=?;";
 
 	public static final String sqlCreateDrinksTable = "CREATE TABLE "
 			+ SQL_DRINK_TABLE_NAME 
