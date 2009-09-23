@@ -2,6 +2,8 @@ package com.bartender;
 
 import java.util.Arrays;
 
+import com.bartender.dao.DrinkDAO;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -24,10 +26,10 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		//create drink type tbl
-		db.execSQL(Drink.sqlCreateDrinkTypeTable);
+		db.execSQL(DrinkDAO.sqlCreateDrinkTypeTable);
 		createTypesData(db);
 		//create drinks
-		db.execSQL(Drink.sqlCreateDrinksTable);
+		db.execSQL(DrinkDAO.sqlCreateDrinksTable);
 		DrinkInserts di = new DrinkInserts();
 		for(int i=0;i<di.sqlInsertDrinks.length;i++)
 			db.execSQL(di.sqlInsertDrinks[i]);
@@ -39,8 +41,8 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		  Log.w(getClass().getSimpleName(), "Upgrading database from version " + oldVersion + " to "
 	                + newVersion + ", which will destroy all old data");
 		  
-		  db.execSQL("DROP TABLE IF EXISTS " + Drink.SQL_TYPE_TABLE_NAME );
-		  db.execSQL("DROP TABLE IF EXISTS " + Drink.SQL_DRINK_TABLE_NAME );
+		  db.execSQL("DROP TABLE IF EXISTS " + DrinkDAO.SQL_TYPE_TABLE_NAME );
+		  db.execSQL("DROP TABLE IF EXISTS " + DrinkDAO.SQL_DRINK_TABLE_NAME );
 	      onCreate(db);
 	}
 
@@ -62,9 +64,9 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		for(int i=1;i<types.length;i++)
 		{
 			values = new ContentValues();
-			values.put(Drink.COL_TYPE, types[i]); 
-			values.put(Drink.COL_ID, i);
-			db.insert(Drink.SQL_TYPE_TABLE_NAME, null, values);
+			values.put(DrinkDAO.COL_TYPE, types[i]); 
+			values.put(DrinkDAO.COL_ID, i);
+			db.insert(DrinkDAO.SQL_TYPE_TABLE_NAME, null, values);
 		}
 		 
 	}
