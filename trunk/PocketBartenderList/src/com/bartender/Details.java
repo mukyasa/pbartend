@@ -1,13 +1,11 @@
 package com.bartender;
 
-import com.bartender.dao.DetailDAO;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
+
+import com.bartender.dao.DetailDAO;
 
 public class Details extends Activity {
 
@@ -32,8 +30,7 @@ public class Details extends Activity {
 	
 	private void initComponents() {
     	
-		selectedRow = getIntent().getLongExtra(
-				PocketBartenderList.INTENT_EXTRA_SELECTED_ROW, 0);
+		selectedRow = getIntent().getLongExtra(PocketBartenderList.INTENT_EXTRA_SELECTED_ROW, 0);
 		tvDrinkName = (TextView) findViewById(R.id.tvDrinkName);
 		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
 		tvGlass = (TextView) findViewById(R.id.tvGlassType);
@@ -50,10 +47,6 @@ public class Details extends Activity {
 			tvDrinkName.setText(drinkdetail.getDrinkName());
 			tvDrinktype.setText(drinkdetail.getDrinkType());
 			tvGlass.setText(drinkdetail.getGlass());
-			
 		} 
-		
 	}
-	
-
 }
