@@ -2,19 +2,19 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:stretchColumns="1">
+    android:stretchColumns="1" android:background="@drawable/cocktail1">
 
 <TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvFieldDrinkNm" android:text="Drink Name:" android:textStyle="bold"></TextView>
-	<TextView android:text="The Name" android:id="@+id/tvDrinkName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvFieldDrinkNm" android:text="Drink Name:" android:textStyle="bold" android:textColor="#000"></TextView>
+	<TextView android:text="The Name" android:id="@+id/tvDrinkName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:textColor="#000"></TextView>
 </TableRow>
 <TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Drink Type:" android:id="@+id/tvFieldDrinkType" android:textStyle="bold"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="The Type" android:id="@+id/tvDrinkType"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Drink Type:" android:id="@+id/tvFieldDrinkType" android:textStyle="bold" android:textColor="#000"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="The Type" android:id="@+id/tvDrinkType" android:textColor="#000"></TextView>
 </TableRow>
 <TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Glass Type:" android:id="@+id/tvFieldGlassType" android:textStyle="bold"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="The Type:" android:id="@+id/tvGlassType"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Glass Type:" android:id="@+id/tvFieldGlassType" android:textStyle="bold" android:textColor="#000"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvGlassType" android:textColor="#000" android:text="The Type"></TextView>
 </TableRow>
 
 </TableLayout>
