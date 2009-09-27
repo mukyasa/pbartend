@@ -3,4 +3,43 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content">
+  
+  <TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvFieldDrinkNm" android:text="Name:" android:textStyle="bold" android:textColor="#fff"></TextView>
+	<TextView android:text="The Name" android:id="@+id/tvDrinkName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Type:" android:id="@+id/tvFieldDrinkType" android:textStyle="bold" android:textColor="#fff"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="The Type" android:id="@+id/tvDrinkType" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Glass:" android:id="@+id/tvFieldGlassType" android:textStyle="bold" android:textColor="#fff"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvGlassType" android:text="The Type" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Booze 1:" android:id="@+id/tvFieldIng1" android:textStyle="bold" android:textColor="#fff"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvIng1" android:text="ing 1" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Booze 2:" android:id="@+id/tvFieldIng2" android:textStyle="bold" android:textColor="#fff"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvIng2" android:text="ing 3" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Booze 3:" android:id="@+id/tvFieldIng3" android:textStyle="bold" android:textColor="#fff"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvIng3" android:text="ing 3" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="All Ingredients:" android:id="@+id/tvFieldFullIng" android:textStyle="bold" android:textColor="#fff"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvFullIng" android:text="full ingredients" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Instructions:" android:id="@+id/tvFieldInstructions" android:textStyle="bold" android:textColor="#fff"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions" android:text="full ingredients" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Extra Instructions:" android:id="@+id/tvFieldInstructions2" android:textStyle="bold" android:textColor="#fff"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions2" android:text="full ingredients" android:textColor="#fff"></TextView>
+</TableRow>
+
+
 </TableLayout>

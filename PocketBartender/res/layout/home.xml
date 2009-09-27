@@ -3,6 +3,11 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
+    android:background="@drawable/cocktail1" android:paddingLeft="20.0sp" android:paddingRight="20.0sp" android:paddingTop="40.0sp">
 
+<Button android:text="Search for Drink" android:id="@+id/Button01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="30.0sp"></Button>
+<Button android:text="Filter by Category" android:id="@+id/Button02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="30.0sp"></Button>
+<Button android:text="Show All Drinks" android:id="@+id/Button02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="30.0sp"></Button>
+<Button android:text="Favorites" android:id="@+id/Button02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="30.0sp"></Button>
+<Button android:text="Create New" android:id="@+id/Button02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="30.0sp"></Button>
 </LinearLayout>
