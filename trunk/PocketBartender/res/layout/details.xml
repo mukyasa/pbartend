@@ -30,15 +30,21 @@
 </TableRow>
 <TableRow>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="All Ingredients:" android:id="@+id/tvFieldFullIng" android:textStyle="bold" android:textColor="#fff"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvFullIng" android:text="full ingredients" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvFullIng" android:text="full ingredients" android:textColor="#fff"></TextView>
 </TableRow>
 <TableRow>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Instructions:" android:id="@+id/tvFieldInstructions" android:textStyle="bold" android:textColor="#fff"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions" android:text="full ingredients" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions" android:text="full ingredients" android:textColor="#fff"></TextView>
 </TableRow>
 <TableRow>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Extra Instructions:" android:id="@+id/tvFieldInstructions2" android:textStyle="bold" android:textColor="#fff"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions2" android:text="full ingredients" android:textColor="#fff"></TextView>
+</TableRow>
+<TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions2" android:text="full ingredients" android:textColor="#fff"></TextView>
 </TableRow>
 
 
