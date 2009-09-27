@@ -10,4 +10,5 @@
 <Button android:text="Show All Drinks" android:id="@+id/Button02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="30.0sp"></Button>
 <Button android:text="Favorites" android:id="@+id/Button02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="30.0sp"></Button>
 <Button android:text="Create New" android:id="@+id/Button02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="30.0sp"></Button>
+
 </LinearLayout>
