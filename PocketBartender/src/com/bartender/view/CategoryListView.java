@@ -3,19 +3,12 @@
  */
 package com.bartender.view;
 
-import android.app.ListActivity;
 
 /**
  * @author Darren
  *
  */
-public class CategoryListView extends ListActivity {
+public class CategoryListView extends ListViews {
 
-	/**
-	 * 
-	 */
-	public CategoryListView() {
-		// TODO Auto-generated constructor stub
-	}
 
 }

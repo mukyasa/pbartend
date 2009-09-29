@@ -6,7 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 public class DataDAO{
 
 	protected SQLiteDatabase sqliteDatabase;
-
+	
+	public static final int INTENT_NEXT_SCREEN = 0;
+	public static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
+	
 	public static final String COL_TYPE = "drinktype";
 	public static final String COL_ID = "id";
 	public static final String COL_ROW_ID = "_id";

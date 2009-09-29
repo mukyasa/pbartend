@@ -12,7 +12,7 @@ import com.bartender.R;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
 
-public class DrinkListView extends ListViews {
+public class FavoriteListView extends ListViews {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
