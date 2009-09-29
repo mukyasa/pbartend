@@ -29,7 +29,7 @@ public class DataDAO{
 
 	public static final String SQL_TYPE_TABLE_NAME = "tblDrinkType";
 	public static final String SQL_DRINK_TABLE_NAME = "tblDrinks";
-	public static final String SQL_INGREDIENTS_NAME = "tblIng";
+	public static final String SQL_INGREDIENTS_TABLE_NAME = "tblIng";
 	public static final String sqlCreateDrinkTypeTable = "CREATE TABLE "
 			+ SQL_TYPE_TABLE_NAME + " "
 			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
@@ -53,7 +53,7 @@ public class DataDAO{
 			+ COL_ROW_FAV+" VARCHAR(50), "
 			+ COL_ROW_DRINK_ID + " AUTOINC NOT NULL ON CONFLICT ROLLBACK);";
 	
-	public static final String sqlCreateIngTable = "CREATE TABLE " +SQL_INGREDIENTS_NAME
+	public static final String sqlCreateIngTable = "CREATE TABLE " +SQL_INGREDIENTS_TABLE_NAME
 			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
 			+ COL_ROW_DRINK_ID + " AUTOINC NOT NULL ON CONFLICT ROLLBACK, "
 			+ COL_ROW_ING1 + "  VARCHAR(255));";
