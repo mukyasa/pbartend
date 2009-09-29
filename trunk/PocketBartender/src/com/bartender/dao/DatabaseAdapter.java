@@ -15,7 +15,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	private static DatabaseAdapter instance; //for singleton
 	
 	private static final String DATABASE_NAME = "pBartender";
-	private static final int DATABASE_VERSION = 4;
+	private static final int DATABASE_VERSION = 5;
 	
 	public DatabaseAdapter(Context context, String name, CursorFactory factory,int version) {
 		super(context, name, factory, version);
@@ -47,6 +47,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		  
 		  db.execSQL("DROP TABLE IF EXISTS " + DataDAO.SQL_TYPE_TABLE_NAME );
 		  db.execSQL("DROP TABLE IF EXISTS " + DataDAO.SQL_DRINK_TABLE_NAME );
+		  db.execSQL("DROP TABLE IF EXISTS " + DataDAO.SQL_INGREDIENTS_TABLE_NAME );
 	      onCreate(db);
 	}
 
