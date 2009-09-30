@@ -9,10 +9,15 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import com.bartender.R;
+import com.bartender.dao.CategoryDAO;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
 
 public class FavoriteListView extends ListViews {
+	
+	CategoryDAO cat = new CategoryDAO();
+	private Intent intent;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
