@@ -2,7 +2,7 @@
 <TableLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_height="wrap_content" android:layout_width="fill_parent">
-	<Spinner android:id="@+id/Spinner01" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginRight="12.0sp"></Spinner>
+	<Spinner android:id="@+id/spinnerDrinkNames" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginRight="12.0sp"></Spinner>
   <TableRow>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvFieldDrinkNm" android:text="Name:" android:textStyle="bold" android:textColor="#fff"></TextView>
 	<TextView android:text="The Name" android:id="@+id/tvDrinkName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:textColor="#fff"></TextView>
