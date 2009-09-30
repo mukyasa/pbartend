@@ -1,8 +1,13 @@
 package com.bartender.view;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bartender.R;
@@ -47,6 +52,16 @@ public class DetailsView extends Activity {
 			tvDrinktype.setText(drinkdetail.getDrinkType());
 			tvGlass.setText(drinkdetail.getGlass());
 		} 
+		
+		Spinner s = (Spinner) findViewById(R.id.spinnerDrinkNames);
+		List<String> items = new ArrayList<String>();
+		//get names
+		
+	    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,items);
+	    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	    s.setAdapter(adapter);
+		    
+		    
 	}
 
 }
