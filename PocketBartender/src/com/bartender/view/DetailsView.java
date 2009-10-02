@@ -21,6 +21,12 @@ public class DetailsView extends Activity {
 	private TextView tvDrinkName;
 	private TextView tvDrinktype;
 	private TextView tvGlass;
+	private TextView tvIng1;
+	private TextView tvIng2;
+	private TextView tvIng3;
+	private TextView tvFullIng;
+	private TextView tvInstructions;
+	private TextView tvInstructions2;
 	private DetailDAO drinkdetail;
 
 
@@ -38,6 +44,12 @@ public class DetailsView extends Activity {
 		tvDrinkName = (TextView) findViewById(R.id.tvDrinkName);
 		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
 		tvGlass = (TextView) findViewById(R.id.tvGlassType);
+		tvIng1 = (TextView) findViewById(R.id.tvIng1);
+		tvIng2 = (TextView) findViewById(R.id.tvIng2);
+		tvIng3 = (TextView) findViewById(R.id.tvIng3);
+		tvFullIng = (TextView) findViewById(R.id.tvFullIng);
+		tvInstructions = (TextView) findViewById(R.id.tvInstructions);
+		tvInstructions2  = (TextView) findViewById(R.id.tvInstructions2);
 
 		drinkdetail = new DetailDAO();
 		drinkdetail.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
@@ -51,6 +63,13 @@ public class DetailsView extends Activity {
 			tvDrinkName.setText(drinkdetail.getDrinkName());
 			tvDrinktype.setText(drinkdetail.getDrinkType());
 			tvGlass.setText(drinkdetail.getGlass());
+			tvIng1.setText(drinkdetail.getIng1());
+			tvIng2.setText(drinkdetail.getIng2());
+			tvIng3.setText(drinkdetail.getIng3());
+			tvFullIng.setText(drinkdetail.getIngredients());
+			tvInstructions.setText(drinkdetail.getInstructions());
+			tvInstructions2.setText(drinkdetail.getInstructions2());
+			
 		} 
 		
 		Spinner s = (Spinner) findViewById(R.id.spinnerDrinkNames);
