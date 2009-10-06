@@ -12,6 +12,11 @@ import com.bartender.domain.DetailsDomain;
 public class DetailDAO extends DataDAO{
 	
 
+	/**
+	 * Loads drink detail based on the selected drink id.
+	 * @param activity
+	 * @param drink
+	 */
 	public void load(Activity activity,DetailsDomain drink) {
 		
 		String selectionArgs[] = {drink.getId()+""};
@@ -35,6 +40,11 @@ public class DetailDAO extends DataDAO{
 		
 	}
 	
+	/**
+	 * Loads first drink in the spinner based on the drink type name 
+	 * @param activity
+	 * @param drink
+	 */
 	public void loadByDrinkNm(Activity activity,DetailsDomain drink) {
 		
 		String selectionArgs[] = {drink.getDrinkType()};
@@ -58,7 +68,13 @@ public class DetailDAO extends DataDAO{
 		
 	}
 	
-	
+	/**
+	 * Loads the drink in the spinner widget 
+	 * based on the id of the selected category
+	 * @param spinnerDrinkNames
+	 * @param drink
+	 * @param context
+	 */
 	public void loadDrinkIds(Spinner spinnerDrinkNames,DetailsDomain drink,Context context){
 		
 		String selectionArgs[] = {drink.getId()+""};
