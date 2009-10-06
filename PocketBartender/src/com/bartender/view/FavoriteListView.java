@@ -43,7 +43,7 @@ public class FavoriteListView extends ListViews {
     	Cursor recordscCursor = drink.retrieveAllDrinks();
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_ROW_DRINK_NAME };
-		int[] to = new int[] { R.id.tvDrinkName};
+		int[] to = new int[] { R.id.tfName};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
 				R.layout.item_row, recordscCursor, from, to);
     	

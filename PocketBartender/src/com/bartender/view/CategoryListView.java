@@ -31,7 +31,7 @@ public class CategoryListView extends ListViews {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.categories); 
         myDatabaseAdapter = DatabaseAdapter.getInstance(this);
-        intent = new Intent(this, DetailsView.class);
+        intent = new Intent(this, MulitDetailsView.class);
         initComponents();
     }
     

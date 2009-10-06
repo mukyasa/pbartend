@@ -2,10 +2,8 @@
 <TableLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_height="wrap_content" android:layout_width="fill_parent">
- <TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Name:" android:id="@+id/tvFieldDrinkName" android:textStyle="bold" android:textColor="#fff"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="The Name" android:id="@+id/tvDrinkName" android:textColor="#fff"></TextView>
-</TableRow>
+	<Spinner android:id="@+id/spinnerDrinkNames" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginRight="12.0sp"></Spinner>
+  
 <TableRow>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Type:" android:id="@+id/tvFieldDrinkType" android:textStyle="bold" android:textColor="#fff"></TextView>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="The Type" android:id="@+id/tvDrinkType" android:textColor="#fff"></TextView>
