@@ -15,7 +15,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	private static DatabaseAdapter instance; //for singleton
 	
 	private static final String DATABASE_NAME = "pBartender";
-	private static final int DATABASE_VERSION = 6;
+	private static final int DATABASE_VERSION = 5;
 	
 	public DatabaseAdapter(Context context, String name, CursorFactory factory,int version) {
 		super(context, name, factory, version);
@@ -66,7 +66,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
 		ContentValues values;
 		
-		for(int i=1;i<types.length;i++)
+		for(int i=0;i<types.length;i++)
 		{
 			values = new ContentValues();
 			values.put(DataDAO.COL_TYPE, types[i]); 

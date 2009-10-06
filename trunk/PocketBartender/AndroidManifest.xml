@@ -18,6 +18,7 @@
 <activity android:name=".view.SearchView"></activity>
 <activity android:name=".view.FavoriteListView"></activity>
 <activity android:name=".view.CreateUpdateView"></activity>
+<activity android:name=".view.MulitDetailsView"></activity>
 </application>
     <uses-sdk android:minSdkVersion="3" />
 
