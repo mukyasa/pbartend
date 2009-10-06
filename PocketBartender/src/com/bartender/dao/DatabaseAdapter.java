@@ -66,6 +66,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
 		ContentValues values;
 		
+		//start from 1 so the array has a blank
 		for(int i=1;i<types.length;i++)
 		{
 			values = new ContentValues();
