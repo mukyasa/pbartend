@@ -1,7 +1,6 @@
 package com.bartender.view;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -10,7 +9,7 @@ import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DetailDAO;
 import com.bartender.domain.DetailsDomain;
 
-public class MulitDetailsView extends DetailsView {
+public class MulitDetailsView extends ActivityView {
 
 
 	@Override
@@ -27,14 +26,34 @@ public class MulitDetailsView extends DetailsView {
 		drinkdao = new DetailDAO();
 		
 		selectedRow = getIntent().getLongExtra(ListViews.INTENT_EXTRA_SELECTED_ROW, 0);
+		
+		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
+		tvGlass = (TextView) findViewById(R.id.tvGlassType);
+		tvIng1 = (TextView) findViewById(R.id.tvIng1);
+		tvIng2 = (TextView) findViewById(R.id.tvIng2);
+		tvIng3 = (TextView) findViewById(R.id.tvIng3);
+		tvFullIng = (TextView) findViewById(R.id.tvFullIng);
+		tvInstructions = (TextView) findViewById(R.id.tvInstructions);
+		tvInstructions2  = (TextView) findViewById(R.id.tvInstructions2);
 		spinnerDrinkNames = (Spinner) findViewById(R.id.spinnerDrinkNames);
 		
 		drinkdao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-		Log.v(getClass().getSimpleName(), "selectedRow=" + selectedRow);
 		drinkdetail.setId((int) selectedRow);
-		Log.v(getClass().getSimpleName(), "drinkdetail.getId()=" + drinkdetail.getId());
-		if (drinkdetail.getId() > 0) 
-			drinkdao.loadDrinkNames(spinnerDrinkNames,drinkdetail,this);
+
+		if (drinkdetail.getId() > 0)
+		{
+			drinkdao.loadDrinkIds(spinnerDrinkNames,drinkdetail,this);
+			drinkdao.loadByDrinkNm(this,drinkdetail);
+			tvDrinktype.setText(drinkdetail.getDrinkType());
+			tvGlass.setText(drinkdetail.getGlass());
+			tvIng1.setText(drinkdetail.getIng1());
+			tvIng2.setText(drinkdetail.getIng2());
+			tvIng3.setText(drinkdetail.getIng3());
+			tvFullIng.setText(drinkdetail.getIngredients());
+			tvInstructions.setText(drinkdetail.getInstructions());
+			tvInstructions2.setText(drinkdetail.getInstructions2());
+		}
+			
 		    
 	}
 
