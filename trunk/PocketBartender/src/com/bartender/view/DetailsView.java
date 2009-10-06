@@ -1,8 +1,6 @@
 package com.bartender.view;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -11,7 +9,7 @@ import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DetailDAO;
 import com.bartender.domain.DetailsDomain;
 
-public class DetailsView extends Activity {
+public class DetailsView extends ActivityView {
 	
 	protected DatabaseAdapter myDatabaseAdapter;
 	protected long selectedRow;
@@ -54,12 +52,12 @@ public class DetailsView extends Activity {
 		tvInstructions2  = (TextView) findViewById(R.id.tvInstructions2);
 		
 		drinkdao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-		Log.v(getClass().getSimpleName(), "selectedRow=" + selectedRow);
 		drinkdetail.setId((int) selectedRow);
+		
 		if (selectedRow > 0) {
 			drinkdao.load(this,drinkdetail);
 		}
-		Log.v(getClass().getSimpleName(), "drinkdetail.getId()=" + drinkdetail.getId());
+		
 		if (drinkdetail.getId() > 0) {
 			tvDrinktype.setText(drinkdetail.getDrinkType());
 			tvDrinkName.setText(drinkdetail.getDrinkName());
