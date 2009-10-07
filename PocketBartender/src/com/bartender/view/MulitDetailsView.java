@@ -1,6 +1,9 @@
 package com.bartender.view;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -21,6 +24,7 @@ public class MulitDetailsView extends ActivityView {
 	}
 	
 	
+	
 	private void initComponents() {
 		drinkdetail = new DetailsDomain();
 		drinkdao = new DetailDAO();
@@ -36,6 +40,7 @@ public class MulitDetailsView extends ActivityView {
 		tvInstructions = (TextView) findViewById(R.id.tvInstructions);
 		tvInstructions2  = (TextView) findViewById(R.id.tvInstructions2);
 		spinnerDrinkNames = (Spinner) findViewById(R.id.spinnerDrinkNames);
+		spinnerDrinkNames.setOnItemSelectedListener(spnDrinkTypesListener);
 		
 		drinkdao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		drinkdetail.setId((int) selectedRow);
@@ -54,8 +59,27 @@ public class MulitDetailsView extends ActivityView {
 			tvInstructions2.setText(drinkdetail.getInstructions2());
 		}
 			
-		    
 	}
+	
+	private Spinner.OnItemSelectedListener spnDrinkTypesListener =
 
+		new Spinner.OnItemSelectedListener() {
+
+		@SuppressWarnings("unchecked")
+		public void onItemSelected(AdapterView parent, View v, int position, long id) {
+			Log.v(getClass().getSimpleName(), "id=" + id);
+			
+
+		}
+
+	
+		
+		@SuppressWarnings("unchecked")
+		public void onNothingSelected(AdapterView parent) {
+			
+
+		}
+
+	};
+	
 }
-;
