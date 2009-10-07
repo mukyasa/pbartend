@@ -3,7 +3,9 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_height="wrap_content" android:layout_width="fill_parent">
 	<Spinner android:id="@+id/spinnerDrinkNames" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginRight="12.0sp"></Spinner>
-  
+ <TableRow>
+	<ImageButton android:layout_width="30.0px" android:layout_height="36.0px" android:id="@+id/imgFav" android:background="@drawable/star" android:layout_gravity="left" android:layout_marginLeft="12.0sp"></ImageButton>
+</TableRow>  
 <TableRow>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Type:" android:id="@+id/tvFieldDrinkType" android:textStyle="bold" android:textColor="#fff"></TextView>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="The Type" android:id="@+id/tvDrinkType" android:textColor="#fff"></TextView>
