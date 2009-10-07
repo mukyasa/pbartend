@@ -3,11 +3,8 @@ package com.bartender.dao;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
-import android.widget.ArrayAdapter;
-import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 
 import com.bartender.domain.DetailsDomain;
 
@@ -48,10 +45,10 @@ public class DetailDAO extends DataDAO{
 	 * @param activity
 	 * @param drink
 	 */
-	public void loadByDrinkNm(Activity activity,DetailsDomain drink) {
+	public void loadByDrinkTypeNm(Activity activity,DetailsDomain drink) {
 		
 		String selectionArgs[] = {drink.getDrinkType()};
-		Cursor cursor = sqliteDatabase.rawQuery(DataDAO.sqlGetDrinkDetailByName,selectionArgs);
+		Cursor cursor = sqliteDatabase.rawQuery(DataDAO.sqlGetDrinkDetailByDrinkTypeName,selectionArgs);
 		
 		if (cursor != null) {
 			cursor.moveToFirst();
@@ -68,7 +65,28 @@ public class DetailDAO extends DataDAO{
 			drink.setInstructions2(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTRUCTIONS2)));
 			
 		}
+	}
+	
+public void loadByDrinkNm(Activity activity,DetailsDomain drink) {
 		
+		String selectionArgs[] = {drink.getDrinkName()};
+		Cursor cursor = sqliteDatabase.rawQuery(DataDAO.sqlGetDrinkDetailByDrinkName,selectionArgs);
+		
+		if (cursor != null) {
+			cursor.moveToFirst();
+			activity.startManagingCursor(cursor);
+			drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ID)));
+			drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_NAME)));
+			drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_ROW_GLASS)));
+			drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_TYPE)));
+			drink.setIng1(cursor.getString(cursor.getColumnIndex(COL_ROW_ING1)));
+			drink.setIng2(cursor.getString(cursor.getColumnIndex(COL_ROW_ING2)));
+			drink.setIng3(cursor.getString(cursor.getColumnIndex(COL_ROW_ING3)));
+			drink.setIngredients(cursor.getString(cursor.getColumnIndex(COL_ROW_INGREDIENTS)));
+			drink.setInstructions(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTUCTIONS)));
+			drink.setInstructions2(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTRUCTIONS2)));
+			
+		}
 	}
 	
 	/**

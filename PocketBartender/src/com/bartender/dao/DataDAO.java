@@ -37,7 +37,8 @@ public class DataDAO{
 			+ COL_ID + " int not null); ";
 	
 	public static final String sqlGetDrinkDetailById ="SELECT * FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt.id where d.id=?;";
-	public static final String sqlGetDrinkDetailByName ="SELECT * FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt.id where dt.drinktype=?;";
+	public static final String sqlGetDrinkDetailByDrinkName ="SELECT * FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt.id where d.drinkName=?;";
+	public static final String sqlGetDrinkDetailByDrinkTypeName ="SELECT * FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt.id where dt.drinktype=?;";
 	public static final String sqlGetDrinkByTypeId = "SELECT *  FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt.id where dt.id=?";
 
 	public static final String sqlCreateDrinksTable = "CREATE TABLE "
