@@ -1,6 +1,7 @@
 package com.bartender.view;
 
 import android.app.Activity;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ public class ActivityView extends Activity {
 	protected TextView tvInstructions2;
 	protected Spinner spinnerDrinkNames;
 	protected DetailsDomain drinkdetail;
+	protected ImageButton favImageButton;
 	protected DetailDAO drinkdao;
 
 
