@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -26,6 +27,9 @@ public class MulitDetailsView extends ActivityView {
 		initComponents();
 	}
 	
+	/**
+	 * sets values to domain object
+	 */
 	private void setViewItems(){
 		
 		tvDrinktype.setText(drinkdetail.getDrinkType());
@@ -38,6 +42,9 @@ public class MulitDetailsView extends ActivityView {
 		tvInstructions2.setText(drinkdetail.getInstructions2());
 	}
 	
+	/**
+	 * initializes all components
+	 */
 	private void initComponents() {
 		drinkdetail = new DetailsDomain();
 		drinkdao = new DetailDAO();
@@ -54,6 +61,8 @@ public class MulitDetailsView extends ActivityView {
 		tvInstructions2  = (TextView) findViewById(R.id.tvInstructions2);
 		spinnerDrinkNames = (Spinner) findViewById(R.id.spinnerDrinkNames);
 		spinnerDrinkNames.setOnItemSelectedListener(spnDrinkTypesListener);
+		favImageButton = (ImageButton)findViewById(R.id.imgFav);
+		favImageButton.setOnClickListener(favImgListener);
 		
 		drinkdao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		drinkdetail.setId((int) selectedRow);
@@ -67,6 +76,19 @@ public class MulitDetailsView extends ActivityView {
 		}
 			
 	}
+	
+	private ImageButton.OnClickListener favImgListener = new ImageButton.OnClickListener(){
+
+		@SuppressWarnings("unchecked")
+		public void onClick(View v) {
+			Log.v(getClass().getSimpleName(), "current drink Id="+drinkdetail.getId());
+			//set as favorite
+			drinkdao.setFavoritesYes(drinkdetail.getId());
+			
+		}
+		
+	};
+	
 	
 	private Spinner.OnItemSelectedListener spnDrinkTypesListener =
 

@@ -1,6 +1,7 @@
 package com.bartender.dao;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.widget.SimpleCursorAdapter;
@@ -12,6 +13,21 @@ import com.bartender.domain.DetailsDomain;
 public class DetailDAO extends DataDAO{
 	
 
+	private void setDrinkDomain(DetailsDomain drink,Cursor cursor)
+	{
+		drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ROW_ID)));
+		drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_NAME)));
+		drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_ROW_GLASS)));
+		drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_TYPE)));
+		drink.setIng1(cursor.getString(cursor.getColumnIndex(COL_ROW_ING1)));
+		drink.setIng2(cursor.getString(cursor.getColumnIndex(COL_ROW_ING2)));
+		drink.setIng3(cursor.getString(cursor.getColumnIndex(COL_ROW_ING3)));
+		drink.setIngredients(cursor.getString(cursor.getColumnIndex(COL_ROW_INGREDIENTS)));
+		drink.setInstructions(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTUCTIONS)));
+		drink.setInstructions2(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTRUCTIONS2)));
+		drink.setFavorites(cursor.getString(cursor.getColumnIndex(COL_ROW_FAV)));
+	}
+	
 	/**
 	 * Loads drink detail based on the selected drink id.
 	 * @param activity
@@ -25,16 +41,7 @@ public class DetailDAO extends DataDAO{
 		if (cursor != null) {
 			cursor.moveToFirst();
 			activity.startManagingCursor(cursor);
-			drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ROW_ID)));
-			drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_NAME)));
-			drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_ROW_GLASS)));
-			drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_TYPE)));
-			drink.setIng1(cursor.getString(cursor.getColumnIndex(COL_ROW_ING1)));
-			drink.setIng2(cursor.getString(cursor.getColumnIndex(COL_ROW_ING2)));
-			drink.setIng3(cursor.getString(cursor.getColumnIndex(COL_ROW_ING3)));
-			drink.setIngredients(cursor.getString(cursor.getColumnIndex(COL_ROW_INGREDIENTS)));
-			drink.setInstructions(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTUCTIONS)));
-			drink.setInstructions2(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTRUCTIONS2)));
+			setDrinkDomain(drink,cursor);
 			
 		}
 		
@@ -53,21 +60,20 @@ public class DetailDAO extends DataDAO{
 		if (cursor != null) {
 			cursor.moveToFirst();
 			activity.startManagingCursor(cursor);
-			drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ID)));
-			drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_NAME)));
-			drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_ROW_GLASS)));
-			drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_TYPE)));
-			drink.setIng1(cursor.getString(cursor.getColumnIndex(COL_ROW_ING1)));
-			drink.setIng2(cursor.getString(cursor.getColumnIndex(COL_ROW_ING2)));
-			drink.setIng3(cursor.getString(cursor.getColumnIndex(COL_ROW_ING3)));
-			drink.setIngredients(cursor.getString(cursor.getColumnIndex(COL_ROW_INGREDIENTS)));
-			drink.setInstructions(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTUCTIONS)));
-			drink.setInstructions2(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTRUCTIONS2)));
+			setDrinkDomain(drink,cursor);
 			
 		}
 	}
 	
-public void loadByDrinkNm(Activity activity,DetailsDomain drink) {
+	public void setFavoritesYes(int id)
+	{
+		ContentValues values = new ContentValues();
+		values.put(COL_ROW_FAV, "yes");
+		
+		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_DRINK_ID + "=" + id, null);
+	}
+	
+	public void loadByDrinkNm(Activity activity,DetailsDomain drink) {
 		
 		String selectionArgs[] = {drink.getDrinkName()};
 		Cursor cursor = sqliteDatabase.rawQuery(DataDAO.sqlGetDrinkDetailByDrinkName,selectionArgs);
@@ -75,17 +81,7 @@ public void loadByDrinkNm(Activity activity,DetailsDomain drink) {
 		if (cursor != null) {
 			cursor.moveToFirst();
 			activity.startManagingCursor(cursor);
-			drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ID)));
-			drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_NAME)));
-			drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_ROW_GLASS)));
-			drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_TYPE)));
-			drink.setIng1(cursor.getString(cursor.getColumnIndex(COL_ROW_ING1)));
-			drink.setIng2(cursor.getString(cursor.getColumnIndex(COL_ROW_ING2)));
-			drink.setIng3(cursor.getString(cursor.getColumnIndex(COL_ROW_ING3)));
-			drink.setIngredients(cursor.getString(cursor.getColumnIndex(COL_ROW_INGREDIENTS)));
-			drink.setInstructions(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTUCTIONS)));
-			drink.setInstructions2(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTRUCTIONS2)));
-			
+			setDrinkDomain(drink,cursor);			
 		}
 	}
 	

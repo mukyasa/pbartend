@@ -15,8 +15,16 @@ public class DetailsDomain {
 	private String instructions;
 	private String instructions2;
 	private int id;
+	private String favorites;
 	private List<String> drinkNames = new ArrayList<String>();
 	
+	
+	public String getFavorites() {
+		return favorites;
+	}
+	public void setFavorites(String favorites) {
+		this.favorites = favorites;
+	}
 	public String getIng1() {
 		return ing1;
 	}
