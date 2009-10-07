@@ -3,8 +3,11 @@ package com.bartender.dao;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
+import android.widget.ArrayAdapter;
+import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 
 import com.bartender.domain.DetailsDomain;
 
@@ -53,7 +56,7 @@ public class DetailDAO extends DataDAO{
 		if (cursor != null) {
 			cursor.moveToFirst();
 			activity.startManagingCursor(cursor);
-			drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ROW_ID)));
+			drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ID)));
 			drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_NAME)));
 			drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_ROW_GLASS)));
 			drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_TYPE)));
