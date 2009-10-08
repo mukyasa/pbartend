@@ -73,7 +73,7 @@ public class ActivityView extends Activity {
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, MENU_HOME, 0, "Home");
+		menu.add(0, MENU_HOME, 0, "Home").setIcon(R.drawable.home);
 		menu.add(0, MENU_ADD_FAV, 0, "Save Favorite").setIcon(R.drawable.fav_menu);
 		menu.add(0, MENU_REMOVE_FAV, 0, "Remove Favorite").setIcon(R.drawable.no_fav_menu);
 	    return true;
