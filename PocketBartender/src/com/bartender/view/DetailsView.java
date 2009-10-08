@@ -35,6 +35,8 @@ public class DetailsView extends ActivityView {
 		}
 		
 		if (drinkdetail.getId() > 0) {
+			//this one has a drink name 
+			tvDrinkName.setText(drinkdetail.getDrinkName());
 			setViewItems();
 			
 		} 
