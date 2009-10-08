@@ -3,7 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_height="wrap_content" android:layout_width="fill_parent">
  <TableRow>
-	<ImageButton android:layout_width="30.0px" android:layout_height="36.0px" android:id="@+id/imgFav" android:background="@drawable/star" android:layout_gravity="left" android:layout_marginLeft="12.0sp"></ImageButton>
+	<ImageButton android:id="@+id/imgFav" android:background="@drawable/star" android:layout_gravity="left" android:layout_marginLeft="12.0sp" android:layout_width="36.0px" android:layout_height="36.0px"></ImageButton>
 </TableRow>
  <TableRow>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Name:" android:id="@+id/tvFieldDrinkName" android:textStyle="bold" android:textColor="#fff"></TextView>
