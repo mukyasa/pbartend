@@ -1,6 +1,7 @@
 package com.bartender.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup.LayoutParams;
@@ -32,6 +33,7 @@ public class ActivityView extends Activity {
 	protected DetailDAO drinkdao;
 	private static final int MENU_ADD_FAV=0;
 	private static final int MENU_REMOVE_FAV=1;
+	private static final int MENU_HOME=2;
 	
 	/**
 	 * sets shared values to domain object
@@ -71,6 +73,7 @@ public class ActivityView extends Activity {
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(0, MENU_HOME, 0, "Home");
 		menu.add(0, MENU_ADD_FAV, 0, "Save Favorite").setIcon(R.drawable.fav_menu);
 		menu.add(0, MENU_REMOVE_FAV, 0, "Remove Favorite").setIcon(R.drawable.no_fav_menu);
 	    return true;
@@ -80,6 +83,10 @@ public class ActivityView extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
 	    switch (item.getItemId()) {
+	    case MENU_HOME:
+	    	Intent intent = new Intent(this, HomeScreenView.class);
+			startActivity(intent);
+	    	return true;
 	    case MENU_ADD_FAV:
 	    	drinkdao.setFavoritesYes(drinkdetail.getId());
 	        return true;
