@@ -3,6 +3,7 @@ package com.bartender.view;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -46,6 +47,11 @@ public class ActivityView extends Activity {
 		tvFullIng.setText(drinkdetail.getIngredients());
 		tvInstructions.setText(drinkdetail.getInstructions());
 		tvInstructions2.setText(drinkdetail.getInstructions2());
+		
+		//only show fav star if is a favorite
+		LayoutParams params = favImageButton.getLayoutParams();
+		if(DetailDAO.FAV_NO.equalsIgnoreCase(drinkdetail.getFavorites()))
+			params.height = 0;
 	}
 	
 	/**
@@ -62,6 +68,7 @@ public class ActivityView extends Activity {
 		tvInstructions = (TextView) findViewById(R.id.tvInstructions);
 		tvInstructions2  = (TextView) findViewById(R.id.tvInstructions2);
 		favImageButton = (ImageButton)findViewById(R.id.imgFav);
+		
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -72,12 +79,18 @@ public class ActivityView extends Activity {
 
 	/* Handles item selections */
 	public boolean onOptionsItemSelected(MenuItem item) {
+		LayoutParams params = favImageButton.getLayoutParams();
+		
 	    switch (item.getItemId()) {
 	    case MENU_ADD_FAV:
 	    	drinkdao.setFavoritesYes(drinkdetail.getId());
+	    	//only show fav star if is a favorite
+			params.height = 36;
 	        return true;
 	    case MENU_REMOVE_FAV:
 	    	drinkdao.removeFavorite(drinkdetail.getId());
+	    	//only show fav star if is a favorite
+			params.height = 0;
 	    	return true;
 	    }
 	    return false;

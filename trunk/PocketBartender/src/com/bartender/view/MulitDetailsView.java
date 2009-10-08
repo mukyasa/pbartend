@@ -39,7 +39,6 @@ public class MulitDetailsView extends ActivityView {
 		findAndSetView();
 		spinnerDrinkNames = (Spinner) findViewById(R.id.spinnerDrinkNames);
 		spinnerDrinkNames.setOnItemSelectedListener(spnDrinkTypesListener);
-		favImageButton = (ImageButton)findViewById(R.id.imgFav);
 		
 		drinkdao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		drinkdetail.setId((int) selectedRow);

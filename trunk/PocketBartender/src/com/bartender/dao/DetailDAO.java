@@ -12,7 +12,14 @@ import com.bartender.domain.DetailsDomain;
 
 public class DetailDAO extends DataDAO{
 	
+	public static final String FAV_NO = "no";
+	public static final String FAV_YES = "yes";
 
+	/**
+	 * sets the drink domain from database
+	 * @param drink
+	 * @param cursor
+	 */
 	private void setDrinkDomain(DetailsDomain drink,Cursor cursor)
 	{
 		drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ROW_ID)));
@@ -72,7 +79,7 @@ public class DetailDAO extends DataDAO{
 	public void removeFavorite(int id){
 		
 		ContentValues values = new ContentValues();
-		values.put(COL_ROW_FAV, "no");
+		values.put(COL_ROW_FAV, FAV_NO);
 		
 		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_ID + "=" + id, null);
 		
@@ -85,7 +92,7 @@ public class DetailDAO extends DataDAO{
 	public void setFavoritesYes(int id)
 	{
 		ContentValues values = new ContentValues();
-		values.put(COL_ROW_FAV, "yes");
+		values.put(COL_ROW_FAV, FAV_YES);
 		
 		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_ID + "=" + id, null);
 	}
