@@ -74,7 +74,7 @@ public class DetailDAO extends DataDAO{
 		ContentValues values = new ContentValues();
 		values.put(COL_ROW_FAV, "no");
 		
-		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_DRINK_ID + "=" + id, null);
+		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_ID + "=" + id, null);
 		
 	}
 
@@ -87,7 +87,7 @@ public class DetailDAO extends DataDAO{
 		ContentValues values = new ContentValues();
 		values.put(COL_ROW_FAV, "yes");
 		
-		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_DRINK_ID + "=" + id, null);
+		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_ID + "=" + id, null);
 	}
 	
 	/**
