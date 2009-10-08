@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 import com.bartender.R;
 import com.bartender.dao.DatabaseAdapter;
@@ -42,9 +45,10 @@ public class DrinkListView extends ListViews {
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_ROW_DRINK_NAME };
 		int[] to = new int[] { R.id.tfName};
+		
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
 				R.layout.item_row, recordscCursor, from, to);
     	
-		setListAdapter(records);
+		setListAdapter(records);		
 	}
 }
