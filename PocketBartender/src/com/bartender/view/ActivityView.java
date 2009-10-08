@@ -52,6 +52,7 @@ public class ActivityView extends Activity {
 	 */
 	protected void findAndSetView()
 	{
+		tvDrinkName = (TextView) findViewById(R.id.tvDrinkName);
 		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
 		tvGlass = (TextView) findViewById(R.id.tvGlassType);
 		tvIng1 = (TextView) findViewById(R.id.tvIng1);
