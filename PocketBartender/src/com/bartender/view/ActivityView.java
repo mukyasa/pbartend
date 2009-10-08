@@ -36,6 +36,7 @@ public class ActivityView extends Activity {
 	 */
 	protected void setViewItems(){
 		
+		tvDrinkName.setText(drinkdetail.getDrinkName());
 		tvDrinktype.setText(drinkdetail.getDrinkType());
 		tvGlass.setText(drinkdetail.getGlass());
 		tvIng1.setText(drinkdetail.getIng1());
@@ -46,6 +47,9 @@ public class ActivityView extends Activity {
 		tvInstructions2.setText(drinkdetail.getInstructions2());
 	}
 	
+	/**
+	 * sets the views to the variables
+	 */
 	protected void findAndSetView()
 	{
 		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
@@ -60,7 +64,7 @@ public class ActivityView extends Activity {
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
-	    menu.add(0, MENU_NEW_GAME, 0, "Save as favorite");
+	    menu.add(0, MENU_NEW_GAME, 0, "Save as favorite").setIcon(R.drawable.star);
 	    return true;
 	}
 
