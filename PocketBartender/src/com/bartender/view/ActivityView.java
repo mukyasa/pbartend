@@ -1,6 +1,8 @@
 package com.bartender.view;
 
 import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -26,6 +28,22 @@ public class ActivityView extends Activity {
 	protected DetailsDomain drinkdetail;
 	protected ImageButton favImageButton;
 	protected DetailDAO drinkdao;
+	private static final int MENU_NEW_GAME=0;
+	
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    menu.add(0, MENU_NEW_GAME, 0, "Save as favorite");
+	    return true;
+	}
+
+	/* Handles item selections */
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    case MENU_NEW_GAME:
+	    	drinkdao.setFavoritesYes(drinkdetail.getId());
+	        return true;
+	    }
+	    return false;
+	}
 
 
 

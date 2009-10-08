@@ -1,7 +1,8 @@
 package com.bartender.view;
 
 import android.os.Bundle;
-import android.widget.Spinner;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.bartender.R;
@@ -10,22 +11,6 @@ import com.bartender.dao.DetailDAO;
 import com.bartender.domain.DetailsDomain;
 
 public class DetailsView extends ActivityView {
-	
-	protected DatabaseAdapter myDatabaseAdapter;
-	protected long selectedRow;
-	protected TextView tvDrinkName;
-	protected TextView tvDrinktype;
-	protected TextView tvGlass;
-	protected TextView tvIng1;
-	protected TextView tvIng2;
-	protected TextView tvIng3;
-	protected TextView tvFullIng;
-	protected TextView tvInstructions;
-	protected TextView tvInstructions2;
-	protected Spinner spinnerDrinkNames;
-	protected DetailsDomain drinkdetail;
-	protected DetailDAO drinkdao;
-
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +19,6 @@ public class DetailsView extends ActivityView {
 		myDatabaseAdapter = DatabaseAdapter.getInstance(this);
 		initComponents();
 	}
-	
 	
 	private void initComponents() {
 		drinkdetail = new DetailsDomain();

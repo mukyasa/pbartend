@@ -62,7 +62,6 @@ public class MulitDetailsView extends ActivityView {
 		spinnerDrinkNames = (Spinner) findViewById(R.id.spinnerDrinkNames);
 		spinnerDrinkNames.setOnItemSelectedListener(spnDrinkTypesListener);
 		favImageButton = (ImageButton)findViewById(R.id.imgFav);
-		favImageButton.setOnClickListener(favImgListener);
 		
 		drinkdao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		drinkdetail.setId((int) selectedRow);
@@ -76,18 +75,6 @@ public class MulitDetailsView extends ActivityView {
 		}
 			
 	}
-	
-	private ImageButton.OnClickListener favImgListener = new ImageButton.OnClickListener(){
-
-		@SuppressWarnings("unchecked")
-		public void onClick(View v) {
-			Log.v(getClass().getSimpleName(), "current drink Id="+drinkdetail.getId());
-			//set as favorite
-			drinkdao.setFavoritesYes(drinkdetail.getId());
-			
-		}
-		
-	};
 	
 	
 	private Spinner.OnItemSelectedListener spnDrinkTypesListener =
