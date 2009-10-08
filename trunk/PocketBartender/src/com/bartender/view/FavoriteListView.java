@@ -12,6 +12,7 @@ import com.bartender.R;
 import com.bartender.dao.CategoryDAO;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
+import com.bartender.dao.FavoritesListDAO;
 
 public class FavoriteListView extends ListViews {
 	
@@ -38,9 +39,9 @@ public class FavoriteListView extends ListViews {
      * init screen list
      */
     private void initComponents() {
-    	DrinkListDAO drink = new DrinkListDAO();
+    	FavoritesListDAO drink = new FavoritesListDAO();
     	drink.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-    	Cursor recordscCursor = drink.retrieveAllDrinks();
+    	Cursor recordscCursor = drink.retrieveAllFavorites();
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_ROW_DRINK_NAME };
 		int[] to = new int[] { R.id.tfName};
