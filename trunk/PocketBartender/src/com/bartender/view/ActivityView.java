@@ -29,14 +29,15 @@ public class ActivityView extends Activity {
 	protected DetailsDomain drinkdetail;
 	protected ImageButton favImageButton;
 	protected DetailDAO drinkdao;
-	private static final int MENU_NEW_GAME=0;
+	private static final int MENU_ADD_FAV=0;
+	private static final int MENU_REMOVE_FAV=1;
 	
 	/**
-	 * sets values to domain object
+	 * sets shared values to domain object
 	 */
 	protected void setViewItems(){
 		
-		tvDrinkName.setText(drinkdetail.getDrinkName());
+		
 		tvDrinktype.setText(drinkdetail.getDrinkType());
 		tvGlass.setText(drinkdetail.getGlass());
 		tvIng1.setText(drinkdetail.getIng1());
@@ -52,7 +53,6 @@ public class ActivityView extends Activity {
 	 */
 	protected void findAndSetView()
 	{
-		tvDrinkName = (TextView) findViewById(R.id.tvDrinkName);
 		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
 		tvGlass = (TextView) findViewById(R.id.tvGlassType);
 		tvIng1 = (TextView) findViewById(R.id.tvIng1);
@@ -65,16 +65,19 @@ public class ActivityView extends Activity {
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
-	    menu.add(0, MENU_NEW_GAME, 0, "Save as favorite").setIcon(R.drawable.star);
+	    menu.add(0, MENU_ADD_FAV, 0, "Save as favorite").setIcon(R.drawable.star);
 	    return true;
 	}
 
 	/* Handles item selections */
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
-	    case MENU_NEW_GAME:
+	    case MENU_ADD_FAV:
 	    	drinkdao.setFavoritesYes(drinkdetail.getId());
 	        return true;
+	    case MENU_REMOVE_FAV:
+	    	drinkdao.removeFavorite(drinkdetail.getId());
+	    	return true;
 	    }
 	    return false;
 	}

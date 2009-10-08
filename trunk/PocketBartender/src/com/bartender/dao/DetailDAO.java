@@ -65,6 +65,23 @@ public class DetailDAO extends DataDAO{
 		}
 	}
 	
+	/**
+	 * removes favorite 
+	 * @param id
+	 */
+	public void removeFavorite(int id){
+		
+		ContentValues values = new ContentValues();
+		values.put(COL_ROW_FAV, "no");
+		
+		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_DRINK_ID + "=" + id, null);
+		
+	}
+
+	/**
+	 * adds favorite
+	 * @param id
+	 */
 	public void setFavoritesYes(int id)
 	{
 		ContentValues values = new ContentValues();
@@ -73,6 +90,11 @@ public class DetailDAO extends DataDAO{
 		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_DRINK_ID + "=" + id, null);
 	}
 	
+	/**
+	 * loads all drinks by name
+	 * @param activity
+	 * @param drink
+	 */
 	public void loadByDrinkNm(Activity activity,DetailsDomain drink) {
 		
 		String selectionArgs[] = {drink.getDrinkName()};
