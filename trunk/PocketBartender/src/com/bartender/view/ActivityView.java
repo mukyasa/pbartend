@@ -36,9 +36,8 @@ public class ActivityView extends Activity {
 	/**
 	 * sets shared values to domain object
 	 */
-	protected void setViewItems(){
-		
-		
+	protected void setViewItems()
+	{
 		tvDrinktype.setText(drinkdetail.getDrinkType());
 		tvGlass.setText(drinkdetail.getGlass());
 		tvIng1.setText(drinkdetail.getIng1());
@@ -79,18 +78,13 @@ public class ActivityView extends Activity {
 
 	/* Handles item selections */
 	public boolean onOptionsItemSelected(MenuItem item) {
-		LayoutParams params = favImageButton.getLayoutParams();
 		
 	    switch (item.getItemId()) {
 	    case MENU_ADD_FAV:
 	    	drinkdao.setFavoritesYes(drinkdetail.getId());
-	    	//only show fav star if is a favorite
-			params.height = 36;
 	        return true;
 	    case MENU_REMOVE_FAV:
 	    	drinkdao.removeFavorite(drinkdetail.getId());
-	    	//only show fav star if is a favorite
-			params.height = 0;
 	    	return true;
 	    }
 	    return false;
