@@ -12,7 +12,7 @@ public class DetailsView extends ActivityView {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.details);
+		setContentView(R.layout.details); 
 		myDatabaseAdapter = DatabaseAdapter.getInstance(this);
 		initComponents();
 	}
