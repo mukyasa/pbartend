@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bartender.R;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DetailDAO;
+import com.bartender.dao.DrinkListDAO;
 import com.bartender.domain.DetailsDomain;
 
 public class ActivityView extends Activity {
@@ -72,6 +73,8 @@ public class ActivityView extends Activity {
 		LayoutParams params = favImageButton.getLayoutParams();
 		if(DetailDAO.FAV_NO.equalsIgnoreCase(drinkdetail.getFavorites()))
 			params.height = 0;
+		else
+			params.height=36;
 		
 		//set glass image
 		if(champagne.equalsIgnoreCase(drinkdetail.getGlass()))
@@ -144,9 +147,13 @@ public class ActivityView extends Activity {
 	    	return true;
 	    case MENU_ADD_FAV:
 	    	drinkdao.setFavoritesYes(drinkdetail.getId());
+	    	drinkdetail.setFavorites(DetailDAO.FAV_YES);
+	    	setViewItems();
 	        return true;
 	    case MENU_REMOVE_FAV:
 	    	drinkdao.removeFavorite(drinkdetail.getId());
+	    	drinkdetail.setFavorites(DetailDAO.FAV_NO);
+	    	setViewItems();
 	    	return true;
 	    }
 	    return false;
