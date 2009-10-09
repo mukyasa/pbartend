@@ -107,8 +107,6 @@ public abstract class ListViews extends ListActivity{
 				return false;
 			}
 
-		
-
 	};
 
 }
