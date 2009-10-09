@@ -63,6 +63,7 @@ public class MulitDetailsView extends ActivityView {
 			Log.v(getClass().getSimpleName(), "id=" + listitem.getString(listitem.getColumnIndex(DataDAO.COL_ROW_DRINK_NAME)));
 			drinkdetail.setDrinkName(listitem.getString(listitem.getColumnIndex(DataDAO.COL_ROW_DRINK_NAME)));
 			drinkdao.loadByDrinkNm(currentActivity, drinkdetail);
+			findAndSetView();
 			setViewItems();
 			
 		}
