@@ -16,6 +16,14 @@ public class FavoritesListDAO extends DataDAO{
 
 		return cursor;
 	}
+	
+public Cursor retrieveAllFilteredFavorites(String searchresult) {
+		
+		String [] selectionArgs = {searchresult};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllFavorites, selectionArgs);
+
+		return cursor;
+	}
 
 
 }

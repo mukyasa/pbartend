@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.bartender.R;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DetailDAO;
-import com.bartender.dao.DrinkListDAO;
 import com.bartender.domain.DetailsDomain;
 
 public class ActivityView extends Activity {
