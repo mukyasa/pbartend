@@ -5,11 +5,11 @@
   android:layout_height="wrap_content">
    <ListView android:id="@+id/android:list"
           android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"/>
+        	android:layout_height="wrap_content" android:layout_marginTop="50.0px"/>
         	
   <TextView android:layout_width="fill_parent" 
   android:layout_height="wrap_content" 
-  android:id="@+id/android:empty" android:text="@string/empty"></TextView>
-
+  android:id="@+id/android:empty" 
+  android:text="@string/empty" android:layout_gravity="center_horizontal" android:textSize="20px"></TextView>
 
 </LinearLayout>

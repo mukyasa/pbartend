@@ -22,7 +22,7 @@ public class FavoriteListView extends ListViews {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.all_drinks); 
+        setContentView(R.layout.list_frame); 
         myDatabaseAdapter = DatabaseAdapter.getInstance(this);
         intent = new Intent(this, DetailsView.class);
         initComponents();
