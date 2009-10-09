@@ -4,12 +4,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 
 import com.bartender.R;
 import com.bartender.dao.DatabaseAdapter;
@@ -23,7 +20,7 @@ public class DrinkListView extends ListViews {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.all_drinks); 
+        setContentView(R.layout.list_frame); 
         myDatabaseAdapter = DatabaseAdapter.getInstance(this);
         intent = new Intent(this, DetailsView.class);
         initComponents();

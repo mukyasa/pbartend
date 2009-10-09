@@ -29,7 +29,7 @@ public class CategoryListView extends ListViews {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.categories); 
+        setContentView(R.layout.list_frame); 
         myDatabaseAdapter = DatabaseAdapter.getInstance(this);
         intent = new Intent(this, MulitDetailsView.class);
         initComponents();
