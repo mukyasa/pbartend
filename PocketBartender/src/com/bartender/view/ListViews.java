@@ -65,7 +65,8 @@ public abstract class ListViews extends ListActivity{
 		searchbox.setOnKeyListener(edSearchBoxListener);
 		
 	}
-	
+
+
 
 	/**
 	 * capture key up and filter list
@@ -73,10 +74,10 @@ public abstract class ListViews extends ListActivity{
 	private EditText.OnKeyListener edSearchBoxListener =
 
 		new EditText.OnKeyListener() {
-
+		
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				
-				if(event.getAction() == KeyEvent.ACTION_UP)
+				if(event.getAction() == KeyEvent.ACTION_UP  || event.getAction() == KeyEvent.KEYCODE_ENTER )
 				{
 					Editable et = searchbox.getText(); //searchbox text
 					Cursor recordscCursor=null;
@@ -85,13 +86,13 @@ public abstract class ListViews extends ListActivity{
 					String[] from = new String[] { DataDAO.COL_ROW_DRINK_NAME };
 					
 					if(laType instanceof FavoriteListView)//filter FAVORITES
-						recordscCursor = ((FavoriteListView) laType).dataDAO.retrieveAllFilteredFavorites(et.toString());
+						recordscCursor = ((FavoriteListView) laType).dataDAO.retrieveAllFilteredFavorites(et.toString().trim());
 					else if(laType instanceof DrinkListView)//filter ALL DRINKS
-						recordscCursor = ((DrinkListView) laType).dataDAO.retrieveAllFilteredDrinks(et.toString());
+						recordscCursor = ((DrinkListView) laType).dataDAO.retrieveAllFilteredDrinks(et.toString().trim());
 					else if(laType instanceof CategoryListView)//filter CATEGORIES
 					{
 						from = new String[] { DataDAO.COL_ROW_DRINK_TYPE };
-						recordscCursor = ((CategoryListView) laType).dataDAO.retrieveAllFilteredDrinktypes(et.toString());
+						recordscCursor = ((CategoryListView) laType).dataDAO.retrieveAllFilteredDrinktypes(et.toString().trim());
 					}
 					
 					
