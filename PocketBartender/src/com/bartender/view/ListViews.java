@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -63,8 +64,8 @@ public abstract class ListViews extends ListActivity{
 	{
 		searchbox = (EditText)findViewById(R.id.etSearch);
 		searchbox.setOnKeyListener(edSearchBoxListener);
-		
 	}
+
 
 
 
