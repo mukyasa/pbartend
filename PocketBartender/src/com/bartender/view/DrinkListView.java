@@ -10,11 +10,12 @@ import com.bartender.dao.DrinkListDAO;
 
 public class DrinkListView extends ListViews {
 	
-	DrinkListDAO drink = new DrinkListDAO();
+	DrinkListDAO dataDAO = new DrinkListDAO();
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setCurrentListActivity(this);
         intent = new Intent(this, DetailsView.class);
         initComponents();
     }
@@ -23,8 +24,8 @@ public class DrinkListView extends ListViews {
      * init screen list
      */
     private void initComponents() {
-    	drink.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-    	Cursor recordscCursor = drink.retrieveAllDrinks();
+    	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
+    	Cursor recordscCursor = dataDAO.retrieveAllDrinks();
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_ROW_DRINK_NAME };
 		int[] to = new int[] { R.id.tfName};

@@ -15,5 +15,13 @@ public class CategoryDAO extends DataDAO {
 
 		return cursor;
 	}
+	
+	public Cursor retrieveAllFilteredDrinktypes(String searchresult) {
+		
+		String [] selectionArgs = {searchresult + "%"};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllCategoriesFilter, selectionArgs);
+
+		return cursor;
+	}
 
 }

@@ -8,7 +8,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.bartender.R;
-import com.bartender.dao.DataDAO;
 
 public class HomeScreenView extends Activity implements OnClickListener {
     /** Called when the activity is first created. */

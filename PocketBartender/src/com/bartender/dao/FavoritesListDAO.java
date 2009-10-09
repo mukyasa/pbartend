@@ -17,10 +17,10 @@ public class FavoritesListDAO extends DataDAO{
 		return cursor;
 	}
 	
-public Cursor retrieveAllFilteredFavorites(String searchresult) {
+	public Cursor retrieveAllFilteredFavorites(String searchresult) {
 		
-		String [] selectionArgs = {searchresult};
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllFavorites, selectionArgs);
+		String [] selectionArgs = {searchresult + "%"};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllFavoritesFilter, selectionArgs);
 
 		return cursor;
 	}
