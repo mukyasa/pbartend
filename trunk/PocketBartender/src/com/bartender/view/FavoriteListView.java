@@ -6,17 +6,17 @@ import android.os.Bundle;
 import android.widget.SimpleCursorAdapter;
 
 import com.bartender.R;
-import com.bartender.dao.CategoryDAO;
 import com.bartender.dao.DrinkListDAO;
 import com.bartender.dao.FavoritesListDAO;
 
 public class FavoriteListView extends ListViews {
 	
-	CategoryDAO cat = new CategoryDAO();
+	FavoritesListDAO dataDAO = new FavoritesListDAO();
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setCurrentListActivity(this);
         intent = new Intent(this, DetailsView.class);
         initComponents();
     }
@@ -26,9 +26,8 @@ public class FavoriteListView extends ListViews {
      * init screen list
      */
     private void initComponents() {
-    	FavoritesListDAO drink = new FavoritesListDAO();
-    	drink.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-    	Cursor recordscCursor = drink.retrieveAllFavorites();
+    	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
+    	Cursor recordscCursor = dataDAO.retrieveAllFavorites();
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_ROW_DRINK_NAME };
 		int[] to = new int[] { R.id.tfName};

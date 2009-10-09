@@ -19,11 +19,12 @@ import com.bartender.dao.DrinkListDAO;
  */
 public class CategoryListView extends ListViews {
 
-	CategoryDAO cat = new CategoryDAO();
+	CategoryDAO dataDAO = new CategoryDAO();
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setCurrentListActivity(this);
         intent = new Intent(this, MulitDetailsView.class);
         initComponents();
     }
@@ -33,8 +34,8 @@ public class CategoryListView extends ListViews {
      * init screen list
      */
     private void initComponents() {
-    	cat.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-    	Cursor recordscCursor = cat.retrieveAllDrinktypes();
+    	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
+    	Cursor recordscCursor = dataDAO.retrieveAllDrinktypes();
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_ROW_DRINK_TYPE };
 		int[] to = new int[] { R.id.tfName};

@@ -36,12 +36,15 @@ public class DataDAO{
 			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
 			+ COL_TYPE + " text not null); ";
 	
-	public static final String sqlGetDrinkDetailById ="SELECT d.*, dt.drinktype FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where d."+COL_ROW_ID+"=?;";
-	public static final String sqlGetDrinkDetailByDrinkName ="SELECT d.*, dt.drinktype FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where d.drinkName=?;";
-	public static final String sqlGetDrinkDetailByDrinkTypeName ="SELECT d.*, dt.drinktype  FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
-	public static final String sqlGetDrinkByTypeId = "SELECT d.*, dt.drinktype FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt."+COL_ROW_ID+"=?";
-	public static final String sqlGetAllFavorites = "SELECT * from tblDrinks where favorites =?";
-	public static final String sqlGetAllFavoritesFilter = "SELECT * FROM tblDrinks where favorites ='"+FAV_YES+"' and drinkName like '?%'";
+	public static final String sqlGetDrinkDetailById ="SELECT d.*, dt.drinktype FROM "+SQL_DRINK_TABLE_NAME+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where d."+COL_ROW_ID+"=?;";
+	public static final String sqlGetDrinkDetailByDrinkName ="SELECT d.*, dt.drinktype FROM "+SQL_DRINK_TABLE_NAME+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where d."+COL_ROW_DRINK_NAME+"=?;";
+	public static final String sqlGetDrinkDetailByDrinkTypeName ="SELECT d.*, dt.drinktype  FROM "+SQL_DRINK_TABLE_NAME+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
+	public static final String sqlGetDrinkByTypeId = "SELECT d.*, dt.drinktype FROM "+SQL_DRINK_TABLE_NAME+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt."+COL_ROW_ID+"=?";
+	public static final String sqlGetAllFavorites = "SELECT * from "+SQL_DRINK_TABLE_NAME+" where favorites =?";
+	//search filter sql
+	public static final String sqlGetAllFavoritesFilter = "SELECT * FROM "+SQL_DRINK_TABLE_NAME+" where favorites ='"+FAV_YES+"' and "+COL_ROW_DRINK_NAME+" like ?";
+	public static final String sqlGetAllDrinksFilter = "SELECT * FROM "+SQL_DRINK_TABLE_NAME+" where "+COL_ROW_DRINK_NAME+" like ?";
+	public static final String sqlGetAllCategoriesFilter = "SELECT * FROM "+ SQL_TYPE_TABLE_NAME + " where  "+COL_ROW_DRINK_TYPE+" like ?";
 	
 	public static final String sqlCreateDrinksTable = "CREATE TABLE "
 			+ SQL_DRINK_TABLE_NAME 

@@ -2,6 +2,7 @@ package com.bartender.view;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -9,8 +10,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 
 import com.bartender.R;
+import com.bartender.dao.DataDAO;
 import com.bartender.dao.DatabaseAdapter;
 
 public abstract class ListViews extends ListActivity{
@@ -20,8 +23,18 @@ public abstract class ListViews extends ListActivity{
 	protected DatabaseAdapter myDatabaseAdapter;
 	protected EditText searchbox;
 	protected Intent intent;
+	protected ListActivity currentListActivity;
 	
-	
+
+
+	public ListActivity getCurrentListActivity() {
+		return currentListActivity;
+	}
+
+	public void setCurrentListActivity(ListActivity currentListActivity) {
+		this.currentListActivity = currentListActivity;
+	}
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,6 +56,9 @@ public abstract class ListViews extends ListActivity{
 			startActivityForResult(intent, INTENT_NEXT_SCREEN);
 	}
 	
+	/**
+	 * sets event listener to search field
+	 */
 	protected void setListenter()
 	{
 		searchbox = (EditText)findViewById(R.id.etSearch);
@@ -51,6 +67,9 @@ public abstract class ListViews extends ListActivity{
 	}
 	
 
+	/**
+	 * capture key up and filter list
+	 */
 	private EditText.OnKeyListener edSearchBoxListener =
 
 		new EditText.OnKeyListener() {
@@ -59,9 +78,29 @@ public abstract class ListViews extends ListActivity{
 				
 				if(event.getAction() == KeyEvent.ACTION_UP)
 				{
-					Editable et = searchbox.getText();
-					et.toString();
-					//filter
+					Editable et = searchbox.getText(); //searchbox text
+					Cursor recordscCursor=null;
+					ListActivity laType = getCurrentListActivity();
+					
+					String[] from = new String[] { DataDAO.COL_ROW_DRINK_NAME };
+					
+					if(laType instanceof FavoriteListView)//filter FAVORITES
+						recordscCursor = ((FavoriteListView) laType).dataDAO.retrieveAllFilteredFavorites(et.toString());
+					else if(laType instanceof DrinkListView)//filter ALL DRINKS
+						recordscCursor = ((DrinkListView) laType).dataDAO.retrieveAllFilteredDrinks(et.toString());
+					else if(laType instanceof CategoryListView)//filter CATEGORIES
+					{
+						from = new String[] { DataDAO.COL_ROW_DRINK_TYPE };
+						recordscCursor = ((CategoryListView) laType).dataDAO.retrieveAllFilteredDrinktypes(et.toString());
+					}
+					
+					
+			    	startManagingCursor(recordscCursor);			    	
+					int[] to = new int[] { R.id.tfName};
+			    	SimpleCursorAdapter records = new SimpleCursorAdapter(getCurrentListActivity(),
+							R.layout.item_row, recordscCursor, from, to);
+			    	
+					setListAdapter(records);
 					
 				}				
 				
