@@ -59,6 +59,7 @@ public class ActivityView extends Activity {
 	 */
 	protected void setViewItems()
 	{
+		tvDrinkName.setText(drinkdetail.getDrinkName());
 		tvDrinktype.setText(drinkdetail.getDrinkType());
 		tvIng1.setText(drinkdetail.getIng1());
 		tvIng2.setText(drinkdetail.getIng2());
@@ -71,22 +72,6 @@ public class ActivityView extends Activity {
 		LayoutParams params = favImageButton.getLayoutParams();
 		if(DetailDAO.FAV_NO.equalsIgnoreCase(drinkdetail.getFavorites()))
 			params.height = 0;
-	}
-	
-	/**
-	 * sets the views to the variables
-	 */
-	protected void findAndSetView()
-	{
-		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
-		tvIng1 = (TextView) findViewById(R.id.tvIng1);
-		tvIng2 = (TextView) findViewById(R.id.tvIng2);
-		tvIng3 = (TextView) findViewById(R.id.tvIng3);
-		tvFullIng = (TextView) findViewById(R.id.tvFullIng);
-		tvInstructions = (TextView) findViewById(R.id.tvInstructions);
-		tvInstructions2  = (TextView) findViewById(R.id.tvInstructions2);
-		favImageButton = (ImageButton)findViewById(R.id.imgFav);
-		imgGlassType =(ImageView)findViewById(R.id.imgGlassType);
 		
 		//set glass image
 		if(champagne.equalsIgnoreCase(drinkdetail.getGlass()))
@@ -123,10 +108,23 @@ public class ActivityView extends Activity {
 			imgGlassType.setBackgroundResource(R.drawable.sour);
 		else if(wine.equalsIgnoreCase(drinkdetail.getGlass()))
 			imgGlassType.setBackgroundResource(R.drawable.wine);
-		
-		
-		
-		
+	}
+	
+	/**
+	 * sets the views to the variables
+	 */
+	protected void findAndSetView()
+	{
+		tvDrinkName = (TextView) findViewById(R.id.tvDrinkName);
+		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
+		tvIng1 = (TextView) findViewById(R.id.tvIng1);
+		tvIng2 = (TextView) findViewById(R.id.tvIng2);
+		tvIng3 = (TextView) findViewById(R.id.tvIng3);
+		tvFullIng = (TextView) findViewById(R.id.tvFullIng);
+		tvInstructions = (TextView) findViewById(R.id.tvInstructions);
+		tvInstructions2  = (TextView) findViewById(R.id.tvInstructions2);
+		favImageButton = (ImageButton)findViewById(R.id.imgFav);
+		imgGlassType =(ImageView)findViewById(R.id.imgGlassType);
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {

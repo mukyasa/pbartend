@@ -1,7 +1,6 @@
 package com.bartender.view;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.bartender.R;
 import com.bartender.dao.DatabaseAdapter;
@@ -24,7 +23,6 @@ public class DetailsView extends ActivityView {
 		
 		selectedRow = getIntent().getLongExtra(ListViews.INTENT_EXTRA_SELECTED_ROW, 0);
 		
-		tvDrinkName = (TextView) findViewById(R.id.tvDrinkName);
 		findAndSetView();
 		
 		drinkdao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
@@ -36,7 +34,6 @@ public class DetailsView extends ActivityView {
 		
 		if (drinkdetail.getId() > 0) {
 			//this one has a drink name 
-			tvDrinkName.setText(drinkdetail.getDrinkName());
 			setViewItems();
 			
 		} 

@@ -1,39 +1,33 @@
 <ScrollView android:id="@+id/ScrollView01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:paddingBottom="10.0sp" android:paddingLeft="10.0sp" android:paddingTop="10.0sp" android:background="@drawable/details_bg">
 <TableLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_height="wrap_content" android:layout_width="fill_parent">
-	<Spinner android:id="@+id/spinnerDrinkNames" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginRight="12.0sp"></Spinner>
- <TableRow>
-	<ImageButton android:id="@+id/imgFav" android:background="@drawable/star" android:layout_gravity="left" android:layout_marginLeft="12.0sp" android:layout_height="36.0px" android:layout_width="36.0px"></ImageButton>
-</TableRow>  
-<TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Type:" android:id="@+id/tvFieldDrinkType" android:textStyle="bold" android:textColor="#000"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="The Type" android:id="@+id/tvDrinkType" android:textColor="#000"></TextView>
-</TableRow>
-<TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Glass:" android:id="@+id/tvFieldGlassType" android:textStyle="bold" android:textColor="#000"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvGlassType" android:text="The Type" android:textColor="#000"></TextView>
-</TableRow>
-<TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Booze 1:" android:id="@+id/tvFieldIng1" android:textStyle="bold" android:textColor="#000"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvIng1" android:text="ing 1" android:textColor="#000"></TextView>
-</TableRow>
-<TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Booze 2:" android:id="@+id/tvFieldIng2" android:textStyle="bold" android:textColor="#000"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvIng2" android:text="ing 3" android:textColor="#000"></TextView>
-</TableRow>
-<TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Booze 3:" android:id="@+id/tvFieldIng3" android:textStyle="bold" android:textColor="#000"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:id="@+id/tvIng3" android:text="ing 3" android:textColor="#000"></TextView>
-</TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="All Ingredients:" android:id="@+id/tvFieldFullIng" android:textStyle="bold" android:textColor="#000"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvFullIng" android:text="full ingredients" android:textColor="#000"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Instructions:" android:id="@+id/tvFieldInstructions" android:textStyle="bold" android:textColor="#000"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions" android:text="full ingredients" android:textColor="#000"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginTop="10.0sp" android:layout_marginLeft="10.0sp" android:text="Extra Instructions:" android:id="@+id/tvFieldInstructions2" android:textStyle="bold" android:textColor="#000"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions2" android:text="full ingredients" android:textColor="#000"></TextView>
-
+  android:layout_height="wrap_content" android:layout_width="fill_parent">	
+  <Spinner android:id="@+id/spinnerDrinkNames" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginRight="12.0sp"></Spinner>
+	<TableRow>
+		<ImageButton android:id="@+id/imgFav" android:background="@drawable/star" android:layout_marginLeft="12.0sp" android:layout_width="36.0px" android:layout_height="36.0px" android:layout_gravity="left|center"></ImageButton>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:id="@+id/tvDrinkName" android:textColor="#000" android:textStyle="bold" android:textSize="22px" android:text="The Name Long" android:layout_marginBottom="10.0sp"></TextView>
+	</TableRow>
+	<TableRow>
+		<ImageView android:id="@+id/imgGlassType" android:background="@drawable/cocktail" android:layout_width="48.0px" android:layout_height="49.0px" android:layout_gravity="left|center"></ImageView>
+	<TableLayout
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:layout_height="wrap_content" android:layout_width="fill_parent">
+		 <TableRow>
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Drink Type" android:id="@+id/tvDrinkType" android:textColor="#000" android:paddingLeft="15.0sp" android:textSize="14.0px" android:textStyle="bold"></TextView>
+		</TableRow>
+		 <TableRow> 
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvIng1" android:text="ing 1" android:textColor="#000" android:layout_marginTop="5.0sp" android:paddingLeft="15.0sp"></TextView>
+		</TableRow>
+		 <TableRow>
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvIng2" android:text="ing 2" android:textColor="#000" android:layout_marginTop="5.0sp" android:paddingLeft="15.0sp"></TextView>
+		</TableRow>
+		 <TableRow>
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvIng3" android:text="ing 3" android:textColor="#000" android:layout_marginTop="5.0sp" android:paddingLeft="15.0sp"></TextView>
+		</TableRow>
+	</TableLayout>
+	</TableRow>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvFullIng" android:text="full ingredients" android:textColor="#000" android:layout_marginTop="10.0sp"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions" android:text="full ingredients" android:textColor="#000" android:layout_marginTop="10.0sp"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions2" android:text="full ingredients" android:textColor="#000" android:layout_marginTop="10.0sp"></TextView>
 </TableLayout>
-
-
 </ScrollView>
