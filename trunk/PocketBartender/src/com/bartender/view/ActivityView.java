@@ -20,7 +20,6 @@ public class ActivityView extends Activity {
 	protected long selectedRow;
 	protected TextView tvDrinkName;
 	protected TextView tvDrinktype;
-	protected TextView tvGlass;
 	protected TextView tvIng1;
 	protected TextView tvIng2;
 	protected TextView tvIng3;
@@ -41,7 +40,6 @@ public class ActivityView extends Activity {
 	protected void setViewItems()
 	{
 		tvDrinktype.setText(drinkdetail.getDrinkType());
-		tvGlass.setText(drinkdetail.getGlass());
 		tvIng1.setText(drinkdetail.getIng1());
 		tvIng2.setText(drinkdetail.getIng2());
 		tvIng3.setText(drinkdetail.getIng3());
@@ -61,7 +59,6 @@ public class ActivityView extends Activity {
 	protected void findAndSetView()
 	{
 		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
-		tvGlass = (TextView) findViewById(R.id.tvGlassType);
 		tvIng1 = (TextView) findViewById(R.id.tvIng1);
 		tvIng2 = (TextView) findViewById(R.id.tvIng2);
 		tvIng3 = (TextView) findViewById(R.id.tvIng3);

@@ -34,7 +34,7 @@ public class HomeScreenView extends Activity implements OnClickListener {
 		btnFav = (Button) findViewById(R.id.btnFav);
 		btnFav.setOnClickListener(this);
 
-		btnSearch = (Button) findViewById(R.id.btnSearch);
+		btnSearch = (Button) findViewById(R.id.btnSearch); 
 		btnSearch.setOnClickListener(this);
 
 		btnNew = (Button) findViewById(R.id.btnNew);
