@@ -4,7 +4,7 @@
   android:layout_height="wrap_content" android:layout_width="fill_parent">
 	<TableRow>
 		<ImageButton android:id="@+id/imgFav" android:background="@drawable/star" android:layout_marginLeft="12.0sp" android:layout_width="36.0px" android:layout_height="36.0px" android:layout_gravity="left|center"></ImageButton>
-		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:id="@+id/tvDrinkName" android:textColor="#000" android:textStyle="bold" android:text="The Name Long" android:layout_marginBottom="10.0sp" android:textSize="18px"></TextView>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:id="@+id/tvDrinkName" android:textColor="#000" android:textStyle="bold" android:text="The Name Long" android:layout_marginBottom="10.0sp" android:textSize="18px" android:paddingRight="10.0sp"></TextView>
 	</TableRow>
 	<TableRow>
 		<ImageView android:id="@+id/imgGlassType" android:background="@drawable/cocktail" android:layout_width="48.0px" android:layout_height="49.0px" android:layout_gravity="left|center"></ImageView>
