@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content">
-</TableLayout>
+<ScrollView android:id="@+id/ScrollView01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:paddingBottom="10.0sp" android:paddingLeft="10.0sp" android:paddingTop="10.0sp" android:background="@drawable/details_bg" android:paddingRight="10.0sp">
+
+   <EditText android:id="@+id/etNewDrinkNm" 
+   android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/create_drink_title" android:textColor="#ccc"></EditText>   
+
+</ScrollView>
