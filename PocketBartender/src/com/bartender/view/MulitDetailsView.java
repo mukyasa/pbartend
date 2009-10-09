@@ -47,9 +47,7 @@ public class MulitDetailsView extends ActivityView {
 			drinkdao.loadDrinkIds(spinnerDrinkNames,drinkdetail,currentActivity);
 			drinkdao.loadByDrinkTypeNm(currentActivity,drinkdetail);
 			setViewItems();
-			
 		}
-			
 	}
 	
 	
