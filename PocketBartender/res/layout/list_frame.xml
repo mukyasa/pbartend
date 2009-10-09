@@ -1,5 +1,5 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/search_box" android:id="@+id/etSearch"/>
+    <include layout="@layout/search_box" android:id="@+id/tfName"/>
         
     <include layout="@layout/list_items" android:id="@+id/tfName"/>
 </merge>

@@ -12,9 +12,6 @@ import com.bartender.domain.DetailsDomain;
 
 public class DetailDAO extends DataDAO{
 	
-	public static final String FAV_NO = "no";
-	public static final String FAV_YES = "yes";
-
 	/**
 	 * sets the drink domain from database
 	 * @param drink

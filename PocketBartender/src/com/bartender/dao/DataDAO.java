@@ -10,6 +10,9 @@ public class DataDAO{
 	public static final int INTENT_NEXT_SCREEN = 0;
 	public static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
 	
+	public static final String FAV_NO = "no";
+	public static final String FAV_YES = "yes";
+	
 	public static final String COL_TYPE = "drinktype";
 	public static final String COL_ROW_ID = "_id";
 	//drink cols
@@ -38,6 +41,7 @@ public class DataDAO{
 	public static final String sqlGetDrinkDetailByDrinkTypeName ="SELECT d.*, dt.drinktype  FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
 	public static final String sqlGetDrinkByTypeId = "SELECT d.*, dt.drinktype FROM tblDrinks d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt."+COL_ROW_ID+"=?";
 	public static final String sqlGetAllFavorites = "SELECT * from tblDrinks where favorites =?";
+	public static final String sqlGetAllFavoritesFilter = "SELECT * FROM tblDrinks where favorites ='"+FAV_YES+"' and drinkName like '?%'";
 	
 	public static final String sqlCreateDrinksTable = "CREATE TABLE "
 			+ SQL_DRINK_TABLE_NAME 
