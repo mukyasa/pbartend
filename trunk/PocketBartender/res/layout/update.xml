@@ -7,22 +7,16 @@ xmlns:android="http://schemas.android.com/apk/res/android"
  android:paddingTop="10.0sp" 
  android:background="@drawable/details_bg" 
  android:paddingRight="10.0sp">
-	<TableLayout 
-	android:layout_height="wrap_content" 
-	android:layout_width="fill_parent" 
-	android:id="@+id/tblUpdate">
-		<TableRow>
-		   <EditText android:id="@+id/etNewDrinkNm" 
+<TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content">
+<EditText android:id="@+id/etNewDrinkNm" 
 		   android:layout_height="wrap_content" 
 		   android:layout_width="fill_parent" 
 		   android:text="@string/create_drink_title" 
 		   android:textColor="#ccc"></EditText>
-		</TableRow>
-		 <TableRow>
-			<Button android:id="@+id/btnCategory" 
-			android:layout_height="wrap_content" 
-			android:layout_width="fill_parent" 
-			android:text="@string/btnCategory"></Button>
-		 </TableRow>
-	</TableLayout>
+		   <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/btnCategory"></Button>
+		   </TableLayout>
+		   
+		   
+		   
+
 </ScrollView>
