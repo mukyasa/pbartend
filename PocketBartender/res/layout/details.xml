@@ -2,9 +2,9 @@
 <TableLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_height="wrap_content" android:layout_width="fill_parent">
-	<TableRow>
+	<TableRow android:layout_width="fill_parent">
 		<ImageButton android:id="@+id/imgFav" android:background="@drawable/star" android:layout_marginLeft="12.0sp" android:layout_width="36.0px" android:layout_height="36.0px" android:layout_gravity="left|center"></ImageButton>
-		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:id="@+id/tvDrinkName" android:textColor="#000" android:textStyle="bold" android:text="The Name Long" android:layout_marginBottom="10.0sp" android:textSize="18px" android:paddingRight="10.0sp"></TextView>
+		<TextView android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:id="@+id/tvDrinkName" android:textColor="#000" android:textStyle="bold" android:layout_marginBottom="10.0sp" android:textSize="18px" android:text="This is where a long name would go." android:gravity="left" android:keepScreenOn="true" android:layout_width="wrap_content" android:paddingRight="80px"></TextView>
 	</TableRow>
 	<TableRow>
 		<ImageView android:id="@+id/imgGlassType" android:background="@drawable/cocktail" android:layout_width="48.0px" android:layout_height="49.0px" android:layout_gravity="left|center"></ImageView>
