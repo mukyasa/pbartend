@@ -1,0 +1,23 @@
+SELECT d.*,g.name[glass_name],dc.name[cat_name],isc.name[ing_subname]
+FROM tblDrinks d 
+INNER JOIN
+	 tblGlasses g  ON d.glass_id = g.id 
+INNER JOIN
+	tblDrink_categories dc ON d.category_id = dc.id 
+INNER JOIN
+	tblDrinks_subcategories dsc ON dsc.drink_id = d.id 
+INNER JOIN
+	tblIngredient_subcategories isc ON dsc.liquor_subcategory_id = isc.id 
+	where d.name='Adam and VeeV'
+	
+
+//select all glass names
+SELECT name from tblGlasses	
+
+//select all drink categories
+Select name from tblDrink_categories
+
+//Select all drinks and categories
+select d.name, dc.name [category_name] from tblDrinks  d
+inner join tblDrink_categories dc on d.category_id = dc.id
+	
