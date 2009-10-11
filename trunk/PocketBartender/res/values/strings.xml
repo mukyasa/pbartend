@@ -4,5 +4,7 @@
     <string name="app_name">Bartender</string>
     <string name="create_drink_title">Drink Title</string>
     <string name="search_filter">Search Filter</string>
-    <string name="btnCategory">Add Category</string>
+    <string name="categoryText">Add Category</string>
+    <string name="ingredientsText">Ingredients</string>
+    <string name="ing_text">Ingredients</string>
 </resources>

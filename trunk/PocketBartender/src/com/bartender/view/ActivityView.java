@@ -77,7 +77,7 @@ public class ActivityView extends Activity {
 		
 		//set glass image
 		if(champagne.equalsIgnoreCase(drinkdetail.getGlass()))
-			imgGlassType.setBackgroundResource(R.drawable.champagne);
+			imgGlassType.setBackgroundResource(R.drawable.champ);
 		else if(cocktail.equalsIgnoreCase(drinkdetail.getGlass()))
 			imgGlassType.setBackgroundResource(R.drawable.cocktail);
 		else if(highball.equalsIgnoreCase(drinkdetail.getGlass()))
