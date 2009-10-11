@@ -26,15 +26,10 @@ public class DataDAO{
 	public static final String COL_ROW_INSTUCTIONS = "instructions";
 	public static final String COL_ROW_INSTRUCTIONS2 = "instructions2";
 	public static final String COL_ROW_FAV = "favorites";
-	
 
 	public static final String SQL_TYPE_TABLE_NAME = "tblDrinkType";
 	public static final String SQL_DRINK_TABLE_NAME = "tblDrinks";
 	public static final String SQL_INGREDIENTS_TABLE_NAME = "tblIng";
-	public static final String sqlCreateDrinkTypeTable = "CREATE TABLE "
-			+ SQL_TYPE_TABLE_NAME + " "
-			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
-			+ COL_TYPE + " text not null); ";
 	
 	public static final String sqlGetDrinkDetailById ="SELECT d.*, dt.drinktype FROM "+SQL_DRINK_TABLE_NAME+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where d."+COL_ROW_ID+"=?;";
 	public static final String sqlGetDrinkDetailByDrinkName ="SELECT d.*, dt.drinktype FROM "+SQL_DRINK_TABLE_NAME+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where d."+COL_ROW_DRINK_NAME+"=?;";
@@ -45,6 +40,11 @@ public class DataDAO{
 	public static final String sqlGetAllFavoritesFilter = "SELECT * FROM "+SQL_DRINK_TABLE_NAME+" where favorites ='"+FAV_YES+"' and "+COL_ROW_DRINK_NAME+" like ?";
 	public static final String sqlGetAllDrinksFilter = "SELECT * FROM "+SQL_DRINK_TABLE_NAME+" where "+COL_ROW_DRINK_NAME+" like ?";
 	public static final String sqlGetAllCategoriesFilter = "SELECT * FROM "+ SQL_TYPE_TABLE_NAME + " where  "+COL_ROW_DRINK_TYPE+" like ?";
+	
+	public static final String sqlCreateDrinkTypeTable = "CREATE TABLE "
+		+ SQL_TYPE_TABLE_NAME + " "
+		+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
+		+ COL_TYPE + " text not null); ";
 	
 	public static final String sqlCreateDrinksTable = "CREATE TABLE "
 			+ SQL_DRINK_TABLE_NAME 
