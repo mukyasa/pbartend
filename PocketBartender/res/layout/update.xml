@@ -5,18 +5,32 @@ xmlns:android="http://schemas.android.com/apk/res/android"
  android:paddingBottom="10.0sp" 
  android:paddingLeft="10.0sp" 
  android:paddingTop="10.0sp" 
- android:background="@drawable/details_bg" 
- android:paddingRight="10.0sp">
-<TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content">
-<EditText android:id="@+id/etNewDrinkNm" 
+ android:background="@drawable/details_bg">
+<TableLayout android:id="@+id/TableLayout01" 
+android:layout_width="fill_parent" 
+android:layout_height="wrap_content"
+ android:paddingRight="10.0sp"  
+>
+	<EditText android:id="@+id/etNewDrinkNm" 
 		   android:layout_height="wrap_content" 
 		   android:layout_width="fill_parent" 
 		   android:text="@string/create_drink_title" 
 		   android:textColor="#ccc"></EditText>
-		   <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/btnCategory"></Button>
-		   </TableLayout>
-		   
-		   
-		   
+	<Button android:layout_width="wrap_content" 
+		   android:layout_height="wrap_content" 
+		   android:text="@string/categoryText" android:id="@+id/ btnAddNewCat"></Button>
+	<TextView android:id="@+id/tvNewCategory" 
+		   android:layout_width="wrap_content" 
+		   android:layout_height="wrap_content"></TextView>
+	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" 
+		   android:text="@string/ingredientsText" android:id="@+id/btnNewIng"></Button>
+	<TextView android:id="@+id/tvNewIngredients" 
+		   android:layout_width="wrap_content" 
+		   android:layout_height="wrap_content"></TextView>
+	<EditText android:id="@+id/etDirections" 
+		   android:layout_width="wrap_content" 
+		   android:layout_height="wrap_content"
+		   android:textColor="#ccc" android:text="@string/ing_text"></EditText>
 
+</TableLayout>
 </ScrollView>

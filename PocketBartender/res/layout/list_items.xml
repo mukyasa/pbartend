@@ -10,6 +10,10 @@
   android:text="@string/empty" android:gravity="center_horizontal" android:paddingTop="85.0sp"></TextView>
    <ListView android:id="@+id/android:list"
           android:layout_width="fill_parent"
-        	android:layout_height="wrap_content" android:background="#fff" android:layout_marginTop="65.0px" android:fadingEdge="vertical" android:fadingEdgeLength="40.0sp"/>
+        	android:layout_height="wrap_content" 
+        	android:background="#fff" 
+        	android:layout_marginTop="65.0px" 
+        	android:fadingEdge="vertical" 
+        	android:fadingEdgeLength="40.0sp"/>
         	
 </LinearLayout>
