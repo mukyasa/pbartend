@@ -42,7 +42,7 @@ public class IngredientsListView extends ListActivity {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor = dataDAO.retrieveAllFilteredIngredients(getType());
     	startManagingCursor(recordscCursor);
-    	String[] from = new String[] { DrinkListDAO.COL_NAME };
+    	String[] from = new String[] { DrinkListDAO.COL_CAT_NAME };
 		int[] to = new int[] { R.id.tfName};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
 				R.layout.item_row, recordscCursor, from, to);
