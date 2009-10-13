@@ -1825,7 +1825,7 @@ public class DrinkInserts {
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2182,2,'Executive Sunrise','Pour the tequila and the orange juice into a Collins glass almost filled with ice cubes. Stir well. Drop the cassis into the centre of the drink.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2183,8,'Exorcist','Shake with ice and strain into a cocktail glass.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2184,2,'Exotic Finn','Shake with ice and strain into a highball glass. Garnish with mint leaves, a strawberry and an orange twist.',1,0,0,0);"
-,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2185,2,'Explosion','Combine in a large beer glass. Eric says: Beware, despite the sweet taste, the glass contains around 3 oz. of alcohol, hence the name. ,1,0,0,0);"
+,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2185,2,'Explosion','Combine in a large beer glass. Eric says: Beware, despite the sweet taste, the glass contains around 3 oz. of alcohol, hence the name.' ,1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2186,2,'Extreme Cherry Bomb','Serve on the rocks in a highball glass. Garnish with a cherry.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2187,8,'Eye of the Dragon','Shake with ice and strain into a cocktail glass. Garnish with 2 lychees.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2188,14,'Eye-Opener','In a shaker half-filled with ice cubes, combine all of the ingredients. Shake well. Strain into a sour glass.',1,0,0,0);"
