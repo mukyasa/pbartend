@@ -20,15 +20,11 @@ public class DetailDAO extends DataDAO{
 	private void setDrinkDomain(DetailsDomain drink,Cursor cursor)
 	{
 		drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ROW_ID)));
-		drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_NAME)));
-		drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_ROW_GLASS)));
-		drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_TYPE)));
-		drink.setIng1(cursor.getString(cursor.getColumnIndex(COL_ROW_ING1)));
-		drink.setIng2(cursor.getString(cursor.getColumnIndex(COL_ROW_ING2)));
-		drink.setIng3(cursor.getString(cursor.getColumnIndex(COL_ROW_ING3)));
+		drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_NAME)));
+		drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_GLASS_NAME)));
+		drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_CAT_NAME)));
 		drink.setIngredients(cursor.getString(cursor.getColumnIndex(COL_ROW_INGREDIENTS)));
 		drink.setInstructions(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTUCTIONS)));
-		drink.setInstructions2(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTRUCTIONS2)));
 		drink.setFavorites(cursor.getString(cursor.getColumnIndex(COL_ROW_FAV)));
 	}
 	
@@ -59,7 +55,7 @@ public class DetailDAO extends DataDAO{
 	public void loadByDrinkTypeNm(Activity activity,DetailsDomain drink) {
 		
 		String selectionArgs[] = {drink.getDrinkType()};
-		Cursor cursor = sqliteDatabase.rawQuery(DataDAO.sqlGetDrinkDetailByDrinkTypeName,selectionArgs);
+		Cursor cursor = sqliteDatabase.rawQuery(DataDAO.sqlGetDrinkDetailByDrinkCatName,selectionArgs);
 		
 		if (cursor != null) {
 			cursor.moveToFirst();
@@ -76,9 +72,9 @@ public class DetailDAO extends DataDAO{
 	public void removeFavorite(int id){
 		
 		ContentValues values = new ContentValues();
-		values.put(COL_ROW_FAV, FAV_NO);
+		values.put(COL_FAVORITE, FAV_NO);
 		
-		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_ID + "=" + id, null);
+		sqliteDatabase.update(TABLE_DRINK, values, COL_ROW_ID + "=" + id, null);
 		
 	}
 
@@ -89,9 +85,9 @@ public class DetailDAO extends DataDAO{
 	public void setFavoritesYes(int id)
 	{
 		ContentValues values = new ContentValues();
-		values.put(COL_ROW_FAV, FAV_YES);
+		values.put(COL_FAVORITE, FAV_YES);
 		
-		sqliteDatabase.update(SQL_DRINK_TABLE_NAME, values, COL_ROW_ID + "=" + id, null);
+		sqliteDatabase.update(TABLE_DRINK, values, COL_ROW_ID + "=" + id, null);
 	}
 	
 	/**
@@ -121,19 +117,19 @@ public class DetailDAO extends DataDAO{
 	public void loadDrinkIds(Spinner spinnerDrinkNames,DetailsDomain drink,Context context){
 		
 		String selectionArgs[] = {drink.getId()+""};
-		Cursor cursor = sqliteDatabase.rawQuery(DataDAO.sqlGetDrinkByTypeId,selectionArgs);
+		Cursor cursor = sqliteDatabase.rawQuery(DataDAO.sqlGetDrinkByCatId,selectionArgs);
 		
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(context,
 			    android.R.layout.simple_spinner_item,
 			    cursor,
-				new String[] {COL_ROW_DRINK_NAME},
+				new String[] {COL_NAME},
 				new int[] {android.R.id.text1}); 
 
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinnerDrinkNames.setAdapter(adapter);
 		
 		cursor.move(0);
-		drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_ROW_DRINK_TYPE)));
+		drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_NAME)));
 		
 	}
 }

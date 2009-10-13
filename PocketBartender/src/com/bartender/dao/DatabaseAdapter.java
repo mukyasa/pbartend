@@ -23,9 +23,9 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		//create drink type tbl
-		db.execSQL(DataDAO.sqlCreateDrinkTypeTable);
-		createTypesData(db);
+		//create drink category table
+		db.execSQL(DataDAO.sqlCreateDrinkCategoriesTable);
+		createDrinkTypes(db);
 		//create drinks
 		db.execSQL(DataDAO.sqlCreateDrinksTable);
 		DrinkInserts di = new DrinkInserts();
@@ -45,23 +45,36 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		  Log.w(getClass().getSimpleName(), "Upgrading database from version " + oldVersion + " to "
 	                + newVersion + ", which will destroy all old data");
 		  
-		  db.execSQL("DROP TABLE IF EXISTS " + DataDAO.SQL_TYPE_TABLE_NAME );
-		  db.execSQL("DROP TABLE IF EXISTS " + DataDAO.SQL_DRINK_TABLE_NAME );
-		  db.execSQL("DROP TABLE IF EXISTS " + DataDAO.SQL_INGREDIENTS_TABLE_NAME );
+		  dropTables(db);
 	      onCreate(db);
+	}
+	
+	/**
+	 * Drops all the tables
+	 * @param db
+	 */
+	private void dropTables(SQLiteDatabase db)
+	{
+		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_DRINK );
+		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_DRINK_CAT );
+		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_DRINK_INGREDIENTS );
+		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_DRINK_SUB_CAT );
+		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_FRACTIONAL_AMOUNTS );
+		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_GLASSES );
+		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_INGREDIENTS );
+		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_INGREDIENTS_CAT );
+		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_INGREDIENTS_SUB_CAT );
+		 
 	}
 
 	/**
 	 * creates the drink types in the database
 	 * @param db
 	 */
-	void createTypesData(SQLiteDatabase db) {
-		String[] types = { "","Beer", "Fix", "Fizz", "Flip",
-				"Highball", "Holiday", "Martini", "Mixed", "Non Alcoholic",
-				"Other", "Pousse Cafe", "Blender", "Punch", "Rickey",
-				"Sangaree", "Shooter", "Sling", "Smash", "Sour", "Toddy",
-				"Wine", "Cobbler", "Cocktail", "Coffee", "Collins", "Cooler",
-				"Crusta", "Daisy" };
+	void createDrinkTypes(SQLiteDatabase db) {
+		
+		String[] types = { "","Cocktails", "Hot Drinks", "Jello Shots", "Martinis",
+				"Non-Alcoholic", "Punches", "Shooters"};
 		Arrays.sort(types);
 
 		ContentValues values;
@@ -70,8 +83,8 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		for(int i=1;i<types.length;i++)
 		{
 			values = new ContentValues();
-			values.put(DataDAO.COL_TYPE, types[i]); 
-			db.insert(DataDAO.SQL_TYPE_TABLE_NAME, null, values);
+			values.put(DataDAO.COL_NAME, types[i]); 
+			db.insert(DataDAO.TABLE_DRINK_CAT, null, values);
 		}
 		 
 	}

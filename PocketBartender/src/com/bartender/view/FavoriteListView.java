@@ -29,7 +29,7 @@ public class FavoriteListView extends ListViews {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor = dataDAO.retrieveAllFavorites();
     	startManagingCursor(recordscCursor);
-    	String[] from = new String[] { DrinkListDAO.COL_ROW_DRINK_NAME };
+    	String[] from = new String[] { DrinkListDAO.COL_NAME };
 		int[] to = new int[] { R.id.tfName};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
 				R.layout.item_row, recordscCursor, from, to);

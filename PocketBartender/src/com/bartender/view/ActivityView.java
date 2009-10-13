@@ -62,11 +62,8 @@ public class ActivityView extends Activity {
 		tvDrinkName.setText(drinkdetail.getDrinkName());
 		tvDrinktype.setText(drinkdetail.getDrinkType());
 		tvIng1.setText(drinkdetail.getIng1());
-		tvIng2.setText(drinkdetail.getIng2());
-		tvIng3.setText(drinkdetail.getIng3());
 		tvFullIng.setText(drinkdetail.getIngredients());
 		tvInstructions.setText(drinkdetail.getInstructions());
-		tvInstructions2.setText(drinkdetail.getInstructions2());
 		
 		//only show fav star if is a favorite
 		LayoutParams params = favImageButton.getLayoutParams();

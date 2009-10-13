@@ -27,7 +27,7 @@ public class DrinkListView extends ListViews {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor = dataDAO.retrieveAllDrinks();
     	startManagingCursor(recordscCursor);
-    	String[] from = new String[] { DrinkListDAO.COL_ROW_DRINK_NAME };
+    	String[] from = new String[] { DrinkListDAO.COL_NAME };
 		int[] to = new int[] { R.id.tfName};
 		
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,

@@ -9,11 +9,8 @@ public class DetailsDomain {
 	private String drinkType;
 	private String glass;
 	private String ing1;
-	private String ing2;
-	private String ing3;
 	private String ingredients;
 	private String instructions;
-	private String instructions2;
 	private int id;
 	private String favorites;
 	private List<String> drinkNames = new ArrayList<String>();
@@ -31,18 +28,6 @@ public class DetailsDomain {
 	public void setIng1(String ing1) {
 		this.ing1 = ing1;
 	}
-	public String getIng2() {
-		return ing2;
-	}
-	public void setIng2(String ing2) {
-		this.ing2 = ing2;
-	}
-	public String getIng3() {
-		return ing3;
-	}
-	public void setIng3(String ing3) {
-		this.ing3 = ing3;
-	}
 	public String getIngredients() {
 		return ingredients;
 	}
@@ -55,12 +40,7 @@ public class DetailsDomain {
 	public void setInstructions(String instructions) {
 		this.instructions = instructions;
 	}
-	public String getInstructions2() {
-		return instructions2;
-	}
-	public void setInstructions2(String instructions2) {
-		this.instructions2 = instructions2;
-	}
+
 	public void setDrinkNames(List<String> drinkNames) {
 		this.drinkNames = drinkNames;
 	}

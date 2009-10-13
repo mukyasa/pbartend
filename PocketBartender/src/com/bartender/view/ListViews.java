@@ -79,20 +79,18 @@ public abstract class ListViews extends ListActivity{
 					Cursor recordscCursor=null;
 					ListActivity laType = getCurrentListActivity();
 					
-					String[] from = new String[] { DataDAO.COL_ROW_DRINK_NAME };
-					
 					if(laType instanceof FavoriteListView)//filter FAVORITES
 						recordscCursor = ((FavoriteListView) laType).dataDAO.retrieveAllFilteredFavorites(et.toString().trim());
 					else if(laType instanceof DrinkListView)//filter ALL DRINKS
 						recordscCursor = ((DrinkListView) laType).dataDAO.retrieveAllFilteredDrinks(et.toString().trim());
 					else if(laType instanceof CategoryListView)//filter CATEGORIES
 					{
-						from = new String[] { DataDAO.COL_ROW_DRINK_TYPE };
 						recordscCursor = ((CategoryListView) laType).dataDAO.retrieveAllFilteredDrinktypes(et.toString().trim());
 					}
 					
 					
-			    	startManagingCursor(recordscCursor);			    	
+			    	startManagingCursor(recordscCursor);
+			    	String[] from = new String[] { DataDAO.COL_NAME };
 					int[] to = new int[] { R.id.tfName};
 			    	SimpleCursorAdapter records = new SimpleCursorAdapter(getCurrentListActivity(),
 							R.layout.item_row, recordscCursor, from, to);
