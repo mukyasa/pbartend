@@ -54,7 +54,7 @@ public class DataDAO{
 	public static final String sqlGetDrinkDetailByDrinkName ="SELECT d.* FROM "+TABLE_DRINK+" d where d."+COL_NAME+"=?;";
 	public static final String sqlGetDrinkDetailByDrinkCatName ="";//SELECT d.*, dt.drinktype  FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
 	public static final String sqlGetDrinkByCatId = "";//SELECT d.*, dt.drinktype FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt."+COL_ROW_ID+"=?";
-	public static final String sqlGetAllFavorites = "SELECT * from "+TABLE_DRINK+" where favorites =?";
+	public static final String sqlGetAllFavorites = "SELECT *,i.name[cat_name] from "+TABLE_DRINK+" where favorites =?";
 	//search filter sql
 	public static final String sqlGetAllFavoritesFilter = "";//SELECT * FROM "+TABLE_DRINK+" where favorites ='"+FAV_YES+"' and "+COL_ROW_DRINK_NAME+" like ?";
 	public static final String sqlGetAllDrinksFilter = "";//SELECT * FROM "+TABLE_DRINK+" where "+COL_ROW_DRINK_NAME+" like ?";
