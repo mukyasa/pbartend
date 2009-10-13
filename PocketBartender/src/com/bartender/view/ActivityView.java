@@ -22,8 +22,6 @@ public class ActivityView extends Activity {
 	protected TextView tvDrinkName;
 	protected TextView tvDrinktype;
 	protected TextView tvIng1;
-	protected TextView tvIng2;
-	protected TextView tvIng3;
 	protected TextView tvFullIng;
 	protected TextView tvInstructions;
 	protected TextView tvInstructions2;
@@ -61,7 +59,6 @@ public class ActivityView extends Activity {
 	{
 		tvDrinkName.setText(drinkdetail.getDrinkName());
 		tvDrinktype.setText(drinkdetail.getDrinkType());
-		tvIng1.setText(drinkdetail.getIng1());
 		tvFullIng.setText(drinkdetail.getIngredients());
 		tvInstructions.setText(drinkdetail.getInstructions());
 		
@@ -117,11 +114,8 @@ public class ActivityView extends Activity {
 		tvDrinkName = (TextView) findViewById(R.id.tvDrinkName);
 		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
 		tvIng1 = (TextView) findViewById(R.id.tvIng1);
-		tvIng2 = (TextView) findViewById(R.id.tvIng2);
-		tvIng3 = (TextView) findViewById(R.id.tvIng3);
 		tvFullIng = (TextView) findViewById(R.id.tvFullIng);
 		tvInstructions = (TextView) findViewById(R.id.tvInstructions);
-		tvInstructions2  = (TextView) findViewById(R.id.tvInstructions2);
 		favImageButton = (ImageButton)findViewById(R.id.imgFav);
 		imgGlassType =(ImageView)findViewById(R.id.imgGlassType);
 	}

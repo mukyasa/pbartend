@@ -12,7 +12,7 @@ import com.bartender.R;
 public class HomeScreenView extends Activity implements OnClickListener {
     /** Called when the activity is first created. */
 	private Intent intent;
-	private Button btnAll, btnCat, btnSearch, btnFav, btnNew;
+	private Button btnAll, btnCat, btnIng, btnFav, btnNew;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,8 @@ public class HomeScreenView extends Activity implements OnClickListener {
 		btnFav = (Button) findViewById(R.id.btnFav);
 		btnFav.setOnClickListener(this);
 
-		btnSearch = (Button) findViewById(R.id.btnSearch); 
-		btnSearch.setOnClickListener(this);
+		btnIng = (Button) findViewById(R.id.btnIng); 
+		btnIng.setOnClickListener(this);
 
 		btnNew = (Button) findViewById(R.id.btnNew);
 		btnNew.setOnClickListener(this);
@@ -57,7 +57,7 @@ public class HomeScreenView extends Activity implements OnClickListener {
 			intent = new Intent(this, FavoriteListView.class);
 			startActivity(intent);
 		}
-		else if(view == btnSearch)
+		else if(view == btnIng)
 		{
 			intent = new Intent(this, SearchView.class);
 			startActivity(intent);

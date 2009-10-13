@@ -19,7 +19,7 @@ import com.bartender.dao.DrinkListDAO;
  */
 public class CategoryListView extends ListViews {
 
-	CategoryDAO dataDAO = new CategoryDAO();
+	protected CategoryDAO dataDAO = new CategoryDAO();
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
