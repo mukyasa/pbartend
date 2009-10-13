@@ -90,14 +90,12 @@ public class DataDAO{
 			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
 			+ COL_DRINK_ID + " INTEGER NOT NULL, "
 			+ COL_LIQUOR_SUB_CAT_ID + " INTEGER NOT NULL, "
-			+ COL_MIX_SUB_CAT_ID + " INTEGER NOT NULL, "
-			+ "PRIMARY KEY ("+COL_DRINK_ID+", "+COL_LIQUOR_SUB_CAT_ID+", "+COL_MIX_SUB_CAT_ID+"));";
+			+ COL_MIX_SUB_CAT_ID + " INTEGER NOT NULL);";
 	
 	/**
 	 * Drink Table
 	 */
-	public static final String sqlCreateDrinksTable = "CREATE TABLE "
-			+ TABLE_DRINK 
+	public static final String sqlCreateDrinksTable = "CREATE TABLE " + TABLE_DRINK 
 			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
 			+ COL_GLASS_ID+ " INTEGER , "
 			+ COL_NAME + " VARCHAR(64) NOT NULL, "

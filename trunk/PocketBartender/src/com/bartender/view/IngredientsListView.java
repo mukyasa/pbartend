@@ -37,12 +37,12 @@ public class IngredientsListView extends ListActivity {
     
     /**
      * init screen list
-     */
+     */ 
     private void initComponents() {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor = dataDAO.retrieveAllDrinktypes();
     	startManagingCursor(recordscCursor);
-    	String[] from = new String[] { DrinkListDAO.COL_ROW_DRINK_TYPE };
+    	String[] from = new String[] { DrinkListDAO.COL_NAME };
 		int[] to = new int[] { R.id.tfName};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
 				R.layout.item_row, recordscCursor, from, to);
