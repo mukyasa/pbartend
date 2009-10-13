@@ -110,7 +110,6 @@ public class DataDAO{
 	 */
 	public static final String sqlCreateIngTable = "CREATE TABLE " +TABLE_INGREDIENTS
 			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
-			+ "id AUTOINC, "
 			+ COL_NAME+ " VARCHAR(64) NOT NULL, "
 			+ COL_DESCRIPTION + " text NOT NULL, "
 			+ COL_CAT_ID + " INTEGER, "

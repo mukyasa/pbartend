@@ -1903,7 +1903,7 @@ public class DrinkInserts {
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2286,2,'Florida Freeze','Blend with 6 oz. of ice until the mixture is slushy.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2287,2,'Florida Punch','Shake with ice. Strain into a highball glass filled with crushed ice. Garnish with an orange slice.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2288,2,'Floridita Special','Blend at high speed in a blender with 3/4 cup of ice until smooth. Pour into wine goblet and garnish with a maraschino cherry.',1,0,0,0);"
-,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2289,8,'Floyd Collins','Shake vodka, Malibu and sweet and sour. Pour over ice into a cocktail glass and mix in soda. Garnish with a slice of lime and a cherry. Jeff says: Essentially this is a vodka Collins with a shot of Malibu. Trivia: The 'Floyd'' part of the name comes from a famous caver.',1,0,0,0);"
+,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2289,8,'Floyd Collins','Shake vodka, Malibu and sweet and sour. Pour over ice into a cocktail glass and mix in soda. Garnish with a slice of lime and a cherry. Jeff says: Essentially this is a vodka Collins with a shot of Malibu.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2290,2,'Fluffy','Mix and serve over ice.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2291,2,'Fluffy Duck','Build into a Collins glass filled with ice and stir in soda water .',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2292,2,'Flunk Day Rum And Coke','Mix over ice.',1,0,0,0);"
