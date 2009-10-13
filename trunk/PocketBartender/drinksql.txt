@@ -18,6 +18,36 @@ SELECT name from tblGlasses
 Select name from tblDrink_categories
 
 //Select all drinks and categories
-select d.name, dc.name [category_name] from tblDrinks  d
+SELECT d.name, dc.name [category_name] from tblDrinks  d
 inner join tblDrink_categories dc on d.category_id = dc.id
+
+//select all ingredient categories
+SELECT * from tblIngredient_categories
+
+//select favorities if they are 1
+SELECT * from tblDrinks where favorite =0
+
+//select all the ingredients based on category id
+SELECT * from tblIngredient_categories ic
+INNER JOIN tblIngredients i on ic.id = i.category_id
+INNER JOIN tblIngredient_subcategories isc on i.category_id = isc.id
+where ic.id=2 order by i.name
+
+
+//drink details by drink name
+SELECT  d.name,d.instructions,dc.name[drinkcatname],di.amount,i.name[ingname]
+FROM tblDrinks d 
+INNER JOIN tblDrink_categories dc on dc.id = d.category_id
+INNER JOIN tblDrinks_ingredients di on di.drink_id = d.id
+INNER JOIN tblIngredients i on di.ingredient_id = i.id
+INNER JOIN tblGlasses g on d.glass_id = g.id
+WHERE d.name = 'VeeV Acai-tini' 
 	
+//drink details by drink id
+SELECT  d.name,d.instructions,dc.name[drinkcatname],di.amount,i.name[ingname]
+FROM tblDrinks d 
+INNER JOIN tblDrink_categories dc on dc.id = d.category_id
+INNER JOIN tblDrinks_ingredients di on di.drink_id = d.id
+INNER JOIN tblIngredients i on di.ingredient_id = i.id
+INNER JOIN tblGlasses g on d.glass_id = g.id
+WHERE d.id = 77
