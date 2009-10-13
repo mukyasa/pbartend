@@ -51,3 +51,15 @@ INNER JOIN tblDrinks_ingredients di on di.drink_id = d.id
 INNER JOIN tblIngredients i on di.ingredient_id = i.id
 INNER JOIN tblGlasses g on d.glass_id = g.id
 WHERE d.id = 77
+
+
+//all drinks by ingredients
+SELECT  distinct d.name[drinknm], ic.name[ingcat],i.name[ing name]
+FROM tblDrinks d
+INNER JOIN tblDrinks_subcategories dsc on d.id = dsc.drink_id
+INNER JOIN tblIngredients i on i.subcategory_id = dsc.liquor_subcategory_id 
+OR i.subcategory_id = dsc.mixer_subcategory_id
+INNER JOIN tblIngredient_categories ic on ic.id = i.category_id
+WHERE i.name='Pernod Absinthe' 
+AND ic.name = 'Liquor'
+
