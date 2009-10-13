@@ -10,9 +10,9 @@ import android.os.Bundle;
 import android.widget.SimpleCursorAdapter;
 
 import com.bartender.R;
-import com.bartender.dao.CategoryDAO;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
+import com.bartender.dao.IngredientsDAO;
 
 
 /**
@@ -23,9 +23,22 @@ public class IngredientsListView extends ListActivity {
 
 	protected DatabaseAdapter myDatabaseAdapter;
 	protected Intent intent;
-	CategoryDAO dataDAO = new CategoryDAO();
+	private IngredientsDAO dataDAO = new IngredientsDAO();
+	private String type;
+	protected final String TYPE_LIQUOR = "Liquor";
+	protected final String TYPE_MIXERS = "Mixers";
+	protected final String TYPE_GARNISH = "Garnish";
 	
-    @Override
+	
+    public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ingredients_list); 
@@ -34,13 +47,10 @@ public class IngredientsListView extends ListActivity {
         initComponents();
     }
     
-    
-    /**
-     * init screen list
-     */ 
     private void initComponents() {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-    	Cursor recordscCursor = dataDAO.retrieveAllDrinktypes();
+    	//TODO: make real not hard coded
+    	Cursor recordscCursor = dataDAO.retrieveAllFilteredIngredients(getType());
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_NAME };
 		int[] to = new int[] { R.id.tfName};
@@ -49,5 +59,6 @@ public class IngredientsListView extends ListActivity {
     	
 		setListAdapter(records);
 	}
+
 
 }

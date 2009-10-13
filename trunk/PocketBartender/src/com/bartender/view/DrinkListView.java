@@ -10,7 +10,7 @@ import com.bartender.dao.DrinkListDAO;
 
 public class DrinkListView extends ListViews {
 	
-	DrinkListDAO dataDAO = new DrinkListDAO();
+	protected DrinkListDAO dataDAO = new DrinkListDAO();
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {

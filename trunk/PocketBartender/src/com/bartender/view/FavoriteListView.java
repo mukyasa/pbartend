@@ -11,7 +11,7 @@ import com.bartender.dao.FavoritesListDAO;
 
 public class FavoriteListView extends ListViews {
 	
-	FavoritesListDAO dataDAO = new FavoritesListDAO();
+	protected FavoritesListDAO dataDAO = new FavoritesListDAO();
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
