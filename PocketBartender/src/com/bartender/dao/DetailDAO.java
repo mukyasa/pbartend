@@ -23,9 +23,8 @@ public class DetailDAO extends DataDAO{
 		drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_NAME)));
 		drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_GLASS_NAME)));
 		drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_CAT_NAME)));
-		drink.setIngredients(cursor.getString(cursor.getColumnIndex(COL_ROW_INGREDIENTS)));
-		drink.setInstructions(cursor.getString(cursor.getColumnIndex(COL_ROW_INSTUCTIONS)));
-		drink.setFavorites(cursor.getString(cursor.getColumnIndex(COL_ROW_FAV)));
+		drink.setInstructions(cursor.getString(cursor.getColumnIndex(COL_INSTUCTIONS)));
+		drink.setFavorites(cursor.getString(cursor.getColumnIndex(COL_FAVORITE)));
 	}
 	
 	/**

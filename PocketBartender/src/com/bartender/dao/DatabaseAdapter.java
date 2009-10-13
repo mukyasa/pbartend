@@ -14,8 +14,8 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	private static SQLiteDatabase sqliteDb;
 	private static DatabaseAdapter instance; //for singleton
 	
-	private static final String DATABASE_NAME = "pBartender";
-	private static final int DATABASE_VERSION = 13;
+	private static final String DATABASE_NAME = "pBartender7";
+	private static final int DATABASE_VERSION = 3;
 	
 	public DatabaseAdapter(Context context, String name, CursorFactory factory,int version) {
 		super(context, name, factory, version);
@@ -25,14 +25,43 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		//create drink category table
 		db.execSQL(DataDAO.sqlCreateDrinkCategoriesTable);
-		createDrinkTypes(db);
-		//create drinks
+		
+		//create drinks table
 		db.execSQL(DataDAO.sqlCreateDrinksTable);
+		
+		//create ingredients table
+		db.execSQL(DataDAO.sqlCreateIngTable);
+		
+		//create ingredients table
+		db.execSQL(DataDAO.sqlDrinkIngredientsTable);
+		
+		//create drink sub cat table
+		db.execSQL(DataDAO.sqlDrinkSubCategoriesTable);
+		
+		//create fractional amount table
+		db.execSQL(DataDAO.sqlFractional_amountsTable);
+		
+		//create glasses table
+		db.execSQL(DataDAO.sqlGlassesTable);
+		
+		//create ingredients cat table
+		db.execSQL(DataDAO.sqlIngredientsCatTable);
+		
+		//create ingredients sub cat
+		db.execSQL(DataDAO.sqlIngredientsSubCatTable);
+		
+		//fill drink cat table
+		fillDrinkCategories(db);
+		
+		//fill ingredient cat table
+		fillIngredientsCategories(db);
+		
+		//fill drinks table
 		DrinkInserts di = new DrinkInserts();
 		for(int i=0;i<di.sqlInsertDrinks.length;i++)
 			db.execSQL(di.sqlInsertDrinks[i]);
 		
-		//create ingredients table
+		//fill ingredients table
 		db.execSQL(DataDAO.sqlCreateIngTable);
 		IngredientsInsert ii = new IngredientsInsert();
 		for(int i=0;i<ii.sqlInsertIngredients.length;i++)
@@ -67,11 +96,30 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		 
 	}
 
+	
+	void fillIngredientsCategories(SQLiteDatabase db) {
+		
+		String[] types = { "","Liquor", "Mixers", "Garnish"};
+		Arrays.sort(types);
+
+		ContentValues values;
+		
+		//start from 1 so the array has a blank
+		for(int i=1;i<types.length;i++)
+		{
+			values = new ContentValues();
+			values.put(DataDAO.COL_NAME, types[i]); 
+			db.insert(DataDAO.TABLE_INGREDIENTS_CAT, null, values);
+		}
+		 
+	}
+
+
 	/**
 	 * creates the drink types in the database
 	 * @param db
 	 */
-	void createDrinkTypes(SQLiteDatabase db) {
+	void fillDrinkCategories(SQLiteDatabase db) {
 		
 		String[] types = { "","Cocktails", "Hot Drinks", "Jello Shots", "Martinis",
 				"Non-Alcoholic", "Punches", "Shooters"};

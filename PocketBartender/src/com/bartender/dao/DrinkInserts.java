@@ -384,7 +384,7 @@ public class DrinkInserts {
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(440,5,'Autumn''s Bottoms Up','Shake all ingredients except ginger ale in an ice filled shaker. Shake well then pour over ice in a pint glass. Top with ginger ale and stir. The ginger ale can be shaken up with the other ingredients for those who prefer a more homogeneous drink. Garnish with cherries.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(441,8,'Aviation','Shake lemon juice with ice. Add sugar, Bulldog Gin and maraschino liqueur. Shake and strain into a cocktail glass.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(442,8,'Aviation Cocktail','Shake with ice and strain into a cocktail glass.',1,0,0,0);"
-,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(443,1,'Avispon Verde - ''Green Hornet'','Shake with ice and strain into an old-fashioned glass. Garnish with a pineapple wedge and a cherry.',1,0,0,0);"
+,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(443,1,'Avispon Verde - Green Hornet','Shake with ice and strain into an old-fashioned glass. Garnish with a pineapple wedge and a cherry.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(444,2,'Awesom Chandler','Combine over ice in a highball glass.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(445,15,'B and B','Float brandy on top of Benedictine in a cordial glass.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(447,1,'B S On The Rocks','Build in a rocks glass.',1,0,0,0);"
