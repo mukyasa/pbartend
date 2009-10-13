@@ -19,11 +19,9 @@ import com.bartender.dao.IngredientsDAO;
  * @author Darren
  * GETS A SET LIST OF CATEGORIES
  */
-public class IngredientsListView extends ListActivity {
+public class IngredientsListView extends ListViews {
 
-	protected DatabaseAdapter myDatabaseAdapter;
-	protected Intent intent;
-	private IngredientsDAO dataDAO = new IngredientsDAO();
+	protected IngredientsDAO dataDAO = new IngredientsDAO();
 	private String type;
 	protected final String TYPE_LIQUOR = "Liquor";
 	protected final String TYPE_MIXERS = "Mixers";
@@ -31,16 +29,15 @@ public class IngredientsListView extends ListActivity {
 	
 	
 	@Override
-    public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ingredients_list); 
-        myDatabaseAdapter = DatabaseAdapter.getInstance(this);
-        intent = new Intent(this, CreateUpdateView.class);
+        setCurrentListActivity(this);
+        intent = new Intent(this, DrinkListView.class);
     }
     
    protected void initComponents() {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-    	Cursor recordscCursor = dataDAO.retrieveAllFilteredIngredients(getType());
+    	Cursor recordscCursor = dataDAO.retrieveAllIngredients(getType());
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_CAT_NAME };
 		int[] to = new int[] { R.id.tfName};

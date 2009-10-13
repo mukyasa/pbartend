@@ -15,7 +15,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	private static DatabaseAdapter instance; //for singleton
 	
 	private static final String DATABASE_NAME = "pBartender7";
-	private static final int DATABASE_VERSION = 8;
+	private static final int DATABASE_VERSION = 10;
 	
 	public DatabaseAdapter(Context context, String name, CursorFactory factory,int version) {
 		super(context, name, factory, version);
@@ -66,6 +66,11 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		for(int i=0;i<ii.sqlInsertIngredients.length;i++)
 			db.execSQL(ii.sqlInsertIngredients[i]);
 		
+		IngredientsSubCatInsert isci = new IngredientsSubCatInsert();
+		for(int i=0;i<isci.sqlInsertIngredientsSubCat.length;i++)
+			db.execSQL(isci.sqlInsertIngredientsSubCat[i]);
+		
+		
 	}
 
 	@Override
@@ -99,7 +104,6 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	void fillIngredientsCategories(SQLiteDatabase db) {
 		
 		String[] types = { "","Liquor", "Mixers", "Garnish"};
-		Arrays.sort(types);
 
 		ContentValues values;
 		
