@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -14,9 +12,6 @@ public class multilist extends Activity {
 	 ListView countryList; 
      ListView stateList; 
 	
-	
-     
-     
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
