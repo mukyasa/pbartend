@@ -59,8 +59,8 @@ public class MulitDetailsView extends ActivityView {
 		public void onItemSelected(AdapterView parent, View v, int position, long id) {
 			
 			SQLiteCursor listitem = (SQLiteCursor)spinnerDrinkNames.getItemAtPosition(position);
-			Log.v(getClass().getSimpleName(), "id=" + listitem.getString(listitem.getColumnIndex(DataDAO.COL_ROW_DRINK_NAME)));
-			drinkdetail.setDrinkName(listitem.getString(listitem.getColumnIndex(DataDAO.COL_ROW_DRINK_NAME)));
+			Log.v(getClass().getSimpleName(), "id=" + listitem.getString(listitem.getColumnIndex(DataDAO.COL_NAME)));
+			drinkdetail.setDrinkName(listitem.getString(listitem.getColumnIndex(DataDAO.COL_NAME)));
 			drinkdao.loadByDrinkNm(currentActivity, drinkdetail);
 			findAndSetView();
 			setViewItems();
