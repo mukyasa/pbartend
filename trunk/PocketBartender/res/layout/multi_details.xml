@@ -21,16 +21,12 @@
 		 <TableRow> 
 			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvIng1" android:text="ing 1" android:textColor="#000" android:layout_marginTop="5.0sp" android:paddingLeft="15.0sp"></TextView>
 		</TableRow>
-		 <TableRow>
-			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvIng2" android:text="ing 2" android:textColor="#000" android:layout_marginTop="5.0sp" android:paddingLeft="15.0sp"></TextView>
-		</TableRow>
-		 <TableRow>
-			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvIng3" android:text="ing 3" android:textColor="#000" android:layout_marginTop="5.0sp" android:paddingLeft="15.0sp"></TextView>
-		</TableRow>
+		 
+		 
 	</TableLayout>
 	</TableRow>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvFullIng" android:text="full ingredients" android:textColor="#000" android:layout_marginTop="10.0sp" android:layout_marginRight="10.0sp"></TextView>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions" android:text="full ingredients" android:textColor="#000" android:layout_marginTop="10.0sp" android:layout_marginRight="10.0sp"></TextView>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions2" android:text="full ingredients" android:textColor="#000" android:layout_marginTop="10.0sp" android:layout_marginRight="10.0sp"></TextView>
+	
 </TableLayout>
 </ScrollView>

@@ -7,4 +7,7 @@
     <string name="categoryText">Add Category</string>
     <string name="ingredientsText">Ingredients</string>
     <string name="ing_text">Ingredients</string>
+    <string name="liquorText">Liquor</string>
+    <string name="mixersText">Mixers</string>
+    <string name="garnishText">Garnish</string>
 </resources>
