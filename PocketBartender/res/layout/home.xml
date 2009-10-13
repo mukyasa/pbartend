@@ -5,9 +5,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-<Button android:text="Search for Drink" android:id="@+id/btnSearch" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="15.0sp"></Button>
-<Button android:text="Filter by Category" android:id="@+id/btnCat" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="15.0sp"></Button>
+
+
 <Button android:text="Show All Drinks" android:id="@+id/btnAll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="15.0sp"></Button>
+<Button android:id="@+id/btnIng" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="15.0sp" android:text="Browse By Ingredients"></Button>
+<Button android:text="Filter by Category" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="15.0sp" android:id="@+id/btnCat"></Button>
 <Button android:text="Favorites" android:id="@+id/btnFav" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="15.0sp"></Button>
 <Button android:text="Create New" android:id="@+id/btnNew" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_gravity="bottom"></Button>
 
