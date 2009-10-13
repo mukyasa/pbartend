@@ -30,26 +30,16 @@ public class IngredientsListView extends ListActivity {
 	protected final String TYPE_GARNISH = "Garnish";
 	
 	
-    public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ingredients_list); 
         myDatabaseAdapter = DatabaseAdapter.getInstance(this);
         intent = new Intent(this, CreateUpdateView.class);
-        initComponents();
     }
     
-    private void initComponents() {
+   protected void initComponents() {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-    	//TODO: make real not hard coded
     	Cursor recordscCursor = dataDAO.retrieveAllFilteredIngredients(getType());
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_NAME };
@@ -58,6 +48,14 @@ public class IngredientsListView extends ListActivity {
 				R.layout.item_row, recordscCursor, from, to);
     	
 		setListAdapter(records);
+	}
+   
+   public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 

@@ -8,7 +8,6 @@ public class DetailsDomain {
 	private String drinkName;
 	private String drinkType;
 	private String glass;
-	private String ing1;
 	private String ingredients;
 	private String instructions;
 	private int id;
@@ -21,12 +20,6 @@ public class DetailsDomain {
 	}
 	public void setFavorites(String favorites) {
 		this.favorites = favorites;
-	}
-	public String getIng1() {
-		return ing1;
-	}
-	public void setIng1(String ing1) {
-		this.ing1 = ing1;
 	}
 	public String getIngredients() {
 		return ingredients;

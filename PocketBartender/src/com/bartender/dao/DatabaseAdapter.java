@@ -15,7 +15,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	private static DatabaseAdapter instance; //for singleton
 	
 	private static final String DATABASE_NAME = "pBartender7";
-	private static final int DATABASE_VERSION = 4;
+	private static final int DATABASE_VERSION = 7;
 	
 	public DatabaseAdapter(Context context, String name, CursorFactory factory,int version) {
 		super(context, name, factory, version);
