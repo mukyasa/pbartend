@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	
+<TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="States"></TextView>
+	<ListView android:id="@+id/listStates" android:gravity=""
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1" android:layout_gravity="fill_vertical" 
+	    android:layout_width="fill_parent" android:background="#fff" android:fadingEdge="vertical" android:fadingEdgeLength="50.0sp" android:textFilterEnabled="true">
+</ListView>
+<TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Countries"></TextView>
+	<ListView android:id="@+id/listCountry" android:layout_height="fill_parent"
+	    android:layout_weight="1" android:layout_gravity="fill_vertical" 
+	    android:layout_width="fill_parent" android:background="#fff" android:fadingEdge="vertical" android:fadingEdgeLength="50.0sp" android:textFilterEnabled="true" android:headerDividersEnabled="true"></ListView>
+</LinearLayout>
+
