@@ -59,7 +59,7 @@ public class HomeScreenView extends Activity implements OnClickListener {
 		}
 		else if(view == btnIng)
 		{
-			intent = new Intent(this, SearchView.class);
+			intent = new Intent(this, IngredientsHomeView.class);
 			startActivity(intent);
 		}
 		else if(view == btnNew)

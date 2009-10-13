@@ -14,6 +14,7 @@ public class DataDAO{
 	public static final String FAV_YES = "yes";
 	
 	public static final String COL_ROW_ID = "_id";
+	public static final String COL_ID = "id";
 	//new drink db cols
 	public static final String COL_GLASS_ID = "glass_id";
 	public static final String COL_DRINK_ID = "drink_id";
@@ -59,30 +60,36 @@ public class DataDAO{
 	public static final String sqlGetAllFavoritesFilter = "";//SELECT * FROM "+TABLE_DRINK+" where favorites ='"+FAV_YES+"' and "+COL_ROW_DRINK_NAME+" like ?";
 	public static final String sqlGetAllDrinksFilter = "";//SELECT * FROM "+TABLE_DRINK+" where "+COL_ROW_DRINK_NAME+" like ?";
 	public static final String sqlGetAllCategoriesFilter = "";//SELECT * FROM "+ SQL_TYPE_TABLE_NAME + " where  "+COL_ROW_DRINK_TYPE+" like ?";
+	public static final String sqlGetAllIngredientsFilter = "SELECT * from tblIngredient_categories ic INNER JOIN tblIngredients i on ic._id = i.category_id INNER JOIN tblIngredient_subcategories isc on i.category_id = isc._id where ic.name=? order by i.name";
 	
 	public static final String sqlDrinkIngredientsTable="CREATE TABLE " + TABLE_DRINK_INGREDIENTS
-	+ " ("+COL_ROW_ID+" integer primary key autoincrement, "
+	+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
+			+ COL_ID +" INTEGER , "
 			  +COL_DRINK_ID+" INT NOT NULL, "
 			  + COL_INGREDIENT_ID + " INT NOT NULL, "
 			  + COL_AMOUNT + " VARCHAR(64) NOT NULL, " 
 			  + COL_AMOUNT_METRIC + " VARCHAR(64));";
 	
 	public static final String sqlIngredientsSubCatTable="CREATE TABLE " + TABLE_INGREDIENTS_SUB_CAT
-		+ " ("+COL_ROW_ID+" integer primary key autoincrement, "
+		+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
+		+ COL_ID +" INTEGER , "
 		+ COL_CAT_ID + " INTEGER, "
 		+ COL_NAME +" VARCHAR(32), "
 		+ COL_CABINET +" bit default 0);";
 	
 	public static final String sqlIngredientsCatTable="CREATE TABLE " + TABLE_INGREDIENTS_CAT
-		+ " ("+COL_ROW_ID+" integer primary key autoincrement, "
+		+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
+		+ COL_ID +" INTEGER , "
 		+ COL_NAME + " VARCHAR(64) NOT NULL);";
 	
 	public static final String sqlGlassesTable = "CREATE TABLE " + TABLE_GLASSES
-		+ " ("+COL_ROW_ID+" integer primary key autoincrement, "
+		+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
+		+ COL_ID +" INTEGER , "
 		+ COL_NAME + " VARCHAR(64) NOT NULL);";
 	
 	public static final String sqlFractional_amountsTable = "CREATE TABLE "+ TABLE_FRACTIONAL_AMOUNTS 
-		+ " ("+COL_ROW_ID+" integer primary key autoincrement, "
+		+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
+		+ COL_ID +" INTEGER , "
 			+ COL_FRACTION +" VARCHAR(8), "
 			+ COL_NUMBER + " double);";
 	
@@ -96,7 +103,8 @@ public class DataDAO{
 	 * Drink Table
 	 */
 	public static final String sqlCreateDrinksTable = "CREATE TABLE " + TABLE_DRINK 
-			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
+			+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, " 
+			+ COL_ID +" INTEGER , "
 			+ COL_GLASS_ID+ " INTEGER , "
 			+ COL_NAME + " VARCHAR(64) NOT NULL, "
 			+ COL_INSTUCTIONS + " TEXT, "
@@ -109,7 +117,8 @@ public class DataDAO{
 	 * Ingredients Table
 	 */
 	public static final String sqlCreateIngTable = "CREATE TABLE " +TABLE_INGREDIENTS
-			+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
+			+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, " 
+			+ COL_ID +" INTEGER , "
 			+ COL_NAME+ " VARCHAR(64) NOT NULL, "
 			+ COL_DESCRIPTION + " text NOT NULL, "
 			+ COL_CAT_ID + " INTEGER, "
@@ -119,7 +128,8 @@ public class DataDAO{
 	 * Drink Category Table
 	 */
 	public static final String sqlCreateDrinkCategoriesTable = "CREATE TABLE " + TABLE_DRINK_CAT
-		+ " ("+COL_ROW_ID+" integer primary key autoincrement, " 
+		+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, " 
+		+ COL_ID +" INTEGER , "
 		+ COL_NAME+ " VARCHAR(64) NOT NULL);";
 
 	

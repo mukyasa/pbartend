@@ -17,7 +17,7 @@ public class IngredientsHomeView extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.ingredients_home);
         initComponents();
         
     }

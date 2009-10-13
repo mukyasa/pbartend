@@ -8,6 +8,7 @@ public class MixersListView extends IngredientsListView {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setType(TYPE_MIXERS);
+        initComponents();
     }
   
     
