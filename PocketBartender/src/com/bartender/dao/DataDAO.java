@@ -54,12 +54,14 @@ public class DataDAO{
 	public static final String sqlGetDrinkDetailByDrinkName ="SELECT d.* FROM "+TABLE_DRINK+" d where d."+COL_NAME+"=?;";
 	public static final String sqlGetDrinkDetailByDrinkCatName ="";//SELECT d.*, dt.drinktype  FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
 	public static final String sqlGetDrinkByCatId = "";//SELECT d.*, dt.drinktype FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt."+COL_ROW_ID+"=?";
-	public static final String sqlGetAllFavorites = "SELECT *,i.name[cat_name] from "+TABLE_DRINK+" where favorites =?";
+	public static final String sqlGetAllFavorites = "SELECT * from "+TABLE_DRINK+" where favorites =?";
 	//search filter sql
 	public static final String sqlGetAllFavoritesFilter = "";//SELECT * FROM "+TABLE_DRINK+" where favorites ='"+FAV_YES+"' and "+COL_ROW_DRINK_NAME+" like ?";
 	public static final String sqlGetAllDrinksFilter = "";//SELECT * FROM "+TABLE_DRINK+" where "+COL_ROW_DRINK_NAME+" like ?";
 	public static final String sqlGetAllCategoriesFilter = "";//SELECT * FROM "+ SQL_TYPE_TABLE_NAME + " where  "+COL_ROW_DRINK_TYPE+" like ?";
-	public static final String sqlGetAllIngredientsFilter = "SELECT * from tblIngredient_categories ic INNER JOIN tblIngredients i on ic._id = i.category_id INNER JOIN tblIngredient_subcategories isc on i.category_id = isc._id where ic.name=? order by i.name";
+	public static final String sqlGetAllIngredients = "SELECT *,i.name["+COL_CAT_NAME+"] from "+TABLE_INGREDIENTS_CAT+" ic  INNER JOIN "+TABLE_INGREDIENTS+" i on ic._id = i.category_id INNER JOIN "+TABLE_INGREDIENTS_SUB_CAT+" isc on i.category_id = isc._id where ic.name=? order by i.name";
+	public static final String sqlGetAllIngredientsFilter = "SELECT *,i.name["+COL_CAT_NAME+"] from "+TABLE_INGREDIENTS_CAT+" ic  INNER JOIN "+TABLE_INGREDIENTS+" i on ic._id = i.category_id INNER JOIN "+TABLE_INGREDIENTS_SUB_CAT+" isc on i.category_id = isc._id where ic.name=? and i.name like ? order by i.name";
+	public static final String sqlGetAllDrinksByIngredients= "SELECT  distinct d.name[drinknm], ic.name[ingcat],i.name[ing name] FROM tblDrinks d INNER JOIN tblDrinks_subcategories dsc on d.id = dsc.drink_id INNER JOIN tblIngredients i on i.subcategory_id = dsc.liquor_subcategory_id OR i.subcategory_id = dsc.mixer_subcategory_id INNER JOIN tblIngredient_categories ic on ic.id = i.category_id WHERE ic.name = ? AND i.name= ? order by i.name";
 	
 	public static final String sqlDrinkIngredientsTable="CREATE TABLE " + TABLE_DRINK_INGREDIENTS
 	+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "

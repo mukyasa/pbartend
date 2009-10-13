@@ -24,6 +24,15 @@ public class DrinkListDAO extends DataDAO{
 		return cursor;
 	}
 	
+	public Cursor retrieveAllDrinksByIng(String ingType,String ingName)
+	{
+		String [] selectionArgs = {ingName,ingType};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllDrinksByIngredients, selectionArgs);
+
+		return cursor;
+		
+	}
+	
 
 
 }
