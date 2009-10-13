@@ -3,16 +3,15 @@
  */
 package com.bartender.view;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.SimpleCursorAdapter;
 
 import com.bartender.R;
-import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
 import com.bartender.dao.IngredientsDAO;
+import com.bartender.domain.IngredientsType;
 
 
 /**
@@ -22,11 +21,10 @@ import com.bartender.dao.IngredientsDAO;
 public class IngredientsListView extends ListViews {
 
 	protected IngredientsDAO dataDAO = new IngredientsDAO();
-	private String type;
 	protected final String TYPE_LIQUOR = "Liquor";
 	protected final String TYPE_MIXERS = "Mixers";
 	protected final String TYPE_GARNISH = "Garnish";
-	
+	protected IngredientsType ingtype = IngredientsType.getInstance();
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -37,9 +35,9 @@ public class IngredientsListView extends ListViews {
     
    protected void initComponents() {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-    	Cursor recordscCursor = dataDAO.retrieveAllIngredients(getType());
+    	Cursor recordscCursor = dataDAO.retrieveAllIngredients(ingtype.getType());
     	startManagingCursor(recordscCursor);
-    	String[] from = new String[] { DrinkListDAO.COL_CAT_NAME };
+    	String[] from = new String[] { DrinkListDAO.COL_NAME };
 		int[] to = new int[] { R.id.tfName};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
 				R.layout.item_row, recordscCursor, from, to);
@@ -47,13 +45,5 @@ public class IngredientsListView extends ListViews {
 		setListAdapter(records);
 	}
    
-   public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
 
 }

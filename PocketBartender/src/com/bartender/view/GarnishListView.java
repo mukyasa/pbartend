@@ -7,7 +7,7 @@ public class GarnishListView extends IngredientsListView {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setType(TYPE_GARNISH);
+        ingtype.setType(TYPE_GARNISH);
         initComponents();
 	}
 }

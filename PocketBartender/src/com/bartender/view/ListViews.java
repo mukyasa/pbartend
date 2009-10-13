@@ -15,6 +15,8 @@ import android.widget.SimpleCursorAdapter;
 import com.bartender.R;
 import com.bartender.dao.DataDAO;
 import com.bartender.dao.DatabaseAdapter;
+import com.bartender.domain.DetailsDomain;
+import com.bartender.domain.IngredientsType;
 
 public abstract class ListViews extends ListActivity{
 	
@@ -24,7 +26,8 @@ public abstract class ListViews extends ListActivity{
 	protected EditText searchbox;
 	protected Intent intent;
 	protected ListActivity currentListActivity;
-	
+	protected DetailsDomain drinkdetail;
+		
 	public ListActivity getCurrentListActivity() {
 		return currentListActivity;
 	}
@@ -49,7 +52,7 @@ public abstract class ListViews extends ListActivity{
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 	{
 			super.onListItemClick(l, v, position, id);
-			Log.v(getClass().getSimpleName(), "id=" + id);
+			Log.v(getClass().getSimpleName(), "id=" + id + " type=" + IngredientsType.getInstance().getType());
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
 			startActivityForResult(intent, INTENT_NEXT_SCREEN);
 	}
@@ -89,7 +92,7 @@ public abstract class ListViews extends ListActivity{
 					else if(laType instanceof IngredientsListView)
 					{
 						from = new String[] { DataDAO.COL_CAT_NAME };
-						recordscCursor = ((IngredientsListView) laType).dataDAO.retrieveAllFilteredIngredients(((IngredientsListView)laType).getType(), et.toString().trim());
+						recordscCursor = ((IngredientsListView) laType).dataDAO.retrieveAllFilteredIngredients(IngredientsType.getInstance().getType(), et.toString().trim());
 					}
 					
 			    	startManagingCursor(recordscCursor);
