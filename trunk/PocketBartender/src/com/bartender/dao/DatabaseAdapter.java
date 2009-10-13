@@ -2,8 +2,10 @@ package com.bartender.dao;
 
 import java.util.Arrays;
 
+import android.R;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -15,7 +17,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	private static DatabaseAdapter instance; //for singleton
 	
 	private static final String DATABASE_NAME = "pBartender7";
-	private static final int DATABASE_VERSION = 10;
+	private static final int DATABASE_VERSION = 13;
 	
 	public DatabaseAdapter(Context context, String name, CursorFactory factory,int version) {
 		super(context, name, factory, version);
@@ -101,20 +103,15 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	}
 
 	
-	void fillIngredientsCategories(SQLiteDatabase db) {
+	private void fillIngredientsCategories(SQLiteDatabase db) {
 		
-		String[] types = { "","Liquor", "Mixers", "Garnish"};
-
-		ContentValues values;
 		
-		//start from 1 so the array has a blank
-		for(int i=1;i<types.length;i++)
-		{
-			values = new ContentValues();
-			values.put(DataDAO.COL_NAME, types[i]); 
-			db.insert(DataDAO.TABLE_INGREDIENTS_CAT, null, values);
-		}
+		String[] sqlInsertIngredientCat ={"INSERT INTO "+DataDAO.TABLE_INGREDIENTS_CAT+" VALUES(1,'Liquor');"
+		,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS_CAT+" VALUES(2,'Mixers');"
+		,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS_CAT+" VALUES(3,'Garnish');"};
 		 
+		for(int i=0;i<sqlInsertIngredientCat.length;i++)
+			db.execSQL(sqlInsertIngredientCat[i]);
 	}
 
 
@@ -122,7 +119,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	 * creates the drink types in the database
 	 * @param db
 	 */
-	void fillDrinkCategories(SQLiteDatabase db) {
+	private void fillDrinkCategories(SQLiteDatabase db) {
 		
 		String[] types = { "","Cocktails", "Hot Drinks", "Jello Shots", "Martinis",
 				"Non-Alcoholic", "Punches", "Shooters"};
@@ -135,12 +132,17 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		{
 			values = new ContentValues();
 			values.put(DataDAO.COL_NAME, types[i]); 
+			values.put(DataDAO.COL_ROW_ID, i); 
 			db.insert(DataDAO.TABLE_DRINK_CAT, null, values);
 		}
 		 
 	}
 
-	
+	private void fillDrinkSubCategories(SQLiteDatabase db)
+	{
+		String insertStmt = Resources.getSystem().getString(com.bartender.R.string.insert_dsc);
+		
+	}
 	//singleton initialize
 	private static void initialize(Context context) {
 		if(instance == null) {
