@@ -28,7 +28,6 @@ android:background="@drawable/details_bg">
 		 
 	</TableLayout>
 	</TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvFullIng" android:text="full ingredients" android:textColor="#000" android:layout_marginTop="10.0sp" android:layout_marginRight="10.0sp"></TextView>
 	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_marginLeft="10.0sp" android:id="@+id/tvInstructions" android:text="full ingredients" android:textColor="#000" android:layout_marginTop="10.0sp" android:layout_marginRight="10.0sp"></TextView>
 	
 </TableLayout>
