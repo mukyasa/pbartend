@@ -15,7 +15,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	private static DatabaseAdapter instance; //for singleton
 	
 	private static final String DATABASE_NAME = "pBartender7";
-	private static final int DATABASE_VERSION = 20;
+	private static final int DATABASE_VERSION = 21;
 	
 	public DatabaseAdapter(Context context, String name, CursorFactory factory,int version) {
 		super(context, name, factory, version);
@@ -56,8 +56,11 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		//fill ingredient cat table
 		fillIngredientsCategories(db);
 		
-		//fills drinks sub cat
+		//fills drinks sub cat table
 		fillDrinkSubCategories(db);
+		
+		//fill drink ingredients table
+		fillDrinkIngredients(db);
 		
 		//fill drinks table
 		DrinkInserts di = new DrinkInserts();
@@ -147,6 +150,34 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		 
 	}
 
+	private void fillDrinkIngredients(SQLiteDatabase db)
+	{
+		String[] dii1 = DrinkIngredientsInsert.insertDrinkIng1();
+		for(int i=0;i<dii1.length;i++)
+			db.execSQL(dii1[i]);
+		
+		String[] dii2 = DrinkIngredientsInsert.insertDrinkIng1();
+		for(int i=0;i<dii2.length;i++)
+			db.execSQL(dii2[i]);
+		
+		String[] dii3 = DrinkIngredientsInsert.insertDrinkIng1();
+		for(int i=0;i<dii3.length;i++)
+			db.execSQL(dii3[i]);
+		
+		String[] dii4 = DrinkIngredientsInsert.insertDrinkIng1();
+		for(int i=0;i<dii4.length;i++)
+			db.execSQL(dii4[i]);
+		
+		String[] dii5 = DrinkIngredientsInsert.insertDrinkIng1();
+		for(int i=0;i<dii5.length;i++)
+			db.execSQL(dii5[i]);
+		
+		String[] dii6 = DrinkIngredientsInsert.insertDrinkIng1();
+		for(int i=0;i<dii6.length;i++)
+			db.execSQL(dii6[i]);
+	}
+	
+	
 	private void fillDrinkSubCategories(SQLiteDatabase db)
 	{
 		String[] dsc1 = DrinkSubCatInsert.insertDrinkSubCat1();
