@@ -15,7 +15,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	private static DatabaseAdapter instance; //for singleton
 	
 	private static final String DATABASE_NAME = "pBartender7";
-	private static final int DATABASE_VERSION = 18;
+	private static final int DATABASE_VERSION = 20;
 	
 	public DatabaseAdapter(Context context, String name, CursorFactory factory,int version) {
 		super(context, name, factory, version);
@@ -69,10 +69,18 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		for(int i=0;i<ii.sqlInsertIngredients.length;i++)
 			db.execSQL(ii.sqlInsertIngredients[i]);
 		
+		//fill ingredients sub cats table
 		IngredientsSubCatInsert isci = new IngredientsSubCatInsert();
 		for(int i=0;i<isci.sqlInsertIngredientsSubCat.length;i++)
 			db.execSQL(isci.sqlInsertIngredientsSubCat[i]);
 		
+		//fill glasses table		
+		for(int i=0;i<GlassesInsert.sqlInsertGlasses.length;i++)
+			db.execSQL(GlassesInsert.sqlInsertGlasses[i]);
+		
+		//fill fractions table		
+		for(int i=0;i<GlassesInsert.sqlInsertFractions.length;i++)
+			db.execSQL(GlassesInsert.sqlInsertFractions[i]);
 		
 	}
 
