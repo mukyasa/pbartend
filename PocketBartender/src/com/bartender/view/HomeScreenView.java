@@ -18,6 +18,9 @@ public class HomeScreenView extends Activity implements OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+         
+        getResources().openRawResource(R.raw.tbldrinks_subcategories);
+        
         initComponents();
         
     }
