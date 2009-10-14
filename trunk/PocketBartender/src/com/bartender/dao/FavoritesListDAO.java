@@ -11,7 +11,7 @@ public class FavoritesListDAO extends DataDAO{
 	 */
 	public Cursor retrieveAllFavorites() {
 		
-		String [] selectionArgs = {"yes"};
+		String [] selectionArgs = {DataDAO.FAV_YES};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllFavorites, selectionArgs);
 
 		return cursor;

@@ -52,20 +52,24 @@ public class DataDAO{
 	
 	
 	public static final String sqlGetDrinkDetailById ="SELECT d.favorite, d._id, d.name,d.instructions,dc.name[cat_name],di.amount,i.name[ingname],g.name[glass_name] " +
-			"FROM tblDrinks d INNER JOIN tblDrink_categories dc on dc._id = d.category_id " +
-			"INNER JOIN tblDrinks_ingredients di on di.drink_id = d._id " +
-			"INNER JOIN tblIngredients i on di.ingredient_id = i._id " +
-			"INNER JOIN tblGlasses g on d.glass_id = g._id " +
+			"FROM "+TABLE_DRINK+" d " +
+			"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id " +
+			"INNER JOIN "+TABLE_DRINK_INGREDIENTS+" di on di.drink_id = d._id " +
+			"INNER JOIN "+TABLE_INGREDIENTS+" i on di.ingredient_id = i._id " +
+			"INNER JOIN "+TABLE_GLASSES+" g on d.glass_id = g._id " +
 			"WHERE d._id =?;";
 	
 	public static final String sqlGetDrinkDetailByDrinkName ="SELECT d.* FROM "+TABLE_DRINK+" d where d."+COL_NAME+"=?;";
 	public static final String sqlGetDrinkDetailByDrinkCatName ="";//SELECT d.*, dt.drinktype  FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
-	public static final String sqlGetDrinkByCatId = "";//SELECT d.*, dt.drinktype FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt."+COL_ROW_ID+"=?";
-	public static final String sqlGetAllFavorites = "SELECT * from "+TABLE_DRINK+" where favorites =?";
+	public static final String sqlGetDrinkByCatId = "";//SELECT d.*, dt.drinktype FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" WHERE dt."+COL_ROW_ID+"=?";
+	public static final String sqlGetAllFavorites = "SELECT d.name,d._id,d.favorite FROM "+TABLE_DRINK+" d where favorite =?";
 	//search filter sql
-	public static final String sqlGetAllFavoritesFilter = "";//SELECT * FROM "+TABLE_DRINK+" where favorites ='"+FAV_YES+"' and "+COL_ROW_DRINK_NAME+" like ?";
+	public static final String sqlGetAllFavoritesFilter = "SELECT d.name,d._id,d.favorite " +
+			"FROM "+TABLE_DRINK+" " +
+			"WHERE favorite ='"+FAV_YES+"' and "+COL_NAME+" like ?";
+	
 	public static final String sqlGetAllDrinksFilter = "";//SELECT * FROM "+TABLE_DRINK+" where "+COL_ROW_DRINK_NAME+" like ?";
-	public static final String sqlGetAllCategoriesFilter = "";//SELECT * FROM "+ SQL_TYPE_TABLE_NAME + " where  "+COL_ROW_DRINK_TYPE+" like ?";
+	public static final String sqlGetAllCategoriesFilter = "";//SELECT * FROM "+ SQL_TYPE_TABLE_NAME + " WHERE  "+COL_ROW_DRINK_TYPE+" like ?";
 	
 	public static final String sqlGetAllIngredients = "SELECT i.name,i._id " +
 			"FROM "+TABLE_INGREDIENTS_CAT+" ic  " +
@@ -79,11 +83,11 @@ public class DataDAO{
 			"WHERE ic.name=? and i.name like ? order by i.name";
 	
 	public static final String sqlGetAllDrinksByIngredients= "SELECT  distinct d.* " +
-			"FROM tblDrinks d " +
-			"INNER JOIN tblDrinks_subcategories dsc on d._id = dsc.drink_id " +
-			"INNER JOIN tblIngredients i on i.subcategory_id = dsc.liquor_subcategory_id " +
+			"FROM "+TABLE_DRINK+" d " +
+			"INNER JOIN "+TABLE_DRINK_SUB_CAT+" dsc on d._id = dsc.drink_id " +
+			"INNER JOIN "+TABLE_INGREDIENTS+" i on i.subcategory_id = dsc.liquor_subcategory_id " +
 			"OR i.subcategory_id = dsc.mixer_subcategory_id " +
-			"INNER JOIN tblIngredient_categories ic on ic._id = i.category_id " +
+			"INNER JOIN "+TABLE_INGREDIENTS_CAT+" ic on ic._id = i.category_id " +
 			"WHERE ic.name = ? " +
 			"AND i._id=? ORDER BY i.name";
 
