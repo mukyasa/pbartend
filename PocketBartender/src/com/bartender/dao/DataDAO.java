@@ -3,7 +3,7 @@ package com.bartender.dao;
 
 import android.database.sqlite.SQLiteDatabase;
 
-public class DataDAO{
+public class DataDAO{ 
 
 	protected SQLiteDatabase sqliteDatabase;
 	
