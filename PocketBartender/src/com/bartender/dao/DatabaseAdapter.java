@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.util.Log;
+import android.widget.FrameLayout;
 
 public class DatabaseAdapter extends SQLiteOpenHelper {
 
@@ -17,7 +18,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	private static DatabaseAdapter instance; //for singleton
 	
 	private static final String DATABASE_NAME = "pBartender7";
-	private static final int DATABASE_VERSION = 13;
+	private static final int DATABASE_VERSION = 14;
 	
 	public DatabaseAdapter(Context context, String name, CursorFactory factory,int version) {
 		super(context, name, factory, version);
@@ -57,6 +58,9 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		
 		//fill ingredient cat table
 		fillIngredientsCategories(db);
+		
+		//fills drinks sub cat
+		fillDrinkSubCategories(db);
 		
 		//fill drinks table
 		DrinkInserts di = new DrinkInserts();
@@ -140,7 +144,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
 	private void fillDrinkSubCategories(SQLiteDatabase db)
 	{
-		String insertStmt = Resources.getSystem().getString(com.bartender.R.string.insert_dsc);
+		Log.w(getClass().getSimpleName(), "");
 		
 	}
 	//singleton initialize
