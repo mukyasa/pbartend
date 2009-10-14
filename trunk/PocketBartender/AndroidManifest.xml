@@ -15,7 +15,7 @@
     <activity android:name=".view.DrinkListView"></activity>
 <activity android:name=".view.CategoryListView"></activity>
 <activity android:name=".view.DetailsView"></activity>
-<activity android:name=".view.SearchView"></activity>
+
 <activity android:name=".view.FavoriteListView"></activity>
 <activity android:name=".view.CreateUpdateView"></activity>
 <activity android:name=".view.MulitDetailsView"></activity>
