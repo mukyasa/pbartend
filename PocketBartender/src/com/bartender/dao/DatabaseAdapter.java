@@ -2,15 +2,12 @@ package com.bartender.dao;
 
 import java.util.Arrays;
 
-import android.R;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.util.Log;
-import android.widget.FrameLayout;
 
 public class DatabaseAdapter extends SQLiteOpenHelper {
 
@@ -18,7 +15,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	private static DatabaseAdapter instance; //for singleton
 	
 	private static final String DATABASE_NAME = "pBartender7";
-	private static final int DATABASE_VERSION = 14;
+	private static final int DATABASE_VERSION = 18;
 	
 	public DatabaseAdapter(Context context, String name, CursorFactory factory,int version) {
 		super(context, name, factory, version);
@@ -144,7 +141,21 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
 	private void fillDrinkSubCategories(SQLiteDatabase db)
 	{
-		Log.w(getClass().getSimpleName(), "");
+		String[] dsc1 = DrinkSubCatInsert.insertDrinkSubCat1();
+		for(int i=0;i<dsc1.length;i++)
+			db.execSQL(dsc1[i]);
+		
+		String[] dsc2 = DrinkSubCatInsert.insertDrinkSubCat2();
+		for(int i=0;i<dsc2.length;i++)
+			db.execSQL(dsc2[i]);
+		
+		String[] dsc3 = DrinkSubCatInsert.insertDrinkSubCat3();
+		for(int i=0;i<dsc3.length;i++)
+			db.execSQL(dsc3[i]);
+		
+		String[] dsc4=DrinkSubCatInsert.insertDrinkSubCat4();
+		for(int i=0;i<dsc4.length;i++)
+			db.execSQL(dsc4[i]);
 		
 	}
 	//singleton initialize

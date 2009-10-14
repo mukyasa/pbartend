@@ -1,8 +1,15 @@
 package com.bartender.view;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources.NotFoundException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -12,14 +19,12 @@ import com.bartender.R;
 public class HomeScreenView extends Activity implements OnClickListener {
     /** Called when the activity is first created. */
 	private Intent intent;
-	private Button btnAll, btnCat, btnIng, btnFav, btnNew;
+	private Button btnAll, btnCat, btnIng, btnFav, btnNew; 
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-         
-        getResources().openRawResource(R.raw.tbldrinks_subcategories);
         
         initComponents();
         
