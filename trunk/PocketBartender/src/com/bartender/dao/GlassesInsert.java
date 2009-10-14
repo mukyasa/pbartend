@@ -9,7 +9,7 @@ public class GlassesInsert {
 ,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(3,'mug');"
 ,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(4,'hurricane');"
 ,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(5,'pint');"
-,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(6,'white wine');"
+,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(6,'wine');"
 ,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(7,'wine');"
 ,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(8,'cocktail');"
 ,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(10,'champagne');"

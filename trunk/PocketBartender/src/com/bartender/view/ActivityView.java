@@ -22,7 +22,6 @@ public class ActivityView extends Activity {
 	protected TextView tvDrinkName;
 	protected TextView tvDrinktype;
 	protected TextView tvIng1;
-	protected TextView tvFullIng;
 	protected TextView tvInstructions;
 	protected TextView tvInstructions2;
 	protected Spinner spinnerDrinkNames;
@@ -38,13 +37,13 @@ public class ActivityView extends Activity {
     public static final String cocktail="cocktail";
     public static final String highball="highball";
     public static final String hurricane="hurricane";
-    public static final String irish="irish";
+    public static final String irish="irish coffee";
     public static final String pint="pint";
     public static final String margarita="margarita";
     public static final String mug="mug";
     public static final String parfait="parfait";
     public static final String pilsner="pilsner";
-    public static final String pousse_cafe="pousse_cafe";
+    public static final String pousse_cafe="pousse cafe";
     public static final String punch="punch";
     public static final String rocks="rocks";
     public static final String shot="shot";
@@ -59,7 +58,7 @@ public class ActivityView extends Activity {
 	{
 		tvDrinkName.setText(drinkdetail.getDrinkName());
 		tvDrinktype.setText(drinkdetail.getDrinkType());
-		tvFullIng.setText(drinkdetail.getIngredients());
+		tvIng1.setText(drinkdetail.getIngredients());
 		tvInstructions.setText(drinkdetail.getInstructions());
 		
 		//only show fav star if is a favorite
@@ -114,7 +113,6 @@ public class ActivityView extends Activity {
 		tvDrinkName = (TextView) findViewById(R.id.tvDrinkName);
 		tvDrinktype = (TextView) findViewById(R.id.tvDrinkType);
 		tvIng1 = (TextView) findViewById(R.id.tvIng1);
-		tvFullIng = (TextView) findViewById(R.id.tvFullIng);
 		tvInstructions = (TextView) findViewById(R.id.tvInstructions);
 		favImageButton = (ImageButton)findViewById(R.id.imgFav);
 		imgGlassType =(ImageView)findViewById(R.id.imgGlassType);
