@@ -83,9 +83,9 @@ public class DataDAO{
 	/**** CREATE STATEMENTS*****/
 	public static final String sqlDrinkIngredientsTable="CREATE TABLE " + TABLE_DRINK_INGREDIENTS
 			  + " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
-			  +COL_DRINK_ID+" INT NOT NULL, "
-			  + COL_INGREDIENT_ID + " INT NOT NULL, "
-			  + COL_AMOUNT + " VARCHAR(64) NOT NULL, " 
+			  +COL_DRINK_ID+" INT, "
+			  + COL_INGREDIENT_ID + " INT , "
+			  + COL_AMOUNT + " VARCHAR(64) , " 
 			  + COL_AMOUNT_METRIC + " VARCHAR(64));";
 	
 	public static final String sqlIngredientsSubCatTable="CREATE TABLE " + TABLE_INGREDIENTS_SUB_CAT
