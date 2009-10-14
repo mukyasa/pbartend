@@ -10,4 +10,5 @@
     <string name="liquorText">Liquor</string>
     <string name="mixersText">Mixers</string>
     <string name="garnishText">Garnish</string>
+<string name="tvListTitle">TITLE</string>
 </resources>
