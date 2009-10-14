@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -66,6 +68,19 @@ public abstract class ListViews extends ListActivity{
 		searchbox.setOnKeyListener(edSearchBoxListener);
 	}
 
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(0, 0, 0, "Home").setIcon(R.drawable.home);
+	    return true;
+	}
+	
+	//home menu option
+	public boolean onOptionsItemSelected(MenuItem item) {
+		
+	    	Intent intent = new Intent(this, HomeScreenView.class);
+			startActivity(intent);
+	    	return true;
+	}
+	
 
 	/**
 	 * capture key up and filter list
