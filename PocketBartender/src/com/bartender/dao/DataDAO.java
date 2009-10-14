@@ -10,8 +10,8 @@ public class DataDAO{
 	public static final int INTENT_NEXT_SCREEN = 0;
 	public static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
 	
-	public static final String FAV_NO = "no";
-	public static final String FAV_YES = "yes";
+	public static final String FAV_NO = "0";
+	public static final String FAV_YES = "1";
 	
 	public static final String COL_ROW_ID = "_id";
 	//new drink db cols
@@ -25,6 +25,7 @@ public class DataDAO{
 	public static final String COL_SUB_CAT_ID = "subcategory_id";
 	public static final String COL_FLAGGED = "flagged";
 	public static final String COL_FAVORITE = "favorite";
+	public static final String COL_ING_NAME = "ingname";
 	public static final String COL_CUSTOM = "custom";
 	public static final String COL_DESCRIPTION = "description";
 	public static final String COL_LIQUOR_SUB_CAT_ID = "liquor_subcategory_id";
@@ -50,7 +51,13 @@ public class DataDAO{
 	public static final String TABLE_INGREDIENTS_SUB_CAT ="tblIngredient_subcategories";
 	
 	
-	public static final String sqlGetDrinkDetailById ="";//SELECT d.*, dt.drinktype FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where d."+COL_ROW_ID+"=?;";
+	public static final String sqlGetDrinkDetailById ="SELECT d.favorite, d._id, d.name,d.instructions,dc.name[cat_name],di.amount,i.name[ingname],g.name[glass_name] " +
+			"FROM tblDrinks d INNER JOIN tblDrink_categories dc on dc._id = d.category_id " +
+			"INNER JOIN tblDrinks_ingredients di on di.drink_id = d._id " +
+			"INNER JOIN tblIngredients i on di.ingredient_id = i._id " +
+			"INNER JOIN tblGlasses g on d.glass_id = g._id " +
+			"WHERE d._id =?;";
+	
 	public static final String sqlGetDrinkDetailByDrinkName ="SELECT d.* FROM "+TABLE_DRINK+" d where d."+COL_NAME+"=?;";
 	public static final String sqlGetDrinkDetailByDrinkCatName ="";//SELECT d.*, dt.drinktype  FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
 	public static final String sqlGetDrinkByCatId = "";//SELECT d.*, dt.drinktype FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt."+COL_ROW_ID+"=?";

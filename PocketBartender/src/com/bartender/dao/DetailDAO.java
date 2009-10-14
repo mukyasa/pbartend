@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 
@@ -19,12 +20,23 @@ public class DetailDAO extends DataDAO{
 	 */
 	private void setDrinkDomain(DetailsDomain drink,Cursor cursor)
 	{
-		drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ROW_ID)));
-		drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_NAME)));
-		drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_GLASS_NAME)));
-		drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_CAT_NAME)));
-		drink.setInstructions(cursor.getString(cursor.getColumnIndex(COL_INSTUCTIONS)));
-		drink.setFavorites(cursor.getString(cursor.getColumnIndex(COL_FAVORITE)));
+		Log.v(getClass().getSimpleName(), "details count=" + cursor.getCount());
+		StringBuffer ingredients= new StringBuffer();
+		
+		for(int i=0;i<cursor.getCount();i++)
+		{
+			ingredients.append(cursor.getString(cursor.getColumnIndex(COL_AMOUNT)) + cursor.getString(cursor.getColumnIndex(COL_ING_NAME)) +  "\n");
+			drink.setId(cursor.getInt(cursor.getColumnIndex(COL_ROW_ID)));
+			drink.setDrinkName(cursor.getString(cursor.getColumnIndex(COL_NAME)));
+			drink.setGlass(cursor.getString(cursor.getColumnIndex(COL_GLASS_NAME)));
+			drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_CAT_NAME)));
+			drink.setInstructions(cursor.getString(cursor.getColumnIndex(COL_INSTUCTIONS)));
+			drink.setFavorites(cursor.getString(cursor.getColumnIndex(COL_FAVORITE)));
+			//move to next row
+			cursor.moveToNext();
+		}
+		
+		drink.setIngredients(ingredients.toString());
 	}
 	
 	/**
