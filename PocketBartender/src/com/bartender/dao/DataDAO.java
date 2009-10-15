@@ -63,6 +63,12 @@ public class DataDAO{
 	public static final String sqlGetDrinkDetailByDrinkCatName ="SELECT d.name,d._id FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
 	public static final String sqlGetDrinkByCatId = "";//SELECT d.*, dt.drinktype FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" WHERE dt."+COL_ROW_ID+"=?";
 	public static final String sqlGetAllFavorites = "SELECT d.name,d._id,d.favorite FROM "+TABLE_DRINK+" d where favorite =?";
+	
+	public static final String sqlGetDrinksByDrinkCatId = "SELECT  d.name,d._id " +
+			"FROM tblDrinks d " +
+			"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id " +
+			"WHERE dc._id =1";
+	
 	//search filter sql
 	public static final String sqlGetAllFavoritesFilter = "SELECT d.name,d._id,d.favorite " +
 			"FROM "+TABLE_DRINK+" d " +

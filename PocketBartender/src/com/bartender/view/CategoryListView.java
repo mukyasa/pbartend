@@ -11,6 +11,7 @@ import android.widget.SimpleCursorAdapter;
 import com.bartender.R;
 import com.bartender.dao.CategoryDAO;
 import com.bartender.dao.DrinkListDAO;
+import com.bartender.domain.ScreenType;
 
 
 /**
@@ -25,8 +26,9 @@ public class CategoryListView extends ListViews {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setCurrentListActivity(this);
-        intent = new Intent(this, MulitDetailsView.class);
+        intent = new Intent(this, DrinkListView.class);
         initComponents();
+        ScreenType.getInstance().setScreenType(SCREEN_TYPE_CAT);
     }
     
     
