@@ -36,7 +36,7 @@ public class DrinkListView extends ListViews {
 		
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor;
-    	if(ScreenType.getInstance().getScreenType() == SCREEN_TYPE_ING)
+    	if(ScreenType.getInstance().getScreenType() == SCREEN_TYPE_CAT)
     		recordscCursor = dataDAO.retrieveAllDrinkByTypes(selectedRow);
     	else if(ScreenType.getInstance().getScreenType() == SCREEN_TYPE_ING)
     		recordscCursor = dataDAO.retrieveAllDrinksByIng(ScreenType.getInstance().getType(),selectedRow+"");

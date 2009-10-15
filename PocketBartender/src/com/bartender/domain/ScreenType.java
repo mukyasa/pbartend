@@ -12,7 +12,7 @@ public class ScreenType {
     }
 
 	private String type;
-	private int screenType;
+	private int screenType=-1;
 	
 	
 	public int getScreenType() {
