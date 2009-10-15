@@ -18,7 +18,7 @@ import com.bartender.R;
 import com.bartender.dao.DataDAO;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.domain.DetailsDomain;
-import com.bartender.domain.IngredientsType;
+import com.bartender.domain.ScreenType;
 
 public abstract class ListViews extends ListActivity{
 	
@@ -29,6 +29,9 @@ public abstract class ListViews extends ListActivity{
 	protected Intent intent;
 	protected ListActivity currentListActivity;
 	protected DetailsDomain drinkdetail;
+	protected final int SCREEN_TYPE_CAT=0;
+	protected final int SCREEN_TYPE_ING=0;
+	
 		
 	public ListActivity getCurrentListActivity() {
 		return currentListActivity;
@@ -54,7 +57,7 @@ public abstract class ListViews extends ListActivity{
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 	{
 			super.onListItemClick(l, v, position, id);
-			Log.v(getClass().getSimpleName(), "id=" + id + " type=" + IngredientsType.getInstance().getType());
+			Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().getType());
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
 			startActivityForResult(intent, INTENT_NEXT_SCREEN);
 	}
@@ -107,7 +110,7 @@ public abstract class ListViews extends ListActivity{
 					else if(laType instanceof IngredientsListView)
 					{
 						from = new String[] { DataDAO.COL_CAT_NAME };
-						recordscCursor = ((IngredientsListView) laType).dataDAO.retrieveAllFilteredIngredients(IngredientsType.getInstance().getType(), et.toString().trim());
+						recordscCursor = ((IngredientsListView) laType).dataDAO.retrieveAllFilteredIngredients(ScreenType.getInstance().getType(), et.toString().trim());
 					}
 					
 			    	startManagingCursor(recordscCursor);

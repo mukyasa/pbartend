@@ -11,7 +11,7 @@ import android.widget.SimpleCursorAdapter;
 import com.bartender.R;
 import com.bartender.dao.DrinkListDAO;
 import com.bartender.dao.IngredientsDAO;
-import com.bartender.domain.IngredientsType;
+import com.bartender.domain.ScreenType;
 
 
 /**
@@ -24,13 +24,14 @@ public class IngredientsListView extends ListViews {
 	protected final String TYPE_LIQUOR = "Liquor";
 	protected final String TYPE_MIXERS = "Mixers";
 	protected final String TYPE_GARNISH = "Garnish";
-	protected IngredientsType ingtype = IngredientsType.getInstance();
+	protected ScreenType ingtype = ScreenType.getInstance();
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setCurrentListActivity(this);
         intent = new Intent(this, DrinkListView.class);
+        ScreenType.getInstance().setScreenType(SCREEN_TYPE_ING);
     }
     
    protected void initComponents() {

@@ -9,7 +9,7 @@ import android.widget.SimpleCursorAdapter;
 import com.bartender.R;
 import com.bartender.dao.DrinkListDAO;
 import com.bartender.domain.DetailsDomain;
-import com.bartender.domain.IngredientsType;
+import com.bartender.domain.ScreenType;
 
 public class DrinkListView extends ListViews {
 	
@@ -36,10 +36,13 @@ public class DrinkListView extends ListViews {
 		
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor;
-    	if(selectedRow <= 0)
-    		recordscCursor = dataDAO.retrieveAllDrinks();
+    	if(ScreenType.getInstance().getScreenType() == SCREEN_TYPE_ING)
+    		recordscCursor = dataDAO.retrieveAllDrinkByTypes(selectedRow);
+    	else if(ScreenType.getInstance().getScreenType() == SCREEN_TYPE_ING)
+    		recordscCursor = dataDAO.retrieveAllDrinksByIng(ScreenType.getInstance().getType(),selectedRow+"");
     	else
-    		recordscCursor = dataDAO.retrieveAllDrinksByIng(IngredientsType.getInstance().getType(),selectedRow+"");
+    		recordscCursor = dataDAO.retrieveAllDrinks();
+    	
     	
     	Log.v(getClass().getSimpleName(), "count=" + recordscCursor.getCount());
     	startManagingCursor(recordscCursor);
