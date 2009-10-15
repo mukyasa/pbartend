@@ -88,7 +88,7 @@ public class DataDAO{
 			"INNER JOIN "+TABLE_INGREDIENTS_SUB_CAT+" isc on i.category_id = isc._id " +
 			"WHERE ic.name=? and i.name like ? order by i.name";
 	
-	public static final String sqlGetAllDrinksByIngredients= "SELECT  distinct d.name,d._id " +
+	public static final String sqlGetAllDrinksByIngredients= "SELECT  d.name, d._id " + //need distinct but not working
 			"FROM "+TABLE_DRINK+" d " +
 			"INNER JOIN "+TABLE_DRINK_SUB_CAT+" dsc on d._id = dsc.drink_id " +
 			"INNER JOIN "+TABLE_INGREDIENTS+" i on i.subcategory_id = dsc.liquor_subcategory_id " +
@@ -125,9 +125,10 @@ public class DataDAO{
 			+ COL_NUMBER + " double);";
 	
 	public static final String sqlDrinkSubCategoriesTable = "CREATE TABLE " + TABLE_DRINK_SUB_CAT	
-			+ " ("+COL_DRINK_ID + " INTEGER NOT NULL, "
-			+ COL_LIQUOR_SUB_CAT_ID + " INTEGER NOT NULL, "
-			+ COL_MIX_SUB_CAT_ID + " INTEGER NOT NULL);";
+	+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "		
+		+COL_DRINK_ID + " INTEGER NOT NULL, "
+		+ COL_LIQUOR_SUB_CAT_ID + " INTEGER NOT NULL, "
+		+ COL_MIX_SUB_CAT_ID + " INTEGER NOT NULL);";
 	
 	/**
 	 * Drink Table
