@@ -7,7 +7,7 @@ public class NewDrinkDomain {
 	private int glassId;
 	private int categoryId;
 	private int ingredientsCat; //0,1,3
-	//mulituples
+	//Multiples
 	private String amount; 
 	private String ingredientsName;
 	
