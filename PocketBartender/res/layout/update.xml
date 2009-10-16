@@ -16,21 +16,28 @@ android:layout_height="wrap_content"
 		   android:layout_width="fill_parent" 
 		   android:text="@string/create_drink_title" 
 		   android:textColor="#ccc"></EditText>
-	<Button android:layout_width="wrap_content" 
+	
+	<EditText android:id="@+id/etAddNewCat" 
 		   android:layout_height="wrap_content" 
-		   android:text="@string/categoryText" android:id="@+id/ btnAddNewCat"></Button>
+		   android:layout_width="fill_parent" 
+		   android:text="@string/categoryText" 
+		   android:textColor="#ccc"></EditText>
+		   
 	<TextView android:id="@+id/tvNewCategory" 
 		   android:layout_width="wrap_content" 
 		   android:layout_height="wrap_content"></TextView>
+		   
 	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" 
 		   android:text="@string/ingredientsText" android:id="@+id/btnNewIng"></Button>
+		   
 	<TextView android:id="@+id/tvNewIngredients" 
 		   android:layout_width="wrap_content" 
 		   android:layout_height="wrap_content"></TextView>
+		   
 	<EditText android:id="@+id/etDirections" 
 		   android:layout_width="wrap_content" 
 		   android:layout_height="wrap_content"
-		   android:textColor="#ccc" android:text="@string/ing_text"></EditText>
+		   android:textColor="#ccc" android:text="@string/instructionsText"></EditText>
 
 </TableLayout>
 </ScrollView>
