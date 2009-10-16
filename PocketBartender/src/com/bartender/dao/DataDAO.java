@@ -65,7 +65,7 @@ public class DataDAO{
 	public static final String sqlGetAllFavorites = "SELECT d.name,d._id,d.favorite FROM "+TABLE_DRINK+" d where favorite =?";
 	
 	public static final String sqlGetDrinksByDrinkCatId = "SELECT  d.name,d._id " +
-			"FROM tblDrinks d " +
+			"FROM "+TABLE_DRINK+" d " +
 			"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id " +
 			"WHERE dc._id =?";
 	
@@ -88,14 +88,14 @@ public class DataDAO{
 			"INNER JOIN "+TABLE_INGREDIENTS_SUB_CAT+" isc on i.category_id = isc._id " +
 			"WHERE ic.name=? and i.name like ? order by i.name";
 	
-	public static final String sqlGetAllDrinksByIngredients= "SELECT  d.name, d._id " + //need distinct but not working
-			"FROM "+TABLE_DRINK+" d " +
-			"INNER JOIN "+TABLE_DRINK_SUB_CAT+" dsc on d._id = dsc.drink_id " +
-			"INNER JOIN "+TABLE_INGREDIENTS+" i on i.subcategory_id = dsc.liquor_subcategory_id " +
-			"OR i.subcategory_id = dsc.mixer_subcategory_id " +
-			"INNER JOIN "+TABLE_INGREDIENTS_CAT+" ic on ic._id = i.category_id " +
-			"WHERE ic.name = ? " +
-			"AND i._id=? ORDER BY i.name";
+	public static final String sqlGetAllDrinksByIngredients= "SELECT  d.name,d._id "
+	+"FROM "+TABLE_DRINK+" d "
+	+"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id "
+	+"INNER JOIN "+TABLE_DRINK_INGREDIENTS+" di on di.drink_id = d._id "
+	+"INNER JOIN "+TABLE_INGREDIENTS+" i on di.ingredient_id = i._id "
+	+"INNER JOIN "+TABLE_GLASSES+" g on d.glass_id = g._id "
+	+"INNER JOIN "+TABLE_INGREDIENTS_CAT+" ic on ic._id = i.category_id "
+	+"WHERE i._id =? and ic.name=? order by d.name";
 
 	/**** CREATE STATEMENTS*****/
 	public static final String sqlDrinkIngredientsTable="CREATE TABLE " + TABLE_DRINK_INGREDIENTS
