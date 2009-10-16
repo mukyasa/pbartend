@@ -21,7 +21,7 @@ android:background="@drawable/details_bg">
 		 <TableRow android:layout_width="fill_parent">
 			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Drink Type" android:id="@+id/tvDrinkType" android:textColor="#000" android:paddingLeft="15.0sp" android:textStyle="bold" android:textSize="14.0px"></TextView>
 		</TableRow>
-		 <TableRow> 
+		 <TableRow android:layout_width="fill_parent"> 
 			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvIng1" android:text="All ingredients will go here each one will go to the next line." android:textColor="#000" android:layout_marginTop="5.0sp" android:paddingLeft="15.0sp" android:paddingRight="80sp" android:layout_gravity="left|center"></TextView>
 		</TableRow>
 		 
