@@ -60,8 +60,8 @@ values(2,'Darren Test 2','do some work and make a drink',1,0,0,1);
 
 // get new drinkid
 select _id from tblDrinks where name ='Darren Test 2';
-// get ingredients id
+// get ingredients ids could be many
 select _id from tblIngredients where name="Lime Juice";
-
+//for each ingredient need to insert
 insert into tblDrinks_ingredients (drink_id,ingredient_id,amount) values(9637,1,"2 oz");
 /******************************************************/
