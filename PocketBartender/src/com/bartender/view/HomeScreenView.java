@@ -15,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.bartender.R;
+import com.bartender.domain.ScreenType;
 
 public class HomeScreenView extends Activity implements OnClickListener {
     /** Called when the activity is first created. */
@@ -52,6 +53,7 @@ public class HomeScreenView extends Activity implements OnClickListener {
     public void onClick(View view) {
 		if(view==btnAll)
 		{
+			ScreenType.getInstance().setScreenType(-1);
 			intent = new Intent(this, DrinkListView.class);
 			startActivity(intent);
 		}
@@ -62,6 +64,7 @@ public class HomeScreenView extends Activity implements OnClickListener {
 		}
 		else if(view == btnFav)
 		{
+			ScreenType.getInstance().setScreenType(-1);
 			intent = new Intent(this, FavoriteListView.class);
 			startActivity(intent);
 		}
@@ -72,6 +75,7 @@ public class HomeScreenView extends Activity implements OnClickListener {
 		}
 		else if(view == btnNew)
 		{
+			ScreenType.getInstance().setScreenType(-1);
 			intent = new Intent(this, CreateUpdateView.class);
 			startActivity(intent);
 		}
