@@ -44,16 +44,22 @@ INNER JOIN tblGlasses g on d.glass_id = g.id
 WHERE d.id = 77
 
 //select drinks based on ingredients id
-SELECT  d.name,d.id
+SELECT  d.name,d._id
 FROM tblDrinks d 
-INNER JOIN tblDrink_categories dc on dc.id = d.category_id
-INNER JOIN tblDrinks_ingredients di on di.drink_id = d.id
-INNER JOIN tblIngredients i on di.ingredient_id = i.id
-INNER JOIN tblGlasses g on d.glass_id = g.id
-INNER JOIN tblIngredient_categories ic on _id = i.category_id
-WHERE i.id =629 and ic.name="Garnish" order by d.name
+INNER JOIN tblDrink_categories dc on dc._id = d.category_id
+INNER JOIN tblDrinks_ingredients di on di.drink_id = d._id
+INNER JOIN tblIngredients i on di.ingredient_id = i._id
+INNER JOIN tblGlasses g on d.glass_id = g._id
+INNER JOIN tblIngredient_categories ic on ic._id = i.category_id
+WHERE i._id =629 and ic.name="Mixer" order by d.name
 
 
+//insert new 
+insert into tblDrinks (glass_id,name,instructions,category_id,flagged,favorite,custom) 
+values(2,'Darren Test 2','do some work and make a drink',1,0,0,1);
 
 
+select _id from tblDrinks where name ='Darren Test 2';
+select _id from tblIngredients where name="Lime Juice";
 
+insert into tblDrinks_ingredients (drink_id,ingredient_id,amount) values(9637,1,"2 oz");
