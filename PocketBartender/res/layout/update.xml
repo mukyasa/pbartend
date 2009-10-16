@@ -27,8 +27,10 @@ android:layout_height="wrap_content"
 		   android:layout_width="wrap_content" 
 		   android:layout_height="wrap_content"></TextView>
 		   
-	<Button android:layout_width="wrap_content" android:layout_height="wrap_content" 
-		   android:text="@string/ingredientsText" android:id="@+id/btnNewIng"></Button>
+	<Button android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" 
+			android:text="@string/ingredientsText" 
+			android:id="@+id/btnNewIng"></Button>
 		   
 	<TextView android:id="@+id/tvNewIngredients" 
 		   android:layout_width="wrap_content" 
@@ -37,7 +39,8 @@ android:layout_height="wrap_content"
 	<EditText android:id="@+id/etDirections" 
 		   android:layout_width="wrap_content" 
 		   android:layout_height="wrap_content"
-		   android:textColor="#ccc" android:text="@string/instructionsText"></EditText>
+		   android:textColor="#ccc" 
+		   android:text="@string/instructionsText"></EditText>
 
 </TableLayout>
 </ScrollView>
