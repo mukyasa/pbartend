@@ -33,15 +33,6 @@ INNER JOIN tblIngredients i on ic.id = i.category_id
 INNER JOIN tblIngredient_subcategories isc on i.category_id = isc.id
 where ic.id=2 order by i.name
 
-
-//drink details by drink name
-SELECT  d.name,d.instructions,dc.name[drinkcatname],di.amount,i.name[ingname]
-FROM tblDrinks d 
-INNER JOIN tblDrink_categories dc on dc.id = d.category_id
-INNER JOIN tblDrinks_ingredients di on di.drink_id = d.id
-INNER JOIN tblIngredients i on di.ingredient_id = i.id
-INNER JOIN tblGlasses g on d.glass_id = g.id
-WHERE d.name = 'VeeV Acai-tini' 
 	
 //drink details by drink id
 SELECT  d.name,d.instructions,dc.name[drinkcatname],di.amount,i.name[ingname]
@@ -52,14 +43,17 @@ INNER JOIN tblIngredients i on di.ingredient_id = i.id
 INNER JOIN tblGlasses g on d.glass_id = g.id
 WHERE d.id = 77
 
+//select drinks based on ingredients id
+SELECT  d.name,d.id
+FROM tblDrinks d 
+INNER JOIN tblDrink_categories dc on dc.id = d.category_id
+INNER JOIN tblDrinks_ingredients di on di.drink_id = d.id
+INNER JOIN tblIngredients i on di.ingredient_id = i.id
+INNER JOIN tblGlasses g on d.glass_id = g.id
+INNER JOIN tblIngredient_categories ic on _id = i.category_id
+WHERE i.id =629 and ic.name="Garnish" order by d.name
 
-//all drinks by ingredients
-SELECT  distinct d.name[drinknm], ic.name[ingcat],i.name[ing name] 
-FROM tblDrinks d INNER JOIN tblDrinks_subcategories dsc on d._id = dsc.drink_id 
-INNER JOIN tblIngredients i on i.subcategory_id = dsc.liquor_subcategory_id 
-OR i.subcategory_id = dsc.mixer_subcategory_id 
-INNER JOIN tblIngredient_categories ic on ic._id = i.category_id 
-WHERE ic.name = 'Liquor' AND i._id='602' order by i.name
+
 
 
 
