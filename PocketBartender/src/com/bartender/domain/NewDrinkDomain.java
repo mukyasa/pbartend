@@ -6,7 +6,9 @@ public class NewDrinkDomain {
 	private String instructions;
 	private int glassId;
 	private int categoryId;
-	private String ingredientsId; //1 1/2 oz (example)
+	private String amount; 
+	private String ingredientsName;
+	private int ingredientsCat; //0,1,3
 	
 	
 
