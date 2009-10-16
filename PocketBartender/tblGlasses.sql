@@ -1,0 +1,18 @@
+INSERT INTO "tblGlasses" VALUES(1,'rocks');
+INSERT INTO "tblGlasses" VALUES(2,'highball');
+INSERT INTO "tblGlasses" VALUES(3,'mug');
+INSERT INTO "tblGlasses" VALUES(4,'hurricane');
+INSERT INTO "tblGlasses" VALUES(5,'pint');
+INSERT INTO "tblGlasses" VALUES(6,'white wine');
+INSERT INTO "tblGlasses" VALUES(7,'wine');
+INSERT INTO "tblGlasses" VALUES(8,'cocktail');
+INSERT INTO "tblGlasses" VALUES(10,'champagne');
+INSERT INTO "tblGlasses" VALUES(12,'margarita');
+INSERT INTO "tblGlasses" VALUES(13,'shot');
+INSERT INTO "tblGlasses" VALUES(14,'sour');
+INSERT INTO "tblGlasses" VALUES(15,'pousse cafe');
+INSERT INTO "tblGlasses" VALUES(16,'parfait');
+INSERT INTO "tblGlasses" VALUES(17,'irish coffee');
+INSERT INTO "tblGlasses" VALUES(18,'pilsner');
+INSERT INTO "tblGlasses" VALUES(19,'punch');
+INSERT INTO "tblGlasses" VALUES(20,'snifter');
