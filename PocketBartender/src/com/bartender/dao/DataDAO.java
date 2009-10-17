@@ -96,6 +96,23 @@ public class DataDAO{
 	+"INNER JOIN "+TABLE_GLASSES+" g on d.glass_id = g._id "
 	+"INNER JOIN "+TABLE_INGREDIENTS_CAT+" ic on ic._id = i.category_id "
 	+"WHERE i._id =? and ic.name=? order by d.name";
+	
+	
+	public static final String sqlInsertNewDrink="INSERT INTO tblDrinks (glass_id,name,instructions,category_id,flagged,favorite,custom) "	+
+			"values(2,'Darren Test 2','do some work and make a drink',1,0,0,1);";
+
+	//for each ingredient need to insert
+	public static final String sqlInsertNewDrinkIngredients ="INSERT INTO tblDrinks_ingredients (drink_id,ingredient_id,amount) " +
+			"values(9637,1,'2 oz');";
+	
+	// get new drinkid
+	public static final String sqlGetNewDrinkIdByName ="SELECT _id from tblDrinks where name ='Darren Test 2';";
+	
+	
+	// get ingredients ids could be many
+	public static final String sqlGetNewIngredientsIdByName = "SELECT _id from tblIngredients where name='Lime Juice';";
+	
+	
 
 	/**** CREATE STATEMENTS*****/
 	public static final String sqlDrinkIngredientsTable="CREATE TABLE " + TABLE_DRINK_INGREDIENTS
@@ -159,7 +176,7 @@ public class DataDAO{
 	public static final String sqlCreateDrinkCategoriesTable = "CREATE TABLE " + TABLE_DRINK_CAT
 		+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, " 
 		+ COL_NAME+ " VARCHAR(64) NOT NULL);";
-
+	
 	
 	/**
 	 * Sets the sqlite db name

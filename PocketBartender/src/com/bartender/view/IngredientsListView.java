@@ -31,7 +31,7 @@ public class IngredientsListView extends ListViews {
         super.onCreate(savedInstanceState);
         setCurrentListActivity(this);
         intent = new Intent(this, DrinkListView.class);
-        ScreenType.getInstance().setScreenType(SCREEN_TYPE_ING);
+        ScreenType.getInstance().setScreenType(ScreenType.SCREEN_TYPE_ING);
     }
     
    protected void initComponents() {

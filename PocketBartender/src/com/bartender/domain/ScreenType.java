@@ -3,6 +3,9 @@ package com.bartender.domain;
 public class ScreenType {
 	
 	private static ScreenType ingType = null;
+	public static final int SCREEN_TYPE_CAT=0;
+	public static final int SCREEN_TYPE_ING=1;
+	public static final int SCREEN_TYPE_NEW=2;
 	
 	public static ScreenType getInstance()
     {
