@@ -17,15 +17,22 @@ android:layout_height="wrap_content"
 		   android:text="@string/create_drink_title" 
 		   android:textColor="#ccc"></EditText>
 	
-	<EditText android:id="@+id/etAddNewCat" 
-		   android:layout_height="wrap_content" 
-		   android:layout_width="fill_parent" 
-		   android:text="@string/categoryText" 
-		   android:textColor="#ccc"></EditText>
-		   
 	<TextView android:id="@+id/tvNewCategory" 
 		   android:layout_width="wrap_content" 
-		   android:layout_height="wrap_content"></TextView>
+		   android:layout_height="wrap_content" 
+		   android:textColor="#000" 
+		   android:textSize="18sp"></TextView>
+		   
+	<Button android:id="@+id/btnNewCat"  
+		   android:layout_height="wrap_content" 
+		   android:layout_width="fill_parent" 
+		   android:text="@string/categoryText"></Button>
+
+		   <TextView android:id="@+id/tvNewIngredients" 
+		   android:layout_width="wrap_content" 
+		   android:layout_height="wrap_content" 
+		   android:textColor="#000"
+		   android:textSize="18sp"></TextView>
 		   
 	<Button android:layout_width="wrap_content" 
 			android:layout_height="wrap_content" 
@@ -41,6 +48,11 @@ android:layout_height="wrap_content"
 		   android:layout_height="wrap_content"
 		   android:textColor="#ccc" 
 		   android:text="@string/instructionsText"></EditText>
+		   
+	<Button android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" 
+			android:text="@string/save" 
+			android:id="@+id/btnSave"></Button>
 
 </TableLayout>
 </ScrollView>
