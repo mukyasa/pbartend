@@ -6,11 +6,15 @@ package com.bartender.view;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import com.bartender.R;
 import com.bartender.dao.CategoryDAO;
+import com.bartender.dao.DataDAO;
 import com.bartender.dao.DrinkListDAO;
+import com.bartender.domain.NewDrinkDomain;
 import com.bartender.domain.ScreenType;
 
 
@@ -26,9 +30,15 @@ public class CategoryListView extends ListViews {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setCurrentListActivity(this);
-        intent = new Intent(this, DrinkListView.class);
+        
+        //check to see if this is new if yes change intent
+        if(ScreenType.getInstance().getScreenType() == ScreenType.SCREEN_TYPE_NEW)
+        	intent = new Intent(this, CreateUpdateView.class);
+        else
+        	intent = new Intent(this, DrinkListView.class);
+        
         initComponents();
-        ScreenType.getInstance().setScreenType(SCREEN_TYPE_CAT);
+        ScreenType.getInstance().setScreenType(ScreenType.SCREEN_TYPE_CAT);
     }
     
     
@@ -46,5 +56,17 @@ public class CategoryListView extends ListViews {
     	
 		setListAdapter(records);
 	}
+    
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+    	super.onListItemClick(l, v, position, id);
+    	
+    	Cursor cursor = (Cursor) l.getItemAtPosition(position);
+    	//set id and name to create domain
+    	NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+    	ndd.setCategoryId(id);
+    	ndd.setDrinkName(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_NAME)));
+    	
+    }
 
 }

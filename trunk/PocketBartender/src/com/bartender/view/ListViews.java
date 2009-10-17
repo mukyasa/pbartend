@@ -29,9 +29,6 @@ public abstract class ListViews extends ListActivity{
 	protected Intent intent;
 	protected ListActivity currentListActivity;
 	protected DetailsDomain drinkdetail;
-	protected final int SCREEN_TYPE_CAT=0;
-	protected final int SCREEN_TYPE_ING=1;
-	
 		
 	public ListActivity getCurrentListActivity() {
 		return currentListActivity;
