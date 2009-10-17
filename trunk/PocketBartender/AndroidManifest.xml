@@ -25,6 +25,7 @@
 <activity android:name=".view.LiquorListView"></activity>
 <activity android:name=".view.MixersListView"></activity>
 <activity android:name=".view.GarnishListView"></activity>
+<activity android:name=".view.AmountPicker"></activity>
 </application>
     <uses-sdk android:minSdkVersion="3" />
 
