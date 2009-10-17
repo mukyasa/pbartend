@@ -1,15 +1,21 @@
 package com.bartender.view;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.bartender.R;
 
-public class AmountPicker extends Activity {
+public class CategoryAndGlassListView extends Activity implements OnClickListener  {
 	
-	 ListView listWholeNums,listHalfNums,measurementtypes; 
+	 ListView listCategories,listGlasses; 
 	
     /** Called when the activity is first created. */
     @Override
@@ -18,35 +24,51 @@ public class AmountPicker extends Activity {
         
         setContentView(com.bartender.R.layout.amounts);
 
-        listWholeNums = (ListView) findViewById(R.id.listWholeNums);
-        listHalfNums = (ListView) findViewById(R.id.listHalfNums); 
+        listCategories = (ListView) findViewById(R.id.listWholeNums);
         
-        listHalfNums.setAdapter(new ArrayAdapter<String>(this,
-        		R.layout.amountrow, COUNTRIES));
+        listCategories.setAdapter(new ArrayAdapter<String>(this,
+        		R.layout.amountrow, CATEGORIES));
+        
+        listGlasses = (ListView)findViewById(R.id.listGlasses);
+        
+        //addes images to list items
+        List<Drawable> imageList = new ArrayList<Drawable>(); 
+        
+        imageList.add(getResources().getDrawable(R.drawable.champ));
+        imageList.add(getResources().getDrawable(R.drawable.cocktail));
+        imageList.add(getResources().getDrawable(R.drawable.highball));
+        imageList.add(getResources().getDrawable(R.drawable.hurricane));
+        imageList.add(getResources().getDrawable(R.drawable.irish));
+        imageList.add(getResources().getDrawable(R.drawable.margarita));
+        imageList.add(getResources().getDrawable(R.drawable.mug));
+        imageList.add(getResources().getDrawable(R.drawable.parfait));
+        imageList.add(getResources().getDrawable(R.drawable.pilsner));
+        imageList.add(getResources().getDrawable(R.drawable.pint));
+        imageList.add(getResources().getDrawable(R.drawable.pousse_cafe));
+        imageList.add(getResources().getDrawable(R.drawable.punch));
+        imageList.add(getResources().getDrawable(R.drawable.rocks));
+        imageList.add(getResources().getDrawable(R.drawable.shot));
+        imageList.add(getResources().getDrawable(R.drawable.snifter));
+        imageList.add(getResources().getDrawable(R.drawable.sour));
+        imageList.add(getResources().getDrawable(R.drawable.wine));
 
-        listWholeNums.setAdapter(new ArrayAdapter<String>(this,
-        		R.layout.amountrow, WHOLENUMBERS));
         
-        measurementtypes = (ListView)findViewById(R.id.listAmounts);
-        measurementtypes.setAdapter(new ArrayAdapter<String>(this,
-        		R.layout.amountrow, AMOUNTS));
+        listGlasses.setAdapter(new ImageListAdapter(this,imageList,listGlasses));
+        
+        listCategories.setOnClickListener(this);
+        listGlasses.setOnClickListener(this);
+        		
         		
     }
+
+    public void onClick(View view) {
+    	Object o = view.getClass();
+    	
+    }
     
-    static final String[] AMOUNTS = new String[] {"cup","oz","pint","quart","gallon","tsp","tbsp","lb","bottles(s)"
-    	,"can(s)"
-    	,"dashe(es)"
-    	,"drop(s)"
-    	,"part(s)"
-    	,"pieces(s)"
-    	,"scoop(s)"
-    	,"splash(es)"
-    	,"sprig(s)"
-    	,"stick(s)"};
+
     
-    static final String[] WHOLENUMBERS = new String[] {"AZ","CA","MO","UT","FL","NY","OH","AR"};
-    
-    static final String[] COUNTRIES = new String[] {
+    static final String[] CATEGORIES = new String[] {
         "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra",
         "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina",
         "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan",

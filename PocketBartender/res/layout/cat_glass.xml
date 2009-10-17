@@ -8,29 +8,20 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:layout_weight="1" android:background="#fff">
-	
 
-	<ListView android:id="@+id/listWholeNums" android:gravity=""
-	    android:layout_height="fill_parent"
-	    android:layout_weight="2" android:layout_gravity="fill_vertical" 
-	    android:layout_width="fill_parent" 
-	    android:background="#fff" 
-	    android:fadingEdge="vertical" 
-	    android:fadingEdgeLength="50.0sp" 
-	    android:fitsSystemWindows="true"></ListView>
 
-	<ListView android:id="@+id/listHalfNums" 
+	<ListView android:id="@+id/listCategories" 
 	android:layout_height="fill_parent"
-	    android:layout_weight="2" 
+	    android:layout_weight="1" 
 	    android:layout_gravity="fill_vertical" 
 	    android:layout_width="fill_parent" 
 	    android:background="#fff" 
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp"></ListView>
 	    
-	    	<ListView android:id="@+id/listAmounts" android:gravity=""
+	    	<ListView android:id="@+id/listGlasses" android:gravity=""
 	    android:layout_height="fill_parent"
-	    android:layout_weight="1" android:layout_gravity="fill_vertical" 
+	    android:layout_weight="2" android:layout_gravity="fill_vertical" 
 	    android:layout_width="fill_parent" 
 	    android:background="#fff" 
 	    android:fadingEdge="vertical" 

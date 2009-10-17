@@ -2,8 +2,6 @@ package com.bartender.view;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -71,7 +69,7 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		}
 		else if(view==btnCat) 
 		{
-			intent = new Intent(this, CategoryListView.class);
+			intent = new Intent(this, CategoryAndGlassListView.class);
 			startActivity(intent);
 		}
 		else if(view == btnSave)
