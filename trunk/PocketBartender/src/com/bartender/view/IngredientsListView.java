@@ -6,11 +6,15 @@ package com.bartender.view;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import com.bartender.R;
+import com.bartender.dao.DataDAO;
 import com.bartender.dao.DrinkListDAO;
 import com.bartender.dao.IngredientsDAO;
+import com.bartender.domain.NewDrinkDomain;
 import com.bartender.domain.ScreenType;
 
 
@@ -30,7 +34,13 @@ public class IngredientsListView extends ListViews {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setCurrentListActivity(this);
-        intent = new Intent(this, DrinkListView.class);
+        
+        //check to see if this is new if yes change intent
+        if(ScreenType.getInstance().getScreenType() == ScreenType.SCREEN_TYPE_NEW)
+        	intent = new Intent(this, AmountPicker.class);
+        else
+        	intent = new Intent(this, DrinkListView.class);
+        
         ScreenType.getInstance().setScreenType(ScreenType.SCREEN_TYPE_ING);
     }
     
@@ -45,6 +55,17 @@ public class IngredientsListView extends ListViews {
     	
 		setListAdapter(records);
 	}
+   
+   @Override
+   protected void onListItemClick(ListView l, View v, int position, long id) {
+   	super.onListItemClick(l, v, position, id);
+   	
+   	Cursor cursor = (Cursor) l.getItemAtPosition(position);
+   	//set id and name to create domain
+   	NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+   	ndd.setIngredientsName(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_NAME)));
+   	
+   }
    
 
 }
