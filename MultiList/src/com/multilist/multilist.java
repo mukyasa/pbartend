@@ -4,20 +4,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public class multilist extends Activity {
 	
-	 ListView countryList; 
+	 ListView countryList;  
      ListView stateList; 
+     ListView glassList;
 	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.image_list);
+        
+        glassList = (ListView)findViewById(R.id.listGlasses);
+        
+        //addes images to list items
+        List<Drawable> imageList = new ArrayList<Drawable>(); 
+        
+        imageList.add(getResources().getDrawable(R.drawable.champ));
+        imageList.add(getResources().getDrawable(R.drawable.cocktail));
+        imageList.add(getResources().getDrawable(R.drawable.highball));
+        imageList.add(getResources().getDrawable(R.drawable.hurricane));
+        imageList.add(getResources().getDrawable(R.drawable.irish));
+        imageList.add(getResources().getDrawable(R.drawable.margarita));
+        imageList.add(getResources().getDrawable(R.drawable.mug));
+        imageList.add(getResources().getDrawable(R.drawable.parfait));
+        imageList.add(getResources().getDrawable(R.drawable.hurricane));
 
+        
+        glassList.setAdapter(new ImageListAdapter(this,imageList,glassList));
+        
+        
+/*
         countryList = (ListView) findViewById(R.id.listCountry);
         
         //addes images to list items
@@ -47,8 +72,7 @@ public class multilist extends Activity {
         
         countryList.setAdapter(new ImageAndTextListAdapter(this,l,countryList));
         
-        
-        /* creates a 2 coloum list view
+        //******** creates a 2 coloum list view
         countryList = (ListView) findViewById(R.id.listCountry); 
         stateList = (ListView) findViewById(R.id.listStates); 
         
@@ -57,8 +81,8 @@ public class multilist extends Activity {
 
         stateList.setAdapter(new ArrayAdapter<String>(this,
         		R.layout.rowlayout, STATES));
+        */		
         		
-        		*/
     }
     
     
