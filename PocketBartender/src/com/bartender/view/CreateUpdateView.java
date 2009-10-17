@@ -2,6 +2,9 @@ package com.bartender.view;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bartender.R;
+import com.bartender.domain.NewDrinkDomain;
 import com.bartender.domain.ScreenType;
 
 public class CreateUpdateView extends Activity implements OnClickListener {
@@ -38,7 +42,7 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		if(selectedRow > 0)
 		{
 			TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
-			newCatNm.setText("The new Cat");
+			newCatNm.setText(NewDrinkDomain.getInstance().getCategoryName());
 		}
 		
 		btnIng = (Button) findViewById(R.id.btnNewIng);
@@ -62,7 +66,7 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		
 		if(view==btnIng)
 		{
-			intent = new Intent(this, IngredientsListView.class);
+			intent = new Intent(this, IngredientsHomeView.class);
 			startActivity(intent);
 		}
 		else if(view==btnCat) 
@@ -80,7 +84,13 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 	OnFocusChangeListener onFocusListener = new OnFocusChangeListener(){
 
 		public void onFocusChange(View v, boolean hasFocus) {
+			
+			CharSequence text = ((TextView)v).getText();
+			text.toString();
+			
+			
 			((TextView)v).setText("");
+			((TextView)v).setTextColor(Color.BLACK);
 			
 		}
 		

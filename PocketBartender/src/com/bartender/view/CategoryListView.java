@@ -65,7 +65,7 @@ public class CategoryListView extends ListViews {
     	//set id and name to create domain
     	NewDrinkDomain ndd = NewDrinkDomain.getInstance();
     	ndd.setCategoryId(id);
-    	ndd.setDrinkName(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_NAME)));
+    	ndd.setCategoryName(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_NAME)));
     	
     }
 
