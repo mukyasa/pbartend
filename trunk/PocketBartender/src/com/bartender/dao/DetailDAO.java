@@ -118,29 +118,4 @@ public class DetailDAO extends DataDAO{
 		}
 	}
 	
-	/**
-	 * Loads the drink in the spinner widget 
-	 * based on the id of the selected category
-	 * @param spinnerDrinkNames
-	 * @param drink
-	 * @param context
-	 */
-	public void loadDrinkIds(Spinner spinnerDrinkNames,DetailsDomain drink,Context context){
-		
-		String selectionArgs[] = {drink.getId()+""};
-		Cursor cursor = sqliteDatabase.rawQuery(DataDAO.sqlGetDrinkByCatId,selectionArgs);
-		
-		SimpleCursorAdapter adapter = new SimpleCursorAdapter(context,
-			    android.R.layout.simple_spinner_item,
-			    cursor,
-				new String[] {COL_NAME},
-				new int[] {android.R.id.text1}); 
-
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinnerDrinkNames.setAdapter(adapter);
-		
-		cursor.move(0);
-		drink.setDrinkType(cursor.getString(cursor.getColumnIndex(COL_NAME)));
-		
-	}
 }
