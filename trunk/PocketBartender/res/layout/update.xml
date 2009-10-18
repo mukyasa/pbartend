@@ -11,34 +11,46 @@ android:layout_width="fill_parent"
 android:layout_height="wrap_content"
  android:paddingRight="10.0sp"   
 >
-	<EditText android:id="@+id/etNewDrinkNm" 
-		   android:layout_height="wrap_content" 
-		   android:layout_width="fill_parent" 
-		   android:text="@string/create_drink_title" 
-		   android:textColor="#ccc"></EditText>
-	<TableRow >	   
-		<ImageView android:id="@+id/imgNewGlass" 
+<TextView android:id="@+id/tvTitle" 
+			   android:layout_width="wrap_content" 
+			   android:layout_height="wrap_content" 
+			   android:textColor="#000" 
+			   android:layout_marginTop="10.0sp" 
+			   android:layout_marginLeft="48px" 
+			   android:textStyle="bold" 
+			   android:textSize="14sp" 
+			   android:text="@string/create_drink_title"></TextView>
+<TableRow >				   
+	<ImageView android:id="@+id/imgNewGlass" 
 		android:layout_width="48.0px" 
 		android:layout_height="48.0px" 
-		android:layout_gravity="left"></ImageView>
+		android:layout_gravity="left" android:background="@drawable/icon"></ImageView>
 		
+		<EditText android:id="@+id/etNewDrinkNm" 
+		   android:layout_height="wrap_content" 
+		   android:layout_width="fill_parent" 
+		   android:textColor="#000"
+		   android:layout_gravity="left"
+		   android:layout_weight="2"></EditText>
+</TableRow>			
 		<TextView android:id="@+id/tvNewCategory" 
 			   android:layout_width="wrap_content" 
 			   android:layout_height="wrap_content" 
 			   android:textColor="#000" 
-			   android:textSize="18sp"
-			   android:layout_gravity="center"></TextView>
-	</TableRow>	   
+			   android:textSize="16sp"></TextView>
+	
+  
 	<Button android:id="@+id/btnNewCat"  
 		   android:layout_height="wrap_content" 
 		   android:layout_width="fill_parent" 
 		   android:text="@string/categoryText"></Button>
 
-		   <TextView android:id="@+id/tvNewIngredients" 
+	<TextView android:id="@+id/tvNewIngredients" 
 		   android:layout_width="wrap_content" 
 		   android:layout_height="wrap_content" 
 		   android:textColor="#000"
-		   android:textSize="18sp"  android:height="0.0sp"></TextView> 
+		   android:textSize="14sp" 
+		   android:layout_marginBottom="5.0sp"></TextView> 
 		   
 	<Button android:layout_width="wrap_content" 
 			android:layout_height="wrap_content" 
@@ -46,12 +58,16 @@ android:layout_height="wrap_content"
 			android:id="@+id/btnNewIng"></Button>
 		   
 	
-		   
+		
+		<TextView android:id="@+id/tvInstuctions" 
+			   android:layout_width="wrap_content" 
+			   android:layout_height="wrap_content" 
+			   android:textColor="#000" 
+			   android:layout_gravity="center" android:text="@string/instructionsText" android:layout_marginTop="10.0sp" android:textStyle="bold" android:textSize="14sp"></TextView>   
 	<EditText android:id="@+id/etDirections" 
 		   android:layout_width="wrap_content" 
 		   android:layout_height="wrap_content"
-		   android:textColor="#ccc" 
-		   android:text="@string/instructionsText"></EditText>
+		   android:textColor="#000"></EditText>
 		   
 	<Button android:layout_width="wrap_content" 
 			android:layout_height="wrap_content" 

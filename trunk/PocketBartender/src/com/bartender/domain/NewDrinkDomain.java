@@ -15,10 +15,10 @@ public class NewDrinkDomain {
 	private String categoryName;
 	private int ingredientsCat; //0,1,3
 	//Multiples
-	private String wholeAmount; 
-	private String halfAmount; 
-	private String measurment;
-	private String ingredientsName;
+	private String wholeAmount=null; 
+	private String halfAmount=null; 
+	private String measurment=null;
+	private String ingredientsName=null;
 	private List<String> ingredients= new ArrayList<String>();
 	
 	private static NewDrinkDomain newDrinkDomain = null;
@@ -46,8 +46,6 @@ public class NewDrinkDomain {
 	
 	public void addIngredients(String ing){
 		this.ingredients.add(ing);
-		this.wholeAmount = null;
-		this.halfAmount = null;
 		
 	}
 	

@@ -41,7 +41,14 @@
 	    android:fitsSystemWindows="true"></ListView>
 
 </LinearLayout>
-<Button android:id="@+id/btnAmountSave" android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/btnSave"></Button>
-<Button android:id="@+id/btnAmountCancel" android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/btnCancel"></Button>
+<Button android:id="@+id/btnAmountSave" 
+android:layout_height="wrap_content" 
+android:layout_width="fill_parent" 
+android:text="@string/btnSave"></Button>
+
+<Button android:id="@+id/btnAmountCancel" 
+android:layout_height="wrap_content" 
+android:layout_width="fill_parent" 
+android:text="@string/btnCancel"></Button>
 </LinearLayout>
 

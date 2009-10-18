@@ -42,8 +42,16 @@ public class AmountPicker extends Activity  implements OnClickListener{
         		
     }
     
-    protected void initComponents() {
+    protected void initComponents() 
+    {
 
+    	 //set event handlers to buttons
+        btnSave = (Button) findViewById(R.id.btnAmountSave);
+    	btnSave.setOnClickListener(this);
+		
+		btnCancel = (Button) findViewById(R.id.btnAmountCancel);
+		btnCancel.setOnClickListener(this);
+		
         listWholeNums = (ListView) findViewById(R.id.listWholeNums);
         listHalfNums = (ListView) findViewById(R.id.listHalfNums); 
         measurementtypes = (ListView)findViewById(R.id.listAmounts);
@@ -72,12 +80,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
         listWholeNums.setAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow, tmp));
         measurementtypes.setAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow, AMOUNTS));
         
-        //set event handlers to buttons
-        btnSave = (Button) findViewById(R.id.btnAmountSave);
-    	btnSave.setOnClickListener(this);
-		
-		btnCancel = (Button) findViewById(R.id.btnAmountCancel);
-		btnCancel.setOnClickListener(this);
+        NewDrinkDomain.getInstance().clearIngredients();
         
     }
     
@@ -87,7 +90,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
 		{
 			intent = new Intent(this, CreateUpdateView.class);
 			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
-			ndd.addIngredients(ndd.getWholeAmount() + " "+ndd.getHalfAmount() + " " + ndd.getIngredientsName());
+			ndd.addIngredients((ndd.getWholeAmount() != null ?ndd.getWholeAmount() : "") + " "+(ndd.getHalfAmount() !=null ? ndd.getHalfAmount():"") + " " + (ndd.getMeasurment() != null ?ndd.getMeasurment():"") + " " + ndd.getIngredientsName());
 			startActivity(intent);
 		}
 		else if(v==btnCancel)
