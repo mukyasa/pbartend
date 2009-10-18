@@ -1,12 +1,12 @@
 package com.bartender.view;
 
+import java.util.Iterator;
+
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnFocusChangeListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,7 +21,6 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 
 	private Intent intent;
 	private Button btnIng, btnSave,btnCat;
-	private EditText etDrinkTitle, etDirections;
 	long selectedRow=-1;
 	
 	@Override
@@ -44,11 +43,20 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 			newGlass.setBackgroundDrawable(NewDrinkDomain.getInstance().getGlassType());
 		}
 		
-		if(NewDrinkDomain.getInstance().getIngredientsName() != null)
+		if(NewDrinkDomain.getInstance().getIngredients() != null)
 		{
 			TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
-			newIngNm.setText(NewDrinkDomain.getInstance().getIngredientsName());
-			newIngNm.setHeight(20);
+			
+			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+			Iterator<String> iter = ndd.getIngredients().iterator();
+			StringBuffer ings =new StringBuffer();
+			
+			while(iter.hasNext())
+			{
+				ings.append(iter.next()+"\n");
+			}
+				 
+			newIngNm.setText(ings.toString());
 		}
 		
 		btnIng = (Button) findViewById(R.id.btnNewIng);
@@ -57,12 +65,6 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		btnCat = (Button) findViewById(R.id.btnNewCat);
 		btnCat.setOnClickListener(this);
 	
-		etDirections = (EditText) findViewById(R.id.etDirections);
-		etDirections.setOnFocusChangeListener(onFocusListener);
-	
-		etDrinkTitle = (EditText) findViewById(R.id.etNewDrinkNm); 
-		etDrinkTitle.setOnFocusChangeListener(onFocusListener);
-		
 		btnSave = (Button)findViewById(R.id.btnSave);
 		btnSave.setOnClickListener(this);
 
@@ -82,25 +84,11 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		}
 		else if(view == btnSave)
 		{
-			
+			NewDrinkDomain.getInstance().clearDomain();
 		}
 		
 	}
-	
-	OnFocusChangeListener onFocusListener = new OnFocusChangeListener(){
-
-		public void onFocusChange(View v, boolean hasFocus) {
-			
-			CharSequence text = ((TextView)v).getText();
-			text.toString();
-			
-			
-			((TextView)v).setText("");
-			((TextView)v).setTextColor(Color.BLACK);
-			
-		}
 		
 		
-	};
 	
 }
