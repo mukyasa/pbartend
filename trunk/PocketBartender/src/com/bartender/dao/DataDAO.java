@@ -61,7 +61,6 @@ public class DataDAO{
 	
 	public static final String sqlGetDrinkDetailByDrinkName ="SELECT d.name,d._id FROM "+TABLE_DRINK+" d where d."+COL_NAME+"=?;";
 	public static final String sqlGetDrinkDetailByDrinkCatName ="SELECT d.name,d._id FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
-	public static final String sqlGetDrinkByCatId = "";//SELECT d.*, dt.drinktype FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" WHERE dt."+COL_ROW_ID+"=?";
 	public static final String sqlGetAllFavorites = "SELECT d.name,d._id,d.favorite FROM "+TABLE_DRINK+" d where favorite =?";
 	
 	public static final String sqlGetDrinksByDrinkCatId = "SELECT  d.name,d._id " +
@@ -97,6 +96,7 @@ public class DataDAO{
 	+"INNER JOIN "+TABLE_INGREDIENTS_CAT+" ic on ic._id = i.category_id "
 	+"WHERE i._id =? and ic.name=? order by d.name";
 	
+	public static final String sqlGetAllMeasurements="SELECT fraction FROM " + TABLE_FRACTIONAL_AMOUNTS + ";";
 	
 	public static final String sqlInsertNewDrink="INSERT INTO tblDrinks (glass_id,name,instructions,category_id,flagged,favorite,custom) "	+
 			"values(2,'Darren Test 2','do some work and make a drink',1,0,0,1);";

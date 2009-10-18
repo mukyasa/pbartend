@@ -1,5 +1,8 @@
 package com.bartender.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.graphics.drawable.Drawable;
 
 public class NewDrinkDomain {
@@ -12,8 +15,11 @@ public class NewDrinkDomain {
 	private String categoryName;
 	private int ingredientsCat; //0,1,3
 	//Multiples
-	private String amount; 
+	private String wholeAmount; 
+	private String halfAmount; 
+	private String measurment;
 	private String ingredientsName;
+	private List<String> ingredients= new ArrayList<String>();
 	
 	private static NewDrinkDomain newDrinkDomain = null;
 	public static final int SCREEN_TYPE_CAT=0;
@@ -21,6 +27,37 @@ public class NewDrinkDomain {
 	public static final int SCREEN_TYPE_NEW=2;
 	
 	
+	
+	public String getMeasurment() {
+		return measurment;
+	}
+
+	public void setMeasurment(String measurment) {
+		this.measurment = measurment;
+	}
+
+	public List<String> getIngredients() {
+		return ingredients;
+	}
+
+	public void setIngredients(List<String> ingredients) {
+		this.ingredients = ingredients;
+	}
+	
+	public void addIngredients(String ing){
+		this.ingredients.add(ing);
+		this.wholeAmount = null;
+		this.halfAmount = null;
+		
+	}
+	
+	public void clearIngredients()
+	{
+		this.measurment=null;
+		this.wholeAmount = null;
+		this.halfAmount = null;
+	}
+
 	public Drawable getGlassType() {
 		return glassType;
 	}
@@ -90,20 +127,28 @@ public class NewDrinkDomain {
 		this.ingredientsCat = ingredientsCat;
 	}
 
-	public String getAmount() {
-		return amount;
-	}
-
-	public void setAmount(String amount) {
-		this.amount = amount;
-	}
-
 	public String getIngredientsName() {
 		return ingredientsName;
 	}
 
 	public void setIngredientsName(String ingredientsName) {
 		this.ingredientsName = ingredientsName;
+	}
+
+	public String getWholeAmount() {
+		return wholeAmount;
+	}
+
+	public void setWholeAmount(String wholeAmount) {
+		this.wholeAmount = wholeAmount;
+	}
+
+	public String getHalfAmount() {
+		return halfAmount;
+	}
+
+	public void setHalfAmount(String halfAmount) {
+		this.halfAmount = halfAmount;
 	}
 	
 	
