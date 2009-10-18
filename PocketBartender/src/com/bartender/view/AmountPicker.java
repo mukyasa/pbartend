@@ -73,10 +73,10 @@ public class AmountPicker extends Activity  implements OnClickListener{
         measurementtypes.setAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow, AMOUNTS));
         
         //set event handlers to buttons
-        btnSave = (Button) findViewById(R.id.btnSave);
+        btnSave = (Button) findViewById(R.id.btnAmountSave);
     	btnSave.setOnClickListener(this);
 		
-		btnCancel = (Button) findViewById(R.id.btnCancel);
+		btnCancel = (Button) findViewById(R.id.btnAmountCancel);
 		btnCancel.setOnClickListener(this);
         
     }
