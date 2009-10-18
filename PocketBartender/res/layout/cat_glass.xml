@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:paddingLeft="10.0sp" android:paddingRight="10.0sp" android:paddingTop="10.0sp" android:paddingBottom="10.0sp">
+	android:layout_height="fill_parent">
 	
 	<LinearLayout
 	android:orientation="horizontal"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:layout_weight="1">
+	android:layout_weight="1" 
+	android:paddingBottom="10.0sp" 
+	android:paddingLeft="10.0sp" 
+	android:paddingRight="10.0sp" android:paddingTop="10.0sp"
+	android:background="@drawable/spinnerbg">
 
 
 	<ListView android:id="@+id/listCategories" 
@@ -30,7 +34,7 @@
 	    
 	    
 </LinearLayout>
-<Button android:id="@+id/btnSave" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginTop="5.0sp" android:text="@string/btnSave"></Button>
-<Button android:id="@+id/btnCancel" android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/btnCancel"></Button>
+<Button android:id="@+id/btnSave" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginTop="5.0sp" android:text="@string/btnSave" android:layout_marginLeft="10.0sp" android:layout_marginRight="10.0sp"></Button>
+<Button android:id="@+id/btnCancel" android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/btnCancel" android:layout_marginLeft="10.0sp" android:layout_marginRight="10.0sp"></Button>
 </LinearLayout>
 
