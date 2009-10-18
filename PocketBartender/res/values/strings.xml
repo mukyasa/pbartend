@@ -12,4 +12,6 @@
     <string name="garnishText">Garnish</string>
 <string name="tvListTitle">TITLE</string>
 <string name="save">Save</string>
+<string name="btnSave">Save</string>
+<string name="btnCancel">Cancel</string>
 </resources>
