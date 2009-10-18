@@ -1,15 +1,32 @@
 package com.bartender.view;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.bartender.R;
+import com.bartender.common.AppCommon;
+import com.bartender.dao.DataDAO;
+import com.bartender.dao.DatabaseAdapter;
+import com.bartender.domain.NewDrinkDomain;
 
-public class AmountPicker extends Activity {
+public class AmountPicker extends Activity  implements OnClickListener{
 	
-	 ListView listWholeNums,listHalfNums,measurementtypes; 
+	 private ListView listWholeNums,listHalfNums,measurementtypes;
+	 private Button btnSave,btnCancel;
+	 private Intent intent;
+	 protected DatabaseAdapter myDatabaseAdapter;
 	
     /** Called when the activity is first created. */
     @Override
@@ -20,6 +37,11 @@ public class AmountPicker extends Activity {
 
         listWholeNums = (ListView) findViewById(R.id.listWholeNums);
         listHalfNums = (ListView) findViewById(R.id.listHalfNums); 
+        measurementtypes = (ListView)findViewById(R.id.listAmounts);
+        
+        listHalfNums.setOnItemClickListener(onHalfItemListener);
+        listWholeNums.setOnItemClickListener(onWholeItemListener);
+        measurementtypes.setOnItemClickListener(onMeasureItemListener);
         
         listHalfNums.setAdapter(new ArrayAdapter<String>(this,
         		R.layout.textviewrow, COUNTRIES));
@@ -27,11 +49,25 @@ public class AmountPicker extends Activity {
         listWholeNums.setAdapter(new ArrayAdapter<String>(this,
         		R.layout.textviewrow, WHOLENUMBERS));
         
-        measurementtypes = (ListView)findViewById(R.id.listAmounts);
         measurementtypes.setAdapter(new ArrayAdapter<String>(this,
         		R.layout.textviewrow, AMOUNTS));
         		
     }
+    
+    public void onClick(View v) {
+
+    	if(v==btnSave)
+		{
+			intent = new Intent(this, CreateUpdateView.class);
+			startActivity(intent);
+		}
+		else if(v==btnCancel)
+		{
+			intent = new Intent(this, CreateUpdateView.class);
+			startActivity(intent);
+		}
+    	
+	}
     
     static final String[] AMOUNTS = new String[] {"cup","oz","pint","quart","gallon","tsp","tbsp","lb","bottles(s)"
     	,"can(s)"
@@ -89,5 +125,49 @@ public class AmountPicker extends Activity {
         "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Wallis and Futuna", "Western Sahara",
         "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"
       };
+    
+    private void setBackgroundDefault(AdapterView<?> parent)
+    {
+    	for(int i=0;i<parent.getCount();i++)
+		{
+			View vv = parent.getChildAt(i);
+			if(vv != null)
+				vv.setBackgroundColor(AppCommon.defaultColor);
+		}
+    }
+    
+    AdapterView.OnItemClickListener onWholeItemListener = new OnItemClickListener(){
+		
+    	public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
+
+    		//set all to white
+    		setBackgroundDefault(parent);
+    		NewDrinkDomain.getInstance().
+    		
+			v.setBackgroundColor(AppCommon.color);
+			
+			}};
+			
+	AdapterView.OnItemClickListener onHalfItemListener = new OnItemClickListener(){
+		
+		public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
+	
+			//set all to white
+			setBackgroundDefault(parent);
+			
+			v.setBackgroundColor(AppCommon.color);
+			
+			}};
+					
+	AdapterView.OnItemClickListener onMeasureItemListener = new OnItemClickListener(){
+		
+    	public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
+
+    		//set all to white
+    		setBackgroundDefault(parent);
+    		
+			v.setBackgroundColor(AppCommon.color);
+			
+			}};
 
 }

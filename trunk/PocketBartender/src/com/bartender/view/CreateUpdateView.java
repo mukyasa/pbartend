@@ -44,6 +44,12 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 			newGlass.setBackgroundDrawable(NewDrinkDomain.getInstance().getGlassType());
 		}
 		
+		if(NewDrinkDomain.getInstance().getIngredientsName() != null)
+		{
+			TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
+			newIngNm.setText(NewDrinkDomain.getInstance().getIngredientsName());
+		}
+		
 		btnIng = (Button) findViewById(R.id.btnNewIng);
 		btnIng.setOnClickListener(this);
 			
