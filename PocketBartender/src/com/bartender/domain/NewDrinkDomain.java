@@ -4,7 +4,7 @@ public class NewDrinkDomain {
 	
 	private String drinkName;
 	private String instructions;
-	private int glassId;
+	private long glassId;
 	private long categoryId;
 	private String categoryName;
 	private int ingredientsCat; //0,1,3
@@ -54,11 +54,11 @@ public class NewDrinkDomain {
 		this.instructions = instructions;
 	}
 
-	public int getGlassId() {
+	public long getGlassId() {
 		return glassId;
 	}
 
-	public void setGlassId(int glassId) {
+	public void setGlassId(long glassId) {
 		this.glassId = glassId;
 	}
 

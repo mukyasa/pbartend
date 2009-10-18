@@ -5,9 +5,24 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-<Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="15.0sp" android:text="@string/liquorText" android:id="@+id/btnLiquor"></Button>
-<Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="15.0sp" android:text="@string/mixersText" android:id="@+id/btnMixers"></Button>
-<Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_gravity="bottom" android:text="@string/garnishText" android:id="@+id/btnGarnish"></Button>
+<Button android:layout_width="fill_parent" 
+android:layout_height="wrap_content" 
+android:layout_marginRight="10.0sp" 
+android:layout_marginBottom="5.0sp" 
+android:text="@string/liquorText" 
+android:id="@+id/btnLiquor"></Button>
+<Button android:layout_width="fill_parent" 
+android:layout_height="wrap_content" 
+android:layout_marginRight="10.0sp" 
+android:layout_marginBottom="5.0sp" 
+android:text="@string/mixersText" 
+android:id="@+id/btnMixers"></Button>
+<Button android:layout_width="fill_parent" 
+android:layout_height="wrap_content" 
+android:layout_marginRight="10.0sp" 
+android:layout_gravity="bottom" 
+android:text="@string/garnishText" 
+android:id="@+id/btnGarnish"></Button>
 
 </LinearLayout>
 </ScrollView>

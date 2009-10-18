@@ -39,9 +39,7 @@ android:layout_height="wrap_content"
 			android:text="@string/ingredientsText" 
 			android:id="@+id/btnNewIng"></Button>
 		   
-	<TextView android:id="@+id/tvNewIngredients" 
-		   android:layout_width="wrap_content" 
-		   android:layout_height="wrap_content"></TextView>
+	
 		   
 	<EditText android:id="@+id/etDirections" 
 		   android:layout_width="wrap_content" 
