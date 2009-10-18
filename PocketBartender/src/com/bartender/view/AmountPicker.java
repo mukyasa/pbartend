@@ -14,9 +14,9 @@ public class AmountPicker extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState); 
         
-        setContentView(com.bartender.R.layout.amounts);
+        setContentView(R.layout.amounts);
 
         listWholeNums = (ListView) findViewById(R.id.listWholeNums);
         listHalfNums = (ListView) findViewById(R.id.listHalfNums); 
