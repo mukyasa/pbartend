@@ -48,6 +48,7 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		{
 			TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
 			newIngNm.setText(NewDrinkDomain.getInstance().getIngredientsName());
+			newIngNm.setHeight(20);
 		}
 		
 		btnIng = (Button) findViewById(R.id.btnNewIng);

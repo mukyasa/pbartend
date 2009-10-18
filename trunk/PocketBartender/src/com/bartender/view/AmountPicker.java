@@ -72,6 +72,13 @@ public class AmountPicker extends Activity  implements OnClickListener{
         listWholeNums.setAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow, tmp));
         measurementtypes.setAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow, AMOUNTS));
         
+        //set event handlers to buttons
+        btnSave = (Button) findViewById(R.id.btnSave);
+    	btnSave.setOnClickListener(this);
+		
+		btnCancel = (Button) findViewById(R.id.btnCancel);
+		btnCancel.setOnClickListener(this);
+        
     }
     
     public void onClick(View v) {
@@ -79,9 +86,9 @@ public class AmountPicker extends Activity  implements OnClickListener{
     	if(v==btnSave)
 		{
 			intent = new Intent(this, CreateUpdateView.class);
-			startActivity(intent);
 			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
 			ndd.addIngredients(ndd.getWholeAmount() + " "+ndd.getHalfAmount() + " " + ndd.getIngredientsName());
+			startActivity(intent);
 		}
 		else if(v==btnCancel)
 		{
