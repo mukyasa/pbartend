@@ -26,18 +26,13 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.update);
-		ScreenType.getInstance().setScreenType(ScreenType.SCREEN_TYPE_NEW);
-		
-		selectedRow = getIntent().getLongExtra(ListViews.INTENT_EXTRA_SELECTED_ROW, 0);
-		
 		initComponents();
 	}
 
 	
 	private void initComponents() {
 		
-		
-		if(selectedRow > 0)
+		if("".equalsIgnoreCase(NewDrinkDomain.getInstance().getCategoryName()))
 		{
 			TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
 			newCatNm.setText(NewDrinkDomain.getInstance().getCategoryName());

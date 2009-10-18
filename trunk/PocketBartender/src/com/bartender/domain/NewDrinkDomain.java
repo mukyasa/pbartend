@@ -1,10 +1,13 @@
 package com.bartender.domain;
 
+import android.graphics.drawable.Drawable;
+
 public class NewDrinkDomain {
 	
 	private String drinkName;
 	private String instructions;
 	private long glassId;
+	private Drawable glassType;
 	private long categoryId;
 	private String categoryName;
 	private int ingredientsCat; //0,1,3
@@ -17,6 +20,15 @@ public class NewDrinkDomain {
 	public static final int SCREEN_TYPE_ING=1;
 	public static final int SCREEN_TYPE_NEW=2;
 	
+	
+	public Drawable getGlassType() {
+		return glassType;
+	}
+
+	public void setGlassType(Drawable glassType) {
+		this.glassType = glassType;
+	}
+
 	public static NewDrinkDomain getInstance()
     {
       if (newDrinkDomain == null)
