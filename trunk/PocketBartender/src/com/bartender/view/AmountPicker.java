@@ -22,14 +22,14 @@ public class AmountPicker extends Activity {
         listHalfNums = (ListView) findViewById(R.id.listHalfNums); 
         
         listHalfNums.setAdapter(new ArrayAdapter<String>(this,
-        		R.layout.amountrow, COUNTRIES));
+        		R.layout.textviewrow, COUNTRIES));
 
         listWholeNums.setAdapter(new ArrayAdapter<String>(this,
-        		R.layout.amountrow, WHOLENUMBERS));
+        		R.layout.textviewrow, WHOLENUMBERS));
         
         measurementtypes = (ListView)findViewById(R.id.listAmounts);
         measurementtypes.setAdapter(new ArrayAdapter<String>(this,
-        		R.layout.amountrow, AMOUNTS));
+        		R.layout.textviewrow, AMOUNTS));
         		
     }
     

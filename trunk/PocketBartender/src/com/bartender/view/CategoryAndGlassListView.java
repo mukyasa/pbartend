@@ -4,30 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.bartender.R;
+import com.bartender.dao.DataDAO;
+import com.bartender.domain.NewDrinkDomain;
 
-public class CategoryAndGlassListView extends Activity implements OnClickListener  {
+public class CategoryAndGlassListView extends Activity {
 	
 	 ListView listCategories,listGlasses; 
 	
     /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {  
         super.onCreate(savedInstanceState);
         
-        setContentView(com.bartender.R.layout.amounts);
+        setContentView(com.bartender.R.layout.cat_glass);
 
-        listCategories = (ListView) findViewById(R.id.listWholeNums);
+        listCategories = (ListView) findViewById(R.id.listCategories);
         
         listCategories.setAdapter(new ArrayAdapter<String>(this,
-        		R.layout.amountrow, CATEGORIES));
+        		R.layout.textviewrow, CATEGORIES));
         
         listGlasses = (ListView)findViewById(R.id.listGlasses);
         
@@ -54,19 +59,29 @@ public class CategoryAndGlassListView extends Activity implements OnClickListene
 
         
         listGlasses.setAdapter(new ImageListAdapter(this,imageList,listGlasses));
-        
-        listCategories.setOnClickListener(this);
-        listGlasses.setOnClickListener(this);
-        		
-        		
-    }
+       
+       //inner class
+       AdapterView.OnItemClickListener onItemClick = new OnItemClickListener(){
 
-    public void onClick(View view) {
-    	Object o = view.getClass();
-    	
-    }
+			public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
+
+				Log.v(getClass().getSimpleName(), "class name=" + v.getClass().toString());
+				Cursor cursor = (Cursor) parent.getItemAtPosition(position);
+		    	//set id and name to create domain
+		    	NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+		    	//cat info
+		    	ndd.setCategoryId(id);
+		    	ndd.setCategoryName(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_NAME)));
+		    	//glass id
+		    	ndd.setGlassId(id);
+			}};
+			
+		listGlasses.setOnItemClickListener(onItemClick);
+		listCategories.setOnItemClickListener(onItemClick);
+		        
     
-
+    }
+   
     
     static final String[] CATEGORIES = new String[] {
         "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra",
@@ -111,5 +126,6 @@ public class CategoryAndGlassListView extends Activity implements OnClickListene
         "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Wallis and Futuna", "Western Sahara",
         "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"
       };
+
 
 }
