@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -24,11 +26,13 @@ import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
 import com.bartender.domain.NewDrinkDomain;
 
-public class CategoryAndGlassListView extends Activity {
+public class CategoryAndGlassListView extends Activity implements OnClickListener {
 	
 	private CategoryDAO dataDAO = new CategoryDAO();
 	protected DatabaseAdapter myDatabaseAdapter;
 	private ListView listCategories,listGlasses; 
+	private Button btnSave,btnCancel;
+	private Intent intent;
 	
     /** Called when the activity is first created. */
     @Override
@@ -39,9 +43,29 @@ public class CategoryAndGlassListView extends Activity {
         initComponents();
     }
    
+    public void onClick(View v) {
+
+    	if(v==btnSave)
+		{
+			intent = new Intent(this, CreateUpdateView.class);
+			startActivity(intent);
+		}
+		else if(v==btnCancel)
+		{
+			intent = new Intent(this, CreateUpdateView.class);
+			startActivity(intent);
+		}
+    	
+	}
     
     private void initComponents() {
 
+    	btnSave = (Button) findViewById(R.id.btnSave);
+    	btnSave.setOnClickListener(this);
+		
+		btnCancel = (Button) findViewById(R.id.btnCancel);
+		btnCancel.setOnClickListener(this);
+		
         //instantiate the objects
     	listCategories = (ListView) findViewById(R.id.listCategories);
         listGlasses = (ListView)findViewById(R.id.listGlasses);
@@ -102,7 +126,12 @@ public class CategoryAndGlassListView extends Activity {
     		
 			if(v instanceof ImageView)
 			{
-		    	NewDrinkDomain.getInstance().setGlassId(id);
+				Drawable glassType = (Drawable) parent.getItemAtPosition(position);
+				
+				NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+				ndd.setGlassId(id);
+				ndd.setGlassType(glassType);
+		    	
 			}
 			else
 			{
@@ -117,6 +146,5 @@ public class CategoryAndGlassListView extends Activity {
 			v.setBackgroundColor(AppCommon.color);
 			
 			}};
-
 
 }
