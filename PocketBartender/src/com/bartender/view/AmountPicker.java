@@ -18,6 +18,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.bartender.R;
 import com.bartender.common.AppCommon;
+import com.bartender.dao.DataDAO;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
 import com.bartender.dao.IngredientsDAO;
@@ -131,8 +132,9 @@ public class AmountPicker extends Activity  implements OnClickListener{
 	
 			//set all to white
 			setBackgroundDefault(parent);
-			NewDrinkDomain.getInstance().setHalfAmount((String)parent.getItemAtPosition(position));
+			Cursor cursor = (Cursor)parent.getItemAtPosition(position);
 			
+			NewDrinkDomain.getInstance().setHalfAmount(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));		
 			v.setBackgroundColor(AppCommon.color);
 			
 			}};
