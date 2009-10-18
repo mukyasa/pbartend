@@ -9,11 +9,13 @@ import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bartender.R;
 import com.bartender.domain.NewDrinkDomain;
 import com.bartender.domain.ScreenType;
+
 
 public class CreateUpdateView extends Activity implements OnClickListener {
 
@@ -26,16 +28,20 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.update);
+		ScreenType.getInstance().setScreenType(ScreenType.SCREEN_TYPE_NEW);
+		
 		initComponents();
 	}
 
 	
 	private void initComponents() {
 		
-		if("".equalsIgnoreCase(NewDrinkDomain.getInstance().getCategoryName()))
+		if(NewDrinkDomain.getInstance().getCategoryName()!=null)
 		{
 			TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
+			ImageView newGlass = (ImageView)findViewById(R.id.imgNewGlass);
 			newCatNm.setText(NewDrinkDomain.getInstance().getCategoryName());
+			newGlass.setBackgroundDrawable(NewDrinkDomain.getInstance().getGlassType());
 		}
 		
 		btnIng = (Button) findViewById(R.id.btnNewIng);

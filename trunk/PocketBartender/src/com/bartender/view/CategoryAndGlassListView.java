@@ -24,7 +24,7 @@ import com.bartender.dao.CategoryDAO;
 import com.bartender.dao.DataDAO;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
-import com.bartender.domain.NewDrinkDomain;
+import com.bartender.domain.NewDrinkDomain; 
 
 public class CategoryAndGlassListView extends Activity implements OnClickListener {
 	
