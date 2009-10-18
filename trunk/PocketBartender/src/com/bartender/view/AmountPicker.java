@@ -35,7 +35,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); 
-        
+        myDatabaseAdapter = DatabaseAdapter.getInstance(this);
         setContentView(R.layout.amounts);
         initComponents();
         		

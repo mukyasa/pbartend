@@ -29,8 +29,8 @@ public class IngredientsDAO extends DataDAO {
 	
 	public Cursor retrieveAllMeasurements()
 	{
-		String [] selectionArgs = {""};
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllMeasurements, selectionArgs);
+		Cursor cursor = sqliteDatabase.query(TABLE_FRACTIONAL_AMOUNTS, new String[] {
+				COL_ROW_ID, COL_FRACTION }, null, null, null, null, null);
 
 		return cursor;
 	}
