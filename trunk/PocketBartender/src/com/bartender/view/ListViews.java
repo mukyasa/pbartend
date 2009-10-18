@@ -3,6 +3,7 @@ package com.bartender.view;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -15,6 +16,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import com.bartender.R;
+import com.bartender.common.AppCommon;
 import com.bartender.dao.DataDAO;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.domain.DetailsDomain;
@@ -54,6 +56,7 @@ public abstract class ListViews extends ListActivity{
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 	{
 			super.onListItemClick(l, v, position, id);
+			v.setBackgroundColor(AppCommon.color);
 			Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().getType());
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
 			startActivityForResult(intent, INTENT_NEXT_SCREEN);
