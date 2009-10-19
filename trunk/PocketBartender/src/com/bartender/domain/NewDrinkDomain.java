@@ -7,12 +7,12 @@ import android.graphics.drawable.Drawable;
 
 public class NewDrinkDomain {
 	
-	private String drinkName;
-	private String instructions;
+	private String drinkName=null;
+	private String instructions=null;
 	private long glassId;
 	private Drawable glassType;
 	private long categoryId;
-	private String categoryName;
+	private String categoryName=null;
 	private int ingredientsCat; //0,1,3
 	//Multiples
 	private String wholeAmount=null; 

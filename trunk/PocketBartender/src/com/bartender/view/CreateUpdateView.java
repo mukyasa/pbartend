@@ -39,19 +39,20 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 	
 	private void initComponents() {
 		
-		if(NewDrinkDomain.getInstance().getCategoryName()!=null)
+		NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+		
+		if(ndd.getCategoryName()!=null)
 		{
 			TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
 			ImageView newGlass = (ImageView)findViewById(R.id.imgNewGlass);
-			newCatNm.setText(NewDrinkDomain.getInstance().getCategoryName());
-			newGlass.setBackgroundDrawable(NewDrinkDomain.getInstance().getGlassType());
+			newCatNm.setText(ndd.getCategoryName());
+			newGlass.setBackgroundDrawable(ndd.getGlassType());
 		}
 		
-		if(NewDrinkDomain.getInstance().getIngredients() != null)
+		if(ndd.getIngredients() != null && ndd.getIngredients().size() > 0)
 		{
 			TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
 			
-			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
 			Iterator<String> iter = ndd.getIngredients().iterator();
 			StringBuffer ings =new StringBuffer();
 			
@@ -62,6 +63,19 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 				 
 			newIngNm.setText(ings.toString());
 		}
+		
+		if(ndd.getDrinkName() != null)
+		{
+			EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
+			drinkName.setText(ndd.getDrinkName());
+		}
+		
+		if(ndd.getInstructions() != null)
+		{
+			EditText directions = (EditText)findViewById(R.id.etDirections);
+			directions.setText(ndd.getInstructions());
+		}
+		
 		
 		btnIng = (Button) findViewById(R.id.btnNewIng);
 		btnIng.setOnClickListener(this);
@@ -78,11 +92,25 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		
 		if(view==btnIng)
 		{
+			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+			EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
+			EditText directions = (EditText)findViewById(R.id.etDirections);
+			
+			ndd.setDrinkName(drinkName.getText().toString());
+			ndd.setInstructions(directions.getText().toString());
+			
 			intent = new Intent(this, IngredientsHomeView.class);
 			startActivity(intent);
 		}
 		else if(view==btnCat) 
 		{
+			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+			EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
+			EditText directions = (EditText)findViewById(R.id.etDirections);
+			
+			ndd.setDrinkName(drinkName.getText().toString());
+			ndd.setInstructions(directions.getText().toString());
+			
 			intent = new Intent(this, CategoryAndGlassListView.class);
 			startActivity(intent);
 		}
@@ -106,7 +134,7 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 				EditText directions = (EditText)findViewById(R.id.etDirections);
 				
 				ndd.setDrinkName(drinkName.getText().toString());
-				ndd.setCategoryName(directions.getText().toString());
+				ndd.setInstructions(directions.getText().toString());
 				
 				//insert into drink table
 				dataDAO.insertNewDrink(ndd.getDrinkName(), ndd.getCategoryId(), ndd.getGlassId(), ndd.getInstructions());
