@@ -140,7 +140,8 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 				ndd.setInstructions(directions.getText().toString());
 				
 				//insert into drink table
-				dataDAO.insertNewDrink(ndd.getDrinkName(), ndd.getCategoryId(), ndd.getGlassId(), ndd.getInstructions());
+				long returnVal = dataDAO.insertNewDrink(ndd.getDrinkName(), ndd.getCategoryId(), ndd.getGlassId(), ndd.getInstructions());
+				
 				
 			}
 			
@@ -153,3 +154,4 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		
 	
 }
+
