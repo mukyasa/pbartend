@@ -48,7 +48,7 @@ public class IngredientsListView extends ListViews {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor = dataDAO.retrieveAllIngredients(ingtype.getType());
     	startManagingCursor(recordscCursor);
-    	String[] from = new String[] { DrinkListDAO.COL_NAME };
+    	String[] from = new String[] { DrinkListDAO.COL_CAT_NAME };
 		int[] to = new int[] { R.id.tfName};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
 				R.layout.item_row, recordscCursor, from, to);
@@ -59,11 +59,11 @@ public class IngredientsListView extends ListViews {
    @Override
    protected void onListItemClick(ListView l, View v, int position, long id) {
    	super.onListItemClick(l, v, position, id);
-   	
+	
    	Cursor cursor = (Cursor) l.getItemAtPosition(position);
    	//set id and name to create domain
    	NewDrinkDomain ndd = NewDrinkDomain.getInstance();
-   	ndd.setIngredientsName(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_NAME)));
+   	ndd.setIngredientsName(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_CAT_NAME)));
    	
    }
    

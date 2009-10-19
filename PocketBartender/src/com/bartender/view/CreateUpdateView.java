@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.bartender.R;
 import com.bartender.dao.CreateUpdateDAO;
+import com.bartender.dao.DatabaseAdapter;
 import com.bartender.domain.NewDrinkDomain;
 import com.bartender.domain.ScreenType;
 
@@ -25,12 +26,14 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 	private Intent intent;
 	private Button btnIng, btnSave,btnCat;
 	long selectedRow=-1;
+	protected DatabaseAdapter myDatabaseAdapter;
 	CreateUpdateDAO dataDAO = new CreateUpdateDAO();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.update);
+		myDatabaseAdapter = DatabaseAdapter.getInstance(this);
 		ScreenType.getInstance().setScreenType(ScreenType.SCREEN_TYPE_NEW);
 		
 		initComponents();
@@ -40,7 +43,7 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 	private void initComponents() {
 		
 		NewDrinkDomain ndd = NewDrinkDomain.getInstance();
-		
+		dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());		
 		if(ndd.getCategoryName()!=null)
 		{
 			TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
