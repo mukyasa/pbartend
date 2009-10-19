@@ -71,7 +71,7 @@ public class NewDrinkDomain {
       return newDrinkDomain;
     }
 	
-	public static void clearDomain(){
+	public void clearDomain(){
 		
 		newDrinkDomain = null;
 	}
