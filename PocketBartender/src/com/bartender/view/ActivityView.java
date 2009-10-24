@@ -33,75 +33,60 @@ public class ActivityView extends Activity {
 	private static final int MENU_REMOVE_FAV=1;
 	private static final int MENU_HOME=2;
 	
-	public static final String champagne="champagne";
-    public static final String cocktail="cocktail";
-    public static final String highball="highball";
-    public static final String hurricane="hurricane";
-    public static final String irish="irish coffee";
-    public static final String pint="pint";
-    public static final String margarita="margarita";
-    public static final String mug="mug";
-    public static final String parfait="parfait";
-    public static final String pilsner="pilsner";
-    public static final String pousse_cafe="pousse cafe";
-    public static final String punch="punch";
-    public static final String rocks="rocks";
-    public static final String shot="shot";
-    public static final String snifter="snifter";
-    public static final String sour="sour";
-    public static final String wine="wine";
+	public static final String[] glasses= {"champagne","cocktail","highball","hurricane","irish coffee",
+	"pint","margarita","mug","parfait","pilsner","pousse cafe","punch","rocks","shot","snifter","sour","wine"};
 	
 	/**
 	 * sets shared values to domain object
 	 */
 	protected void setViewItems()
 	{
-		tvDrinkName.setText(drinkdetail.getDrinkName());
-		tvDrinktype.setText(drinkdetail.getDrinkType());
-		tvIng1.setText(drinkdetail.getIngredients());
-		tvInstructions.setText(drinkdetail.getInstructions());
+		tvDrinkName.setText(drinkdetail.drinkName);
+		tvDrinktype.setText(drinkdetail.drinkType);
+		tvIng1.setText(drinkdetail.ingredients);
+		tvInstructions.setText(drinkdetail.instructions);
 		
 		//only show fav star if is a favorite
 		LayoutParams params = favImageButton.getLayoutParams();
-		if(DetailDAO.FAV_NO.equalsIgnoreCase(drinkdetail.getFavorites()))
+		if(DetailDAO.FAV_NO.equalsIgnoreCase(drinkdetail.favorites))
 			params.height = 0;
 		else
 			params.height=36;
 		
 		//set glass image
-		if(champagne.equalsIgnoreCase(drinkdetail.getGlass()))
+		if(glasses[0].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.champ);
-		else if(cocktail.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[1].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.cocktail);
-		else if(highball.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[2].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.highball);
-		else if(hurricane.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[3].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.hurricane);
-		else if(irish.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[4].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.irish);
-		else if(pint.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[5].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.pint);
-		else if(margarita.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[6].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.margarita);
-		else if(mug.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[7].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.mug);
-		else if(parfait.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[8].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.parfait);
-		else if(pilsner.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[9].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.pilsner);
-		else if(pousse_cafe.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[10].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.pousse_cafe);
-		else if(punch.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[11].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.punch);
-		else if(rocks.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[12].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.rocks);
-		else if(shot.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[13].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.shot);
-		else if(snifter.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[14].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.snifter);
-		else if(sour.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[15].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.sour);
-		else if(wine.equalsIgnoreCase(drinkdetail.getGlass()))
+		else if(glasses[16].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.wine);
 	}
 	
@@ -134,13 +119,13 @@ public class ActivityView extends Activity {
 			startActivity(intent);
 	    	return true;
 	    case MENU_ADD_FAV:
-	    	drinkdao.setFavoritesYes(drinkdetail.getId());
-	    	drinkdetail.setFavorites(DetailDAO.FAV_YES);
+	    	drinkdao.setFavoritesYes(drinkdetail.id);
+	    	drinkdetail.favorites = DetailDAO.FAV_YES;
 	    	setViewItems();
 	        return true;
 	    case MENU_REMOVE_FAV:
-	    	drinkdao.removeFavorite(drinkdetail.getId());
-	    	drinkdetail.setFavorites(DetailDAO.FAV_NO);
+	    	drinkdao.removeFavorite(drinkdetail.id);
+	    	drinkdetail.favorites = DetailDAO.FAV_NO;
 	    	setViewItems();
 	    	return true;
 	    }
