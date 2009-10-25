@@ -7,18 +7,18 @@ import android.graphics.drawable.Drawable;
 
 public class NewDrinkDomain {
 	
-	private String drinkName=null;
-	private String instructions=null;
-	private long glassId;
-	private Drawable glassType;
-	private long categoryId;
-	private String categoryName=null;
-	private int ingredientsCat; //0,1,3
+	public String drinkName=null;
+	public String instructions=null;
+	public long glassId;
+	public Drawable glassType;
+	public long categoryId;
+	public String categoryName=null;
+	public int ingredientsCat; //0,1,3
 	//Multiples
-	private String wholeAmount=null; 
-	private String halfAmount=null; 
-	private String measurment=null;
-	private String ingredientsName=null;
+	public String wholeAmount=null; 
+	public String halfAmount=null; 
+	public String measurment=null;
+	public String ingredientsName=null;
 	private List<String> ingredients= new ArrayList<String>();
 	
 	private static NewDrinkDomain newDrinkDomain = null;
@@ -26,15 +26,6 @@ public class NewDrinkDomain {
 	public static final int SCREEN_TYPE_ING=1;
 	public static final int SCREEN_TYPE_NEW=2;
 	
-	
-	
-	public String getMeasurment() {
-		return measurment;
-	}
-
-	public void setMeasurment(String measurment) {
-		this.measurment = measurment;
-	}
 
 	public List<String> getIngredients() {
 		return ingredients;
@@ -56,14 +47,6 @@ public class NewDrinkDomain {
 		this.halfAmount = null;
 	}
 
-	public Drawable getGlassType() {
-		return glassType;
-	}
-
-	public void setGlassType(Drawable glassType) {
-		this.glassType = glassType;
-	}
-
 	public static NewDrinkDomain getInstance()
     {
       if (newDrinkDomain == null)
@@ -76,78 +59,7 @@ public class NewDrinkDomain {
 		newDrinkDomain = null;
 	}
 	
-	public String getCategoryName() {
-		return categoryName;
-	}
-
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
-	}
-
-
-	public String getDrinkName() {
-		return drinkName;
-	}
-
-	public void setDrinkName(String drinkName) {
-		this.drinkName = drinkName;
-	}
-
-	public String getInstructions() {
-		return instructions;
-	}
-
-	public void setInstructions(String instructions) {
-		this.instructions = instructions;
-	}
-
-	public long getGlassId() {
-		return glassId;
-	}
-
-	public void setGlassId(long glassId) {
-		this.glassId = glassId;
-	}
-
-	public long getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(long categoryId) {
-		this.categoryId = categoryId;
-	}
-
-	public int getIngredientsCat() {
-		return ingredientsCat;
-	}
-
-	public void setIngredientsCat(int ingredientsCat) {
-		this.ingredientsCat = ingredientsCat;
-	}
-
-	public String getIngredientsName() {
-		return ingredientsName;
-	}
-
-	public void setIngredientsName(String ingredientsName) {
-		this.ingredientsName = ingredientsName;
-	}
-
-	public String getWholeAmount() {
-		return wholeAmount;
-	}
-
-	public void setWholeAmount(String wholeAmount) {
-		this.wholeAmount = wholeAmount;
-	}
-
-	public String getHalfAmount() {
-		return halfAmount;
-	}
-
-	public void setHalfAmount(String halfAmount) {
-		this.halfAmount = halfAmount;
-	}
+	
 	
 	
 	

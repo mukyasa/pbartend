@@ -90,7 +90,9 @@ public class AmountPicker extends Activity  implements OnClickListener{
 		{
 			intent = new Intent(this, CreateUpdateView.class);
 			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
-			ndd.addIngredients((ndd.getWholeAmount() != null ?ndd.getWholeAmount() : "") + " "+(ndd.getHalfAmount() !=null ? ndd.getHalfAmount():"") + " " + (ndd.getMeasurment() != null ?ndd.getMeasurment():"") + ", " + ndd.getIngredientsName());
+			ndd.addIngredients((ndd.wholeAmount != null ?ndd.wholeAmount : "")
+					+ " "+(ndd.halfAmount !=null ? ndd.halfAmount:"") + " " 
+					+ (ndd.measurment != null ?ndd.measurment:"") + ", " + ndd.ingredientsName);
 			startActivity(intent);
 		}
 		else if(v==btnCancel)
@@ -130,10 +132,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
 
     		//set all to white
     		setBackgroundDefault(parent);
-    		NewDrinkDomain.getInstance().setWholeAmount((String)parent.getItemAtPosition(position));
-    		
-			v.setBackgroundColor(AppCommon.color);
-			
+    		NewDrinkDomain.getInstance().wholeAmount =((String)parent.getItemAtPosition(position));
 			}};
 			
 	AdapterView.OnItemClickListener onHalfItemListener = new OnItemClickListener(){
@@ -144,8 +143,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
 			setBackgroundDefault(parent);
 			Cursor cursor = (Cursor)parent.getItemAtPosition(position);
 			
-			NewDrinkDomain.getInstance().setHalfAmount(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));		
-			v.setBackgroundColor(AppCommon.color);
+			NewDrinkDomain.getInstance().halfAmount=(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));		
 			
 			}};
 					
@@ -155,9 +153,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
 
     		//set all to white
     		setBackgroundDefault(parent);
-    		NewDrinkDomain.getInstance().setMeasurment((String)parent.getItemAtPosition(position));
-    		
-			v.setBackgroundColor(AppCommon.color);
+    		NewDrinkDomain.getInstance().measurment=((String)parent.getItemAtPosition(position));
 			
 			}};
 }

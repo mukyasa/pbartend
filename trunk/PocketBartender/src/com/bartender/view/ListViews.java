@@ -55,7 +55,6 @@ public abstract class ListViews extends ListActivity{
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 	{
 			super.onListItemClick(l, v, position, id);
-			v.setBackgroundColor(AppCommon.color);
 			Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
 			startActivityForResult(intent, INTENT_NEXT_SCREEN);

@@ -19,14 +19,13 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.bartender.R;
-import com.bartender.common.AppCommon;
 import com.bartender.dao.CategoryDAO;
 import com.bartender.dao.DataDAO;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
-import com.bartender.domain.NewDrinkDomain; 
+import com.bartender.domain.NewDrinkDomain;
 
-public class CategoryAndGlassListView extends Activity implements OnClickListener {
+public class CategoryAndGlassPicker extends Activity implements OnClickListener {
 	
 	private CategoryDAO dataDAO = new CategoryDAO();
 	protected DatabaseAdapter myDatabaseAdapter;
@@ -116,21 +115,15 @@ public class CategoryAndGlassListView extends Activity implements OnClickListene
     	public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 
     		Log.v(getClass().getSimpleName(), "class name=" + v.getClass().toString());
-    		//set all to white
-    		for(int i=0;i<parent.getCount();i++)
-			{
-				View vv = parent.getChildAt(i);
-				if(vv != null)
-					vv.setBackgroundColor(AppCommon.defaultColor);
-			}
+
     		
 			if(v instanceof ImageView)
 			{
 				Drawable glassType = (Drawable) parent.getItemAtPosition(position);
 				
 				NewDrinkDomain ndd = NewDrinkDomain.getInstance();
-				ndd.setGlassId(id);
-				ndd.setGlassType(glassType);
+				ndd.glassId=id;
+				ndd.glassType=glassType;
 		    	
 			}
 			else
@@ -139,11 +132,9 @@ public class CategoryAndGlassListView extends Activity implements OnClickListene
 		    	//set id and name to create domain
 		    	NewDrinkDomain ndd = NewDrinkDomain.getInstance();
 		    	//cat info
-		    	ndd.setCategoryId(id);
-		    	ndd.setCategoryName(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_NAME)));
+		    	ndd.categoryId=id;
+		    	ndd.categoryName = (cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_NAME)));
 			}
-			
-			v.setBackgroundColor(AppCommon.color);
 			
 			}};
 
