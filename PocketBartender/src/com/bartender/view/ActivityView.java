@@ -34,7 +34,7 @@ public class ActivityView extends Activity {
 	private static final int MENU_HOME=2;
 	
 	public static final String[] glasses= {"champagne","cocktail","highball","hurricane","irish coffee",
-	"pint","margarita","mug","parfait","pilsner","pousse cafe","punch","rocks","shot","snifter","sour","wine"};
+	"pint","margarita","mug","parfait","pilsner","pousse cafe","punch","rocks","shot","snifter","sour","white wine","red wine"};
 	
 	/**
 	 * sets shared values to domain object
@@ -87,7 +87,9 @@ public class ActivityView extends Activity {
 		else if(glasses[15].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.sour);
 		else if(glasses[16].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.wine);
+			imgGlassType.setBackgroundResource(R.drawable.whitewine);
+		else if(glasses[17].equalsIgnoreCase(drinkdetail.glass))
+			imgGlassType.setBackgroundResource(R.drawable.redwine);
 	}
 	
 	/**

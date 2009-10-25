@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.bartender.R;
@@ -133,6 +134,8 @@ public class AmountPicker extends Activity  implements OnClickListener{
     		//set all to white
     		setBackgroundDefault(parent);
     		NewDrinkDomain.getInstance().wholeAmount =((String)parent.getItemAtPosition(position));
+    		TextView tv = (TextView)findViewById(R.id.tvWhole);
+    		tv.setText((String)parent.getItemAtPosition(position));
 			}};
 			
 	AdapterView.OnItemClickListener onHalfItemListener = new OnItemClickListener(){
@@ -144,7 +147,8 @@ public class AmountPicker extends Activity  implements OnClickListener{
 			Cursor cursor = (Cursor)parent.getItemAtPosition(position);
 			
 			NewDrinkDomain.getInstance().halfAmount=(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));		
-			
+			TextView tv = (TextView)findViewById(R.id.tvHalf);
+    		tv.setText(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));
 			}};
 					
 	AdapterView.OnItemClickListener onMeasureItemListener = new OnItemClickListener(){
@@ -154,6 +158,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
     		//set all to white
     		setBackgroundDefault(parent);
     		NewDrinkDomain.getInstance().measurment=((String)parent.getItemAtPosition(position));
-			
+    		TextView tv = (TextView)findViewById(R.id.tvMeasurement);
+    		tv.setText((String)parent.getItemAtPosition(position));
 			}};
 }
