@@ -63,7 +63,7 @@ public class IngredientsListView extends ListViews {
    	Cursor cursor = (Cursor) l.getItemAtPosition(position);
    	//set id and name to create domain
    	NewDrinkDomain ndd = NewDrinkDomain.getInstance();
-   	ndd.setIngredientsName(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_CAT_NAME)));
+   	ndd.ingredientsName=(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_CAT_NAME)));
    	
    }
    
