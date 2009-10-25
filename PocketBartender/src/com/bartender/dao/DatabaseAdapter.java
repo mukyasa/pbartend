@@ -178,26 +178,6 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 			db.execSQL(dii6[i]);
 	}
 	
-	/*
-	private void fillDrinkSubCategories(SQLiteDatabase db)
-	{
-		String[] dsc1 = DrinkSubCatInsert.insertDrinkSubCat1();
-		for(int i=0;i<dsc1.length;i++)
-			db.execSQL(dsc1[i]);
-		
-		String[] dsc2 = DrinkSubCatInsert.insertDrinkSubCat2();
-		for(int i=0;i<dsc2.length;i++)
-			db.execSQL(dsc2[i]);
-		
-		String[] dsc3 = DrinkSubCatInsert.insertDrinkSubCat3();
-		for(int i=0;i<dsc3.length;i++)
-			db.execSQL(dsc3[i]);
-		
-		String[] dsc4=DrinkSubCatInsert.insertDrinkSubCat4();
-		for(int i=0;i<dsc4.length;i++)
-			db.execSQL(dsc4[i]);
-		
-	}*/
 	//singleton initialize
 	private static void initialize(Context context) {
 		if(instance == null) {
