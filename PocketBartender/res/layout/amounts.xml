@@ -44,7 +44,7 @@
 
 <TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10.0sp" android:paddingRight="10.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">
 <TableRow>
-<TextView android:id="@+id/tvHole" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tvWhole" android:layout_weight="1"></TextView>
+<TextView android:id="@+id/tvWhole" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tvWhole" android:layout_weight="1"></TextView>
 
 <TextView android:id="@+id/tvHalf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tvHalf" android:layout_weight="1"></TextView>
 
