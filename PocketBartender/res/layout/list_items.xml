@@ -14,6 +14,6 @@
         	android:background="#fff" 
         	android:layout_marginTop="65.0px" 
         	android:fadingEdge="vertical" 
-        	android:fadingEdgeLength="40.0sp"/>
+        	android:fadingEdgeLength="40.0sp" android:cacheColorHint="#00000000"/>
         	
 </LinearLayout>
