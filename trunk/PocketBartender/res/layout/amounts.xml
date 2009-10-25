@@ -41,14 +41,20 @@
 	    android:fitsSystemWindows="true" android:cacheColorHint="#00000000"></ListView>
 
 </LinearLayout>
+
+<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10.0sp" android:paddingRight="10.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">
+	<TableRow>
 <Button android:id="@+id/btnAmountSave" 
 android:layout_height="wrap_content" 
-android:layout_width="fill_parent" 
-android:text="@string/btnSave" android:layout_marginLeft="10.0sp" android:layout_marginRight="10.0sp"></Button>
-
-<Button android:id="@+id/btnAmountCancel" 
-android:layout_height="wrap_content" 
-android:layout_width="fill_parent" 
-android:text="@string/btnCancel" android:layout_marginLeft="10.0sp" android:layout_marginRight="10.0sp"></Button>
+android:text="@string/btnSave" 
+ android:layout_width="fill_parent" 
+ android:layout_weight="1" android:layout_gravity="fill_horizontal"></Button>
+ <Button android:id="@+id/btnAmountCancel" 
+ android:layout_height="wrap_content" 
+ android:text="@string/btnCancel" 
+ android:layout_width="fill_parent" 
+ android:layout_weight="1" android:layout_gravity="fill_horizontal"></Button>
+</TableRow>
+</TableLayout>
 </LinearLayout>
 

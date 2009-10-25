@@ -3,4 +3,4 @@
 	 android:id="@+id/ivGlass"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:src="@drawable/wine" android:background="#fff"/>
+                   android:src="@drawable/wine"/>
