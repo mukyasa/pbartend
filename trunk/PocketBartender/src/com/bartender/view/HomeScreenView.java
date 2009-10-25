@@ -30,7 +30,7 @@ public class HomeScreenView extends Activity implements OnClickListener,Runnable
         setContentView(R.layout.home);
         initComponents();
         
-        pd = ProgressDialog.show(this, null,"We are building your database. The application will quit when it's done, then you're set.");        
+        pd = ProgressDialog.show(this, null,"Building the database, please be patient.");        
         
         Thread thread = new Thread(this);
         thread.start();
