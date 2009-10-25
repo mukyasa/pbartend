@@ -30,7 +30,7 @@ public class CategoryListView extends ListViews {
         intent = new Intent(this, DrinkListView.class);
         
         initComponents();
-        ScreenType.getInstance().setScreenType(ScreenType.SCREEN_TYPE_CAT);
+        ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_CAT);
     }
     
     

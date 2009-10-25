@@ -140,13 +140,13 @@ public class DataDAO{
 		+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
 			+ COL_FRACTION +" VARCHAR(8), "
 			+ COL_NUMBER + " double);";
-	
+	/*
 	public static final String sqlDrinkSubCategoriesTable = "CREATE TABLE " + TABLE_DRINK_SUB_CAT	
 	+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "		
 		+COL_DRINK_ID + " INTEGER NOT NULL, "
 		+ COL_LIQUOR_SUB_CAT_ID + " INTEGER NOT NULL, "
 		+ COL_MIX_SUB_CAT_ID + " INTEGER NOT NULL);";
-	
+	*/
 	/**
 	 * Drink Table
 	 */

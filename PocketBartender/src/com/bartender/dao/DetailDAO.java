@@ -2,11 +2,8 @@ package com.bartender.dao;
 
 import android.app.Activity;
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.util.Log;
-import android.widget.SimpleCursorAdapter;
-import android.widget.Spinner;
 
 import com.bartender.domain.DetailsDomain;
 

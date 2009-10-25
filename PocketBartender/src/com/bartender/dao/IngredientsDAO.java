@@ -1,6 +1,5 @@
 package com.bartender.dao;
 
-import android.R.raw;
 import android.database.Cursor;
 
 public class IngredientsDAO extends DataDAO {

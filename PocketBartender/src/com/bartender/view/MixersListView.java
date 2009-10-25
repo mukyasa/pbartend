@@ -7,7 +7,7 @@ public class MixersListView extends IngredientsListView {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ingtype.setType(TYPE_MIXERS);
+        ingtype.type=(TYPE_MIXERS);
         initComponents();
     }
   
