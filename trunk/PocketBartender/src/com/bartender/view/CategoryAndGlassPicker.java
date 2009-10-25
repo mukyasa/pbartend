@@ -1,8 +1,11 @@
 package com.bartender.view;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
+import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -16,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.bartender.R;
@@ -69,27 +73,64 @@ public class CategoryAndGlassPicker extends Activity implements OnClickListener 
     	listCategories = (ListView) findViewById(R.id.listCategories);
         listGlasses = (ListView)findViewById(R.id.listGlasses);
         
-        //addes images to list items
-        List<Drawable> imageList = new ArrayList<Drawable>(); 
-        
-        imageList.add(getResources().getDrawable(R.drawable.champ));
-        imageList.add(getResources().getDrawable(R.drawable.cocktail));
-        imageList.add(getResources().getDrawable(R.drawable.highball));
-        imageList.add(getResources().getDrawable(R.drawable.hurricane));
-        imageList.add(getResources().getDrawable(R.drawable.irish));
-        imageList.add(getResources().getDrawable(R.drawable.margarita));
-        imageList.add(getResources().getDrawable(R.drawable.mug));
-        imageList.add(getResources().getDrawable(R.drawable.parfait));
-        imageList.add(getResources().getDrawable(R.drawable.pilsner));
-        imageList.add(getResources().getDrawable(R.drawable.pint));
-        imageList.add(getResources().getDrawable(R.drawable.pousse_cafe));
-        imageList.add(getResources().getDrawable(R.drawable.punch));
-        imageList.add(getResources().getDrawable(R.drawable.rocks));
-        imageList.add(getResources().getDrawable(R.drawable.shot));
-        imageList.add(getResources().getDrawable(R.drawable.snifter));
-        imageList.add(getResources().getDrawable(R.drawable.sour));
-        imageList.add(getResources().getDrawable(R.drawable.wine));
+        HashMap<Integer, Drawable> map = new HashMap<Integer, Drawable>();
 
+        List<HashMap<Integer, Drawable>> imageList = new ArrayList<HashMap<Integer, Drawable>>();
+        
+        map.put(1, getResources().getDrawable(R.drawable.rocks));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(2, getResources().getDrawable(R.drawable.highball));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(3, getResources().getDrawable(R.drawable.mug));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(4, getResources().getDrawable(R.drawable.hurricane));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(5, getResources().getDrawable(R.drawable.pint));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(6, getResources().getDrawable(R.drawable.whitewine));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(7, getResources().getDrawable(R.drawable.redwine));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(8, getResources().getDrawable(R.drawable.cocktail));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(10, getResources().getDrawable(R.drawable.champ));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(12, getResources().getDrawable(R.drawable.margarita));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(13, getResources().getDrawable(R.drawable.shot));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(14, getResources().getDrawable(R.drawable.sour));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(15, getResources().getDrawable(R.drawable.pousse_cafe));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(16, getResources().getDrawable(R.drawable.parfait));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(17, getResources().getDrawable(R.drawable.irish));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(18, getResources().getDrawable(R.drawable.pilsner));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(19, getResources().getDrawable(R.drawable.punch));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(20, getResources().getDrawable(R.drawable.snifter));
+        imageList.add(map);
+        
         
        
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
@@ -112,18 +153,30 @@ public class CategoryAndGlassPicker extends Activity implements OnClickListener 
     //inner class
     AdapterView.OnItemClickListener onItemListener = new OnItemClickListener(){
 		
-    	public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
+    	@SuppressWarnings("unchecked")
+        public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 
-    		Log.v(getClass().getSimpleName(), "class name=" + v.getClass().toString());
-
-    		
 			if(v instanceof ImageView)
 			{
-				Drawable glassType = (Drawable) parent.getItemAtPosition(position);
-				
+				 HashMap<Integer, Drawable> map = (HashMap<Integer, Drawable>)parent.getItemAtPosition(position);
+			        Iterator<Integer> iter = map.keySet().iterator();
+			        
+			        Drawable glassType=null;
+			        while (iter.hasNext()) {
+				        Integer key = (Integer) iter.next();
+				        glassType = (Drawable)map.get(key);
+				        id = key;
+			        }
+			        
 				NewDrinkDomain ndd = NewDrinkDomain.getInstance();
 				ndd.glassId=id;
 				ndd.glassType=glassType;
+				Cursor recordscCursor = dataDAO.retrieveGlassNameById(id+"");
+				
+				recordscCursor.moveToFirst();
+				
+				TextView tv = (TextView)findViewById(R.id.tvGlassSelect);
+				tv.setText(recordscCursor.getString(recordscCursor.getColumnIndex(DataDAO.COL_GLASS_NAME)));
 		    	
 			}
 			else
@@ -134,6 +187,8 @@ public class CategoryAndGlassPicker extends Activity implements OnClickListener 
 		    	//cat info
 		    	ndd.categoryId=id;
 		    	ndd.categoryName = (cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_NAME)));
+		    	TextView tv = (TextView)findViewById(R.id.tvCatSelect);
+	    		tv.setText(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_NAME)));
 			}
 			
 			}};

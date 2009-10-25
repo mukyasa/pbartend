@@ -23,5 +23,14 @@ public class CategoryDAO extends DataDAO {
 
 		return cursor;
 	}
+	
+	public Cursor retrieveGlassNameById(String searchresult) {
+		
+		String [] selectionArgs = {searchresult};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetGlassNameById, selectionArgs);
+
+		return cursor;
+	}
+	
 
 }

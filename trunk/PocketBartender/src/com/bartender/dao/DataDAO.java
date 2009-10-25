@@ -50,7 +50,7 @@ public class DataDAO{
 	public static final String TABLE_INGREDIENTS_CAT ="tblIngredient_categories";
 	public static final String TABLE_INGREDIENTS_SUB_CAT ="tblIngredient_subcategories";
 	
-	
+	public static final String sqlGetGlassNameById = "SELECT name["+COL_GLASS_NAME+"] from "+TABLE_GLASSES+" WHERE _id=?";
 	public static final String sqlGetDrinkDetailById ="SELECT d.favorite, d._id, d.name,d.instructions,dc.name["+COL_CAT_NAME+"],di.amount,i.name["+COL_ING_NAME+"],g.name["+COL_GLASS_NAME+"] " +
 			"FROM "+TABLE_DRINK+" d " +
 			"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id " +
@@ -140,13 +140,7 @@ public class DataDAO{
 		+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
 			+ COL_FRACTION +" VARCHAR(8), "
 			+ COL_NUMBER + " double);";
-	/*
-	public static final String sqlDrinkSubCategoriesTable = "CREATE TABLE " + TABLE_DRINK_SUB_CAT	
-	+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "		
-		+COL_DRINK_ID + " INTEGER NOT NULL, "
-		+ COL_LIQUOR_SUB_CAT_ID + " INTEGER NOT NULL, "
-		+ COL_MIX_SUB_CAT_ID + " INTEGER NOT NULL);";
-	*/
+
 	/**
 	 * Drink Table
 	 */
