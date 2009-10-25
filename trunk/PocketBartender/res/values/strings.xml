@@ -14,4 +14,9 @@
 <string name="save">Save</string>
 <string name="btnSave">Save</string>
 <string name="btnCancel">Cancel</string>
+<string name="tvGlassSelect">Selected Glass</string>
+<string name="tvCatSelect">Selected Category</string>
+<string name="tvWhole">Selected 1</string>
+<string name="tvHalf">Selected 2</string>
+<string name="tvMeasurement">Selected 3</string>
 </resources>
