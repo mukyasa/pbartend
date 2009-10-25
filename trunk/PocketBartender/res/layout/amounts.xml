@@ -13,14 +13,14 @@
 	android:paddingRight="10.0sp" android:paddingTop="10.0sp" android:background="@drawable/spinnerbg">
 	
 
-	<ListView android:id="@+id/listWholeNums" android:gravity=""
+	<ListView android:id="@+id/listWholeNums" 
 	    android:layout_height="fill_parent"
 	    android:layout_weight="2" android:layout_gravity="fill_vertical" 
 	    android:layout_width="fill_parent" 
 	    android:background="#fff" 
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp" 
-	    android:fitsSystemWindows="true" android:layout_marginRight="5.0sp" android:cacheColorHint="#00000000"></ListView>
+	    android:fitsSystemWindows="true" android:scrollbars="none" android:layout_marginRight="10.0sp"></ListView>
 
 	<ListView android:id="@+id/listHalfNums" 
 	android:layout_height="fill_parent"
@@ -29,7 +29,7 @@
 	    android:layout_width="fill_parent" 
 	    android:background="#fff" 
 	    android:fadingEdge="vertical" 
-	    android:fadingEdgeLength="50.0sp" android:layout_marginRight="5.0sp" android:cacheColorHint="#00000000"></ListView>
+	    android:fadingEdgeLength="50.0sp" android:scrollbars="none" android:layout_marginRight="10.0sp"></ListView>
 	    
 	  <ListView android:id="@+id/listAmounts" android:gravity=""
 	    android:layout_height="fill_parent"
@@ -38,11 +38,18 @@
 	    android:background="#fff" 
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp" 
-	    android:fitsSystemWindows="true" android:cacheColorHint="#00000000"></ListView>
+	    android:fitsSystemWindows="true" android:scrollbars="none"></ListView>
 
 </LinearLayout>
 
 <TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10.0sp" android:paddingRight="10.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">
+<TableRow>
+<TextView android:id="@+id/tvHole" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tvWhole" android:layout_weight="1"></TextView>
+
+<TextView android:id="@+id/tvHalf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tvHalf" android:layout_weight="1"></TextView>
+
+<TextView android:id="@+id/tvMeasurement" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tvMeasurement" android:layout_weight="1"></TextView>
+</TableRow>
 	<TableRow>
 <Button android:id="@+id/btnAmountSave" 
 android:layout_height="wrap_content" 
