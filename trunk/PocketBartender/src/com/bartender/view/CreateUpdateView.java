@@ -34,7 +34,7 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.update);
 		myDatabaseAdapter = DatabaseAdapter.getInstance(this);
-		ScreenType.getInstance().setScreenType(ScreenType.SCREEN_TYPE_NEW);
+		ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_NEW);
 		
 		initComponents();
 	}

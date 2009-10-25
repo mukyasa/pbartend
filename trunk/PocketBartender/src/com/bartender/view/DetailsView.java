@@ -26,13 +26,13 @@ public class DetailsView extends ActivityView {
 		findAndSetView();
 		
 		drinkdao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-		drinkdetail.setId((int) selectedRow);
+		drinkdetail.id=((int) selectedRow);
 		
 		if (selectedRow > 0) {
 			drinkdao.load(this,drinkdetail);
 		}
 		
-		if (drinkdetail.getId() > 0) {
+		if (drinkdetail.id > 0) {
 			//this one has a drink name 
 			setViewItems();
 			

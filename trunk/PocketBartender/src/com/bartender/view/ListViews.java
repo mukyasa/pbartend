@@ -56,7 +56,7 @@ public abstract class ListViews extends ListActivity{
 	{
 			super.onListItemClick(l, v, position, id);
 			v.setBackgroundColor(AppCommon.color);
-			Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().getType());
+			Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
 			startActivityForResult(intent, INTENT_NEXT_SCREEN);
 	}
@@ -109,7 +109,7 @@ public abstract class ListViews extends ListActivity{
 					else if(laType instanceof IngredientsListView)
 					{
 						from = new String[] { DataDAO.COL_CAT_NAME };
-						recordscCursor = ((IngredientsListView) laType).dataDAO.retrieveAllFilteredIngredients(ScreenType.getInstance().getType(), et.toString().trim());
+						recordscCursor = ((IngredientsListView) laType).dataDAO.retrieveAllFilteredIngredients(ScreenType.getInstance().type, et.toString().trim());
 					}
 					
 			    	startManagingCursor(recordscCursor);

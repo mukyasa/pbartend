@@ -36,7 +36,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		db.execSQL(DataDAO.sqlDrinkIngredientsTable);
 		
 		//create drink sub cat table
-		db.execSQL(DataDAO.sqlDrinkSubCategoriesTable);
+		//db.execSQL(DataDAO.sqlDrinkSubCategoriesTable);
 		
 		//create fractional amount table
 		db.execSQL(DataDAO.sqlFractional_amountsTable);
@@ -57,7 +57,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		fillIngredientsCategories(db);
 		
 		//fills drinks sub cat table
-		fillDrinkSubCategories(db);
+		//fillDrinkSubCategories(db);
 		
 		//fill drink ingredients table
 		fillDrinkIngredients(db);
@@ -106,7 +106,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_DRINK );
 		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_DRINK_CAT );
 		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_DRINK_INGREDIENTS );
-		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_DRINK_SUB_CAT );
+		// db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_DRINK_SUB_CAT );
 		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_FRACTIONAL_AMOUNTS );
 		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_GLASSES );
 		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_INGREDIENTS );
@@ -178,7 +178,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 			db.execSQL(dii6[i]);
 	}
 	
-	
+	/*
 	private void fillDrinkSubCategories(SQLiteDatabase db)
 	{
 		String[] dsc1 = DrinkSubCatInsert.insertDrinkSubCat1();
@@ -197,7 +197,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 		for(int i=0;i<dsc4.length;i++)
 			db.execSQL(dsc4[i]);
 		
-	}
+	}*/
 	//singleton initialize
 	private static void initialize(Context context) {
 		if(instance == null) {

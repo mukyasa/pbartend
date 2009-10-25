@@ -36,17 +36,17 @@ public class IngredientsListView extends ListViews {
         setCurrentListActivity(this);
         
         //check to see if this is new if yes change intent
-        if(ScreenType.getInstance().getScreenType() == ScreenType.SCREEN_TYPE_NEW)
+        if(ScreenType.getInstance().screenType == ScreenType.SCREEN_TYPE_NEW)
         	intent = new Intent(this, AmountPicker.class);
         else
         	intent = new Intent(this, DrinkListView.class);
         
-        ScreenType.getInstance().setScreenType(ScreenType.SCREEN_TYPE_ING);
+        ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_ING);
     }
     
    protected void initComponents() {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-    	Cursor recordscCursor = dataDAO.retrieveAllIngredients(ingtype.getType());
+    	Cursor recordscCursor = dataDAO.retrieveAllIngredients(ingtype.type);
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_CAT_NAME };
 		int[] to = new int[] { R.id.tfName};

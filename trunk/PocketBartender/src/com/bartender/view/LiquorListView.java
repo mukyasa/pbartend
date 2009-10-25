@@ -7,7 +7,7 @@ public class LiquorListView extends IngredientsListView {
 	  @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
-	        ingtype.setType(TYPE_LIQUOR);
+	        ingtype.type=(TYPE_LIQUOR);
 	        initComponents();
 	    }
 	    

@@ -32,14 +32,14 @@ public class DrinkListView extends ListViews {
      */
     private void initComponents() {
     	drinkdetail = new DetailsDomain();
-    	drinkdetail.setId((int) selectedRow);
+    	drinkdetail.id=((int) selectedRow);
 		
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor;
-    	if(ScreenType.getInstance().getScreenType() == ScreenType.SCREEN_TYPE_CAT)
+    	if(ScreenType.getInstance().screenType == ScreenType.SCREEN_TYPE_CAT)
     		recordscCursor = dataDAO.retrieveAllDrinkByTypes(selectedRow);
-    	else if(ScreenType.getInstance().getScreenType() == ScreenType.SCREEN_TYPE_ING)
-    		recordscCursor = dataDAO.retrieveAllDrinksByIng(ScreenType.getInstance().getType(),selectedRow+"");
+    	else if(ScreenType.getInstance().screenType == ScreenType.SCREEN_TYPE_ING)
+    		recordscCursor = dataDAO.retrieveAllDrinksByIng(ScreenType.getInstance().type,selectedRow+"");
     	else
     		recordscCursor = dataDAO.retrieveAllDrinks();
     	
