@@ -21,8 +21,7 @@
 	    android:layout_width="fill_parent" 
 	    android:background="#fff" 
 	    android:fadingEdge="vertical" 
-	    android:fadingEdgeLength="50.0sp" android:layout_marginRight="5.0sp" 
-	    android:cacheColorHint="#00000000" android:choiceMode="singleChoice"></ListView>
+	    android:fadingEdgeLength="50.0sp" android:choiceMode="singleChoice" android:scrollbars="none" android:layout_marginRight="10.0sp"></ListView>
 	    
 	    	<ListView android:id="@+id/listGlasses" android:gravity=""
 	    android:layout_height="fill_parent"
@@ -33,15 +32,20 @@
 	    android:fadingEdgeLength="50.0sp" 
 	    android:fitsSystemWindows="true" 
 	    android:cacheColorHint="#00000000"
-	    android:choiceMode="singleChoice"></ListView>
+	    android:choiceMode="singleChoice" android:scrollbars="none"></ListView>
 	    
 	    
 </LinearLayout>
 <TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10.0sp" android:paddingRight="10.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">
+<TableRow>
+<TextView android:id="@+id/tvCatSelect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tvCatSelect" android:layout_weight="1"></TextView>
+<TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-"></TextView>
+<TextView android:id="@+id/tvGlassSelect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tvGlassSelect"></TextView>
+</TableRow>
 	<TableRow>
 <Button android:id="@+id/btnSave" 
 android:layout_height="wrap_content" 
-android:text="@string/btnSave" 
+android:text="@string/btnSave"
  android:layout_width="fill_parent" 
  android:layout_weight="1" android:layout_gravity="fill_horizontal"></Button>
  <Button android:id="@+id/btnCancel" 
@@ -50,6 +54,7 @@ android:text="@string/btnSave"
  android:layout_width="fill_parent" 
  android:layout_weight="1" android:layout_gravity="fill_horizontal"></Button>
 </TableRow>
+
 </TableLayout>
 </LinearLayout>
 

@@ -7,4 +7,4 @@
          android:textColor="#000" 
          android:paddingLeft="5.0dp" 
          android:paddingBottom="5.0dp" 
-         android:paddingTop="5.0dp"/>
+         android:paddingTop="5.0dp" android:background="#fff"/>
