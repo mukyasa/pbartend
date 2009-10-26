@@ -1,77 +1,68 @@
-<ScrollView android:id="@+id/ScrollView01" 
-android:layout_width="fill_parent" 
-android:layout_height="fill_parent" 
-xmlns:android="http://schemas.android.com/apk/res/android"
- android:paddingBottom="10.0sp" 
- android:paddingLeft="10.0sp" 
- android:paddingTop="10.0sp" 
- android:background="@drawable/details_bg">
-<TableLayout android:id="@+id/TableLayout01" 
-android:layout_width="fill_parent" 
-android:layout_height="wrap_content"
- android:paddingRight="10.0sp"   
->
-<TextView android:id="@+id/tvTitle" 
-			   android:layout_width="wrap_content" 
-			   android:layout_height="wrap_content" 
-			   android:textColor="#000" 
-			   android:layout_marginTop="10.0sp" 
-			   android:layout_marginLeft="48px" 
-			   android:textStyle="bold" 
-			   android:textSize="14sp" 
-			   android:text="@string/create_drink_title"></TextView>
-<TableRow >				   
-	<ImageView android:id="@+id/imgNewGlass" 
-		android:layout_width="48.0px" 
-		android:layout_height="48.0px" 
-		android:layout_gravity="left" android:background="@drawable/icon"></ImageView>
-		
-		<EditText android:id="@+id/etNewDrinkNm" 
-		   android:layout_height="wrap_content" 
-		   android:layout_width="fill_parent" 
-		   android:textColor="#000"
-		   android:layout_gravity="left"
-		   android:layout_weight="2" android:inputType="textWebEditText" android:imeOptions="actionDone"></EditText>
-</TableRow>			
-		<TextView android:id="@+id/tvNewCategory" 
-			   android:layout_width="wrap_content" 
-			   android:layout_height="wrap_content" 
-			   android:textColor="#000" 
-			   android:textSize="16sp"></TextView>
-	
-  
-	<Button android:id="@+id/btnNewCat"  
-		   android:layout_height="wrap_content" 
-		   android:layout_width="fill_parent" 
-		   android:text="@string/categoryText"></Button>
+<ScrollView android:id="@+id/ScrollView01"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:paddingBottom="10.0sp" android:paddingLeft="10.0sp"
+	android:paddingTop="10.0sp" android:background="@drawable/details_bg">
+	<TableLayout android:id="@+id/TableLayout01"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:paddingRight="10.0sp">
+		<RelativeLayout>
+		<TextView android:id="@+id/tvTitle" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:textColor="#000"
+			android:layout_marginTop="10.0sp" android:textStyle="bold" android:textSize="14sp"
+			android:text="@string/create_drink_title" android:layout_marginLeft="58.0sp"></TextView>
 
-	<TextView android:id="@+id/tvNewIngredients" 
-		   android:layout_width="wrap_content" 
-		   android:layout_height="wrap_content" 
-		   android:textColor="#000"
-		   android:textSize="14sp" 
-		   android:layout_marginBottom="5.0sp"></TextView> 
-		   
-	<Button android:layout_width="wrap_content" 
-			android:layout_height="wrap_content" 
-			android:text="@string/ingredientsText" 
-			android:id="@+id/btnNewIng"></Button>
-		   
-	
+			<EditText android:id="@+id/etNewDrinkNm"
+				android:layout_height="wrap_content" android:textColor="#000" android:inputType="textWebEditText"
+				android:imeOptions="actionDone" android:layout_width="fill_parent" android:layout_marginLeft="58.0sp" android:layout_marginTop="30.0sp"></EditText>
+			<TextView android:id="@+id/tvNewCategory"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:textColor="#000" android:textSize="16sp" android:layout_marginTop="75.0sp"></TextView>
+				
+		<ImageView android:id="@+id/imgNewGlass"
+				android:layout_width="48.0px" android:layout_height="48.0px"
+				android:background="@drawable/icon" android:layout_marginTop="25.0sp"></ImageView>
+		</RelativeLayout>
 		
-		<TextView android:id="@+id/tvInstuctions" 
-			   android:layout_width="wrap_content" 
-			   android:layout_height="wrap_content" 
-			   android:textColor="#000" 
-			   android:layout_gravity="center" android:text="@string/instructionsText" android:layout_marginTop="10.0sp" android:textStyle="bold" android:textSize="14sp"></TextView>   
-	<EditText android:id="@+id/etDirections" 
-		   android:layout_width="wrap_content" 
-		   android:textColor="#000" android:inputType="textWebEditText" android:imeOptions="actionDone" android:layout_height="fill_parent" android:singleLine="false" android:lines="8"></EditText>
-		   
-	<Button android:layout_width="wrap_content" 
-			android:layout_height="wrap_content" 
-			android:text="@string/save" 
-			android:id="@+id/btnSave" android:layout_gravity="bottom"></Button>
+		<TableRow android:paddingTop="10.0sp">
+			<Button android:id="@+id/btnNewCat" android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:text="@string/categoryText"
+				android:layout_weight="1" android:layout_gravity="left"></Button>
 
-</TableLayout>
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="@string/ingredientsText"
+				android:id="@+id/btnNewIng" android:layout_weight="1" android:layout_gravity="right"></Button>
+</TableRow>
+			<TextView android:id="@+id/tvNewIngredients"
+				android:layout_height="wrap_content"
+				android:textColor="#000" 
+				android:textSize="14sp"
+				android:layout_width="fill_parent" 
+				android:layout_gravity="fill_horizontal"></TextView>
+		<TextView android:id="@+id/tvInstuctions"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textColor="#000" android:layout_gravity="center"
+			android:text="@string/instructionsText" android:layout_marginTop="10.0sp"
+			android:textStyle="bold" android:textSize="14sp"></TextView>
+
+		<EditText android:id="@+id/etDirections"
+			android:layout_width="wrap_content" android:textColor="#000"
+			android:inputType="textWebEditText" android:imeOptions="actionDone"
+			android:layout_height="fill_parent" android:singleLine="false"
+			android:lines="8"></EditText>
+	<TableRow>
+	 <Button android:id="@+id/btnCancel" 
+ android:layout_height="wrap_content" 
+ android:text="@string/btnCancel" 
+ android:layout_width="fill_parent" 
+ android:layout_gravity="left|fill_horizontal" android:layout_weight="1"></Button>
+<Button android:id="@+id/btnSave" 
+android:layout_height="wrap_content" 
+android:text="@string/btnSave"
+ android:layout_width="fill_parent" 
+ android:layout_gravity="right" android:layout_weight="400"></Button>
+
+</TableRow>
+
+	</TableLayout>
 </ScrollView>
