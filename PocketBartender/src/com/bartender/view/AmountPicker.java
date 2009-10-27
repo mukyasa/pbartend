@@ -2,6 +2,8 @@ package com.bartender.view;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -67,9 +69,9 @@ public class AmountPicker extends Activity  implements OnClickListener{
     	Cursor recordscCursor = dataDAO.retrieveAllMeasurements();
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_FRACTION };
-		int[] to = new int[] { R.id.tfName};
+		int[] to = new int[] { R.id.tvItem};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
-				R.layout.item_row, recordscCursor, from, to);
+				R.layout.textviewrow, recordscCursor, from, to);
     	
 
     	//whole numbers to add
@@ -127,15 +129,19 @@ public class AmountPicker extends Activity  implements OnClickListener{
 		}
     }
     
+    
     AdapterView.OnItemClickListener onWholeItemListener = new OnItemClickListener(){
 		
     	public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 
-    		//set all to white
-    		setBackgroundDefault(parent);
+    		//v.setBackgroundResource(R.drawable.clickbg);
+    		
     		NewDrinkDomain.getInstance().wholeAmount =((String)parent.getItemAtPosition(position));
     		TextView tv = (TextView)findViewById(R.id.tvWhole);
     		tv.setText((String)parent.getItemAtPosition(position));
+    		
+    		//set all to white
+			//setBackgroundDefault(parent);
 			}};
 			
 	AdapterView.OnItemClickListener onHalfItemListener = new OnItemClickListener(){
@@ -143,7 +149,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
 		public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 	
 			//set all to white
-			setBackgroundDefault(parent);
+			//setBackgroundDefault(parent);
 			Cursor cursor = (Cursor)parent.getItemAtPosition(position);
 			
 			NewDrinkDomain.getInstance().halfAmount=(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));		
@@ -156,7 +162,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
     	public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 
     		//set all to white
-    		setBackgroundDefault(parent);
+    		//setBackgroundDefault(parent);
     		NewDrinkDomain.getInstance().measurment=((String)parent.getItemAtPosition(position));
     		TextView tv = (TextView)findViewById(R.id.tvMeasurement);
     		tv.setText((String)parent.getItemAtPosition(position));

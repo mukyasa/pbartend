@@ -5,13 +5,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -137,9 +135,9 @@ public class CategoryAndGlassPicker extends Activity implements OnClickListener 
     	Cursor recordscCursor = dataDAO.retrieveAllDrinktypes();
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_NAME };
-		int[] to = new int[] { R.id.tfName};
+		int[] to = new int[] { R.id.tvItem};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
-				R.layout.item_row, recordscCursor, from, to);
+				R.layout.textviewrow, recordscCursor, from, to);
     	
     	listCategories.setAdapter(records);
     	listGlasses.setAdapter(new ImageListAdapter(this,imageList,listGlasses));
