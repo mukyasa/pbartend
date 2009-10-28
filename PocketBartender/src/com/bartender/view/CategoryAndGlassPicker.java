@@ -173,8 +173,10 @@ public class CategoryAndGlassPicker extends Activity implements OnClickListener 
 				
 				recordscCursor.moveToFirst();
 				
-				TextView tv = (TextView)findViewById(R.id.tvGlassSelect);
-				tv.setText(recordscCursor.getString(recordscCursor.getColumnIndex(DataDAO.COL_GLASS_NAME)));
+				ImageView iv = (ImageView)findViewById(R.id.ivGlassSelect);
+				iv.setImageDrawable(glassType);
+				
+				
 		    	
 			}
 			else
