@@ -24,7 +24,7 @@ import com.bartender.domain.ScreenType;
 public class CreateUpdateView extends Activity implements OnClickListener {
 
 	private Intent intent;
-	private Button btnIng, btnSave,btnCat,btnCancel;
+	private Button btnIng, btnSave,btnCat,btnCancel,btnReset;
 	long selectedRow=-1;
 	protected DatabaseAdapter myDatabaseAdapter;
 	CreateUpdateDAO dataDAO = new CreateUpdateDAO();
@@ -90,6 +90,9 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 	
 		btnSave = (Button)findViewById(R.id.btnSave);
 		btnSave.setOnClickListener(this);
+		
+		btnReset = (Button)findViewById(R.id.btnReset);
+		btnReset.setOnClickListener(this);
 
 	}
 	
@@ -111,6 +114,21 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		{
 			intent = new Intent(this, HomeScreenView.class);
 			startActivity(intent);
+		}
+		else if(view==btnReset)
+		{
+			 NewDrinkDomain.getInstance().clearDomain();
+			 EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
+			 drinkName.setText("");
+			 EditText directions = (EditText)findViewById(R.id.etDirections);
+			 directions.setText("");
+			 TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
+			 newIngNm.setText("");
+			 TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
+			 ImageView newGlass = (ImageView)findViewById(R.id.imgNewGlass);
+			 newCatNm.setText("");
+			 newGlass.setBackgroundResource(R.drawable.blank);
+			 
 		}
 		else if(view==btnCat) 
 		{
