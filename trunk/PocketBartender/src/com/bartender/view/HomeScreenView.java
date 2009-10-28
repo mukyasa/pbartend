@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -19,7 +21,7 @@ import com.bartender.domain.ScreenType;
 public class HomeScreenView extends Activity implements OnClickListener,Runnable {
     /** Called when the activity is first created. */
 	private Intent intent;
-	private Button btnAll, btnCat, btnIng, btnFav, btnNew; 
+	private Button btnAll, btnCat, btnIng, btnFav; 
 	private DatabaseAdapter myDatabaseAdapter;
 	private ProgressDialog pd;
 	private DataDAO dataDAO = new DetailDAO();
@@ -51,10 +53,23 @@ public class HomeScreenView extends Activity implements OnClickListener,Runnable
 		btnIng = (Button) findViewById(R.id.btnIng); 
 		btnIng.setOnClickListener(this);
 
-		btnNew = (Button) findViewById(R.id.btnNew);
-		btnNew.setOnClickListener(this);
 	}
     
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(0, 0, 0, "Create New").setIcon(R.drawable.home);
+	    return true;
+	}
+
+	/* Handles item selections */
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+			ScreenType.getInstance().screenType= -1;
+	    	Intent intent = new Intent(this, CreateUpdateView.class);
+			startActivity(intent);
+			
+	    	return true;
+
+	}
     
     public void onClick(View view) {
 			if(view==btnAll)
@@ -77,12 +92,6 @@ public class HomeScreenView extends Activity implements OnClickListener,Runnable
 			else if(view == btnIng)
 			{
 				intent = new Intent(this, IngredientsHomeView.class);
-				startActivity(intent);
-			}
-			else if(view == btnNew)
-			{
-				ScreenType.getInstance().screenType= -1;
-				intent = new Intent(this, CreateUpdateView.class);
 				startActivity(intent);
 			}
 			
