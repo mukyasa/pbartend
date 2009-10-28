@@ -50,6 +50,9 @@ public class DataDAO{
 	public static final String TABLE_INGREDIENTS_CAT ="tblIngredient_categories";
 	public static final String TABLE_INGREDIENTS_SUB_CAT ="tblIngredient_subcategories";
 	
+	
+	
+	public static final String sqlGetMaxId ="SELECT MAX(_ID)["+COL_ROW_ID+"]  FROM "+TABLE_DRINK;
 	public static final String sqlGetGlassNameById = "SELECT name["+COL_GLASS_NAME+"] from "+TABLE_GLASSES+" WHERE _id=?";
 	public static final String sqlGetDrinkDetailById ="SELECT d.favorite, d._id, d.name,d.instructions,dc.name["+COL_CAT_NAME+"],di.amount,i.name["+COL_ING_NAME+"],g.name["+COL_GLASS_NAME+"] " +
 			"FROM "+TABLE_DRINK+" d " +
@@ -110,7 +113,7 @@ public class DataDAO{
 	
 	
 	// get ingredients ids could be many
-	public static final String sqlGetNewIngredientsIdByName = "SELECT _id from tblIngredients where name='Lime Juice';";
+	public static final String sqlGetNewIngredientsIdByName ="SELECT "+COL_ROW_ID+" from "+TABLE_INGREDIENTS+" where name=?";
 	
 	
 

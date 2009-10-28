@@ -7,9 +7,11 @@ import android.graphics.drawable.Drawable;
 
 public class NewDrinkDomain {
 	
+	public String newDrinkId;
 	public String drinkName=null;
 	public String instructions=null;
 	public long glassId;
+	public String newing_id;
 	public Drawable glassType;
 	public long categoryId;
 	public String categoryName=null;
