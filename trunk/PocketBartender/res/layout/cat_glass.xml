@@ -2,7 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
-	
+	<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingRight="10.0sp" android:background="#fff" android:paddingBottom="15.0sp" android:paddingTop="15.0sp" android:paddingLeft="15.0sp">
+<TableRow>
+<ImageView android:id="@+id/ivGlassSelect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/blank"></ImageView>
+<TextView android:id="@+id/tvCatSelect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000" android:layout_gravity="left|center_vertical" android:layout_marginLeft="10.0sp"></TextView>
+</TableRow>
+</TableLayout>
 	<LinearLayout
 	android:orientation="horizontal"
 	android:layout_width="fill_parent"
@@ -13,15 +18,6 @@
 	android:paddingRight="10.0sp" android:paddingTop="10.0sp"
 	android:background="@drawable/spinnerbg">
 
-
-	<ListView android:id="@+id/listCategories" 
-	android:layout_height="fill_parent"
-	    android:layout_weight="1" 
-	    android:layout_gravity="fill_vertical" 
-	    android:layout_width="fill_parent" 
-	    android:fadingEdge="vertical" 
-	    android:fadingEdgeLength="50.0sp" android:choiceMode="singleChoice" android:scrollbars="none" android:layout_marginRight="10.0sp"></ListView>
-	    
 	    	<ListView android:id="@+id/listGlasses" android:gravity=""
 	    android:layout_height="fill_parent"
 	    android:layout_weight="2" android:layout_gravity="fill_vertical" 
@@ -29,16 +25,20 @@
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp" 
 	    android:fitsSystemWindows="true" 
-	    android:choiceMode="singleChoice" android:scrollbars="none"></ListView>
+	    android:choiceMode="singleChoice" 
+	    android:layout_marginRight="10.0sp" 
+	    android:scrollbars="none" android:background="#fff"></ListView>
+	    	<ListView android:id="@+id/listCategories" 
+	android:layout_height="fill_parent"
+	    android:layout_weight="1" 
+	    android:layout_gravity="fill_vertical" 
+	    android:layout_width="fill_parent" 
+	    android:fadingEdge="vertical" 
+	    android:fadingEdgeLength="50.0sp" 
+	    android:choiceMode="singleChoice" 
+	    android:scrollbars="none" android:background="#fff"></ListView>
+	    
 </LinearLayout>
-<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10.0sp" android:paddingRight="10.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">
-<TableRow>
-<TextView android:id="@+id/tvCatSelect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="left" android:text="@string/tvCatSelect"></TextView>
-<TextView android:id="@+id/tvSep" android:layout_height="wrap_content" android:text=" - " android:layout_width="wrap_content" android:layout_gravity="left"></TextView>
-<TextView android:id="@+id/tvGlassSelect" android:layout_height="wrap_content" android:text="@string/tvGlassSelect" android:layout_width="wrap_content" android:layout_gravity="left"></TextView>
-
-</TableRow>
-</TableLayout>
 <TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="8.0sp" android:paddingRight="8.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">
 	<TableRow>
 	 <Button android:id="@+id/btnCancel" 
