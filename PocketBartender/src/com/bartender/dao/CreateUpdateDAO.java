@@ -1,5 +1,7 @@
 package com.bartender.dao;
 
+import com.bartender.domain.NewDrinkDomain;
+
 import android.content.ContentValues;
 import android.database.Cursor;
 
@@ -10,19 +12,25 @@ public class CreateUpdateDAO extends DataDAO {
 			"values(2,'Darren Test 2','do some work and make a drink',1,0,0,1);
 	 * @return
 	 */
-	public long insertNewDrink(String drinknm,long cat_id,long glassId,String instructions) {
+	public void insertNewDrink(String drinknm,long cat_id,long glassId,String instructions) {
 		ContentValues values = new ContentValues();
 		
 			values.put(COL_NAME, drinknm);
 			values.put(COL_CAT_ID, cat_id);
 			values.put(COL_GLASS_ID, glassId);
-			values.put(COL_DESCRIPTION, instructions);
+			values.put(COL_INSTUCTIONS, instructions);
 			values.put(COL_FLAGGED, 0);
 			values.put(COL_FAVORITE, 0);
 			values.put(COL_CUSTOM, 1);
 			
-			return sqliteDatabase.insert(TABLE_DRINK, null, values);
+			sqliteDatabase.insert(TABLE_DRINK, null, values);
 			
+			Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxId, new String[]{});
+			cursor.moveToFirst();
+			String newDrinkId = cursor.getString(cursor.getColumnIndex(DataDAO.COL_ROW_ID));
+			
+			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+			ndd.newDrinkId = newDrinkId;
 	}
 	
 	/**
@@ -30,7 +38,7 @@ public class CreateUpdateDAO extends DataDAO {
 	"values(9637,1,'2 oz');
 	 * @return
 	 */
-	private long insertDrinkIng(long drink_id,long ing_id, String amount){
+	public long insertDrinkIng(String drink_id,String ing_id, String amount){
 		
 		ContentValues values = new ContentValues();
 		
@@ -41,6 +49,22 @@ public class CreateUpdateDAO extends DataDAO {
 		return sqliteDatabase.insert(TABLE_DRINK_INGREDIENTS, null, values);
 	}
 	
+	/**
+	 * get the ingredient id from given name
+	 * Oct 27, 2009
+	 * dmason
+	 * @param ingredientsName
+	 *
+	 */
+	public void getIngredientsId(String ingredientsName)
+	{
+		String[] selectionArgs = {ingredientsName};
+		Cursor c = sqliteDatabase.rawQuery(sqlGetNewIngredientsIdByName, selectionArgs);
+		c.moveToFirst();
+		String ing_id = c.getString(c.getColumnIndex(DataDAO.COL_ROW_ID));
+		
+		NewDrinkDomain.getInstance().newing_id =ing_id;
+	}
 	
 	/**
 	 * updates exiting user created drinks

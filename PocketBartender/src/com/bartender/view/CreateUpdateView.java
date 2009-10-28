@@ -131,14 +131,6 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 			
 			if(ingredients != null)
 			{
-				Iterator<String> iter = ingredients.iterator();
-				while (iter.hasNext()) {
-					String ing = (String) iter.next();
-					
-					StringTokenizer toke = new StringTokenizer(ing,",");
-					
-					
-				}
 				
 				EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
 				EditText directions = (EditText)findViewById(R.id.etDirections);
@@ -147,12 +139,28 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 				ndd.instructions=(directions.getText().toString());
 				
 				//insert into drink table
-				long returnVal = dataDAO.insertNewDrink(ndd.drinkName, ndd.categoryId, ndd.glassId, ndd.instructions);
+				dataDAO.insertNewDrink(ndd.drinkName, ndd.categoryId, ndd.glassId, ndd.instructions);
+				
+				Iterator<String> iter = ingredients.iterator();
+				while (iter.hasNext()) {
+					String ing = (String) iter.next();
+					
+					StringTokenizer toke = new StringTokenizer(ing,",");
+					//the first one is junk ignore
+					String amount = (String)toke.nextElement();
+					String ingredientsName = (String)toke.nextElement();
+					
+					
+					dataDAO.getIngredientsId(ingredientsName.trim());
+					dataDAO.insertDrinkIng(ndd.newDrinkId, ndd.newing_id, amount);
+				}
 				
 				
 			}
 			
 			ndd.clearDomain();
+			intent = new Intent(this, HomeScreenView.class);
+			startActivity(intent);
 			
 		}
 		
