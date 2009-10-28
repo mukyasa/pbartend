@@ -51,16 +51,26 @@
 			android:layout_height="fill_parent" android:singleLine="false"
 			android:lines="8"></EditText>
 	<TableRow>
-	 <Button android:id="@+id/btnCancel" 
+
+<Button android:id="@+id/btnCancel" 
  android:layout_height="wrap_content" 
  android:text="@string/btnCancel" 
  android:layout_width="fill_parent" 
- android:layout_gravity="left|fill_horizontal" android:layout_weight="1"></Button>
-<Button android:id="@+id/btnSave" 
-android:layout_height="wrap_content" 
+ android:layout_gravity="left" 
+ android:layout_weight="1"></Button>
+ 
+<Button android:layout_height="wrap_content" 
+android:text="@string/btnReset"
+ android:layout_width="fill_parent" 
+ android:layout_gravity="left" 
+ android:layout_weight="1" 
+ android:id="@+id/btnReset"></Button>
+ 
+ <Button android:layout_height="wrap_content" 
 android:text="@string/btnSave"
  android:layout_width="fill_parent" 
- android:layout_gravity="right" android:layout_weight="400"></Button>
+ android:layout_weight="3" 
+ android:id="@+id/btnSave" android:layout_gravity="right"></Button>
 
 </TableRow>
 
