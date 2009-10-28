@@ -21,7 +21,7 @@
 				
 		<ImageView android:id="@+id/imgNewGlass"
 				android:layout_width="48.0px" android:layout_height="48.0px"
-				android:background="@drawable/icon" android:layout_marginTop="25.0sp"></ImageView>
+				android:layout_marginTop="25.0sp" android:background="@drawable/blank"></ImageView>
 		</RelativeLayout>
 		
 		<TableRow android:paddingTop="10.0sp">
