@@ -2,7 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
-	
+	<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingRight="10.0sp" android:paddingBottom="15.0sp" android:paddingTop="15.0sp" android:paddingLeft="15.0sp" android:background="#fff">
+<TableRow>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="left" android:text="@string/tvWhole" android:id="@+id/tvWhole" android:textColor="#000"></TextView>
+<TextView android:id="@+id/tvSep" android:layout_height="wrap_content" android:text=" - " android:layout_width="wrap_content" android:layout_gravity="left" android:textColor="#666"></TextView>
+<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="left" android:id="@+id/tvHalf" android:text="@string/tvHalf" android:textColor="#000"></TextView>
+<TextView android:id="@+id/tvSep" android:layout_height="wrap_content" android:text=" - " android:layout_width="wrap_content" android:layout_gravity="left" android:textColor="#666"></TextView>
+<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="left" android:id="@+id/tvMeasurement" android:text="@string/tvMeasurement" android:textColor="#000"></TextView>
+
+</TableRow>
+</TableLayout>
 	<LinearLayout
 	android:orientation="horizontal"
 	android:layout_width="fill_parent"
@@ -19,7 +28,7 @@
 	    android:layout_width="fill_parent" 
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp" 
-	    android:fitsSystemWindows="true" android:scrollbars="none" android:layout_marginRight="10.0sp"></ListView>
+	    android:fitsSystemWindows="true" android:scrollbars="none" android:layout_marginRight="10.0sp" android:background="#fff"></ListView>
 
 	<ListView android:id="@+id/listHalfNums" 
 	android:layout_height="fill_parent"
@@ -27,7 +36,7 @@
 	    android:layout_gravity="fill_vertical" 
 	    android:layout_width="fill_parent" 
 	    android:fadingEdge="vertical" 
-	    android:fadingEdgeLength="50.0sp" android:scrollbars="none" android:layout_marginRight="10.0sp"></ListView>
+	    android:fadingEdgeLength="50.0sp" android:scrollbars="none" android:layout_marginRight="10.0sp" android:background="#fff"></ListView>
 	    
 	  <ListView android:id="@+id/listAmounts" android:gravity=""
 	    android:layout_height="fill_parent"
@@ -35,19 +44,9 @@
 	    android:layout_width="fill_parent" 
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp" 
-	    android:fitsSystemWindows="true" android:scrollbars="none"></ListView>
+	    android:fitsSystemWindows="true" android:scrollbars="none" android:background="#fff"></ListView>
 
 </LinearLayout>
-<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10.0sp" android:paddingRight="10.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">
-<TableRow>
-<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="left" android:text="@string/tvWhole" android:id="@+id/tvWhole"></TextView>
-<TextView android:id="@+id/tvSep" android:layout_height="wrap_content" android:text=" - " android:layout_width="wrap_content" android:layout_gravity="left"></TextView>
-<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="left" android:id="@+id/tvHalf" android:text="@string/tvHalf"></TextView>
-<TextView android:id="@+id/tvSep" android:layout_height="wrap_content" android:text=" - " android:layout_width="wrap_content" android:layout_gravity="left"></TextView>
-<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="left" android:id="@+id/tvMeasurement" android:text="@string/tvMeasurement"></TextView>
-
-</TableRow>
-</TableLayout>
 <TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="8.0sp" android:paddingRight="8.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">
 	<TableRow>
 	 <Button android:layout_height="wrap_content" 

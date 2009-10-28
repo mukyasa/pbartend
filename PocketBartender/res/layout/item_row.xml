@@ -4,6 +4,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 	android:id="@+id/tfName"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" 
-    android:paddingTop="5.0sp" 
-    android:paddingBottom="5.0sp" 
+    android:paddingTop="10.0sp" 
+    android:paddingBottom="10.0sp" 
     android:paddingLeft="10.0sp" android:textColor="#000"/>
