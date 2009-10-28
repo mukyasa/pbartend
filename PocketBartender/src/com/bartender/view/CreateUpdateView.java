@@ -24,7 +24,7 @@ import com.bartender.domain.ScreenType;
 public class CreateUpdateView extends Activity implements OnClickListener {
 
 	private Intent intent;
-	private Button btnIng, btnSave,btnCat;
+	private Button btnIng, btnSave,btnCat,btnCancel;
 	long selectedRow=-1;
 	protected DatabaseAdapter myDatabaseAdapter;
 	CreateUpdateDAO dataDAO = new CreateUpdateDAO();
@@ -79,6 +79,8 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 			directions.setText(ndd.instructions);
 		}
 		
+		btnCancel=(Button)findViewById(R.id.btnCancel);
+		btnCancel.setOnClickListener(this);
 		
 		btnIng = (Button) findViewById(R.id.btnNewIng);
 		btnIng.setOnClickListener(this);
@@ -103,6 +105,11 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 			ndd.instructions=(directions.getText().toString());
 			
 			intent = new Intent(this, IngredientsHomeView.class);
+			startActivity(intent);
+		}
+		else if(view==btnCancel)
+		{
+			intent = new Intent(this, HomeScreenView.class);
 			startActivity(intent);
 		}
 		else if(view==btnCat) 
