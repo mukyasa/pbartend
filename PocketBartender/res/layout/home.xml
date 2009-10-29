@@ -7,10 +7,10 @@
 
 
 
-<Button android:text="Show All Drinks" android:id="@+id/btnAll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="10.0sp"></Button>
-<Button android:id="@+id/btnIng" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:text="Browse By Ingredients" android:layout_marginBottom="10.0sp"></Button>
-<Button android:text="Filter by Category" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:id="@+id/btnCat" android:layout_marginBottom="10.0sp"></Button>
-<Button android:text="Favorites" android:id="@+id/btnFav" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="10.0sp"></Button>
+<Button android:text="Show All Drinks" android:id="@+id/btnAll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="10.0sp" android:height="20.0sp"></Button>
+<Button android:id="@+id/btnIng" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:text="Browse By Ingredients" android:layout_marginBottom="10.0sp" android:height="20.0sp"></Button>
+<Button android:text="Filter by Category" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:id="@+id/btnCat" android:layout_marginBottom="10.0sp" android:height="20.0sp"></Button>
+<Button android:text="Favorites" android:id="@+id/btnFav" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:layout_marginBottom="10.0sp" android:height="20.0sp" android:drawableLeft="@drawable/star" android:gravity="left|center_vertical" android:drawablePadding="70.0sp"></Button>
 
 
 </LinearLayout>
