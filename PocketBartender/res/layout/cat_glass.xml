@@ -27,7 +27,8 @@
 	    android:fitsSystemWindows="true" 
 	    android:choiceMode="singleChoice" 
 	    android:layout_marginRight="10.0sp" 
-	    android:scrollbars="none" android:background="#fff"></ListView>
+	    android:scrollbars="none"
+	    android:cacheColorHint="#00000000"></ListView>
 	    	<ListView android:id="@+id/listCategories" 
 	android:layout_height="fill_parent"
 	    android:layout_weight="1" 
@@ -36,7 +37,8 @@
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp" 
 	    android:choiceMode="singleChoice" 
-	    android:scrollbars="none" android:background="#fff"></ListView>
+	    android:scrollbars="none"
+	    android:cacheColorHint="#00000000"></ListView>
 	    
 </LinearLayout>
 <TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="8.0sp" android:paddingRight="8.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">
