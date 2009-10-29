@@ -154,7 +154,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
 			
 			NewDrinkDomain.getInstance().halfAmount=(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));		
 			TextView tv = (TextView)findViewById(R.id.tvHalf);
-    		tv.setText(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));
+    		tv.setText(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION))+" ");
 			}};
 					
 	AdapterView.OnItemClickListener onMeasureItemListener = new OnItemClickListener(){
