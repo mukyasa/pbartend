@@ -8,8 +8,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 
 import com.bartender.R;
@@ -18,8 +20,9 @@ import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DetailDAO;
 import com.bartender.domain.ScreenType;
 
-public class HomeScreenView extends Activity implements OnClickListener,Runnable {
-    /** Called when the activity is first created. */
+public class HomeScreenView extends Activity implements OnClickListener,OnTouchListener,Runnable {
+
+	/** Called when the activity is first created. */
 	private Intent intent;
 	private Button btnAll, btnCat, btnIng, btnFav; 
 	private DatabaseAdapter myDatabaseAdapter;
@@ -43,15 +46,19 @@ public class HomeScreenView extends Activity implements OnClickListener,Runnable
 		
 		btnAll = (Button) findViewById(R.id.btnAll);
 		btnAll.setOnClickListener(this);
+		btnAll.setOnTouchListener(this);
 		
 		btnCat = (Button) findViewById(R.id.btnCat);
 		btnCat.setOnClickListener(this);
+		btnCat.setOnTouchListener(this);
 
 		btnFav = (Button) findViewById(R.id.btnFav);
 		btnFav.setOnClickListener(this);
+		btnFav.setOnTouchListener(this);
 
 		btnIng = (Button) findViewById(R.id.btnIng); 
 		btnIng.setOnClickListener(this);
+		btnIng.setOnTouchListener(this);
 
 	}
     
@@ -70,6 +77,29 @@ public class HomeScreenView extends Activity implements OnClickListener,Runnable
 	    	return true;
 
 	}
+	
+	  public boolean onTouch(View v, MotionEvent event) {
+		    
+		  int left=60;
+		  	if(v instanceof Button )
+		  	{
+		  		if(v == btnFav)
+		  			left=25;
+		  		if(event.getAction() == MotionEvent.ACTION_DOWN)
+		  		{
+		  			v.setBackgroundResource(R.drawable.button_over);
+		  			v.setPadding(left, 0, 0, 10);
+		  		}
+		  		
+		  		else if(event.getAction()== MotionEvent.ACTION_UP)
+		  		{
+		  			v.setBackgroundResource(R.drawable.button_bg);
+		  			v.setPadding(left, 0, 0, 10);
+		  		}
+		  	}
+		  
+		    return false;
+	    }
     
     public void onClick(View view) {
 			if(view==btnAll)
