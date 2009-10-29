@@ -56,7 +56,7 @@ public class HomeScreenView extends Activity implements OnClickListener,Runnable
 	}
     
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 0, 0, "Create New").setIcon(R.drawable.home);
+		menu.add(0, 0, 0, "Create New").setIcon(android.R.drawable.ic_menu_add);
 	    return true;
 	}
 
