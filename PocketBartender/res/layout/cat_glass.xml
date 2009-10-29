@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
-	<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingRight="10.0sp" android:background="#fff" android:paddingBottom="15.0sp" android:paddingTop="15.0sp" android:paddingLeft="15.0sp">
-<TableRow>
+	<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="15.0sp" android:background="@drawable/picker_bg">
+<TableRow android:layout_marginTop="5.0sp">
 <ImageView android:id="@+id/ivGlassSelect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/blank"></ImageView>
-<TextView android:id="@+id/tvCatSelect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000" android:layout_gravity="left|center_vertical" android:layout_marginLeft="10.0sp"></TextView>
+<TextView android:id="@+id/tvCatSelect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000" android:layout_gravity="left|center_vertical" android:layout_marginLeft="10.0sp" android:textStyle="bold" android:textSize="20sp"></TextView>
 </TableRow>
 </TableLayout>
 	<LinearLayout
@@ -18,7 +18,7 @@
 	android:paddingRight="10.0sp" android:paddingTop="10.0sp"
 	android:background="@drawable/spinnerbg">
 
-	    	<ListView android:id="@+id/listGlasses" android:gravity=""
+	    	<ListView android:id="@+id/listGlasses"
 	    android:layout_height="fill_parent"
 	    android:layout_weight="2" android:layout_gravity="fill_vertical" 
 	    android:layout_width="fill_parent" 
