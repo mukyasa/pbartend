@@ -2,10 +2,7 @@ package com.bartender.view;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -27,7 +24,7 @@ import com.bartender.dao.DrinkListDAO;
 import com.bartender.dao.IngredientsDAO;
 import com.bartender.domain.NewDrinkDomain;
 
-public class AmountPicker extends Activity  implements OnClickListener{
+public class AmountPicker extends BaseActivity  implements OnClickListener{
 	
 	 private ListView listWholeNums,listHalfNums,measurementtypes;
 	 private Button btnSave,btnCancel;
@@ -51,9 +48,11 @@ public class AmountPicker extends Activity  implements OnClickListener{
     	 //set event handlers to buttons
         btnSave = (Button) findViewById(R.id.btnAmountSave);
     	btnSave.setOnClickListener(this);
+    	btnSave.setOnTouchListener(this);
 		
 		btnCancel = (Button) findViewById(R.id.btnAmountCancel);
 		btnCancel.setOnClickListener(this);
+		btnCancel.setOnTouchListener(this);
 		
         listWholeNums = (ListView) findViewById(R.id.listWholeNums);
         listHalfNums = (ListView) findViewById(R.id.listHalfNums); 
@@ -86,6 +85,8 @@ public class AmountPicker extends Activity  implements OnClickListener{
         NewDrinkDomain.getInstance().clearIngredients();
         
     }
+    
+
     
     public void onClick(View v) {
 
@@ -138,7 +139,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
     		
     		NewDrinkDomain.getInstance().wholeAmount =((String)parent.getItemAtPosition(position));
     		TextView tv = (TextView)findViewById(R.id.tvWhole);
-    		tv.setText((String)parent.getItemAtPosition(position));
+    		tv.setText((String)parent.getItemAtPosition(position) + " ");
     		
     		//set all to white
 			//setBackgroundDefault(parent);
@@ -154,7 +155,7 @@ public class AmountPicker extends Activity  implements OnClickListener{
 			
 			NewDrinkDomain.getInstance().halfAmount=(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));		
 			TextView tv = (TextView)findViewById(R.id.tvHalf);
-    		tv.setText(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION))+" ");
+    		tv.setText(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));
 			}};
 					
 	AdapterView.OnItemClickListener onMeasureItemListener = new OnItemClickListener(){

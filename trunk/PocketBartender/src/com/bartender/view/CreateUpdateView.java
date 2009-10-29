@@ -4,7 +4,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +20,7 @@ import com.bartender.domain.NewDrinkDomain;
 import com.bartender.domain.ScreenType;
 
 
-public class CreateUpdateView extends Activity implements OnClickListener {
+public class CreateUpdateView extends BaseActivity implements OnClickListener {
 
 	private Intent intent;
 	private Button btnIng, btnSave,btnCat,btnCancel,btnReset;
@@ -81,6 +80,7 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 		
 		btnCancel=(Button)findViewById(R.id.btnCancel);
 		btnCancel.setOnClickListener(this);
+		btnCancel.setOnTouchListener(this);
 		
 		btnIng = (Button) findViewById(R.id.btnNewIng);
 		btnIng.setOnClickListener(this);
@@ -90,9 +90,11 @@ public class CreateUpdateView extends Activity implements OnClickListener {
 	
 		btnSave = (Button)findViewById(R.id.btnSave);
 		btnSave.setOnClickListener(this);
+		btnSave.setOnTouchListener(this);
 		
 		btnReset = (Button)findViewById(R.id.btnReset);
 		btnReset.setOnClickListener(this);
+		btnReset.setOnTouchListener(this);
 
 	}
 	

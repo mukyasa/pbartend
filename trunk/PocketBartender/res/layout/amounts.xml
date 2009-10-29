@@ -28,7 +28,9 @@
 	    android:layout_width="fill_parent" 
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp" 
-	    android:fitsSystemWindows="true" android:scrollbars="none" android:layout_marginRight="10.0sp" android:background="#fff"></ListView>
+	    android:fitsSystemWindows="true" android:scrollbars="none" 
+	    android:layout_marginRight="10.0sp"
+	    android:cacheColorHint="#00000000"></ListView>
 
 	<ListView android:id="@+id/listHalfNums" 
 	android:layout_height="fill_parent"
@@ -36,7 +38,9 @@
 	    android:layout_gravity="fill_vertical" 
 	    android:layout_width="fill_parent" 
 	    android:fadingEdge="vertical" 
-	    android:fadingEdgeLength="50.0sp" android:scrollbars="none" android:layout_marginRight="10.0sp" android:background="#fff"></ListView>
+	    android:fadingEdgeLength="50.0sp"
+	    android:cacheColorHint="#00000000"
+	     android:scrollbars="none" android:layout_marginRight="10.0sp"></ListView>
 	    
 	  <ListView android:id="@+id/listAmounts" android:gravity=""
 	    android:layout_height="fill_parent"
@@ -44,7 +48,8 @@
 	    android:layout_width="fill_parent" 
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp" 
-	    android:fitsSystemWindows="true" android:scrollbars="none" android:background="#fff"></ListView>
+	    android:fitsSystemWindows="true" android:cacheColorHint="#00000000"
+	    android:scrollbars="none"></ListView>
 
 </LinearLayout>
 <TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="8.0sp" android:paddingRight="8.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">

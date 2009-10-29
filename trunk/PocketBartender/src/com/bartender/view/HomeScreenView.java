@@ -35,10 +35,12 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
         setContentView(R.layout.home);
         initComponents();
         
-        pd = ProgressDialog.show(this, null,"Building the database, please be patient.");        
-        
-        Thread thread = new Thread(this);
-        thread.start();
+        if(DatabaseAdapter.sqliteDb== null)
+        {
+        	pd = ProgressDialog.show(this, null,"Building the database, please be patient.");
+        	Thread thread = new Thread(this);
+        	thread.start();
+        }
         
     }
     

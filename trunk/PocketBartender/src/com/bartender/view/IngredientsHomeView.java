@@ -1,6 +1,5 @@
 package com.bartender.view;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,7 @@ import android.widget.Button;
 
 import com.bartender.R;
 
-public class IngredientsHomeView extends Activity implements OnClickListener {
+public class IngredientsHomeView extends BaseActivity implements OnClickListener {
     /** Called when the activity is first created. */
 	private Intent intent;
 	private Button btnLiquor, btnMixers, btnGarnish;
@@ -26,14 +25,18 @@ public class IngredientsHomeView extends Activity implements OnClickListener {
 		
 		btnLiquor = (Button) findViewById(R.id.btnLiquor);
 		btnLiquor.setOnClickListener(this);
+		btnLiquor.setOnTouchListener(this);
 		
 		btnMixers = (Button) findViewById(R.id.btnMixers);
 		btnMixers.setOnClickListener(this);
+		btnMixers.setOnTouchListener(this);
 
 		btnGarnish = (Button) findViewById(R.id.btnGarnish);
 		btnGarnish.setOnClickListener(this);
+		btnGarnish.setOnTouchListener(this);
 	}
     
+	
     
     public void onClick(View view) {
 		if(view==btnLiquor)

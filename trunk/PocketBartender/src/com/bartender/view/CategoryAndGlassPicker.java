@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
@@ -27,7 +26,7 @@ import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
 import com.bartender.domain.NewDrinkDomain;
 
-public class CategoryAndGlassPicker extends Activity implements OnClickListener {
+public class CategoryAndGlassPicker extends BaseActivity implements OnClickListener {
 	
 	private CategoryDAO dataDAO = new CategoryDAO();
 	protected DatabaseAdapter myDatabaseAdapter;
@@ -63,9 +62,11 @@ public class CategoryAndGlassPicker extends Activity implements OnClickListener 
 
     	btnSave = (Button) findViewById(R.id.btnSave);
     	btnSave.setOnClickListener(this);
+    	btnSave.setOnTouchListener(this);
 		
 		btnCancel = (Button) findViewById(R.id.btnCancel);
 		btnCancel.setOnClickListener(this);
+		btnCancel.setOnTouchListener(this);
 		
         //instantiate the objects
     	listCategories = (ListView) findViewById(R.id.listCategories);

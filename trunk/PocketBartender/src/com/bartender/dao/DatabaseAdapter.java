@@ -11,7 +11,7 @@ import android.util.Log;
 
 public class DatabaseAdapter extends SQLiteOpenHelper {
 
-	private static SQLiteDatabase sqliteDb;
+	public static SQLiteDatabase sqliteDb=null;
 	private static DatabaseAdapter instance; //for singleton
 	
 	private static final String DATABASE_NAME = "pBartender7";
