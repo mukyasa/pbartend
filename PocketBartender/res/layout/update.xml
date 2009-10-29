@@ -4,8 +4,7 @@
 	android:paddingBottom="10.0sp" android:paddingLeft="10.0sp"
 	android:paddingTop="10.0sp" android:background="@drawable/details_bg">
 	<TableLayout android:id="@+id/TableLayout01"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:paddingRight="10.0sp">
+		android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingRight="10.0sp">
 		<RelativeLayout>
 		<TextView android:id="@+id/tvTitle" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:textColor="#000"
@@ -26,12 +25,11 @@
 		
 		<TableRow android:paddingTop="10.0sp">
 			<Button android:id="@+id/btnNewCat" android:layout_height="wrap_content"
-				android:layout_width="fill_parent" android:text="@string/categoryText"
-				android:layout_weight="1" android:layout_gravity="left"></Button>
+				android:text="@string/categoryText"
+				android:layout_gravity="left" android:background="@drawable/button_bg" android:height="20.0sp" android:layout_width="wrap_content" android:layout_weight="2" android:layout_marginRight="5.0sp" android:paddingBottom="0sp" android:paddingLeft="0sp" android:paddingRight="0sp" android:paddingTop="0sp"></Button>
 
-			<Button android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:text="@string/ingredientsText"
-				android:id="@+id/btnNewIng" android:layout_weight="1" android:layout_gravity="right"></Button>
+			<Button android:layout_height="wrap_content" android:text="@string/ingredientsText"
+				android:id="@+id/btnNewIng" android:background="@drawable/button_bg" android:height="20.0sp" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="right" android:paddingBottom="0sp" android:paddingLeft="0sp" android:paddingRight="0sp" android:paddingTop="0sp"></Button>
 </TableRow>
 			<TextView android:id="@+id/tvNewIngredients"
 				android:layout_height="wrap_content"
@@ -56,21 +54,17 @@
  android:layout_height="wrap_content" 
  android:text="@string/btnCancel" 
  android:layout_width="fill_parent" 
- android:layout_gravity="left" 
- android:layout_weight="1"></Button>
+ android:background="@drawable/button_bg" android:height="20.0sp" android:layout_gravity="left" android:layout_weight="1" android:layout_marginRight="5.0sp" android:paddingBottom="0sp" android:paddingLeft="0sp" android:paddingRight="0sp" android:paddingTop="0sp"></Button>
  
 <Button android:layout_height="wrap_content" 
 android:text="@string/btnReset"
  android:layout_width="fill_parent" 
- android:layout_gravity="left" 
- android:layout_weight="1" 
- android:id="@+id/btnReset"></Button>
+ android:id="@+id/btnReset" android:background="@drawable/button_bg" android:height="20.0sp" android:layout_gravity="left" android:layout_weight="1" android:layout_marginRight="5.0sp" android:paddingBottom="0sp" android:paddingLeft="0sp" android:paddingRight="0sp" android:paddingTop="0sp"></Button>
  
  <Button android:layout_height="wrap_content" 
 android:text="@string/btnSave"
  android:layout_width="fill_parent" 
- android:layout_weight="3" 
- android:id="@+id/btnSave" android:layout_gravity="right"></Button>
+ android:id="@+id/btnSave" android:background="@drawable/button_bg" android:height="20.0sp" android:layout_gravity="right" android:layout_weight="1" android:paddingBottom="0sp" android:paddingLeft="0sp" android:paddingRight="0sp" android:paddingTop="0sp"></Button>
 
 </TableRow>
 
