@@ -32,7 +32,7 @@ public class FavoriteListView extends ListViews {
     	String[] from = new String[] { DrinkListDAO.COL_NAME };
 		int[] to = new int[] { R.id.tfName};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
-				R.layout.item_row, recordscCursor, from, to);
+				R.layout.fav_item_row, recordscCursor, from, to);
     	
 		setListAdapter(records);
 	}

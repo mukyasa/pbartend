@@ -94,13 +94,17 @@ public abstract class ListViews extends ListActivity{
 				
 				if(event.getAction() == KeyEvent.ACTION_UP  || event.getAction() == KeyEvent.KEYCODE_ENTER )
 				{
+					int row_item =R.layout.item_row;
 					Editable et = searchbox.getText(); //searchbox text
 					Cursor recordscCursor=null;
 					ListActivity laType = getCurrentListActivity();
 					String[] from = new String[] { DataDAO.COL_NAME };
 					
 					if(laType instanceof FavoriteListView)//filter FAVORITES
+					{
+						row_item = R.layout.fav_item_row;
 						recordscCursor = ((FavoriteListView) laType).dataDAO.retrieveAllFilteredFavorites(et.toString().trim());
+					}
 					else if(laType instanceof DrinkListView)//filter ALL DRINKS
 						recordscCursor = ((DrinkListView) laType).dataDAO.retrieveAllFilteredDrinks(et.toString().trim());
 					else if(laType instanceof CategoryListView)//filter CATEGORIES
@@ -114,7 +118,7 @@ public abstract class ListViews extends ListActivity{
 			    	startManagingCursor(recordscCursor);
 					int[] to = new int[] { R.id.tfName};
 			    	SimpleCursorAdapter records = new SimpleCursorAdapter(getCurrentListActivity(),
-							R.layout.item_row, recordscCursor, from, to);
+			    			row_item, recordscCursor, from, to);
 			    	
 					setListAdapter(records);
 					
