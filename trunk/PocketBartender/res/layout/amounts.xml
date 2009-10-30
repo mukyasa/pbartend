@@ -52,7 +52,7 @@
 	    android:scrollbars="none"></ListView>
 
 </LinearLayout>
-<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="8.0sp" android:paddingRight="8.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp" android:background="@drawable/bottom_buttons_bg">
+<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="8.0sp" android:paddingRight="8.0sp" android:paddingBottom="5.0sp" android:background="@drawable/bottom_buttons_bg" android:paddingTop="10.0sp">
 	<TableRow>
 	 <Button android:layout_height="wrap_content" 
  android:text="@string/btnCancel" 

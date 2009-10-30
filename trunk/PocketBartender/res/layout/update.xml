@@ -5,25 +5,44 @@
 	android:paddingTop="10.0sp" android:background="@drawable/details_bg">
 	<TableLayout android:id="@+id/TableLayout01"
 		android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingRight="10.0sp">
-		<RelativeLayout>
-		<TextView android:id="@+id/tvTitle" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:textColor="#000"
-			android:layout_marginTop="10.0sp" android:textStyle="bold" android:textSize="14sp"
-			android:text="@string/create_drink_title" android:layout_marginLeft="58.0sp"></TextView>
-
-			<EditText android:id="@+id/etNewDrinkNm"
-				android:layout_height="wrap_content" android:textColor="#000" android:inputType="textWebEditText"
-				android:imeOptions="actionDone" android:layout_width="fill_parent" android:layout_marginLeft="58.0sp" android:layout_marginTop="30.0sp"></EditText>
-			<TextView android:id="@+id/tvNewCategory"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:textColor="#000" android:layout_marginTop="75.0sp" android:textSize="18sp"></TextView>
-				
+		<TableRow>
+		<TextView android:id="@+id/tvNewCategory"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#fff" 
+				android:layout_marginTop="0sp" 
+				android:textSize="18sp" android:layout_gravity="center_vertical"></TextView>
 		<ImageView android:id="@+id/imgNewGlass"
 				android:layout_width="48.0px" android:layout_height="48.0px"
-				android:layout_marginTop="25.0sp" android:background="@drawable/blank"></ImageView>
-		</RelativeLayout>
+				android:layout_gravity="right|center_vertical"
+				android:background="@drawable/blank"></ImageView>
+		</TableRow>
+
+		<EditText android:id="@+id/etNewDrinkNm"
+				android:layout_height="wrap_content" 
+				android:textColor="#ccc"
+				android:inputType="textWebEditText"
+				android:text="@string/create_drink_title"
+				android:imeOptions="actionDone" 
+				android:layout_width="fill_parent" 
+				android:layout_marginLeft="0.0sp" 
+				android:layout_marginTop="0sp"></EditText>
 		
-		<TableRow android:paddingTop="10.0sp">
+			<TextView android:id="@+id/tvNewIngredients"
+				android:layout_height="wrap_content"
+				android:textColor="#fff" 
+				android:textSize="16sp"
+				android:textStyle="bold"
+				android:layout_width="fill_parent" 
+				android:layout_gravity="fill_horizontal"></TextView>
+
+		<EditText android:id="@+id/etDirections"
+			android:layout_width="wrap_content" android:textColor="#ccc"
+			android:inputType="textWebEditText" android:imeOptions="actionDone"
+			android:layout_height="fill_parent" android:singleLine="false"
+			android:text="@string/instructionsText"
+			android:lines="8"></EditText>
+			<TableRow android:paddingTop="10.0sp">
 			<Button android:id="@+id/btnNewCat" android:layout_height="wrap_content"
 				android:text="@string/categoryText"
 				android:layout_gravity="left" android:height="20.0sp" android:layout_width="wrap_content" android:layout_weight="2" android:layout_marginRight="5.0sp" android:paddingBottom="0sp" android:paddingTop="0sp" android:background="@drawable/wht_button_bg" android:paddingLeft="40sp" android:paddingRight="10sp"></Button>
@@ -31,23 +50,6 @@
 			<Button android:layout_height="wrap_content" android:text="@string/ingredientsText"
 				android:id="@+id/btnNewIng" android:height="20.0sp" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="right" android:paddingBottom="0sp" android:paddingTop="0sp" android:background="@drawable/wht_button_bg" android:paddingRight="10sp" android:paddingLeft="40sp"></Button>
 </TableRow>
-			<TextView android:id="@+id/tvNewIngredients"
-				android:layout_height="wrap_content"
-				android:textColor="#000" 
-				android:textSize="14sp"
-				android:layout_width="fill_parent" 
-				android:layout_gravity="fill_horizontal"></TextView>
-		<TextView android:id="@+id/tvInstuctions"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:textColor="#000" android:layout_gravity="center"
-			android:text="@string/instructionsText" android:layout_marginTop="10.0sp"
-			android:textStyle="bold" android:textSize="14sp"></TextView>
-
-		<EditText android:id="@+id/etDirections"
-			android:layout_width="wrap_content" android:textColor="#000"
-			android:inputType="textWebEditText" android:imeOptions="actionDone"
-			android:layout_height="fill_parent" android:singleLine="false"
-			android:lines="8"></EditText>
 	<TableRow>
 
 <Button android:id="@+id/btnCancel" 
@@ -64,7 +66,11 @@ android:text="@string/btnReset"
  <Button android:layout_height="wrap_content" 
 android:text="@string/btnSave"
  android:layout_width="fill_parent" 
- android:id="@+id/btnSave" android:background="@drawable/button_bg" android:height="20.0sp" android:layout_gravity="right" android:layout_weight="1" android:paddingLeft="0sp" android:paddingRight="0sp" android:paddingTop="0sp" android:textColor="#fff" android:textStyle="bold" android:paddingBottom="10sp"></Button>
+ android:id="@+id/btnSave" android:background="@drawable/button_bg" 
+ android:height="20.0sp" android:layout_gravity="right" 
+ android:layout_weight="1" android:paddingLeft="0sp" 
+ android:paddingRight="0sp" android:paddingTop="0sp" 
+ android:textColor="#fff" android:textStyle="bold" android:paddingBottom="10sp"></Button>
 
 </TableRow>
 
