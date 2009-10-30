@@ -25,7 +25,7 @@ public class DrinkInserts {
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(20,8,'38 Degrees','Shake with lots of ice and strain into a cocktail glass.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(21,12,'4 Copas Organic Agave Margarita','In a mixing glass add all ingredients, shake and strain over fresh ice into a margarita glass. Garnish with a lime wheel.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(22,5,'40 Volume Lemonade','Muddle the Bacardi Limon, the amaretto and the sour apple. Add 3 to 5 lemon wedges and 1 or 2 tbsp. of sugar. Muddle well without ice. Add the sour mix and the 7-Up. Shake and strain into a 16oz. glass. Garnish with a slice of lemon and a cherry.',1,0,0,0);"
-,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(25,4,'501 Blue','Mix all the ingredients (except for the 7-Up) in a shaker with ice. Pour into a hurricane glass and top off with 7-Up. This is a Penn State University specialty.',1,0,0,0);"
+,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(25,4,'501 Blue','Mix all the ingredients (except for the 7-Up) in a shaker with ice. Pour into a hurricane glass and top off with 7-Up.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(26,2,'501 Blues','Mix in a highball glass and fill with sprite.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(27,1,'502','Shake with ice and strain over ice in a small rocks glass.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(28,2,'57 Chevy','Fill a highball glass with ice. Top with equal part of juice and the splash of lime soda. Cover with a shaker and shake. Garnish with an orange',1,0,0,0);"
