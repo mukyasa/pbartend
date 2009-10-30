@@ -7,13 +7,14 @@ package com.bartender.dao;
  */
 public class DrinkInserts {
 	
-	public String[] sqlInsertDrinks = {"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(1,2,'#26','Muddle six or seven grapes. Add ice, lime, syrup, and spirits. Shake and strain into an ice-filled highball glass. Top with orange juice and garnish with fresh grapes. ',1,0,0,0);"
-,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2,2,'$2 Fish','Combine vodka and tequila in a highball glass. Fill to a half inch from top with tang. Swirl grenadine.',1,0,0,0);"
-,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(3,2,'''57 Chevy','Fill a highball glass with ice and pour in the liqueurs. Fill the rest of the glass with equal parts of the juices and top off with a splash of grenadine. Cover the glass with a shaker and shake well. Remove shaker from glass and serve.',1,0,0,0);"
-,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(6,5,'''Blou'' Piniella','Pour liquors over ice in a pint glass. Add a splash of sweet and sour and top off with 7-Up.',1,0,0,0);"
-,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(7,2,'006','Pour all ingredients in a glass full of ice.',1,0,0,0);"
+	public String[] sqlInsertDrinks = {
+			//"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(1,2,'#26','Muddle six or seven grapes. Add ice, lime, syrup, and spirits. Shake and strain into an ice-filled highball glass. Top with orange juice and garnish with fresh grapes. ',1,0,0,0);"
+//,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(2,2,'$2 Fish','Combine vodka and tequila in a highball glass. Fill to a half inch from top with tang. Swirl grenadine.',1,0,0,0);"
+"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(3,2,'''57 Chevy','Fill a highball glass with ice and pour in the liqueurs. Fill the rest of the glass with equal parts of the juices and top off with a splash of grenadine. Cover the glass with a shaker and shake well. Remove shaker from glass and serve.',1,0,0,0);"
+//,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(6,5,'''Blou'' Piniella','Pour liquors over ice in a pint glass. Add a splash of sweet and sour and top off with 7-Up.',1,0,0,0);"
+//,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(7,2,'006','Pour all ingredients in a glass full of ice.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(8,2,'007','Pour Vodka into a tall glass over ice. Fill with Sprite and splash the orange juice for color and flavor. Stir and serve.',1,0,0,0);"
-,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(10,2,'101','Mix in a highball glass.',1,0,0,0);"
+//,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(10,2,'101','Mix in a highball glass.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(11,8,'104 Per Cent','Mix with ice and serve in a cocktail glass. Top off with sour mix.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(12,2,'117 Cherry','Pour Banana liqueur and rum over ice in a highball glass. Fill the glass with orange juice. Add a splash of grenadine and stir for a wonderful taste and color.',1,0,0,0);"
 ,"INSERT INTO "+DataDAO.TABLE_DRINK+" VALUES(13,2,'118 Brown','Mix with ice in a highball glass.',1,0,0,0);"
