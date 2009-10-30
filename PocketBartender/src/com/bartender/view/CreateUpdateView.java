@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,6 +26,7 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 
 	private Intent intent;
 	private Button btnIng, btnSave,btnCat,btnCancel,btnReset;
+	private EditText drinkName,directions;
 	long selectedRow=-1;
 	protected DatabaseAdapter myDatabaseAdapter;
 	CreateUpdateDAO dataDAO = new CreateUpdateDAO();
@@ -42,7 +45,13 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 	private void initComponents() {
 		
 		NewDrinkDomain ndd = NewDrinkDomain.getInstance();
-		dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());		
+		dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());	
+		
+		directions = (EditText)findViewById(R.id.etDirections);
+		drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
+		directions.setOnTouchListener(this);
+		drinkName.setOnTouchListener(this);
+		
 		if(ndd.categoryName!=null)
 		{
 			TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
@@ -68,13 +77,13 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 		
 		if(ndd.drinkName != null)
 		{
-			EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
+			
 			drinkName.setText(ndd.drinkName);
 		}
 		
 		if(ndd.instructions != null)
 		{
-			EditText directions = (EditText)findViewById(R.id.etDirections);
+			
 			directions.setText(ndd.instructions);
 		}
 		
@@ -121,9 +130,11 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 		{
 			 NewDrinkDomain.getInstance().clearDomain();
 			 EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
-			 drinkName.setText("");
+			 drinkName.setText(this.getString(R.string.create_drink_title));
+			 drinkName.setTextColor(Color.LTGRAY);
 			 EditText directions = (EditText)findViewById(R.id.etDirections);
-			 directions.setText("");
+			 directions.setText(this.getString(R.string.instructionsText));
+			 directions.setTextColor(Color.LTGRAY);
 			 TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
 			 newIngNm.setText("");
 			 TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
