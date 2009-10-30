@@ -67,7 +67,7 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
         dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor = dataDAO.retrieveAllMeasurements();
     	startManagingCursor(recordscCursor);
-    	String[] from = new String[] { DrinkListDAO.COL_FRACTION };
+    	String[] from = new String[] { DrinkListDAO.COL_FRACTION};
 		int[] to = new int[] { R.id.tvItem};
     	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
 				R.layout.textviewrow, recordscCursor, from, to);
@@ -81,6 +81,7 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
         listHalfNums.setAdapter(records);
         listWholeNums.setAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow, tmp));
         measurementtypes.setAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow, AMOUNTS));
+        
         
         NewDrinkDomain.getInstance().clearIngredients();
         
@@ -155,7 +156,7 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
 			
 			NewDrinkDomain.getInstance().halfAmount=(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));		
 			TextView tv = (TextView)findViewById(R.id.tvHalf);
-    		tv.setText(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));
+    		tv.setText(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)) + " ");
 			}};
 					
 	AdapterView.OnItemClickListener onMeasureItemListener = new OnItemClickListener(){
