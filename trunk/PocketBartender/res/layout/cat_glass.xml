@@ -24,7 +24,6 @@
 	    android:layout_width="fill_parent" 
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp" 
-	    android:fitsSystemWindows="true" 
 	    android:choiceMode="singleChoice" 
 	    android:layout_marginRight="10.0sp" 
 	    android:scrollbars="none"
@@ -41,7 +40,7 @@
 	    android:cacheColorHint="#00000000"></ListView>
 	    
 </LinearLayout>
-<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="8.0sp" android:paddingRight="8.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp">
+<TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="8.0sp" android:paddingRight="8.0sp" android:paddingTop="5.0sp" android:paddingBottom="5.0sp" android:background="@drawable/bottom_buttons_bg">
 	<TableRow>
 	 <Button android:layout_height="wrap_content" 
  android:text="@string/btnCancel" 
