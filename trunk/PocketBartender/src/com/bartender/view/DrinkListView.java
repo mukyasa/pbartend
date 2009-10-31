@@ -41,7 +41,7 @@ public class DrinkListView extends ListViews {
     	else if(ScreenType.getInstance().screenType == ScreenType.SCREEN_TYPE_ING)
     		recordscCursor = dataDAO.retrieveAllDrinksByIng(ScreenType.getInstance().type,selectedRow+"");
     	else
-    		recordscCursor = dataDAO.retrieveAllDrinks();
+    		recordscCursor = dataDAO.retrieveAllDrinkAndGlass();
     	
     	
     	Log.v(getClass().getSimpleName(), "count=" + recordscCursor.getCount());
@@ -49,7 +49,7 @@ public class DrinkListView extends ListViews {
     	String[] from = new String[] { DrinkListDAO.COL_NAME };
 		int[] to = new int[] { R.id.tfName};
 		
-    	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
+    	SimpleCursorAdapter records = new ImageAndTextAdapter(this,
 				R.layout.item_row, recordscCursor, from, to);
     	
 		setListAdapter(records);	

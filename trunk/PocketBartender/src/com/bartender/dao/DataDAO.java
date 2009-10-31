@@ -51,6 +51,7 @@ public class DataDAO{
 	public static final String TABLE_INGREDIENTS_SUB_CAT ="tblIngredient_subcategories";
 	
 	
+	public static final String sqlGetAllDrinksAndGlass ="SELECT g.name["+COL_GLASS_NAME+"],d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
 	
 	public static final String sqlGetMaxId ="SELECT MAX(_ID)["+COL_ROW_ID+"]  FROM "+TABLE_DRINK;
 	public static final String sqlGetGlassNameById = "SELECT name["+COL_GLASS_NAME+"] from "+TABLE_GLASSES+" WHERE _id=?";
