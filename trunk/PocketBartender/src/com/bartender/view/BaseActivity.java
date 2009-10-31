@@ -9,16 +9,15 @@
  */
 package com.bartender.view;
 
-import com.bartender.R;
-
 import android.app.Activity;
 import android.graphics.Color;
-import android.text.Editable;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.bartender.R;
 
 /**
  * @author dmason
@@ -57,6 +56,7 @@ public class BaseActivity extends Activity implements OnTouchListener {
 		  		}
 
 		  	}
+		  	
 		  
 		    return false;
 	    }

@@ -27,6 +27,7 @@ import com.bartender.domain.NewDrinkDomain;
 public class AmountPicker extends BaseActivity  implements OnClickListener{
 	
 	 private ListView listWholeNums,listHalfNums,measurementtypes;
+	 private final String none ="---";
 	 private Button btnSave,btnCancel;
 	 private Intent intent;
 	 protected DatabaseAdapter myDatabaseAdapter;
@@ -63,6 +64,11 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
         listWholeNums.setOnItemClickListener(onWholeItemListener);
         measurementtypes.setOnItemClickListener(onMeasureItemListener);
         
+        //set touch
+        listHalfNums.setOnTouchListener(this);
+        listWholeNums.setOnTouchListener(this);
+        measurementtypes.setOnTouchListener(this);
+        
         //fractions
         dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor = dataDAO.retrieveAllMeasurements();
@@ -75,6 +81,7 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
 
     	//whole numbers to add
         List<String> tmp = new ArrayList<String>();
+        tmp.add(none);
         for(int i=1;i<241;i++)
         	tmp.add(i+"");
         
@@ -109,7 +116,7 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
     	
 	}
     
-    static final String[] AMOUNTS = new String[] {"cup","oz","pint","quart","gallon","tsp","tbsp","lb","bottles(s)"
+    final String[] AMOUNTS = new String[] {none,"cup","oz","pint","quart","gallon","tsp","tbsp","lb","bottles(s)"
     	,"can(s)"
     	,"dashe(es)"
     	,"drop(s)"
@@ -136,37 +143,54 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
 		
     	public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 
-    		//v.setBackgroundResource(R.drawable.clickbg);
     		
     		NewDrinkDomain.getInstance().wholeAmount =((String)parent.getItemAtPosition(position));
     		TextView tv = (TextView)findViewById(R.id.tvWhole);
     		tv.setText((String)parent.getItemAtPosition(position) + " ");
     		
-    		//set all to white
-			//setBackgroundDefault(parent);
+    		//remove if none
+    		if(none.equals((String)parent.getItemAtPosition(position)))
+    		{
+    			tv.setText(null);
+    			NewDrinkDomain.getInstance().wholeAmount=null;
+    		}
+    		
 			}};
 			
 	AdapterView.OnItemClickListener onHalfItemListener = new OnItemClickListener(){
 		
 		public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 	
-			//set all to white
-			//setBackgroundDefault(parent);
 			Cursor cursor = (Cursor)parent.getItemAtPosition(position);
 			
 			NewDrinkDomain.getInstance().halfAmount=(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)));		
 			TextView tv = (TextView)findViewById(R.id.tvHalf);
     		tv.setText(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION)) + " ");
+    		
+    		//remove if none
+    		if(none.equals(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_FRACTION))))
+    		{
+    			tv.setText(null);
+    			NewDrinkDomain.getInstance().halfAmount=null;
+    		}
+    		
 			}};
 					
 	AdapterView.OnItemClickListener onMeasureItemListener = new OnItemClickListener(){
 		
     	public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 
-    		//set all to white
-    		//setBackgroundDefault(parent);
     		NewDrinkDomain.getInstance().measurment=((String)parent.getItemAtPosition(position));
     		TextView tv = (TextView)findViewById(R.id.tvMeasurement);
     		tv.setText((String)parent.getItemAtPosition(position));
+    		
+    		//remove if none
+    		if(none.equals((String)parent.getItemAtPosition(position)))
+    		{
+    			tv.setText(null);
+    			NewDrinkDomain.getInstance().measurment=null;
+    		}
+    		
+    		
 			}};
 }

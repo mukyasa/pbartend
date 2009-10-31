@@ -24,7 +24,8 @@ public class GlassesInsert {
 ,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(20,'snifter');"};
 	
 
-	public static String[] sqlInsertFractions= {"INSERT INTO "+DataDAO.TABLE_FRACTIONAL_AMOUNTS+" VALUES(1,'1/8',0.125);"
+	public static String[] sqlInsertFractions= {"INSERT INTO "+DataDAO.TABLE_FRACTIONAL_AMOUNTS+" VALUES(0,'---','---');"
+												,"INSERT INTO "+DataDAO.TABLE_FRACTIONAL_AMOUNTS+" VALUES(1,'1/8',0.125);"
 												,"INSERT INTO "+DataDAO.TABLE_FRACTIONAL_AMOUNTS+" VALUES(2,'1/6',0.166);"
 												,"INSERT INTO "+DataDAO.TABLE_FRACTIONAL_AMOUNTS+" VALUES(3,'1/5',0.2);"
 												,"INSERT INTO "+DataDAO.TABLE_FRACTIONAL_AMOUNTS+" VALUES(4,'1/4',0.25);"
