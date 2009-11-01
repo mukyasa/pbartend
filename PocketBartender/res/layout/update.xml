@@ -23,7 +23,6 @@
 				android:layout_gravity="center_vertical"
 				 android:textStyle="bold" 
 				 android:layout_width="fill_parent" 
-				 android:drawableLeft="@drawable/champ" android:text="Test stuff" 
 				 android:gravity="left|center_vertical"></TextView>
 		</TableRow>
 			<TextView android:id="@+id/tvNewIngredients"
