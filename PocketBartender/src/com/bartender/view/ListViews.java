@@ -1,6 +1,7 @@
 package com.bartender.view;
 
 import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -15,7 +16,6 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import com.bartender.R;
-import com.bartender.common.AppCommon;
 import com.bartender.dao.DataDAO;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.domain.DetailsDomain;
@@ -30,6 +30,7 @@ public abstract class ListViews extends ListActivity{
 	protected Intent intent;
 	protected ListActivity currentListActivity;
 	protected DetailsDomain drinkdetail;
+	protected ProgressDialog pd;
 		
 	public ListActivity getCurrentListActivity() {
 		return currentListActivity;
@@ -55,7 +56,8 @@ public abstract class ListViews extends ListActivity{
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 	{
 			super.onListItemClick(l, v, position, id);
-			Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
+			pd=ProgressDialog.show(this, null,"Pouring...");
+			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
 			startActivityForResult(intent, INTENT_NEXT_SCREEN);
 	}
@@ -76,7 +78,6 @@ public abstract class ListViews extends ListActivity{
 	
 	//home menu option
 	public boolean onOptionsItemSelected(MenuItem item) {
-		
 	    	Intent intent = new Intent(this, HomeScreenView.class);
 			startActivity(intent);
 	    	return true;
@@ -117,7 +118,7 @@ public abstract class ListViews extends ListActivity{
 					
 			    	startManagingCursor(recordscCursor);
 					int[] to = new int[] { R.id.tfName};
-			    	SimpleCursorAdapter records = new SimpleCursorAdapter(getCurrentListActivity(),
+			    	SimpleCursorAdapter records = new ImageAndTextAdapter(getCurrentListActivity(),
 			    			row_item, recordscCursor, from, to);
 			    	
 					setListAdapter(records);

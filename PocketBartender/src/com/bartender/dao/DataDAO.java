@@ -64,20 +64,19 @@ public class DataDAO{
 			"WHERE d._id =?;";
 	
 	public static final String sqlGetDrinkDetailByDrinkName ="SELECT d.name,d._id FROM "+TABLE_DRINK+" d where d."+COL_NAME+"=?;";
-	public static final String sqlGetDrinkDetailByDrinkCatName ="SELECT d.name,d._id FROM "+TABLE_DRINK+" d inner join tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
+	public static final String sqlGetDrinkDetailByDrinkCatName ="SELECT d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN tblDrinkType dt on d.drinkType = dt."+COL_ROW_ID+" where dt.drinktype=?;";
 	public static final String sqlGetAllFavorites = "SELECT d.name,d._id,d.favorite FROM "+TABLE_DRINK+" d where favorite =?";
 	
-	public static final String sqlGetDrinksByDrinkCatId = "SELECT  d.name,d._id " +
+	public static final String sqlGetDrinksByDrinkCatId = "SELECT  d.name,d._id,g.name["+COL_GLASS_NAME+"] " +
 			"FROM "+TABLE_DRINK+" d " +
+			"INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id "+
 			"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id " +
 			"WHERE dc._id =?";
 	
 	//search filter sql
-	public static final String sqlGetAllFavoritesFilter = "SELECT d.name,d._id,d.favorite " +
-			"FROM "+TABLE_DRINK+" d " +
-			"WHERE favorite ="+FAV_YES+" and "+COL_NAME+" like ?";
+	public static final String sqlGetAllFavoritesFilter = "SELECT d.name,d._id,d.favorite, g.name["+COL_GLASS_NAME+"] FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE favorite ="+FAV_YES+" and "+COL_NAME+" like ?";
 	
-	public static final String sqlGetAllDrinksFilter = "SELECT d.name,d._id FROM "+TABLE_DRINK+" d WHERE "+COL_NAME+" like ?";
+	public static final String sqlGetAllDrinksFilter = "SELECT g.name["+COL_GLASS_NAME+"],d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE d."+COL_NAME+" like ?";
 	public static final String sqlGetAllCategoriesFilter = "SELECT d.name,d._id FROM "+ TABLE_DRINK_CAT + "  WHERE  "+COL_NAME+" like ?";
 	
 	public static final String sqlGetAllIngredients = "SELECT i.name["+COL_CAT_NAME+"],i._id " +
@@ -91,7 +90,7 @@ public class DataDAO{
 			"INNER JOIN "+TABLE_INGREDIENTS_SUB_CAT+" isc on i.category_id = isc._id " +
 			"WHERE ic.name=? and i.name like ? order by i.name";
 	
-	public static final String sqlGetAllDrinksByIngredients= "SELECT  d.name,d._id "
+	public static final String sqlGetAllDrinksByIngredients= "SELECT d.name,d._id,g.name["+COL_GLASS_NAME+"] "
 	+"FROM "+TABLE_DRINK+" d "
 	+"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id "
 	+"INNER JOIN "+TABLE_DRINK_INGREDIENTS+" di on di.drink_id = d._id "

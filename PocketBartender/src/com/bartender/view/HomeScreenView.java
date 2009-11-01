@@ -103,15 +103,18 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 		    return false;
 	    }
     
+	  
     public void onClick(View view) {
+    	
 			if(view==btnAll)
 			{
+				pd = ProgressDialog.show(this, null,"Building drink list.");
 				ScreenType.getInstance().screenType= -1;
 				intent = new Intent(this, DrinkListView.class);
 				startActivity(intent);
 			}
 			else if(view==btnCat)
-			{
+			{	
 				intent = new Intent(this, CategoryListView.class);
 				startActivity(intent);
 			}

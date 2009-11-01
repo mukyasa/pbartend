@@ -33,7 +33,6 @@ public class DrinkListView extends ListViews {
     private void initComponents() {
     	drinkdetail = new DetailsDomain();
     	drinkdetail.id=((int) selectedRow);
-		
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor;
     	if(ScreenType.getInstance().screenType == ScreenType.SCREEN_TYPE_CAT)
@@ -52,7 +51,7 @@ public class DrinkListView extends ListViews {
     	SimpleCursorAdapter records = new ImageAndTextAdapter(this,
 				R.layout.item_row, recordscCursor, from, to);
     	
-		setListAdapter(records);	
+		setListAdapter(records);
 	}
 }
 
