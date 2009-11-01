@@ -17,7 +17,6 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.bartender.R;
-import com.bartender.common.AppCommon;
 import com.bartender.dao.DataDAO;
 import com.bartender.dao.DatabaseAdapter;
 import com.bartender.dao.DrinkListDAO;
@@ -127,16 +126,6 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
     	,"sprig(s)"
     	,"stick(s)"};
     
-    
-    private void setBackgroundDefault(AdapterView<?> parent)
-    {
-    	for(int i=0;i<parent.getCount();i++)
-		{
-			View vv = parent.getChildAt(i);
-			if(vv != null)
-				vv.setBackgroundColor(AppCommon.defaultColor);
-		}
-    }
     
     
     AdapterView.OnItemClickListener onWholeItemListener = new OnItemClickListener(){

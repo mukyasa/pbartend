@@ -26,8 +26,7 @@ public class DrinkListDAO extends DataDAO{
 	
 	public Cursor retrieveAllDrinkAndGlass()
 	{
-		String [] selectionArgs = {""};
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllDrinksAndGlass, selectionArgs);
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllDrinksAndGlass, new String[]{});
 
 		return cursor;
 		

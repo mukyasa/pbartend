@@ -3,6 +3,7 @@
  */
 package com.bartender.view;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -58,13 +59,11 @@ public class IngredientsListView extends ListViews {
    
    @Override
    protected void onListItemClick(ListView l, View v, int position, long id) {
-   	super.onListItemClick(l, v, position, id);
-	
    	Cursor cursor = (Cursor) l.getItemAtPosition(position);
    	//set id and name to create domain
    	NewDrinkDomain ndd = NewDrinkDomain.getInstance();
    	ndd.ingredientsName=(cursor.getString(cursor.getColumnIndexOrThrow(DataDAO.COL_CAT_NAME)));
-   	
+   	super.onListItemClick(l, v, position, id);
    }
    
 
