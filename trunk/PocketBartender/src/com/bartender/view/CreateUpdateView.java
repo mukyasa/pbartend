@@ -55,9 +55,10 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 		if(ndd.categoryName!=null)
 		{
 			TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
-			ImageView newGlass = (ImageView)findViewById(R.id.imgNewGlass);
+			//ImageView newGlass = (ImageView)findViewById(R.id.imgNewGlass);
 			newCatNm.setText(ndd.categoryName);
-			newGlass.setBackgroundDrawable(ndd.glassType);
+			newCatNm.setCompoundDrawablesWithIntrinsicBounds(ndd.glassType, null, null, null);
+			//newGlass.setBackgroundDrawable(ndd.glassType);
 		}
 		
 		if(ndd.getIngredients() != null && ndd.getIngredients().size() > 0)
@@ -138,9 +139,10 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 			 TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
 			 newIngNm.setText("");
 			 TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
-			 ImageView newGlass = (ImageView)findViewById(R.id.imgNewGlass);
+			// ImageView newGlass = (ImageView)findViewById(R.id.imgNewGlass);
 			 newCatNm.setText("");
-			 newGlass.setBackgroundResource(R.drawable.blank);
+			 newCatNm.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
+			// newGlass.setBackgroundResource(R.drawable.blank);
 			 
 		}
 		else if(view==btnCat) 

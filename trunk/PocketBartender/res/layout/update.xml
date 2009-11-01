@@ -15,15 +15,16 @@
 				android:layout_marginLeft="0.0sp" 
 				android:layout_marginTop="0sp"></EditText>
 		<TableRow>
-		<ImageView android:id="@+id/imgNewGlass"
-				android:layout_width="48.0px" android:layout_height="48.0px"
-				android:background="@drawable/blank" 
-				android:layout_gravity="left|center_vertical"></ImageView>
 		<TextView android:id="@+id/tvNewCategory"
 				android:layout_height="wrap_content"
 				android:textColor="#fff" 
 				android:layout_marginTop="0sp" 
-				android:textSize="18sp" android:layout_gravity="center_vertical" android:textStyle="bold" android:layout_width="fill_parent" android:gravity="left"></TextView>
+				android:textSize="18sp" 
+				android:layout_gravity="center_vertical"
+				 android:textStyle="bold" 
+				 android:layout_width="fill_parent" 
+				 android:drawableLeft="@drawable/champ" android:text="Test stuff" 
+				 android:gravity="left|center_vertical"></TextView>
 		</TableRow>
 			<TextView android:id="@+id/tvNewIngredients"
 				android:layout_height="wrap_content"
