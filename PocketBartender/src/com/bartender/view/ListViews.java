@@ -30,7 +30,6 @@ public abstract class ListViews extends ListActivity{
 	protected Intent intent;
 	protected ListActivity currentListActivity;
 	protected DetailsDomain drinkdetail;
-	protected ProgressDialog pd;
 		
 	public ListActivity getCurrentListActivity() {
 		return currentListActivity;
@@ -56,7 +55,6 @@ public abstract class ListViews extends ListActivity{
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 	{
 			super.onListItemClick(l, v, position, id);
-			pd=ProgressDialog.show(this, null,"Pouring...");
 			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
 			startActivityForResult(intent, INTENT_NEXT_SCREEN);
@@ -93,7 +91,7 @@ public abstract class ListViews extends ListActivity{
 		
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				
-				if(event.getAction() == KeyEvent.ACTION_UP  || event.getAction() == KeyEvent.KEYCODE_ENTER )
+				if((event.getAction() == KeyEvent.ACTION_UP  || event.getAction() == KeyEvent.KEYCODE_ENTER )&& event.getAction()!= KeyEvent.KEYCODE_SOFT_LEFT)
 				{
 					int row_item =R.layout.item_row;
 					Editable et = searchbox.getText(); //searchbox text
