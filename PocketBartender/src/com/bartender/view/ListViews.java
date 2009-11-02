@@ -30,6 +30,7 @@ public abstract class ListViews extends ListActivity implements OnKeyListener{
 	protected Intent intent;
 	protected ListActivity currentListActivity;
 	protected DetailsDomain drinkdetail;
+	protected ProgressDialog pd;
 		
 	public ListActivity getCurrentListActivity() {
 		return currentListActivity;
@@ -51,11 +52,14 @@ public abstract class ListViews extends ListActivity implements OnKeyListener{
 	}
 	
 	/* (non-Javadoc)
-	 * @see android.app.Activity#onBackPressed()
+	 * @see android.app.Activity#onStop()
 	 */
 	@Override
-	public void onBackPressed() {
-		//disable back button
+	protected void onStop() {
+		if(pd!=null)
+			pd.dismiss();
+		
+	    super.onStop();
 	}
 	
 	public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -98,7 +102,7 @@ public abstract class ListViews extends ListActivity implements OnKeyListener{
 	 */
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 	{
-			ProgressDialog.show(this, null,"LOADING...");
+			pd =ProgressDialog.show(this, null,"LOADING...");
 			super.onListItemClick(l, v, position, id);
 			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
