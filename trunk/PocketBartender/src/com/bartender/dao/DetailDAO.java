@@ -17,7 +17,7 @@ public class DetailDAO extends DataDAO{
 	 */
 	private void setDrinkDomain(DetailsDomain drink,Cursor cursor)
 	{
-		Log.v(getClass().getSimpleName(), "details count=" + cursor.getCount());
+		//Log.v(getClass().getSimpleName(), "details count=" + cursor.getCount());
 		StringBuffer ingredients= new StringBuffer();
 		
 		for(int i=0;i<cursor.getCount();i++)
