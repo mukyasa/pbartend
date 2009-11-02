@@ -43,7 +43,7 @@ public class DrinkListView extends ListViews {
     		recordscCursor = dataDAO.retrieveAllDrinkAndGlass();
     	
     	
-    	Log.v(getClass().getSimpleName(), "count=" + recordscCursor.getCount());
+    	//Log.v(getClass().getSimpleName(), "count=" + recordscCursor.getCount());
     	startManagingCursor(recordscCursor);
     	String[] from = new String[] { DrinkListDAO.COL_NAME };
 		int[] to = new int[] { R.id.tfName};
