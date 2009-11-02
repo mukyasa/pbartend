@@ -3,7 +3,6 @@
  */
 package com.bartender.view;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;

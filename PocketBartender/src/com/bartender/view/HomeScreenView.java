@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
@@ -110,6 +109,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     	
 			if(view==btnAll)
 			{
+				ProgressDialog.show(this, null,"LOADING...");
 				ScreenType.getInstance().screenType= -1;
 				intent = new Intent(this, DrinkListView.class);
 				startActivity(intent);

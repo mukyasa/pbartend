@@ -3,7 +3,6 @@ package com.bartender.view;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -29,7 +28,7 @@ public class ImageAndTextAdapter extends SimpleCursorAdapter {
 	@Override
 	public void bindView(View view, Context context, Cursor cursor) {
 		
-		Log.v(getClass().getSimpleName(),cursor.getString(cursor.getColumnIndex(DataDAO.COL_GLASS_NAME)));
+		//Log.v(getClass().getSimpleName(),cursor.getString(cursor.getColumnIndex(DataDAO.COL_GLASS_NAME)));
 		
 		Drawable d =null;
 			
