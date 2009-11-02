@@ -41,13 +41,7 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
         initComponents();
         		
     }
-    /* (non-Javadoc)
-     * @see android.app.Activity#onBackPressed()
-     */
-    @Override
-    public void onBackPressed() {
-    	//remove back button
-    }
+
     
     protected void initComponents() 
     {

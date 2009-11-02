@@ -17,14 +17,6 @@ public class DetailsView extends ActivityView {
 		initComponents();
 	}
 	
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onBackPressed()
-	 */
-	@Override
-	public void onBackPressed() {
-	    // disable back button
-	}
-	
 	private void initComponents() {
 		drinkdetail = new DetailsDomain();
 		drinkdao = new DetailDAO();

@@ -45,6 +45,17 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
         
     }
     
+    /* (non-Javadoc)
+     * @see android.app.Activity#onStop()
+     */
+    @Override
+    protected void onStop() {
+    	if(pd!=null)
+    		pd.dismiss();
+    	
+        super.onStop();
+    }
+    
 	private void initComponents() {
 		
 		btnAll = (Button) findViewById(R.id.btnAll);
@@ -109,7 +120,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     	
 			if(view==btnAll)
 			{
-				ProgressDialog.show(this, null,"LOADING...");
+				pd = ProgressDialog.show(this, null,"LOADING...");
 				ScreenType.getInstance().screenType= -1;
 				intent = new Intent(this, DrinkListView.class);
 				startActivity(intent);
