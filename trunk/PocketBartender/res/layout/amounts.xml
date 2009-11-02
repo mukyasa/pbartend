@@ -29,8 +29,7 @@
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp" 
 	    android:fitsSystemWindows="true" android:scrollbars="none" 
-	    android:layout_marginRight="10.0sp"
-	    android:cacheColorHint="#00000000"></ListView>
+	    android:cacheColorHint="#00000000" android:layout_marginRight="5sp"></ListView>
 
 	<ListView android:id="@+id/listHalfNums" 
 	android:layout_height="fill_parent"
@@ -40,7 +39,7 @@
 	    android:fadingEdge="vertical" 
 	    android:fadingEdgeLength="50.0sp"
 	    android:cacheColorHint="#00000000"
-	     android:scrollbars="none" android:layout_marginRight="10.0sp"></ListView>
+	     android:scrollbars="none" android:layout_marginRight="5sp"></ListView>
 	    
 	  <ListView android:id="@+id/listAmounts" android:gravity=""
 	    android:layout_height="fill_parent"

@@ -7,25 +7,40 @@ android:background="@drawable/details2_bg">
 <TableLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_height="wrap_content" android:layout_width="fill_parent">
-	<TableRow android:layout_width="fill_parent" android:background="@drawable/picker_bg" android:layout_marginBottom="5sp">
-		<ImageButton android:id="@+id/imgFav" android:background="@drawable/star" android:layout_marginLeft="12.0sp" android:layout_width="36.0px" android:layout_height="36.0px" android:layout_gravity="left|center"></ImageButton>
-		<TextView android:layout_height="wrap_content" android:layout_marginTop="10.0sp" android:id="@+id/tvDrinkName" android:textColor="#000" android:textStyle="bold" android:layout_marginBottom="10.0sp" android:text="This is where a long name would go." android:gravity="left" android:layout_width="wrap_content" android:paddingRight="80sp" android:textSize="19sp" android:layout_gravity="center_vertical"></TextView>
+	<TableRow android:layout_width="fill_parent" android:background="@drawable/picker_bg" android:layout_marginBottom="5sp" android:paddingLeft="20sp">
+		<ImageButton android:id="@+id/imgFav" 
+			android:background="@drawable/star" 
+			android:layout_width="36.0px" 
+			android:layout_height="36.0px" 
+			android:layout_gravity="left|center_vertical"></ImageButton>
+		<TextView android:layout_height="wrap_content" 
+			android:layout_marginTop="10.0sp" 
+			android:id="@+id/tvDrinkName" 
+			android:textColor="#000" 
+			android:textStyle="bold" 
+			android:layout_marginBottom="10.0sp" 
+			android:text="This is where a long name would go." 
+			android:gravity="left" 
+			android:layout_width="wrap_content" 
+			android:textSize="19sp" 
+			android:layout_gravity="center_vertical" 
+			android:paddingRight="80sp"></TextView>
 	</TableRow>
-	<TableRow>
+	<TableRow android:paddingLeft="10sp">
 		<ImageView android:id="@+id/imgGlassType" android:background="@drawable/cocktail" android:layout_width="48.0px" android:layout_height="48.0px" android:layout_gravity="top|left"></ImageView>
 	<TableLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-	  android:layout_height="wrap_content" android:layout_width="wrap_content">
+	  android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="10sp">
 		 <TableRow android:layout_width="fill_parent">
-			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Drink Type" android:id="@+id/tvDrinkType" android:paddingLeft="15.0sp" android:textStyle="bold" android:textSize="14.0sp" android:textColor="#fff"></TextView>
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Drink Type" android:id="@+id/tvDrinkType" android:textStyle="bold" android:textSize="14.0sp" android:textColor="#fff"></TextView>
 		</TableRow>
 		 <TableRow android:layout_width="fill_parent"> 
-			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvIng1" android:text="All ingredients will go here each one will go to the next line." android:layout_marginTop="5.0sp" android:paddingRight="80sp" android:layout_gravity="left|center" android:paddingLeft="15.0sp" android:paddingBottom="5sp" android:textColor="#fff"></TextView>
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvIng1" android:text="All ingredients will go here each one will go to the next line." android:layout_marginTop="5.0sp" android:paddingRight="80sp" android:layout_gravity="left|center" android:paddingBottom="5sp" android:textColor="#fff"></TextView>
 		</TableRow>
 		 
 		 
 	</TableLayout>
 	</TableRow>
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvInstructions" android:layout_marginTop="10.0sp" android:layout_marginRight="10.0sp" android:text="instructions" android:layout_marginLeft="63.0sp" android:textColor="#fff"></TextView>
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvInstructions" android:layout_marginTop="10.0sp" android:layout_marginRight="10.0sp" android:text="instructions" android:textColor="#fff" android:layout_marginLeft="68.0sp"></TextView>
 	
 </TableLayout>
 </ScrollView>
