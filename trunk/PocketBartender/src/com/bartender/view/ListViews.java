@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,6 +65,8 @@ public abstract class ListViews extends ListActivity{
 	 */
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 	{
+			v.setBackgroundResource(R.drawable.clickbg);
+			v.setPadding(18, 2, 0, 2);
 			pd = ProgressDialog.show(this, null,"LOADING...");
 			super.onListItemClick(l, v, position, id);
 			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);

@@ -1,7 +1,10 @@
 package com.bartender.view;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,6 +16,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.bartender.R;
 import com.bartender.dao.DataDAO;
@@ -25,6 +29,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 	/** Called when the activity is first created. */
 	private Intent intent;
 	private Button btnAll, btnCat, btnIng, btnFav; 
+	private ImageView info;
 	private DatabaseAdapter myDatabaseAdapter;
 	private ProgressDialog pd;
 	private DataDAO dataDAO = new DetailDAO();
@@ -57,6 +62,9 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     }
     
 	private void initComponents() {
+		
+		info = (ImageView) findViewById(R.id.ivInfo);
+		info.setOnClickListener(this);
 		
 		btnAll = (Button) findViewById(R.id.btnAll);
 		btnAll.setOnClickListener(this);
@@ -142,9 +150,30 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 				intent = new Intent(this, IngredientsHomeView.class);
 				startActivity(intent);
 			}
-			
+			else if(view == info){
+				showDialog(0);
+			}
 	}
 
+    /* (non-Javadoc)
+     * @see android.app.Activity#onCreateDialog(int)
+     */
+    @Override
+    protected Dialog onCreateDialog(int id) {
+    	return new AlertDialog.Builder(HomeScreenView.this)
+        .setIcon(R.drawable.info)
+        .setMessage("mypocket technologies \nwww.mypocket-technolgies.com")
+        .setTitle("Information")
+        .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+               dismissDialog(0);
+            }
+        })
+        
+       .create();
+
+    }
     
     
     private Handler handler = new Handler() {

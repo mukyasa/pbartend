@@ -12,6 +12,15 @@
 <Button android:text="Filter by Category" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0sp" android:id="@+id/btnCat" android:layout_marginBottom="10.0sp" android:height="20.0sp" android:background="@drawable/button_bg" android:gravity="left|center_vertical" android:paddingBottom="10sp" android:paddingLeft="60.0sp" android:textColor="#fff" android:textStyle="bold" android:paddingRight="0sp" android:paddingTop="0sp"></Button>
 <Button android:text="Favorites" android:id="@+id/btnFav" android:layout_width="fill_parent" android:layout_height="wrap_content" android:height="20.0sp" android:drawableLeft="@drawable/star" android:background="@drawable/button_bg" android:layout_marginRight="10.0sp" android:layout_gravity="left" android:gravity="left|center_vertical" android:paddingRight="0sp" android:paddingTop="0sp" android:paddingBottom="10sp" android:paddingLeft="25sp" android:textColor="#fff" android:textStyle="bold"></Button>
 
-
+<ImageView android:id="@+id/ivInfo" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:background="@drawable/info" 
+android:layout_gravity="bottom|right"
+android:layout_marginRight="18.0sp"
+android:layout_marginTop="20.0sp"
+android:layout_marginBottom="25.0sp"
+></ImageView>
 </LinearLayout>
+
 </ScrollView>
