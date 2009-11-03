@@ -129,8 +129,11 @@ public abstract class ListViews extends ListActivity{
 					
 			    	startManagingCursor(recordscCursor);
 					int[] to = new int[] { R.id.tfName};
-			    	SimpleCursorAdapter records = new ImageAndTextAdapter(getCurrentListActivity(),
-			    			row_item, recordscCursor, from, to);
+					SimpleCursorAdapter records;
+					if(laType instanceof IngredientsListView)
+						records = new SimpleCursorAdapter(getCurrentListActivity(),	row_item, recordscCursor, from, to);
+					else
+						records = new ImageAndTextAdapter(getCurrentListActivity(),	row_item, recordscCursor, from, to);
 			    	
 					setListAdapter(records);
 					
