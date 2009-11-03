@@ -138,6 +138,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 			}
 			else if(view == btnIng)
 			{
+				ScreenType.getInstance().screenType= ScreenType.SCREEN_TYPE_ING;
 				intent = new Intent(this, IngredientsHomeView.class);
 				startActivity(intent);
 			}
