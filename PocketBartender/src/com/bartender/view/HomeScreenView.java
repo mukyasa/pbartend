@@ -162,15 +162,14 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     protected Dialog onCreateDialog(int id) {
     	return new AlertDialog.Builder(HomeScreenView.this)
         .setIcon(R.drawable.info)
-        .setMessage("mypocket technologies \nwww.mypocket-technolgies.com")
-        .setTitle("Information")
-        .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+        .setMessage("support@mypocket-technologies.com \n\nmypocket-technolgies.com\ncopyright © 2009")
+        .setTitle("Application Information")
+        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
 
                dismissDialog(0);
             }
-        })
-        
+        })      
        .create();
 
     }
