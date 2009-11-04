@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -43,6 +44,9 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
         
         if(DatabaseAdapter.sqliteDb== null)
         {
+        	MediaPlayer mp = MediaPlayer.create(this, R.raw.pouring);
+            mp.start();
+
         	pd = ProgressDialog.show(this, null,"Building the database, please be patient.");
         	Thread thread = new Thread(this);
         	thread.start();
