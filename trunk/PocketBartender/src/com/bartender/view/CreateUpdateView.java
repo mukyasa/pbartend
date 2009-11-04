@@ -4,6 +4,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -108,6 +111,24 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 
 	}
 	
+	/* (non-Javadoc)
+     * @see android.app.Activity#onCreateDialog(int)
+     */
+    @Override
+    protected Dialog onCreateDialog(int id) {
+    	return new AlertDialog.Builder(CreateUpdateView.this)
+        .setIcon(R.drawable.error)
+        .setMessage("Don't forget a drink name.")
+        .setTitle("Error")
+        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+               dismissDialog(0);
+            }
+        })      
+       .create();
+
+    }
+    
 	public void onClick(View view) {
 		
 		if(view==btnIng)
@@ -162,38 +183,44 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
 			List<String> ingredients = ndd.getIngredients();
 			
-			if(ingredients != null)
+			if(ndd.drinkName != null && !"".equals(ndd.drinkName.trim()))
 			{
-				
-				EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
-				EditText directions = (EditText)findViewById(R.id.etDirections);
-				
-				ndd.drinkName=(drinkName.getText().toString());
-				ndd.instructions=(directions.getText().toString());
-				
-				//insert into drink table
-				dataDAO.insertNewDrink(ndd.drinkName, ndd.categoryId, ndd.glassId, ndd.instructions);
-				
-				Iterator<String> iter = ingredients.iterator();
-				while (iter.hasNext()) {
-					String ing = (String) iter.next();
+				if(ingredients != null && !"".equals(ndd.drinkName))
+				{
 					
-					StringTokenizer toke = new StringTokenizer(ing,",");
-					//the first one is junk ignore
-					String amount = (String)toke.nextElement();
-					String ingredientsName = (String)toke.nextElement();
+					EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
+					EditText directions = (EditText)findViewById(R.id.etDirections);
+					
+					ndd.drinkName=(drinkName.getText().toString().trim());
+					ndd.instructions=(directions.getText().toString());
+					
+					//insert into drink table
+					dataDAO.insertNewDrink(ndd.drinkName, ndd.categoryId, ndd.glassId, ndd.instructions);
+					
+					Iterator<String> iter = ingredients.iterator();
+					while (iter.hasNext()) {
+						String ing = (String) iter.next();
+						
+						StringTokenizer toke = new StringTokenizer(ing,",");
+						//the first one is junk ignore
+						String amount = (String)toke.nextElement();
+						String ingredientsName = (String)toke.nextElement();
+						
+						
+						dataDAO.getIngredientsId(ingredientsName.trim());
+						dataDAO.insertDrinkIng(ndd.newDrinkId, ndd.newing_id, amount);
+					}
 					
 					
-					dataDAO.getIngredientsId(ingredientsName.trim());
-					dataDAO.insertDrinkIng(ndd.newDrinkId, ndd.newing_id, amount);
+					ndd.clearDomain();
+					intent = new Intent(this, HomeScreenView.class);
+					startActivity(intent);
 				}
-				
-				
 			}
-			
-			ndd.clearDomain();
-			intent = new Intent(this, HomeScreenView.class);
-			startActivity(intent);
+			else
+			{
+				showDialog(0);
+			}
 			
 		}
 		
