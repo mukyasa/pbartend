@@ -105,7 +105,8 @@ public abstract class ListViews extends ListActivity{
 		
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				
-				if(event.getAction() == KeyEvent.ACTION_UP  || event.getAction() == KeyEvent.KEYCODE_ENTER )
+				if((event.getAction() == KeyEvent.ACTION_UP  || event.getAction() == KeyEvent.KEYCODE_ENTER) 
+						&& (event.getAction() != KeyEvent.KEYCODE_SOFT_LEFT || event.getAction() != KeyEvent.KEYCODE_SOFT_RIGHT)) //dont call on back button
 				{
 					int row_item =R.layout.item_row;
 					Editable et = searchbox.getText(); //searchbox text
