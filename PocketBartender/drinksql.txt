@@ -65,3 +65,13 @@ select _id from tblIngredients where name="Lime Juice";
 //for each ingredient need to insert
 insert into tblDrinks_ingredients (drink_id,ingredient_id,amount) values(9637,1,"2 oz");
 /******************************************************/
+
+
+
+/******* flat all*********/
+SELECT d.name,d.instructions,dc._id[cat_id],di.amount,i._id[ing_id],d.favorite,d.custom,d.flagged
+FROM tblDrinks d 
+INNER JOIN tblDrink_categories dc on dc._id = d.category_id
+INNER JOIN tblDrinks_ingredients di on di.drink_id = d._id
+INNER JOIN tblIngredients i on di.ingredient_id = i._id
+INNER JOIN tblGlasses g on d.glass_id = g._id
