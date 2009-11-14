@@ -9,6 +9,6 @@
    android:layout_height="wrap_content" 
    android:layout_width="fill_parent" 
    android:lines="1" 
-   android:inputType="textWebEditText" android:imeOptions="actionDone" android:drawableRight="@drawable/search"></EditText>
+   android:inputType="textWebEditText" android:drawableRight="@drawable/search" android:imeOptions="actionGo"></EditText>
 
 </LinearLayout>
