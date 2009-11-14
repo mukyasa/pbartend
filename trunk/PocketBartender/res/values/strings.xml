@@ -20,4 +20,5 @@
 <string name="tvHalf">Selected 2</string>
 <string name="tvMeasurement">Selected 3</string>
 <string name="btnReset">Reset</string>
+<string name="searchboxlbl">Search</string>
 </resources>

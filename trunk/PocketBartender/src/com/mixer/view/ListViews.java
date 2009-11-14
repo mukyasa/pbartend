@@ -4,6 +4,8 @@ import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.inputmethodservice.Keyboard;
+import android.inputmethodservice.KeyboardView;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.KeyEvent;
@@ -95,7 +97,6 @@ public abstract class ListViews extends ListActivity{
 	    	return true;
 	}
 	
-
 	/**
 	 * capture key up and filter list
 	 */
@@ -105,7 +106,9 @@ public abstract class ListViews extends ListActivity{
 		
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				
-				if((event.getAction() == KeyEvent.ACTION_UP  || event.getAction() == KeyEvent.KEYCODE_ENTER) 
+				
+				if((event.getAction() == KeyEvent.ACTION_UP  || 
+						event.getAction() == KeyEvent.KEYCODE_ENTER) 
 						&& (event.getAction() != KeyEvent.KEYCODE_SOFT_LEFT || event.getAction() != KeyEvent.KEYCODE_SOFT_RIGHT)) //dont call on back button
 				{
 					int row_item =R.layout.item_row;
