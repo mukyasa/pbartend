@@ -11,8 +11,6 @@ public class XMLHandler extends DefaultHandler{
      // Fields
      // ===========================================================
      
-     private boolean in_outertag = false;
-     private boolean in_innertag = false;
      private boolean question = false;
      private boolean answer = false;
      
@@ -46,14 +44,11 @@ public class XMLHandler extends DefaultHandler{
      @Override
      public void startElement(String namespaceURI, String localName,
                String qName, Attributes atts) throws SAXException {
-          if (localName.equals("FlashCards")) {
-               this.in_outertag = true;
-          }else if (localName.equals("Card")) {
+          if (localName.equals("Card")) {
         	  // Extract an Attribute
               String attrValue = atts.getValue("number");
               int i = Integer.parseInt(attrValue);
               card.cardNum=i;
-               this.in_innertag = true;
           }else if (localName.equals("Question")) {
                this.question = true;
           }else if (localName.equals("Answer")) {
@@ -66,16 +61,10 @@ public class XMLHandler extends DefaultHandler{
      @Override
      public void endElement(String namespaceURI, String localName, String qName)
                throws SAXException {
-          if (localName.equals("FlashCards")) {
-               this.in_outertag = false;
-          }else if (localName.equals("Card")) {
-               this.in_innertag = false;
-          }else if (localName.equals("Question")) {
+          if (localName.equals("Question")) {
                this.question = false;
           }else if (localName.equals("Answer")) {
                this.answer = false;
-          }else if (localName.equals("number")) {
-               // Nothing to do here
           }
      }
      
