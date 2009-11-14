@@ -13,7 +13,6 @@ import org.xml.sax.XMLReader;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -53,7 +52,7 @@ public class XMLParsingDemo extends Activity {
 	}
 
 	private String getOriginalMyXML() throws Exception {
-		FileInputStream in = new FileInputStream("/sdcard/FlashCards.xml");
+		FileInputStream in = new FileInputStream("/sdcard/FlashCardSet_pda.xml"); 
 		StringBuffer inLine = new StringBuffer();
 		InputStreamReader isr = new InputStreamReader(in);
 
@@ -80,10 +79,10 @@ public class XMLParsingDemo extends Activity {
 		XMLHandler myExampleHandler = new XMLHandler();
 		xr.setContentHandler(myExampleHandler);
 
-		FileInputStream in = new FileInputStream("/sdcard/FlashCards.xml");
+		FileInputStream in = new FileInputStream("/sdcard/FlashCardSet_pda.xml");
 
 		xr.parse(new InputSource(in));
-		XMLDataSet parsedExampleDataSet = myExampleHandler.getParsedData();
+		FlashCard parsedExampleDataSet = myExampleHandler.getParsedData();
 		inLine.append(parsedExampleDataSet.toString());
 		in.close();
 		return inLine.toString();
