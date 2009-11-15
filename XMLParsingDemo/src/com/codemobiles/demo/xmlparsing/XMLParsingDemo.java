@@ -81,21 +81,7 @@ public class XMLParsingDemo extends Activity {
 			cardsets.add(cardset);
 		}
 		
-		/*
-		FileInputStream in = new FileInputStream("/sdcard/FlashCardSet_pda.xml"); 
-		StringBuffer inLine = new StringBuffer();
-		InputStreamReader isr = new InputStreamReader(in);
 
-		BufferedReader inRd = new BufferedReader(isr);
-
-		String text;
-		while ((text = inRd.readLine()) != null) {
-			inLine.append(text);
-			inLine.append("\n");
-		}
-		in.close();
-		return inLine.toString();
-		*/
 		return "from quizlet";
 	}
 
