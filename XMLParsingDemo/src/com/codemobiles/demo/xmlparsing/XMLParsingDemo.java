@@ -2,11 +2,16 @@ package com.codemobiles.demo.xmlparsing;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
@@ -52,6 +57,43 @@ public class XMLParsingDemo extends Activity {
 	}
 
 	private String getOriginalMyXML() throws Exception {
+		URL url = new URL("http://quizlet.com/api/1.0/sets?dev_key=f4ndi00uluokcc0c&q=creator:jalenack&extended=on&sort=most_recent&callback=processData");
+		InputStream is = url.openStream();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+		StringBuilder sb = new StringBuilder();
+		
+		String line;
+		while ((line = reader.readLine()) != null) 
+		{
+			sb.append(line + "\n");
+		}
+		
+		JSONTokener toke = new JSONTokener(sb.toString());
+		sb = new StringBuilder();
+		boolean start=false;
+		while(toke.more())
+		{
+			char c = toke.next();
+			
+			if(start)
+				sb.append(c);
+			
+			if(c=='(')
+				start = true;
+		}
+		
+		JSONObject jsonObj = new JSONObject(sb.toString());
+		JSONArray sets = (JSONArray)jsonObj.get("sets");
+		StringBuffer titles = new StringBuffer();
+		//gets the titles
+		for(int i=0;i<sets.length();i++)
+		{
+			JSONObject set = (JSONObject)sets.get(i);
+			String title = (String)set.get("title");
+			titles.append(title +" | ");
+			
+		}
+		
 		FileInputStream in = new FileInputStream("/sdcard/FlashCardSet_pda.xml"); 
 		StringBuffer inLine = new StringBuffer();
 		InputStreamReader isr = new InputStreamReader(in);
