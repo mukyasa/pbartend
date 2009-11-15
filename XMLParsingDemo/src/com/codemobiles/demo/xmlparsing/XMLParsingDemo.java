@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -57,7 +58,7 @@ public class XMLParsingDemo extends Activity {
 	}
 
 	private String getOriginalMyXML() throws Exception {
-		URL url = new URL("http://quizlet.com/api/1.0/sets?dev_key=f4ndi00uluokcc0c&q=creator:jalenack&extended=on&sort=most_recent&callback=processData");
+		URL url = new URL("http://quizlet.com/api/1.0/sets?dev_key=f4ndi00uluokcc0c&q=creator:jalenack&extended=on&sort=most_recent");
 		InputStream is = url.openStream();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 		StringBuilder sb = new StringBuilder();
@@ -69,31 +70,18 @@ public class XMLParsingDemo extends Activity {
 		}
 		
 		JSONTokener toke = new JSONTokener(sb.toString());
-		sb = new StringBuilder();
-		boolean start=false;
-		while(toke.more())
-		{
-			char c = toke.next();
-			
-			if(start)
-				sb.append(c);
-			
-			if(c=='(')
-				start = true;
-		}
-		
-		JSONObject jsonObj = new JSONObject(sb.toString());
+		JSONObject jsonObj = new JSONObject(toke);
 		JSONArray sets = (JSONArray)jsonObj.get("sets");
-		StringBuffer titles = new StringBuffer();
+		ArrayList<CardSets> cardsets = new ArrayList<CardSets>();
 		//gets the titles
 		for(int i=0;i<sets.length();i++)
 		{
 			JSONObject set = (JSONObject)sets.get(i);
-			String title = (String)set.get("title");
-			titles.append(title +" | ");
-			
+			CardSets cardset = new CardSets((String)set.get("title"),(JSONArray)set.get("terms"));
+			cardsets.add(cardset);
 		}
 		
+		/*
 		FileInputStream in = new FileInputStream("/sdcard/FlashCardSet_pda.xml"); 
 		StringBuffer inLine = new StringBuffer();
 		InputStreamReader isr = new InputStreamReader(in);
@@ -107,6 +95,8 @@ public class XMLParsingDemo extends Activity {
 		}
 		in.close();
 		return inLine.toString();
+		*/
+		return "from quizlet";
 	}
 
 	private String getParsedMyXML() throws Exception {
