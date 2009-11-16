@@ -2,12 +2,25 @@
 <LinearLayout
  xmlns:android="http://schemas.android.com/apk/res/android"
  android:id="@+id/LinearLayout01" 
- android:layout_width="fill_parent" android:layout_height="wrap_content" 
+ android:layout_width="fill_parent" 
+ android:paddingTop="65.0sp"
+ android:layout_height="wrap_content">
+ <LinearLayout
+ android:id="@+id/LinearLayout02" 
+ android:layout_width="fill_parent" 
+ android:layout_height="wrap_content" 
  android:background="@drawable/port_bg">
+   
+   <TextView android:layout_width="fill_parent" 
+  android:layout_height="wrap_content" 
+  android:id="@+id/android:empty" 
+  android:layout_gravity="center_horizontal" android:textSize="20px" 
+  android:text="@string/empty" android:gravity="center_horizontal" android:paddingTop="85.0sp"></TextView>
+   
 <ListView android:id="@+id/android:list"
-	android:paddingTop="90.0sp"
   android:layout_width="fill_parent"
   android:layout_height="wrap_content" android:layout_marginBottom="30sp">
 </ListView>
+</LinearLayout>
 </LinearLayout>
 

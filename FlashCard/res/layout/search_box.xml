@@ -13,5 +13,4 @@
    android:lines="1" 
    android:inputType="textWebEditText" 
    android:imeOptions="actionDone" android:drawableRight="@drawable/search_icon"></EditText>
-
 </LinearLayout>
