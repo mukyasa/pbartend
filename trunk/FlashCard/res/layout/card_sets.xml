@@ -19,7 +19,7 @@
    
 <ListView android:id="@+id/android:list"
   android:layout_width="fill_parent"
-  android:layout_height="wrap_content" android:layout_marginBottom="30sp">
+  android:layout_height="wrap_content" android:cacheColorHint="#00000000" android:layout_marginBottom="10sp">
 </ListView>
 </LinearLayout>
 </LinearLayout>
