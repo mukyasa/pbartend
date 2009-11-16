@@ -18,11 +18,14 @@ import org.json.JSONArray;
 public class CardSets {
 	
 	public String title;
-	public JSONArray terms;
+	public Integer cardCount;
+	public JSONArray flashcards;
 	
 	public CardSets(){}
-	public CardSets(String title,JSONArray terms){
+	
+	public CardSets(String title,JSONArray flashcards,Integer cardCount){
 		this.title = title;
-		this.terms = terms;	
+		this.cardCount = cardCount;
+		this.flashcards = flashcards;	
 	}
 }

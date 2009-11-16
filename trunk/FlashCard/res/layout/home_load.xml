@@ -10,12 +10,12 @@
 <Button android:layout_width="wrap_content" android:layout_height="wrap_content" 
 android:id="@+id/btnUserNameCardSet" 
 android:text="@string/btnGetCardSet" 
-android:paddingLeft="30sp" android:background="@drawable/button" android:paddingRight="40sp" android:layout_gravity="right"></Button>
+android:paddingLeft="30sp" android:background="@drawable/button" android:paddingRight="40sp" android:layout_gravity="right" android:paddingTop="0sp" android:paddingBottom="5sp"></Button>
 
 <EditText android:layout_height="wrap_content" android:textColor="#ccc" android:layout_width="fill_parent" android:text="@string/etTerm" android:layout_marginBottom="5sp" android:layout_marginTop="10sp" android:id="@+id/etTerm"></EditText>
 <Button android:layout_width="wrap_content" android:layout_height="wrap_content" 
 android:text="@string/btnGetCardSet" 
-android:paddingLeft="30sp" android:background="@drawable/button" android:paddingRight="40sp" android:layout_gravity="right" android:id="@+id/btnTerm"></Button>
+android:paddingLeft="30sp" android:background="@drawable/button" android:paddingRight="40sp" android:layout_gravity="right" android:id="@+id/btnTerm" android:paddingBottom="5sp" android:paddingTop="0sp"></Button>
 
 
 <TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="bottom">
