@@ -17,7 +17,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.card.R;
@@ -60,10 +59,14 @@ public class CardSetArrayAdapter extends ArrayAdapter<CardSets> {
 	        else
 	        	title=cardset.title;
 	        	
-	        if(cardset.cardCount.toString().length() > 2)
+	        String count = cardset.cardCount.toString();
+	        if(count.length() == 1)
+	        	count = " " +count;
+	        
+	        if(count.length() > 2)
 	        	tabs = "\t";
 	        
-	        rowView.setText(cardset.cardCount + tabs + title);
+	        rowView.setText(count + tabs + title);
 	        
 	        return rowView;
     }
