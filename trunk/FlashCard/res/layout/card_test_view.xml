@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#ffffff"
-    >
+    android:layout_height="fill_parent" android:background="@drawable/land_bg">
 
     <ViewFlipper android:id="@+id/details"
         android:layout_width="fill_parent"
@@ -12,55 +10,39 @@
         <LinearLayout
                android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="#ffffff">
+            android:layout_height="fill_parent">
 
-            <TextView android:id="@+id/tv_country"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="18px"
-            android:text="Country" >
-            </TextView>
-            <Spinner android:text=""
-            android:id="@+id/spinner_country"
-            android:layout_width="200px"
-            android:layout_height="55px">
-            </Spinner>
+            <ImageView android:id="@+id/ivFlashCard" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" android:background="@drawable/flashcard"></ImageView>
             <Button android:text="Next"
             android:id="@+id/Button_next"
             android:layout_width="250px"
                 android:textSize="18px"
-            android:layout_height="55px">
+            android:layout_height="45px">
         </Button>
-        </LinearLayout> 
+        
+</LinearLayout> 
 
         <LinearLayout
                android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="#ffffff">
-
-            <TextView android:id="@+id/tv_income"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="18px"
-            android:text="Income" >
-            </TextView>
-            <EditText android:text=""
-            android:id="@+id/et_income"
-            android:layout_width="200px"
-            android:layout_height="55px">
-            </EditText>
+            android:layout_height="fill_parent">
+            <ImageView android:id="@+id/ivFlashCard" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" android:background="@drawable/flashcard"></ImageView>
             <Button android:text="Previous"
             android:id="@+id/Button_previous"
             android:layout_width="250px"
                 android:textSize="18px"
-            android:layout_height="55px">
+            android:layout_height="45px">
             </Button>
+             <Button android:text="Next"
+            android:id="@+id/Button_next2"
+            android:layout_width="250px"
+                android:textSize="18px"
+            android:layout_height="45px">
+        </Button>
         </LinearLayout> 
 
     </ViewFlipper>        
