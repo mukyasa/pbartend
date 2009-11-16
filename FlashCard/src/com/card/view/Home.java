@@ -14,16 +14,22 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import android.app.Activity;
+import android.app.Application;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.card.R;
 import com.card.domain.CardSets;
+import com.card.handler.ApplicationHandler;
 
-public class Home extends Activity implements OnClickListener {
+public class Home extends Activity implements OnClickListener,OnTouchListener {
 	private Button btUserName;
 	private Button btTerm;
 	private final int TYPE_TERM=0;
@@ -31,6 +37,7 @@ public class Home extends Activity implements OnClickListener {
 	private final String DEV_KEY="f4ndi00uluokcc0c";
 	private final String EXTRAS ="&extended=on&sort=most_recent";
 	private final String API_VERS ="1.0";
+	private Intent intent;
 	
 	
     /** Called when the activity is first created. */
@@ -43,8 +50,17 @@ public class Home extends Activity implements OnClickListener {
     
     private void initScreen(){
     	btUserName = (Button)findViewById(R.id.btnUserNameCardSet);
+    	btUserName.setOnTouchListener(this);
+    	btUserName.setOnClickListener(this);
     	btTerm = (Button)findViewById(R.id.btnTerm);
+    	btTerm.setOnTouchListener(this);
+    	btTerm.setOnClickListener(this);
     	
+    	EditText etUserName = (EditText)findViewById(R.id.etUserName);
+    	etUserName.setOnTouchListener(this);
+    	
+    	EditText etTerm = (EditText)findViewById(R.id.etTerm);
+    	etTerm.setOnTouchListener(this);   	
     }
     
     private void getCardSets(int type)
@@ -77,14 +93,21 @@ public class Home extends Activity implements OnClickListener {
 	        
 	        JSONTokener toke = new JSONTokener(sb.toString());
 	        JSONObject jsonObj = new JSONObject(toke);
-	        JSONArray sets = (JSONArray)jsonObj.get("sets");
-	        ArrayList<CardSets> cardsets = new ArrayList<CardSets>();
-	        //gets the titles
-	        for(int i=0;i<sets.length();i++)
+	        if(((String)jsonObj.get("response_type")).equals("ok"))
 	        {
-	        	JSONObject set = (JSONObject)sets.get(i);
-	        	CardSets cardset = new CardSets((String)set.get("title"),(JSONArray)set.get("terms"));
-	        	cardsets.add(cardset);
+		        JSONArray sets = (JSONArray)jsonObj.get("sets");
+		        ApplicationHandler handler = ApplicationHandler.instance();
+		        ArrayList<CardSets> cardsets = handler.cardsets;
+		        //gets the titles
+		        for(int i=0;i<sets.length();i++)
+		        {
+		        	JSONObject set = (JSONObject)sets.get(i);
+		        	CardSets cardset = new CardSets((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"));
+		        	cardsets.add(cardset);
+		        }
+		        
+		        intent = new Intent(this, CardSetList.class);
+		        startActivity(intent);
 	        }
 	        
         } catch (MalformedURLException e) {
@@ -113,5 +136,42 @@ public class Home extends Activity implements OnClickListener {
     		getCardSets(TYPE_USER_NAME);
     	}
 	    
+    }
+
+	/* (non-Javadoc)
+     * @see android.view.View.OnTouchListener#onTouch(android.view.View, android.view.MotionEvent)
+     */
+    public boolean onTouch(View v, MotionEvent event) {
+
+    	if(v instanceof Button )
+	  	{
+	  		if(event.getAction() == MotionEvent.ACTION_DOWN)
+	  		{
+	  			v.setBackgroundResource(R.drawable.button_hvr);
+	  			v.setPadding(30, 0, 40, 5);
+	  		}
+	  		
+	  		else if(event.getAction()== MotionEvent.ACTION_UP)
+	  		{
+	  			v.setBackgroundResource(R.drawable.button);
+	  			v.setPadding(30, 0, 40, 5);
+	  		}
+	  	}
+	  	else if(v instanceof EditText)
+	  	{
+	    	if(event.getAction() == MotionEvent.ACTION_DOWN)
+	  		{
+	  			//clear base text
+	  			if(((EditText)v).getText().toString().equals(this.getString(R.string.etUserName))
+	  					||((EditText)v).getText().toString().equals(this.getString(R.string.etTerm))) 
+	  			{
+	  				((EditText)v).setText("");
+	  				((EditText)v).setTextColor(Color.BLACK);
+	  			}
+	  			
+	  		}
+	  	}
+    	
+    	return false;
     }
 }

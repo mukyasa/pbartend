@@ -18,8 +18,8 @@ public class FlashCard {
 	public String question;
 	public String answer;
 	public int cardNum;
-	
-	 public String toString(){
+
+	public String toString(){
          return "Question = " + this.question
                    + "\nAnswer = " + this.answer;
     }
