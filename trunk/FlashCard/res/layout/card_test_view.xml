@@ -12,37 +12,29 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-            <ImageView android:id="@+id/ivFlashCard" 
-            android:layout_width="wrap_content" 
-            android:layout_height="wrap_content" android:background="@drawable/flashcard"></ImageView>
+            
+            <TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/flashcard" android:text="first Card" android:textColor="#000" android:padding="20sp"></TextView>
             <Button android:text="Next"
             android:id="@+id/Button_next"
-            android:layout_width="250px"
-                android:textSize="18px"
-            android:layout_height="45px">
+            android:layout_width="150px"
+                android:textSize="14px"
+            android:layout_height="35px">
         </Button>
         
+
 </LinearLayout> 
 
         <LinearLayout
                android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
-            <ImageView android:id="@+id/ivFlashCard" 
-            android:layout_width="wrap_content" 
-            android:layout_height="wrap_content" android:background="@drawable/flashcard"></ImageView>
+            <TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/flashcard" android:text="first Card Two" android:textColor="#000" android:padding="20sp"></TextView>
             <Button android:text="Previous"
             android:id="@+id/Button_previous"
-            android:layout_width="250px"
-                android:textSize="18px"
-            android:layout_height="45px">
+            android:layout_width="150px"
+                android:textSize="14px"
+            android:layout_height="35px">
             </Button>
-             <Button android:text="Next"
-            android:id="@+id/Button_next2"
-            android:layout_width="250px"
-                android:textSize="18px"
-            android:layout_height="45px">
-        </Button>
         </LinearLayout> 
 
     </ViewFlipper>        
