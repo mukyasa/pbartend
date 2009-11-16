@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
+    <string name="empty">No records found.</string>
     <string name="app_name">Flash Card</string>
 <string name="btnGetCardSet">Get Card Set</string>
 <string name="etUserName">Quizlet User Name</string>
