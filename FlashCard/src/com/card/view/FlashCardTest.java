@@ -35,16 +35,9 @@ public class FlashCardTest extends Activity {
 		//force to be landscape
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		
-		
-        // Add a few countries to the spinner
-        Spinner spinnerCountries = (Spinner) findViewById(R.id.spinner_country);
-        ArrayAdapter countryArrayAdapter = new ArrayAdapter(this,
-                    android.R.layout.simple_spinner_dropdown_item,
-                    new String[] { "Canada", "USA" });
-        spinnerCountries.setAdapter(countryArrayAdapter);
 
         // Set the listener for Button_Next, a quick and dirty way to create a listener
-        Button buttonNext = (Button) findViewById(R.id.Button_next);
+		Button buttonNext = (Button) findViewById(R.id.Button_next);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 // Get the ViewFlipper from the layout
@@ -53,7 +46,18 @@ public class FlashCardTest extends Activity {
                 // Set an animation from res/anim: 
                 vf.setAnimation(AnimationUtils.loadAnimation(view.getContext(),  R.anim.slide_left));
                 vf.showNext();
-        }
+            }
+        });
+        Button buttonNext2 = (Button) findViewById(R.id.Button_next2);
+        buttonNext2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                // Get the ViewFlipper from the layout
+                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+
+                // Set an animation from res/anim: 
+                vf.setAnimation(AnimationUtils.loadAnimation(view.getContext(),  R.anim.slide_left));
+                vf.showNext();
+            }
         });
 
         // Set the listener for Button_Previous, a quick and dirty way to create a listener
