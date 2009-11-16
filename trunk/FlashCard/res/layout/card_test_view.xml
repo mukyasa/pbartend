@@ -13,7 +13,7 @@
             android:layout_height="fill_parent">
 
             
-            <TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/flashcard" android:text="first Card" android:textColor="#000" android:padding="20sp"></TextView>
+            <TextView android:id="@+id/tvflashCard1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/flashcard" android:text="first Card" android:textColor="#000" android:padding="20sp"></TextView>
             <Button android:text="Next"
             android:id="@+id/Button_next"
             android:layout_width="150px"
@@ -28,7 +28,7 @@
                android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
-            <TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/flashcard" android:text="first Card Two" android:textColor="#000" android:padding="20sp"></TextView>
+            <TextView android:id="@+id/tvflashCard2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/flashcard" android:text="first Card Two" android:textColor="#000" android:padding="20sp"></TextView>
             <Button android:text="Previous"
             android:id="@+id/Button_previous"
             android:layout_width="150px"
