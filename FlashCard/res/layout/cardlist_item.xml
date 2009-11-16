@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView  xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_height="wrap_content" android:background="@drawable/list_item" android:id="@+id/tvCardItem" android:paddingTop="10sp" android:text="@string/tvItem" android:textColor="#000" android:paddingLeft="13sp" android:layout_width="fill_parent"></TextView>

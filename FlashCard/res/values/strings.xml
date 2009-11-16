@@ -5,4 +5,5 @@
 <string name="btnGetCardSet">Get Card Set</string>
 <string name="etUserName">Quizlet User Name</string>
 <string name="etTerm">Quizlet Serch Term (e.g. math)</string>
+<string name="tvItem">100   Sample Item Name</string>
 </resources>
