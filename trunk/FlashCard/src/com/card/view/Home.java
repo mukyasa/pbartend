@@ -14,13 +14,14 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import android.app.Activity;
-import android.app.Application;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,7 +30,7 @@ import com.card.R;
 import com.card.domain.CardSets;
 import com.card.handler.ApplicationHandler;
 
-public class Home extends Activity implements OnClickListener,OnTouchListener {
+public class Home extends Activity implements OnTouchListener {
 	private Button btUserName;
 	private Button btTerm;
 	private final int TYPE_TERM=0;
@@ -51,10 +52,8 @@ public class Home extends Activity implements OnClickListener,OnTouchListener {
     private void initScreen(){
     	btUserName = (Button)findViewById(R.id.btnUserNameCardSet);
     	btUserName.setOnTouchListener(this);
-    	btUserName.setOnClickListener(this);
     	btTerm = (Button)findViewById(R.id.btnTerm);
     	btTerm.setOnTouchListener(this);
-    	btTerm.setOnClickListener(this);
     	
     	EditText etUserName = (EditText)findViewById(R.id.etUserName);
     	etUserName.setOnTouchListener(this);
@@ -109,6 +108,11 @@ public class Home extends Activity implements OnClickListener,OnTouchListener {
 		        intent = new Intent(this, CardSetList.class);
 		        startActivity(intent);
 	        }
+	        else
+	        {
+	        	//error dialog
+	        	showDialog(0);
+	        }
 	        
         } catch (MalformedURLException e) {
 	        // TODO Auto-generated catch block
@@ -122,20 +126,22 @@ public class Home extends Activity implements OnClickListener,OnTouchListener {
         }
     }
 
-	/* (non-Javadoc)
-     * @see android.view.View.OnClickListener#onClick(android.view.View)
+    /* (non-Javadoc)
+     * @see android.app.Activity#onCreateDialog(int)
      */
-    public void onClick(View view) {
-    	
-    	if(view==btTerm)
-		{
-    		getCardSets(TYPE_TERM);
-		}
-    	else if(view == btUserName)
-    	{
-    		getCardSets(TYPE_USER_NAME);
-    	}
-	    
+    @Override
+    protected Dialog onCreateDialog(int id) {
+    	return new AlertDialog.Builder(Home.this)
+        .setIcon(R.drawable.error)
+        .setMessage("No card sets found, please try again.")
+        .setTitle("Error")
+        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+               dismissDialog(0);
+            }
+        })      
+       .create();
+
     }
 
 	/* (non-Javadoc)
@@ -155,6 +161,11 @@ public class Home extends Activity implements OnClickListener,OnTouchListener {
 	  		{
 	  			v.setBackgroundResource(R.drawable.button);
 	  			v.setPadding(30, 0, 40, 5);
+	  			
+	  			if(v==btTerm)
+	  	    		getCardSets(TYPE_TERM);
+	  	    	else if(v == btUserName)
+	  	    		getCardSets(TYPE_USER_NAME);
 	  		}
 	  	}
 	  	else if(v instanceof EditText)
