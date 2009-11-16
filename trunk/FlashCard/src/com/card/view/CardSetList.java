@@ -12,10 +12,13 @@ package com.card.view;
 import java.util.ArrayList;
 
 import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import com.card.R;
 import com.card.domain.CardSets;
@@ -28,16 +31,29 @@ import com.card.handler.ApplicationHandler;
 public class CardSetList extends ListActivity {
 
 	private Intent intent;
+	protected static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
+	protected static final int INTENT_NEXT_SCREEN = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.list_frame); 
-        //intent = new Intent(this, DetailsView.class);
+		setContentView(R.layout.list_frame);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        intent = new Intent(this, FlashCardTest.class);
         initComponents();
     }
-    
-    
+	
+	protected void onListItemClick(ListView l, View v, int position, long id) 
+	{
+			//v.setBackgroundResource(R.drawable.clickbg);
+			//v.setPadding(18, 2, 0, 2);
+			//pd = ProgressDialog.show(this, null,"LOADING...");
+			super.onListItemClick(l, v, position, id);
+			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
+			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
+			startActivityForResult(intent, INTENT_NEXT_SCREEN);
+	}
+	
     /**
      * init screen list
      */
