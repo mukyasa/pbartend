@@ -16,6 +16,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.ViewFlipper;
 
@@ -35,6 +37,9 @@ public class FlashCardTest extends Activity {
 	@SuppressWarnings("unchecked")
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.card_test_view);  
 		//force to be landscape

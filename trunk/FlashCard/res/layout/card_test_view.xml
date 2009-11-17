@@ -13,7 +13,7 @@
             android:layout_height="fill_parent">
 
             
-            <TextView android:id="@+id/tvflashCard1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="first Card" android:textColor="#000" android:padding="20sp" android:background="@drawable/flashcardfront"></TextView>
+            <TextView android:id="@+id/tvflashCard1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="first Card" android:textColor="#000" android:padding="20sp" android:background="@drawable/flashcardfront" android:layout_marginLeft="8sp" android:layout_marginTop="15sp"></TextView>
         
 
 </LinearLayout> 
@@ -22,7 +22,7 @@
                android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
-            <TextView android:id="@+id/tvflashCard2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/flashcardfront" android:text="first Card Two" android:textColor="#000" android:padding="20sp"></TextView>
+            <TextView android:id="@+id/tvflashCard2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="first Card" android:textColor="#000" android:padding="20sp" android:background="@drawable/flashcardfront" android:layout_marginLeft="8sp" android:layout_marginTop="15sp"></TextView>
         </LinearLayout> 
 
     </ViewFlipper>        
