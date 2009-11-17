@@ -33,6 +33,8 @@ public class CardSetList extends ListActivity {
 	private Intent intent;
 	protected static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
 	protected static final int INTENT_NEXT_SCREEN = 0;
+	private View listview=null;
+	private ProgressDialog pd;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +46,31 @@ public class CardSetList extends ListActivity {
     }
 	
 	protected void onListItemClick(ListView l, View v, int position, long id) 
-	{
-			//v.setBackgroundResource(R.drawable.clickbg);
-			//v.setPadding(18, 2, 0, 2);
-			//pd = ProgressDialog.show(this, null,"LOADING...");
+	{ 
+			v.setBackgroundResource(R.drawable.list_item_hvr);
+			v.setPadding(13, 10, 0, 0);
+			listview = v;
+			pd = ProgressDialog.show(this, null,"LOADING...");
 			super.onListItemClick(l, v, position, id);
 			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
 			startActivityForResult(intent, INTENT_NEXT_SCREEN);
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onStop()
+	 */
+	@Override
+	protected void onStop() {
+		if(listview!=null)
+		{
+			listview.setBackgroundResource(R.drawable.list_item);
+			listview.setPadding(13, 10, 0, 0);
+		}
+		if(pd!=null)
+			pd.dismiss();
+		
+		super.onStop();
 	}
 	
     /**

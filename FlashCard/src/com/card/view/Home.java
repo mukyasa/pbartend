@@ -16,6 +16,7 @@ import org.json.JSONTokener;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -40,6 +41,7 @@ public class Home extends Activity implements OnTouchListener {
 	private final String EXTRAS ="&extended=on&sort=most_recent";
 	private final String API_VERS ="1.0";
 	private Intent intent;
+	private ProgressDialog pd;
 	
 	
     /** Called when the activity is first created. */
@@ -143,6 +145,16 @@ public class Home extends Activity implements OnTouchListener {
 
     }
 
+    /* (non-Javadoc)
+     * @see android.app.Activity#onStop()
+     */
+    @Override
+    protected void onStop() {
+    	if(pd!=null)
+    		pd.dismiss();
+    	
+    	super.onStop();
+    }
 	/* (non-Javadoc)
      * @see android.view.View.OnTouchListener#onTouch(android.view.View, android.view.MotionEvent)
      */
@@ -150,6 +162,7 @@ public class Home extends Activity implements OnTouchListener {
 
     	if(v instanceof Button )
 	  	{
+    		
 	  		if(event.getAction() == MotionEvent.ACTION_DOWN)
 	  		{
 	  			v.setBackgroundResource(R.drawable.button_hvr);
@@ -158,6 +171,8 @@ public class Home extends Activity implements OnTouchListener {
 	  		
 	  		else if(event.getAction()== MotionEvent.ACTION_UP)
 	  		{
+	  			pd = ProgressDialog.show(this, null,"LOADING...");
+	  			
 	  			v.setBackgroundResource(R.drawable.button);
 	  			v.setPadding(30, 0, 40, 5);
 	  			
