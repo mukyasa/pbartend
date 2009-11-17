@@ -16,9 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ViewFlipper;
 
 import com.card.R;
@@ -31,6 +29,8 @@ public class FlashCardTest extends Activity {
 	
 	private GestureDetector mGestureDetector;
 	private Context context;
+	private int count=0;
+	private int maxcount=4;
 	
 	@SuppressWarnings("unchecked")
     @Override
@@ -42,32 +42,6 @@ public class FlashCardTest extends Activity {
 		mGestureDetector = new GestureDetector(this, new LearnGestureListener());
 		context = getBaseContext();
 		
-        // Set the listener for Button_Next, a quick and dirty way to create a listener
-		Button buttonNext = (Button) findViewById(R.id.Button_next);
-        buttonNext.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                // Get the ViewFlipper from the layout
-                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
-
-                // Set an animation from res/anim: 
-                vf.setAnimation(AnimationUtils.loadAnimation(view.getContext(),  R.anim.slide_left));
-                vf.showNext();
-            }
-        });
-        
-        // Set the listener for Button_Previous, a quick and dirty way to create a listener
-        Button buttonPrevious = (Button) findViewById(R.id.Button_previous);
-        buttonPrevious.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                // Get the ViewFlipper from the layout
-                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
-                // Set an animation from res/anim: 
-                vf.setAnimation(AnimationUtils.loadAnimation(view.getContext(), R.anim.slide_right));
-                vf.showPrevious();
-        }
-
-        });        
-
     }
 	
 	@Override
@@ -81,37 +55,52 @@ public class FlashCardTest extends Activity {
 	protected class LearnGestureListener extends GestureDetector.SimpleOnGestureListener{
 	    @Override
 	    public boolean onSingleTapUp(MotionEvent ev) {
-	        Log.d("onSingleTapUp",ev.toString());
+	      //  Log.d("onSingleTapUp",ev.toString());
 	        return true;
 	    }
 	    @Override
 	    public void onShowPress(MotionEvent ev) {
-	        Log.d("onShowPress",ev.toString());
+	       // Log.d("onShowPress",ev.toString());
 	    }
 	    @Override
 	    public void onLongPress(MotionEvent ev) {
-	        Log.d("onLongPress",ev.toString());
+	       // Log.d("onLongPress",ev.toString());
 	    }
 	    @Override
 	    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-	        Log.d("onScroll",e1.toString());
+	       // Log.d("onScroll",e1.toString());
 	        return true;
 	    }
 	    @Override
 	    public boolean onDown(MotionEvent ev) {
-	        Log.d("onDownd",ev.toString());
+	        //Log.d("onDownd",ev.toString());
 	        return true;
 	    }
 	    @Override
 	    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-	        Log.d("d",e1.toString());
-	        Log.d("e2",e2.toString());
-	        // Get the ViewFlipper from the layout
-            ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
-
-            // Set an animation from res/anim: 
-            vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left));
-            vf.showNext();
+	        Log.d("e1",e1.getX()+"");
+	        Log.d("e2",e2.getX()+"");
+	        
+	        if(e1.getX() > e2.getX() && count < maxcount)//flick next 
+	        {
+		        // Get the ViewFlipper from the layout
+	            ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+	
+	            // Set an animation from res/anim: 
+	            vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left));
+	            vf.showNext();
+	            count++;
+	        }
+	        else if(count > 0 && e1.getX() < e2.getX())//flix previous
+	        {
+	        	 // Get the ViewFlipper from the layout
+                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+                // Set an animation from res/anim: 
+                vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_right));
+                vf.showPrevious();	
+                count--;
+	        }
+	        
 	        return true;
 	    }
 
