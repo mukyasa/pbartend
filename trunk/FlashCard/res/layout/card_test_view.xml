@@ -2,31 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:paddingTop="22.0sp">
-<LinearLayout android:orientation="vertical"
-			android:layout_width="fill_parent" android:layout_height="fill_parent"
-			android:background="@drawable/land_bg">
-	<ViewFlipper android:id="@+id/details"
-		android:layout_width="fill_parent" android:layout_height="fill_parent">
-
-		<LinearLayout android:orientation="vertical"
-			android:layout_width="fill_parent" android:layout_height="fill_parent">
-
-			<TextView android:id="@+id/tvflashCard1"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:textColor="#000" android:background="@drawable/flashcardfront"
-				android:layout_marginLeft="8sp" android:layout_marginTop="12sp" android:text="hellow" android:paddingBottom="20sp" android:paddingLeft="20sp" android:paddingRight="20sp" android:paddingTop="40sp"></TextView>
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:background="@drawable/land_bg">
 		
-</LinearLayout>
-
-		<LinearLayout android:orientation="vertical"
+		<ViewFlipper android:id="@+id/details"
 			android:layout_width="fill_parent" android:layout_height="fill_parent">
-			<TextView android:id="@+id/tvflashCard2"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:textColor="#000" android:background="@drawable/flashcardfront"
-				android:layout_marginLeft="8sp" android:layout_marginTop="12sp" android:text="hellow" android:paddingBottom="20sp" android:paddingLeft="20sp" android:paddingRight="20sp" android:paddingTop="40sp"></TextView>
-		</LinearLayout>
 
-	</ViewFlipper>
+			<LinearLayout android:orientation="vertical"
+				android:layout_width="fill_parent" android:layout_height="fill_parent">
 
-</LinearLayout>
+				<TextView android:id="@+id/tvflashCard1"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:textColor="#000" android:background="@drawable/flashcardfront"
+					android:layout_marginLeft="8sp" android:layout_marginTop="12sp"
+					android:text="hellow" android:paddingBottom="20sp"
+					android:paddingLeft="20sp" android:paddingRight="20sp"
+					android:paddingTop="40sp"></TextView>
+			</LinearLayout>
+
+			<LinearLayout android:orientation="vertical"
+				android:layout_width="fill_parent" android:layout_height="fill_parent">
+				<TextView android:id="@+id/tvflashCard2"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:textColor="#000" android:background="@drawable/flashcardfront"
+					android:layout_marginLeft="8sp" android:layout_marginTop="12sp"
+					android:text="hellow" android:paddingBottom="20sp"
+					android:paddingLeft="20sp" android:paddingRight="20sp"
+					android:paddingTop="40sp"></TextView>
+			</LinearLayout>
+
+		</ViewFlipper>
+
+	</LinearLayout>
 </LinearLayout>
