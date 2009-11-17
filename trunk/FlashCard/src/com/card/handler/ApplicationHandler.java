@@ -20,6 +20,7 @@ import com.card.domain.CardSets;
 public class ApplicationHandler {
 	
 	public ArrayList<CardSets> cardsets = new ArrayList<CardSets>();
+	public CardSets pickedSet = null;
 	private static ApplicationHandler handler=null;
 		
 	/**

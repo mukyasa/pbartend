@@ -51,6 +51,9 @@ public class CardSetList extends ListActivity {
 			v.setPadding(13, 10, 0, 0);
 			listview = v;
 			pd = ProgressDialog.show(this, null,"LOADING...");
+			CardSets cardSetPicked = (CardSets)l.getItemAtPosition(position);
+			ApplicationHandler.instance().pickedSet = cardSetPicked;
+			
 			super.onListItemClick(l, v, position, id);
 			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);

@@ -1,0 +1,8 @@
+<LinearLayout android:id="@+id/LinearLayout01"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<TextView android:id="@+id/tvSetTitle" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:background="@drawable/totals_bg"
+		android:textStyle="bold" android:paddingLeft="10sp" android:text="Title"
+		android:textColor="#fff" android:paddingTop="3sp"></TextView>
+</LinearLayout>
