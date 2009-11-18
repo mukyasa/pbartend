@@ -17,8 +17,7 @@
 
 				<ImageView android:id="@+id/ImageView1"
 					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:background="@drawable/info" android:layout_marginTop="5sp"
-					android:layout_marginLeft="20sp"></ImageView>
+					android:layout_marginLeft="20sp" android:background="@drawable/correct" android:layout_marginTop="8sp"></ImageView>
 				<TextView android:id="@+id/tvflashCard1" android:textColor="#000"
 					android:paddingLeft="20sp"
 					android:paddingRight="20sp" android:layout_height="fill_parent"
@@ -32,7 +31,7 @@
 
 				<ImageView android:id="@+id/ImageView2"
 					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:background="@drawable/info" android:layout_marginTop="5sp"
+					android:background="@drawable/correct" android:layout_marginTop="8sp"
 					android:layout_marginLeft="20sp"></ImageView>
 				<TextView android:id="@+id/tvflashCard2" android:textColor="#000"
 					android:paddingLeft="20sp"
@@ -47,7 +46,7 @@
 
 				<ImageView android:id="@+id/ImageView2"
 					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:background="@drawable/info" android:layout_marginTop="5sp"
+					android:background="@drawable/correct" android:layout_marginTop="8sp"
 					android:layout_marginLeft="20sp"></ImageView>
 				<TextView android:id="@+id/tvflashCard2" android:textColor="#000"
 					android:paddingLeft="20sp"
