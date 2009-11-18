@@ -33,7 +33,7 @@ public class Results extends Activity {
 	 private void initiaize()
 	 {
 		 LinearLayout main = (LinearLayout) findViewById(R.id.resultsLayout);
-		    main.addView(new Chart(this,50,50,25));
+		    main.addView(new Chart(this,120,225,90));
 		 
 	 }
 	 

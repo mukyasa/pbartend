@@ -22,6 +22,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -42,6 +44,7 @@ public class Home extends Activity implements OnTouchListener {
 	private final String API_VERS ="1.0";
 	private Intent intent;
 	private ProgressDialog pd;
+	private final int MENU_RESULTS=0;
 	
 	
     /** Called when the activity is first created. */
@@ -65,6 +68,23 @@ public class Home extends Activity implements OnTouchListener {
     	EditText etTerm = (EditText)findViewById(R.id.etTerm);
     	etTerm.setOnTouchListener(this);   	
     }
+    
+    public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(0, MENU_RESULTS, 0, "Test Results").setIcon(R.drawable.results);
+	    return true;
+	}
+
+	/* Handles item selections */
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent intent;
+	    switch (item.getItemId()) {
+	    case MENU_RESULTS:
+	    	intent = new Intent(this, Results.class);
+			startActivity(intent);
+	    	return true;
+	    }
+	    return false;
+	}
     
     private void getCardSets(int type)
     {
