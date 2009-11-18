@@ -129,16 +129,18 @@ public class FlashCardTest extends Activity {
 
 	/* Handles item selections */
 	public boolean onOptionsItemSelected(MenuItem item) {
-		
+		Intent intent;
 	    switch (item.getItemId()) {
 	    case MENU_RESULTS:
+	    	intent = new Intent(this, Results.class);
+			startActivity(intent);
 	    	return true;
 	    case MENU_RETEST:
 	        return true;
 	    case MENU_SHUFFLE:
 	    	return true;
 	    case MENU_NEW:
-	    	Intent intent = new Intent(this, Home.class);
+	    	intent = new Intent(this, Home.class);
 			startActivity(intent);
 	    	return true;
 	    }
