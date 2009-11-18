@@ -99,6 +99,7 @@ public class Home extends Activity implements OnTouchListener {
 	        if(((String)jsonObj.get("response_type")).equals("ok"))
 	        {
 		        JSONArray sets = (JSONArray)jsonObj.get("sets");
+		        ApplicationHandler.clearHandlerInstance();
 		        ApplicationHandler handler = ApplicationHandler.instance();
 		        ArrayList<CardSets> cardsets = handler.cardsets;
 		        //gets the titles
