@@ -39,6 +39,8 @@ public class FlashCardTest extends Activity {
 	private Context context;
 	private int count=0;
 	private int maxcount=0;
+	private String title;
+	boolean isBack=true;
 	
 	@SuppressWarnings("unchecked")
     @Override
@@ -49,7 +51,7 @@ public class FlashCardTest extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_frame);  
 		//force to be landscape
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+		//setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		mGestureDetector = new GestureDetector(this, new LearnGestureListener());
 		context = getBaseContext();
 		//set up cardset
@@ -63,7 +65,8 @@ public class FlashCardTest extends Activity {
 		        CardSets cardsets = handler.pickedSet;
 		        maxcount = cardsets.cardCount;
 		        TextView tvTitle = (TextView)findViewById(R.id.tvSetTitle);
-		        tvTitle.setText(cardsets.title);
+		        this.title=cardsets.title;
+		        tvTitle.setText(this.title +" - "+ 1);
 		        JSONArray sets = cardsets.flashcards;
 	
 		        JSONArray terms = (JSONArray)sets.get(0);
@@ -91,12 +94,35 @@ public class FlashCardTest extends Activity {
 	protected class LearnGestureListener extends GestureDetector.SimpleOnGestureListener{
 	    @Override
 	    public boolean onSingleTapUp(MotionEvent ev) {
-	      //  Log.d("onSingleTapUp",ev.toString());
+	      
+
+	        if(isBack)//flick previous
+	        {
+	        	// Get the ViewFlipper from the layout
+                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+                vf.setDisplayedChild(2);
+                // Set an animation from res/anim: 
+                vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_top_to_bottom));
+                vf.getAnimation(); 
+                
+                isBack=false;
+	        }
+	        else
+	        {
+	        	// Get the ViewFlipper from the layout
+                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+                vf.setDisplayedChild(0);
+                // Set an animation from res/anim: 
+                vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_top_to_bottom));
+                vf.getAnimation(); 
+                
+                isBack=true;
+	        }
 	        return true;
 	    }
 	    @Override
 	    public void onShowPress(MotionEvent ev) {
-	       // Log.d("onShowPress",ev.toString());
+	       // Log.d("onShowPress",ev.toString()); 
 	    }
 	    @Override
 	    public void onLongPress(MotionEvent ev) {
@@ -114,26 +140,31 @@ public class FlashCardTest extends Activity {
 	    }
 	    @Override
 	    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-	        Log.d("e1",e1.getX()+"");
-	        Log.d("e2",e2.getX()+"");
-	        
+	        Log.d("e1",e1.getY()+"");
+	        Log.d("e2",e2.getY()+"");
+	        TextView tvTitle = (TextView)findViewById(R.id.tvSetTitle);
+	        tvTitle.setText(title + " - "+ (count+1));
+	        isBack=true;
 	        if(e1.getX() > e2.getX() && count < maxcount)//flick next 
 	        {
 		        // Get the ViewFlipper from the layout
 	            ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
-	
+	            vf.setDisplayedChild(0);
 	            // Set an animation from res/anim: 
-	            vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left));
-	            vf.showNext();
+	            vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left)); 
+	            vf.getAnimation(); 
+	            
 	            count++;
 	        }
-	        else if(count > 0 && e1.getX() < e2.getX())//flix previous
+	        else if(count > 0 && e1.getX() < e2.getX())//flick previous
 	        {
 	        	 // Get the ViewFlipper from the layout
                 ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+                vf.setDisplayedChild(0);
                 // Set an animation from res/anim: 
                 vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_right));
-                vf.showPrevious();	
+                vf.getAnimation(); 
+               
                 count--;
 	        }
 	        
