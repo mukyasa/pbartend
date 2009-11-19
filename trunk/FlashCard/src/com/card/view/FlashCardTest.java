@@ -25,7 +25,6 @@ import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -80,6 +79,8 @@ public class FlashCardTest extends Activity {
 	        ArrayList<FlashCard> sets = cardsets.flashcards;
 
 	        FlashCard terms = (FlashCard)sets.get(0);
+	        terms.wasSeen=true;
+	        terms.isCorrect=true;
 	        
 	        TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
 	        tvFlashCard.setText(terms.question);
@@ -94,12 +95,12 @@ public class FlashCardTest extends Activity {
 	        ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
 	        answered.setOnClickListener(new OnClickListener() {
 
-	        	ApplicationHandler handler = ApplicationHandler.instance();
-	            CardSets cardsets = handler.pickedSet;
-	            ArrayList<FlashCard> sets = cardsets.flashcards;
-	            FlashCard card = (FlashCard)sets.get(count);
 	            
 				public void onClick(View v) {
+					ApplicationHandler handler = ApplicationHandler.instance();
+		            CardSets cardsets = handler.pickedSet;
+		            ArrayList<FlashCard> sets = cardsets.flashcards;
+		            FlashCard card = (FlashCard)sets.get(count);
 					ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
 					if(!isWrong)
 					{
@@ -168,10 +169,11 @@ public class FlashCardTest extends Activity {
             CardSets cardsets = handler.pickedSet;
             ArrayList<FlashCard> sets = cardsets.flashcards;
             
-            if(isBack)//flick previous
+            if(isBack)//flick over
             {
             	FlashCard terms = (FlashCard)sets.get(count);
             	terms.wasSeen=true;
+            	terms.isCorrect=true;
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard2);
                 tvFlashCard.setText(terms.answer);
                 
@@ -184,10 +186,11 @@ public class FlashCardTest extends Activity {
                 
                 isBack=false;
             }
-            else // flick next
+            else // flick front
             {
             	FlashCard terms = (FlashCard)sets.get(count);
             	terms.wasSeen=true;
+            	terms.isCorrect=true;
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
                 tvFlashCard.setText(terms.question);
                 
@@ -251,6 +254,7 @@ public class FlashCardTest extends Activity {
                 
 		        tvFlashCard.setText(terms.question);
 		        terms.wasSeen=true;
+		        terms.isCorrect=true;
                 // Set an animation from res/anim: 
 		        // Get the ViewFlipper from the layout
                 vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left)); 
@@ -263,6 +267,7 @@ public class FlashCardTest extends Activity {
             	FlashCard terms = (FlashCard)sets.get(count);
 		        tvFlashCard.setText(terms.question);
 		        terms.wasSeen=true;
+		        terms.isCorrect=true;
 		        // Set an animation from res/anim: 
             	// Get the ViewFlipper from the layout
                 vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_right));
