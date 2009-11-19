@@ -13,9 +13,8 @@
 				android:text="@string/resultshead" android:textColor="#fff"
 				android:textSize="18sp" android:paddingTop="6sp" android:gravity="center_horizontal" android:layout_margin="10sp"></TextView>
 		</TableRow>
-		<TableRow android:layout_marginBottom="90sp">
-			<View android:id="@+id/resultsLayout" android:layout_width="wrap_content"
-				android:layout_height="wrap_content"></View>
+		<TableRow android:id="@+id/resultsLayout">
+			
 		</TableRow>
 		<TableRow>
 			<Button android:layout_height="wrap_content" android:text="@string/butRetest"

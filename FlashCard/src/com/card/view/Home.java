@@ -48,6 +48,7 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 	private Intent intent;
 	private ProgressDialog pd;
 	private final int MENU_RESULTS=0;
+	private boolean WAS_ERROR=false;
 	
 	
     /** Called when the activity is first created. */
@@ -65,6 +66,8 @@ public class Home extends Activity implements OnTouchListener,Runnable {
         public void handleMessage(Message msg) {
         	if(pd!=null)
         		pd.dismiss();
+        	if(WAS_ERROR)
+        		showDialog(0);
         }
     };
     
@@ -155,10 +158,7 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 		        startActivity(intent);
 	        }
 	        else
-	        {
-	        	//error dialog
-	        	showDialog(0);
-	        }
+	        	WAS_ERROR=true;
 	        
         } catch (MalformedURLException e) {
 	        e.printStackTrace();
@@ -216,7 +216,7 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 	  			pd = ProgressDialog.show(this, null,"LOADING...");
 	  			
 	  			v.setBackgroundResource(R.drawable.button);
-	  			v.setPadding(30, 0, 40, 5);
+	  			v.setPadding(30, 0, 40, 5); 
 	  			
 	  			Thread thread = new Thread(this);
 	        	thread.start();
