@@ -18,7 +18,7 @@ public class ResultsBean {
 	public int wrongcardcount=0;
 	public int correctcardcount=0;
 	public int countseen=0;
-	public int totalCards=0;
+	public float totalCards=0;
     
 	
 }
