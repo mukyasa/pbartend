@@ -15,7 +15,7 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import com.card.R;
-
+ 
 /**
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
