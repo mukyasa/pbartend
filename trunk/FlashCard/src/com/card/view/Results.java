@@ -12,7 +12,7 @@ package com.card.view;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.widget.LinearLayout;
+import android.widget.TableRow;
 
 import com.card.R;
  
@@ -32,7 +32,7 @@ public class Results extends Activity {
 	 
 	 private void initiaize()
 	 {
-		 LinearLayout main = (LinearLayout) findViewById(R.id.resultsLayout);
+		 TableRow main = (TableRow) findViewById(R.id.resultsLayout);
 		    main.addView(new Chart(this,120,225,90));
 		 
 	 }

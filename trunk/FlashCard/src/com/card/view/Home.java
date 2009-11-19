@@ -22,6 +22,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -34,11 +36,12 @@ import com.card.R;
 import com.card.domain.CardSets;
 import com.card.handler.ApplicationHandler;
 
-public class Home extends Activity implements OnTouchListener {
+public class Home extends Activity implements OnTouchListener,Runnable {
 	private Button btUserName;
 	private Button btTerm;
 	private final int TYPE_TERM=0;
 	private final int TYPE_USER_NAME=1;
+	private int CHOOSEN_TYPE;
 	private final String DEV_KEY="f4ndi00uluokcc0c";
 	private final String EXTRAS ="&extended=on&sort=most_recent";
 	private final String API_VERS ="1.0";
@@ -56,6 +59,24 @@ public class Home extends Activity implements OnTouchListener {
         initScreen();
     }
     
+    private Handler handler = new Handler() {
+        
+        @Override
+        public void handleMessage(Message msg) {
+        	if(pd!=null)
+        		pd.dismiss();
+        }
+    };
+    
+	/* (non-Javadoc)
+	 * @see java.lang.Runnable#run()
+	 */
+	public void run() {
+		 getCardSets(CHOOSEN_TYPE);
+	     handler.sendEmptyMessage(0);
+	    
+	}
+
     private void initScreen(){
     	btUserName = (Button)findViewById(R.id.btnUserNameCardSet);
     	btUserName.setOnTouchListener(this);
@@ -197,10 +218,13 @@ public class Home extends Activity implements OnTouchListener {
 	  			v.setBackgroundResource(R.drawable.button);
 	  			v.setPadding(30, 0, 40, 5);
 	  			
+	  			Thread thread = new Thread(this);
+	        	thread.start();
+	        	
 	  			if(v==btTerm)
-	  	    		getCardSets(TYPE_TERM);
+	  				CHOOSEN_TYPE=TYPE_TERM;
 	  	    	else if(v == btUserName)
-	  	    		getCardSets(TYPE_USER_NAME);
+	  	    		CHOOSEN_TYPE=TYPE_USER_NAME;
 	  		}
 	  	}
 	  	else if(v instanceof EditText)
