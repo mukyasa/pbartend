@@ -14,7 +14,7 @@
 		android:layout_height="wrap_content" android:id="@+id/btnUserNameCardSet"
 		android:text="@string/btnGetCardSet" android:paddingLeft="30sp"
 		android:background="@drawable/button" android:paddingRight="40sp"
-		android:layout_gravity="right" android:paddingTop="0sp" android:paddingBottom="8sp" android:textStyle="bold"></Button>
+		android:layout_gravity="right" android:paddingTop="0sp" android:paddingBottom="8sp" android:textStyle="bold" android:textColor="#42493f"></Button>
 
 	<EditText android:layout_height="wrap_content"
 		android:textColor="#ccc" android:layout_width="fill_parent"
@@ -25,7 +25,7 @@
 		android:layout_height="wrap_content" android:text="@string/btnGetCardSet"
 		android:paddingLeft="30sp" android:background="@drawable/button"
 		android:paddingRight="40sp" android:layout_gravity="right" android:id="@+id/btnTerm"
-		android:paddingTop="0sp" android:paddingBottom="8sp" android:textStyle="bold"></Button>
+		android:paddingTop="0sp" android:paddingBottom="8sp" android:textStyle="bold" android:textColor="#42493f"></Button>
 
 
 	<TableLayout android:id="@+id/TableLayout01"
