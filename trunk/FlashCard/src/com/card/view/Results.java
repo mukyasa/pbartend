@@ -49,6 +49,7 @@ public class Results extends Activity {
 	        
 	        this.screenwidth=width;
 	        this.screenheight=180;
+	        this.adjHeight=this.screenheight;
 	        //for larger screens
 	        if(height> 450)
 	        	this.adjHeight=220;
