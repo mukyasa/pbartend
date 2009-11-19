@@ -13,6 +13,8 @@ import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.card.R;
@@ -23,27 +25,43 @@ import com.card.R;
  */
 public class Results extends Activity {
 	
-	private long screenwidth;
-	private long screenheight;
+	private long x;
+	private long y;
+	private int screenwidth;
+	private int screenheight;
+	private int adjHeight;
 	private int r;
 	
 	 public void onCreate(Bundle savedInstanceState) {
-	        super.onCreate(savedInstanceState);
-	        setContentView(R.layout.results);
-	        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		 //need to be full screen this needs to be called FIRST
+		 requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+	                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	        
+		 super.onCreate(savedInstanceState);
+	        setContentView(R.layout.results);
+	        
+	        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	        DisplayMetrics metrics = new DisplayMetrics();
 	        getWindowManager().getDefaultDisplay().getMetrics(metrics);
 	        int width = metrics.widthPixels;
 	        int height = metrics.heightPixels;
 	        
-	        double dheight=height*.55;
+	        this.screenwidth=width;
+	        this.screenheight=180;
+	        //for larger screens
+	        if(height> 450)
+	        	this.adjHeight=220;
+	        
+	        double dheight=height*.21;
 	        double dwidth=width*.46;
 	        
-	        this.screenheight =  Math.round(dheight);
-	        this.screenwidth = Math.round(dwidth);
+	        this.y =  Math.round(dheight);
+	        this.x = Math.round(dwidth);
 	        
-	        Double dr = (width * .56)/2;
+	        double radius = .53;
+	        
+	        Double dr = (width * radius)/2;
 	        
 	        this.r = Math.round(dr.floatValue());
 	        
@@ -54,7 +72,7 @@ public class Results extends Activity {
 	 private void initiaize()
 	 {
 		 LinearLayout main = (LinearLayout) findViewById(R.id.vResultsChart);
-		 main.addView(new Chart(this,this.screenwidth,this.screenheight,this.r),150,150);
+		 main.addView(new Chart(this,this.x,this.y,this.r,this.screenwidth,this.screenheight),this.screenwidth,this.adjHeight); 
 		 
 	 }
 	 
