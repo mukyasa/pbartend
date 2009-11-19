@@ -4,25 +4,24 @@
 	android:layout_height="fill_parent" android:background="@drawable/port_bg"
 	android:padding="10sp">
 
-	<TableLayout android:layout_width="fill_parent"
+	<RelativeLayout android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
-		android:background="#fff">
-		<TableRow>
-			<TextView android:id="@+id/tvTitle" android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:background="@drawable/resultshdr"
+		android:background="#fff" android:id="@+id/resultsLayout">
+			<TextView android:id="@+id/tvTitle" android:layout_height="wrap_content" android:background="@drawable/resultshdr"
 				android:text="@string/resultshead" android:textColor="#fff"
-				android:textSize="18sp" android:paddingTop="6sp" android:gravity="center_horizontal" android:layout_margin="10sp"></TextView>
-		</TableRow>
-		<TableRow android:id="@+id/resultsLayout">
-			
-		</TableRow>
-		<TableRow>
+				android:textSize="18sp" android:paddingTop="6sp" 
+				android:gravity="center_horizontal" 
+				android:layout_margin="10sp" android:layout_width="fill_parent" android:layout_above="@+id/vResultsChart"></TextView>
+				<TextView android:layout_height="wrap_content" android:id="@+id/TextView01" android:layout_width="wrap_content" android:text="@+id/TextView01" android:layout_above="@+id/vResultsChart" android:layout_below="@+id/tvTitle"></TextView><LinearLayout android:layout_height="wrap_content" android:id="@+id/vResultsChart" android:layout_width="fill_parent" android:layout_below="@+id/tfTitle"></LinearLayout>
 			<Button android:layout_height="wrap_content" android:text="@string/butRetest"
 				android:background="@drawable/button" android:paddingBottom="5sp"
 				android:paddingLeft="30sp" android:paddingTop="0sp"
 				android:paddingRight="40sp" android:id="@+id/btRetest"
-				android:layout_width="fill_parent" android:layout_marginTop="10sp"></Button>
-		</TableRow>
-	</TableLayout>
+				android:layout_width="fill_parent" android:layout_marginTop="10sp" android:layout_margin="10sp" android:layout_below="@+id/vResultsChart">
+				</Button>
+	
+
+
+</RelativeLayout>
 
 </LinearLayout>
