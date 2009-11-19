@@ -10,11 +10,16 @@
 package com.card.view;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.View.OnTouchListener;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,7 +30,7 @@ import com.card.domain.ResultsBean;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class Results extends Activity {
+public class Results extends Activity implements OnTouchListener {
 	
 	private long x;
 	private long y;
@@ -33,7 +38,13 @@ public class Results extends Activity {
 	private int screenheight;
 	private int adjHeight;
 	private int r;
-	ResultsBean rbean;
+	private ResultsBean rbean;
+	private final int BASE_SCREEN_HEIGHT=180;
+	private final int LARGE_SCREEN_HEIGHT=450;
+	private final double BASE_WIDTH_PERCENT=.46;
+	private final double BASE_HEIGHT_PERCENT=.21;
+	private final double BASE_RADIUS_PERCENT=.53;
+	
 	
 	 public void onCreate(Bundle savedInstanceState) {
 		 //need to be full screen this needs to be called FIRST
@@ -51,22 +62,23 @@ public class Results extends Activity {
 	        int height = metrics.heightPixels;
 	        
 	        this.screenwidth=width;
-	        this.screenheight=180;
+	        this.screenheight=BASE_SCREEN_HEIGHT;
 	        this.adjHeight=this.screenheight;
 	        //for larger screens
-	        if(height> 450)
+	        if(height> LARGE_SCREEN_HEIGHT)
 	        	this.adjHeight=220;
 	        
-	        double dheight=height*.21;
-	        double dwidth=width*.46;
+	        double dheight=height*BASE_HEIGHT_PERCENT;
+	        double dwidth=width*BASE_WIDTH_PERCENT;
 	        
 	        this.y =  Math.round(dheight);
 	        this.x = Math.round(dwidth);
 	        
-	        double radius = .53;
+	        double radius = BASE_RADIUS_PERCENT;
 	        
 	        Double dr = (width * radius)/2;
 	        
+	        //set radius
 	        this.r = Math.round(dr.floatValue());
 	        //result bean to be populated
 	        rbean = new ResultsBean();
@@ -93,8 +105,38 @@ public class Results extends Activity {
 	 private void initiaize()
 	 {
 		 LinearLayout main = (LinearLayout) findViewById(R.id.vResultsChart);
-		 main.addView(new Chart(this,this.x,this.y,this.r,this.screenwidth,this.screenheight,rbean),this.screenwidth,this.adjHeight); 
+		 main.addView(new Chart(this,this.x,this.y,this.r,this.screenwidth,this.screenheight,rbean),this.screenwidth,this.adjHeight);
+		 
+		 
+		 Button retrest = (Button)findViewById(R.id.btRetest);
+		 retrest.setOnTouchListener(this);		 
 		 
 	 }
+
+
+	/* (non-Javadoc)
+     * @see android.view.View.OnTouchListener#onTouch(android.view.View, android.view.MotionEvent)
+     */
+    public boolean onTouch(View v, MotionEvent event) {
+    	
+    	if(v instanceof Button )
+	  	{
+    		
+	  		if(event.getAction() == MotionEvent.ACTION_DOWN)
+	  		{
+	  			v.setBackgroundResource(R.drawable.button_hvr);
+	  			v.setPadding(30, 0, 40, 5);
+	  		}
+	  		
+	  		else if(event.getAction()== MotionEvent.ACTION_UP)
+	  		{
+	  			v.setBackgroundResource(R.drawable.button);
+	  			v.setPadding(30, 0, 40, 5);
+	  			//reconfig for retest
+	  		}
+	  	}
+    	
+	    return false;
+    }
 	 
 }

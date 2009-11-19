@@ -35,6 +35,10 @@ public class Chart extends View {
     private final float y;
     private final int r;
     private final int START_ANGLE = -90;
+    private final int CIRCLE = 360;
+    private final int SCREEN_OFFSET = 12; 
+  //sweepangle will be set by score
+    private long SWEEP_ANGLE = 0;
     
     private int screenwidth;
     ResultsBean rbean;
@@ -47,8 +51,7 @@ public class Chart extends View {
     
     private final Paint mPaintWrong = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint mPaintCorrect = new Paint(Paint.ANTI_ALIAS_FLAG);
-    //sweepangle will be set by score
-    private int sweepangle = 0;
+    
    
     
     public Chart(Context context, float x, float y, int r,int screenwidth,int screenheight,ResultsBean rbean) {
@@ -92,8 +95,8 @@ public class Chart extends View {
 	        }
 	        
 	        //set chart
-	        int degree = 360 / rbean.totalCards;
-	        sweepangle = rbean.correctcardcount * degree;
+	        float degree = CIRCLE / rbean.totalCards;
+	        SWEEP_ANGLE = Math.round(rbean.correctcardcount * degree);
         }
         
     	
@@ -104,14 +107,13 @@ public class Chart extends View {
         super.onDraw(canvas);
         canvas.drawCircle(x, y, r, mPaintWrong);
         
-        int offset = 12; 
-        this.lft =  this.screenwidth/2 - this.r-offset;
-        this.rgt =  this.screenwidth/2 + this.r-offset;
+        this.lft =  this.screenwidth/2 - this.r-SCREEN_OFFSET;
+        this.rgt =  this.screenwidth/2 + this.r-SCREEN_OFFSET;
         this.top = this.y - r;
         this.bot = this.top + (r*2);
         
         RectF clockRect = new RectF(this.lft, this.top, this.rgt, this.bot); 
-        canvas.drawArc(clockRect, START_ANGLE, sweepangle, true, mPaintCorrect);
+        canvas.drawArc(clockRect, START_ANGLE, SWEEP_ANGLE, true, mPaintCorrect);
     }
 	
 }
