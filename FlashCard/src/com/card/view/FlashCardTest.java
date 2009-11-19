@@ -9,13 +9,11 @@
  */
 package com.card.view;
 
-import org.json.JSONArray;
-import org.json.JSONException;
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources.NotFoundException;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.Menu;
@@ -27,11 +25,13 @@ import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.card.R;
 import com.card.domain.CardSets;
+import com.card.domain.FlashCard;
 import com.card.handler.ApplicationHandler;
 
 /**
@@ -71,51 +71,52 @@ public class FlashCardTest extends Activity {
     }
 	
 	private void initalize(){
-		try {
-		        ApplicationHandler handler = ApplicationHandler.instance();
-		        CardSets cardsets = handler.pickedSet;
-		        maxcount = cardsets.cardCount;
-		        TextView tvTitle = (TextView)findViewById(R.id.tvSetTitle);
-		        tvTitle.setText(cardsets.title);
-		        JSONArray sets = cardsets.flashcards;
-	
-		        JSONArray terms = (JSONArray)sets.get(0);
-		        String question = (String)terms.get(0);
-		        
-		        TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
-		        tvFlashCard.setText(question);
-		        
-		        //set card number tag
-		        TextView cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
-		        TextView cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
-		        cardnumber.setText(CARD_NUMBER + "1");
-		        cardnumber2.setText(CARD_NUMBER + "1");
-		        
-		        //the correct button
-		        ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
-		        answered.setOnClickListener(new OnClickListener() {
+		
+	        ApplicationHandler handler = ApplicationHandler.instance();
+	        CardSets cardsets = handler.pickedSet;
+	        maxcount = cardsets.cardCount;
+	        TextView tvTitle = (TextView)findViewById(R.id.tvSetTitle);
+	        tvTitle.setText(cardsets.title);
+	        ArrayList<FlashCard> sets = cardsets.flashcards;
 
-					public void onClick(View v) {
-						ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
-						if(!isWrong)
-						{
-							answered.setBackgroundResource(R.drawable.wrong);
-							isWrong=true;
-						}
-						else
-						{
-							answered.setBackgroundResource(R.drawable.correct);
-							isWrong=false;
-						}
-							
-                    }
-		        	
-		        });
-		        
+	        FlashCard terms = (FlashCard)sets.get(0);
 	        
-        } catch (JSONException e) {
-	        e.printStackTrace();
-        }
+	        TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
+	        tvFlashCard.setText(terms.question);
+	        
+	        //set card number tag
+	        TextView cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
+	        TextView cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
+	        cardnumber.setText(CARD_NUMBER + "1");
+	        cardnumber2.setText(CARD_NUMBER + "1");
+	        
+	        //the correct button
+	        ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
+	        answered.setOnClickListener(new OnClickListener() {
+
+	        	ApplicationHandler handler = ApplicationHandler.instance();
+	            CardSets cardsets = handler.pickedSet;
+	            ArrayList<FlashCard> sets = cardsets.flashcards;
+	            FlashCard card = (FlashCard)sets.get(count);
+	            
+				public void onClick(View v) {
+					ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
+					if(!isWrong)
+					{
+						answered.setBackgroundResource(R.drawable.wrong);
+						card.isCorrect=false;
+						isWrong=true;
+					}
+					else
+					{
+						answered.setBackgroundResource(R.drawable.correct);
+						card.isCorrect=true;
+						isWrong=false;
+					}
+						
+                }
+	        	
+	        });
 		
 	}
 	
@@ -163,51 +164,43 @@ public class FlashCardTest extends Activity {
 		@Override
 		public boolean onDoubleTap(MotionEvent e) {
 
-			try {
-	            ApplicationHandler handler = ApplicationHandler.instance();
-	            CardSets cardsets = handler.pickedSet;
-	            JSONArray sets = cardsets.flashcards;
-	            
-	            if(isBack)//flick previous
-	            {
-	            	JSONArray terms = (JSONArray)sets.get(count);
-	                String answer = (String)terms.get(1);
-	                TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard2);
-	                tvFlashCard.setText(answer);
-	                
-	            	// Get the ViewFlipper from the layout
-	                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
-	                vf.setDisplayedChild(1);
-	                // Set an animation from res/anim: 
-	                vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_top_to_bottom));
-	                vf.getAnimation(); 
-	                
-	                isBack=false;
-	            }
-	            else
-	            {
-	            	JSONArray terms = (JSONArray)sets.get(count);
-	                String question = (String)terms.get(0);
-	                TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
-	                tvFlashCard.setText(question);
-	                
-	            	// Get the ViewFlipper from the layout
-	                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
-	                vf.setDisplayedChild(0);
-	                // Set an animation from res/anim: 
-	                vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_top_to_bottom));
-	                vf.getAnimation(); 
-	                
-	                isBack=true;
-	            }
-	            
-            } catch (NotFoundException e1) {
-	            // TODO Auto-generated catch block
-	            e1.printStackTrace();
-            } catch (JSONException e1) {
-	            // TODO Auto-generated catch block
-	            e1.printStackTrace();
+            ApplicationHandler handler = ApplicationHandler.instance();
+            CardSets cardsets = handler.pickedSet;
+            ArrayList<FlashCard> sets = cardsets.flashcards;
+            
+            if(isBack)//flick previous
+            {
+            	FlashCard terms = (FlashCard)sets.get(count);
+            	terms.wasSeen=true;
+                TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard2);
+                tvFlashCard.setText(terms.answer);
+                
+            	// Get the ViewFlipper from the layout
+                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+                vf.setDisplayedChild(1);
+                // Set an animation from res/anim: 
+                vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_top_to_bottom));
+                vf.getAnimation(); 
+                
+                isBack=false;
             }
+            else // flick next
+            {
+            	FlashCard terms = (FlashCard)sets.get(count);
+            	terms.wasSeen=true;
+                TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
+                tvFlashCard.setText(terms.question);
+                
+            	// Get the ViewFlipper from the layout
+                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+                vf.setDisplayedChild(0);
+                // Set an animation from res/anim: 
+                vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_top_to_bottom));
+                vf.getAnimation(); 
+                
+                isBack=true;
+            }
+	            
 	        return true;
 		}
 		
@@ -237,60 +230,52 @@ public class FlashCardTest extends Activity {
 	    @Override
 	    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
 	        
-	    	try {
-	    		//reset values on fling
-	            isBack=true;
-	            isWrong=false;
-	            ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
-		        answered.setBackgroundResource(R.drawable.correct);
-	            ApplicationHandler handler = ApplicationHandler.instance();
-                CardSets cardsets = handler.pickedSet;
-            	JSONArray sets = cardsets.flashcards;
-	            
-	            if(e1.getX() > e2.getX() && countlabel < maxcount)//flick next 
-	            {
-	            	count++;
-	            	countlabel++;
-	                JSONArray terms = (JSONArray)sets.get(count);
-	                String question = (String)terms.get(0);
-	                TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
-			        tvFlashCard.setText(question);
-	                // Get the ViewFlipper from the layout
-	                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
-	                vf.setDisplayedChild(0);
-	                // Set an animation from res/anim: 
-	                vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left)); 
-	                vf.getAnimation(); 
-	            }
-	            else if(count > 0 && e1.getX() < e2.getX())//flick previous
-	            {
-	            	count--;
-	            	countlabel--;
-	            	
-	            	JSONArray terms = (JSONArray)sets.get(count);
-	                String question = (String)terms.get(0);
-	                TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
-			        tvFlashCard.setText(question);
-			        
-	            	// Get the ViewFlipper from the layout
-	                ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
-	                vf.setDisplayedChild(0);
-	                // Set an animation from res/anim: 
-	                vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_right));
-	                vf.getAnimation(); 
-	            }
-	            
-	            //set card number tag
-		        TextView cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
-		        TextView cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
-		        cardnumber.setText(CARD_NUMBER + countlabel);
-		        cardnumber2.setText(CARD_NUMBER + countlabel);
-	            
-            } catch (NotFoundException e) {
-	            e.printStackTrace();
-            } catch (JSONException e) {
-	            e.printStackTrace();
+    		//reset values on fling
+            isBack=true;
+            isWrong=false;
+            ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
+	        answered.setBackgroundResource(R.drawable.correct);
+            ApplicationHandler handler = ApplicationHandler.instance();
+            CardSets cardsets = handler.pickedSet;
+        	ArrayList<FlashCard> sets = cardsets.flashcards;
+        	TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
+        	// Get the ViewFlipper from the layout
+            ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+            vf.setDisplayedChild(0);
+        	
+            if(e1.getX() > e2.getX() && countlabel < maxcount)//flick next 
+            {
+            	count++;
+            	countlabel++;
+            	FlashCard terms = (FlashCard)sets.get(count);
+                
+		        tvFlashCard.setText(terms.question);
+		        terms.wasSeen=true;
+                // Set an animation from res/anim: 
+		        // Get the ViewFlipper from the layout
+                vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left)); 
             }
+            else if(count > 0 && e1.getX() < e2.getX())//flick previous
+            {
+            	count--;
+            	countlabel--;
+            	
+            	FlashCard terms = (FlashCard)sets.get(count);
+		        tvFlashCard.setText(terms.question);
+		        terms.wasSeen=true;
+		        // Set an animation from res/anim: 
+            	// Get the ViewFlipper from the layout
+                vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_right));
+            }
+            
+            vf.getAnimation(); 
+            
+            //set card number tag
+	        TextView cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
+	        TextView cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
+	        cardnumber.setText(CARD_NUMBER + countlabel);
+	        cardnumber2.setText(CARD_NUMBER + countlabel);
+            
 	        
 	        return true;
 	    }

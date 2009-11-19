@@ -38,8 +38,8 @@
 						android:layout_marginTop="8sp">
 						<ImageView android:layout_width="wrap_content"
 							android:layout_height="wrap_content" android:layout_marginLeft="20sp"
-							android:background="@drawable/correct" android:layout_gravity="left|center_vertical"
-							android:id="@+id/ivAnswered"></ImageView>
+							android:id="@+id/ivAnswered" android:background="@drawable/correct"
+							android:layout_gravity="left|center_vertical"></ImageView>
 						<TextView android:layout_height="wrap_content"
 							android:layout_width="wrap_content" android:gravity="right|center_vertical"
 							android:layout_gravity="right|center_vertical" android:id="@+id/tvCardNumbr"

@@ -16,8 +16,10 @@ import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.card.R;
+import com.card.domain.ResultsBean;
  
 /**
  * @author dmason
@@ -31,6 +33,7 @@ public class Results extends Activity {
 	private int screenheight;
 	private int adjHeight;
 	private int r;
+	ResultsBean rbean;
 	
 	 public void onCreate(Bundle savedInstanceState) {
 		 //need to be full screen this needs to be called FIRST
@@ -38,7 +41,7 @@ public class Results extends Activity {
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 	                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	        
-		 super.onCreate(savedInstanceState);
+	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.results);
 	        
 	        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -65,15 +68,32 @@ public class Results extends Activity {
 	        Double dr = (width * radius)/2;
 	        
 	        this.r = Math.round(dr.floatValue());
-	        
+	        //result bean to be populated
+	        rbean = new ResultsBean();
+	        //get the chart
 	        initiaize();
+	        
+	        //set values
+	        TextView total = (TextView)findViewById(R.id.tvToBeStudied);
+	        total.setText("Cards to be studied:\t\t\t\t\t\t"+rbean.totalCards);
+	        
+	        TextView seen =(TextView)findViewById(R.id.tvSeen);
+	        seen.setText("Cards seen:\t\t\t\t\t\t\t\t\t"+rbean.countseen);
+	        
+	        TextView correct = (TextView)findViewById(R.id.tvCorrect);
+	        correct.setText("Correct:\t\t\t\t\t\t\t\t\t\t" + rbean.correctcardcount);
+	        
+	        TextView wrong = (TextView)findViewById(R.id.tvIncorrect);
+	        wrong.setText("Incorrect:\t\t\t\t\t\t\t\t\t"+rbean.wrongcardcount);
+	        
+	        
 	    }
 	 
 	 
 	 private void initiaize()
 	 {
 		 LinearLayout main = (LinearLayout) findViewById(R.id.vResultsChart);
-		 main.addView(new Chart(this,this.x,this.y,this.r,this.screenwidth,this.screenheight),this.screenwidth,this.adjHeight); 
+		 main.addView(new Chart(this,this.x,this.y,this.r,this.screenwidth,this.screenheight,rbean),this.screenwidth,this.adjHeight); 
 		 
 	 }
 	 
