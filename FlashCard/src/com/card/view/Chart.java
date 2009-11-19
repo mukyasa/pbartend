@@ -80,13 +80,14 @@ public class Chart extends View {
 		        while(iter.hasNext())
 		        {
 		        	FlashCard card = iter.next();
-		        	if(card.isCorrect)
-		        		rbean.correctcardcount++;
-		        	else
+		        	if(!card.isCorrect)
 		        		rbean.wrongcardcount++;
-		        	
+		        		
 		        	if(card.wasSeen)
 		        		rbean.countseen++;
+		        	
+		        	//assume that if you saw it and didnt' mark it wrong it was correct
+		        	rbean.correctcardcount = (rbean.countseen - rbean.wrongcardcount);
 		        }
 	        }
         }
