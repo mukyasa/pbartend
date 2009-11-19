@@ -34,6 +34,7 @@ public class Chart extends View {
         this.x = x;
         this.y = y; 
         this.r = r;
+        
     }
     
     @Override
@@ -41,7 +42,7 @@ public class Chart extends View {
         super.onDraw(canvas);
         canvas.drawCircle(x, y, r, mPaintWrong);
         RectF clockRect = new RectF(30, 135, 210, 315); 
-        canvas.drawArc(clockRect, 180, 300, true, mPaintCorrect);
+       // canvas.drawArc(clockRect, 180, 300, true, mPaintCorrect);
     }
 	
 }
