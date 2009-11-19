@@ -18,25 +18,25 @@
 			android:layout_width="fill_parent" android:background="#dfdfdf"
 			android:textColor="#000" android:paddingTop="2sp"
 			android:paddingBottom="2sp" android:textSize="14sp"
-			android:layout_marginLeft="10sp" android:layout_marginRight="10sp"></TextView>
+			android:layout_marginLeft="10sp" android:layout_marginRight="10sp" android:paddingLeft="10sp"></TextView>
 		<TextView android:layout_height="wrap_content" android:text="@+id/TextView01"
 			android:id="@+id/tvSeen"
 			android:layout_width="fill_parent" android:textColor="#000"
 			android:paddingTop="2sp" android:paddingBottom="2sp"
 			android:textSize="14sp" android:layout_marginLeft="10sp"
-			android:layout_marginRight="10sp"></TextView>
+			android:layout_marginRight="10sp" android:paddingLeft="10sp"></TextView>
 		<TextView android:layout_height="wrap_content" android:text="@+id/TextView01"
 			android:id="@+id/tvIncorrect"
 			android:layout_width="fill_parent" android:background="#dfdfdf"
 			android:textColor="#000" android:paddingTop="2sp"
 			android:paddingBottom="2sp" android:textSize="14sp"
-			android:layout_marginLeft="10sp" android:layout_marginRight="10sp"></TextView>
+			android:layout_marginLeft="10sp" android:layout_marginRight="10sp" android:paddingLeft="10sp"></TextView>
 		<TextView android:layout_height="wrap_content" android:text="@+id/TextView01"
 			android:id="@+id/tvCorrect"
 			android:layout_width="fill_parent" android:textColor="#000"
 			android:paddingTop="2sp" android:paddingBottom="2sp"
 			android:textSize="14sp" android:layout_marginLeft="10sp"
-			android:layout_marginRight="10sp"></TextView>
+			android:layout_marginRight="10sp" android:paddingLeft="10sp"></TextView>
 </TableLayout>
 		<LinearLayout android:layout_height="wrap_content"
 			android:id="@+id/vResultsChart" android:layout_width="fill_parent"

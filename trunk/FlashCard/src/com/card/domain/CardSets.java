@@ -9,7 +9,10 @@
  */
 package com.card.domain;
 
+import java.util.ArrayList;
+
 import org.json.JSONArray;
+import org.json.JSONException;
 
 /**
  * @author dmason
@@ -19,13 +22,30 @@ public class CardSets {
 	
 	public String title;
 	public Integer cardCount;
-	public JSONArray flashcards;
+	public ArrayList<FlashCard> flashcards=new ArrayList<FlashCard>();
 	
 	public CardSets(){}
 	
 	public CardSets(String title,JSONArray flashcards,Integer cardCount){
 		this.title = title;
 		this.cardCount = cardCount;
-		this.flashcards = flashcards;	
+		
+		try {
+			
+	        for(int i=0;i<flashcards.length();i++)
+	        {
+	        	JSONArray terms = (JSONArray)flashcards.get(i);
+	        	String question = (String)terms.get(0);
+	        	String answer = (String)terms.get(1);
+	        	FlashCard flashcard = new FlashCard(question,answer,i+1);
+	        	this.flashcards.add(flashcard);
+	        }
+	        
+        } catch (JSONException e) {
+	        // TODO Auto-generated catch block
+	        e.printStackTrace();
+        }
+		
+		
 	}
 }

@@ -18,10 +18,13 @@ public class FlashCard {
 	public String question;
 	public String answer;
 	public int cardNum;
+	public boolean isCorrect=true; //assumes is correct by default
+	public boolean wasSeen=false; //assuses not seen by default
 
-	public String toString(){
-         return "Question = " + this.question
-                   + "\nAnswer = " + this.answer;
-    }
+	public FlashCard(String q,String a,int num){
+		this.question =q;
+		this.answer=a;
+		this.cardNum=num;
+	}
 	
 }

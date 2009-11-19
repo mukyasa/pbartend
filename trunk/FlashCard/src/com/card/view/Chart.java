@@ -9,11 +9,21 @@
  */
 package com.card.view;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
+import android.widget.TextView;
+
+import com.card.R;
+import com.card.domain.CardSets;
+import com.card.domain.FlashCard;
+import com.card.domain.ResultsBean;
+import com.card.handler.ApplicationHandler;
 
 /**
  * @author dmason
@@ -24,8 +34,10 @@ public class Chart extends View {
 	private final float x;
     private final float y;
     private final int r;
+    private final int START_ANGLE = -90;
     
     private int screenwidth;
+    ResultsBean rbean;
     
     private float lft;
     private float rgt;
@@ -36,10 +48,10 @@ public class Chart extends View {
     private final Paint mPaintWrong = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint mPaintCorrect = new Paint(Paint.ANTI_ALIAS_FLAG);
     //sweepangle will be set by score
-    private int sweepangle = 180;
-    private int startangle = 90;
+    private int sweepangle = 10;
+   
     
-    public Chart(Context context, float x, float y, int r,int screenwidth,int screenheight) {
+    public Chart(Context context, float x, float y, int r,int screenwidth,int screenheight,ResultsBean rbean) {
         super(context);
         mPaintWrong.setColor(0xFFedb419);
         mPaintCorrect.setColor(0xFFbc8f13);
@@ -47,8 +59,39 @@ public class Chart extends View {
         this.y = y; 
         this.r = r;
         
+        this.rbean = rbean;
         this.screenwidth = screenwidth;
         
+        initCards();
+    }
+    
+    private void initCards() {
+	    
+    	ApplicationHandler handler = ApplicationHandler.instance();
+        CardSets cardsets = handler.pickedSet;
+        if(cardsets!= null)
+        {
+	        ArrayList<FlashCard> cards = cardsets.flashcards;
+	        
+	        rbean.totalCards = cards.size();
+	        Iterator<FlashCard> iter = cards.iterator();
+	        if(iter != null)
+	        {
+		        while(iter.hasNext())
+		        {
+		        	FlashCard card = iter.next();
+		        	if(card.isCorrect)
+		        		rbean.correctcardcount++;
+		        	else
+		        		rbean.wrongcardcount++;
+		        	
+		        	if(card.wasSeen)
+		        		rbean.countseen++;
+		        }
+	        }
+        }
+        
+    	
     }
     
     @Override
@@ -63,7 +106,7 @@ public class Chart extends View {
         this.bot = this.top + (r*2);
         
         RectF clockRect = new RectF(this.lft, this.top, this.rgt, this.bot); 
-        canvas.drawArc(clockRect, startangle, sweepangle, true, mPaintCorrect);
+        canvas.drawArc(clockRect, START_ANGLE, sweepangle, true, mPaintCorrect);
     }
 	
 }
