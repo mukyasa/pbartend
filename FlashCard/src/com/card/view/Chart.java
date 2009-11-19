@@ -48,13 +48,13 @@ public class Chart extends View {
     private final Paint mPaintWrong = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint mPaintCorrect = new Paint(Paint.ANTI_ALIAS_FLAG);
     //sweepangle will be set by score
-    private int sweepangle = 10;
+    private int sweepangle = 0;
    
     
     public Chart(Context context, float x, float y, int r,int screenwidth,int screenheight,ResultsBean rbean) {
         super(context);
-        mPaintWrong.setColor(0xFFedb419);
-        mPaintCorrect.setColor(0xFFbc8f13);
+        mPaintWrong.setColor(0xFFd56b32);
+        mPaintCorrect.setColor(0xFFdfb861);
         this.x = x;
         this.y = y; 
         this.r = r;
@@ -90,6 +90,10 @@ public class Chart extends View {
 		        	rbean.correctcardcount = (rbean.countseen - rbean.wrongcardcount);
 		        }
 	        }
+	        
+	        //set chart
+	        int degree = 360 / rbean.totalCards;
+	        sweepangle = rbean.correctcardcount * degree;
         }
         
     	
