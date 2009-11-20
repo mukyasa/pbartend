@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content" android:background="@drawable/port_bg">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/port_bg"
+	android:padding="10sp">
+	<TableLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="#fff" android:id="@+id/resultsLayout">
+	<TextView android:id="@+id/tvTitle" android:layout_height="wrap_content"
+		android:background="@drawable/resultshdr" android:text="@string/preferences"
+		android:textColor="#fff" android:textSize="18sp" android:paddingTop="6sp"
+		android:gravity="center_horizontal" android:layout_margin="10sp"
+		android:layout_width="fill_parent"></TextView>
+	<CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10sp" android:textColor="#000" android:text="@string/sound" android:id="@+id/cbSoundEffects" android:paddingLeft="50sp"></CheckBox>
+</TableLayout>
 </LinearLayout>

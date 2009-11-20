@@ -9,4 +9,6 @@
 <string name="tvTotals">Total Card Sets 100</string>
 <string name="butRetest">Retest Incorrect</string>
 <string name="resultshead">Flashcard Results</string>
+<string name="preferences">User Preferences</string>
+<string name="sound">Use Sound Effects</string>
 </resources>
