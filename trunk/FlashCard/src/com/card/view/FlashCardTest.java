@@ -13,8 +13,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.Menu;
@@ -55,6 +57,7 @@ public class FlashCardTest extends Activity {
 	private  TextView cardnumber;
 	private TextView cardnumber2;
 	private TextView tvFlashCard;
+	private boolean cardfinished=false;
 	
 	@SuppressWarnings("unchecked")
     @Override
@@ -288,6 +291,10 @@ public class FlashCardTest extends Activity {
             {
             	count++;
             	countlabel++;
+            	
+            	MediaPlayer mp = MediaPlayer.create(context, R.raw.slide);
+                mp.start();
+            	
             	FlashCard terms = (FlashCard)sets.get(count);
                 
 		        tvFlashCard.setText(terms.question);
@@ -295,11 +302,15 @@ public class FlashCardTest extends Activity {
                 // Set an animation from res/anim: 
 		        // Get the ViewFlipper from the layout
                 vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left)); 
+                
             }
             else if(count > 0 && e1.getX() < e2.getX())//flick previous
             {
             	count--;
             	countlabel--;
+            	
+            	MediaPlayer mp = MediaPlayer.create(context, R.raw.slide);
+                mp.start();
             	
             	FlashCard terms = (FlashCard)sets.get(count);
 		        tvFlashCard.setText(terms.question);
@@ -315,6 +326,13 @@ public class FlashCardTest extends Activity {
 	        cardnumber.setText(CARD_NUMBER + countlabel);
 	        cardnumber2.setText(CARD_NUMBER + countlabel);
             
+	        
+	        if(countlabel == maxcount && !cardfinished)
+	        {
+	        	MediaPlayer mp = MediaPlayer.create(context, R.raw.wind);
+                mp.start();
+                cardfinished=true;
+	        }
 	        
 	        return true;
 	    }
