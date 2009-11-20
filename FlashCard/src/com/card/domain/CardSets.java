@@ -37,7 +37,13 @@ public class CardSets {
 	        	JSONArray terms = (JSONArray)flashcards.get(i);
 	        	String question = (String)terms.get(0);
 	        	String answer = (String)terms.get(1);
-	        	FlashCard flashcard = new FlashCard(question,answer,i+1);
+	        	String imageURL="";
+	        	try {
+	        		imageURL= (String)terms.get(2);
+                } catch (Exception e) {
+                	//do nothing
+                }
+	        	FlashCard flashcard = new FlashCard(question,answer,i+1,imageURL);
 	        	this.flashcards.add(flashcard);
 	        }
 	        
