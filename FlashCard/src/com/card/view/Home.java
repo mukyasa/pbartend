@@ -48,6 +48,7 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 	private Intent intent;
 	private ProgressDialog pd;
 	private final int MENU_RESULTS=0;
+	private final int MENU_USER_PREF=1;
 	private boolean WAS_ERROR=false;
 	
 	
@@ -94,7 +95,8 @@ public class Home extends Activity implements OnTouchListener,Runnable {
     }
     
     public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, MENU_RESULTS, 0, "Test Results").setIcon(R.drawable.results);
+    	menu.add(0, MENU_RESULTS, 0, "Test Results").setIcon(R.drawable.results);
+    	menu.add(0, MENU_USER_PREF, 0, "Preferences").setIcon(android.R.drawable.ic_menu_preferences);
 	    return true;
 	}
 
@@ -102,11 +104,16 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent;
 	    switch (item.getItemId()) {
-	    case MENU_RESULTS:
-	    	intent = new Intent(this, Results.class);
-			startActivity(intent);
-	    	return true;
-	    }
+	    	 case MENU_RESULTS:
+	 	    	intent = new Intent(this, Results.class);
+	 			startActivity(intent);
+	 	    	return true;
+	    	 case MENU_USER_PREF:
+	 	    	intent = new Intent(this, UserPrefActivity.class);
+	 			startActivity(intent);
+	 	    	return true;
+	 	    }
+	    
 	    return false;
 	}
     
