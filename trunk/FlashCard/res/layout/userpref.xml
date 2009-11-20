@@ -13,5 +13,6 @@
 	<TableRow android:paddingLeft="10sp" android:background="#dfdfdf" android:layout_marginRight="10sp" android:layout_marginLeft="10sp">
 		<CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000" android:text="@string/sound" android:id="@+id/cbSoundEffects" android:paddingLeft="50sp" android:checked="true"></CheckBox>
 	</TableRow>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/button" android:layout_margin="10sp" android:text="@string/done" android:id="@+id/butDone" android:paddingLeft="30sp" android:paddingBottom="5sp" android:paddingRight="40sp" android:paddingTop="0sp"></Button>
 </TableLayout>
 </LinearLayout>
