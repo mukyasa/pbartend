@@ -28,18 +28,13 @@
 		android:paddingTop="0sp" android:paddingBottom="8sp" android:textStyle="bold" android:textColor="#42493f"></Button>
 
 
-	<TableLayout android:id="@+id/TableLayout01"
-		android:layout_width="fill_parent" android:layout_height="fill_parent"
-		android:gravity="bottom">
-		<TableRow android:id="@+id/TableRow01" android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:gravity="bottom">
-			<ImageView android:layout_height="wrap_content"
-				android:background="@drawable/info" android:layout_width="wrap_content"
-				android:layout_marginRight="10sp" android:layout_gravity="center_vertical"
-				android:id="@+id/ivInfo"></ImageView>
-			<ImageView android:layout_width="wrap_content"
+	<RelativeLayout android:id="@+id/bottomInfo"
+		android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left|bottom">
+		<ImageView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:background="@drawable/poweredby"
-				android:layout_gravity="bottom" android:id="@+id/ivQuizlet"></ImageView>
-		</TableRow>
-	</TableLayout>
+				android:id="@+id/ivQuizlet" android:layout_marginTop="5sp"></ImageView>
+			<ImageView android:layout_height="wrap_content"
+				android:background="@drawable/info" android:id="@+id/ivInfo" android:layout_marginRight="0sp" android:layout_marginLeft="20sp" android:layout_alignParentRight="true" android:layout_width="wrap_content" android:layout_marginBottom="5sp"></ImageView>
+			
+	</RelativeLayout>
 </LinearLayout>
