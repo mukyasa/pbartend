@@ -12,12 +12,17 @@ package com.card.view;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.apache.http.message.LineFormatter;
+import org.apache.http.message.LineParser;
+
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
 import com.card.R;
 import com.card.domain.CardSets;
@@ -48,9 +53,13 @@ public class Chart extends View {
     private float top;
     private float bot;
     
+    private float percentWrong;
+    private float percentRight;
+    
     
     private final Paint mPaintWrong = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint mPaintCorrect = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint mPaintKey = new Paint(Paint.ANTI_ALIAS_FLAG);
     
    
     
@@ -94,8 +103,11 @@ public class Chart extends View {
 		        }
 	        }
 	        
+	        percentRight = (((rbean.countseen - rbean.wrongcardcount) / rbean.countseen) * 100);
+            percentWrong = ((rbean.wrongcardcount / rbean.countseen) * 100);
+	        
 	        //set chart
-	        float degree = CIRCLE / rbean.totalCards;
+	        float degree = CIRCLE / rbean.countseen;
 	        SWEEP_ANGLE = Math.round(rbean.correctcardcount * degree);
         }
         
@@ -107,13 +119,32 @@ public class Chart extends View {
         super.onDraw(canvas);
         canvas.drawCircle(x, y, r, mPaintWrong);
         
+        Bitmap bitmapCorrect = BitmapFactory.decodeResource(getResources(),
+     		   R.drawable.correctresult);
+        Bitmap bitmapInCorrect = BitmapFactory.decodeResource(getResources(),
+     		   R.drawable.incorrectresult);
+        
         this.lft =  this.screenwidth/2 - this.r-SCREEN_OFFSET;
         this.rgt =  this.screenwidth/2 + this.r-SCREEN_OFFSET;
         this.top = this.y - r;
         this.bot = this.top + (r*2);
         
+        canvas.drawLine(10, 0, this.lft+this.rgt-10, 0, mPaintKey);
+        
         RectF clockRect = new RectF(this.lft, this.top, this.rgt, this.bot); 
         canvas.drawArc(clockRect, START_ANGLE, SWEEP_ANGLE, true, mPaintCorrect);
+        
+        //draw images
+        canvas.drawBitmap(bitmapCorrect, 10,10, mPaintKey);
+        canvas.drawBitmap(bitmapInCorrect,10,this.bot-31, mPaintKey); 
+        
+        mPaintKey.setTextSize(15);
+        canvas.drawText(Math.round(percentRight)+"%", 28, 22, mPaintKey);
+        canvas.drawText("Correct", 28, 38, mPaintKey);
+        
+        canvas.drawText(Math.round(percentWrong)+"%", 28, this.bot-19, mPaintKey);
+        canvas.drawText("Incorrect", 28, this.bot-3, mPaintKey);
+        
     }
 	
 }
