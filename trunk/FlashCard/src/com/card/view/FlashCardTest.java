@@ -153,6 +153,7 @@ public class FlashCardTest extends Activity {
 	        {
 	        	FlashCard card = (FlashCard)iter.next();
 	        	card.isCorrect=true;
+	        	card.wasSeen=false;
 	        }
 	        
 	    	FlashCard terms = (FlashCard)sets.get(0);
