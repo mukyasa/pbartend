@@ -117,7 +117,7 @@ public class Results extends Activity implements OnTouchListener {
 	 }
 
 	    public boolean onCreateOptionsMenu(Menu menu) {
-			menu.add(0, MENU_NEW, 0, "Home").setIcon(R.drawable.results);
+	    	menu.add(0, MENU_NEW, 0, "New Card Set").setIcon(R.drawable.newcardset);
 		    return true;
 		}
 
