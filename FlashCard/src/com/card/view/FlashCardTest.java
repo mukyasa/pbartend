@@ -10,6 +10,7 @@
 package com.card.view;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import android.app.Activity;
 import android.content.Context;
@@ -51,6 +52,9 @@ public class FlashCardTest extends Activity {
 	private final int MENU_RETEST=1;
 	private final int MENU_SHUFFLE=2;
 	private final int MENU_NEW=3;
+	private  TextView cardnumber;
+	private TextView cardnumber2;
+	private TextView tvFlashCard;
 	
 	@SuppressWarnings("unchecked")
     @Override
@@ -80,14 +84,13 @@ public class FlashCardTest extends Activity {
 
 	        FlashCard terms = (FlashCard)sets.get(0);
 	        terms.wasSeen=true;
-	        terms.isCorrect=true;
 	        
-	        TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
+	        tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
 	        tvFlashCard.setText(terms.question);
 	        
 	        //set card number tag
-	        TextView cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
-	        TextView cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
+	        cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
+	        cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
 	        cardnumber.setText(CARD_NUMBER + "1");
 	        cardnumber2.setText(CARD_NUMBER + "1");
 	        
@@ -138,6 +141,32 @@ public class FlashCardTest extends Activity {
 			startActivity(intent);
 	    	return true;
 	    case MENU_RETEST:
+	    	count=0;
+	    	countlabel=1;
+	    	
+	    	ApplicationHandler handler = ApplicationHandler.instance();
+	        CardSets cardsets = handler.pickedSet;
+	        ArrayList<FlashCard> sets = cardsets.flashcards;
+
+	        Iterator<FlashCard> iter = sets.iterator();
+	        while(iter.hasNext())
+	        {
+	        	FlashCard card = (FlashCard)iter.next();
+	        	card.isCorrect=true;
+	        }
+	        
+	    	FlashCard terms = (FlashCard)sets.get(0);
+	        terms.wasSeen=true;
+	        
+	        tvFlashCard.setText(terms.question);
+	        
+	        //set card number tag
+	        cardnumber.setText(CARD_NUMBER + "1");
+	        cardnumber2.setText(CARD_NUMBER + "1");
+	        ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+            vf.setDisplayedChild(0);
+            vf.getAnimation();
+            isBack=true;
 	        return true;
 	    case MENU_SHUFFLE:
 	    	return true;
@@ -168,14 +197,19 @@ public class FlashCardTest extends Activity {
             ApplicationHandler handler = ApplicationHandler.instance();
             CardSets cardsets = handler.pickedSet;
             ArrayList<FlashCard> sets = cardsets.flashcards;
+            ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
             
             if(isBack)//flick over
             {
             	FlashCard terms = (FlashCard)sets.get(count);
             	terms.wasSeen=true;
-            	terms.isCorrect=true;
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard2);
                 tvFlashCard.setText(terms.answer);
+                
+                if(terms.isCorrect)
+                	answered.setBackgroundResource(R.drawable.correct);
+                else
+                	answered.setBackgroundResource(R.drawable.wrong);
                 
             	// Get the ViewFlipper from the layout
                 ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
@@ -190,9 +224,13 @@ public class FlashCardTest extends Activity {
             {
             	FlashCard terms = (FlashCard)sets.get(count);
             	terms.wasSeen=true;
-            	terms.isCorrect=true;
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
                 tvFlashCard.setText(terms.question);
+                
+                if(terms.isCorrect)
+                	answered.setBackgroundResource(R.drawable.correct);
+                else
+                	answered.setBackgroundResource(R.drawable.wrong);
                 
             	// Get the ViewFlipper from the layout
                 ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
@@ -241,7 +279,6 @@ public class FlashCardTest extends Activity {
             ApplicationHandler handler = ApplicationHandler.instance();
             CardSets cardsets = handler.pickedSet;
         	ArrayList<FlashCard> sets = cardsets.flashcards;
-        	TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
         	// Get the ViewFlipper from the layout
             ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
             vf.setDisplayedChild(0);
@@ -254,7 +291,6 @@ public class FlashCardTest extends Activity {
                 
 		        tvFlashCard.setText(terms.question);
 		        terms.wasSeen=true;
-		        terms.isCorrect=true;
                 // Set an animation from res/anim: 
 		        // Get the ViewFlipper from the layout
                 vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left)); 
@@ -267,7 +303,6 @@ public class FlashCardTest extends Activity {
             	FlashCard terms = (FlashCard)sets.get(count);
 		        tvFlashCard.setText(terms.question);
 		        terms.wasSeen=true;
-		        terms.isCorrect=true;
 		        // Set an animation from res/anim: 
             	// Get the ViewFlipper from the layout
                 vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_right));
@@ -276,8 +311,6 @@ public class FlashCardTest extends Activity {
             vf.getAnimation(); 
             
             //set card number tag
-	        TextView cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
-	        TextView cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
 	        cardnumber.setText(CARD_NUMBER + countlabel);
 	        cardnumber2.setText(CARD_NUMBER + countlabel);
             
