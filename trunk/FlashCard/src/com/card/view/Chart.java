@@ -12,9 +12,6 @@ package com.card.view;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import org.apache.http.message.LineFormatter;
-import org.apache.http.message.LineParser;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,7 +19,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.card.R;
 import com.card.domain.CardSets;

@@ -10,10 +10,12 @@
 package com.card.view;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -44,6 +46,7 @@ public class Results extends Activity implements OnTouchListener {
 	private final double BASE_WIDTH_PERCENT=.46;
 	private final double BASE_HEIGHT_PERCENT=.21;
 	private final double BASE_RADIUS_PERCENT=.53;
+	private final int MENU_NEW=0;
 	
 	
 	 public void onCreate(Bundle savedInstanceState) {
@@ -113,6 +116,22 @@ public class Results extends Activity implements OnTouchListener {
 		 
 	 }
 
+	    public boolean onCreateOptionsMenu(Menu menu) {
+			menu.add(0, MENU_NEW, 0, "Home").setIcon(R.drawable.results);
+		    return true;
+		}
+
+		/* Handles item selections */
+		public boolean onOptionsItemSelected(MenuItem item) {
+			Intent intent;
+		    switch (item.getItemId()) {
+		    case MENU_NEW:
+		    	intent = new Intent(this, Home.class);
+				startActivity(intent);
+		    	return true;
+		    }
+		    return false;
+		}
 
 	/* (non-Javadoc)
      * @see android.view.View.OnTouchListener#onTouch(android.view.View, android.view.MotionEvent)
