@@ -10,6 +10,8 @@
 		android:textColor="#fff" android:textSize="18sp" android:paddingTop="6sp"
 		android:gravity="center_horizontal" android:layout_margin="10sp"
 		android:layout_width="fill_parent"></TextView>
-	<CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10sp" android:textColor="#000" android:text="@string/sound" android:id="@+id/cbSoundEffects" android:paddingLeft="50sp"></CheckBox>
+	<TableRow android:paddingLeft="10sp" android:background="#dfdfdf" android:layout_marginRight="10sp" android:layout_marginLeft="10sp">
+		<CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000" android:text="@string/sound" android:id="@+id/cbSoundEffects" android:paddingLeft="50sp" android:checked="true"></CheckBox>
+	</TableRow>
 </TableLayout>
 </LinearLayout>
