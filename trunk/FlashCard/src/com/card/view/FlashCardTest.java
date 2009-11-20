@@ -9,16 +9,22 @@
  */
 package com.card.view;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ScaleDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -68,7 +74,7 @@ public class FlashCardTest extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_frame);  
 		//force to be landscape
-		//setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		mGestureDetector = new GestureDetector(this, new LearnGestureListener());
 		context = getBaseContext();
 		//set up cardset
@@ -192,6 +198,25 @@ public class FlashCardTest extends Activity {
 	
 	protected class LearnGestureListener extends GestureDetector.SimpleOnGestureListener{
 	    
+		/**
+		 * FUTURE PARSE IMAGES
+		 * Nov 20, 2009
+		 * dmason
+		 * @param url
+		 * @return
+		 *
+		 */
+		public Drawable loadImageFromUrl(String url) {
+	        InputStream inputStream;
+	        try {
+	            inputStream = new URL(url).openStream();
+	        } catch (IOException e) {
+	            throw new RuntimeException(e);
+	        }
+	        return Drawable.createFromStream(inputStream, "src");
+	    }
+
+		
 		/* (non-Javadoc)
 		 * @see android.view.GestureDetector.SimpleOnGestureListener#onDoubleTap(android.view.MotionEvent)
 		 */
@@ -298,6 +323,13 @@ public class FlashCardTest extends Activity {
             	FlashCard terms = (FlashCard)sets.get(count);
                 
 		        tvFlashCard.setText(terms.question);
+		        //future add image
+		        if(!"".equals(terms.imageURL))
+		        {
+		        	Drawable image = loadImageFromUrl("http://www.casarioblanco.com/poison-dart-frog.jpg");
+		        	
+		        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(image,null,null,null);
+		        }
 		        terms.wasSeen=true;
                 // Set an animation from res/anim: 
 		        // Get the ViewFlipper from the layout

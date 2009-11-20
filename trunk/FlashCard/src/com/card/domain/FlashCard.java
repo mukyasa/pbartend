@@ -16,15 +16,17 @@ package com.card.domain;
 public class FlashCard {
 	
 	public String question;
+	public String imageURL;
 	public String answer;
 	public int cardNum;
 	public boolean isCorrect=true; //assumes is correct by default
 	public boolean wasSeen=false; //assuses not seen by default
 
-	public FlashCard(String q,String a,int num){
+	public FlashCard(String q,String a,int num,String imageURL){
 		this.question =q;
 		this.answer=a;
 		this.cardNum=num;
+		this.imageURL=imageURL;
 	}
 	
 }
