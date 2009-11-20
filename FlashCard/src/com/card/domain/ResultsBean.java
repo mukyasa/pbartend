@@ -15,8 +15,8 @@ package com.card.domain;
  */
 public class ResultsBean {
 	
-	public int wrongcardcount=0;
-	public int correctcardcount=0;
+	public float wrongcardcount=0;
+	public float correctcardcount=0;
 	public int countseen=0;
 	public float totalCards=0;
     
