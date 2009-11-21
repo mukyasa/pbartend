@@ -19,6 +19,8 @@ public class ResultsBean {
 	public float correctcardcount=0;
 	public int countseen=0;
 	public float totalCards=0;
+	
+	public int cardSetNumber;
     
 	
 }

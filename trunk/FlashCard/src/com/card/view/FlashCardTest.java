@@ -38,9 +38,10 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.card.R;
-import com.card.domain.CardSets;
+import com.card.domain.CardSet;
 import com.card.domain.FlashCard;
 import com.card.handler.ApplicationHandler;
+import com.card.util.AppUtil;
 
 /**
  * @author dmason
@@ -64,6 +65,8 @@ public class FlashCardTest extends Activity {
 	private TextView cardnumber2;
 	private TextView tvFlashCard;
 	private boolean cardfinished=false;
+	private boolean isSound=false;
+	MediaPlayer mp;
 	
 	@SuppressWarnings("unchecked")
     @Override
@@ -84,52 +87,56 @@ public class FlashCardTest extends Activity {
 	
 	private void initalize(){
 		
-	        ApplicationHandler handler = ApplicationHandler.instance();
-	        CardSets cardsets = handler.pickedSet;
-	        maxcount = cardsets.cardCount;
-	        TextView tvTitle = (TextView)findViewById(R.id.tvSetTitle);
-	        tvTitle.setText(cardsets.title);
-	        ArrayList<FlashCard> sets = cardsets.flashcards;
+		//get user prefs
+		isSound = AppUtil.getSound(this);
+		mp = MediaPlayer.create(context, R.raw.slide);
+		 
+        ApplicationHandler handler = ApplicationHandler.instance();
+        CardSet cardsets = handler.currentlyUsedSet;
+        maxcount = cardsets.cardCount;
+        TextView tvTitle = (TextView)findViewById(R.id.tvSetTitle);
+        tvTitle.setText(cardsets.title);
+        ArrayList<FlashCard> sets = cardsets.flashcards;
 
-	        FlashCard terms = (FlashCard)sets.get(0);
-	        terms.wasSeen=true;
-	        
-	        tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
-	        tvFlashCard.setText(terms.question);
-	        
-	        //set card number tag
-	        cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
-	        cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
-	        cardnumber.setText(CARD_NUMBER + "1");
-	        cardnumber2.setText(CARD_NUMBER + "1");
-	        
-	        //the correct button
-	        ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
-	        answered.setOnClickListener(new OnClickListener() {
+        FlashCard terms = (FlashCard)sets.get(0);
+        terms.wasSeen=true;
+        
+        tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
+        tvFlashCard.setText(terms.question);
+        
+        //set card number tag
+        cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
+        cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
+        cardnumber.setText(CARD_NUMBER + "1");
+        cardnumber2.setText(CARD_NUMBER + "1");
+        
+        //the correct button
+        ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
+        answered.setOnClickListener(new OnClickListener() {
 
-	            
-				public void onClick(View v) {
-					ApplicationHandler handler = ApplicationHandler.instance();
-		            CardSets cardsets = handler.pickedSet;
-		            ArrayList<FlashCard> sets = cardsets.flashcards;
-		            FlashCard card = (FlashCard)sets.get(count);
-					ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
-					if(!isWrong)
-					{
-						answered.setBackgroundResource(R.drawable.wrong);
-						card.isCorrect=false;
-						isWrong=true;
-					}
-					else
-					{
-						answered.setBackgroundResource(R.drawable.correct);
-						card.isCorrect=true;
-						isWrong=false;
-					}
-						
-                }
-	        	
-	        });
+            
+			public void onClick(View v) {
+				ApplicationHandler handler = ApplicationHandler.instance();
+	            CardSet cardsets = handler.currentlyUsedSet;
+	            ArrayList<FlashCard> sets = cardsets.flashcards;
+	            FlashCard card = (FlashCard)sets.get(count);
+				ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
+				if(!isWrong)
+				{
+					answered.setBackgroundResource(R.drawable.wrong);
+					card.isCorrect=false;
+					isWrong=true;
+				}
+				else
+				{
+					answered.setBackgroundResource(R.drawable.correct);
+					card.isCorrect=true;
+					isWrong=false;
+				}
+					
+            }
+        	
+        });
 		
 	}
 	
@@ -154,7 +161,7 @@ public class FlashCardTest extends Activity {
 	    	countlabel=1;
 	    	
 	    	ApplicationHandler handler = ApplicationHandler.instance();
-	        CardSets cardsets = handler.pickedSet;
+	        CardSet cardsets = handler.currentlyUsedSet;
 	        ArrayList<FlashCard> sets = cardsets.flashcards;
 
 	        Iterator<FlashCard> iter = sets.iterator();
@@ -224,7 +231,7 @@ public class FlashCardTest extends Activity {
 		public boolean onDoubleTap(MotionEvent e) {
 
             ApplicationHandler handler = ApplicationHandler.instance();
-            CardSets cardsets = handler.pickedSet;
+            CardSet cardsets = handler.currentlyUsedSet;
             ArrayList<FlashCard> sets = cardsets.flashcards;
             ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
             
@@ -306,7 +313,7 @@ public class FlashCardTest extends Activity {
             ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
 	        answered.setBackgroundResource(R.drawable.correct);
             ApplicationHandler handler = ApplicationHandler.instance();
-            CardSets cardsets = handler.pickedSet;
+            CardSet cardsets = handler.currentlyUsedSet;
         	ArrayList<FlashCard> sets = cardsets.flashcards;
         	// Get the ViewFlipper from the layout
             ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
@@ -317,8 +324,10 @@ public class FlashCardTest extends Activity {
             	count++;
             	countlabel++;
             	
-            	MediaPlayer mp = MediaPlayer.create(context, R.raw.slide);
-                mp.start();
+            	if(isSound)
+            	{
+            		mp.start();
+            	}
             	
             	FlashCard terms = (FlashCard)sets.get(count);
                 
@@ -341,8 +350,10 @@ public class FlashCardTest extends Activity {
             	count--;
             	countlabel--;
             	
-            	MediaPlayer mp = MediaPlayer.create(context, R.raw.slide);
-                mp.start();
+            	if(isSound)
+            	{
+            		mp.start();
+            	}
             	
             	FlashCard terms = (FlashCard)sets.get(count);
 		        tvFlashCard.setText(terms.question);
@@ -361,8 +372,8 @@ public class FlashCardTest extends Activity {
 	        
 	        if(countlabel == maxcount && !cardfinished)
 	        {
-	        	MediaPlayer mp = MediaPlayer.create(context, R.raw.wind);
-                mp.start();
+	        	MediaPlayer mpfinish = MediaPlayer.create(context, R.raw.wind);
+	        	mpfinish.start();
                 cardfinished=true;
 	        }
 	        

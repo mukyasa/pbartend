@@ -20,15 +20,15 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.card.R;
-import com.card.domain.CardSets;
+import com.card.domain.CardSet;
 
 /**
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class CardSetArrayAdapter extends ArrayAdapter<CardSets> {
+public class CardSetArrayAdapter extends ArrayAdapter<CardSet> {
 
-	private List<CardSets> cards=null;
+	private List<CardSet> cards=null;
 	/**
      * Nov 15, 2009
      * @param context
@@ -36,7 +36,7 @@ public class CardSetArrayAdapter extends ArrayAdapter<CardSets> {
      * @param objects
      * 
      */
-    public CardSetArrayAdapter(Context context, int textViewResourceId, List<CardSets> cards) {
+    public CardSetArrayAdapter(Context context, int textViewResourceId, List<CardSet> cards) {
 	    super(context, textViewResourceId, cards);
 	    this.cards = cards;
 
@@ -52,7 +52,7 @@ public class CardSetArrayAdapter extends ArrayAdapter<CardSets> {
 	        TextView rowView = (TextView) inflater.inflate(R.layout.cardlist_item, null);
 	        
 	        String tabs ="\t\t";
-	        CardSets cardset = (CardSets)cards.get(position);
+	        CardSet cardset = (CardSet)cards.get(position);
 	        String title;
 	        if(cardset.title.length() > 37)//trunc at 37 char
 	        	title = cardset.title.substring(0, 34) + "...";

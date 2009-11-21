@@ -33,7 +33,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.card.R;
-import com.card.domain.CardSets;
+import com.card.domain.CardSet;
 import com.card.handler.ApplicationHandler;
 
 public class Home extends Activity implements OnTouchListener,Runnable {
@@ -152,12 +152,12 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 		        JSONArray sets = (JSONArray)jsonObj.get("sets");
 		        ApplicationHandler.clearHandlerInstance();
 		        ApplicationHandler handler = ApplicationHandler.instance();
-		        ArrayList<CardSets> cardsets = handler.cardsets;
+		        ArrayList<CardSet> cardsets = handler.cardsets;
 		        //gets the titles
 		        for(int i=0;i<sets.length();i++)
 		        {
 		        	JSONObject set = (JSONObject)sets.get(i);
-		        	CardSets cardset = new CardSets((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"));
+		        	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"));
 		        	cardsets.add(cardset);
 		        }
 		        
