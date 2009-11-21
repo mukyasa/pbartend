@@ -13,10 +13,20 @@ public class AppUtil {
 
 	public static final String PREFS_NAME = "app_pref";
 	public static final String PREF_SOUND = "silentMode";
+	public static final String PREF_FONT_SIZE = "fontSize";
 
 	public static boolean getSound(Context context) {
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
 		return settings.getBoolean(PREF_SOUND, false);
+	}
+	
+	public static boolean getFontSize(Context context,String radioText,String defaultValue) {
+		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		String fontSize = settings.getString(PREF_FONT_SIZE, defaultValue);
+		if(fontSize.equals(radioText))
+			return true;
+		else
+			return false;
 	}
 	
 	/**

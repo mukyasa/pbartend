@@ -16,20 +16,23 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 
 import com.card.R;
 import com.card.util.AppUtil;
 
 /**
  * @author dmason
- * @version $Revision$ $Date$ $Author$ $Id$
- */
-public class UserPrefActivity extends Activity implements OnTouchListener {
+ * @version $Revision$ $Date$ $Author$ $Id$ 
+ */ 
+public class UserPrefActivity extends Activity implements OnTouchListener, OnClickListener {
 
 	private CheckBox sound;
+	private String fontsize;
 	  @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -39,6 +42,31 @@ public class UserPrefActivity extends Activity implements OnTouchListener {
 	        sound = (CheckBox)findViewById(R.id.cbSoundEffects);
 	        sound.setChecked( AppUtil.getSound(this));
 	        
+	        RadioButton s =(RadioButton)findViewById(R.id.rbSmaller);
+	        s.setOnClickListener(this);
+	        RadioButton n =(RadioButton)findViewById(R.id.rbNormal);
+	        n.setOnClickListener(this);
+	        RadioButton b =(RadioButton) findViewById(R.id.rbBigger);
+	        b.setOnClickListener(this);
+	        
+	        String defaultValue=getText(R.string.normal).toString();
+	        
+	        if(AppUtil.getFontSize(this, s.getText().toString(), defaultValue))
+	        {
+	        	s.setChecked(true);
+	        	fontsize = s.getText().toString();
+	        } 
+	        else if(AppUtil.getFontSize(this, n.getText().toString(), defaultValue))
+	        {
+	        	n.setChecked(true);
+	        	fontsize = n.getText().toString();
+	        }
+	        else if(AppUtil.getFontSize(this, b.getText().toString(), defaultValue))
+	        {
+	        	b.setChecked(true);
+	        	fontsize = b.getText().toString();
+	        }
+	         
 	        Button done = (Button)findViewById(R.id.butDone);
 	        done.setOnTouchListener(this);
 	        
@@ -52,6 +80,7 @@ public class UserPrefActivity extends Activity implements OnTouchListener {
 		      SharedPreferences settings = getSharedPreferences(AppUtil.PREFS_NAME, 0);
 		      SharedPreferences.Editor editor = settings.edit();
 		      editor.putBoolean(AppUtil.PREF_SOUND, sound.isChecked());
+		      editor.putString(AppUtil.PREF_FONT_SIZE,fontsize);
 
 		      // Don't forget to commit your edits!!!
 		      editor.commit();
@@ -81,4 +110,10 @@ public class UserPrefActivity extends Activity implements OnTouchListener {
 	    	
 	    	return false;
 	    }
+	@Override
+	public void onClick(View v) {
+		
+		fontsize = ((RadioButton)v).getText().toString();
+		
+	}
 }
