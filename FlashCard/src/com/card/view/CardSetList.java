@@ -82,7 +82,6 @@ public class CardSetList extends ListActivity {
     /**
      * init screen list
      */
-    @SuppressWarnings("unchecked")
     private void initComponents() {
     	
     	ApplicationHandler handler = ApplicationHandler.instance();

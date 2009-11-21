@@ -10,9 +10,12 @@
 package com.card.view;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +38,7 @@ import com.card.util.AppUtil;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class Results extends Activity implements OnTouchListener {
+public class Results extends Activity implements OnTouchListener,Runnable {
 	
 	private long x;
 	private long y;
@@ -50,6 +53,7 @@ public class Results extends Activity implements OnTouchListener {
 	private final double BASE_HEIGHT_PERCENT=.21;
 	private final double BASE_RADIUS_PERCENT=.53;
 	private final int MENU_NEW=0;
+	private ProgressDialog pd;
 	
 	
 	 public void onCreate(Bundle savedInstanceState) {
@@ -107,15 +111,26 @@ public class Results extends Activity implements OnTouchListener {
 	        
 	    }
 	 
+	 @Override
+	protected void onStop() {
+		super.onStop();
+		if(pd!=null)
+			pd.dismiss();
+	}
 	 
 	 private void initiaize()
 	 {
 		 LinearLayout main = (LinearLayout) findViewById(R.id.vResultsChart);
 		 main.addView(new Chart(this,this.x,this.y,this.r,this.screenwidth,this.screenheight,rbean),this.screenwidth,this.adjHeight);
 		 
-		 
 		 Button retrest = (Button)findViewById(R.id.btRetest);
-		 retrest.setOnTouchListener(this);		 
+		 if(rbean.wrongcardcount > 0)
+		 {
+			 
+			 retrest.setOnTouchListener(this);
+		 }
+		 else
+			 retrest.setBackgroundResource(R.drawable.button_dis);
 		 
 	 }
 
@@ -154,17 +169,42 @@ public class Results extends Activity implements OnTouchListener {
 	  		{
 	  			v.setBackgroundResource(R.drawable.button);
 	  			v.setPadding(30, 0, 40, 5);
-	  			//reconfig for retest
-	  			ApplicationHandler handler = ApplicationHandler.instance();
-	  			CardSet newSet = AppUtil.getWrongCardsOnly(handler.currentlyUsedSet);
-	  			handler.currentlyUsedSet=newSet;
 	  			
-	  			Intent intent = new Intent(this, FlashCardTest.class);
-	  			startActivity(intent);
+	  			pd = ProgressDialog.show(this, null,"LOADING...");
+	  			
+	  			Thread thread = new Thread(this);
+	        	thread.start();
+	        	
 	  		}
 	  	}
     	
 	    return false;
     }
+
+    /**
+     * thread handler
+     */
+    private Handler handler = new Handler() {
+        
+        @Override
+        public void handleMessage(Message msg) {
+        	if(pd!=null)
+        		pd.dismiss();
+        	
+        }
+    };
+    
+    
+	@Override
+	public void run() {
+		//reconfigure cards for re-test
+			ApplicationHandler appHandler = ApplicationHandler.instance();
+			CardSet newSet = AppUtil.getWrongCardsOnly(appHandler.currentlyUsedSet);
+			appHandler.currentlyUsedSet=newSet;
+			
+			Intent intent = new Intent(this, FlashCardTest.class);
+			startActivity(intent);
+			handler.sendEmptyMessage(0);
+	}
 	 
 }

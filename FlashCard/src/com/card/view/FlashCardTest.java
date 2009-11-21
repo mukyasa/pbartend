@@ -20,11 +20,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ScaleDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.GestureDetector;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -68,7 +66,6 @@ public class FlashCardTest extends Activity {
 	private boolean isSound=false;
 	MediaPlayer mp;
 	
-	@SuppressWarnings("unchecked")
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -85,6 +82,14 @@ public class FlashCardTest extends Activity {
 		
     }
 	
+    @Override
+    protected void onStop() {
+    	super.onStop();
+    	count=0;
+    	countlabel=1;
+    	maxcount=0;
+    }
+    
 	private void initalize(){
 		
 		//get user prefs
@@ -325,9 +330,7 @@ public class FlashCardTest extends Activity {
             	countlabel++;
             	
             	if(isSound)
-            	{
             		mp.start();
-            	}
             	
             	FlashCard terms = (FlashCard)sets.get(count);
                 
@@ -351,9 +354,7 @@ public class FlashCardTest extends Activity {
             	countlabel--;
             	
             	if(isSound)
-            	{
             		mp.start();
-            	}
             	
             	FlashCard terms = (FlashCard)sets.get(count);
 		        tvFlashCard.setText(terms.question);

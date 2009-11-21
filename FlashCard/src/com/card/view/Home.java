@@ -21,9 +21,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -31,10 +33,12 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.card.R;
 import com.card.domain.CardSet;
 import com.card.handler.ApplicationHandler;
+import com.card.util.Constants;
 
 public class Home extends Activity implements OnTouchListener,Runnable {
 	private Button btUserName;
@@ -50,6 +54,9 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 	private final int MENU_RESULTS=0;
 	private final int MENU_USER_PREF=1;
 	private boolean WAS_ERROR=false;
+	private final int DIALOG_ERROR=0;
+	private final int DIALOG_ERROR_EMPTY=2;
+	private final int DIALOG_INFO=1;
 	
 	
     /** Called when the activity is first created. */
@@ -68,7 +75,7 @@ public class Home extends Activity implements OnTouchListener,Runnable {
         	if(pd!=null)
         		pd.dismiss();
         	if(WAS_ERROR)
-        		showDialog(0);
+        		showDialog(DIALOG_ERROR);
         }
     };
     
@@ -91,7 +98,10 @@ public class Home extends Activity implements OnTouchListener,Runnable {
     	etUserName.setOnTouchListener(this);
     	
     	EditText etTerm = (EditText)findViewById(R.id.etTerm);
-    	etTerm.setOnTouchListener(this);   	
+    	etTerm.setOnTouchListener(this); 
+    	
+    	ImageView info = (ImageView)findViewById(R.id.ivInfo);
+    	info.setOnTouchListener(this);
     }
     
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -181,16 +191,43 @@ public class Home extends Activity implements OnTouchListener,Runnable {
      */
     @Override
     protected Dialog onCreateDialog(int id) {
-    	return new AlertDialog.Builder(Home.this)
-        .setIcon(R.drawable.error)
-        .setMessage("No card sets found, please try again.")
-        .setTitle("Error")
-        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-               dismissDialog(0);
-            }
-        })      
-       .create();
+    	
+    	if(id==DIALOG_ERROR)
+    	{
+	    	return new AlertDialog.Builder(Home.this)
+	        .setIcon(R.drawable.error)
+	        .setMessage("No card sets found, please try again.")
+	        .setTitle("Error")
+	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int whichButton) {
+	               dismissDialog(DIALOG_ERROR);
+	            }
+	        })      
+	       .create();
+    	}else if(id==DIALOG_ERROR_EMPTY){
+    		return new AlertDialog.Builder(Home.this)
+	        .setIcon(R.drawable.error)
+	        .setMessage("Please enter a value.")
+	        .setTitle("Error")
+	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int whichButton) {
+	               dismissDialog(DIALOG_ERROR_EMPTY);
+	            }
+	        })      
+	       .create();
+    	}else{
+    		return new AlertDialog.Builder(Home.this)
+            .setIcon(R.drawable.info)
+            .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright © 2009")
+            .setTitle("Application Information")
+            .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                   dismissDialog(DIALOG_INFO);
+                }
+            })      
+           .create();
+    	}
 
     }
 
@@ -220,18 +257,44 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 	  		
 	  		else if(event.getAction()== MotionEvent.ACTION_UP)
 	  		{
-	  			pd = ProgressDialog.show(this, null,"LOADING...");
+	  			EditText etValue;
+	  			boolean canSearch=true;
 	  			
-	  			v.setBackgroundResource(R.drawable.button);
-	  			v.setPadding(30, 0, 40, 5); 
-	  			
-	  			Thread thread = new Thread(this);
-	        	thread.start();
-	        	
 	  			if(v==btTerm)
+	  			{
 	  				CHOOSEN_TYPE=TYPE_TERM;
+	  				etValue = (EditText)findViewById(R.id.etTerm);
+	  				Editable ed = etValue.getText();
+	  				CharSequence cs = getText(R.string.etTerm);
+	  				
+	  				if(ed.toString().equals(cs.toString()))
+	  					canSearch=false;
+	  			}
 	  	    	else if(v == btUserName)
+	  	    	{
 	  	    		CHOOSEN_TYPE=TYPE_USER_NAME;
+	  	    		etValue= (EditText)findViewById(R.id.etUserName);
+	  	    		Editable ed = etValue.getText();
+	  	    		CharSequence cs = getText(R.string.etUserName);
+	  	    		if(ed.toString().equals(cs.toString()))
+	  					canSearch=false;
+	  	    	}
+	  			
+	  			if(canSearch)
+	  			{
+		  			pd = ProgressDialog.show(this, null,"LOADING...");
+		  			
+		  			v.setBackgroundResource(R.drawable.button);
+		  			v.setPadding(30, 0, 40, 5); 
+		  			
+		  			Thread thread = new Thread(this);
+		        	thread.start();
+		        	
+	  			}
+	  			else
+	  			{
+	  				showDialog(DIALOG_ERROR_EMPTY);
+	  			}
 	  		}
 	  	}
 	  	else if(v instanceof EditText)
@@ -246,6 +309,17 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 	  				((EditText)v).setTextColor(Color.BLACK);
 	  			}
 	  			
+	  		}
+	  	}else if(v instanceof ImageView)
+	  	{
+	  		if(event.getAction() == MotionEvent.ACTION_DOWN)
+	  		{
+	  			int id = v.getId();
+	  			
+	  			if(id == R.id.ivInfo)
+	  			{
+	  				showDialog(DIALOG_INFO);
+	  			}
 	  		}
 	  	}
     	
