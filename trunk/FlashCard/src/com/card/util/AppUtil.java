@@ -51,17 +51,15 @@ public class AppUtil {
 	 * @return
 	 */
 	public static float getFontSize(Context context) {
-		SharedPreferences settings = context.getSharedPreferences(
-				AppUtil.PREFS_NAME, 0);
-		String fontSize = settings.getString(PREF_FONT_SIZE, context
-				.getString(R.string.normal));
+		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		String fontSize = settings.getString(PREF_FONT_SIZE, context.getString(R.string.normal));
 
 		if (fontSize.equals(context.getString(R.string.smaller)))
 			return 12;
 		else if (fontSize.equals(context.getString(R.string.normal)))
 			return 16;
 		else
-			return 22;
+			return 24;
 	}
 
 	/**
