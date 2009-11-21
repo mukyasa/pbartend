@@ -33,15 +33,15 @@
 			<RadioButton android:id="@+id/rbSmaller"
 				android:layout_width="wrap_content" android:layout_height="wrap_content"
 				android:textColor="#000" android:paddingLeft="50sp"
-				android:layout_marginLeft="10sp" android:text="@string/smaller"></RadioButton>
+				android:layout_marginLeft="10sp" android:text="@string/smaller" android:textSize="12sp"></RadioButton>
 			<RadioButton android:id="@+id/rbNormal"
 				android:layout_width="wrap_content" android:layout_height="wrap_content"
 				android:textColor="#000" android:paddingLeft="50sp"
-				android:layout_marginLeft="10sp" android:text="@string/normal"></RadioButton>
+				android:layout_marginLeft="10sp" android:text="@string/normal" android:textSize="16sp"></RadioButton>
 			<RadioButton android:id="@+id/rbBigger"
 				android:layout_width="wrap_content" android:layout_height="wrap_content"
 				android:textColor="#000" android:paddingLeft="50sp"
-				android:layout_marginLeft="10sp" android:text="@string/bigger"></RadioButton>
+				android:layout_marginLeft="10sp" android:text="@string/bigger" android:textSize="22sp"></RadioButton>
 		</RadioGroup>
 		<Button android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:background="@drawable/button"

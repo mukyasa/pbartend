@@ -64,7 +64,7 @@ public class FlashCardTest extends Activity {
 	private TextView tvFlashCard;
 	private boolean cardfinished=false;
 	private boolean isSound=false;
-	MediaPlayer mp;
+	private MediaPlayer mp;
 	
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +108,7 @@ public class FlashCardTest extends Activity {
         
         tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
         tvFlashCard.setText(terms.question);
+        tvFlashCard.setTextSize(AppUtil.getFontSize(this));
         
         //set card number tag
         cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
@@ -246,6 +247,8 @@ public class FlashCardTest extends Activity {
             	terms.wasSeen=true;
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard2);
                 tvFlashCard.setText(terms.answer);
+                tvFlashCard.setTextSize(AppUtil.getFontSize(context));
+                
                 
                 if(terms.isCorrect)
                 	answered.setBackgroundResource(R.drawable.correct);
@@ -267,6 +270,7 @@ public class FlashCardTest extends Activity {
             	terms.wasSeen=true;
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
                 tvFlashCard.setText(terms.question);
+                tvFlashCard.setTextSize(AppUtil.getFontSize(context));
                 
                 if(terms.isCorrect)
                 	answered.setBackgroundResource(R.drawable.correct);
@@ -335,6 +339,7 @@ public class FlashCardTest extends Activity {
             	FlashCard terms = (FlashCard)sets.get(count);
                 
 		        tvFlashCard.setText(terms.question);
+		        tvFlashCard.setTextSize(AppUtil.getFontSize(context));
 		        //future add image
 		        if(!"".equals(terms.imageURL))
 		        {
@@ -358,6 +363,7 @@ public class FlashCardTest extends Activity {
             	
             	FlashCard terms = (FlashCard)sets.get(count);
 		        tvFlashCard.setText(terms.question);
+		        tvFlashCard.setTextSize(AppUtil.getFontSize(context));
 		        terms.wasSeen=true;
 		        // Set an animation from res/anim: 
             	// Get the ViewFlipper from the layout
