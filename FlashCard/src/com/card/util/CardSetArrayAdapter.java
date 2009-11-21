@@ -7,7 +7,7 @@
  * http://www.gouvernement.lu/
  * http://www.tgen.org 
  */
-package com.card.view;
+package com.card.util;
 
 import java.util.List;
 
@@ -55,7 +55,7 @@ public class CardSetArrayAdapter extends ArrayAdapter<CardSet> {
 	        CardSet cardset = (CardSet)cards.get(position);
 	        String title;
 	        if(cardset.title.length() > 37)//trunc at 37 char
-	        	title = cardset.title.substring(0, 34) + "...";
+	        	title = cardset.title.substring(0, 32) + "...";
 	        else
 	        	title=cardset.title;
 	        	

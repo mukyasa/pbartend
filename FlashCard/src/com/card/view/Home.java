@@ -21,15 +21,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnKeyListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,9 +41,11 @@ import com.card.domain.CardSet;
 import com.card.handler.ApplicationHandler;
 import com.card.util.Constants;
 
-public class Home extends Activity implements OnTouchListener,Runnable {
+public class Home extends Activity implements OnTouchListener,OnKeyListener,Runnable {
 	private Button btUserName;
 	private Button btTerm;
+	private EditText etUserName;
+	private EditText etTerm;
 	private final int TYPE_TERM=0;
 	private final int TYPE_USER_NAME=1;
 	private int CHOOSEN_TYPE;
@@ -87,17 +90,17 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 	     handler.sendEmptyMessage(0);
 	    
 	}
-
+ 
     private void initScreen(){
     	btUserName = (Button)findViewById(R.id.btnUserNameCardSet);
     	btUserName.setOnTouchListener(this);
     	btTerm = (Button)findViewById(R.id.btnTerm);
     	btTerm.setOnTouchListener(this);
     	
-    	EditText etUserName = (EditText)findViewById(R.id.etUserName);
+    	etUserName = (EditText)findViewById(R.id.etUserName);
     	etUserName.setOnTouchListener(this);
-    	
-    	EditText etTerm = (EditText)findViewById(R.id.etTerm);
+    	etUserName.setOnKeyListener(this);
+    	etTerm = (EditText)findViewById(R.id.etTerm);
     	etTerm.setOnTouchListener(this); 
     	
     	ImageView info = (ImageView)findViewById(R.id.ivInfo);
@@ -267,7 +270,7 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 	  				Editable ed = etValue.getText();
 	  				CharSequence cs = getText(R.string.etTerm);
 	  				
-	  				if(ed.toString().equals(cs.toString()))
+	  				if(ed.toString().equals(cs.toString()) || "".equals(ed.toString()))
 	  					canSearch=false;
 	  			}
 	  	    	else if(v == btUserName)
@@ -276,7 +279,7 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 	  	    		etValue= (EditText)findViewById(R.id.etUserName);
 	  	    		Editable ed = etValue.getText();
 	  	    		CharSequence cs = getText(R.string.etUserName);
-	  	    		if(ed.toString().equals(cs.toString()))
+	  	    		if(ed.toString().equals(cs.toString()) || "".equals(ed.toString()))
 	  					canSearch=false;
 	  	    	}
 	  			
@@ -325,4 +328,29 @@ public class Home extends Activity implements OnTouchListener,Runnable {
     	
     	return false;
     }
+
+    /**
+     * This is used when they is is pressed and the default text is still in the box we need to clear it.
+     */
+	@Override
+	public boolean onKey(View v, int keyCode, KeyEvent event) {
+		
+		if(etUserName.hasFocus())
+		{
+			if(((EditText)v).getText().toString().equals(this.getString(R.string.etUserName))) 
+  			{
+  				((EditText)v).setText("");
+  				((EditText)v).setTextColor(Color.BLACK);
+  			}
+		}
+		else if(etTerm.hasFocus())
+		{
+			if(((EditText)v).getText().toString().equals(this.getString(R.string.etTerm))) 
+  			{
+  				((EditText)v).setText("");
+  				((EditText)v).setTextColor(Color.BLACK);
+  			}
+		}
+		return false;
+	}
 }

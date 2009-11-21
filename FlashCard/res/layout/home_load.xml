@@ -9,7 +9,7 @@
 		android:textColor="#ccc" android:id="@+id/etUserName" android:text="@string/etUserName"
 		android:layout_width="fill_parent" android:layout_marginTop="10sp"
 		android:layout_marginBottom="5sp" android:imeOptions="actionDone"
-		android:inputType="textWebEditText" android:focusable="false"></EditText>
+		android:inputType="textWebEditText"></EditText>
 	<Button android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:id="@+id/btnUserNameCardSet"
 		android:text="@string/btnGetCardSet" android:paddingLeft="30sp"
@@ -20,7 +20,7 @@
 		android:textColor="#ccc" android:layout_width="fill_parent"
 		android:text="@string/etTerm" android:layout_marginBottom="5sp"
 		android:layout_marginTop="10sp" android:id="@+id/etTerm"
-		android:inputType="textWebEditText" android:imeOptions="actionDone" android:focusable="false"></EditText>
+		android:inputType="textWebEditText" android:imeOptions="actionDone"></EditText>
 	<Button android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:text="@string/btnGetCardSet"
 		android:paddingLeft="30sp" android:background="@drawable/button"
