@@ -24,6 +24,7 @@ import com.mixer.dao.DataDAO;
 import com.mixer.dao.DatabaseAdapter;
 import com.mixer.dao.DetailDAO;
 import com.mixer.domain.ScreenType;
+import com.mixer.utils.Constants;
 
 public class HomeScreenView extends Activity implements OnClickListener,OnTouchListener,Runnable {
 
@@ -166,7 +167,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     protected Dialog onCreateDialog(int id) {
     	return new AlertDialog.Builder(HomeScreenView.this)
         .setIcon(R.drawable.info)
-        .setMessage("Ver:1.0.1\nsupport@mypocket-technologies.com \n\nmypocket-technolgies.com\ncopyright Â© 2009")
+        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright © 2009")
         .setTitle("Application Information")
         .setNegativeButton("Close", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
