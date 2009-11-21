@@ -49,19 +49,17 @@ public class UserPrefActivity extends Activity implements OnTouchListener, OnCli
 	        RadioButton b =(RadioButton) findViewById(R.id.rbBigger);
 	        b.setOnClickListener(this);
 	        
-	        String defaultValue=getText(R.string.normal).toString();
-	        
-	        if(AppUtil.getFontSize(this, s.getText().toString(), defaultValue))
+	        if(AppUtil.chooseFontSize(this, s.getText().toString()))
 	        {
 	        	s.setChecked(true);
 	        	fontsize = s.getText().toString();
 	        } 
-	        else if(AppUtil.getFontSize(this, n.getText().toString(), defaultValue))
+	        else if(AppUtil.chooseFontSize(this, n.getText().toString()))
 	        {
 	        	n.setChecked(true);
 	        	fontsize = n.getText().toString();
 	        }
-	        else if(AppUtil.getFontSize(this, b.getText().toString(), defaultValue))
+	        else if(AppUtil.chooseFontSize(this, b.getText().toString()))
 	        {
 	        	b.setChecked(true);
 	        	fontsize = b.getText().toString();
