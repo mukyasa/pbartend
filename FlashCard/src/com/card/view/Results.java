@@ -26,7 +26,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.card.R;
+import com.card.domain.CardSet;
 import com.card.domain.ResultsBean;
+import com.card.handler.ApplicationHandler;
+import com.card.util.AppUtil;
  
 /**
  * @author dmason
@@ -152,6 +155,12 @@ public class Results extends Activity implements OnTouchListener {
 	  			v.setBackgroundResource(R.drawable.button);
 	  			v.setPadding(30, 0, 40, 5);
 	  			//reconfig for retest
+	  			ApplicationHandler handler = ApplicationHandler.instance();
+	  			CardSet newSet = AppUtil.getWrongCardsOnly(handler.currentlyUsedSet);
+	  			handler.currentlyUsedSet=newSet;
+	  			
+	  			Intent intent = new Intent(this, FlashCardTest.class);
+	  			startActivity(intent);
 	  		}
 	  	}
     	

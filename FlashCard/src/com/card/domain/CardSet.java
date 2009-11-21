@@ -18,15 +18,15 @@ import org.json.JSONException;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class CardSets {
+public class CardSet {
 	
 	public String title;
 	public Integer cardCount;
 	public ArrayList<FlashCard> flashcards=new ArrayList<FlashCard>();
 	
-	public CardSets(){}
+	public CardSet(){}
 	
-	public CardSets(String title,JSONArray flashcards,Integer cardCount){
+	public CardSet(String title,JSONArray flashcards,Integer cardCount){
 		this.title = title;
 		this.cardCount = cardCount;
 		

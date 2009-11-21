@@ -21,7 +21,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.card.R;
-import com.card.domain.CardSets;
+import com.card.domain.CardSet;
 import com.card.handler.ApplicationHandler;
 
 /**
@@ -51,8 +51,11 @@ public class CardSetList extends ListActivity {
 			v.setPadding(13, 10, 0, 0);
 			listview = v;
 			pd = ProgressDialog.show(this, null,"LOADING...");
-			CardSets cardSetPicked = (CardSets)l.getItemAtPosition(position);
-			ApplicationHandler.instance().pickedSet = cardSetPicked;
+			CardSet cardSetPicked = (CardSet)l.getItemAtPosition(position);
+			//this is the set picked from the list screen it will change when they retest correct
+			ApplicationHandler.instance().currentlyUsedSet = cardSetPicked; 
+			//this is the set picked from the list screen alway constant
+			ApplicationHandler.instance().orignalUsedSet = cardSetPicked;
 			
 			super.onListItemClick(l, v, position, id);
 			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
@@ -83,7 +86,7 @@ public class CardSetList extends ListActivity {
     private void initComponents() {
     	
     	ApplicationHandler handler = ApplicationHandler.instance();
-    	ArrayList<CardSets> cardsets = handler.cardsets;
+    	ArrayList<CardSet> cardsets = handler.cardsets;
     	ListAdapter adapter = new CardSetArrayAdapter(this,R.layout.cardlist_item,cardsets);
     	
     	setListAdapter(adapter);

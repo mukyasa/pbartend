@@ -11,7 +11,7 @@ package com.card.handler;
 
 import java.util.ArrayList;
 
-import com.card.domain.CardSets;
+import com.card.domain.CardSet;
 
 /**
  * @author dmason
@@ -19,9 +19,12 @@ import com.card.domain.CardSets;
  */
 public class ApplicationHandler {
 	
-	public ArrayList<CardSets> cardsets = new ArrayList<CardSets>();
-	public CardSets pickedSet = null;
 	private static ApplicationHandler handler=null;
+	public ArrayList<CardSet> cardsets = new ArrayList<CardSet>();
+	//these are both init set in the CardSetList screen
+	public CardSet currentlyUsedSet = null;
+	public CardSet orignalUsedSet=null;
+	
 		
 	/**
 	 * gets handler instance

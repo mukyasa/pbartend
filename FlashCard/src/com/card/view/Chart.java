@@ -21,7 +21,7 @@ import android.graphics.RectF;
 import android.view.View;
 
 import com.card.R;
-import com.card.domain.CardSets;
+import com.card.domain.CardSet;
 import com.card.domain.FlashCard;
 import com.card.domain.ResultsBean;
 import com.card.handler.ApplicationHandler;
@@ -76,7 +76,7 @@ public class Chart extends View {
     private void initCards() {
 	    
     	ApplicationHandler handler = ApplicationHandler.instance();
-        CardSets cardsets = handler.pickedSet;
+        CardSet cardsets = handler.currentlyUsedSet;
         if(cardsets!= null)
         {
 	        ArrayList<FlashCard> cards = cardsets.flashcards;
