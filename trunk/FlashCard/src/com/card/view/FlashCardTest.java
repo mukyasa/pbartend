@@ -373,8 +373,11 @@ public class FlashCardTest extends Activity {
 	        
 	        if(countlabel == maxcount && !cardfinished)
 	        {
-	        	MediaPlayer mpfinish = MediaPlayer.create(context, R.raw.wind);
-	        	mpfinish.start();
+	        	if(isSound)
+	        	{
+		        	MediaPlayer mpfinish = MediaPlayer.create(context, R.raw.wind);
+		        	mpfinish.start();
+	        	}
                 cardfinished=true;
 	        }
 	        
