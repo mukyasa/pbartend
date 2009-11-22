@@ -332,7 +332,6 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
     /**
      * This is used when they is is pressed and the default text is still in the box we need to clear it.
      */
-	@Override
 	public boolean onKey(View v, int keyCode, KeyEvent event) {
 		
 		if(etUserName.hasFocus())

@@ -108,7 +108,6 @@ public class UserPrefActivity extends Activity implements OnTouchListener, OnCli
 	    	
 	    	return false;
 	    }
-	@Override
 	public void onClick(View v) {
 		
 		fontsize = ((RadioButton)v).getText().toString();
