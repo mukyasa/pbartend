@@ -195,7 +195,6 @@ public class Results extends Activity implements OnTouchListener,Runnable {
     };
     
     
-	@Override
 	public void run() {
 		//reconfigure cards for re-test
 			ApplicationHandler appHandler = ApplicationHandler.instance();
