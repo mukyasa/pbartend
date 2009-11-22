@@ -31,7 +31,7 @@ public class AppUtil {
 	 * test to see id supplied radio text is the same that is in preferences
 	 * 
 	 * @param context
-	 * @param radioText
+	 * @param radioText 
 	 * @param defaultValue
 	 * @return
 	 */
