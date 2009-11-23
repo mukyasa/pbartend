@@ -58,8 +58,10 @@ public class AppUtil {
 			return 12;
 		else if (fontSize.equals(context.getString(R.string.normal)))
 			return 16;
-		else
+		else if(fontSize.equals(context.getString(R.string.bigger)))
 			return 24;
+		else
+			return 30;
 	}
 
 	/**

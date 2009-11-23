@@ -13,7 +13,8 @@
 <string name="sound">Use Sound Effects</string>
 <string name="done">Done</string>
 <string name="fontsize">Set Font Sizes</string>
-<string name="smaller">Small</string>
+<string name="smaller">Smaller</string>
 <string name="normal">Default</string>
 <string name="bigger">Bigger</string>
+<string name="supersize">Super</string>
 </resources>
