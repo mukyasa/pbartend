@@ -27,7 +27,7 @@ import com.card.util.CardSetArrayAdapter;
 
 /**
  * @author dmason
- * @version $Revision$ $Date$ $Author$ $Id$
+ * @version $Revision$ $Date$ $Author$ $Id$ 
  */
 public class CardSetList extends ListActivity {
 
