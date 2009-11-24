@@ -7,10 +7,6 @@
   android:paddingLeft="10.0sp" android:paddingTop="10.0sp" 
   android:paddingBottom="5sp" android:background="@drawable/search_bg">
   
-   <EditText android:id="@+id/etSearch" 
-   android:layout_height="wrap_content" 
-   android:layout_width="fill_parent" 
-   android:lines="1" 
-   android:inputType="textWebEditText" 
-   android:imeOptions="actionDone" android:drawableRight="@drawable/search_icon"></EditText>
+   
+<Spinner android:id="@+id/filterType" android:layout_height="wrap_content" android:layout_width="fill_parent"></Spinner>
 </LinearLayout>
