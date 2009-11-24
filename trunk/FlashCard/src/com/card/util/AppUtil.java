@@ -187,7 +187,7 @@ public class AppUtil {
 		{
 			
 			int len = cardText.length();
-			Log.v("", "LENGTH="+ len);
+			//Log.v("", "LENGTH="+ len);
 			if(len <= 100)
 				return 30;
 			else if(len > 100 && len <= 276)
