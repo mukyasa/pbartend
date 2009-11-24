@@ -173,9 +173,9 @@ public class AppUtil {
 	 * 
 	 * @return
 	 */
-	public static float getFontSize(Context context) {
+	public static float getFontSize(Context context,String cardText) {
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
-		String fontSize = settings.getString(PREF_FONT_SIZE, context.getString(R.string.normal));
+		String fontSize = settings.getString(PREF_FONT_SIZE, context.getString(R.string.autosize));
 
 		if (fontSize.equals(context.getString(R.string.smaller)))
 			return 12;
@@ -184,7 +184,19 @@ public class AppUtil {
 		else if(fontSize.equals(context.getString(R.string.bigger)))
 			return 24;
 		else
-			return 30;
+		{
+			
+			int len = cardText.length();
+			Log.v("", "LENGTH="+ len);
+			if(len <= 100)
+				return 30;
+			else if(len > 100 && len <= 276)
+				return 24;
+			else if(len > 276 && len <=500)
+				return 16;
+			else
+				return 12;
+		}
 	}
 
 	/**

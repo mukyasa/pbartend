@@ -7,8 +7,8 @@
 <string name="etTerm">Quizlet Search Titles (e.g. math)</string>
 <string name="tvItem">100   Sample Item Name</string>
 <string name="tvTotals">Total Card Sets 100</string>
-<string name="butRetest">Retest Incorrect</string>
-<string name="resultshead">Flashcard Results</string>
+<string name="butRetest">Re-test Incorrect</string>
+<string name="resultshead">Flash Card Results</string>
 <string name="preferences">User Preferences</string>
 <string name="sound">Use Sound Effects</string>
 <string name="done">Done</string>
@@ -16,5 +16,5 @@
 <string name="smaller">Smaller</string>
 <string name="normal">Default</string>
 <string name="bigger">Bigger</string>
-<string name="supersize">Super</string>
+<string name="autosize">Auto Size</string>
 </resources>

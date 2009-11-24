@@ -48,7 +48,7 @@ public class UserPrefActivity extends Activity implements OnTouchListener, OnCli
 	        n.setOnClickListener(this);
 	        RadioButton b =(RadioButton) findViewById(R.id.rbBigger);
 	        b.setOnClickListener(this);
-	        RadioButton sup =(RadioButton) findViewById(R.id.rbSuper);
+	        RadioButton sup =(RadioButton) findViewById(R.id.rbAutoSize);
 	        sup.setOnClickListener(this);
 	        
 	        //loop this or something

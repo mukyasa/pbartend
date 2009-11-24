@@ -23,8 +23,7 @@
 				
 				<TextView android:id="@+id/tvflashCard1" android:textColor="#000"
 					android:paddingLeft="20sp" android:paddingRight="20sp"
-					android:layout_height="fill_parent" android:layout_width="fill_parent"
-					android:paddingTop="15sp"></TextView>
+					android:layout_height="fill_parent" android:layout_width="fill_parent" android:paddingTop="10sp"></TextView>
 
 			</LinearLayout>
 
@@ -49,8 +48,7 @@
 				</TableLayout>
 				<TextView android:id="@+id/tvflashCard2" android:textColor="#000"
 					android:paddingLeft="20sp" android:paddingRight="20sp"
-					android:layout_height="fill_parent" android:layout_width="fill_parent"
-					android:paddingTop="15sp"></TextView>
+					android:layout_height="fill_parent" android:layout_width="fill_parent" android:paddingTop="10sp"></TextView>
 			</LinearLayout>			
 
 		</ViewFlipper>
