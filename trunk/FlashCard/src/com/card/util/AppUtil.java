@@ -16,6 +16,7 @@ import org.json.JSONTokener;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.card.R;
 import com.card.domain.CardSet;
@@ -54,7 +55,7 @@ public class AppUtil {
 	{
 		JSONArray sets=null;
 		try {
-	        //Log.v("", "sort type=" + sortType + " value="+value);
+	        //Log.v("", "sort type=" + sortType + " value="+ value + " pageNumber="+ pageNumber);
 	        URL url = new URL("http://quizlet.com/api/"+ Constants.API_VERS +"/sets?dev_key="+Constants.DEV_KEY + value + Constants.EXTRAS + "&sort="+sortType+"&page="+pageNumber);
 	        //Log.v("", url.toString());
 	        InputStream is = url.openStream();

@@ -23,10 +23,10 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -59,9 +59,12 @@ public class CardSetList extends ListActivity implements OnScrollListener {
 	private ListAdapter adapter;
 	private String sortType = Constants.SORT_TYPE_DEFALUT;
 	private final int MENU_NEW=0;
+	private int scrollpagenumber=1;
+	private final Handler mHandler = new Handler();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_frame);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -140,7 +143,8 @@ public class CardSetList extends ListActivity implements OnScrollListener {
     	filterType.setOnItemSelectedListener(new OnItemSelectedListener(){
 		ProgressDialog pd;
 		
-		 public void onItemSelected(AdapterView parent, View v,int position, long id) { 
+		 @SuppressWarnings("unchecked")
+        public void onItemSelected(AdapterView parent, View v,int position, long id) { 
             
 				//Log.v(getClass().getSimpleName(), "position=" + position);
 				switch(position)
@@ -167,7 +171,8 @@ public class CardSetList extends ListActivity implements OnScrollListener {
 				}
     		 }
     		 
-             public void onNothingSelected(AdapterView arg0) {
+             @SuppressWarnings("unchecked")
+            public void onNothingSelected(AdapterView arg0) {
                   
              } 
              
@@ -204,47 +209,101 @@ public class CardSetList extends ListActivity implements OnScrollListener {
 
     }
 
-
+    /* (non-Javadoc)
+     * @see android.widget.AbsListView.OnScrollListener#onScrollStateChanged(android.widget.AbsListView, int)
+     */
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+	    
+    }
 
 	/* (non-Javadoc)
      * @see android.widget.AbsListView.OnScrollListener#onScroll(android.widget.AbsListView, int, int, int)
      */
-    @SuppressWarnings("unchecked")
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
     		
     	//Log.v(getClass().getSimpleName(), "visibleItemCount=" + visibleItemCount + " firstVisibleItem="+firstVisibleItem + " totalItemCount="+totalItemCount);
     	if(firstVisibleItem > (totalItemCount/2)) {
-    			
+    		//turn on thinking icon
+    		setProgressBarIndeterminateVisibility(true);
+    		startLongRunningOperation();
+	        /*
             try {
-	            ((ArrayAdapter<CardSet>) adapter).notifyDataSetChanged();
-	            
+            	
 	            //next page
 	            Constants.DEFAULT_PAGE_NUMBER = Constants.DEFAULT_PAGE_NUMBER++;
 	            JSONArray sets = AppUtil.getQuizletData(AppUtil.searchTerm, sortType, Constants.DEFAULT_PAGE_NUMBER);
 	            ArrayList<CardSet> cardsets = AppUtil.createNewCardSetArrayList(new ArrayList<CardSet>(),sets);
 	            //loop this
 	            Iterator<CardSet> iter = cardsets.iterator();
+	            ApplicationHandler handler = ApplicationHandler.instance();
+	            ArrayList<CardSet> rootcardsets = handler.cardsets;
 	            while(iter.hasNext())
 	            {
 	            	CardSet cardSet = iter.next();
-	            	((ArrayAdapter<CardSet>) adapter).add(cardSet);
+	            	//((ArrayAdapter<CardSet>) adapter).add(cardSet);
+	            	rootcardsets.add(cardSet);
 	            }
+	            ((ArrayAdapter<CardSet>) adapter).notifyDataSetChanged();
 	            
             } catch (JSONException e) {
 	            e.printStackTrace();
-            }
+            }*/
     	}
 	    
     }
 
+    /**
+     * runnable thread
+     */
+    final Runnable mUpdateResults = new Runnable() {
+        public void run() {
+            updateResultsInUi();
+        }
+    };
 
+    protected void startLongRunningOperation() {
 
-	/* (non-Javadoc)
-     * @see android.widget.AbsListView.OnScrollListener#onScrollStateChanged(android.widget.AbsListView, int)
+        // Fire off a thread to do some work that we shouldn't do directly in the UI thread
+        Thread t = new Thread() {
+            public void run() {
+                
+            	mHandler.post(mUpdateResults);
+            }
+        };
+        t.start();
+    }
+
+    /**
+     * This is the uithread
+     * Nov 24, 2009
+     * dmason
+     *
      */
     @SuppressWarnings("unchecked")
-    public void onScrollStateChanged(AbsListView view, int scrollState) {
+    private void updateResultsInUi() {
     	
-	    
+        // Back in the UI thread -- update our UI elements based on the data in mResults
+    	 //next page
+        try {
+	        JSONArray sets = AppUtil.getQuizletData(AppUtil.searchTerm, sortType, ++scrollpagenumber);
+	        ArrayList<CardSet> cardsets = AppUtil.createNewCardSetArrayList(new ArrayList<CardSet>(),sets);
+	        //loop this
+	        Iterator<CardSet> iter = cardsets.iterator();
+	        while(iter.hasNext())
+	        {
+	        	CardSet cardSet = iter.next();
+	        	((ArrayAdapter<CardSet>) adapter).add(cardSet);
+	        }
+	        //((ArrayAdapter<CardSet>) adapter).notifyDataSetChanged();
+	        
+	        //turn off thinking icon
+	        setProgressBarIndeterminateVisibility(false);
+	        
+        } catch (JSONException e) {
+	        // TODO Auto-generated catch block
+	        e.printStackTrace();
+        }
+       
     }
+
 }
