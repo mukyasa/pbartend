@@ -39,7 +39,7 @@ public class ApplicationHandler {
 		
 		return handler;
 	}
-	
+
 	/**
 	 * resets handler
 	 * Nov 15, 2009

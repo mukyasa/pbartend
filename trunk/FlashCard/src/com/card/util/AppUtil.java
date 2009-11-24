@@ -1,20 +1,34 @@
 package com.card.util;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.card.R;
 import com.card.domain.CardSet;
 import com.card.domain.FlashCard;
+import com.card.handler.ApplicationHandler;
 
 public class AppUtil {
 
 	public static final String PREFS_NAME = "app_pref";
 	public static final String PREF_SOUND = "silentMode";
 	public static final String PREF_FONT_SIZE = "fontSize";
+	public static String searchTerm;
 
 	/**
 	 * Gets the sound preferences
@@ -25,6 +39,62 @@ public class AppUtil {
 	public static boolean getSound(Context context) {
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
 		return settings.getBoolean(PREF_SOUND, false);
+	}
+	
+	/**
+	 * Call the API and get the results back based on a set of values
+	 * Nov 23, 2009
+	 * dmason
+	 * @param value
+	 * @return
+	 *
+	 */
+	public static boolean initCardSets(String value,String sortType,int pageNumber)
+	{
+		boolean didGetResults= false;
+        try {
+        	//Log.v("", "sort type=" + sortType + " value="+value);
+	        URL url = new URL("http://quizlet.com/api/"+ Constants.API_VERS +"/sets?dev_key="+Constants.DEV_KEY + value + Constants.EXTRAS + "&sort="+sortType+"&page="+pageNumber);
+	        //Log.v("", url.toString());
+	        InputStream is = url.openStream();
+	        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+	        StringBuilder sb = new StringBuilder();
+	        
+	        String line;
+	        while ((line = reader.readLine()) != null) 
+	        {
+	        	sb.append(line + "\n");
+	        }
+	        
+	        JSONTokener toke = new JSONTokener(sb.toString());
+	        JSONObject jsonObj = new JSONObject(toke);
+	        if(((String)jsonObj.get("response_type")).equals("ok"))
+	        {
+	            JSONArray sets = (JSONArray)jsonObj.get("sets");
+	            ApplicationHandler.clearHandlerInstance();
+	            ApplicationHandler handler = ApplicationHandler.instance();
+	            ArrayList<CardSet> cardsets = handler.cardsets;
+	            //gets the titles
+	            for(int i=0;i<sets.length();i++)
+	            {
+	            	JSONObject set = (JSONObject)sets.get(i);
+	            	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"));
+	            	cardsets.add(cardset);
+	            }
+	            
+	            didGetResults=true;
+	        }
+        } catch (MalformedURLException e) {
+	        e.printStackTrace();
+        } catch (IOException e) {
+	        e.printStackTrace();
+        } catch (JSONException e) {
+	        e.printStackTrace();
+        }
+       
+        return didGetResults;
+        
+        
 	}
 
 	/**
