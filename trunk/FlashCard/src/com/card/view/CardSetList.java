@@ -24,6 +24,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
@@ -56,6 +58,7 @@ public class CardSetList extends ListActivity implements OnScrollListener {
 	private boolean firtTimeIn=true;
 	private ListAdapter adapter;
 	private String sortType = Constants.SORT_TYPE_DEFALUT;
+	private final int MENU_NEW=0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +88,23 @@ public class CardSetList extends ListActivity implements OnScrollListener {
 			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
 			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
 			startActivityForResult(intent, INTENT_NEXT_SCREEN);
+	}
+	
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	menu.add(0, MENU_NEW, 0, "New Card Set").setIcon(R.drawable.newcardset);
+	    return true;
+	}
+
+	/* Handles item selections */
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent intent;
+	    switch (item.getItemId()) {
+	    case MENU_NEW:
+	    	intent = new Intent(this, Home.class);
+			startActivity(intent);
+	    	return true;
+	    }
+	    return false;
 	}
 	
 	/* (non-Javadoc)

@@ -127,7 +127,7 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
 		else if(type == TYPE_TERM)
 		{
 			etValue = (EditText)findViewById(R.id.etTerm);
-			value = "&q=term:"+etValue.getText().toString().trim();
+			value = "&q="+etValue.getText().toString().trim();
 		}
 		
 		if(AppUtil.initCardSets(value,Constants.SORT_TYPE_DEFALUT,Constants.DEFAULT_PAGE_NUMBER))
