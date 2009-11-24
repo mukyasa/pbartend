@@ -48,7 +48,10 @@ public class UserPrefActivity extends Activity implements OnTouchListener, OnCli
 	        n.setOnClickListener(this);
 	        RadioButton b =(RadioButton) findViewById(R.id.rbBigger);
 	        b.setOnClickListener(this);
+	        RadioButton sup =(RadioButton) findViewById(R.id.rbSuper);
+	        sup.setOnClickListener(this);
 	        
+	        //loop this or something
 	        if(AppUtil.chooseFontSize(this, s.getText().toString()))
 	        {
 	        	s.setChecked(true);
@@ -64,6 +67,12 @@ public class UserPrefActivity extends Activity implements OnTouchListener, OnCli
 	        	b.setChecked(true);
 	        	fontsize = b.getText().toString();
 	        }
+	        else if(AppUtil.chooseFontSize(this, sup.getText().toString()))
+	        {
+	        	sup.setChecked(true);
+	        	fontsize = sup.getText().toString();
+	        }
+	         
 	         
 	        Button done = (Button)findViewById(R.id.butDone);
 	        done.setOnTouchListener(this);
