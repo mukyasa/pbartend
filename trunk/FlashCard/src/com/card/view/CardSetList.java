@@ -10,6 +10,10 @@
 package com.card.view;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -21,11 +25,13 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.card.R;
@@ -39,7 +45,7 @@ import com.card.util.Constants;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$ 
  */
-public class CardSetList extends ListActivity {
+public class CardSetList extends ListActivity implements OnScrollListener {
 
 	private Intent intent;
 	protected static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
@@ -48,6 +54,8 @@ public class CardSetList extends ListActivity {
 	private ProgressDialog pd;
 	private Context context;
 	private boolean firtTimeIn=true;
+	private ListAdapter adapter;
+	private String sortType = Constants.SORT_TYPE_DEFALUT;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -100,41 +108,43 @@ public class CardSetList extends ListActivity {
      */
     private void initComponents() {
     	
+    	//set listener
+    	getListView().setOnScrollListener(this);
+
+    	//set up spinner
     	Spinner filterType = (Spinner)findViewById(R.id.filterType);
     	ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.filterTypeValues, android.R.layout.simple_spinner_item);
     	spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         filterType.setAdapter(spinnerAdapter);
 
-    	
     	filterType.setOnItemSelectedListener(new OnItemSelectedListener(){
-    		String sortType = Constants.SORT_TYPE_DEFALUT;
-    		ProgressDialog pd;
-    		
-    		 public void onItemSelected(AdapterView parent, View v,int position, long id) { 
-	            
-					//Log.v(getClass().getSimpleName(), "position=" + position);
-					switch(position)
-					{
-						case 0: sortType = Constants.SORT_TYPE_DEFALUT;break;
-						case 1: sortType = Constants.SORT_TYPE_STUDIED;break;
-						case 2: sortType = Constants.SORT_TYPE_RECENT;break;
-					}
-					//Log.v(getClass().getSimpleName(), "firtTimeIn=" + firtTimeIn);
-					
-					if(!firtTimeIn)//skip the first time in thread this
-					{
-						pd = ProgressDialog.show(context, null,"RELOADING...");
-						startHeavyDutyStuff();
-						//AppUtil.initCardSets(AppUtil.searchTerm, sortType, Constants.DEFAULT_PAGE_NUMBER);
-					}
-					else
-					{
-						firtTimeIn=false;
-						ApplicationHandler handler = ApplicationHandler.instance();
-	 			    	ArrayList<CardSet> cardsets = handler.cardsets;
-	 			    	ListAdapter adapter = new CardSetArrayAdapter(context,R.layout.cardlist_item,cardsets);
-	 			    	setListAdapter(adapter);
-					}
+		ProgressDialog pd;
+		
+		 public void onItemSelected(AdapterView parent, View v,int position, long id) { 
+            
+				//Log.v(getClass().getSimpleName(), "position=" + position);
+				switch(position)
+				{
+					case 0: sortType = Constants.SORT_TYPE_DEFALUT;break;
+					case 1: sortType = Constants.SORT_TYPE_STUDIED;break;
+					case 2: sortType = Constants.SORT_TYPE_RECENT;break;
+				}
+				//Log.v(getClass().getSimpleName(), "firtTimeIn=" + firtTimeIn);
+				
+				if(!firtTimeIn)//skip the first time in thread this
+				{
+					pd = ProgressDialog.show(context, null,"RELOADING...");
+					startHeavyDutyStuff();
+					//AppUtil.initCardSets(AppUtil.searchTerm, sortType, Constants.DEFAULT_PAGE_NUMBER);
+				}
+				else
+				{
+					firtTimeIn=false;
+					ApplicationHandler handler = ApplicationHandler.instance();
+ 			    	ArrayList<CardSet> cardsets = handler.cardsets;
+ 			    	adapter = new CardSetArrayAdapter(context,R.layout.cardlist_item,cardsets);
+ 			    	setListAdapter(adapter);
+				}
     		 }
     		 
              public void onNothingSelected(AdapterView arg0) {
@@ -162,7 +172,7 @@ public class CardSetList extends ListActivity {
                  public void handleMessage(Message msg) { 
                 	ApplicationHandler handler = ApplicationHandler.instance();
   			    	ArrayList<CardSet> cardsets = handler.cardsets;
-  			    	ListAdapter adapter = new CardSetArrayAdapter(context,R.layout.cardlist_item,cardsets);
+  			    	adapter = new CardSetArrayAdapter(context,R.layout.cardlist_item,cardsets);
   			    	setListAdapter(adapter);
                     pd.dismiss();
                  }
@@ -172,5 +182,49 @@ public class CardSetList extends ListActivity {
     	
     	});
 
+    }
+
+
+
+	/* (non-Javadoc)
+     * @see android.widget.AbsListView.OnScrollListener#onScroll(android.widget.AbsListView, int, int, int)
+     */
+    @SuppressWarnings("unchecked")
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+    		
+    	//Log.v(getClass().getSimpleName(), "visibleItemCount=" + visibleItemCount + " firstVisibleItem="+firstVisibleItem + " totalItemCount="+totalItemCount);
+    	if(firstVisibleItem > (totalItemCount/2)) {
+    			
+            try {
+	            ((ArrayAdapter<CardSet>) adapter).notifyDataSetChanged();
+	            
+	            //next page
+	            Constants.DEFAULT_PAGE_NUMBER = Constants.DEFAULT_PAGE_NUMBER++;
+	            JSONArray sets = AppUtil.getQuizletData(AppUtil.searchTerm, sortType, Constants.DEFAULT_PAGE_NUMBER);
+	            ArrayList<CardSet> cardsets = AppUtil.createNewCardSetArrayList(new ArrayList<CardSet>(),sets);
+	            //loop this
+	            Iterator<CardSet> iter = cardsets.iterator();
+	            while(iter.hasNext())
+	            {
+	            	CardSet cardSet = iter.next();
+	            	((ArrayAdapter<CardSet>) adapter).add(cardSet);
+	            }
+	            
+            } catch (JSONException e) {
+	            e.printStackTrace();
+            }
+    	}
+	    
+    }
+
+
+
+	/* (non-Javadoc)
+     * @see android.widget.AbsListView.OnScrollListener#onScrollStateChanged(android.widget.AbsListView, int)
+     */
+    @SuppressWarnings("unchecked")
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+    	
+	    
     }
 }

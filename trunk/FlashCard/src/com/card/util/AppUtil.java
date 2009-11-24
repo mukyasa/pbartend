@@ -16,7 +16,6 @@ import org.json.JSONTokener;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.card.R;
 import com.card.domain.CardSet;
@@ -42,18 +41,20 @@ public class AppUtil {
 	}
 	
 	/**
-	 * Call the API and get the results back based on a set of values
+	 * Gets the URL
 	 * Nov 23, 2009
 	 * dmason
 	 * @param value
+	 * @param sortType
+	 * @param pageNumber
 	 * @return
 	 *
 	 */
-	public static boolean initCardSets(String value,String sortType,int pageNumber)
+	public static JSONArray getQuizletData(String value,String sortType,int pageNumber)
 	{
-		boolean didGetResults= false;
-        try {
-        	//Log.v("", "sort type=" + sortType + " value="+value);
+		JSONArray sets=null;
+		try {
+	        //Log.v("", "sort type=" + sortType + " value="+value);
 	        URL url = new URL("http://quizlet.com/api/"+ Constants.API_VERS +"/sets?dev_key="+Constants.DEV_KEY + value + Constants.EXTRAS + "&sort="+sortType+"&page="+pageNumber);
 	        //Log.v("", url.toString());
 	        InputStream is = url.openStream();
@@ -68,22 +69,13 @@ public class AppUtil {
 	        
 	        JSONTokener toke = new JSONTokener(sb.toString());
 	        JSONObject jsonObj = new JSONObject(toke);
+	        
+	        
 	        if(((String)jsonObj.get("response_type")).equals("ok"))
 	        {
-	            JSONArray sets = (JSONArray)jsonObj.get("sets");
-	            ApplicationHandler.clearHandlerInstance();
-	            ApplicationHandler handler = ApplicationHandler.instance();
-	            ArrayList<CardSet> cardsets = handler.cardsets;
-	            //gets the titles
-	            for(int i=0;i<sets.length();i++)
-	            {
-	            	JSONObject set = (JSONObject)sets.get(i);
-	            	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"));
-	            	cardsets.add(cardset);
-	            }
-	            
-	            didGetResults=true;
+	        	sets = (JSONArray)jsonObj.get("sets");
 	        }
+	        
         } catch (MalformedURLException e) {
 	        e.printStackTrace();
         } catch (IOException e) {
@@ -91,7 +83,67 @@ public class AppUtil {
         } catch (JSONException e) {
 	        e.printStackTrace();
         }
-       
+        
+        return sets;
+	}
+	
+	/**
+	 * builds out a new arraylist of cardsets
+	 * Nov 23, 2009
+	 * dmason
+	 * @param cardsets
+	 * @param sets
+	 * @return
+	 * @throws JSONException
+	 *
+	 */
+	public static ArrayList<CardSet> createNewCardSetArrayList(ArrayList<CardSet> cardsets,JSONArray sets) throws JSONException
+	{
+		 for(int i=0;i<sets.length();i++)
+         {
+         	JSONObject set = (JSONObject)sets.get(i);
+         	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"));
+         	cardsets.add(cardset);
+         }
+		 
+		 return cardsets;
+	}
+	
+	/**
+	 * Call the API and get the results back based on a set of values puts it on the application handler
+	 * Nov 23, 2009
+	 * dmason
+	 * @param value
+	 * @return
+	 *
+	 */
+	public static boolean initCardSets(String value,String sortType,int pageNumber)
+	{
+		boolean didGetResults= false;
+        	try {
+	            
+        		JSONArray sets = getQuizletData(value,sortType,pageNumber);
+	            
+	            if(sets!=null)
+	            {
+	                ApplicationHandler.clearHandlerInstance();
+	                ApplicationHandler handler = ApplicationHandler.instance();
+	                ArrayList<CardSet> cardsets = handler.cardsets;
+	                //gets the titles
+	                for(int i=0;i<sets.length();i++)
+	                {
+	                	JSONObject set = (JSONObject)sets.get(i);
+	                	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"));
+	                	cardsets.add(cardset);
+	                }
+	                
+	                didGetResults=true;
+	            }
+            } catch (JSONException e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+            }
+	        
         return didGetResults;
         
         
