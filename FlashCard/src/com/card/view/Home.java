@@ -40,6 +40,7 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
 	private ProgressDialog pd;
 	private final int MENU_RESULTS=0;
 	private final int MENU_USER_PREF=1;
+	private final int MENU_BOOKMARKS=2;
 	private boolean WAS_ERROR=false;
 	private final int DIALOG_ERROR=0;
 	private final int DIALOG_ERROR_EMPTY=2;
@@ -94,6 +95,7 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
     public boolean onCreateOptionsMenu(Menu menu) {
     	menu.add(0, MENU_RESULTS, 0, "Test Results").setIcon(R.drawable.results);
     	menu.add(0, MENU_USER_PREF, 0, "Preferences").setIcon(android.R.drawable.ic_menu_preferences);
+    	menu.add(0, MENU_BOOKMARKS, 0, "View Bookmarks").setIcon(R.drawable.bookmark);
 	    return true;
 	}
 
@@ -106,9 +108,13 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
 	 			startActivity(intent);
 	 	    	return true;
 	    	 case MENU_USER_PREF:
-	 	    	intent = new Intent(this, UserPrefActivity.class);
-	 			startActivity(intent);
-	 	    	return true;
+		 	    	intent = new Intent(this, UserPrefActivity.class);
+		 			startActivity(intent);
+		 	    	return true;
+	    	 case MENU_BOOKMARKS:
+		 	    	intent = new Intent(this, BookmarkList.class);
+		 			startActivity(intent);
+		 	    	return true;
 	 	    }
 	    
 	    return false;

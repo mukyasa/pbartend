@@ -28,6 +28,7 @@ public class AppUtil {
 	public static final String PREFS_NAME = "app_pref";
 	public static final String PREF_SOUND = "silentMode";
 	public static final String PREF_FONT_SIZE = "fontSize";
+	public static final String PREF_BOOKMARKS= "bookmarks";
 	public static String searchTerm;
 
 	/**
@@ -39,6 +40,39 @@ public class AppUtil {
 	public static boolean getSound(Context context) {
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
 		return settings.getBoolean(PREF_SOUND, false);
+	}
+	
+	/**
+	 * Gets bookmarks out of pref
+	 * Nov 24, 2009
+	 * dmason
+	 * @param context
+	 * @return
+	 *
+	 */
+	public static String getBookmarks(Context context)
+	{
+		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		String bookmarks = settings.getString(PREF_BOOKMARKS, "");
+		
+		return bookmarks;
+	}
+	
+	public static void setBookmarks(Context context,CardSet cardset) throws JSONException
+	{
+		
+		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		String bookmarks=getBookmarks(context);
+		bookmarks += cardset.id+"|"+cardset.title+"|";
+		
+    	//get existing bookmarks first
+    	Log.v("", "bookmarks="+bookmarks);
+	    SharedPreferences.Editor editor = settings.edit();
+	    editor.putString(AppUtil.PREF_BOOKMARKS, bookmarks);
+	    
+	    // Don't forget to commit your edits!!!
+	    editor.commit();
+	    
 	}
 	
 	/**
@@ -103,7 +137,7 @@ public class AppUtil {
 		 for(int i=0;i<sets.length();i++)
          {
          	JSONObject set = (JSONObject)sets.get(i);
-         	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"));
+         	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"),(Integer)set.get("id"));
          	cardsets.add(cardset);
          }
 		 
@@ -134,7 +168,7 @@ public class AppUtil {
 	                for(int i=0;i<sets.length();i++)
 	                {
 	                	JSONObject set = (JSONObject)sets.get(i);
-	                	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"));
+	                	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"),(Integer)set.getInt("id"));
 	                	cardsets.add(cardset);
 	                }
 	                

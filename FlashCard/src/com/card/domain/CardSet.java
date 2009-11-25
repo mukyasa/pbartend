@@ -21,14 +21,16 @@ import org.json.JSONException;
 public class CardSet {
 	
 	public String title;
+	public int id;
 	public Integer cardCount;
 	public ArrayList<FlashCard> flashcards=new ArrayList<FlashCard>();
 	
 	public CardSet(){}
 	
-	public CardSet(String title,JSONArray flashcards,Integer cardCount){
+	public CardSet(String title,JSONArray flashcards,Integer cardCount,int id){
 		this.title = title;
 		this.cardCount = cardCount;
+		this.id = id;
 		
 		try {
 			
