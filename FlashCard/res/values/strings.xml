@@ -10,6 +10,7 @@
 <string name="butRetest">Re-test Incorrect</string>
 <string name="resultshead">Flash Card Results</string>
 <string name="preferences">User Preferences</string>
+<string name="bookmarkhead">Bookmarks</string>
 <string name="sound">Use Sound Effects</string>
 <string name="done">Done</string>
 <string name="fontsize">Set Font Sizes</string>
