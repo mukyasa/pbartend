@@ -7,14 +7,19 @@ package com.card.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.card.R;
 import com.card.domain.BookmarkDomain;
+import com.card.domain.FlashCard;
 import com.card.util.AppUtil;
 import com.card.util.BookMarkArrayAdapter;
 
@@ -36,23 +41,33 @@ public class BookmarkList extends Activity {
 	private void initComponents() {
 		
 		//get list
-		String bookmarks = AppUtil.getBookmarks(this);
-		String[] BOOKMARKS = bookmarks.split("|");
+		String oldbookmarks = AppUtil.getBookmarks(this);
 		List<BookmarkDomain> items = new ArrayList<BookmarkDomain>();
 		
 		try {
-			BookmarkDomain bookmark = new BookmarkDomain();
-	        for(int i=0;i<BOOKMARKS.length;i++)
+			
+	        JSONObject bookmarks=null;
+	        JSONArray bookmarkwrapper=null;
+	        if(!"".equals(oldbookmarks))
 	        {
-	        	if(i==0 || i%1==0)
-	        	bookmark.id = BOOKMARKS[i];
-	        	else
-	        	bookmark.title = BOOKMARKS[i];
-	        	
-	        	items.add(bookmark);
+	        	JSONTokener toke = new JSONTokener(oldbookmarks);
+	        	bookmarks = new JSONObject(toke);
+	        	bookmarkwrapper = new JSONArray(bookmarks.getString(AppUtil.BOOKMARKS));
 	        }
 	        
-        } catch (Exception e) { }
+	        for(int i=0;i<bookmarkwrapper.length();i++)
+	        {
+	        	JSONArray bookmark = (JSONArray)bookmarkwrapper.get(i);
+	        	BookmarkDomain bookmarkdomain = new BookmarkDomain((Integer)bookmark.get(0),(String)bookmark.get(1));
+	        	items.add(bookmarkdomain);	        	
+	        }
+	        
+	        
+        } catch (JSONException e) {
+	        // TODO Auto-generated catch block
+	        e.printStackTrace();
+        }
+		
 		
 		ListView bookmarkslist = (ListView) findViewById(R.id.bookmarkList);
 		bookmarkslist.setAdapter(new BookMarkArrayAdapter(this, R.layout.bookmark_item, items));

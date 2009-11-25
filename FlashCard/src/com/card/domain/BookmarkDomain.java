@@ -14,10 +14,10 @@ package com.card.domain;
  * @version $Revision$ $Date$ $Author$ $Id$
  */
 public class BookmarkDomain {
-	public String id;
+	public Integer id;
 	public String title;
 	
-	public BookmarkDomain(String title, String id){
+	public BookmarkDomain(Integer id,String title){
 		
 		this.id = id;
 		this.title = title;

@@ -29,6 +29,7 @@ public class AppUtil {
 	public static final String PREF_SOUND = "silentMode";
 	public static final String PREF_FONT_SIZE = "fontSize";
 	public static final String PREF_BOOKMARKS= "bookmarks";
+	public static final String BOOKMARKS = "rootbookmarks";
 	public static String searchTerm;
 
 	/**
@@ -61,14 +62,44 @@ public class AppUtil {
 	public static void setBookmarks(Context context,CardSet cardset) throws JSONException
 	{
 		
+			
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
-		String bookmarks=getBookmarks(context);
-		bookmarks += cardset.id+"|"+cardset.title+"|";
+		String oldbookmarks=getBookmarks(context);
+		//Log.v("", "bookmarks from pref="+oldbookmarks);
+		
+		JSONObject bookmarks=null;
+		JSONArray bookmarkwrapper=null;
+		//look for older bookmarks
+		if(!"".equals(oldbookmarks))
+		{
+			JSONTokener toke = new JSONTokener(oldbookmarks);
+			//Log.v("", "TOKE="+toke.toString());
+			bookmarks = new JSONObject(toke);
+			//Log.v("", "ROOT="+bookmarks.toString());
+			bookmarkwrapper = new JSONArray(bookmarks.getString(BOOKMARKS));
+			//Log.v("", "BOOKMARKS="+bookmarkwrapper.toString());
+		}
+		else
+		{
+			bookmarks = new JSONObject();
+			bookmarkwrapper = new JSONArray();
+		}
+
+		
+		JSONArray bookmarkdetails = new JSONArray();
+		
+        //put in new ones
+		bookmarkdetails.put(cardset.id);
+		bookmarkdetails.put(cardset.title);
+		//Log.v("", "BOOKMARK DETAILS="+bookmarkdetails.toString());
+		
+		bookmarkwrapper.put(bookmarkdetails);
+		bookmarks.put(BOOKMARKS, bookmarkwrapper);
 		
     	//get existing bookmarks first
-    	Log.v("", "bookmarks="+bookmarks);
+    	//Log.v("", "bookmarks="+bookmarks.toString());
 	    SharedPreferences.Editor editor = settings.edit();
-	    editor.putString(AppUtil.PREF_BOOKMARKS, bookmarks);
+	    editor.putString(AppUtil.PREF_BOOKMARKS, bookmarks.toString());
 	    
 	    // Don't forget to commit your edits!!!
 	    editor.commit();
