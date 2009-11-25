@@ -15,6 +15,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.json.JSONException;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -59,6 +61,7 @@ public class FlashCardTest extends Activity {
 	private final int MENU_RETEST=1;
 	private final int MENU_SHUFFLE=2;
 	private final int MENU_NEW=3;
+	private final int MENU_BOOKMARK=4;
 	private  TextView cardnumber;
 	private TextView cardnumber2;
 	private TextView tvFlashCard;
@@ -97,11 +100,11 @@ public class FlashCardTest extends Activity {
 		mp = MediaPlayer.create(context, R.raw.slide);
 		 
         ApplicationHandler handler = ApplicationHandler.instance();
-        CardSet cardsets = handler.currentlyUsedSet;
-        maxcount = cardsets.cardCount;
+        CardSet cardset = handler.currentlyUsedSet;
+        maxcount = cardset.cardCount;
         TextView tvTitle = (TextView)findViewById(R.id.tvSetTitle);
-        tvTitle.setText(cardsets.title);
-        ArrayList<FlashCard> sets = cardsets.flashcards;
+        tvTitle.setText(cardset.title);
+        ArrayList<FlashCard> sets = cardset.flashcards;
 
         FlashCard terms = (FlashCard)sets.get(0);
         terms.wasSeen=true;
@@ -123,8 +126,8 @@ public class FlashCardTest extends Activity {
             
 			public void onClick(View v) {
 				ApplicationHandler handler = ApplicationHandler.instance();
-	            CardSet cardsets = handler.currentlyUsedSet;
-	            ArrayList<FlashCard> sets = cardsets.flashcards;
+	            CardSet cardset = handler.currentlyUsedSet;
+	            ArrayList<FlashCard> sets = cardset.flashcards;
 	            FlashCard card = (FlashCard)sets.get(count);
 				ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
 				if(!isWrong)
@@ -150,13 +153,17 @@ public class FlashCardTest extends Activity {
 		menu.add(0, MENU_RESULTS, 0, "Test Results").setIcon(R.drawable.results);
 		menu.add(0, MENU_RETEST, 0, "Retest").setIcon(R.drawable.retest);
 		menu.add(0, MENU_SHUFFLE, 0, "Shuffle").setIcon(R.drawable.shuffle);
-		menu.add(0, MENU_NEW, 0, "New Card Set").setIcon(R.drawable.newcardset);
+		menu.add(0, MENU_NEW, 0, "New Set").setIcon(R.drawable.newcardset);
+		menu.add(0, MENU_BOOKMARK, 0, "Bookmark").setIcon(R.drawable.bookmark);
 	    return true;
 	}
 
 	/* Handles item selections */
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent;
+		ApplicationHandler handler = ApplicationHandler.instance();
+        CardSet cardset = handler.currentlyUsedSet;
+        
 	    switch (item.getItemId()) {
 	    case MENU_RESULTS:
 	    	intent = new Intent(this, Results.class);
@@ -166,9 +173,7 @@ public class FlashCardTest extends Activity {
 	    	count=0;
 	    	countlabel=1;
 	    	
-	    	ApplicationHandler handler = ApplicationHandler.instance();
-	        CardSet cardsets = handler.currentlyUsedSet;
-	        ArrayList<FlashCard> sets = cardsets.flashcards;
+	        ArrayList<FlashCard> sets = cardset.flashcards;
 
 	        Iterator<FlashCard> iter = sets.iterator();
 	        while(iter.hasNext())
@@ -197,8 +202,15 @@ public class FlashCardTest extends Activity {
 	    	intent = new Intent(this, Home.class);
 			startActivity(intent);
 	    	return true;
+	    case MENU_BOOKMARK:
+	    	try {
+	                AppUtil.setBookmarks(this,cardset);
+                } catch (JSONException e) {
+	                e.printStackTrace();
+                }
+	    	return true;
 	    }
-	    return false;
+	    return false; 
 	}
 	
 	@Override
