@@ -15,6 +15,7 @@
 <activity android:name=".view.FlashCardTest"></activity>
 <activity android:name=".view.Results"></activity>
 <activity android:name=".view.UserPrefActivity"></activity>
+<activity android:name=".view.BookmarkList"></activity>
 </application>
     <uses-sdk android:minSdkVersion="3" />
 

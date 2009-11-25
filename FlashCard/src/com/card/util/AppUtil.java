@@ -122,7 +122,7 @@ public class AppUtil {
 		try {
 	        //Log.v("", "sort type=" + sortType + " value="+ value + " pageNumber="+ pageNumber);
 	        URL url = new URL("http://quizlet.com/api/"+ Constants.API_VERS +"/sets?dev_key="+Constants.DEV_KEY + value + Constants.EXTRAS + "&sort="+sortType+"&page="+pageNumber);
-	        //Log.v("", url.toString());
+	        Log.v("", url.toString());
 	        InputStream is = url.openStream();
 	        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 	        StringBuilder sb = new StringBuilder();
