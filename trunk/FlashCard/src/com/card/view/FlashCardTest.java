@@ -24,6 +24,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -80,11 +81,19 @@ public class FlashCardTest extends Activity {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		mGestureDetector = new GestureDetector(this, new LearnGestureListener());
 		context = getBaseContext();
-		//set up cardset
-		initalize();
-		
     }
 	
+    /* (non-Javadoc)
+     * @see android.app.Activity#onResume()
+     */
+    @Override
+    protected void onResume() {
+    	//Log.v("", "RESUMED!!!!!!!");
+    	//set up cardset called here to avoid back button problems
+    	initalize();
+        super.onResume();
+    }
+    
     @Override
     protected void onStop() {
     	super.onStop();
@@ -105,6 +114,7 @@ public class FlashCardTest extends Activity {
         TextView tvTitle = (TextView)findViewById(R.id.tvSetTitle);
         tvTitle.setText(cardset.title);
         ArrayList<FlashCard> sets = cardset.flashcards;
+        
 
         FlashCard terms = (FlashCard)sets.get(0);
         terms.wasSeen=true;
