@@ -3,13 +3,13 @@ package com.mixer.view;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.SimpleCursorAdapter;
 
 import com.mixer.R;
 import com.mixer.dao.DrinkListDAO;
 import com.mixer.domain.DetailsDomain;
 import com.mixer.domain.ScreenType;
+import com.mixer.utils.Constants;
 
 public class DrinkListView extends ListViews {
 	
@@ -23,7 +23,7 @@ public class DrinkListView extends ListViews {
         intent = new Intent(this, DetailsView.class);
         
         selectedRow = getIntent().getLongExtra(ListViews.INTENT_EXTRA_SELECTED_ROW, 0);
-        
+        Constants.selectedCat=selectedRow;
         initComponents();
     }
     
