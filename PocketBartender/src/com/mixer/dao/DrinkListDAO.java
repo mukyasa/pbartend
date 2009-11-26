@@ -49,6 +49,13 @@ public class DrinkListDAO extends DataDAO{
 		return cursor;
 	}
 	
+	public Cursor retrieveAllFilteredDrinksByTypes(String searchresult,long catId) {
+		
+		String [] selectionArgs = {searchresult + "%",catId+""};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllDringksFilterCategories, selectionArgs);
+
+		return cursor;
+	}
 
 
 }
