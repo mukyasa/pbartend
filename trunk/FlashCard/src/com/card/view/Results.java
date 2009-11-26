@@ -97,16 +97,16 @@ public class Results extends Activity implements OnTouchListener,Runnable {
 	        
 	        //set values
 	        TextView total = (TextView)findViewById(R.id.tvToBeStudied);
-	        total.setText("Cards to be studied:\t\t\t\t\t\t"+Math.round(rbean.totalCards));
+	        total.setText("Cards to be studied:\t\t\t\t\t"+Math.round(rbean.totalCards));
 	        
 	        TextView seen =(TextView)findViewById(R.id.tvSeen);
-	        seen.setText("Cards seen:\t\t\t\t\t\t\t\t\t"+rbean.countseen);
+	        seen.setText("Cards seen:\t\t\t\t\t\t\t\t"+rbean.countseen);
 	        
 	        TextView correct = (TextView)findViewById(R.id.tvCorrect);
-	        correct.setText("Correct:\t\t\t\t\t\t\t\t\t\t" + Math.round(rbean.correctcardcount));
+	        correct.setText("Correct:\t\t\t\t\t\t\t\t\t" + Math.round(rbean.correctcardcount));
 	        
 	        TextView wrong = (TextView)findViewById(R.id.tvIncorrect);
-	        wrong.setText("Incorrect:\t\t\t\t\t\t\t\t\t"+Math.round(rbean.wrongcardcount));
+	        wrong.setText("Incorrect:\t\t\t\t\t\t\t\t"+Math.round(rbean.wrongcardcount));
 	        
 	        
 	    }
