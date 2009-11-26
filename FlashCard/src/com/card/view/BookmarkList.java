@@ -68,13 +68,14 @@ public class BookmarkList extends Activity implements Runnable{
 	        	JSONTokener toke = new JSONTokener(oldbookmarks);
 	        	bookmarks = new JSONObject(toke);
 	        	bookmarkwrapper = new JSONArray(bookmarks.getString(AppUtil.BOOKMARKS));
-	        }
 	        
-	        for(int i=0;i<bookmarkwrapper.length();i++)
-	        {
-	        	JSONArray bookmark = (JSONArray)bookmarkwrapper.get(i);
-	        	BookmarkDomain bookmarkdomain = new BookmarkDomain((Integer)bookmark.get(0),(String)bookmark.get(1));
-	        	items.add(bookmarkdomain);	        	
+	        
+		        for(int i=0;i<bookmarkwrapper.length();i++)
+		        {
+		        	JSONArray bookmark = (JSONArray)bookmarkwrapper.get(i);
+		        	BookmarkDomain bookmarkdomain = new BookmarkDomain((Integer)bookmark.get(0),(String)bookmark.get(1));
+		        	items.add(bookmarkdomain);	        	
+		        }
 	        }
 	        
 	        
