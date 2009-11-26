@@ -19,6 +19,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -41,6 +43,7 @@ public class BookmarkList extends Activity implements Runnable{
 	private ProgressDialog pd;
 	private String bookmarkvalue;
 	private Thread thread;
+	private final int MENU_NEW=0;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -87,6 +90,32 @@ public class BookmarkList extends Activity implements Runnable{
 		ListView bookmarkslist = (ListView) findViewById(R.id.bookmarkList);
 		bookmarkslist.setAdapter(new BookMarkArrayAdapter(this, R.layout.bookmark_item, items));
 		bookmarkslist.setOnItemClickListener(bookmarkListener);
+	}
+	
+	public boolean onCreateOptionsMenu(Menu menu) {
+    	menu.add(0, MENU_NEW, 0, "New Set").setIcon(R.drawable.newcardset);
+	    return true;
+	}
+
+	/* Handles item selections */
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent intent;
+	    switch (item.getItemId()) {
+	    case MENU_NEW:
+	    	intent = new Intent(this, Home.class);
+			startActivity(intent);
+	    	return true;
+	    }
+	    return false;
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onStop()
+	 */
+	@Override
+	protected void onStop() {
+		thread = new Thread(this);//get new thread
+	    super.onStop();
 	}
 	
 	private void getCardSets(String value){

@@ -24,7 +24,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.card.R;
-import com.card.handler.ApplicationHandler;
 import com.card.util.AppUtil;
 import com.card.util.Constants;
 
