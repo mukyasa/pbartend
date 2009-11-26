@@ -253,7 +253,9 @@ public class AppUtil {
 			
 			int len = cardText.length();
 			//Log.v("", "LENGTH="+ len);
-			if(len <= 100)
+			if(len <= 30)
+				return 36;
+			else if(len > 30 && len <= 100)
 				return 30;
 			else if(len > 100 && len <= 276)
 				return 24;
@@ -271,7 +273,30 @@ public class AppUtil {
 	 * @return
 	 */
 	public static CardSet shuffleCard(CardSet set) {
-		return set;
+		
+		ArrayList<FlashCard> orderedCards = set.flashcards;
+		Iterator<FlashCard> iter = orderedCards.iterator();
+		
+		 CardSet newfc = new CardSet();
+
+
+         int max = orderedCards.size();
+         int half = max / 2;
+         int fourth = half / 2;
+         int eight = fourth / 2;
+/*
+         orderedCards.Reverse();
+         orderedCards.Reverse(0, eight);
+         orderedCards.Reverse(0, half);
+         orderedCards.Reverse(0, fourth);
+
+         for (int i = 0; i < orderedCards.Count; i++)
+         {
+             Flashc  card = (Card)orderedCards[i];
+             newfc.setCards(i,card) ;
+         }
+		*/
+		return newfc;
 	}
 
 	/**
