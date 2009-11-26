@@ -197,6 +197,7 @@ public class FlashCardTest extends Activity {
             isBack=true;
 	        return true;
 	    case MENU_SHUFFLE:
+	    	AppUtil.shuffleCard(cardset);
 	    	return true;
 	    case MENU_NEW:
 	    	intent = new Intent(this, Home.class);

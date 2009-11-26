@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 
 import org.json.JSONArray;
@@ -268,35 +270,17 @@ public class AppUtil {
 
 	/**
 	 * takes a cardset and shuffles the cards out of order
-	 * 
+	 * Nov 25, 2009
+	 * dmason
 	 * @param set
-	 * @return
+	 *
 	 */
-	public static CardSet shuffleCard(CardSet set) {
+	public static void shuffleCard(CardSet set) {
 		
-		ArrayList<FlashCard> orderedCards = set.flashcards;
-		Iterator<FlashCard> iter = orderedCards.iterator();
+		ArrayList<FlashCard> shuffled = set.flashcards;
 		
-		 CardSet newfc = new CardSet();
-
-
-         int max = orderedCards.size();
-         int half = max / 2;
-         int fourth = half / 2;
-         int eight = fourth / 2;
-/*
-         orderedCards.Reverse();
-         orderedCards.Reverse(0, eight);
-         orderedCards.Reverse(0, half);
-         orderedCards.Reverse(0, fourth);
-
-         for (int i = 0; i < orderedCards.Count; i++)
-         {
-             Flashc  card = (Card)orderedCards[i];
-             newfc.setCards(i,card) ;
-         }
-		*/
-		return newfc;
+		Collections.shuffle(shuffled);
+		set.flashcards = shuffled;
 	}
 
 	/**
