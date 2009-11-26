@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 
@@ -25,7 +24,7 @@ import com.card.domain.CardSet;
 import com.card.domain.FlashCard;
 import com.card.handler.ApplicationHandler;
 
-public class AppUtil {
+public class AppUtil extends Constants {
 
 	public static final String PREFS_NAME = "app_pref";
 	public static final String PREF_SOUND = "silentMode";
@@ -123,8 +122,8 @@ public class AppUtil {
 		JSONArray sets=null;
 		try {
 	        //Log.v("", "sort type=" + sortType + " value="+ value + " pageNumber="+ pageNumber);
-	        URL url = new URL("http://quizlet.com/api/"+ Constants.API_VERS +"/sets?dev_key="+Constants.DEV_KEY + value + Constants.EXTRAS + "&sort="+sortType+"&page="+pageNumber);
-	        Log.v("", url.toString());
+	        URL url = new URL("http://quizlet.com/api/"+ API_VERS +"/sets?dev_key="+DEV_KEY + value + EXTRAS + "&sort="+sortType+"&page="+pageNumber);
+	        //Log.v("", url.toString());
 	        InputStream is = url.openStream();
 	        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 	        StringBuilder sb = new StringBuilder();

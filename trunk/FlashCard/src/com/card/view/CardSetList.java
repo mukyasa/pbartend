@@ -23,6 +23,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -221,8 +222,8 @@ public class CardSetList extends ListActivity implements OnScrollListener {
      */
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
     		
-    	//Log.v(getClass().getSimpleName(), "visibleItemCount=" + visibleItemCount + " firstVisibleItem="+firstVisibleItem + " totalItemCount="+totalItemCount);
-    	if(firstVisibleItem > (totalItemCount/2)) {
+    	Log.v(getClass().getSimpleName(), "visibleItemCount=" + visibleItemCount + " firstVisibleItem="+firstVisibleItem + " totalItemCount="+totalItemCount);
+    	if(firstVisibleItem >= (totalItemCount/2) && totalItemCount != 0) {
     		//turn on thinking icon
     		setProgressBarIndeterminateVisibility(true);
     		startLongRunningOperation();
