@@ -9,47 +9,46 @@
 		<ViewFlipper android:id="@+id/details"
 			android:layout_width="fill_parent" android:layout_height="fill_parent"
 			android:paddingTop="12sp" android:paddingLeft="8sp">
-			
+
 			<LinearLayout android:orientation="vertical"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
 				android:background="@drawable/flashcardfront" android:id="@+id/layoutfront">
 
 				<TextView android:layout_height="wrap_content"
 					android:layout_width="wrap_content" android:id="@+id/tvCardNumbr2"
 					android:layout_marginLeft="20sp" android:textColor="#cc0000"
-					android:textStyle="bold" android:textSize="12sp" 
-					android:hapticFeedbackEnabled="true" 
-					android:layout_marginTop="12sp"></TextView>
-				
+					android:textStyle="bold" android:textSize="12sp"
+					android:hapticFeedbackEnabled="true" android:layout_marginTop="12sp"></TextView>
+
 				<TextView android:id="@+id/tvflashCard1" android:textColor="#000"
 					android:paddingLeft="20sp" android:paddingRight="20sp"
-					android:layout_height="fill_parent" android:layout_width="fill_parent" android:paddingTop="10sp"></TextView>
+					android:layout_height="fill_parent" android:layout_width="fill_parent"
+					android:paddingTop="10sp"></TextView>
 
 			</LinearLayout>
 
 			<LinearLayout android:orientation="vertical"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
 				android:background="@drawable/flashcardback" android:id="@+id/layoutfront">
 
-					<TableLayout android:layout_height="wrap_content"
+				<TableLayout android:layout_height="wrap_content"
 					android:layout_width="fill_parent">
-					<TableRow android:layout_width="fill_parent"
-						android:layout_marginTop="8sp">
+					<TableRow android:layout_width="fill_parent">
 						<ImageView android:layout_width="wrap_content"
-							android:layout_height="wrap_content" android:layout_marginLeft="20sp"
-							android:id="@+id/ivAnswered" android:background="@drawable/correct"
-							android:layout_gravity="left|center_vertical"></ImageView>
+							android:layout_height="wrap_content" android:id="@+id/ivAnswered" android:background="@drawable/correct"
+							android:layout_gravity="left|center_vertical" android:layout_marginLeft="0sp"></ImageView>
 						<TextView android:layout_height="wrap_content"
 							android:layout_width="wrap_content" android:gravity="right|center_vertical"
 							android:layout_gravity="right|center_vertical" android:id="@+id/tvCardNumbr"
 							android:textColor="#cc0000" android:textStyle="bold"
-							android:textSize="12sp"></TextView>
+							android:textSize="12sp" android:text="Filler"></TextView>
 					</TableRow>
 				</TableLayout>
 				<TextView android:id="@+id/tvflashCard2" android:textColor="#000"
 					android:paddingLeft="20sp" android:paddingRight="20sp"
-					android:layout_height="fill_parent" android:layout_width="fill_parent" android:paddingTop="10sp"></TextView>
-			</LinearLayout>			
+					android:layout_height="fill_parent" android:layout_width="fill_parent"
+					android:paddingTop="10sp"></TextView>
+			</LinearLayout>
 
 		</ViewFlipper>
 	</LinearLayout>
