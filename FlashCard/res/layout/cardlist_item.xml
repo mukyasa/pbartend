@@ -6,7 +6,16 @@
 		android:id="@android:id/text1" android:paddingTop="10sp" android:text="@string/tvItem"
 		android:textColor="#000" android:paddingLeft="13sp"
 		android:layout_width="fill_parent"></TextView>
-	<ImageView android:id="@+id/throbber" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:src="@drawable/ic_popup_sync_1"
-		android:visibility="gone" />
+	<TableLayout android:id="@+id/throbberWrapper"
+		android:layout_height="wrap_content" android:background="#fff"
+		android:layout_width="fill_parent" android:paddingLeft="10sp" android:visibility="gone">
+		<TableRow>
+		<ImageView android:id="@+id/throbber" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:src="@drawable/ic_popup_sync_1"
+			android:layout_gravity="center_horizontal" />
+		<TextView android:id="@+id/TextView01"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:textColor="#000" android:textSize="12sp" android:text="@string/loading" android:layout_marginLeft="5sp"></TextView>
+			</TableRow>
+	</TableLayout>
+
 </FrameLayout>
