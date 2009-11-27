@@ -135,7 +135,7 @@ public class Results extends Activity implements OnTouchListener,Runnable {
 	 }
 
 	    public boolean onCreateOptionsMenu(Menu menu) {
-	    	menu.add(0, MENU_NEW, 0, "New Set").setIcon(R.drawable.newcardset);
+	    	menu.add(0, MENU_NEW, 0, getResources().getString(R.string.home)).setIcon(R.drawable.newcardset);
 		    return true;
 		}
 

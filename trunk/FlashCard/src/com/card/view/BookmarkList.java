@@ -95,7 +95,7 @@ public class BookmarkList extends Activity implements Runnable{
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
-    	menu.add(0, MENU_NEW, 0, "New Set").setIcon(R.drawable.newcardset);
+    	menu.add(0, MENU_NEW, 0, getResources().getString(R.string.home)).setIcon(R.drawable.newcardset);
 	    return true;
 	}
 

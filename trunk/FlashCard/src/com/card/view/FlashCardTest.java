@@ -168,7 +168,7 @@ public class FlashCardTest extends Activity {
 		menu.add(0, MENU_BOOKMARK, 0, "Bookmark").setIcon(R.drawable.bookmark);
 		menu.add(0, MENU_RESULTS, 0, "Test Results").setIcon(R.drawable.results);
 		menu.add(0, MENU_USER_PREF, 0, "Preferences").setIcon(android.R.drawable.ic_menu_preferences);
-		menu.add(0, MENU_NEW, 0, "New Set").setIcon(R.drawable.newcardset);
+		menu.add(0, MENU_NEW, 0, getResources().getString(R.string.home)).setIcon(R.drawable.newcardset);
 		menu.add(0, MENU_BOOKMARKS, 0, "View Bookmarks").setIcon(R.drawable.bookmark);
 	    return true;
 	}
