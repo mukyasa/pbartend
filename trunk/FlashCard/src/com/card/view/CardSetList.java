@@ -152,7 +152,8 @@ public class CardSetList extends ListActivity{
 				child.setVisibility(View.GONE);
 
 				child = row.findViewById(R.id.throbber);
-				child.setVisibility(View.VISIBLE); 
+				View wrapper  = row.findViewById(R.id.throbberWrapper);
+				wrapper.setVisibility(View.VISIBLE); 
 				child.startAnimation(rotate);
 
 				return (row);
@@ -185,7 +186,8 @@ public class CardSetList extends ListActivity{
 		        ((TextView) child).setText(count + tabs + title);
 
 				child = row.findViewById(R.id.throbber);
-				child.setVisibility(View.GONE);
+				View wrapper  = row.findViewById(R.id.throbberWrapper);
+				wrapper.setVisibility(View.GONE);
 				child.clearAnimation();
 			}
 

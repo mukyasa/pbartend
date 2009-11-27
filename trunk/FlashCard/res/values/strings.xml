@@ -18,4 +18,5 @@
 <string name="normal">Default</string>
 <string name="bigger">Bigger</string>
 <string name="autosize">Auto Size</string>
+<string name="loading">Loading please wait...</string>
 </resources>
