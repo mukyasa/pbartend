@@ -10,10 +10,8 @@
 package com.card.view;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -23,32 +21,35 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.AbsListView;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.AbsListView.OnScrollListener;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.card.R;
 import com.card.domain.CardSet;
 import com.card.handler.ApplicationHandler;
+import com.card.handler.EndlessAdapter;
 import com.card.util.AppUtil;
-import com.card.util.CardSetArrayAdapter;
 import com.card.util.Constants;
 
 /**
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$ 
  */
-public class CardSetList extends ListActivity implements OnScrollListener {
+public class CardSetList extends ListActivity{
 
 	private Intent intent;
 	protected static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
@@ -127,14 +128,91 @@ public class CardSetList extends ListActivity implements OnScrollListener {
 		super.onStop();
 	}
 	
+	
+	 /******************************************/
+
+	 class CardSetAdapter extends EndlessAdapter {
+			private RotateAnimation rotate = null;
+
+			CardSetAdapter(ArrayList<CardSet> list) {
+				super(new ArrayAdapter<CardSet>(CardSetList.this,R.layout.cardlist_item, android.R.id.text1, list),context);
+
+				rotate = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF,
+						0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+				rotate.setDuration(600);
+				rotate.setRepeatMode(Animation.RESTART);
+				rotate.setRepeatCount(Animation.INFINITE);
+			}
+
+			protected View getPendingView(ViewGroup parent) {
+				View row = getLayoutInflater().inflate(R.layout.cardlist_item, null);
+
+				View child = row.findViewById(android.R.id.text1);
+
+				child.setVisibility(View.GONE);
+
+				child = row.findViewById(R.id.throbber);
+				child.setVisibility(View.VISIBLE); 
+				child.startAnimation(rotate);
+
+				return (row);
+			}
+
+			@SuppressWarnings("unchecked")
+			protected void rebindPendingView(int position, View row) {
+				View child = row.findViewById(android.R.id.text1);
+				
+				//set up the text here
+				ArrayAdapter<CardSet> wrapped = (ArrayAdapter<CardSet>) getWrappedAdapter();
+				CardSet cardset = (CardSet)wrapped.getItem(position);
+				//get the textview and set the text
+		        
+		        String tabs ="\t\t";
+		        String title;
+		        if(cardset.title.length() > 37)//trunc at 37 char
+		        	title = cardset.title.substring(0, 32) + "...";
+		        else
+		        	title=cardset.title;
+		        	
+		        String count = cardset.cardCount.toString();
+		        if(count.length() == 1)
+		        	count = " " +count;
+		        
+		        if(count.length() > 2)
+		        	tabs = "\t";
+		        
+		        child.setVisibility(View.VISIBLE);
+		        ((TextView) child).setText(count + tabs + title);
+
+				child = row.findViewById(R.id.throbber);
+				child.setVisibility(View.GONE);
+				child.clearAnimation();
+			}
+
+			protected boolean appendInBackground() {
+				SystemClock.sleep(2000); // pretend to do work
+				ArrayAdapter<CardSet> a = (ArrayAdapter<CardSet>) getWrappedAdapter();
+				
+				int nextCardSet = (a.getCount()/Constants.CARDS_PER_PAGE)+1;
+				Log.v(getClass().getSimpleName(), "nextCardSet=" + nextCardSet);
+	            JSONArray sets = AppUtil.getQuizletData(AppUtil.searchTerm, sortType,nextCardSet);
+	            ArrayList<CardSet> cardsets = AppUtil.createNewCardSetArrayList(new ArrayList<CardSet>(),sets);
+		    	
+				for (CardSet item : cardsets) { 
+					a.add(item);
+				}
+
+				return (a.getCount() <= Constants.TOTAL_RESULTS); //on return true if this is true
+			}
+		}
+	 
+	 /******************************************/	
+	 
     /**
      * init screen list
      */
     private void initComponents() {
     	
-    	//set listener
-    	getListView().setOnScrollListener(this);
-
     	//set up spinner
     	Spinner filterType = (Spinner)findViewById(R.id.filterType);
     	ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.filterTypeValues, android.R.layout.simple_spinner_item);
@@ -160,17 +238,17 @@ public class CardSetList extends ListActivity implements OnScrollListener {
 				{
 					pd = ProgressDialog.show(context, null,"RELOADING...");
 					startHeavyDutyStuff();
-					//AppUtil.initCardSets(AppUtil.searchTerm, sortType, Constants.DEFAULT_PAGE_NUMBER);
 				}
 				else
 				{
 					firtTimeIn=false;
 					ApplicationHandler handler = ApplicationHandler.instance();
  			    	ArrayList<CardSet> cardsets = handler.cardsets;
- 			    	adapter = new CardSetArrayAdapter(context,R.layout.cardlist_item,cardsets);
- 			    	setListAdapter(adapter);
+ 			    	setListAdapter(new CardSetAdapter(cardsets));
 				}
     		 }
+		 
+		 
     		 
              @SuppressWarnings("unchecked")
             public void onNothingSelected(AdapterView arg0) {
@@ -198,8 +276,7 @@ public class CardSetList extends ListActivity implements OnScrollListener {
                  public void handleMessage(Message msg) { 
                 	ApplicationHandler handler = ApplicationHandler.instance();
   			    	ArrayList<CardSet> cardsets = handler.cardsets;
-  			    	adapter = new CardSetArrayAdapter(context,R.layout.cardlist_item,cardsets);
-  			    	setListAdapter(adapter);
+  			    	setListAdapter(new CardSetAdapter(cardsets));
                     pd.dismiss();
                  }
 
@@ -208,103 +285,6 @@ public class CardSetList extends ListActivity implements OnScrollListener {
     	
     	});
 
-    }
-
-    /* (non-Javadoc)
-     * @see android.widget.AbsListView.OnScrollListener#onScrollStateChanged(android.widget.AbsListView, int)
-     */
-    public void onScrollStateChanged(AbsListView view, int scrollState) {
-	    
-    }
-
-	/* (non-Javadoc)
-     * @see android.widget.AbsListView.OnScrollListener#onScroll(android.widget.AbsListView, int, int, int)
-     */
-    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-    		
-    	Log.v(getClass().getSimpleName(), "visibleItemCount=" + visibleItemCount + " firstVisibleItem="+firstVisibleItem + " totalItemCount="+totalItemCount);
-    	if(firstVisibleItem >= (totalItemCount/2) && totalItemCount != 0) {
-    		//turn on thinking icon
-    		setProgressBarIndeterminateVisibility(true);
-    		startLongRunningOperation();
-	        /*
-            try {
-            	
-	            //next page
-	            Constants.DEFAULT_PAGE_NUMBER = Constants.DEFAULT_PAGE_NUMBER++;
-	            JSONArray sets = AppUtil.getQuizletData(AppUtil.searchTerm, sortType, Constants.DEFAULT_PAGE_NUMBER);
-	            ArrayList<CardSet> cardsets = AppUtil.createNewCardSetArrayList(new ArrayList<CardSet>(),sets);
-	            //loop this
-	            Iterator<CardSet> iter = cardsets.iterator();
-	            ApplicationHandler handler = ApplicationHandler.instance();
-	            ArrayList<CardSet> rootcardsets = handler.cardsets;
-	            while(iter.hasNext())
-	            {
-	            	CardSet cardSet = iter.next();
-	            	//((ArrayAdapter<CardSet>) adapter).add(cardSet);
-	            	rootcardsets.add(cardSet);
-	            }
-	            ((ArrayAdapter<CardSet>) adapter).notifyDataSetChanged();
-	            
-            } catch (JSONException e) {
-	            e.printStackTrace();
-            }*/
-    	}
-	    
-    }
-
-    /**
-     * runnable thread
-     */
-    final Runnable mUpdateResults = new Runnable() {
-        public void run() {
-            updateResultsInUi();
-        }
-    };
-
-    protected void startLongRunningOperation() {
-
-        // Fire off a thread to do some work that we shouldn't do directly in the UI thread
-        Thread t = new Thread() {
-            public void run() {
-                
-            	mHandler.post(mUpdateResults);
-            }
-        };
-        t.start();
-    }
-
-    /**
-     * This is the uithread
-     * Nov 24, 2009
-     * dmason
-     *
-     */
-    @SuppressWarnings("unchecked")
-    private void updateResultsInUi() {
-    	
-        // Back in the UI thread -- update our UI elements based on the data in mResults
-    	 //next page
-        try {
-	        JSONArray sets = AppUtil.getQuizletData(AppUtil.searchTerm, sortType, ++scrollpagenumber);
-	        ArrayList<CardSet> cardsets = AppUtil.createNewCardSetArrayList(new ArrayList<CardSet>(),sets);
-	        //loop this
-	        Iterator<CardSet> iter = cardsets.iterator();
-	        while(iter.hasNext())
-	        {
-	        	CardSet cardSet = iter.next();
-	        	((ArrayAdapter<CardSet>) adapter).add(cardSet);
-	        }
-	        //((ArrayAdapter<CardSet>) adapter).notifyDataSetChanged();
-	        
-	        //turn off thinking icon
-	        setProgressBarIndeterminateVisibility(false);
-	        
-        } catch (JSONException e) {
-	        // TODO Auto-generated catch block
-	        e.printStackTrace();
-        }
-       
     }
 
 }

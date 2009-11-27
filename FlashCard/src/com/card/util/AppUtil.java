@@ -15,6 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import android.R.integer;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -136,10 +137,11 @@ public class AppUtil extends Constants {
 	        
 	        JSONTokener toke = new JSONTokener(sb.toString());
 	        JSONObject jsonObj = new JSONObject(toke);
-	        
+	       
 	        
 	        if(((String)jsonObj.get("response_type")).equals("ok"))
 	        {
+	        	TOTAL_RESULTS = (Integer)jsonObj.get("total_results");
 	        	sets = (JSONArray)jsonObj.get("sets");
 	        }
 	        
@@ -164,14 +166,18 @@ public class AppUtil extends Constants {
 	 * @throws JSONException
 	 *
 	 */
-	public static ArrayList<CardSet> createNewCardSetArrayList(ArrayList<CardSet> cardsets,JSONArray sets) throws JSONException
+	public static ArrayList<CardSet> createNewCardSetArrayList(ArrayList<CardSet> cardsets,JSONArray sets)
 	{
-		 for(int i=0;i<sets.length();i++)
-         {
-         	JSONObject set = (JSONObject)sets.get(i);
-         	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"),(Integer)set.get("id"));
-         	cardsets.add(cardset);
-         }
+		 try {
+			for(int i=0;i<sets.length();i++)
+			 {
+			 	JSONObject set = (JSONObject)sets.get(i);
+			 	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"),(Integer)set.get("id"));
+			 	cardsets.add(cardset);
+			 }
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 		 
 		 return cardsets;
 	}

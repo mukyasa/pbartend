@@ -45,7 +45,7 @@ public class CardSetArrayAdapter extends ArrayAdapter<CardSet> {
 	@SuppressWarnings("unchecked")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-		 Activity activity = (Activity) getContext();
+		 	Activity activity = (Activity) getContext();
 	        LayoutInflater inflater = activity.getLayoutInflater();
 
 	        // Inflate the views from XML
