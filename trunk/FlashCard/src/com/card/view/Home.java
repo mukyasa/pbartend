@@ -243,7 +243,7 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
 	  			if(canSearch)
 	  			{
 		  			pd = ProgressDialog.show(this, null,"LOADING...");
-		  			
+
 		  			v.setBackgroundResource(R.drawable.button);
 		  			v.setPadding(30, 0, 40, 5); 
 		  			

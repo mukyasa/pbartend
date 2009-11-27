@@ -79,8 +79,10 @@ public class CardSetList extends ListActivity{
 	
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 	{ 
-			v.setBackgroundResource(R.drawable.list_item_hvr);
-			v.setPadding(13, 10, 0, 0);
+			TextView child = (TextView)v.findViewById(android.R.id.text1);
+		
+			child.setBackgroundResource(R.drawable.list_item_hvr);
+			child.setPadding(13, 10, 0, 0);
 			listview = v;
 			pd = ProgressDialog.show(this, null,"LOADING...");
 			CardSet cardSetPicked = (CardSet)l.getItemAtPosition(position);
