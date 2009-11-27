@@ -24,11 +24,11 @@ import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -63,6 +63,9 @@ public class FlashCardTest extends Activity {
 	private final int MENU_SHUFFLE=2;
 	private final int MENU_NEW=3;
 	private final int MENU_BOOKMARK=4;
+	private final int MENU_MORE=5;
+	private final int MENU_USER_PREF=6;
+	private final int MENU_BOOKMARKS=7;
 	private  TextView cardnumber;
 	private TextView cardnumber2;
 	private TextView tvFlashCard;
@@ -160,11 +163,13 @@ public class FlashCardTest extends Activity {
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, MENU_RESULTS, 0, "Test Results").setIcon(R.drawable.results);
 		menu.add(0, MENU_RETEST, 0, "Retest").setIcon(R.drawable.retest);
 		menu.add(0, MENU_SHUFFLE, 0, "Shuffle").setIcon(R.drawable.shuffle);
-		menu.add(0, MENU_NEW, 0, "New Set").setIcon(R.drawable.newcardset);
 		menu.add(0, MENU_BOOKMARK, 0, "Bookmark").setIcon(R.drawable.bookmark);
+		menu.add(0, MENU_RESULTS, 0, "Test Results").setIcon(R.drawable.results);
+		menu.add(0, MENU_USER_PREF, 0, "Preferences").setIcon(android.R.drawable.ic_menu_preferences);
+		menu.add(0, MENU_NEW, 0, "New Set").setIcon(R.drawable.newcardset);
+		menu.add(0, MENU_BOOKMARKS, 0, "View Bookmarks").setIcon(R.drawable.bookmark);
 	    return true;
 	}
 
@@ -179,6 +184,14 @@ public class FlashCardTest extends Activity {
 	    	intent = new Intent(this, Results.class);
 			startActivity(intent);
 	    	return true;
+	    case MENU_USER_PREF:
+ 	    	intent = new Intent(this, UserPrefActivity.class);
+ 			startActivity(intent);
+ 	    	return true;
+	    case MENU_BOOKMARKS:
+ 	    	intent = new Intent(this, BookmarkList.class);
+ 			startActivity(intent);
+ 	    	return true;
 	    case MENU_RETEST:
 	    	count=0;
 	    	countlabel=1;
