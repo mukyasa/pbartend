@@ -10,7 +10,6 @@
 package com.card.view;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -109,9 +108,7 @@ public class UserPrefActivity extends Activity implements OnTouchListener, OnCli
 		  			v.setBackgroundResource(R.drawable.button);
 		  			v.setPadding(30, 0, 40, 5); 
 		  			
-		  			Intent intent = new Intent(this,Home.class);
-		  			startActivity(intent);
-		  			
+		  			finish();
 		  		}
 		  	}
 	    	
