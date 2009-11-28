@@ -1,4 +1,4 @@
-package com.card.util;
+package com.flashcard.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,10 +18,10 @@ import org.json.JSONTokener;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.card.R;
-import com.card.domain.CardSet;
-import com.card.domain.FlashCard;
-import com.card.handler.ApplicationHandler;
+import com.flashcard.R;
+import com.flashcard.domain.CardSet;
+import com.flashcard.domain.FlashCard;
+import com.flashcard.handler.ApplicationHandler;
 
 public class AppUtil extends Constants {
 

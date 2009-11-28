@@ -13,10 +13,10 @@
 	limitations under the License.
  */
 
-package com.card.handler;
+package com.flashcard.handler;
 
-import com.card.R;
-import com.card.domain.CardSet;
+import com.flashcard.R;
+import com.flashcard.domain.CardSet;
 
 import android.app.Activity;
 import android.content.Context;

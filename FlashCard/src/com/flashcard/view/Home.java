@@ -1,4 +1,4 @@
-package com.card.view;
+package com.flashcard.view;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -24,9 +24,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
-import com.card.R;
-import com.card.util.AppUtil;
-import com.card.util.Constants;
+import com.flashcard.R;
+import com.flashcard.util.AppUtil;
+import com.flashcard.util.Constants;
 
 public class Home extends Activity implements OnTouchListener,OnKeyListener,Runnable {
 	private Button btSearch;

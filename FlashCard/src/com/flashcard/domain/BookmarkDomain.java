@@ -7,7 +7,7 @@
  * http://www.gouvernement.lu/
  * http://www.tgen.org 
  */
-package com.card.domain;
+package com.flashcard.domain;
 
 /**
  * @author dmason

@@ -7,7 +7,7 @@
  * http://www.gouvernement.lu/
  * http://www.tgen.org 
  */
-package com.card.view;
+package com.flashcard.view;
 
 import java.util.ArrayList;
 
@@ -38,12 +38,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-import com.card.R;
-import com.card.domain.CardSet;
-import com.card.handler.ApplicationHandler;
-import com.card.handler.EndlessAdapter;
-import com.card.util.AppUtil;
-import com.card.util.Constants;
+import com.flashcard.R;
+import com.flashcard.domain.CardSet;
+import com.flashcard.handler.ApplicationHandler;
+import com.flashcard.handler.EndlessAdapter;
+import com.flashcard.util.AppUtil;
+import com.flashcard.util.Constants;
 
 /**
  * @author dmason

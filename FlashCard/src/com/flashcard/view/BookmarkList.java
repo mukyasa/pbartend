@@ -2,7 +2,7 @@
  * Date: Nov 24, 2009 Project: FlashCard User: dmason This software is subject
  * to license of IBBL-TGen http://www.gouvernement.lu/ http://www.tgen.org
  */
-package com.card.view;
+package com.flashcard.view;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +27,13 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
-import com.card.R;
-import com.card.domain.BookmarkDomain;
-import com.card.domain.CardSet;
-import com.card.handler.ApplicationHandler;
-import com.card.util.AppUtil;
-import com.card.util.BookMarkArrayAdapter;
-import com.card.util.Constants;
+import com.flashcard.R;
+import com.flashcard.domain.BookmarkDomain;
+import com.flashcard.domain.CardSet;
+import com.flashcard.handler.ApplicationHandler;
+import com.flashcard.util.AppUtil;
+import com.flashcard.util.BookMarkArrayAdapter;
+import com.flashcard.util.Constants;
 
 /**
  * @author dmason
