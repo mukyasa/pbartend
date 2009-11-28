@@ -7,7 +7,7 @@
  * http://www.gouvernement.lu/
  * http://www.tgen.org 
  */
-package com.card.view;
+package com.flashcard.view;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -21,8 +21,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 
-import com.card.R;
-import com.card.util.AppUtil;
+import com.flashcard.R;
+import com.flashcard.util.AppUtil;
 
 /**
  * @author dmason

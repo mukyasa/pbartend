@@ -13,14 +13,14 @@
 	limitations under the License.
  */
 
-package com.card.handler;
+package com.flashcard.handler;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.card.R;
-import com.card.domain.CardSet;
-import com.card.util.Constants;
+import com.flashcard.R;
+import com.flashcard.domain.CardSet;
+import com.flashcard.util.Constants;
 
 import android.app.Activity;
 import android.content.Context;

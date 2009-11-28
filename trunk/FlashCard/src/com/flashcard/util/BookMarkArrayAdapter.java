@@ -7,7 +7,7 @@
  * http://www.gouvernement.lu/
  * http://www.tgen.org 
  */
-package com.card.util;
+package com.flashcard.util;
 
 import java.util.List;
 
@@ -19,8 +19,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.card.R;
-import com.card.domain.BookmarkDomain;
+import com.flashcard.R;
+import com.flashcard.domain.BookmarkDomain;
 
 /**
  * @author dmason

@@ -7,7 +7,7 @@
  * http://www.gouvernement.lu/
  * http://www.tgen.org 
  */
-package com.card.view;
+package com.flashcard.view;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,11 +20,11 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
 
-import com.card.R;
-import com.card.domain.CardSet;
-import com.card.domain.FlashCard;
-import com.card.domain.ResultsBean;
-import com.card.handler.ApplicationHandler;
+import com.flashcard.R;
+import com.flashcard.domain.CardSet;
+import com.flashcard.domain.FlashCard;
+import com.flashcard.domain.ResultsBean;
+import com.flashcard.handler.ApplicationHandler;
 
 /**
  * @author dmason

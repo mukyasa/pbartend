@@ -7,7 +7,7 @@
  * http://www.gouvernement.lu/
  * http://www.tgen.org 
  */
-package com.card.view;
+package com.flashcard.view;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -28,11 +28,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.card.R;
-import com.card.domain.CardSet;
-import com.card.domain.ResultsBean;
-import com.card.handler.ApplicationHandler;
-import com.card.util.AppUtil;
+import com.flashcard.R;
+import com.flashcard.domain.CardSet;
+import com.flashcard.domain.ResultsBean;
+import com.flashcard.handler.ApplicationHandler;
+import com.flashcard.util.AppUtil;
  
 /**
  * @author dmason

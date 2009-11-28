@@ -1,4 +1,4 @@
-package com.card.util;
+package com.flashcard.util;
 
 public class Constants {
 	public static String VERSION = "1.0.0";

@@ -7,11 +7,11 @@
  * http://www.gouvernement.lu/
  * http://www.tgen.org 
  */
-package com.card.handler;
+package com.flashcard.handler;
 
 import java.util.ArrayList;
 
-import com.card.domain.CardSet;
+import com.flashcard.domain.CardSet;
 
 /**
  * @author dmason
