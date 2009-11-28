@@ -31,7 +31,7 @@ import com.card.util.AppUtil;
 public class UserPrefActivity extends Activity implements OnTouchListener, OnClickListener {
 
 	private CheckBox sound;
-	private String fontsize;
+	private String fontsize; 
 	  @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
