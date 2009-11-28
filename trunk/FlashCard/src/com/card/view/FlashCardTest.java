@@ -64,6 +64,7 @@ public class FlashCardTest extends Activity {
 	private final int MENU_BOOKMARK=4;
 	private final int MENU_USER_PREF=6;
 	private final int MENU_BOOKMARKS=7;
+	private final int MENU_SWAP=9;
 	private  TextView cardnumber;
 	private TextView cardnumber2;
 	private TextView tvFlashCard;
@@ -164,10 +165,12 @@ public class FlashCardTest extends Activity {
 		menu.add(0, MENU_RETEST, 0, "Retest").setIcon(R.drawable.retest);
 		menu.add(0, MENU_SHUFFLE, 0, "Shuffle").setIcon(R.drawable.shuffle);
 		menu.add(0, MENU_BOOKMARK, 0, "Bookmark").setIcon(R.drawable.bookmark);
-		menu.add(0, MENU_RESULTS, 0, "Test Results").setIcon(R.drawable.results);
-		menu.add(0, MENU_USER_PREF, 0, "Preferences").setIcon(android.R.drawable.ic_menu_preferences);
+		menu.add(0, MENU_RESULTS, 0, getResources().getString(R.string.results)).setIcon(R.drawable.results);
+		menu.add(0, MENU_SWAP, 0, "Reverse").setIcon(R.drawable.swap);
 		menu.add(0, MENU_NEW, 0, getResources().getString(R.string.home)).setIcon(R.drawable.newcardset);
+		menu.add(0, MENU_USER_PREF, 0, "Preferences").setIcon(android.R.drawable.ic_menu_preferences);
 		menu.add(0, MENU_BOOKMARKS, 0, "View Bookmarks").setIcon(R.drawable.bookmark);
+		
 	    return true;
 	}
 
@@ -178,7 +181,10 @@ public class FlashCardTest extends Activity {
         CardSet cardset = handler.currentlyUsedSet;
         
 	    switch (item.getItemId()) {
-	    case MENU_RESULTS:
+    	case MENU_SWAP:
+	    	AppUtil.switchQuestionAnswer(context, cardset);
+	    	return true;
+    	case MENU_RESULTS:
 	    	intent = new Intent(this, Results.class);
 			startActivity(intent);
 	    	return true;
