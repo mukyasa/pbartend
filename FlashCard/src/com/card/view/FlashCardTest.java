@@ -28,7 +28,6 @@ import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.SubMenu;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -63,7 +62,6 @@ public class FlashCardTest extends Activity {
 	private final int MENU_SHUFFLE=2;
 	private final int MENU_NEW=3;
 	private final int MENU_BOOKMARK=4;
-	private final int MENU_MORE=5;
 	private final int MENU_USER_PREF=6;
 	private final int MENU_BOOKMARKS=7;
 	private  TextView cardnumber;

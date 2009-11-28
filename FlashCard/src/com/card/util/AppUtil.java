@@ -104,6 +104,7 @@ public class AppUtil extends Constants {
 	    editor.putString(AppUtil.PREF_BOOKMARKS, bookmarks.toString());
 	    
 	    // Don't forget to commit your edits!!!
+	    //check to see if the bookmark exists if so dont do it
 	    editor.commit();
 	    
 	}
