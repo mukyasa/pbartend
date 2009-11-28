@@ -15,10 +15,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-import android.R.integer;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.card.R;
 import com.card.domain.CardSet;
@@ -59,6 +57,33 @@ public class AppUtil extends Constants {
 		String bookmarks = settings.getString(PREF_BOOKMARKS, "");
 		
 		return bookmarks;
+	}
+	
+	/**
+	 * Reverses the queston and the answer.
+	 * Nov 27, 2009
+	 * dmason
+	 * @param context
+	 * @param cardset
+	 *
+	 */
+	public static void switchQuestionAnswer(Context context,CardSet cardset){
+		
+		 ArrayList<FlashCard> flashCards = cardset.flashcards;
+		 
+		Iterator<FlashCard> iter = flashCards.iterator();
+		while (iter.hasNext()) {
+	        FlashCard flashCard = (FlashCard) iter.next();
+	        
+	        String answer = flashCard.answer;
+	        String question = flashCard.question;
+	        
+	        //swap them.
+	        flashCard.question = answer;
+	        flashCard.answer = question;
+	        
+        }
+		
 	}
 	
 	public static void setBookmarks(Context context,CardSet cardset) throws JSONException

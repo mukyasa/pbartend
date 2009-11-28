@@ -97,7 +97,7 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
     }
     
     public boolean onCreateOptionsMenu(Menu menu) {
-    	menu.add(0, MENU_RESULTS, 0, "Test Results").setIcon(R.drawable.results);
+    	menu.add(0, MENU_RESULTS, 0, getResources().getString(R.string.results)).setIcon(R.drawable.results);
     	menu.add(0, MENU_USER_PREF, 0, "Preferences").setIcon(android.R.drawable.ic_menu_preferences);
     	menu.add(0, MENU_BOOKMARKS, 0, "View Bookmarks").setIcon(R.drawable.bookmark);
 	    return true;
