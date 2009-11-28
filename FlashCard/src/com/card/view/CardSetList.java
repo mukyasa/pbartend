@@ -139,9 +139,8 @@ public class CardSetList extends ListActivity{
 
 			CardSetAdapter(ArrayList<CardSet> list) {
 				super(new ArrayAdapter<CardSet>(CardSetList.this,R.layout.cardlist_item, android.R.id.text1, list),context);
-
-				rotate = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF,
-						0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+				
+				rotate = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF,0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 				rotate.setDuration(600);
 				rotate.setRepeatMode(Animation.RESTART);
 				rotate.setRepeatCount(Animation.INFINITE);
@@ -164,34 +163,37 @@ public class CardSetList extends ListActivity{
 
 			@SuppressWarnings("unchecked")
 			protected void rebindPendingView(int position, View row) {
-				View child = row.findViewById(android.R.id.text1);
-				
-				//set up the text here
-				ArrayAdapter<CardSet> wrapped = (ArrayAdapter<CardSet>) getWrappedAdapter();
-				CardSet cardset = (CardSet)wrapped.getItem(position);
-				//get the textview and set the text
-		        
-		        String tabs ="\t\t";
-		        String title;
-		        if(cardset.title.length() > 37)//trunc at 37 char
-		        	title = cardset.title.substring(0, 32) + "...";
-		        else
-		        	title=cardset.title;
-		        	
-		        String count = cardset.cardCount.toString();
-		        if(count.length() == 1)
-		        	count = " " +count;
-		        
-		        if(count.length() > 2)
-		        	tabs = "\t";
-		        
-		        child.setVisibility(View.VISIBLE);
-		        ((TextView) child).setText(count + tabs + title);
-
-				child = row.findViewById(R.id.throbber);
-				View wrapper  = row.findViewById(R.id.throbberWrapper);
-				wrapper.setVisibility(View.GONE);
-				child.clearAnimation();
+				if(row != null)
+				{
+					View child = row.findViewById(android.R.id.text1);
+					
+					//set up the text here
+					ArrayAdapter<CardSet> wrapped = (ArrayAdapter<CardSet>) getWrappedAdapter();
+					CardSet cardset = (CardSet)wrapped.getItem(position);
+					//get the textview and set the text
+			        
+			        String tabs ="\t\t";
+			        String title;
+			        if(cardset.title.length() > 37)//trunc at 37 char
+			        	title = cardset.title.substring(0, 32) + "...";
+			        else
+			        	title=cardset.title;
+			        	
+			        String count = cardset.cardCount.toString();
+			        if(count.length() == 1)
+			        	count = " " +count;
+			        
+			        if(count.length() > 2)
+			        	tabs = "\t";
+			        
+			        child.setVisibility(View.VISIBLE);
+			        ((TextView) child).setText(count + tabs + title);
+	
+					child = row.findViewById(R.id.throbber);
+					View wrapper  = row.findViewById(R.id.throbberWrapper);
+					wrapper.setVisibility(View.GONE);
+					child.clearAnimation();
+				}
 			}
 
 			protected boolean appendInBackground() {
@@ -206,7 +208,7 @@ public class CardSetList extends ListActivity{
 				for (CardSet item : cardsets) { 
 					a.add(item);
 				}
-
+				
 				return (a.getCount() <= Constants.TOTAL_RESULTS); //on return true if this is true
 			}
 		}

@@ -55,7 +55,7 @@ public class AdapterWrapper extends BaseAdapter {
 	 * Get the data item associated with the specified position in the data set.
 	 * 
 	 * @param position
-	 *            Position of the item whose data we want
+	 *            Position of the item whose data we want 
 	 */
 	public Object getItem(int position) {
 		return (wrapped.getItem(position));
