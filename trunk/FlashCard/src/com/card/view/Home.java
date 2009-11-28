@@ -22,19 +22,23 @@ import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 
 import com.card.R;
 import com.card.util.AppUtil;
 import com.card.util.Constants;
 
 public class Home extends Activity implements OnTouchListener,OnKeyListener,Runnable {
-	private Button btUserName;
-	private Button btTerm;
+	private Button btSearch;
+	private RadioButton rbUser;
+	private RadioButton rbTerm;
+	private RadioButton rbId;
 	private EditText etUserName;
 	private EditText etTerm;
-	private final int TYPE_TERM=0;
-	private final int TYPE_USER_NAME=1;
-	private int CHOOSEN_TYPE;
+	private final int TYPE_USER_NAME=0;
+	private final int TYPE_TERM=1;
+	private final int TYPE_ID=2;
+	private int CHOOSEN_TYPE=1;
 	private Intent intent;
 	private ProgressDialog pd;
 	private final int MENU_RESULTS=0;
@@ -76,16 +80,17 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
 	}
  
     private void initScreen(){
-    	btUserName = (Button)findViewById(R.id.btnUserNameCardSet);
-    	btUserName.setOnTouchListener(this);
-    	btTerm = (Button)findViewById(R.id.btnTerm);
-    	btTerm.setOnTouchListener(this);
+    	btSearch = (Button)findViewById(R.id.btnSearch);
+    	btSearch.setOnTouchListener(this);
     	
-    	etUserName = (EditText)findViewById(R.id.etUserName);
-    	etUserName.setOnTouchListener(this);
-    	etUserName.setOnKeyListener(this);
-    	etTerm = (EditText)findViewById(R.id.etTerm);
-    	etTerm.setOnTouchListener(this); 
+    	rbUser = (RadioButton)findViewById(R.id.rbUserName);
+    	rbUser.setOnTouchListener(this);
+    	rbTerm = (RadioButton)findViewById(R.id.rbTerm);
+    	rbTerm.setOnTouchListener(this);
+    	rbId = (RadioButton)findViewById(R.id.rbId);
+    	rbId.setOnTouchListener(this);
+    	
+    	
     	
     	ImageView info = (ImageView)findViewById(R.id.ivInfo);
     	info.setOnTouchListener(this);
@@ -122,18 +127,16 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
     private void getCardSets(int type)
     {
     		
-		EditText etValue=null;
 		String value = "";
+		EditText etValue= (EditText)findViewById(R.id.etSearchTerm);
+		
 		if(type==TYPE_USER_NAME)
-		{
-			etValue= (EditText)findViewById(R.id.etUserName);
 			value = "&q=creator:"+ etValue.getText().toString().trim();
-		}
 		else if(type == TYPE_TERM)
-		{
-			etValue = (EditText)findViewById(R.id.etTerm);
 			value = "&q="+etValue.getText().toString().trim();
-		}
+		else if(type == TYPE_ID)
+			value = "&q=ids:"+etValue.getText().toString().trim();
+		
 		
 		if(AppUtil.initCardSets(value,Constants.SORT_TYPE_DEFALUT,Constants.DEFAULT_PAGE_NUMBER))
         {
@@ -208,54 +211,48 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
 
     	if(v instanceof Button )
 	  	{
+    		if(v instanceof RadioButton)
+    	  	{
+    			if(event.getAction()== MotionEvent.ACTION_UP)
+    				CHOOSEN_TYPE =  Integer.valueOf((((RadioButton) v).getHint().toString()));
+    	  	}else
+    	  	{
     		
-	  		if(event.getAction() == MotionEvent.ACTION_DOWN)
-	  		{
-	  			v.setBackgroundResource(R.drawable.button_hvr);
-	  			v.setPadding(30, 0, 40, 5);
-	  		}
-	  		
-	  		else if(event.getAction()== MotionEvent.ACTION_UP)
-	  		{
-	  			EditText etValue;
-	  			boolean canSearch=true;
-	  			
-	  			if(v==btTerm)
-	  			{
-	  				CHOOSEN_TYPE=TYPE_TERM;
-	  				etValue = (EditText)findViewById(R.id.etTerm);
-	  				Editable ed = etValue.getText();
-	  				CharSequence cs = getText(R.string.etTerm);
-	  				
-	  				if(ed.toString().equals(cs.toString()) || "".equals(ed.toString()))
-	  					canSearch=false;
-	  			}
-	  	    	else if(v == btUserName)
-	  	    	{
-	  	    		CHOOSEN_TYPE=TYPE_USER_NAME;
-	  	    		etValue= (EditText)findViewById(R.id.etUserName);
-	  	    		Editable ed = etValue.getText();
-	  	    		CharSequence cs = getText(R.string.etUserName);
-	  	    		if(ed.toString().equals(cs.toString()) || "".equals(ed.toString()))
-	  					canSearch=false;
-	  	    	}
-	  			
-	  			if(canSearch)
-	  			{
-		  			pd = ProgressDialog.show(this, null,"LOADING...");
-
-		  			v.setBackgroundResource(R.drawable.button);
-		  			v.setPadding(30, 0, 40, 5); 
+		  		if(event.getAction() == MotionEvent.ACTION_DOWN)
+		  		{
+		  			v.setBackgroundResource(R.drawable.button_hvr);
+		  			v.setPadding(30, 0, 40, 5);
+		  		}
+		  		
+		  		else if(event.getAction()== MotionEvent.ACTION_UP)
+		  		{
+		  			EditText etValue;
+		  			boolean canSearch=true;
 		  			
-		  			Thread thread = new Thread(this);
-		        	thread.start();
-		        	
+	  				etValue = (EditText)findViewById(R.id.etSearchTerm);
+	  				Editable ed = etValue.getText();
+	  				
+	  				if("".equals(ed.toString()))
+	  					canSearch=false;
+	  				
+	  				
+		  			if(canSearch)
+		  			{
+			  			pd = ProgressDialog.show(this, null,"LOADING...");
+	
+			  			v.setBackgroundResource(R.drawable.button);
+			  			v.setPadding(30, 0, 40, 5); 
+			  			
+			  			Thread thread = new Thread(this);
+			        	thread.start();
+			        	
+		  			}
+		  			else
+		  			{
+		  				showDialog(DIALOG_ERROR_EMPTY);
+		  			}
 	  			}
-	  			else
-	  			{
-	  				showDialog(DIALOG_ERROR_EMPTY);
-	  			}
-	  		}
+    	  	}
 	  	}
 	  	else if(v instanceof EditText)
 	  	{

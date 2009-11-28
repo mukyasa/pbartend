@@ -20,10 +20,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.card.R;
 import com.card.domain.CardSet;
+import com.card.util.Constants;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +66,7 @@ abstract public class EndlessAdapter extends AdapterWrapper {
 
 	private View pendingView = null;
 	private int pendingPosition = -1;
-	private AtomicBoolean keepOnAppending = new AtomicBoolean(true);
+	protected AtomicBoolean keepOnAppending = new AtomicBoolean(true);
 
 	/**
 	 * Constructor wrapping a supplied ListAdapter
@@ -84,8 +86,9 @@ abstract public class EndlessAdapter extends AdapterWrapper {
 	 */
 	@Override
 	public int getCount() {
-		if (keepOnAppending.get()) {
-			return (super.getCount() + 1); // one more for "pending"
+		//Log.v("", "COUNT="+ super.getCount() + " TOTAL=" +  Constants.TOTAL_RESULTS);
+		if (keepOnAppending.get() && Constants.TOTAL_RESULTS > super.getCount()) {
+			return (super.getCount()+1); // one more for "pending"
 		}
 
 		return (super.getCount());
