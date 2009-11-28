@@ -83,8 +83,8 @@ public class CardSetList extends ListActivity{
 		
 			child.setBackgroundResource(R.drawable.list_item_hvr);
 			child.setPadding(13, 10, 0, 0);
-			listview = v;
-			pd = ProgressDialog.show(this, null,"LOADING...");
+			listview = child;
+			pd = ProgressDialog.show(this, null,"LOADING...",false,true);
 			CardSet cardSetPicked = (CardSet)l.getItemAtPosition(position);
 			//this is the set picked from the list screen it will change when they retest correct
 			ApplicationHandler.instance().currentlyUsedSet = cardSetPicked; 
