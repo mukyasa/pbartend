@@ -39,8 +39,8 @@ public class AuthenticationRegCode {
 	
 	public static void main(String args[]) throws Exception {
 	    String name = "flashcard101";
-	    String passwd = "bd80e9fe05e646c5498398c088b4c212";
-	    String salt = "djmason9@yahoo.com";
+	    String passwd = "3cb1b44022817390e265aee6dd1d31c8";
+	    String salt = "djmason9@hotmail.com";//email address
 
 	   
 	    MessageDigest m = MessageDigest.getInstance("MD5");
