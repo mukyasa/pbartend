@@ -18,7 +18,7 @@ import java.security.MessageDigest;
  * @version $Revision$ $Date$ $Author$ $Id$
  */
 public class AuthenticationRegCode {
-	
+	private static final String APP_NAME = "flashcard101";
 	/*public static void main2(String[] args) throws IOException {
         BufferedReader userInput = new BufferedReader (new InputStreamReader(System.in));
  
@@ -38,14 +38,13 @@ public class AuthenticationRegCode {
 	   
 		BufferedReader userInput = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("Enter email:");
-		String name = "flashcard101";
 	   // String passwd = "3485dadaee23848e31b3cc4bcc79e3ea";
 	    String salt = userInput.readLine();//email address
 
 	   
 	    MessageDigest m = MessageDigest.getInstance("MD5");
 	    m.update(salt.getBytes());
-	    m.update(name.getBytes("UTF8"));
+	    m.update(APP_NAME.getBytes("UTF8"));
 	    byte s[] = m.digest();
 	    String result = "";
 	    for (int i = 0; i < s.length; i++) {
