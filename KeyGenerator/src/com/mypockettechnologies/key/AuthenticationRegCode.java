@@ -10,11 +10,8 @@
 package com.mypockettechnologies.key;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * @author dmason
@@ -22,7 +19,7 @@ import java.security.NoSuchAlgorithmException;
  */
 public class AuthenticationRegCode {
 	
-	public static void main2(String[] args) throws IOException {
+	/*public static void main2(String[] args) throws IOException {
         BufferedReader userInput = new BufferedReader (new InputStreamReader(System.in));
  
         System.out.println("Enter string:");
@@ -35,12 +32,15 @@ public class AuthenticationRegCode {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 	
 	public static void main(String args[]) throws Exception {
-	    String name = "flashcard101";
+	   
+		BufferedReader userInput = new BufferedReader (new InputStreamReader(System.in));
+		System.out.println("Enter email:");
+		String name = "flashcard101";
 	    String passwd = "3485dadaee23848e31b3cc4bcc79e3ea";
-	    String salt = "dj";//email address
+	    String salt = userInput.readLine();//email address
 
 	   
 	    MessageDigest m = MessageDigest.getInstance("MD5");
