@@ -45,7 +45,7 @@ public class Authenication {
 	            e.printStackTrace();
             }
 		
-            return result.equals(code);
+            return result.substring(0,10).equals(code.substring(0,10));
             
 	}
 	
