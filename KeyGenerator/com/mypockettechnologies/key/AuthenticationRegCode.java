@@ -39,8 +39,8 @@ public class AuthenticationRegCode {
 	
 	public static void main(String args[]) throws Exception {
 	    String name = "flashcard101";
-	    String passwd = "3cb1b44022817390e265aee6dd1d31c8";
-	    String salt = "djmason9@hotmail.com";//email address
+	    String passwd = "3485dadaee23848e31b3cc4bcc79e3ea";
+	    String salt = "dj";//email address
 
 	   
 	    MessageDigest m = MessageDigest.getInstance("MD5");
@@ -51,7 +51,9 @@ public class AuthenticationRegCode {
 	    for (int i = 0; i < s.length; i++) {
 	      result += Integer.toHexString((0x000000ff & s[i]) | 0xffffff00).substring(6);
 	    }
-	    System.out.println(result + " " + result.equals(passwd));
+	    
+	    //shorten key
+	    System.out.println(result.substring(0,10) + " " + result.substring(0,10).equals(passwd.substring(0,10)));
 	  }
 
 }
