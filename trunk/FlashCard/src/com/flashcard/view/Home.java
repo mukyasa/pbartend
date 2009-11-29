@@ -26,10 +26,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
-import com.card.util.Authenication;
-import com.card.view.Home;
 import com.flashcard.R;
 import com.flashcard.util.AppUtil;
+import com.flashcard.util.Authenication;
 import com.flashcard.util.Constants;
 
 public class Home extends Activity implements OnTouchListener,OnKeyListener,Runnable {
