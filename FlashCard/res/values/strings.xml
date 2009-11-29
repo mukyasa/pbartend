@@ -22,4 +22,9 @@
 <string name="loading">Loading please wait...</string>
 <string name="home">New Card Set (Home)</string>
 <string name="results">Results</string>
+<string name="email">User Email (all lower case)</string>
+<string name="authcode">Authentication Code</string>
+<string name="regdialog">Registration Entry</string>
+<string name="register">Register</string>
+<string name="cancel">Cancel</string>
 </resources>
