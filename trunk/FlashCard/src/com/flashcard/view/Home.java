@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -13,6 +14,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -24,6 +26,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
+import com.card.util.Authenication;
+import com.card.view.Home;
 import com.flashcard.R;
 import com.flashcard.util.AppUtil;
 import com.flashcard.util.Constants;
@@ -48,6 +52,7 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
 	private final int DIALOG_ERROR=0;
 	private final int DIALOG_ERROR_EMPTY=2;
 	private final int DIALOG_INFO=1;
+	private Context context;
 	
 	
     /** Called when the activity is first created. */
@@ -56,7 +61,11 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_load);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        context=this;
         initScreen();
+      //for demo
+        if(!Authenication.getRegPrefererences(this))
+        	showDialog(Authenication.ISDEMO);
     }
     
     private Handler handler = new Handler() {
@@ -178,6 +187,33 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
 	            }
 	        })      
 	       .create();
+    	}else if(id == Authenication.ISDEMO){	
+    		LayoutInflater factory = LayoutInflater.from(this); 
+            final View textEntryView = factory.inflate(R.layout.alert_dialog_text_entry, null);
+            return new AlertDialog.Builder(Home.this)
+                .setIcon(R.drawable.info)
+                .setTitle(R.string.regdialog) 
+                .setView(textEntryView)
+                .setCancelable(false)
+                .setPositiveButton(R.string.register, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    	EditText email =  (EditText)textEntryView.findViewById(R.id.username_edit);
+                    	EditText authCode =  (EditText)textEntryView.findViewById(R.id.password_edit);
+                    	
+                        if(!Authenication.authenitcate(email.getText().toString().trim().toLowerCase(), authCode.getText().toString().trim().toLowerCase()) )
+                        	finish();
+                        else
+                        	Authenication.setRegPrefererences(context);
+                        	
+                    }
+                })
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                        finish();
+                    }
+                })
+                .create();
     	}else{
     		return new AlertDialog.Builder(Home.this)
             .setIcon(R.drawable.info)
