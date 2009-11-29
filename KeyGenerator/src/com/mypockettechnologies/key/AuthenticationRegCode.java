@@ -39,7 +39,7 @@ public class AuthenticationRegCode {
 		BufferedReader userInput = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("Enter email:");
 		String name = "flashcard101";
-	    String passwd = "3485dadaee23848e31b3cc4bcc79e3ea";
+	   // String passwd = "3485dadaee23848e31b3cc4bcc79e3ea";
 	    String salt = userInput.readLine();//email address
 
 	   
@@ -53,7 +53,7 @@ public class AuthenticationRegCode {
 	    }
 	    
 	    //shorten key
-	    System.out.println(result.substring(0,10) + " " + result.substring(0,10).equals(passwd.substring(0,10)));
+	    System.out.println(result.substring(0,10));// + " " + result.substring(0,10).equals(passwd.substring(0,10)));
 	  }
 
 }
