@@ -20,24 +20,8 @@ public class MoveTest extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-       try {
-	   
-    	   File root = Environment.getExternalStorageDirectory();
-    	   File dst=new File("/"+root.getName() + "/"+Dbtest.FILE_NM);
-    	   File src = new File("/data/data/com.move/databases/"+Dbtest.FILE_NM);
-    	   
-    	   boolean canread =dst.canRead();
-    	   boolean isdir = dst.isDirectory();
-    	      
-    	   if(!dst.exists())
-    	   	  dst.createNewFile();
-    	      
-    	   copy(src,dst);
-    	   Log.v("","Finished");
-	       
-    } catch (Exception e) {
-	    Log.v("", e.getMessage());
-    }
+       SmsDbHelper help = new SmsDbHelper(this);
+       help.getReadableDatabase();
   }
         
 /*     
