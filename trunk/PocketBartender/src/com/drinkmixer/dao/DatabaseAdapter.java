@@ -1,16 +1,8 @@
 package com.drinkmixer.dao;
 
-import java.util.Arrays;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
-import android.util.Log;
-
-public class DatabaseAdapter extends SQLiteOpenHelper {
-
+public class DatabaseAdapter {//extends SQLiteOpenHelper {
+/*
 	public static SQLiteDatabase sqliteDb=null;
 	private static DatabaseAdapter instance; //for singleton
 	
@@ -100,7 +92,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	/**
 	 * Drops all the tables
 	 * @param db
-	 */
+	 *
 	private void dropTables(SQLiteDatabase db)
 	{
 		 db.execSQL("DROP TABLE IF EXISTS " + DataDAO.TABLE_DRINK );
@@ -131,7 +123,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	/**
 	 * creates the drink types in the database
 	 * @param db
-	 */
+	 *
 	private void fillDrinkCategories(SQLiteDatabase db) {
 		
 		String[] types = { "","Cocktails", "Hot Drinks", "Jello Shots", "Martinis",
@@ -190,7 +182,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	 * Pubic method to instantiate class
 	 * @param context
 	 * @return
-	 */
+	 *
 	public static final DatabaseAdapter getInstance(Context context) {
 		initialize(context);
 		return instance;
@@ -199,19 +191,19 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 	/**
 	 * gets the database we are using
 	 * @return
-	 */
+	 *
 	public SQLiteDatabase getDatabase() {
 		return sqliteDb;	
 	}
 	
 	/**
 	 * closes instance of database
-	 */
+	 *
 	public void close() {
 		if(instance != null ) { 
 			instance.close();
 			instance = null;
 		}
 	}
-
+*/
 }
