@@ -3,8 +3,8 @@ package com.drinkmixer.view;
 import android.os.Bundle;
 
 import com.drinkmixer.R;
-import com.drinkmixer.dao.DatabaseAdapter;
 import com.drinkmixer.dao.DetailDAO;
+import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.DetailsDomain;
 
 public class DetailsView extends ActivityView {
@@ -13,7 +13,7 @@ public class DetailsView extends ActivityView {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.details); 
-		myDatabaseAdapter = DatabaseAdapter.getInstance(this);
+		myDatabaseAdapter = MixerDbHelper.getInstance(this);
 		initComponents();
 	}
 	

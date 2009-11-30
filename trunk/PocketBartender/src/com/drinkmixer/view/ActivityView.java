@@ -10,15 +10,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-
 import com.drinkmixer.R;
-import com.drinkmixer.dao.DatabaseAdapter;
 import com.drinkmixer.dao.DetailDAO;
+import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.DetailsDomain;
 
 public class ActivityView extends Activity {
 	
-	protected DatabaseAdapter myDatabaseAdapter;
+	protected MixerDbHelper myDatabaseAdapter;
 	protected long selectedRow;
 	protected TextView tvDrinkName;
 	protected TextView tvDrinktype;

@@ -18,9 +18,9 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.drinkmixer.R;
 import com.drinkmixer.dao.DataDAO;
-import com.drinkmixer.dao.DatabaseAdapter;
 import com.drinkmixer.dao.DrinkListDAO;
 import com.drinkmixer.dao.IngredientsDAO;
+import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.NewDrinkDomain;
 
 public class AmountPicker extends BaseActivity  implements OnClickListener{
@@ -29,14 +29,14 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
 	 private final String none ="---";
 	 private Button btnSave,btnCancel;
 	 private Intent intent;
-	 protected DatabaseAdapter myDatabaseAdapter;
+	 protected MixerDbHelper myDatabaseAdapter;
 	 private IngredientsDAO dataDAO = new IngredientsDAO();
 	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); 
-        myDatabaseAdapter = DatabaseAdapter.getInstance(this);
+        myDatabaseAdapter = MixerDbHelper.getInstance(this);
         setContentView(R.layout.amounts);
         initComponents();
         		

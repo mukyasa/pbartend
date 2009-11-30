@@ -22,14 +22,14 @@ import android.widget.AdapterView.OnItemClickListener;
 import com.drinkmixer.R;
 import com.drinkmixer.dao.CategoryDAO;
 import com.drinkmixer.dao.DataDAO;
-import com.drinkmixer.dao.DatabaseAdapter;
 import com.drinkmixer.dao.DrinkListDAO;
+import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.NewDrinkDomain;
 
 public class CategoryAndGlassPicker extends BaseActivity implements OnClickListener {
 	
 	private CategoryDAO dataDAO = new CategoryDAO();
-	protected DatabaseAdapter myDatabaseAdapter;
+	protected MixerDbHelper myDatabaseAdapter;
 	private ListView listCategories,listGlasses; 
 	private Button btnSave,btnCancel;
 	private Intent intent;
@@ -38,7 +38,7 @@ public class CategoryAndGlassPicker extends BaseActivity implements OnClickListe
     @Override
     public void onCreate(Bundle savedInstanceState) {  
         super.onCreate(savedInstanceState);
-        myDatabaseAdapter = DatabaseAdapter.getInstance(this);
+        myDatabaseAdapter = MixerDbHelper.getInstance(this);
         setContentView(com.drinkmixer.R.layout.cat_glass);
         initComponents();
     }

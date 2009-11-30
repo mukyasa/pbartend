@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +16,7 @@ import android.widget.SimpleCursorAdapter;
 
 import com.drinkmixer.R;
 import com.drinkmixer.dao.DataDAO;
-import com.drinkmixer.dao.DatabaseAdapter;
+import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.DetailsDomain;
 import com.drinkmixer.domain.ScreenType;
 import com.drinkmixer.utils.Constants;
@@ -26,7 +25,7 @@ public abstract class ListViews extends ListActivity{
 	
 	protected static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
 	protected static final int INTENT_NEXT_SCREEN = 0;
-	protected DatabaseAdapter myDatabaseAdapter;
+	protected MixerDbHelper myDatabaseAdapter;
 	protected EditText searchbox;
 	protected Intent intent;
 	protected ListActivity currentListActivity;
@@ -45,7 +44,7 @@ public abstract class ListViews extends ListActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_frame); 
-        myDatabaseAdapter = DatabaseAdapter.getInstance(this);
+        myDatabaseAdapter = MixerDbHelper.getInstance(this);
 		//set search listener
 		setListenter();
 		
