@@ -12,15 +12,13 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.drinkmixer.R;
 import com.drinkmixer.dao.CreateUpdateDAO;
-import com.drinkmixer.dao.DatabaseAdapter;
+import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.NewDrinkDomain;
 import com.drinkmixer.domain.ScreenType;
 
@@ -31,14 +29,14 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 	private Button btnIng, btnSave,btnCat,btnCancel,btnReset;
 	private EditText drinkName,directions;
 	long selectedRow=-1;
-	protected DatabaseAdapter myDatabaseAdapter;
+	protected MixerDbHelper myDatabaseAdapter;
 	CreateUpdateDAO dataDAO = new CreateUpdateDAO();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.update);
-		myDatabaseAdapter = DatabaseAdapter.getInstance(this);
+		myDatabaseAdapter = MixerDbHelper.getInstance(this);
 		ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_NEW);
 		
 		initComponents();

@@ -23,6 +23,7 @@ import com.drinkmixer.R;
 import com.drinkmixer.dao.DataDAO;
 import com.drinkmixer.dao.DatabaseAdapter;
 import com.drinkmixer.dao.DetailDAO;
+import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.ScreenType;
 import com.drinkmixer.utils.Constants;
 
@@ -32,7 +33,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 	private Intent intent;
 	private Button btnAll, btnCat, btnIng, btnFav; 
 	private ImageView info;
-	private DatabaseAdapter myDatabaseAdapter;
+	private MixerDbHelper myDatabaseAdapter;
 	private ProgressDialog pd;
 	private DataDAO dataDAO = new DetailDAO();
 	
@@ -167,7 +168,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     protected Dialog onCreateDialog(int id) {
     	return new AlertDialog.Builder(HomeScreenView.this)
         .setIcon(R.drawable.info)
-        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright © 2009")
+        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright ï¿½ 2009")
         .setTitle("Application Information")
         .setNegativeButton("Close", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
@@ -192,7 +193,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
      * @see java.lang.Runnable#run()
      */
     public void run() {
-    	 myDatabaseAdapter = DatabaseAdapter.getInstance(this);
+    	 myDatabaseAdapter = MixerDbHelper.getInstance(this);
          dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
          handler.sendEmptyMessage(0);
 	    
