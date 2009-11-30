@@ -42,7 +42,8 @@ public class MoveTest extends Activity {
                 	out.write(sCurrentLine);
 
                 out.close();
-                Log.v("","Finished");
+                
+                Log.v("","Finished"); 
                 
             }
         } catch (IOException e) {
