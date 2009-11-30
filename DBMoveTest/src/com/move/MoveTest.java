@@ -1,11 +1,11 @@
 package com.move;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -14,15 +14,33 @@ import android.util.Log;
 
 public class MoveTest extends Activity {
     /** Called when the activity is first created. */
-	private static final String MEDIA_PATH = new String("/sdcard/");
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-     
-       // Dbtest.getInstance(this);
+       try {
+	   
+    	   File root = Environment.getExternalStorageDirectory();
+    	   File dst=new File("/"+root.getName() + "/"+Dbtest.FILE_NM);
+    	   File src = new File("/data/data/com.move/databases/"+Dbtest.FILE_NM);
+    	   
+    	   boolean canread =dst.canRead();
+    	   boolean isdir = dst.isDirectory();
+    	      
+    	   if(!dst.exists())
+    	   	  dst.createNewFile();
+    	      
+    	   copy(src,dst);
+    	   Log.v("","Finished");
+	       
+    } catch (Exception e) {
+	    Log.v("", e.getMessage());
+    }
+  }
+        
+/*     
         try {
         	//set <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
             File root = Environment.getExternalStorageDirectory();
@@ -49,7 +67,21 @@ public class MoveTest extends Activity {
         } catch (IOException e) {
             Log.v("", "Could not write file " + e.getMessage());
         }
+        */
         
+    void copy(File src, File dst) throws IOException {
+        InputStream in = new FileInputStream(src);
+        OutputStream out = new FileOutputStream(dst);
+    
+        // Transfer bytes from in to out
+        byte[] buf = new byte[1024];
+        int len;
+        
+        while ((len = in.read(buf)) > 0) 
+            out.write(buf, 0, len);
+        
+        in.close();
+        out.close();
         
     }
 }
