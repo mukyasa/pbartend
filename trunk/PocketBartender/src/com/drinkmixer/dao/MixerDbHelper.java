@@ -23,13 +23,15 @@ public class MixerDbHelper extends SQLiteOpenHelper {
 	private static final String TAG = "MixerDbHelper";
 	public static SQLiteDatabase sqliteDb=null;
 	private static MixerDbHelper instance; //for singleton
+	public static boolean isLocal=false;
+	public static boolean isRelocating = false;
 
-	private static final String DATABASE_NAME = "pBartender7";
-	private static final String DATABASE_EXTERNAL_FOLDER="dmdb";
-	private static final String DATABASE_PATH_EXTERNAL = "/sdcard/"+DATABASE_EXTERNAL_FOLDER+"/"+DATABASE_NAME;
+	public static final String DATABASE_NAME = "pBartender7";
+	public static final String DATABASE_EXTERNAL_FOLDER="dmdb";
+	public static final String DATABASE_PATH_EXTERNAL = "/sdcard/"+DATABASE_EXTERNAL_FOLDER+"/"+DATABASE_NAME;
 	private static final String DATABASE_PATH_LOCAL = DATABASE_NAME;
 
-	private boolean useLocal = false;
+	private boolean useLocal = false; 
 	private String dbPathToUse = DATABASE_PATH_EXTERNAL;
 
 	private static final int DATABASE_VERSION = 2;		
@@ -51,7 +53,13 @@ public class MixerDbHelper extends SQLiteOpenHelper {
 	
 	//singleton initialize
 	private static void initialize(Context context) {
+		
+		//this needs to be done in order to reinit the db to new location. 
+		if(isRelocating)
+			instance=null;
+		
 		if(instance == null) {
+			isRelocating=false;
 			instance = new MixerDbHelper(context);
 			sqliteDb = instance.getWritableDatabase();
 		}
@@ -82,10 +90,10 @@ public class MixerDbHelper extends SQLiteOpenHelper {
 		File sdcard = Environment.getExternalStorageDirectory();
 
 		File destination = new File(sdcard, DATABASE_EXTERNAL_FOLDER);
-		if (destination.mkdir()) {
-			//Log.d(TAG, "Application data directory created");
-		}
-		if (destination.exists()) {
+		if (!isLocal)
+			destination.mkdir();
+
+		if (!isLocal && destination.exists()) {
 			useLocal = false;
 			dbPathToUse = DATABASE_PATH_EXTERNAL;
 		} else {
@@ -96,7 +104,7 @@ public class MixerDbHelper extends SQLiteOpenHelper {
 	}
 
 	@Override
-	public void onCreate(SQLiteDatabase db) {
+	public void onCreate(SQLiteDatabase db) { 
 
 		//create drink category table
 		db.execSQL(DataDAO.sqlCreateDrinkCategoriesTable);

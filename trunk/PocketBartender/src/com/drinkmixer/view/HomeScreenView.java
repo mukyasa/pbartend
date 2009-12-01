@@ -1,15 +1,20 @@
 package com.drinkmixer.view;
 
+import java.io.File;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -18,10 +23,10 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 
 import com.drinkmixer.R;
 import com.drinkmixer.dao.DataDAO;
-import com.drinkmixer.dao.DatabaseAdapter;
 import com.drinkmixer.dao.DetailDAO;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.ScreenType;
@@ -36,22 +41,32 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 	private MixerDbHelper myDatabaseAdapter;
 	private ProgressDialog pd;
 	private DataDAO dataDAO = new DetailDAO();
+	private final int DIALOG_ABOUT = 0;
+	private final int DIALOG_LOC=1;
+	private Context context=null;
+	private final int MENU_CREATE=0;
+	private final int MENU_MOVE=1;
+	private final int DIALOG_CHANGE_LOC=2;
+	private Thread thread;
+	private File dbfile;
+	private File dbfilesd;
 	
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState);
         //progress menu bar
         setContentView(R.layout.home);
+        context=this;
         initComponents();
         
-        if(DatabaseAdapter.sqliteDb== null)
+        dbfile = new File(Environment.getDataDirectory()+"/data/com.drinkmixer/databases/", MixerDbHelper.DATABASE_NAME); 
+        dbfilesd = new File(Environment.getExternalStorageDirectory(), MixerDbHelper.DATABASE_EXTERNAL_FOLDER+"/"+MixerDbHelper.DATABASE_NAME);
+        
+        if(!dbfile.exists() && !dbfilesd.exists())
         {
-        	MediaPlayer mp = MediaPlayer.create(this, R.raw.pouring);
-            mp.start();
-
-        	pd = ProgressDialog.show(this, null,"Building the database, please be patient.");
-        	Thread thread = new Thread(this);
-        	thread.start();
+        	thread = new Thread(this);
+        	//let user choose db location
+        	showDialog(DIALOG_LOC);
         }
         
     }
@@ -91,18 +106,26 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 	}
     
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 0, 0, "Create New").setIcon(android.R.drawable.ic_menu_add);
+		menu.add(0, MENU_CREATE, 0, "Create New").setIcon(android.R.drawable.ic_menu_add);
+		menu.add(0, MENU_MOVE, 0, "Move Database").setIcon(android.R.drawable.ic_menu_share);
 	    return true;
 	}
 
 	/* Handles item selections */
 	public boolean onOptionsItemSelected(MenuItem item) {
 
-			ScreenType.getInstance().screenType= -1;
-	    	Intent intent = new Intent(this, CreateUpdateView.class);
-			startActivity(intent);
-			
-	    	return true;
+		 switch (item.getItemId()) {
+			 case MENU_CREATE:
+					ScreenType.getInstance().screenType= -1;
+			    	Intent intent = new Intent(this, CreateUpdateView.class);
+					startActivity(intent);
+			    	return true;
+			 case MENU_MOVE:
+				 thread = new Thread(this);
+				 showDialog(DIALOG_CHANGE_LOC);
+			    	return true;
+		 }
+		 return false;
 
 	}
 	
@@ -157,7 +180,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 				startActivity(intent);
 			}
 			else if(view == info){
-				showDialog(0);
+				showDialog(DIALOG_ABOUT);
 			}
 	}
 
@@ -166,17 +189,94 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
      */
     @Override
     protected Dialog onCreateDialog(int id) {
-    	return new AlertDialog.Builder(HomeScreenView.this)
-        .setIcon(R.drawable.info)
-        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright � 2009")
-        .setTitle("Application Information")
-        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
+    	
+    	if(id==DIALOG_ABOUT)
+    	{
+	    	return new AlertDialog.Builder(HomeScreenView.this)
+	        .setIcon(R.drawable.info)
+	        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright © 2009")
+	        .setTitle("Application Information")
+	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int whichButton) {
+	
+	               dismissDialog(DIALOG_ABOUT);
+	            }
+	        })      
+	       .create();
+    	}else if(id==DIALOG_LOC){
+        	
+        	LayoutInflater factory = LayoutInflater.from(this); 
+            final View textEntryView = factory.inflate(R.layout.dblocation, null);
+            return new AlertDialog.Builder(HomeScreenView.this)
+                .setIcon(R.drawable.info)
+                .setTitle(R.string.dblocation) 
+                .setView(textEntryView)
+                .setCancelable(false)
+                .setPositiveButton(R.string.setlocation, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    	RadioButton local =  (RadioButton)textEntryView.findViewById(R.id.rbLocal);
+                    	if(dbfile.exists())
+                    		dbfile.delete();
+                    	else if(dbfilesd.exists())
+                    		dbfilesd.delete();
+                    	
+                        if(local.isChecked())
+                        	MixerDbHelper.isLocal=true;
+                        else
+                        	MixerDbHelper.isLocal=false;
+                    	
+                        dismissDialog(DIALOG_LOC);
+                        
+                    	MediaPlayer mp = MediaPlayer.create(context, R.raw.pouring);
+                        mp.start();
 
-               dismissDialog(0);
-            }
-        })      
-       .create();
+                    	pd = ProgressDialog.show(context, null,"Building the database, please be patient.");
+                    	
+                    	thread.start();
+                        	
+                    }
+                }).create();
+        	}else if(id==DIALOG_CHANGE_LOC){
+            	
+            	LayoutInflater factory = LayoutInflater.from(this); 
+                final View textEntryView = factory.inflate(R.layout.dblocation, null);
+                return new AlertDialog.Builder(HomeScreenView.this)
+                    .setIcon(R.drawable.info)
+                    .setTitle(R.string.dblocation) 
+                    .setView(textEntryView)
+                    .setCancelable(false)
+                    .setPositiveButton(R.string.setlocation, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                        	RadioButton local =  (RadioButton)textEntryView.findViewById(R.id.rbLocal);
+                        	if(dbfile.exists()) 
+                        		dbfile.delete();
+                        	else if(dbfilesd.exists())
+                        		dbfilesd.delete();
+                        	
+                        	MixerDbHelper.isRelocating=true;
+                            if(local.isChecked())
+                            	MixerDbHelper.isLocal=true;
+                            else
+                            	MixerDbHelper.isLocal=false;
+                        	
+                            dismissDialog(DIALOG_CHANGE_LOC);
+                            
+                        	MediaPlayer mp = MediaPlayer.create(context, R.raw.pouring);
+                            mp.start();
+
+                        	pd = ProgressDialog.show(context, null,"Building the database, please be patient.");
+                        	thread.start();
+                            	
+                        }
+                    }).setNegativeButton(R.string.btnCancel, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+
+                        	dismissDialog(DIALOG_CHANGE_LOC);
+                        	thread = null;
+                        }
+                    }).create();
+            	}else
+    		return null;
 
     }
     
