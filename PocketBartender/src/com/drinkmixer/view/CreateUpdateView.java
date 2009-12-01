@@ -42,6 +42,17 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 		initComponents();
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+	    super.onResume();
+	    if(!drinkName.getText().toString().equals(this.getString(R.string.create_drink_title)))
+	    	drinkName.setTextColor(Color.BLACK);	
+	    if(!directions.getText().toString().equals(this.getString(R.string.instructionsText))) 
+	    	directions.setTextColor(Color.BLACK);
+	}
 	
 	private void initComponents() {
 		
