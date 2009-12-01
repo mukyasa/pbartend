@@ -13,7 +13,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:layout_height="wrap_content"
-	android:orientation="vertical">
+	android:orientation="vertical" android:padding="10sp">
 	<RadioGroup android:id="@+id/rgDBLocations"
 		android:layout_width="wrap_content" android:layout_height="wrap_content">
 		<RadioButton android:id="@+id/rbLocal"
@@ -24,4 +24,5 @@
 			android:text="@string/remotelocation" android:checked="true"></RadioButton>
 	</RadioGroup>
 
+<TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/setNote" android:layout_marginBottom="5sp" android:layout_marginLeft="5sp" android:layout_marginRight="5sp"></TextView>
 </LinearLayout>

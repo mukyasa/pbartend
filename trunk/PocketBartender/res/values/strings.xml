@@ -25,4 +25,5 @@
 <string name="remotelocation"> Put database on SDcard</string>
 <string name="dblocation">Select your database location</string>
 <string name="setlocation">Set Location</string>
+<string name="setNote">Warning, changing the database location will clear any new or favorite drinks.</string>
 </resources>
