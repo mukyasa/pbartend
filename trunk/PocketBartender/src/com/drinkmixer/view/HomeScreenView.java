@@ -231,7 +231,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                     	DrinkIngredientsInsert.in = context.getResources().openRawResource(R.raw.tbldrinks_ingredients);
                         mp.start();
 
-                    	pd = ProgressDialog.show(context, null,"Building the database, please be patient only happens once.");
+                    	pd = ProgressDialog.show(context, null,"Building the database, please be patient it only happens once.");
                     	
                     	thread.start();
                         	
