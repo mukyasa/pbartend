@@ -215,6 +215,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                 .setCancelable(false)
                 .setPositiveButton(R.string.setlocation, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
+                    	dismissDialog(DIALOG_LOC);
                     	RadioButton local =  (RadioButton)textEntryView.findViewById(R.id.rbLocal);
                     	if(dbfile.exists())
                     		dbfile.delete();
@@ -224,9 +225,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                         if(local.isChecked())
                         	MixerDbHelper.isLocal=true;
                         else
-                        	MixerDbHelper.isLocal=false;
-                    	
-                        dismissDialog(DIALOG_LOC);
+                        	MixerDbHelper.isLocal=false;                           
                         
                     	MediaPlayer mp = MediaPlayer.create(context, R.raw.pouring);
                     	DrinkIngredientsInsert.in = context.getResources().openRawResource(R.raw.tbldrinks_ingredients);
@@ -249,6 +248,8 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                     .setCancelable(false)
                     .setPositiveButton(R.string.setlocation, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
+                        	dismissDialog(DIALOG_CHANGE_LOC);
+                        	
                         	RadioButton local =  (RadioButton)textEntryView.findViewById(R.id.rbLocal);
                         	if(dbfile.exists()) 
                         		dbfile.delete();
@@ -261,8 +262,6 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                             else
                             	MixerDbHelper.isLocal=false;
                         	
-                            dismissDialog(DIALOG_CHANGE_LOC);
-                            
                         	MediaPlayer mp = MediaPlayer.create(context, R.raw.pouring);
                         	DrinkIngredientsInsert.in = context.getResources().openRawResource(R.raw.tbldrinks_ingredients);
                             mp.start();
