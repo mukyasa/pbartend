@@ -195,7 +195,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     	{
 	    	return new AlertDialog.Builder(HomeScreenView.this)
 	        .setIcon(R.drawable.info)
-	        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright Â© 2009")
+	        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright © 2009")
 	        .setTitle("Application Information")
 	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int whichButton) {
