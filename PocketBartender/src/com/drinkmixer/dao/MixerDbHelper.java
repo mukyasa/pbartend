@@ -137,7 +137,7 @@ public class MixerDbHelper extends SQLiteOpenHelper {
 		fillIngredientsCategories(db);
 		
 		//fill drink ingredients table
-		fillDrinkIngredients(db); 
+		DrinkIngredientsInsert.insertDrinkIng(db); 
 		
 		
 		//fill drinks table
@@ -199,40 +199,6 @@ public class MixerDbHelper extends SQLiteOpenHelper {
 		 
 	}
 
-	private void fillDrinkIngredients(SQLiteDatabase db)
-	{ 
-		try {
-	        DrinkIngredientsInsert.insertDrinkIng(db);
-        } catch (Exception e) {
-	        // TODO Auto-generated catch block
-	        e.printStackTrace();
-        }
-		/*
-		String[] dii1 = DrinkIngredientsInsert.insertDrinkIng1();
-		for(int i=0;i<dii1.length;i++)
-			db.execSQL(dii1[i]);
-		
-		String[] dii2 = DrinkIngredientsInsert.insertDrinkIng2();
-		for(int i=0;i<dii2.length;i++)
-			db.execSQL(dii2[i]);
-		
-		String[] dii3 = DrinkIngredientsInsert.insertDrinkIng3();
-		for(int i=0;i<dii3.length;i++)
-			db.execSQL(dii3[i]);
-		
-		String[] dii4 = DrinkIngredientsInsert.insertDrinkIng4();
-		for(int i=0;i<dii4.length;i++)
-			db.execSQL(dii4[i]);
-		
-		String[] dii5 = DrinkIngredientsInsert.insertDrinkIng5();
-		for(int i=0;i<dii5.length;i++)
-			db.execSQL(dii5[i]);
-		
-		String[] dii6 = DrinkIngredientsInsert.insertDrinkIng6();
-		for(int i=0;i<dii6.length;i++)
-			db.execSQL(dii6[i]);
-			*/
-	}
 
 	/*
 	 * (non-Javadoc)
