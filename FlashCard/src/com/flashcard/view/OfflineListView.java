@@ -1,5 +1,5 @@
 /**
- * Date: Nov 15, 2009
+ * Date: Dec 1, 2009
  * Project: FlashCard
  * User: dmason
  * This software is subject to license of
@@ -27,7 +27,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.AdapterView;
@@ -47,15 +46,13 @@ import com.flashcard.util.Constants;
 
 /**
  * @author dmason
- * @version $Revision$ $Date$ $Author$ $Id$ 
+ * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class CardSetList extends ListActivity{
-
-	private Intent intent;
+public class OfflineListView extends ListActivity {
+	
 	protected static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
 	protected static final int INTENT_NEXT_SCREEN = 0;
 	private View listview=null;
-	private ProgressDialog pd;
 	private Context context;
 	private boolean firtTimeIn=true;
 	private ListAdapter adapter;
@@ -68,9 +65,8 @@ public class CardSetList extends ListActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.list_frame);
+		setContentView(R.layout.offline_frame);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        intent = new Intent(this, FlashCardTest.class);
         context=this;
         initComponents();
     }
@@ -84,7 +80,6 @@ public class CardSetList extends ListActivity{
 			child.setBackgroundResource(R.drawable.list_item_hvr);
 			child.setPadding(13, 10, 0, 0);
 			listview = child;
-			pd = ProgressDialog.show(this, null,"LOADING...",false,true);
 			CardSet cardSetPicked = (CardSet)l.getItemAtPosition(position);
 			//this is the set picked from the list screen it will change when they retest correct
 			ApplicationHandler.instance().currentlyUsedSet = cardSetPicked; 
@@ -93,8 +88,6 @@ public class CardSetList extends ListActivity{
 			
 			super.onListItemClick(l, v, position, id);
 			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
-			intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
-			startActivityForResult(intent, INTENT_NEXT_SCREEN);
 	}
 	
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -129,8 +122,6 @@ public class CardSetList extends ListActivity{
 			listview.setBackgroundResource(R.drawable.list_item);
 			listview.setPadding(13, 10, 0, 0);
 		}
-		if(pd!=null)
-			pd.dismiss();
 		
 		super.onStop();
 	}
@@ -142,7 +133,7 @@ public class CardSetList extends ListActivity{
 			private RotateAnimation rotate = null;
 
 			CardSetAdapter(ArrayList<CardSet> list) {
-				super(new ArrayAdapter<CardSet>(CardSetList.this,R.layout.cardlist_item, android.R.id.text1, list),context);
+				super(new ArrayAdapter<CardSet>(OfflineListView.this,R.layout.cardlist_item, android.R.id.text1, list),context);
 				
 				rotate = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF,0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 				rotate.setDuration(600);
@@ -224,77 +215,9 @@ public class CardSetList extends ListActivity{
      */
     private void initComponents() {
     	
-    	//set up spinner
-    	Spinner filterType = (Spinner)findViewById(R.id.filterType);
-    	ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.filterTypeValues, android.R.layout.simple_spinner_item);
-    	spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        filterType.setAdapter(spinnerAdapter);
-
-    	filterType.setOnItemSelectedListener(new OnItemSelectedListener(){
-		ProgressDialog pd;
-		
-		 @SuppressWarnings("unchecked")
-        public void onItemSelected(AdapterView parent, View v,int position, long id) { 
-            
-				//Log.v(getClass().getSimpleName(), "position=" + position);
-				switch(position)
-				{
-					case 0: sortType = Constants.SORT_TYPE_DEFALUT;break;
-					case 1: sortType = Constants.SORT_TYPE_STUDIED;break;
-					case 2: sortType = Constants.SORT_TYPE_RECENT;break;
-				}
-				//Log.v(getClass().getSimpleName(), "firtTimeIn=" + firtTimeIn);
-				
-				if(!firtTimeIn)//skip the first time in thread this
-				{
-					pd = ProgressDialog.show(context, null,"RELOADING...");
-					startHeavyDutyStuff();
-				}
-				else
-				{
-					firtTimeIn=false;
-					ApplicationHandler handler = ApplicationHandler.instance();
- 			    	ArrayList<CardSet> cardsets = handler.cardsets;
- 			    	setListAdapter(new CardSetAdapter(cardsets));
-				}
-    		 }
-		 
-		 
-    		 
-             @SuppressWarnings("unchecked")
-            public void onNothingSelected(AdapterView arg0) {
-                  
-             } 
-             
-             void startHeavyDutyStuff() {
-
-                 // Here is the heavy-duty thread
-                 Thread t = new Thread() {
-
-                     public void run() {
-                        	AppUtil.initCardSets(AppUtil.searchTerm, sortType, Constants.DEFAULT_PAGE_NUMBER);   
-                             //Send update to the main thread
-                             messageHandler.sendEmptyMessage(0); 
-                     }
-                 };
-                 t.start();
-             }
-
-             // Instantiating the Handler associated with the main thread.
-             private Handler messageHandler = new Handler() {
-
-                 @Override
-                 public void handleMessage(Message msg) { 
-                	ApplicationHandler handler = ApplicationHandler.instance();
-  			    	ArrayList<CardSet> cardsets = handler.cardsets;
-  			    	setListAdapter(new CardSetAdapter(cardsets));
-                    pd.dismiss();
-                 }
-
-             };
-    	
-    	
-    	});
+    	ApplicationHandler handler = ApplicationHandler.instance();
+	    	ArrayList<CardSet> cardsets = handler.cardsets;
+	    	setListAdapter(new CardSetAdapter(cardsets));
 
     }
 

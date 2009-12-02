@@ -22,6 +22,11 @@ import android.content.SharedPreferences;
  */
 public class Authenication {
 	
+	/***************************/
+	//IF THIS IS A DEMO THEN SET THIS
+	private static boolean isNotDemo= true;
+	/***************************/
+	
 	private static final String appname="flashcard101";
 	public static final int ISDEMO = 99;
 	private static final String PREF_REG ="regcode";
@@ -59,7 +64,11 @@ public class Authenication {
 	 */
 	public static boolean getRegPrefererences(Context context) {
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
-		return settings.getBoolean(PREF_REG, false);
+		
+		if(!isNotDemo)
+			return settings.getBoolean(PREF_REG, false);
+		else
+			return isNotDemo;
 	}
 	
 	/**

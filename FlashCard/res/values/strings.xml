@@ -27,4 +27,5 @@
 <string name="regdialog">Registration Entry</string>
 <string name="register">Register</string>
 <string name="cancel">Cancel</string>
+<string name="offline">Saving these will save to your SD card or your local drive if no card is found.</string>
 </resources>
