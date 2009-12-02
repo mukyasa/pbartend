@@ -28,6 +28,7 @@ import android.widget.RadioButton;
 import com.drinkmixer.R;
 import com.drinkmixer.dao.DataDAO;
 import com.drinkmixer.dao.DetailDAO;
+import com.drinkmixer.dao.DrinkIngredientsInsert;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.ScreenType;
 import com.drinkmixer.utils.Constants;
@@ -228,6 +229,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                         dismissDialog(DIALOG_LOC);
                         
                     	MediaPlayer mp = MediaPlayer.create(context, R.raw.pouring);
+                    	DrinkIngredientsInsert.in = context.getResources().openRawResource(R.raw.tbldrinks_ingredients);
                         mp.start();
 
                     	pd = ProgressDialog.show(context, null,"Building the database, please be patient.");
@@ -262,6 +264,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                             dismissDialog(DIALOG_CHANGE_LOC);
                             
                         	MediaPlayer mp = MediaPlayer.create(context, R.raw.pouring);
+                        	DrinkIngredientsInsert.in = context.getResources().openRawResource(R.raw.tbldrinks_ingredients);
                             mp.start();
 
                         	pd = ProgressDialog.show(context, null,"Building the database, please be patient.");

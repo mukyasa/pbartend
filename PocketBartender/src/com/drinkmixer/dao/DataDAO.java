@@ -31,11 +31,9 @@ public class DataDAO{
 	public static final String COL_LIQUOR_SUB_CAT_ID = "liquor_subcategory_id";
 	public static final String COL_MIX_SUB_CAT_ID = "mixer_subcategory_id";
 	public static final String COL_FRACTION = "fraction";
-	public static final String COL_NUMBER = "number";
 	public static final String COL_CABINET ="cabinet";
 	public static final String COL_INGREDIENT_ID ="ingredient_id";
 	public static final String COL_AMOUNT="amount";
-	public static final String COL_AMOUNT_METRIC="amount_metric";
 	
 
 	//table names
@@ -123,8 +121,7 @@ public class DataDAO{
 			  + " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
 			  +COL_DRINK_ID+" INT, "
 			  + COL_INGREDIENT_ID + " INT , "
-			  + COL_AMOUNT + " VARCHAR(64) , " 
-			  + COL_AMOUNT_METRIC + " VARCHAR(64));";
+			  + COL_AMOUNT + " VARCHAR(64) );";
 	
 	public static final String sqlIngredientsSubCatTable="CREATE TABLE " + TABLE_INGREDIENTS_SUB_CAT
 		+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
@@ -142,8 +139,7 @@ public class DataDAO{
 	
 	public static final String sqlFractional_amountsTable = "CREATE TABLE "+ TABLE_FRACTIONAL_AMOUNTS 
 		+ " ("+COL_ROW_ID+" integer PRIMARY KEY autoincrement, "
-			+ COL_FRACTION +" VARCHAR(8), "
-			+ COL_NUMBER + " double);";
+			+ COL_FRACTION +" VARCHAR(8));";
 
 	/**
 	 * Drink Table
