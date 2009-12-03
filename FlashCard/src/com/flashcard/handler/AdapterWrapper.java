@@ -17,6 +17,7 @@ package com.flashcard.handler;
 
 import com.flashcard.R;
 import com.flashcard.domain.CardSet;
+import com.flashcard.view.OfflineListView;
 
 import android.app.Activity;
 import android.content.Context;
@@ -126,25 +127,39 @@ public class AdapterWrapper extends BaseAdapter {
 		Activity activity = (Activity) context;
 		LayoutInflater inflater = activity.getLayoutInflater();
 		
-		 // Inflate the views from XML
-        FrameLayout frameRowView = (FrameLayout) inflater.inflate(R.layout.cardlist_item, null);
-        TextView rowView = (TextView)frameRowView.findViewById(android.R.id.text1);
-        
-        String tabs ="\t\t";
+		String tabs ="\t\t";
         String title;
+        
         if(cardset.title.length() > 37)//trunc at 37 char
         	title = cardset.title.substring(0, 32) + "...";
         else
         	title=cardset.title;
-        	
-        String count = cardset.cardCount.toString();
-        if(count.length() == 1)
-        	count = " " +count;
-        
-        if(count.length() > 2)
-        	tabs = "\t";
-        
-        rowView.setText(count + tabs + title);
+        FrameLayout frameRowView;
+		if(activity instanceof OfflineListView)
+		{
+			 // Inflate the views from XML
+	        frameRowView = (FrameLayout) inflater.inflate(R.layout.offline_item, null);
+	        TextView rowView = (TextView)frameRowView.findViewById(android.R.id.text1);
+	        rowView.setText(title);
+	        
+		}else
+		{
+		
+			 // Inflate the views from XML
+	        frameRowView = (FrameLayout) inflater.inflate(R.layout.cardlist_item, null);
+	        TextView rowView = (TextView)frameRowView.findViewById(android.R.id.text1);
+	        
+	        
+	        String count = cardset.cardCount.toString();
+	        if(count.length() == 1)
+	        	count = " " +count;
+	        
+	        if(count.length() > 2)
+	        	tabs = "\t";
+	        
+	        rowView.setText(count + tabs + title);
+		}
+		
         return frameRowView;
 		//return (wrapped.getView(position, convertView, parent));
 	}

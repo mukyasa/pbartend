@@ -22,12 +22,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.AdapterView;
@@ -205,7 +203,7 @@ public class CardSetList extends ListActivity{
 				ArrayAdapter<CardSet> a = (ArrayAdapter<CardSet>) getWrappedAdapter();
 				
 				int nextCardSet = (a.getCount()/Constants.CARDS_PER_PAGE)+1;
-				Log.v(getClass().getSimpleName(), "nextCardSet=" + nextCardSet);
+				//Log.v(getClass().getSimpleName(), "nextCardSet=" + nextCardSet);
 	            JSONArray sets = AppUtil.getQuizletData(AppUtil.searchTerm, sortType,nextCardSet);
 	            ArrayList<CardSet> cardsets = AppUtil.createNewCardSetArrayList(new ArrayList<CardSet>(),sets);
 		    	
@@ -278,7 +276,7 @@ public class CardSetList extends ListActivity{
                      }
                  };
                  t.start();
-             }
+             } 
 
              // Instantiating the Handler associated with the main thread.
              private Handler messageHandler = new Handler() {
