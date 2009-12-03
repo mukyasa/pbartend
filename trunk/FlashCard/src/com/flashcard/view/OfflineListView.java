@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -59,19 +60,21 @@ public class OfflineListView extends ListActivity {
 	
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 	{ 
-			TextView child = (TextView)v.findViewById(android.R.id.text1);
-		
-			child.setBackgroundResource(R.drawable.offlineclick);
-			child.setPadding(43, 10, 0, 0);
-			listview = child;
-			CardSet cardSetPicked = (CardSet)l.getItemAtPosition(position);
-			//this is the set picked from the list screen it will change when they retest correct
-			ApplicationHandler.instance().currentlyUsedSet = cardSetPicked; 
-			//this is the set picked from the list screen alway constant
-			ApplicationHandler.instance().orignalUsedSet = cardSetPicked;
+		TextView child = (TextView)v.findViewById(android.R.id.text1);
+
+        child.setBackgroundResource(R.drawable.offlineclick);
+        child.setPadding(43, 10, 0, 0);
+        listview = child;
+        CardSet cardSetPicked = (CardSet)l.getItemAtPosition(position);
+        //this is the set picked from the list screen it will change when they retest correct
+        ApplicationHandler.instance().currentlyUsedSet = cardSetPicked; 
+        //this is the set picked from the list screen alway constant
+        ApplicationHandler.instance().orignalUsedSet = cardSetPicked;
+        
+        
+        super.onListItemClick(l, v, position, id);
+        //Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
 			
-			super.onListItemClick(l, v, position, id);
-			//Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
 	}
 	
     public boolean onCreateOptionsMenu(Menu menu) {
