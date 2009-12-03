@@ -14,13 +14,10 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 
 import android.app.ListActivity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
@@ -29,13 +26,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.flashcard.R;
 import com.flashcard.domain.CardSet;
@@ -54,13 +47,9 @@ public class OfflineListView extends ListActivity {
 	protected static final int INTENT_NEXT_SCREEN = 0;
 	private View listview=null;
 	private Context context;
-	private boolean firtTimeIn=true;
-	private ListAdapter adapter;
 	private String sortType = Constants.SORT_TYPE_DEFALUT;
 	private final int MENU_NEW=0;
 	private final int MENU_LOCAL=1;
-	private int scrollpagenumber=1;
-	private final Handler mHandler = new Handler();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
