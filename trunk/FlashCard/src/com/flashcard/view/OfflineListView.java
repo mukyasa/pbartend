@@ -19,7 +19,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,13 +42,10 @@ import com.flashcard.util.Constants;
  */
 public class OfflineListView extends ListActivity {
 	
-	protected static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
-	protected static final int INTENT_NEXT_SCREEN = 0;
 	private View listview=null;
 	private Context context;
 	private String sortType = Constants.SORT_TYPE_DEFALUT;
 	private final int MENU_NEW=0;
-	private final int MENU_LOCAL=1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +62,8 @@ public class OfflineListView extends ListActivity {
 	{ 
 			TextView child = (TextView)v.findViewById(android.R.id.text1);
 		
-			child.setBackgroundResource(R.drawable.list_item_hvr);
-			child.setPadding(13, 10, 0, 0);
+			child.setBackgroundResource(R.drawable.offlineclick);
+			child.setPadding(43, 10, 0, 0);
 			listview = child;
 			CardSet cardSetPicked = (CardSet)l.getItemAtPosition(position);
 			//this is the set picked from the list screen it will change when they retest correct
@@ -81,7 +77,6 @@ public class OfflineListView extends ListActivity {
 	
     public boolean onCreateOptionsMenu(Menu menu) {
     	menu.add(0, MENU_NEW, 0, getResources().getString(R.string.home)).setIcon(R.drawable.newcardset);
-    	menu.add(0, MENU_LOCAL, 0, "Save Cards Local").setIcon(android.R.drawable.ic_menu_save);
 	    return true;
 	}
 
@@ -91,10 +86,6 @@ public class OfflineListView extends ListActivity {
 	    switch (item.getItemId()) {
 		    case MENU_NEW:
 		    	intent = new Intent(this, Home.class);
-				startActivity(intent);
-		    	return true;
-		    case MENU_LOCAL:
-		    	intent = new Intent(this, OfflineListView.class);
 				startActivity(intent);
 		    	return true;
 	    }
@@ -122,7 +113,7 @@ public class OfflineListView extends ListActivity {
 			private RotateAnimation rotate = null;
 
 			CardSetAdapter(ArrayList<CardSet> list) {
-				super(new ArrayAdapter<CardSet>(OfflineListView.this,R.layout.cardlist_item, android.R.id.text1, list),context);
+				super(new ArrayAdapter<CardSet>(OfflineListView.this,R.layout.offline_item, android.R.id.text1, list),context);
 				
 				rotate = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF,0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 				rotate.setDuration(600);
@@ -131,7 +122,7 @@ public class OfflineListView extends ListActivity {
 			}
 
 			protected View getPendingView(ViewGroup parent) {
-				View row = getLayoutInflater().inflate(R.layout.cardlist_item, null);
+				View row = getLayoutInflater().inflate(R.layout.offline_item, null);
 
 				View child = row.findViewById(android.R.id.text1);
 
@@ -156,27 +147,19 @@ public class OfflineListView extends ListActivity {
 					CardSet cardset = (CardSet)wrapped.getItem(position);
 					//get the textview and set the text
 			        
-			        String tabs ="\t\t";
 			        String title;
 			        if(cardset.title.length() > 37)//trunc at 37 char
 			        	title = cardset.title.substring(0, 32) + "...";
 			        else
 			        	title=cardset.title;
 			        	
-			        String count = cardset.cardCount.toString();
-			        if(count.length() == 1)
-			        	count = " " +count;
-			        
-			        if(count.length() > 2)
-			        	tabs = "\t";
-			        
 			        child.setVisibility(View.VISIBLE);
-			        ((TextView) child).setText(count + tabs + title);
+			        ((TextView) child).setText(title);
 	
 					child = row.findViewById(R.id.throbber);
 					View wrapper  = row.findViewById(R.id.throbberWrapper);
 					wrapper.setVisibility(View.GONE);
-					child.clearAnimation();
+					child.clearAnimation(); 
 				}
 			}
 
@@ -185,7 +168,7 @@ public class OfflineListView extends ListActivity {
 				ArrayAdapter<CardSet> a = (ArrayAdapter<CardSet>) getWrappedAdapter();
 				
 				int nextCardSet = (a.getCount()/Constants.CARDS_PER_PAGE)+1;
-				Log.v(getClass().getSimpleName(), "nextCardSet=" + nextCardSet);
+				//Log.v(getClass().getSimpleName(), "nextCardSet=" + nextCardSet);
 	            JSONArray sets = AppUtil.getQuizletData(AppUtil.searchTerm, sortType,nextCardSet);
 	            ArrayList<CardSet> cardsets = AppUtil.createNewCardSetArrayList(new ArrayList<CardSet>(),sets);
 		    	
@@ -205,8 +188,8 @@ public class OfflineListView extends ListActivity {
     private void initComponents() {
     	
     	ApplicationHandler handler = ApplicationHandler.instance();
-	    	ArrayList<CardSet> cardsets = handler.cardsets;
-	    	setListAdapter(new CardSetAdapter(cardsets));
+    	ArrayList<CardSet> cardsets = handler.cardsets;
+    	setListAdapter(new CardSetAdapter(cardsets));
 
     }
 

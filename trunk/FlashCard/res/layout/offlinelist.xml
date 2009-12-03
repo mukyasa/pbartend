@@ -8,7 +8,7 @@
  android:id="@+id/LinearLayout02" 
  android:layout_width="fill_parent" 
  android:layout_height="wrap_content" 
- android:background="@drawable/port_bg" android:paddingBottom="5sp" android:paddingLeft="5sp" android:paddingRight="5sp">
+ android:paddingBottom="5sp" android:paddingLeft="5sp" android:paddingRight="5sp" android:background="@drawable/offline">
    
    <TextView android:layout_width="fill_parent" 
   android:layout_height="wrap_content" 
