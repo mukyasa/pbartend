@@ -44,7 +44,6 @@ public class OfflineListView extends ListActivity {
 	
 	private View listview=null;
 	private Context context;
-	private String sortType = Constants.SORT_TYPE_DEFALUT;
 	private final int MENU_NEW=0;
 	
 	@Override
@@ -169,7 +168,7 @@ public class OfflineListView extends ListActivity {
 				
 				int nextCardSet = (a.getCount()/Constants.CARDS_PER_PAGE)+1;
 				//Log.v(getClass().getSimpleName(), "nextCardSet=" + nextCardSet);
-	            JSONArray sets = AppUtil.getQuizletData(AppUtil.searchTerm, sortType,nextCardSet);
+	            JSONArray sets = AppUtil.getQuizletData(AppUtil.searchTerm, Constants.SORT_TYPE_DEFALUT,nextCardSet);
 	            ArrayList<CardSet> cardsets = AppUtil.createNewCardSetArrayList(new ArrayList<CardSet>(),sets);
 		    	
 				for (CardSet item : cardsets) { 
