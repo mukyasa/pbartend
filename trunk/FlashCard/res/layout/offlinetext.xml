@@ -3,5 +3,5 @@
 	android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingBottom="5sp" android:background="@drawable/offline_note" android:paddingRight="20.0sp" android:paddingTop="12.0sp" android:paddingLeft="50.0sp">
 
 
-<TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/offline" android:textColor="#000"></TextView>
+<TextView android:id="@+id/tvOfflineMessage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/offline" android:textColor="#000" android:scrollbars="vertical"></TextView>
 </LinearLayout>
