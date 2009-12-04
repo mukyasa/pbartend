@@ -64,6 +64,7 @@ public class FlashCardTest extends Activity {
 	private final int MENU_BOOKMARK=4;
 	private final int MENU_USER_PREF=6;
 	private final int MENU_BOOKMARKS=7;
+	private final int MENU_OFFLINECARDS=8;
 	private final int MENU_SWAP=9;
 	private  TextView cardnumber;
 	private TextView cardnumber2;
@@ -170,6 +171,7 @@ public class FlashCardTest extends Activity {
 		menu.add(0, MENU_NEW, 0, getResources().getString(R.string.home)).setIcon(R.drawable.newcardset);
 		menu.add(0, MENU_USER_PREF, 0, "Preferences").setIcon(android.R.drawable.ic_menu_preferences);
 		menu.add(0, MENU_BOOKMARKS, 0, "View Bookmarks").setIcon(R.drawable.bookmark);
+		menu.add(0, MENU_OFFLINECARDS, 0, "View Offline Cards").setIcon(R.drawable.bookmark);
 		
 	    return true;
 	}
@@ -194,6 +196,10 @@ public class FlashCardTest extends Activity {
  	    	return true;
 	    case MENU_BOOKMARKS:
  	    	intent = new Intent(this, BookmarkList.class);
+ 			startActivity(intent);
+ 	    	return true;
+	    case MENU_OFFLINECARDS:
+ 	    	intent = new Intent(this, OfflineCardsList.class);
  			startActivity(intent);
  	    	return true;
 	    case MENU_RETEST:
