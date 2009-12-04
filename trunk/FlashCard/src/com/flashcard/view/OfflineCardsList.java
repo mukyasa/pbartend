@@ -95,7 +95,7 @@ public class OfflineCardsList extends Activity implements Runnable{
 		
 		ListView savedList = (ListView) findViewById(R.id.savedList);
 		savedList.setAdapter(new BookMarkArrayAdapter(this, R.layout.bookmark_item, items));
-		savedList.setOnItemClickListener(bookmarkListener);
+		savedList.setOnItemClickListener(savedCardsListener);
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -126,7 +126,7 @@ public class OfflineCardsList extends Activity implements Runnable{
 	
 	private void getCardSets(String value){
 		
-		if(AppUtil.initCardSets(value,Constants.SORT_TYPE_DEFALUT,Constants.DEFAULT_PAGE_NUMBER))
+		if(AppUtil.initCardSets(value,Constants.SORT_TYPE_DEFALUT,Constants.DEFAULT_PAGE_NUMBER,true,this))
         {
 			ApplicationHandler handler = ApplicationHandler.instance();
             ArrayList<CardSet> cardsets = handler.cardsets;
@@ -143,20 +143,20 @@ public class OfflineCardsList extends Activity implements Runnable{
 		
 	}
 	
-	   AdapterView.OnItemClickListener bookmarkListener = new OnItemClickListener(){
+	AdapterView.OnItemClickListener savedCardsListener = new OnItemClickListener(){
 			
-		public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
-	
-			
-			BookmarkDomain bookmark = ((BookmarkDomain)parent.getItemAtPosition(position));
-			cardvalue = "&q=ids:"+bookmark.id;
-			
-			pd = ProgressDialog.show(context, null,"LOADING...");
-  			
-        	thread.start();
-			
-			
-			}};
+	public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
+
+		
+		BookmarkDomain bookmark = ((BookmarkDomain)parent.getItemAtPosition(position));
+		cardvalue = ""+ bookmark.id;
+		
+		pd = ProgressDialog.show(context, null,"LOADING...");
+		
+    	thread.start();
+		
+		
+		}};
 	
 	private Handler handler = new Handler() {
         
