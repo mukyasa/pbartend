@@ -10,8 +10,10 @@
 package com.flashcard.view;
 
 import java.util.ArrayList;
+import java.util.Timer;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -19,7 +21,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,7 +44,6 @@ import com.flashcard.util.Constants;
  */
 public class OfflineListView extends ListActivity {
 	
-	private View listview=null;
 	private Context context;
 	private final int MENU_NEW=0;
 	
@@ -64,13 +64,21 @@ public class OfflineListView extends ListActivity {
 
         child.setBackgroundResource(R.drawable.offlineclick);
         child.setPadding(43, 10, 0, 0);
-        listview = child;
+
+        
         CardSet cardSetPicked = (CardSet)l.getItemAtPosition(position);
         //this is the set picked from the list screen it will change when they retest correct
         ApplicationHandler.instance().currentlyUsedSet = cardSetPicked; 
         //this is the set picked from the list screen alway constant
         ApplicationHandler.instance().orignalUsedSet = cardSetPicked;
         
+        try {
+        	
+	        AppUtil.setSavedCards(this, cardSetPicked);
+	        
+        } catch (JSONException e) {
+	        e.printStackTrace();
+        }
         
         super.onListItemClick(l, v, position, id);
         //Log.v(getClass().getSimpleName(), "id=" + id + " type=" + ScreenType.getInstance().type);
@@ -94,19 +102,6 @@ public class OfflineListView extends ListActivity {
 	    return false;
 	}
 	
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onStop()
-	 */
-	@Override
-	protected void onStop() {
-		if(listview!=null)
-		{
-			listview.setBackgroundResource(R.drawable.list_item);
-			listview.setPadding(13, 10, 0, 0);
-		}
-		
-		super.onStop();
-	}
 	
 	
 	 /******************************************/

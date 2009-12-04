@@ -30,6 +30,7 @@ public class AppUtil extends Constants {
 	public static final String PREF_FONT_SIZE = "fontSize";
 	public static final String PREF_BOOKMARKS= "bookmarks";
 	public static final String BOOKMARKS = "rootbookmarks";
+	public static final String PREF_SAVED_CARDS ="savedcards";
 	public static String searchTerm;
 
 	/**
@@ -60,6 +61,96 @@ public class AppUtil extends Constants {
 	}
 	
 	/**
+	 * gets saved cards
+	 * Dec 3, 2009
+	 * dmason
+	 * @param context
+	 * @return
+	 *
+	 */
+	public static String getSavedCards(Context context)
+	{
+		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		String savedCards = settings.getString(PREF_SAVED_CARDS, "");
+		
+		return savedCards;
+	}
+	
+	/**
+	 * saves the cards to pref
+	 * Dec 3, 2009
+	 * dmason
+	 * @param context
+	 * @param cardset
+	 * @throws JSONException
+	 *
+	 */
+	public static void setSavedCards(Context context, CardSet cardset) throws JSONException
+	{
+		
+			
+		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		String oldCards=getSavedCards(context);
+		//Log.v("", "SAVED_CARDS from pref="+oldCards);
+		JSONArray sets=null;
+		
+		//look for older bookmarks
+		if(!"".equals(oldCards))
+		{
+			JSONTokener toke = new JSONTokener(oldCards);
+	        JSONObject jsonObj = new JSONObject(toke);
+	       
+	        
+	        if(((String)jsonObj.get("response_type")).equals("ok"))
+	        {
+	        	TOTAL_RESULTS = (Integer)jsonObj.get("total_results");
+	        	sets = (JSONArray)jsonObj.get("sets");
+	        }
+		}
+		else
+		{
+			sets = new JSONArray();
+		}
+		
+		JSONObject root = new JSONObject();
+		
+		JSONObject set = new JSONObject();
+		JSONArray terms = new JSONArray();
+		
+		
+		ArrayList<FlashCard> flashcards = cardset.flashcards;
+		Iterator<FlashCard> iter =flashcards.iterator();
+		
+		while (iter.hasNext()) {
+	        FlashCard flashCard = (FlashCard) iter.next();
+	        terms.put(flashCard.question);
+	        terms.put(flashCard.answer);
+	        terms.put(flashCard.imageURL);
+	        
+        }
+		
+		set.put("id", cardset.id);
+		set.put("title", cardset.title);
+		set.put("term_count", cardset.cardCount);
+		set.put("terms",terms);
+		
+		sets.put(set);
+		root.put("sets",sets);
+		root.put("response_type", "ok");
+		root.put("total_results", sets.length());
+		
+    	//get existing bookmarks first
+    	//Log.v("", "bookmarks="+bookmarks.toString());
+	    SharedPreferences.Editor editor = settings.edit();
+	    editor.putString(AppUtil.PREF_SAVED_CARDS, root.toString());
+	    
+	    // Don't forget to commit your edits!!!
+	    //check to see if the cards exists if so dont do it
+	    editor.commit();
+	    
+	}
+	
+	/**
 	 * Reverses the queston and the answer.
 	 * Nov 27, 2009
 	 * dmason
@@ -86,7 +177,7 @@ public class AppUtil extends Constants {
 		
 	}
 	
-	public static void setBookmarks(Context context,CardSet cardset) throws JSONException
+	public static void setBookmarks(Context context, CardSet cardset) throws JSONException
 	{
 		
 			
