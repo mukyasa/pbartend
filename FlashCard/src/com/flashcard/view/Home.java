@@ -13,13 +13,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
-import android.view.KeyEvent;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnKeyListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,16 +30,13 @@ import com.flashcard.util.AppUtil;
 import com.flashcard.util.Authenication;
 import com.flashcard.util.Constants;
 
-public class Home extends Activity implements OnTouchListener,OnKeyListener,Runnable {
+public class Home extends Activity implements OnTouchListener,Runnable {
 	private Button btSearch;
-	private RadioButton rbUser;
-	private RadioButton rbTerm;
-	private RadioButton rbId;
-	private EditText etUserName;
-	private EditText etTerm;
+	private RadioButton rbUser,rbSavedCard,rbTerm,rbId;
 	private final int TYPE_USER_NAME=0;
 	private final int TYPE_TERM=1;
 	private final int TYPE_ID=2;
+	private final int TYPE_SAVED=3;
 	private int CHOOSEN_TYPE=1;
 	private Intent intent;
 	private ProgressDialog pd;
@@ -97,7 +93,8 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
     	rbTerm.setOnTouchListener(this);
     	rbId = (RadioButton)findViewById(R.id.rbId);
     	rbId.setOnTouchListener(this);
-    	
+    	rbSavedCard = (RadioButton)findViewById(R.id.rbSaved);
+    	rbSavedCard.setOnTouchListener(this);
     	
     	
     	ImageView info = (ImageView)findViewById(R.id.ivInfo);
@@ -238,18 +235,28 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
     		pd.dismiss();
     	
     	super.onStop();
-    }
+    } 
 	/* (non-Javadoc)
      * @see android.view.View.OnTouchListener#onTouch(android.view.View, android.view.MotionEvent)
      */
     public boolean onTouch(View v, MotionEvent event) {
 
+    	EditText etValue = (EditText)findViewById(R.id.etSearchTerm);
+    	
     	if(v instanceof Button )
 	  	{
     		if(v instanceof RadioButton)
     	  	{
     			if(event.getAction()== MotionEvent.ACTION_UP)
+    			{
     				CHOOSEN_TYPE =  Integer.valueOf((((RadioButton) v).getHint().toString()));
+    				
+    				if(CHOOSEN_TYPE == TYPE_SAVED)
+    				{
+    					etValue.setEnabled(false);
+    				}else
+    					etValue.setEnabled(true);
+    			}
     	  	}else
     	  	{
     		
@@ -261,10 +268,9 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
 		  		
 		  		else if(event.getAction()== MotionEvent.ACTION_UP)
 		  		{
-		  			EditText etValue;
 		  			boolean canSearch=true;
-		  			
-	  				etValue = (EditText)findViewById(R.id.etSearchTerm);
+		  			v.setBackgroundResource(R.drawable.button);
+		  			v.setPadding(30, 0, 40, 5);
 	  				Editable ed = etValue.getText();
 	  				
 	  				if("".equals(ed.toString()))
@@ -282,9 +288,16 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
 			        	thread.start();
 			        	
 		  			}
-		  			else
+		  			else if(CHOOSEN_TYPE != TYPE_SAVED)
 		  			{
 		  				showDialog(DIALOG_ERROR_EMPTY);
+		  			}
+		  			else if(CHOOSEN_TYPE == TYPE_SAVED)
+		  			{
+		  				//call saved list
+		  				intent = new Intent(this, OfflineCardsList.class);
+			 			startActivity(intent);
+		  				
 		  			}
 	  			}
     	  	}
@@ -318,27 +331,4 @@ public class Home extends Activity implements OnTouchListener,OnKeyListener,Runn
     	return false;
     }
 
-    /**
-     * This is used when they is is pressed and the default text is still in the box we need to clear it.
-     */
-	public boolean onKey(View v, int keyCode, KeyEvent event) {
-		
-		if(etUserName.hasFocus())
-		{
-			if(((EditText)v).getText().toString().equals(this.getString(R.string.etUserName))) 
-  			{
-  				((EditText)v).setText("");
-  				((EditText)v).setTextColor(Color.BLACK);
-  			}
-		}
-		else if(etTerm.hasFocus())
-		{
-			if(((EditText)v).getText().toString().equals(this.getString(R.string.etTerm))) 
-  			{
-  				((EditText)v).setText("");
-  				((EditText)v).setTextColor(Color.BLACK);
-  			}
-		}
-		return false;
-	}
 }
