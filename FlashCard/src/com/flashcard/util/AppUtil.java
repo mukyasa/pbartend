@@ -87,14 +87,12 @@ public class AppUtil extends Constants {
 	 */
 	public static void setSavedCards(Context context, CardSet cardset) throws JSONException
 	{
-		
-			
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
 		String oldCards=getSavedCards(context);
 		//Log.v("", "SAVED_CARDS from pref="+oldCards);
 		JSONArray sets=null;
 		
-		//look for older bookmarks
+		//look for older cards
 		if(!"".equals(oldCards))
 		{
 			JSONTokener toke = new JSONTokener(oldCards);
@@ -113,11 +111,9 @@ public class AppUtil extends Constants {
 		}
 		
 		JSONObject root = new JSONObject();
-		
 		JSONObject set = new JSONObject();
 		JSONArray terms = new JSONArray();
 		JSONArray termdata = new JSONArray();
-		
 		
 		ArrayList<FlashCard> flashcards = cardset.flashcards;
 		Iterator<FlashCard> iter =flashcards.iterator();
@@ -141,8 +137,7 @@ public class AppUtil extends Constants {
 		root.put("response_type", "ok");
 		root.put("total_results", sets.length());
 		
-    	//get existing bookmarks first
-    	//Log.v("", "bookmarks="+bookmarks.toString());
+    	//get existing cards first
 	    SharedPreferences.Editor editor = settings.edit();
 	    editor.putString(AppUtil.PREF_SAVED_CARDS, root.toString());
 	    
