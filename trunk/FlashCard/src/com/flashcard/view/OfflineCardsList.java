@@ -48,7 +48,7 @@ public class OfflineCardsList extends Activity implements Runnable{
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.bookmarks);
+		setContentView(R.layout.offlinelistview);
 		 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		context=this;
 		thread= new Thread(this);
@@ -60,27 +60,31 @@ public class OfflineCardsList extends Activity implements Runnable{
 	private void initComponents() {
 		
 		//get list
-		String oldbookmarks = AppUtil.getBookmarks(this);
+		String savedcards = AppUtil.getSavedCards(this);
 		List<BookmarkDomain> items = new ArrayList<BookmarkDomain>();
-		
-		
 		try {
 			
-	        JSONObject cards=null;
-	        JSONArray cardswrapper=null;
-	        if(!"".equals(oldbookmarks))
+	        JSONObject jsonObj=null;
+	        JSONArray sets=null;
+	        if(!"".equals(savedcards))
 	        {
-	        	JSONTokener toke = new JSONTokener(oldbookmarks);
-	        	cards = new JSONObject(toke);
-	        	cardswrapper = new JSONArray(cards.getString(AppUtil.PREF_SAVED_CARDS));
+	        	JSONTokener toke = new JSONTokener(savedcards);
+	        	jsonObj = new JSONObject(toke);
+	        	
+	        	if(((String)jsonObj.get("response_type")).equals("ok"))
+	 	        {
+	 	        	Constants.TOTAL_RESULTS = (Integer)jsonObj.get("total_results");
+	 	        	sets = (JSONArray)jsonObj.get("sets");
+	 	        	
+	 	        	for(int i=0;i<sets.length();i++)
+	 		        {
+	 	        		JSONObject set = (JSONObject)sets.get(i);
+	 		        	
+	 		        	BookmarkDomain bookmarkdomain = new BookmarkDomain((Integer)set.get("id"),(String)set.get("title"));
+	 		        	items.add(bookmarkdomain);	        	
+	 		        }
+	 	        }
 	        
-	        
-		        for(int i=0;i<cardswrapper.length();i++)
-		        {
-		        	JSONArray card = (JSONArray)cardswrapper.get(i);
-		        	BookmarkDomain bookmarkdomain = new BookmarkDomain((Integer)card.get(0),(String)card.get(1));
-		        	items.add(bookmarkdomain);	        	
-		        }
 	        }
 	        
 	        
@@ -89,9 +93,9 @@ public class OfflineCardsList extends Activity implements Runnable{
         }
 		
 		
-		ListView bookmarkslist = (ListView) findViewById(R.id.bookmarkList);
-		bookmarkslist.setAdapter(new BookMarkArrayAdapter(this, R.layout.bookmark_item, items));
-		bookmarkslist.setOnItemClickListener(bookmarkListener);
+		ListView savedList = (ListView) findViewById(R.id.savedList);
+		savedList.setAdapter(new BookMarkArrayAdapter(this, R.layout.bookmark_item, items));
+		savedList.setOnItemClickListener(bookmarkListener);
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {

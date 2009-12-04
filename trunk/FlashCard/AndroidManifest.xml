@@ -16,7 +16,7 @@
 <activity android:name=".view.UserPrefActivity"></activity>
 <activity android:name=".view.BookmarkList"></activity>
 <activity android:name=".view.OfflineListView"></activity>
-<activity android:name=".view.OfflineListView"></activity>
+<activity android:name=".view.OfflineCardsList"></activity>
 </application>
     <uses-sdk android:minSdkVersion="3" />
 
