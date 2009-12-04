@@ -17,6 +17,7 @@ import org.json.JSONTokener;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.flashcard.R;
 import com.flashcard.domain.CardSet;
@@ -110,40 +111,49 @@ public class AppUtil extends Constants {
 			sets = new JSONArray();
 		}
 		
-		JSONObject root = new JSONObject();
-		JSONObject set = new JSONObject();
-		JSONArray terms = new JSONArray();
-		JSONArray termdata = new JSONArray();
+		//no need to put ones in that exist
+		if(!sets.toString().contains(cardset.id +""))
+		{
 		
-		ArrayList<FlashCard> flashcards = cardset.flashcards;
-		Iterator<FlashCard> iter =flashcards.iterator();
+			JSONObject root = new JSONObject();
+			JSONObject set = new JSONObject();
+			JSONArray terms = new JSONArray();
+			
+			ArrayList<FlashCard> flashcards = cardset.flashcards;
+			Iterator<FlashCard> iter =flashcards.iterator();
+			
+			while (iter.hasNext()) {
+		        FlashCard flashCard = (FlashCard) iter.next();
+		        JSONArray termdata = new JSONArray();
+		        termdata.put(flashCard.question);
+		        termdata.put(flashCard.answer);
+		        termdata.put(flashCard.imageURL);
+		        terms.put(termdata);
+		        
+	        }
 		
-		while (iter.hasNext()) {
-	        FlashCard flashCard = (FlashCard) iter.next();
-	        termdata.put(flashCard.question);
-	        termdata.put(flashCard.answer);
-	        termdata.put(flashCard.imageURL);
-	        terms.put(termdata);
-	        
-        }
 		
-		set.put("id", cardset.id);
-		set.put("title", cardset.title);
-		set.put("term_count", cardset.cardCount);
-		set.put("terms",terms);
+			//Log.v("","There is one in there" + sets.toString());
 		
-		sets.put(set);
-		root.put("sets",sets);
-		root.put("response_type", "ok");
-		root.put("total_results", sets.length());
+			set.put("id", cardset.id);
+			set.put("title", cardset.title);
+			set.put("term_count", cardset.cardCount);
+			set.put("terms",terms);
+			
+			sets.put(set);
+			root.put("response_type", "ok");
+			root.put("total_results", sets.length());
+			root.put("sets",sets);
+			
+	    	//get existing cards first
+		    SharedPreferences.Editor editor = settings.edit();
+		    editor.putString(AppUtil.PREF_SAVED_CARDS, root.toString());
 		
-    	//get existing cards first
-	    SharedPreferences.Editor editor = settings.edit();
-	    editor.putString(AppUtil.PREF_SAVED_CARDS, root.toString());
-	    
-	    // Don't forget to commit your edits!!!
-	    //check to see if the cards exists if so dont do it
-	    editor.commit();
+		    // Don't forget to commit your edits!!!
+		    //check to see if the cards exists if so dont do it
+		    if(sets.length() <=10)
+		    	editor.commit();
+		}
 	    
 	}
 	
