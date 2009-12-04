@@ -160,7 +160,8 @@ public class OfflineListView extends ListActivity {
 				}
 			}
 
-			protected boolean appendInBackground() {
+			@SuppressWarnings("unchecked")
+            protected boolean appendInBackground() {
 				SystemClock.sleep(2000); // pretend to do work
 				ArrayAdapter<CardSet> a = (ArrayAdapter<CardSet>) getWrappedAdapter();
 				
