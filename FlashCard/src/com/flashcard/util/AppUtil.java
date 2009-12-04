@@ -116,6 +116,7 @@ public class AppUtil extends Constants {
 		
 		JSONObject set = new JSONObject();
 		JSONArray terms = new JSONArray();
+		JSONArray termdata = new JSONArray();
 		
 		
 		ArrayList<FlashCard> flashcards = cardset.flashcards;
@@ -123,9 +124,10 @@ public class AppUtil extends Constants {
 		
 		while (iter.hasNext()) {
 	        FlashCard flashCard = (FlashCard) iter.next();
-	        terms.put(flashCard.question);
-	        terms.put(flashCard.answer);
-	        terms.put(flashCard.imageURL);
+	        termdata.put(flashCard.question);
+	        termdata.put(flashCard.answer);
+	        termdata.put(flashCard.imageURL);
+	        terms.put(termdata);
 	        
         }
 		
@@ -299,6 +301,10 @@ public class AppUtil extends Constants {
 		 return cardsets;
 	}
 	
+	public static boolean initCardSets(String value,String sortType,int pageNumber)
+	{
+		return initCardSets(value, sortType, pageNumber, false, null);
+	}
 	/**
 	 * Call the API and get the results back based on a set of values puts it on the application handler
 	 * Nov 23, 2009
@@ -307,13 +313,29 @@ public class AppUtil extends Constants {
 	 * @return
 	 *
 	 */
-	public static boolean initCardSets(String value,String sortType,int pageNumber)
+	public static boolean initCardSets(String value,String sortType,int pageNumber,boolean isFromSaved,Context context)
 	{
 		boolean didGetResults= false;
         	try {
 	            
-        		JSONArray sets = getQuizletData(value,sortType,pageNumber);
-	            
+        		JSONArray sets=null;
+        		if(!isFromSaved)
+        			sets = getQuizletData(value,sortType,pageNumber);
+        		else
+        		{
+        			String json = getSavedCards(context);
+        			JSONTokener toke = new JSONTokener(json);
+    	        	JSONObject jsonObj = new JSONObject(toke);
+    	        	
+    	        	if(((String)jsonObj.get("response_type")).equals("ok"))
+    	 	        {
+    	 	        	Constants.TOTAL_RESULTS = (Integer)jsonObj.get("total_results");
+    	 	        	sets = (JSONArray)jsonObj.get("sets");
+    	 	        }
+    	        	
+    	        	
+        		}
+        		
 	            if(sets!=null)
 	            {
 	                ApplicationHandler.clearHandlerInstance();
@@ -323,8 +345,18 @@ public class AppUtil extends Constants {
 	                for(int i=0;i<sets.length();i++)
 	                {
 	                	JSONObject set = (JSONObject)sets.get(i);
-	                	CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"),(Integer)set.getInt("id"));
-	                	cardsets.add(cardset);
+	                	
+	                	if(value.equals(((Integer)set.get("id")).toString()) && isFromSaved )
+                		{
+	                		CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"),(Integer)set.getInt("id"));
+	                		cardsets.add(cardset);
+	                		break;
+                		}
+	                	else if(!isFromSaved)
+	                	{
+	                		CardSet cardset = new CardSet((String)set.get("title"),(JSONArray)set.get("terms"),(Integer)set.get("term_count"),(Integer)set.getInt("id"));
+	                		cardsets.add(cardset);
+	                	}
 	                }
 	                
 	                didGetResults=true;
@@ -437,3 +469,4 @@ public class AppUtil extends Constants {
 		return newSet;
 	}
 }
+
