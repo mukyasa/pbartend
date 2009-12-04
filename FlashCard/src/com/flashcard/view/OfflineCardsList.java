@@ -42,7 +42,7 @@ import com.flashcard.util.Constants;
 public class OfflineCardsList extends Activity implements Runnable{
 	private Context context;
 	private ProgressDialog pd;
-	private String bookmarkvalue;
+	private String cardvalue;
 	private Thread thread;
 	private final int MENU_NEW=0;
 
@@ -149,7 +149,7 @@ public class OfflineCardsList extends Activity implements Runnable{
 	
 			
 			BookmarkDomain bookmark = ((BookmarkDomain)parent.getItemAtPosition(position));
-			bookmarkvalue = "&q=ids:"+bookmark.id;
+			cardvalue = "&q=ids:"+bookmark.id;
 			
 			pd = ProgressDialog.show(context, null,"LOADING...");
   			
@@ -171,7 +171,7 @@ public class OfflineCardsList extends Activity implements Runnable{
      * @see java.lang.Runnable#run()
      */
     public void run() {
-	    getCardSets(bookmarkvalue);
+	    getCardSets(cardvalue);
 	    handler.sendEmptyMessage(0);
 	    
     }
