@@ -20,20 +20,22 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 
 import com.flashcard.R;
 import com.flashcard.domain.BookmarkDomain;
 import com.flashcard.domain.CardSet;
 import com.flashcard.handler.ApplicationHandler;
 import com.flashcard.util.AppUtil;
-import com.flashcard.util.BookMarkArrayAdapter;
 import com.flashcard.util.Constants;
+import com.flashcard.util.SavedCardsArrayAdapter;
 
 /**
  * @author dmason
@@ -45,6 +47,7 @@ public class OfflineCardsList extends Activity implements Runnable{
 	private String cardvalue;
 	private Thread thread;
 	private final int MENU_NEW=0;
+	private boolean didDelete=false;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -94,8 +97,9 @@ public class OfflineCardsList extends Activity implements Runnable{
 		
 		
 		ListView savedList = (ListView) findViewById(R.id.savedList);
-		savedList.setAdapter(new BookMarkArrayAdapter(this, R.layout.bookmark_item, items));
+		savedList.setAdapter(new SavedCardsArrayAdapter(this, R.layout.offlineview_item, items));
 		savedList.setOnItemClickListener(savedCardsListener);
+		savedList.setOnItemLongClickListener(longclickListener);
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -147,16 +151,33 @@ public class OfflineCardsList extends Activity implements Runnable{
 			
 	public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 
-		
-		BookmarkDomain bookmark = ((BookmarkDomain)parent.getItemAtPosition(position));
-		cardvalue = ""+ bookmark.id;
-		
-		pd = ProgressDialog.show(context, null,"LOADING...");
-		
-    	thread.start();
+		if(!didDelete)
+		{
+			BookmarkDomain bookmark = ((BookmarkDomain)parent.getItemAtPosition(position));
+			cardvalue = ""+ bookmark.id;
+			
+			pd = ProgressDialog.show(context, null,"LOADING...");
+			
+	    	thread.start();
+		}
 		
 		
 		}};
+		
+	AdapterView.OnItemLongClickListener longclickListener = new OnItemLongClickListener(){
+
+		public boolean onItemLongClick(AdapterView<?> parent, View v, int position, long id) {
+			//Log.v("","LONG CLICK");
+			didDelete=true;
+			BookmarkDomain bookmark = ((BookmarkDomain)parent.getItemAtPosition(position));
+			
+			v.setVisibility(View.GONE);
+			
+	        return false;
+        }
+		
+		
+	};
 	
 	private Handler handler = new Handler() {
         
