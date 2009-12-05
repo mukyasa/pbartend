@@ -2,6 +2,7 @@ package com.flashcard.view;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Application;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -12,6 +13,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.Settings.System;
 import android.text.Editable;
 import android.text.InputType;
 import android.view.LayoutInflater;

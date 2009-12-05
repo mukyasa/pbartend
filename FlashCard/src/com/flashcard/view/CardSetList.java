@@ -97,7 +97,7 @@ public class CardSetList extends ListActivity{
 	
     public boolean onCreateOptionsMenu(Menu menu) {
     	menu.add(0, MENU_NEW, 0, getResources().getString(R.string.home)).setIcon(R.drawable.newcardset);
-    	menu.add(0, MENU_LOCAL, 0, "Save Cards Local").setIcon(android.R.drawable.ic_menu_save);
+    	menu.add(0, MENU_LOCAL, 0, "Save Cards Offline").setIcon(android.R.drawable.ic_menu_save);
 	    return true;
 	}
 

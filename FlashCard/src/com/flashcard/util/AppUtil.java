@@ -17,7 +17,10 @@ import org.json.JSONTokener;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.util.Log;
+import android.view.Display;
+import android.view.WindowManager;
 
 import com.flashcard.R;
 import com.flashcard.domain.CardSet;
@@ -386,7 +389,7 @@ public class AppUtil extends Constants {
 	 */
 	public static boolean chooseFontSize(Context context, String radioText) {
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
-		String fontSize = settings.getString(PREF_FONT_SIZE, context.getString(R.string.normal));
+		String fontSize = settings.getString(PREF_FONT_SIZE, context.getString(R.string.autosize));
 		
 		if (fontSize.equals(radioText))
 			return true;
@@ -413,17 +416,38 @@ public class AppUtil extends Constants {
 		{
 			
 			int len = cardText.length();
-			//Log.v("", "LENGTH="+ len);
-			if(len <= 30)
-				return 36;
-			else if(len > 30 && len <= 100)
-				return 30;
-			else if(len > 100 && len <= 276)
-				return 24;
-			else if(len > 276 && len <=500)
-				return 16;
+			Log.v("", "LENGTH="+ len);
+			
+			Display display = ((WindowManager)context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+			
+			if(display.getOrientation() == Configuration.ORIENTATION_LANDSCAPE)
+			{
+				//landscape
+				if(len <= 30)
+					return 36;
+				else if(len > 30 && len <= 100)
+					return 30;
+				else if(len > 100 && len <= 276)
+					return 24;
+				else if(len > 276 && len <=500)
+					return 16;
+				else
+					return 12;
+			}
 			else
-				return 12;
+			{
+				//portrait
+				if(len <= 30)
+					return 36;
+				else if(len > 30 && len <= 80)
+					return 30;
+				else if(len > 80 && len <= 200)
+					return 24;
+				else if(len > 200 && len <=400)
+					return 16;
+				else
+					return 14;
+			}
 		}
 	}
 
