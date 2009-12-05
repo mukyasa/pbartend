@@ -45,7 +45,7 @@ public class AppUtil extends Constants {
 	 */
 	public static boolean getSound(Context context) {
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
-		return settings.getBoolean(PREF_SOUND, false);
+		return settings.getBoolean(PREF_SOUND, true);
 	}
 	
 	/**
@@ -416,7 +416,7 @@ public class AppUtil extends Constants {
 		{
 			
 			int len = cardText.length();
-			Log.v("", "LENGTH="+ len);
+			//Log.v("", "LENGTH="+ len);
 			
 			Display display = ((WindowManager)context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
 			
