@@ -18,7 +18,6 @@ import org.json.JSONTokener;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 
