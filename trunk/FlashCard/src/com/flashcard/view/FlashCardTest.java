@@ -81,7 +81,7 @@ public class FlashCardTest extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_frame);  
 		//force to be landscape
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+	//	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		mGestureDetector = new GestureDetector(this, new LearnGestureListener());
 		context = getBaseContext();
     }

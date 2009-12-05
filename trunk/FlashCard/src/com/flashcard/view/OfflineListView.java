@@ -10,7 +10,6 @@
 package com.flashcard.view;
 
 import java.util.ArrayList;
-import java.util.Timer;
 
 import org.json.JSONArray;
 import org.json.JSONException;
