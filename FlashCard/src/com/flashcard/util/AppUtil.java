@@ -161,7 +161,7 @@ public class AppUtil extends Constants {
 		else
 		{
 			msg.didSave = false;
-	    	msg.message = "Card found in list already.";
+	    	msg.message = cardset.title +" already saved.";
 	    	return msg;
 		}
 		
