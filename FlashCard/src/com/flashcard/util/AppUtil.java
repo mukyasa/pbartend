@@ -23,6 +23,7 @@ import android.view.Display;
 import android.view.WindowManager;
 
 import com.flashcard.R;
+import com.flashcard.domain.BookmarkDomain;
 import com.flashcard.domain.CardSet;
 import com.flashcard.domain.FlashCard;
 import com.flashcard.domain.MessageHandler;
@@ -178,6 +179,40 @@ public class AppUtil extends Constants {
 		 return msg;		
 	    
 	}
+	public static void deleteBookmarks(Context context,Integer id) throws JSONException
+	{
+		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		String oldbookmarks=getBookmarks(context);
+		
+		JSONObject newbookmark = new JSONObject();
+		JSONArray newbookmarkwrapper=new JSONArray();
+		//look for older bookmarks
+		JSONTokener toke = new JSONTokener(oldbookmarks);
+		JSONObject bookmarks = new JSONObject(toke);
+		JSONArray bookmarkwrapper = new JSONArray(bookmarks.getString(BOOKMARKS));
+		
+		//loop old bookmarks and look for the one we are deleting
+
+        for(int i=0;i<bookmarkwrapper.length();i++)
+        {
+        	JSONArray b = (JSONArray)bookmarkwrapper.get(i);
+        	Log.v("",id+"=="+b.get(0));
+        	if(((Integer)b.get(0)).intValue() != id.intValue())
+        		newbookmarkwrapper.put(b);
+        		
+        }
+		
+		newbookmark.put(BOOKMARKS, newbookmarkwrapper);
+		
+    	//get existing bookmarks first
+    	//Log.v("", "bookmarks="+bookmarks.toString());
+	    SharedPreferences.Editor editor = settings.edit();
+	    editor.putString(AppUtil.PREF_BOOKMARKS, newbookmark.toString());
+	    
+	    // Don't forget to commit your edits!!!
+	    //check to see if the bookmark exists if so dont do it
+	    editor.commit();
+	}
 	
 	public static void deleteCard(Context context,Integer id) throws JSONException
 	{
@@ -198,7 +233,7 @@ public class AppUtil extends Constants {
         for(int i=0;i<sets.length();i++)
         { 
         	JSONObject set = (JSONObject)sets.get(i);
-        	if((Integer)set.get("id") != id.intValue())
+        	if(((Integer)set.get("id")).intValue() != id.intValue())
         	{	
         		newsets.put(set);
         		
@@ -250,8 +285,6 @@ public class AppUtil extends Constants {
 	
 	public static void setBookmarks(Context context, CardSet cardset) throws JSONException
 	{
-		
-			
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
 		String oldbookmarks=getBookmarks(context);
 		//Log.v("", "bookmarks from pref="+oldbookmarks);

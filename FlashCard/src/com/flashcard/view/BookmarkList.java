@@ -26,6 +26,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 
 import com.flashcard.R;
 import com.flashcard.domain.BookmarkDomain;
@@ -45,6 +46,7 @@ public class BookmarkList extends Activity implements Runnable{
 	private String bookmarkvalue;
 	private Thread thread;
 	private final int MENU_NEW=0;
+	private boolean didDelete=false;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,18 +56,15 @@ public class BookmarkList extends Activity implements Runnable{
 		thread= new Thread(this);
 		initComponents();
 	}
-	/**
-	 * init screen list
-	 */
-	private void initComponents() {
-		
+	
+	private ListView initCardList()
+	{
 		//get list
 		String oldbookmarks = AppUtil.getBookmarks(this);
 		List<BookmarkDomain> items = new ArrayList<BookmarkDomain>();
 		
 		
 		try {
-			
 	        JSONObject bookmarks=null;
 	        JSONArray bookmarkwrapper=null;
 	        if(!"".equals(oldbookmarks))
@@ -91,7 +90,16 @@ public class BookmarkList extends Activity implements Runnable{
 		
 		ListView bookmarkslist = (ListView) findViewById(R.id.bookmarkList);
 		bookmarkslist.setAdapter(new BookMarkArrayAdapter(this, R.layout.bookmark_item, items));
+		return bookmarkslist;
+	}
+	/**
+	 * init screen list
+	 */
+	private void initComponents() {
+		
+		ListView bookmarkslist = initCardList();
 		bookmarkslist.setOnItemClickListener(bookmarkListener);
+		bookmarkslist.setOnItemLongClickListener(longclickListener);
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -143,16 +151,40 @@ public class BookmarkList extends Activity implements Runnable{
 			
 		public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 	
-			
-			BookmarkDomain bookmark = ((BookmarkDomain)parent.getItemAtPosition(position));
-			bookmarkvalue = "&q=ids:"+bookmark.id;
-			
-			pd = ProgressDialog.show(context, null,"LOADING...");
-  			
-        	thread.start();
-			
+			if(!didDelete)
+			{
+				BookmarkDomain bookmark = ((BookmarkDomain)parent.getItemAtPosition(position));
+				bookmarkvalue = "&q=ids:"+bookmark.id;
+				
+				pd = ProgressDialog.show(context, null,"LOADING...");
+	  			
+	        	thread.start();
+			}
+        	else
+    			didDelete=false;
 			
 			}};
+			
+			AdapterView.OnItemLongClickListener longclickListener = new OnItemLongClickListener(){
+
+				public boolean onItemLongClick(AdapterView<?> parent, View v, int position, long id) {
+					//Log.v("","LONG CLICK");
+					didDelete=true;
+					BookmarkDomain bookmark = ((BookmarkDomain)parent.getItemAtPosition(position));
+					
+					v.setVisibility(View.GONE);
+					
+					try {
+			            AppUtil.deleteBookmarks(context, bookmark.id);
+			            initCardList();
+		            } catch (JSONException e) {
+		            }
+					
+			        return false;
+		        }
+				
+				
+			};
 	
 	private Handler handler = new Handler() {
         
