@@ -74,9 +74,16 @@ public class OfflineListView extends ListActivity {
         
         try {
         	
-	        AppUtil.setSavedCards(this, cardSetPicked);
+	        if(!AppUtil.setSavedCards(this, cardSetPicked))
+	        {
+	        	 child.setBackgroundResource(R.drawable.offline_off);
+	             child.setPadding(43, 10, 0, 0);	
+	             TextView mesg = (TextView)findViewById(R.id.tvOfflineMessage);
+	             mesg.setText("Max count reached.");
+	             
+	        }
 	        
-        } catch (JSONException e) {
+        } catch (JSONException e) { 
 	        e.printStackTrace();
         }
         
