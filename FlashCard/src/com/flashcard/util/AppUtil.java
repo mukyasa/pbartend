@@ -165,27 +165,28 @@ public class AppUtil extends Constants {
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
 		String oldCards=getSavedCards(context);
 		//Log.v("", "SAVED_CARDS from pref="+oldCards);
-		JSONArray sets=null;
+		JSONArray sets=null; 
 		
 		JSONTokener toke = new JSONTokener(oldCards);
         JSONObject jsonObj = new JSONObject(toke);
         JSONObject root = new JSONObject();
-        JSONObject newsets = new JSONObject();
+        JSONArray newsets = new JSONArray();
         
-        if(((String)jsonObj.get("response_type")).equals("ok"))
-        {
-        	TOTAL_RESULTS = (Integer)jsonObj.get("total_results");
-        	sets = (JSONArray)jsonObj.get("sets");
-        }
+    	TOTAL_RESULTS = (Integer)jsonObj.get("total_results");
+    	sets = (JSONArray)jsonObj.get("sets");
         
 		
         for(int i=0;i<sets.length();i++)
         { 
         	JSONObject set = (JSONObject)sets.get(i);
         	if((Integer)set.get("id") != id.intValue())
-        		newsets = set;
+        	{	
+        		newsets.put(set);
+        		
+        	}
         		
         }
+        
         
         root.put("response_type", "ok");
 		root.put("total_results", sets.length());
