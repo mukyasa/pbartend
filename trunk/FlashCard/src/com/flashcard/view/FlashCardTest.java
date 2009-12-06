@@ -20,7 +20,6 @@ import org.json.JSONException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -181,10 +180,16 @@ public class FlashCardTest extends Activity {
 		Intent intent;
 		ApplicationHandler handler = ApplicationHandler.instance();
         CardSet cardset = handler.currentlyUsedSet;
+        ViewFlipper vf;
         
 	    switch (item.getItemId()) {
     	case MENU_SWAP:
 	    	AppUtil.switchQuestionAnswer(context, cardset);
+	    	vf = (ViewFlipper) findViewById(R.id.details);
+            vf.setDisplayedChild(0);
+            vf.getAnimation();
+            isBack=true;
+	    	initalize();
 	    	return true;
     	case MENU_RESULTS:
 	    	intent = new Intent(this, Results.class);
@@ -224,13 +229,18 @@ public class FlashCardTest extends Activity {
 	        //set card number tag
 	        cardnumber.setText(CARD_NUMBER + "1");
 	        cardnumber2.setText(CARD_NUMBER + "1");
-	        ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+	        vf = (ViewFlipper) findViewById(R.id.details);
             vf.setDisplayedChild(0);
             vf.getAnimation();
             isBack=true;
 	        return true;
 	    case MENU_SHUFFLE:
 	    	AppUtil.shuffleCard(cardset);
+	    	vf = (ViewFlipper) findViewById(R.id.details);
+            vf.setDisplayedChild(0);
+            vf.getAnimation();
+            isBack=true;
+	    	initalize();
 	    	return true;
 	    case MENU_NEW:
 	    	intent = new Intent(this, Home.class);
