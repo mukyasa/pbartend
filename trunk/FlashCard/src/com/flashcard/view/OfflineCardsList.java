@@ -56,11 +56,9 @@ public class OfflineCardsList extends Activity implements Runnable{
 		thread= new Thread(this);
 		initComponents();
 	}
-	/**
-	 * init screen list
-	 */
-	private void initComponents() {
-		
+	
+	private ListView initCardList()
+	{
 		//get list
 		String savedcards = AppUtil.getSavedCards(this);
 		List<BookmarkDomain> items = new ArrayList<BookmarkDomain>();
@@ -97,6 +95,15 @@ public class OfflineCardsList extends Activity implements Runnable{
 		
 		ListView savedList = (ListView) findViewById(R.id.savedList);
 		savedList.setAdapter(new SavedCardsArrayAdapter(this, R.layout.offlineview_item, items));
+		
+		return savedList;
+	}
+	/**
+	 * init screen list
+	 */
+	private void initComponents() {
+		
+		ListView savedList = initCardList();
 		savedList.setOnItemClickListener(savedCardsListener);
 		savedList.setOnItemLongClickListener(longclickListener);
 	}
@@ -175,6 +182,7 @@ public class OfflineCardsList extends Activity implements Runnable{
 			
 			try {
 	            AppUtil.deleteCard(context, bookmark.id);
+	            initCardList();
             } catch (JSONException e) {
             }
 			
