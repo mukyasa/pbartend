@@ -45,6 +45,7 @@ public class OfflineListView extends ListActivity {
 	
 	private Context context;
 	private final int MENU_NEW=0;
+	private final int MENU_LOCAL=1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,7 @@ public class OfflineListView extends ListActivity {
 	
     public boolean onCreateOptionsMenu(Menu menu) {
     	menu.add(0, MENU_NEW, 0, getResources().getString(R.string.home)).setIcon(R.drawable.newcardset);
+    	menu.add(0, MENU_LOCAL, 0, "View Offline Cards").setIcon(android.R.drawable.ic_menu_view);
 	    return true;
 	}
 
@@ -93,8 +95,12 @@ public class OfflineListView extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent;
 	    switch (item.getItemId()) {
-		    case MENU_NEW:
+	    	case MENU_NEW:
 		    	intent = new Intent(this, Home.class);
+				startActivity(intent);
+		    	return true;
+	    	case MENU_LOCAL:
+		    	intent = new Intent(this, OfflineCardsList.class);
 				startActivity(intent);
 		    	return true;
 	    }
