@@ -89,7 +89,7 @@ public class AppUtil extends Constants {
 	 * @throws JSONException
 	 *
 	 */
-	public static void setSavedCards(Context context, CardSet cardset) throws JSONException
+	public static boolean setSavedCards(Context context, CardSet cardset) throws JSONException
 	{
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
 		String oldCards=getSavedCards(context);
@@ -157,6 +157,14 @@ public class AppUtil extends Constants {
 		    if(sets.length() <=10)
 		    	editor.commit();
 		}
+		
+		Log.v("", "LENGTH="+sets.length());
+		
+		 if(sets.length() <=10)
+	    	return true;
+	    else
+			return false;
+		
 	    
 	}
 	
