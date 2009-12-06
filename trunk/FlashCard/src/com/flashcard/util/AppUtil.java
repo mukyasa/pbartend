@@ -18,12 +18,10 @@ import org.json.JSONTokener;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 
 import com.flashcard.R;
-import com.flashcard.domain.BookmarkDomain;
 import com.flashcard.domain.CardSet;
 import com.flashcard.domain.FlashCard;
 import com.flashcard.domain.MessageHandler;
@@ -196,7 +194,7 @@ public class AppUtil extends Constants {
         for(int i=0;i<bookmarkwrapper.length();i++)
         {
         	JSONArray b = (JSONArray)bookmarkwrapper.get(i);
-        	Log.v("",id+"=="+b.get(0));
+        	//Log.v("",id+"=="+b.get(0));
         	if(((Integer)b.get(0)).intValue() != id.intValue())
         		newbookmarkwrapper.put(b);
         		
