@@ -20,7 +20,6 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -160,7 +159,8 @@ public class OfflineCardsList extends Activity implements Runnable{
 			
 	    	thread.start();
 		}
-		
+		else
+			didDelete=false;
 		
 		}};
 		
@@ -172,6 +172,11 @@ public class OfflineCardsList extends Activity implements Runnable{
 			BookmarkDomain bookmark = ((BookmarkDomain)parent.getItemAtPosition(position));
 			
 			v.setVisibility(View.GONE);
+			
+			try {
+	            AppUtil.deleteCard(context, bookmark.id);
+            } catch (JSONException e) {
+            }
 			
 	        return false;
         }

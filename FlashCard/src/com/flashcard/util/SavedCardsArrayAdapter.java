@@ -49,15 +49,14 @@ public class SavedCardsArrayAdapter extends ArrayAdapter<BookmarkDomain> {
 	        LayoutInflater inflater = activity.getLayoutInflater();
 
 	        // Inflate the views from XML
-	        TableLayout tableRow = (TableLayout) inflater.inflate(R.layout.offlineview_item, null);
-	        TextView rowView =(TextView)tableRow.findViewById(R.id.tvSavedItem);
+	        TextView rowView =(TextView)inflater.inflate(R.layout.offlineview_item, null);
 	        
 	        BookmarkDomain bookmark = (BookmarkDomain)bookmarks.get(position);
 	        
 	        rowView.setText(bookmark.title);
 	        rowView.setId(Integer.valueOf(bookmark.id));
 	        
-	        return tableRow;
+	        return rowView;
     }
 
 	
