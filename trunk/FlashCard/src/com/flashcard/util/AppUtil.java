@@ -25,6 +25,7 @@ import android.view.WindowManager;
 import com.flashcard.R;
 import com.flashcard.domain.CardSet;
 import com.flashcard.domain.FlashCard;
+import com.flashcard.domain.MessageHandler;
 import com.flashcard.handler.ApplicationHandler;
 
 public class AppUtil extends Constants {
@@ -89,10 +90,11 @@ public class AppUtil extends Constants {
 	 * @throws JSONException
 	 *
 	 */
-	public static boolean setSavedCards(Context context, CardSet cardset) throws JSONException
+	public static MessageHandler setSavedCards(Context context, CardSet cardset) throws JSONException
 	{
 		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
 		String oldCards=getSavedCards(context);
+		MessageHandler msg = new MessageHandler();
 		//Log.v("", "SAVED_CARDS from pref="+oldCards);
 		JSONArray sets=null;
 		
@@ -157,14 +159,23 @@ public class AppUtil extends Constants {
 		    if(sets.length() <=10)
 		    	editor.commit();
 		}
+		else
+		{
+			msg.didSave = false;
+	    	msg.message = "Card found in list already.";
+	    	return msg;
+		}
 		
-		Log.v("", "LENGTH="+sets.length());
+		//Log.v("", "LENGTH="+sets.length());
 		
 		 if(sets.length() <=10)
-	    	return true;
+	    	msg.didSave = true;
 	    else
-			return false;
-		
+	    {
+	    	msg.didSave = false;
+	    	msg.message = "Maximum cards saved reached.";
+	    }
+		 return msg;		
 	    
 	}
 	

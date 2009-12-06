@@ -32,6 +32,7 @@ import android.widget.TextView;
 
 import com.flashcard.R;
 import com.flashcard.domain.CardSet;
+import com.flashcard.domain.MessageHandler;
 import com.flashcard.handler.ApplicationHandler;
 import com.flashcard.handler.EndlessAdapter;
 import com.flashcard.util.AppUtil;
@@ -74,12 +75,14 @@ public class OfflineListView extends ListActivity {
         
         try {
         	
-	        if(!AppUtil.setSavedCards(this, cardSetPicked))
+        	MessageHandler msg = AppUtil.setSavedCards(this, cardSetPicked);
+        	
+	        if(!msg.didSave)
 	        {
 	        	 child.setBackgroundResource(R.drawable.offline_off);
 	             child.setPadding(43, 10, 0, 0);	
 	             TextView mesg = (TextView)findViewById(R.id.tvOfflineMessage);
-	             mesg.setText("Max count reached.");
+	             mesg.setText(msg.message);
 	             
 	        }
 	        

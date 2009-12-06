@@ -13,7 +13,7 @@
 			android:layout_marginRight="0sp" android:layout_marginBottom="0sp"
 			android:layout_marginTop="5sp" android:text="@string/localcardhead"></TextView>
 			<TextView android:id="@+id/TextView01"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/deletesaved" android:textColor="#333" android:drawableLeft="@drawable/delete" android:layout_marginLeft="10sp" android:gravity="center_vertical"></TextView>
+			android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/deletesaved" android:textColor="#333" android:layout_marginLeft="10sp" android:gravity="center_vertical|center_horizontal"></TextView>
 		<ListView android:layout_height="fill_parent"
 			android:layout_weight="2" android:layout_gravity="fill_vertical"
 			android:layout_width="fill_parent" android:fadingEdge="vertical"
