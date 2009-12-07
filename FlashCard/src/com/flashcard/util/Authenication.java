@@ -23,7 +23,7 @@ import android.content.SharedPreferences;
 public class Authenication {
 	
 	/***************************/
-	//IF THIS IS A DEMO THEN SET THIS
+	//IF THIS "IS" A DEMO THEN SET THIS TO FALSE
 	private static boolean isNotDemo= true;
 	/***************************/
 	
