@@ -128,8 +128,8 @@ public class FlashCardTest extends Activity {
         //set card number tag
         cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
         cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
-        cardnumber.setText(CARD_NUMBER + "1");
-        cardnumber2.setText(CARD_NUMBER + "1");
+        cardnumber.setText(CARD_NUMBER + "1 of " + maxcount);
+        cardnumber2.setText(CARD_NUMBER + "1 of " + maxcount);
         
         //the correct button
         ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
@@ -227,8 +227,8 @@ public class FlashCardTest extends Activity {
 	        tvFlashCard.setText(terms.question);
 	        
 	        //set card number tag
-	        cardnumber.setText(CARD_NUMBER + "1");
-	        cardnumber2.setText(CARD_NUMBER + "1");
+	        cardnumber.setText(CARD_NUMBER + "1 of " + sets.size());
+	        cardnumber2.setText(CARD_NUMBER +  "1 of " + sets.size());
 	        vf = (ViewFlipper) findViewById(R.id.details);
             vf.setDisplayedChild(0);
             vf.getAnimation();
@@ -429,8 +429,8 @@ public class FlashCardTest extends Activity {
             vf.getAnimation(); 
             
             //set card number tag
-	        cardnumber.setText(CARD_NUMBER + countlabel);
-	        cardnumber2.setText(CARD_NUMBER + countlabel);
+	        cardnumber.setText(CARD_NUMBER + countlabel + " of " +  sets.size() );
+	        cardnumber2.setText(CARD_NUMBER + countlabel + " of " +  sets.size());
             
 	        
 	        if(countlabel == maxcount && !cardfinished)
