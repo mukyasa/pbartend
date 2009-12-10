@@ -7,7 +7,7 @@ public class CategoryDAO extends DataDAO {
 	/**
 	 * gets all records for type
 	 * 
-	 * @return
+	 * @return   
 	 */
 	public Cursor retrieveAllDrinktypes() {
 		Cursor cursor = sqliteDatabase.query(TABLE_DRINK_CAT, new String[] {
