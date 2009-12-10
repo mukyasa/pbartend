@@ -141,9 +141,7 @@ public class MixerDbHelper extends SQLiteOpenHelper {
 		
 		
 		//fill drinks table
-		DrinkInserts di = new DrinkInserts();
-		for(int i=0;i<di.sqlInsertDrinks.length;i++)
-			db.execSQL(di.sqlInsertDrinks[i]);
+		DrinkInserts.insertDrinks(db); 
 		
 		//fill ingredients table
 		IngredientsInsert ii = new IngredientsInsert();
