@@ -13,7 +13,7 @@
 26|2|501 Blues|Mix in a highball glass and fill with sprite.|1|0|0|0
 27|1|502|Shake with ice and strain over ice in a small rocks glass.|1|0|0|0
 28|2|57 Chevy|Fill a highball glass with ice. Top with equal part of juice and the splash of lime soda. Cover with a shaker and shake. Garnish with an orange|1|0|0|0
-29|2|57 T-Bird with Hawaiian Plates|Combine over ice cubes into a highball glass.|1|0|1|0
+29|2|57 T-Bird with Hawaiian Plates|Combine over ice cubes into a highball glass.|1|0|0|0
 30|2|60 Hillcrest|Serve over ice with equal parts of orange juice and Sprite.|1|0|0|0
 31|1|69er|Build in a rocks glass.|1|0|0|0
 32|2|6:30 Wake-up Call|Combine Malibu and juice over ice in a collins glass and top with Bacardi.|1|0|0|0
@@ -5247,7 +5247,7 @@
 6306|2|Zachyl|Mix all with ice in a 32 oz. Taco Bell cup and add grenadine and 7-Up to taste.|1|0|0|0
 6307|8|Zaranes Cocktail|Shake with ice and strain into a cocktail glass.|1|0|0|0
 6308|2|Zeke''s Suprise|Mix with 2 cubes of ice. Don''t put in umbrellas or any of that stuff.|1|0|0|0
-6309|1|Zephyr|Muddle cucumber pieces, sage leaves and sugar. Add Bulldog Gin in a rocks glass over ice.|1|0|1|0
+6309|1|Zephyr|Muddle cucumber pieces, sage leaves and sugar. Add Bulldog Gin in a rocks glass over ice.|1|0|0|0
 6310|8|Zero Mist|Serve in a cocktail glass frappe style (over shaved ice)|1|0|0|0
 6312|2|Zinger|Mix the two juices and vodka together. Pour into a tall glass and top with tonic water. Garnish with a little citrus zest.|1|0|0|0
 6315|2|Zipperhead|Fill a rocks glass with ice, add the Chambord, and layer the vodka. Top up with club soda and garnish with a straw. Drink from the straw and as fast as possible.|1|0|0|0
