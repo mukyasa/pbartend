@@ -29,6 +29,7 @@ import com.drinkmixer.R;
 import com.drinkmixer.dao.DataDAO;
 import com.drinkmixer.dao.DetailDAO;
 import com.drinkmixer.dao.DrinkIngredientsInsert;
+import com.drinkmixer.dao.DrinkInserts;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.ScreenType;
 import com.drinkmixer.utils.Constants;
@@ -195,7 +196,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     	{
 	    	return new AlertDialog.Builder(HomeScreenView.this)
 	        .setIcon(R.drawable.info)
-	        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright © 2009")
+	        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright 2009")
 	        .setTitle("Application Information")
 	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int whichButton) {
@@ -229,6 +230,8 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                         
                     	MediaPlayer mp = MediaPlayer.create(context, R.raw.pouring);
                     	DrinkIngredientsInsert.in = context.getResources().openRawResource(R.raw.tbldrinks_ingredients);
+                    	DrinkInserts.in = context.getResources().openRawResource(R.raw.tbldrinks);
+                    	
                         mp.start();
 
                     	pd = ProgressDialog.show(context, null,"Building the database, please be patient it only happens once.");
@@ -264,6 +267,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                         	
                         	MediaPlayer mp = MediaPlayer.create(context, R.raw.pouring);
                         	DrinkIngredientsInsert.in = context.getResources().openRawResource(R.raw.tbldrinks_ingredients);
+                        	DrinkInserts.in = context.getResources().openRawResource(R.raw.tbldrinks);
                             mp.start();
 
                         	pd = ProgressDialog.show(context, null,"Building the database, please be patient.");
