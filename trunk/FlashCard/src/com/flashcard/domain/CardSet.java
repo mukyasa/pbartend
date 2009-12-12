@@ -10,14 +10,11 @@
 package com.flashcard.domain;
 
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import android.util.Log;
+import com.flashcard.util.AppUtil;
 
 /**
  * @author dmason
@@ -32,65 +29,11 @@ public class CardSet {
 	
 	public CardSet(){}
 	
-	private String defringe(String title){
-		
-        // Create a pattern to match cat
-        Pattern p = Pattern.compile("&quot;");
-        // Create a matcher with an input string
-        Matcher m = p.matcher(title);
-        StringBuffer sb = new StringBuffer();
-        boolean result = m.find();
-        
-        while(result) {
-    		m.appendReplacement(sb, "\"");
-    		result = m.find();
-        }
-        m.appendTail(sb);
-        
-        
-        
-        title = sb.toString();
-        sb = new StringBuffer();
-        // Create a pattern to match cat
-       // p = Pattern.compile("&quot;|&#039;|&amp;");
-        p = Pattern.compile("&#039;");
-        // Create a matcher with an input string
-        m = p.matcher(title);
-        result = m.find();
-        
-        while(result) {
-    		m.appendReplacement(sb, "'");
-    		//m.appendReplacement(sb, "&");
-    	
-    		result = m.find();
-        }
-        m.appendTail(sb);
-        
-        
-        
-        title = sb.toString();
-        sb = new StringBuffer();
-        // Create a pattern to match cat
-        p = Pattern.compile("&amp;");
-        // Create a matcher with an input string
-        m = p.matcher(title);
-        result = m.find();
-        
-        while(result) {
-    		m.appendReplacement(sb, "&");
-    		result = m.find();
-        }
-        m.appendTail(sb);
-        
-        
-        return sb.toString();
-	        
-      
-	}
+	
 	
 	public CardSet(String title,JSONArray flashcards,Integer cardCount,int id){
 		
-		this.title = defringe(title);
+		this.title = AppUtil.defringe(title);
 		this.cardCount = cardCount;
 		this.id = id;
 		
