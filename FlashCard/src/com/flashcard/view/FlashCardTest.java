@@ -20,10 +20,12 @@ import org.json.JSONException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -123,7 +125,7 @@ public class FlashCardTest extends Activity {
         
         tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
         tvFlashCard.setText(terms.question);
-        tvFlashCard.setTextSize(AppUtil.getFontSize(this,terms.question));
+        tvFlashCard.setTextSize(AppUtil.getFontSize(this,terms.question,terms));
         
         //set card number tag
         cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
@@ -266,24 +268,6 @@ public class FlashCardTest extends Activity {
 	}
 	
 	protected class LearnGestureListener extends GestureDetector.SimpleOnGestureListener{
-	    
-		/**
-		 * FUTURE PARSE IMAGES
-		 * Nov 20, 2009
-		 * dmason
-		 * @param url
-		 * @return
-		 *
-		 */
-		public Drawable loadImageFromUrl(String url) {
-	        InputStream inputStream;
-	        try {
-	            inputStream = new URL(url).openStream();
-	        } catch (IOException e) {
-	            throw new RuntimeException(e);
-	        }
-	        return Drawable.createFromStream(inputStream, "src");
-	    }
 
 		
 		/* (non-Javadoc)
@@ -303,8 +287,16 @@ public class FlashCardTest extends Activity {
             	terms.wasSeen=true;
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard2);
                 tvFlashCard.setText(terms.answer);
-                tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.answer));
+                tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.answer,terms));
                 
+              //future add image
+		        if(!"".equals(terms.imageURL))
+		        {
+		        	Drawable image = AppUtil.getsizedDrawableFromURL("http://www.casarioblanco.com/poison-dart-frog.jpg",context);
+		        	//size image
+		        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,image,null,null);
+		        	tvFlashCard.setGravity(Gravity.TOP);
+		        }
                 
                 if(terms.isCorrect)
                 	answered.setBackgroundResource(R.drawable.correct);
@@ -326,7 +318,15 @@ public class FlashCardTest extends Activity {
             	terms.wasSeen=true;
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
                 tvFlashCard.setText(terms.question);
-                tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question));
+                tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
+                
+              //future add image
+		        if(!"".equals(terms.imageURL))
+		        {
+		        	Drawable image = AppUtil.getsizedDrawableFromURL("http://www.casarioblanco.com/poison-dart-frog.jpg",context);
+		        	//size image
+		        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,image,null,null);
+		        }
                 
                 if(terms.isCorrect)
                 	answered.setBackgroundResource(R.drawable.correct);
@@ -395,13 +395,13 @@ public class FlashCardTest extends Activity {
             	FlashCard terms = (FlashCard)sets.get(count);
                 
 		        tvFlashCard.setText(terms.question);
-		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question));
+		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
 		        //future add image
 		        if(!"".equals(terms.imageURL))
 		        {
-		        	Drawable image = loadImageFromUrl("http://www.casarioblanco.com/poison-dart-frog.jpg");
-		        	
-		        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(image,null,null,null);
+		        	Drawable image =  AppUtil.getsizedDrawableFromURL("http://www.casarioblanco.com/poison-dart-frog.jpg",context);
+		        	//size image
+		        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,image,null,null);
 		        }
 		        terms.wasSeen=true;
                 // Set an animation from res/anim: 
@@ -419,7 +419,7 @@ public class FlashCardTest extends Activity {
             	
             	FlashCard terms = (FlashCard)sets.get(count);
 		        tvFlashCard.setText(terms.question);
-		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question));
+		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
 		        terms.wasSeen=true;
 		        // Set an animation from res/anim: 
             	// Get the ViewFlipper from the layout

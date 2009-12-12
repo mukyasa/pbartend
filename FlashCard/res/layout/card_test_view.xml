@@ -11,8 +11,7 @@
 			android:paddingTop="12sp" android:paddingLeft="8sp">
 
 			<LinearLayout android:orientation="vertical"
-				android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:background="@drawable/flashcardfront" android:id="@+id/layoutfront">
+				android:layout_width="fill_parent" android:background="@drawable/flashcardfront" android:id="@+id/layoutfront" android:layout_height="fill_parent">
 
 				<TextView android:layout_height="wrap_content"
 					android:layout_width="wrap_content" android:id="@+id/tvCardNumbr2"
@@ -28,8 +27,7 @@
 			</LinearLayout>
 
 			<LinearLayout android:orientation="vertical"
-				android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:background="@drawable/flashcardback" android:id="@+id/layoutfront">
+				android:layout_width="fill_parent" android:background="@drawable/flashcardback" android:id="@+id/layoutfront" android:layout_height="fill_parent">
 
 				<TableLayout android:layout_height="wrap_content"
 					android:layout_width="fill_parent">
