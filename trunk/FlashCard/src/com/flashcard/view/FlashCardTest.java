@@ -133,6 +133,14 @@ public class FlashCardTest extends Activity {
         cardnumber.setText(CARD_NUMBER + "1 of " + maxcount);
         cardnumber2.setText(CARD_NUMBER + "1 of " + maxcount);
         
+        if(!"".equals(terms.imageURL))
+        {
+        	Drawable image = AppUtil.getsizedDrawableFromURL(terms.imageURL,context);
+        	//size image
+        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,image,null,null);
+        	tvFlashCard.setGravity(Gravity.TOP);
+        }
+        
         //the correct button
         ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
         answered.setOnClickListener(new OnClickListener() {
@@ -227,6 +235,13 @@ public class FlashCardTest extends Activity {
 	        terms.wasSeen=true;
 	        
 	        tvFlashCard.setText(terms.question);
+	        if(!"".equals(terms.imageURL))
+	        {
+	        	Drawable image = AppUtil.getsizedDrawableFromURL(terms.imageURL,context);
+	        	//size image
+	        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,image,null,null);
+	        	tvFlashCard.setGravity(Gravity.TOP);
+	        }
 	        
 	        //set card number tag
 	        cardnumber.setText(CARD_NUMBER + "1 of " + sets.size());
@@ -292,7 +307,7 @@ public class FlashCardTest extends Activity {
               //future add image
 		        if(!"".equals(terms.imageURL))
 		        {
-		        	Drawable image = AppUtil.getsizedDrawableFromURL("http://www.casarioblanco.com/poison-dart-frog.jpg",context);
+		        	Drawable image = AppUtil.getsizedDrawableFromURL(terms.imageURL,context);
 		        	//size image
 		        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,image,null,null);
 		        	tvFlashCard.setGravity(Gravity.TOP);
@@ -323,7 +338,7 @@ public class FlashCardTest extends Activity {
               //future add image
 		        if(!"".equals(terms.imageURL))
 		        {
-		        	Drawable image = AppUtil.getsizedDrawableFromURL("http://www.casarioblanco.com/poison-dart-frog.jpg",context);
+		        	Drawable image = AppUtil.getsizedDrawableFromURL(terms.imageURL,context);
 		        	//size image
 		        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,image,null,null);
 		        }
@@ -399,7 +414,7 @@ public class FlashCardTest extends Activity {
 		        //future add image
 		        if(!"".equals(terms.imageURL))
 		        {
-		        	Drawable image =  AppUtil.getsizedDrawableFromURL("http://www.casarioblanco.com/poison-dart-frog.jpg",context);
+		        	Drawable image =  AppUtil.getsizedDrawableFromURL(terms.imageURL,context);
 		        	//size image
 		        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,image,null,null);
 		        }

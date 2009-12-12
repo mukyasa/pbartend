@@ -28,7 +28,7 @@ public class FlashCard {
 		this.question = AppUtil.defringe(q);
 		this.answer=AppUtil.defringe(a);
 		this.cardNum=num;
-		this.imageURL=imageURL;
+		this.imageURL=AppUtil.stripImage(imageURL);
 	}
 	
 }
