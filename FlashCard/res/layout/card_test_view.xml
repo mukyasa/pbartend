@@ -11,7 +11,7 @@
 			android:paddingTop="12sp" android:paddingLeft="8sp">
 
 			<LinearLayout android:orientation="vertical"
-				android:layout_width="fill_parent" android:background="@drawable/flashcardfront" android:id="@+id/layoutfront" android:layout_height="fill_parent">
+				android:layout_width="fill_parent" android:id="@+id/layoutfront" android:layout_height="fill_parent" android:background="@drawable/flashcardfront">
 
 				<TextView android:layout_height="wrap_content"
 					android:layout_width="wrap_content" android:id="@+id/tvCardNumbr2"
