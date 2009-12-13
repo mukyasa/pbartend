@@ -43,6 +43,7 @@ public class AppUtil extends Constants {
 	public static final String PREF_BOOKMARKS = "bookmarks";
 	public static final String BOOKMARKS = "rootbookmarks";
 	public static final String PREF_SAVED_CARDS = "savedcards";
+	public static boolean isFlipped = false;
 	public static String searchTerm;
 
 	//<img src="http://i.quizlet.com/i/4400a18b1ea131770665eacf8d002de9_m.jpg" width="155" height="240" />
@@ -300,6 +301,11 @@ public class AppUtil extends Constants {
 	public static void switchQuestionAnswer(Context context, CardSet cardset) {
 		ArrayList<FlashCard> flashCards = cardset.flashcards;
 		Iterator<FlashCard> iter = flashCards.iterator();
+		if(!AppUtil.isFlipped)
+			AppUtil.isFlipped=true;
+		else
+			AppUtil.isFlipped=false;
+		
 		while (iter.hasNext()) {
 			FlashCard flashCard = (FlashCard) iter.next();
 			String answer = flashCard.answer;
