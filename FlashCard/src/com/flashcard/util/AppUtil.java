@@ -135,7 +135,7 @@ public class AppUtil extends Constants {
 	        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,drawable,null,null);
 	        
 	        tvFlashCard.setGravity(Gravity.TOP);
-	        tvFlashCard.setCompoundDrawablePadding(10);
+	        tvFlashCard.setCompoundDrawablePadding(5);
 	        
         } catch (MalformedURLException e) {
 	        e.printStackTrace();
