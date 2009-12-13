@@ -107,7 +107,7 @@ public class AppUtil extends Constants {
 			}
 			else
 			{
-				newHeight=280;
+				newHeight=180;
 				float ratio =fwidth/fheight;
 				newWidth = newHeight*ratio;
 			}
@@ -404,6 +404,16 @@ public class AppUtil extends Constants {
 		}
 		return cardsets;
 	}
+	/**
+	 * 
+	 * Dec 13, 2009
+	 * dmason
+	 * @param value
+	 * @param sortType
+	 * @param pageNumber
+	 * @return
+	 *
+	 */
 	public static boolean initCardSets(String value, String sortType, int pageNumber) {
 		return initCardSets(value, sortType, pageNumber, false, null);
 	}
