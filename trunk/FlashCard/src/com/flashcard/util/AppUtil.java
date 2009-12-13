@@ -107,7 +107,7 @@ public class AppUtil extends Constants {
 			}
 			else
 			{
-				newHeight=200;
+				newHeight=280;
 				float ratio =fwidth/fheight;
 				newWidth = newHeight*ratio;
 			}
@@ -193,7 +193,6 @@ public class AppUtil extends Constants {
 			JSONTokener toke = new JSONTokener(oldCards);
 			JSONObject jsonObj = new JSONObject(toke);
 			if (((String) jsonObj.get("response_type")).equals("ok")) {
-				TOTAL_RESULTS = (Integer) jsonObj.get("total_results");
 				sets = (JSONArray) jsonObj.get("sets");
 			}
 		} else {

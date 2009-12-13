@@ -154,7 +154,7 @@ public class OfflineListView extends ListActivity {
 				{
 					View child = row.findViewById(android.R.id.text1);
 					
-					//set up the text here
+					//set up the text here 
 					ArrayAdapter<CardSet> wrapped = (ArrayAdapter<CardSet>) getWrappedAdapter();
 					CardSet cardset = (CardSet)wrapped.getItem(position);
 					//get the textview and set the text
