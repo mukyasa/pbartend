@@ -101,13 +101,13 @@ public class AppUtil extends Constants {
 	        Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
 			if (display.getOrientation() == Configuration.ORIENTATION_LANDSCAPE) 
 			{
-				newWidth=150;
+				newWidth=125;
 				float ratio =fheight/fwidth;
 	        	newHeight = newWidth*ratio;
 			}
 			else
 			{
-				newHeight=180;
+				newHeight=160;
 				float ratio =fwidth/fheight;
 				newWidth = newHeight*ratio;
 			}
