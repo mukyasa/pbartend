@@ -384,6 +384,7 @@ public class FlashCardTest extends Activity {
                 
 		        tvFlashCard.setText(terms.question);
 		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
+		        //check for images
 		        if(!"".equals(terms.imageURL))
 		        	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
 		        
@@ -404,6 +405,10 @@ public class FlashCardTest extends Activity {
             	FlashCard terms = (FlashCard)sets.get(count);
 		        tvFlashCard.setText(terms.question);
 		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
+		        //check for images
+		        if(!"".equals(terms.imageURL))
+		        	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
+		        
 		        terms.wasSeen=true;
 		        // Set an animation from res/anim: 
             	// Get the ViewFlipper from the layout
