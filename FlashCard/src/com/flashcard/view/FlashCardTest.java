@@ -227,6 +227,8 @@ public class FlashCardTest extends Activity {
 	        tvFlashCard.setText(terms.question);
 	        if(!"".equals(terms.imageURL) && AppUtil.isFlipped)
 	        	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
+	        else
+	        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
 	        
 	        //set card number tag
 	        cardnumber.setText(CARD_NUMBER + "1 of " + sets.size());
@@ -308,7 +310,7 @@ public class FlashCardTest extends Activity {
                 
                 isBack=false;
             }
-            else // flick front
+            else // flick front 
             {
             	FlashCard terms = (FlashCard)sets.get(count);
             	terms.wasSeen=true;
