@@ -15,23 +15,16 @@
 
 package com.flashcard.handler;
 
-import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.flashcard.R;
-import com.flashcard.domain.CardSet;
-import com.flashcard.util.Constants;
-
-import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ListAdapter;
-import android.widget.TextView;
+
+import com.flashcard.util.Constants;
 
 /**
  * Adapter that assists another adapter in appearing endless. For example, this
