@@ -2,7 +2,6 @@ package com.flashcard.view;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Application;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,9 +12,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.provider.Settings.System;
 import android.text.Editable;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -275,7 +272,7 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 		  			v.setPadding(30, 0, 40, 5);
 	  				Editable ed = etValue.getText();
 	  				
-	  				if("".equals(ed.toString()))
+	  				if("".equals(ed.toString()) || CHOOSEN_TYPE == TYPE_SAVED)
 	  					canSearch=false;
 	  				
 	  				
