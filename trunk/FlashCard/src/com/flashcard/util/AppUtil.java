@@ -555,7 +555,7 @@ public class AppUtil extends Constants {
 		if (fontSize.equals(context.getString(R.string.smaller))) return 12;
 		else if (fontSize.equals(context.getString(R.string.normal))) return 16;
 		else if (fontSize.equals(context.getString(R.string.bigger))) return 24;
-		else {
+		else { 
 			int len = cardText.length();
 			
 			//if there is an image this all goes out the window
@@ -564,8 +564,11 @@ public class AppUtil extends Constants {
 				if (len <= 30) return 24;
 				else if (len > 30 && len <= 80) return 18;
 				else if (len > 80 && len <= 200) return 16;
-				else if (len > 200 && len <= 400) return 14;
-				else return 12;
+				else if (len > 200 && len <= 384) return 14;
+				else if (len > 384 && len <= 500) 
+					return 13;
+				else
+					return 11;
 				
 			}else
 			{
