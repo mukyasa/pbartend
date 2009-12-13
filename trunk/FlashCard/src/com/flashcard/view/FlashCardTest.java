@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -127,7 +128,7 @@ public class FlashCardTest extends Activity {
         cardnumber.setText(CARD_NUMBER + "1 of " + maxcount);
         cardnumber2.setText(CARD_NUMBER + "1 of " + maxcount);
         
-        if(!"".equals(terms.imageURL))
+        if(!"".equals(terms.imageURL) && AppUtil.isFlipped)
         	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
         
         //the correct button
@@ -224,7 +225,7 @@ public class FlashCardTest extends Activity {
 	        terms.wasSeen=true;
 	        
 	        tvFlashCard.setText(terms.question);
-	        if(!"".equals(terms.imageURL))
+	        if(!"".equals(terms.imageURL) && AppUtil.isFlipped)
 	        	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
 	        
 	        //set card number tag
@@ -287,9 +288,11 @@ public class FlashCardTest extends Activity {
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard2);
                 tvFlashCard.setText(terms.answer);
                 tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.answer,terms));
-                
-                if(!"".equals(terms.imageURL))
+                Log.v("",AppUtil.isFlipped+"");
+                if(!"".equals(terms.imageURL) && !AppUtil.isFlipped)
                 	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
+                else
+                	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
                 
                 if(terms.isCorrect)
                 	answered.setBackgroundResource(R.drawable.correct);
@@ -312,9 +315,11 @@ public class FlashCardTest extends Activity {
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
                 tvFlashCard.setText(terms.question);
                 tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
-                
-                if(!"".equals(terms.imageURL))
+                Log.v("",AppUtil.isFlipped+"");
+                if(!"".equals(terms.imageURL) && AppUtil.isFlipped)
                 	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
+                else
+                	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
                 
                 if(terms.isCorrect)
                 	answered.setBackgroundResource(R.drawable.correct);
@@ -385,7 +390,7 @@ public class FlashCardTest extends Activity {
 		        tvFlashCard.setText(terms.question);
 		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
 		        //check for images
-		        if(!"".equals(terms.imageURL))
+		        if(!"".equals(terms.imageURL) && AppUtil.isFlipped)
 		        	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
 		        
 		        terms.wasSeen=true;
@@ -406,7 +411,7 @@ public class FlashCardTest extends Activity {
 		        tvFlashCard.setText(terms.question);
 		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
 		        //check for images
-		        if(!"".equals(terms.imageURL))
+		        if(!"".equals(terms.imageURL)  && AppUtil.isFlipped)
 		        	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
 		        
 		        terms.wasSeen=true;
