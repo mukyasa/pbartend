@@ -27,7 +27,9 @@ import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.flashcard.R;
 import com.flashcard.domain.CardSet;
@@ -77,7 +79,7 @@ public class AppUtil extends Constants {
 	 * @return
 	 *
 	 */
-	public static Drawable getsizedDrawableFromURL(String url,Context context) {
+	public static void getsizedDrawableFromURL(String url,Context context,TextView tvFlashCard) {
 		 BitmapDrawable drawable=null;
 		try {
 	        URL myImageURL = null;
@@ -92,15 +94,23 @@ public class AppUtil extends Constants {
 	        int height = myBitmap.getHeight();
 	        float fwidth = width;
 	        float fheight = height;
-	        int newWidth=200;
+	        float newWidth=0;
 	        float newHeight=0;
-	        
+	       
+	         
 	        Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
 			if (display.getOrientation() == Configuration.ORIENTATION_LANDSCAPE) 
+			{
 				newWidth=150;
-	        
-	        float ratio =fheight/fwidth;
-        	newHeight = newWidth*ratio;
+				float ratio =fheight/fwidth;
+	        	newHeight = newWidth*ratio;
+			}
+			else
+			{
+				newHeight=200;
+				float ratio =fwidth/fheight;
+				newWidth = newHeight*ratio;
+			}
 	       
 	        // calculate the scale - in this case = 0.4f
 	        float scaleWidth = ((float) newWidth) / width;
@@ -117,14 +127,21 @@ public class AppUtil extends Constants {
 	        //set back to drawable
 	        drawable = new BitmapDrawable(resizedBitmap); 
 	        
+	        
+	        //for portrait
+	        if (display.getOrientation() == Configuration.ORIENTATION_PORTRAIT) 
+	        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(drawable,null,null,null);
+	        else //for landscape
+	        	tvFlashCard.setCompoundDrawablesWithIntrinsicBounds(null,drawable,null,null);
+	        
+	        tvFlashCard.setGravity(Gravity.TOP);
+	        tvFlashCard.setCompoundDrawablePadding(10);
+	        
         } catch (MalformedURLException e) {
 	        e.printStackTrace();
         } catch (IOException e) {
 	        e.printStackTrace();
         }
-        
-        
-		return drawable;
 	}
 	/**
 	 * Gets the sound preferences
