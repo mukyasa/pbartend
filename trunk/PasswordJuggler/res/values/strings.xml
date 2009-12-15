@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="login">Login</string>
+    <string name="empty">No records found.</string>
     <string name="app_name">Password Juggler</string>
+    <string name="password">Password</string>
+    <string name="cancel">Cancel</string>
+    <string name="dialogtitle">Password Juggler Login</string>
 </resources>
