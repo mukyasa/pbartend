@@ -1,0 +1,5 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android" 
+android:layout_height="fill_parent">
+    <include layout="@layout/search_filter" android:id="@+id/tfName"/>
+    <include layout="@layout/all_passwords_list" android:id="@+id/tfName"/>
+</merge>
