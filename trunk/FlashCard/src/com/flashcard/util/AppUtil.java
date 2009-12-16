@@ -99,9 +99,10 @@ public class AppUtil extends Constants {
 	       
 	         
 	        Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
-			if (display.getOrientation() == Configuration.ORIENTATION_LANDSCAPE) 
+	        
+			if (display.getWidth() > display.getHeight()) 
 			{
-				newWidth=125;
+				newWidth=155;
 				float ratio =fheight/fwidth;
 	        	newHeight = newWidth*ratio;
 			}
@@ -580,7 +581,7 @@ public class AppUtil extends Constants {
 			{
 				// Log.v("", "LENGTH="+ len);
 				Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
-				if (display.getOrientation() == Configuration.ORIENTATION_LANDSCAPE) {
+				if (display.getWidth() > display.getHeight()) {
 					// landscape
 					if (len <= 30) return 36;
 					else if (len > 30 && len <= 100) return 30;
