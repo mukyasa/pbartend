@@ -7,7 +7,6 @@ import android.view.MenuItem;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.drinkmixer.R;
@@ -23,8 +22,6 @@ public class ActivityView extends Activity {
 	protected TextView tvDrinktype;
 	protected TextView tvIng1;
 	protected TextView tvInstructions;
-	protected TextView tvInstructions2;
-	protected Spinner spinnerDrinkNames;
 	protected DetailsDomain drinkdetail;
 	protected ImageButton favImageButton;
 	protected ImageView imgGlassType;
