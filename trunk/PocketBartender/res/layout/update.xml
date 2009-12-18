@@ -23,13 +23,16 @@
 				 android:textStyle="bold" 
 				 android:layout_width="fill_parent" 
 				 android:gravity="left|center_vertical"></TextView>
-			<TextView android:id="@+id/tvNewIngredients"
+				 <TableLayout android:id="@+id/lling" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10sp">
+				 <TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delete" android:textColor="#fff" android:textSize="12sp"></TextView>
+				 </TableLayout>
+			<!--TextView android:id="@+id/tvNewIngredients"
 				android:layout_height="wrap_content"
 				android:textColor="#fff" 
 				android:textSize="16sp"
 				android:textStyle="bold"
 				android:layout_width="fill_parent" 
-				android:layout_gravity="fill_horizontal"></TextView>
+				android:layout_gravity="fill_horizontal"></TextView-->
 
 		<EditText android:id="@+id/etDirections"
 			android:layout_width="wrap_content" android:textColor="#ccc"
@@ -66,5 +69,6 @@ android:text="@string/btnSave"
 
 </TableRow>
 
-	</TableLayout>
+	
+</TableLayout>
 </ScrollView>
