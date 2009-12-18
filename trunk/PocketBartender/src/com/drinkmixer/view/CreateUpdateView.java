@@ -265,7 +265,7 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
     	CharSequence text = ((TextView)v).getText();
     	
     	Iterator<String> iter = ndd.getIngredients().iterator();
-		/*
+		
 		for(int i=0;iter.hasNext();i++)
 		{
 			String t = (String)iter.next();
@@ -274,7 +274,7 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 				ArrayList<String> items = ndd.getIngredients();
 				items.remove(i);
 			}
-		}*/
+		}
 		
 	    return false;
     }
