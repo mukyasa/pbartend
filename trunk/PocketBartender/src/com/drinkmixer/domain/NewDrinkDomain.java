@@ -1,7 +1,6 @@
 package com.drinkmixer.domain;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.graphics.drawable.Drawable;
 
@@ -21,7 +20,7 @@ public class NewDrinkDomain {
 	public String halfAmount=null; 
 	public String measurment=null;
 	public String ingredientsName=null;
-	private List<String> ingredients= new ArrayList<String>();
+	private ArrayList<String> ingredients= new ArrayList<String>();
 	
 	private static NewDrinkDomain newDrinkDomain = null;
 	public static final int SCREEN_TYPE_CAT=0;
@@ -29,11 +28,11 @@ public class NewDrinkDomain {
 	public static final int SCREEN_TYPE_NEW=2;
 	
 
-	public List<String> getIngredients() {
+	public ArrayList<String> getIngredients() {
 		return ingredients;
 	}
 
-	public void setIngredients(List<String> ingredients) {
+	public void setIngredients(ArrayList<String> ingredients) {
 		this.ingredients = ingredients;
 	}
 	

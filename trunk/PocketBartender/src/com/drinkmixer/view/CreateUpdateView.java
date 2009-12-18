@@ -1,5 +1,6 @@
 package com.drinkmixer.view;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -9,11 +10,16 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.drinkmixer.R;
@@ -23,7 +29,7 @@ import com.drinkmixer.domain.NewDrinkDomain;
 import com.drinkmixer.domain.ScreenType;
 
 
-public class CreateUpdateView extends BaseActivity implements OnClickListener {
+public class CreateUpdateView extends BaseActivity implements OnClickListener, OnLongClickListener {
 
 	private Intent intent;
 	private Button btnIng, btnSave,btnCat,btnCancel,btnReset;
@@ -75,19 +81,32 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 		
 		if(ndd.getIngredients() != null && ndd.getIngredients().size() > 0)
 		{
-			TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
+			//TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
 			
 			Iterator<String> iter = ndd.getIngredients().iterator();
-			StringBuffer ings =new StringBuffer();
+			//StringBuffer ings =new StringBuffer();
+			TableLayout ll = (TableLayout)findViewById(R.id.lling);
 			
 			while(iter.hasNext())
 			{
-				ings.append(iter.next()+"\n");
+				TableRow  tr = new TableRow(this);
+				TextView tv = new TextView(this);
+				tv.setText(iter.next());
+				tv.setTypeface(Typeface.DEFAULT_BOLD);
+				tv.setTextColor(Color.WHITE);
+				tv.setTextSize(16f); 
+				tv.setOnLongClickListener(this);
+				//tv.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+				Drawable d = getResources().getDrawable(R.drawable.delete);
+				tv.setCompoundDrawablesWithIntrinsicBounds(d, null, null, null);
+				tr.addView(tv);
+				//ings.append(iter.next()+"\n");
+				ll.addView(tr);
 			}
-				 
-			newIngNm.setText(ings.toString());
+			
+			//newIngNm.setText(ings.toString());
 		}
-		
+		 
 		if(ndd.drinkName != null)
 		{
 			
@@ -166,8 +185,8 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 			 EditText directions = (EditText)findViewById(R.id.etDirections);
 			 directions.setText(this.getString(R.string.instructionsText));
 			 directions.setTextColor(Color.LTGRAY);
-			 TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
-			 newIngNm.setText("");
+			// TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
+			 //newIngNm.setText("");
 			 TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
 			// ImageView newGlass = (ImageView)findViewById(R.id.imgNewGlass);
 			 newCatNm.setText("");
@@ -234,6 +253,31 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener {
 		}
 		
 	}
+
+	/* (non-Javadoc)
+     * @see android.view.View.OnLongClickListener#onLongClick(android.view.View)
+     */
+    public boolean onLongClick(View v) {
+
+    	v.setVisibility(View.GONE);
+    	//remove item from array
+    	NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+    	CharSequence text = ((TextView)v).getText();
+    	
+    	Iterator<String> iter = ndd.getIngredients().iterator();
+		/*
+		for(int i=0;iter.hasNext();i++)
+		{
+			String t = (String)iter.next();
+			if(t.equals(text.toString()))
+			{
+				ArrayList<String> items = ndd.getIngredients();
+				items.remove(i);
+			}
+		}*/
+		
+	    return false;
+    }
 		
 		
 	
