@@ -158,10 +158,9 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
     }
     
 	public void onClick(View view) {
-		
+		NewDrinkDomain ndd = NewDrinkDomain.getInstance();
 		if(view==btnIng)
 		{
-			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
 			EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
 			EditText directions = (EditText)findViewById(R.id.etDirections);
 			
@@ -173,18 +172,25 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 		}
 		else if(view==btnCancel)
 		{
-			intent = new Intent(this, HomeScreenView.class);
-			startActivity(intent);
+			TableLayout ll = (TableLayout)findViewById(R.id.lling);
+			 ll.removeAllViews();
+			 ndd.clearDomain();
+			 if(ndd.drink_id > 0)
+				 finish();
+			 else
+				 startActivity(new Intent(this,HomeScreenView.class));
 		}
 		else if(view==btnReset)
 		{
-			 NewDrinkDomain.getInstance().clearDomain();
+			 ndd.clearDomain();
 			 EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
 			 drinkName.setText(this.getString(R.string.create_drink_title));
 			 drinkName.setTextColor(Color.LTGRAY);
 			 EditText directions = (EditText)findViewById(R.id.etDirections);
 			 directions.setText(this.getString(R.string.instructionsText));
 			 directions.setTextColor(Color.LTGRAY);
+			 TableLayout ll = (TableLayout)findViewById(R.id.lling);
+			 ll.removeAllViews();
 			// TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
 			 //newIngNm.setText("");
 			 TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
@@ -196,7 +202,7 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 		}
 		else if(view==btnCat) 
 		{
-			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+			
 			EditText drinkName = (EditText)findViewById(R.id.etNewDrinkNm);
 			EditText directions = (EditText)findViewById(R.id.etDirections);
 			
@@ -208,7 +214,6 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 		}
 		else if(view == btnSave)
 		{
-			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
 			List<String> ingredients = ndd.getIngredients();
 			
 			if(ndd.drinkName != null && !"".equals(ndd.drinkName.trim()))
@@ -241,6 +246,8 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 					
 					
 					ndd.clearDomain();
+					TableLayout ll = (TableLayout)findViewById(R.id.lling);
+					 ll.removeAllViews();
 					intent = new Intent(this, HomeScreenView.class);
 					startActivity(intent);
 				}

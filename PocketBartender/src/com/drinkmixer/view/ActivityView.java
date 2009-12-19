@@ -40,12 +40,6 @@ public class ActivityView extends Activity {
 	 */
 	protected void setViewItems()
 	{
-		NewDrinkDomain ndd = NewDrinkDomain.getInstance();
-		ndd.clearDomain();
-		ndd.drinkName = drinkdetail.drinkName;
-		ndd.ingredientsName = drinkdetail.ingredients;
-		
-		
 		tvDrinkName.setText(drinkdetail.drinkName);
 		tvDrinktype.setText(drinkdetail.drinkType);
 		tvIng1.setText(drinkdetail.ingredients);
@@ -95,8 +89,19 @@ public class ActivityView extends Activity {
 			imgGlassType.setBackgroundResource(R.drawable.whitewine);
 		else if(glasses[17].equalsIgnoreCase(drinkdetail.glass))
 			imgGlassType.setBackgroundResource(R.drawable.redwine);
+		
 	}
 	
+	protected void setDomain(){
+		NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+		ndd.drinkName = drinkdetail.drinkName;
+		ndd.setIngredients(drinkdetail.ings);
+		ndd.categoryName = drinkdetail.drinkType;
+		ndd.instructions = drinkdetail.instructions;
+		ndd.glassType = imgGlassType.getBackground();
+		ndd.drink_id = drinkdetail.id;
+		
+	}
 	/**
 	 * sets the views to the variables
 	 */
@@ -112,7 +117,7 @@ public class ActivityView extends Activity {
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, MENU_HOME, 0, "Home").setIcon(R.drawable.home);
-		//menu.add(0, MENU_MODIFY, 0, "Modify Drink").setIcon(android.R.drawable.ic_menu_edit);
+		menu.add(0, MENU_MODIFY, 0, "Modify Drink").setIcon(android.R.drawable.ic_menu_edit);
 		menu.add(0, MENU_ADD_FAV, 0, "Save Favorite").setIcon(R.drawable.fav_menu);
 		menu.add(0, MENU_REMOVE_FAV, 0, "Remove Favorite").setIcon(R.drawable.no_fav_menu);
 	    return true;
