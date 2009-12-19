@@ -36,7 +36,9 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 	private EditText drinkName,directions;
 	long selectedRow=-1;
 	protected MixerDbHelper myDatabaseAdapter;
-	CreateUpdateDAO dataDAO = new CreateUpdateDAO();
+	private CreateUpdateDAO dataDAO = new CreateUpdateDAO();
+	private final int MENU_DRINK_NAME=0;
+	private final int MENU_DRINK_ING=1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -144,17 +146,32 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
      */
     @Override
     protected Dialog onCreateDialog(int id) {
-    	return new AlertDialog.Builder(CreateUpdateView.this)
-        .setIcon(R.drawable.error)
-        .setMessage("Don't forget a drink name.")
-        .setTitle("Error")
-        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-               dismissDialog(0);
-            }
-        })      
-       .create();
 
+    		if(id== MENU_DRINK_NAME){
+		    	return new AlertDialog.Builder(CreateUpdateView.this)
+		        .setIcon(R.drawable.error)
+		        .setMessage("Don't forget a drink name.")
+		        .setTitle("Error")
+		        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+		            public void onClick(DialogInterface dialog, int whichButton) {
+		               dismissDialog(0);
+		            }
+		        })      
+		       .create();
+    		}
+    		else 
+    		{
+    			return new AlertDialog.Builder(CreateUpdateView.this)
+    	        .setIcon(R.drawable.error)
+    	        .setMessage("You need some ingredients.")
+    	        .setTitle("Error")
+    	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+    	            public void onClick(DialogInterface dialog, int whichButton) {
+    	               dismissDialog(1);
+    	            }
+    	        })      
+    	       .create();
+    		}
     }
     
 	public void onClick(View view) {
@@ -227,23 +244,43 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 					ndd.drinkName=(drinkName.getText().toString().trim());
 					ndd.instructions=(directions.getText().toString());
 					
-					//insert into drink table
-					dataDAO.insertNewDrink(ndd.drinkName, ndd.categoryId, ndd.glassId, ndd.instructions);
-					
-					Iterator<String> iter = ingredients.iterator();
-					while (iter.hasNext()) {
-						String ing = (String) iter.next();
+					//if  update
+					if(ndd.drink_id >0)
+						dataDAO.updateDrink(ndd);
+					else
+						dataDAO.insertNewDrink(ndd.drinkName, ndd.categoryId, ndd.glassId, ndd.instructions);
 						
-						StringTokenizer toke = new StringTokenizer(ing,",");
-						//the first one is junk ignore
-						String amount = (String)toke.nextElement();
-						String ingredientsName = (String)toke.nextElement();
+						Iterator<String> iter = ingredients.iterator();
+						while (iter.hasNext()) {
+							String ing = (String) iter.next();
+							
+							StringTokenizer toke = new StringTokenizer(ing,",");
+							String amount="";
+							String ingredientsName="";
+							//the first one is junk ignore
+							String token =toke.nextToken();
+							//if there is only one token assume no amount
+							if(toke.hasMoreElements())
+							{
+								if(toke != null)
+								{
+									 amount = token;
+									 token =toke.nextToken();
+								}
+								if(toke != null)
+									 ingredientsName = token;
+							}
+							else
+								ingredientsName = token;
+							
+							
+							dataDAO.getIngredientsId(ingredientsName.trim());
+							if(ndd.drink_id >0)
+								dataDAO.updateDrinkIngs(ndd,amount);
+							else
+								dataDAO.insertDrinkIng(ndd.newDrinkId, ndd.newing_id, amount);
 						
-						
-						dataDAO.getIngredientsId(ingredientsName.trim());
-						dataDAO.insertDrinkIng(ndd.newDrinkId, ndd.newing_id, amount);
-					}
-					
+						}
 					
 					ndd.clearDomain();
 					TableLayout ll = (TableLayout)findViewById(R.id.lling);
@@ -251,11 +288,11 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 					intent = new Intent(this, HomeScreenView.class);
 					startActivity(intent);
 				}
+				else
+					showDialog(MENU_DRINK_ING);
 			}
 			else
-			{
-				showDialog(0);
-			}
+				showDialog(MENU_DRINK_NAME);
 			
 		}
 		

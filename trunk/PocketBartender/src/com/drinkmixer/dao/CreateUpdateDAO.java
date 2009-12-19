@@ -33,6 +33,16 @@ public class CreateUpdateDAO extends DataDAO {
 			ndd.newDrinkId = newDrinkId;
 	}
 	
+	public void updateDrink(NewDrinkDomain ndd)
+	{
+		
+	}
+	
+	public void updateDrinkIngs(NewDrinkDomain ndd,String amount)
+	{
+		
+	}
+	
 	/**
 	 * INSERT INTO tblDrinks_ingredients (drink_id,ingredient_id,amount) " +
 	"values(9637,1,'2 oz');
