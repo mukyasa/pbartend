@@ -98,15 +98,12 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 				tv.setTextColor(Color.WHITE);
 				tv.setTextSize(16f); 
 				tv.setOnLongClickListener(this);
-				//tv.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
 				Drawable d = getResources().getDrawable(R.drawable.delete);
 				tv.setCompoundDrawablesWithIntrinsicBounds(d, null, null, null);
 				tr.addView(tv);
-				//ings.append(iter.next()+"\n");
 				ll.addView(tr);
 			}
 			
-			//newIngNm.setText(ings.toString());
 		}
 		 
 		if(ndd.drinkName != null)
@@ -303,21 +300,24 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
      */
     public boolean onLongClick(View v) {
 
-    	v.setVisibility(View.GONE);
-    	//remove item from array
-    	NewDrinkDomain ndd = NewDrinkDomain.getInstance();
-    	CharSequence text = ((TextView)v).getText();
-    	
-    	Iterator<String> iter = ndd.getIngredients().iterator();
-		
-		for(int i=0;iter.hasNext();i++)
-		{
-			String t = (String)iter.next();
-			if(t.equals(text.toString()))
+    	try {
+			v.setVisibility(View.GONE);
+			//remove item from array
+			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+			CharSequence text = ((TextView)v).getText();
+			
+			Iterator<String> iter = ndd.getIngredients().iterator();
+			
+			for(int i=0;iter.hasNext();i++)
 			{
-				ArrayList<String> items = ndd.getIngredients();
-				items.remove(i);
+				String t = (String)iter.next();
+				if(t.equals(text.toString()))
+				{
+					ArrayList<String> items = ndd.getIngredients();
+					items.remove(i);
+				}
 			}
+		} catch (Exception e) {
 		}
 		
 	    return false;
