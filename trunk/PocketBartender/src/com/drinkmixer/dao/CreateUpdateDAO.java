@@ -35,12 +35,27 @@ public class CreateUpdateDAO extends DataDAO {
 	
 	public void updateDrink(NewDrinkDomain ndd)
 	{
-		String sql = "UPDATE "+TABLE_DRINK+" SET "+COL_NAME+"='"+ndd.drinkName+"', "+COL_INSTUCTIONS+"='"+ndd.instructions+"', "+COL_GLASS_ID+"="+ndd.glassId+","+COL_CAT_ID+"="+ndd.categoryId+" WHERE "+COL_ROW_ID+"="+ndd.drink_id;
+		String[] selectionArgs = {ndd.drink_id+""};
+		ContentValues values = new ContentValues();
+		values.put(COL_NAME, ndd.drinkName);
+		values.put(COL_INSTUCTIONS, ndd.instructions);
+		values.put(COL_GLASS_ID, ndd.glassId);
+		values.put(COL_CAT_ID, ndd.categoryId);
+		
+		sqliteDatabase.update(TABLE_DRINK, values, COL_ROW_ID+"=?",selectionArgs);
+		//blow away ings before readding
+		sqliteDatabase.delete(TABLE_DRINK_INGREDIENTS, COL_DRINK_ID+"=?",selectionArgs);
 	}
 	
 	public void updateDrinkIngs(NewDrinkDomain ndd,String amount)
 	{
-		String sql = "UPDATE "+TABLE_DRINK_INGREDIENTS+" SET "+COL_AMOUNT+"='"+amount+"' WHERE "+COL_DRINK_ID+"="+ndd.drink_id +" and "+ COL_INGREDIENT_ID+"=" +ndd.newing_id;
+		ContentValues values = new ContentValues();
+		
+		values.put(COL_DRINK_ID, ndd.drink_id);
+		values.put(COL_INGREDIENT_ID, ndd.newing_id);
+		values.put(COL_AMOUNT, amount);
+		
+		sqliteDatabase.insert(TABLE_DRINK_INGREDIENTS, null, values);
 	}
 	
 	/**
@@ -76,17 +91,4 @@ public class CreateUpdateDAO extends DataDAO {
 		NewDrinkDomain.getInstance().newing_id =ing_id;
 	}
 	
-	/**
-	 * updates exiting user created drinks
-	 * @return
-	 */
-	public Cursor updateDrink() {
-		Cursor cursor = sqliteDatabase.query(TABLE_DRINK_CAT, new String[] {
-				COL_ROW_ID, COL_NAME }, null, null, null, null, null);
-
-		return cursor;
-	}
-	
-
-
 }
