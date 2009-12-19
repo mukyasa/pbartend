@@ -53,7 +53,7 @@ public class CreateUpdateDAO extends DataDAO {
 		
 		values.put(COL_DRINK_ID, ndd.drink_id);
 		values.put(COL_INGREDIENT_ID, ndd.newing_id);
-		values.put(COL_AMOUNT, amount);
+		values.put(COL_AMOUNT, amount.trim());
 		
 		sqliteDatabase.insert(TABLE_DRINK_INGREDIENTS, null, values);
 	}
@@ -69,7 +69,7 @@ public class CreateUpdateDAO extends DataDAO {
 		
 		values.put(COL_DRINK_ID, drink_id);
 		values.put(COL_INGREDIENT_ID, ing_id);
-		values.put(COL_AMOUNT, amount);
+		values.put(COL_AMOUNT, amount.trim());
 		
 		return sqliteDatabase.insert(TABLE_DRINK_INGREDIENTS, null, values);
 	}
