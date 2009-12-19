@@ -102,8 +102,8 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
 		{
 			intent = new Intent(this, CreateUpdateView.class);
 			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
-			ndd.addIngredients((ndd.wholeAmount != null ?ndd.wholeAmount : "")
-					+ " "+(ndd.halfAmount !=null ? ndd.halfAmount:"") + " " 
+			ndd.addIngredients((ndd.wholeAmount != null?ndd.wholeAmount : "")
+					+ " "+(ndd.halfAmount != null ? ndd.halfAmount:"") + " " 
 					+ (ndd.measurment != null ?ndd.measurment:"") + ", " + ndd.ingredientsName);
 			startActivity(intent);
 		}
