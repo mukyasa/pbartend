@@ -13,6 +13,7 @@ import com.drinkmixer.R;
 import com.drinkmixer.dao.DetailDAO;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.DetailsDomain;
+import com.drinkmixer.domain.NewDrinkDomain;
 
 public class ActivityView extends Activity {
 	
@@ -29,6 +30,7 @@ public class ActivityView extends Activity {
 	private static final int MENU_ADD_FAV=0;
 	private static final int MENU_REMOVE_FAV=1;
 	private static final int MENU_HOME=2;
+	private static final int MENU_MODIFY=3;
 	
 	public static final String[] glasses= {"champagne","cocktail","highball","hurricane","irish coffee",
 	"pint","margarita","mug","parfait","pilsner","pousse cafe","punch","rocks","shot","snifter","sour","white wine","red wine"};
@@ -38,6 +40,12 @@ public class ActivityView extends Activity {
 	 */
 	protected void setViewItems()
 	{
+		NewDrinkDomain ndd = NewDrinkDomain.getInstance();
+		ndd.clearDomain();
+		ndd.drinkName = drinkdetail.drinkName;
+		ndd.ingredientsName = drinkdetail.ingredients;
+		
+		
 		tvDrinkName.setText(drinkdetail.drinkName);
 		tvDrinktype.setText(drinkdetail.drinkType);
 		tvIng1.setText(drinkdetail.ingredients);
@@ -104,6 +112,7 @@ public class ActivityView extends Activity {
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, MENU_HOME, 0, "Home").setIcon(R.drawable.home);
+		//menu.add(0, MENU_MODIFY, 0, "Modify Drink").setIcon(android.R.drawable.ic_menu_edit);
 		menu.add(0, MENU_ADD_FAV, 0, "Save Favorite").setIcon(R.drawable.fav_menu);
 		menu.add(0, MENU_REMOVE_FAV, 0, "Remove Favorite").setIcon(R.drawable.no_fav_menu);
 	    return true;
@@ -114,8 +123,7 @@ public class ActivityView extends Activity {
 		
 	    switch (item.getItemId()) {
 	    case MENU_HOME:
-	    	Intent intent = new Intent(this, HomeScreenView.class);
-			startActivity(intent);
+			startActivity(new Intent(this, HomeScreenView.class));
 	    	return true;
 	    case MENU_ADD_FAV:
 	    	drinkdao.setFavoritesYes(drinkdetail.id);
@@ -126,6 +134,9 @@ public class ActivityView extends Activity {
 	    	drinkdao.removeFavorite(drinkdetail.id);
 	    	drinkdetail.favorites = DetailDAO.FAV_NO;
 	    	setViewItems();
+	    	return true;
+	    case MENU_MODIFY:
+			startActivity(new Intent(this, CreateUpdateView.class));
 	    	return true;
 	    }
 	    return false;
