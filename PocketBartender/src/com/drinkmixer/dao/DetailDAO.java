@@ -29,6 +29,10 @@ public class DetailDAO extends DataDAO{
 			drink.drinkType=(cursor.getString(cursor.getColumnIndex(COL_CAT_NAME)));
 			drink.instructions=(cursor.getString(cursor.getColumnIndex(COL_INSTUCTIONS)));
 			drink.favorites=(cursor.getString(cursor.getColumnIndex(COL_FAVORITE)));
+			
+			drink.glassId=(cursor.getInt(cursor.getColumnIndex(COL_GLASS_ID)));
+			drink.catId=(cursor.getInt(cursor.getColumnIndex(COL_CAT_ID)));
+			
 			//move to next row
 			cursor.moveToNext();
 		}

@@ -97,6 +97,8 @@ public class ActivityView extends Activity {
 		ndd.drinkName = drinkdetail.drinkName;
 		ndd.setIngredients(drinkdetail.ings);
 		ndd.categoryName = drinkdetail.drinkType;
+		ndd.categoryId = drinkdetail.catId;
+		ndd.glassId = drinkdetail.glassId;
 		ndd.instructions = drinkdetail.instructions;
 		ndd.glassType = imgGlassType.getBackground();
 		ndd.drink_id = drinkdetail.id;

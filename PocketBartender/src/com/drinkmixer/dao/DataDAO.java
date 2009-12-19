@@ -53,7 +53,7 @@ public class DataDAO{
 	
 	public static final String sqlGetMaxId ="SELECT MAX(_ID)["+COL_ROW_ID+"]  FROM "+TABLE_DRINK;
 	public static final String sqlGetGlassNameById = "SELECT name["+COL_GLASS_NAME+"] from "+TABLE_GLASSES+" WHERE _id=?";
-	public static final String sqlGetDrinkDetailById ="SELECT d.favorite, d._id, d.name,d.instructions,dc.name["+COL_CAT_NAME+"],di.amount,i.name["+COL_ING_NAME+"],g.name["+COL_GLASS_NAME+"] " +
+	public static final String sqlGetDrinkDetailById ="SELECT d.favorite, d._id, d.name,d.instructions,dc.name["+COL_CAT_NAME+"],di.amount,i.name["+COL_ING_NAME+"],g.name["+COL_GLASS_NAME+"],g._id["+COL_GLASS_ID+"],dc._id["+COL_CAT_ID+"] " +
 			"FROM "+TABLE_DRINK+" d " +
 			"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id " +
 			"INNER JOIN "+TABLE_DRINK_INGREDIENTS+" di on di.drink_id = d._id " +
@@ -100,12 +100,6 @@ public class DataDAO{
 	
 	public static final String sqlGetAllMeasurements="SELECT fraction FROM " + TABLE_FRACTIONAL_AMOUNTS + ";";
 	
-	public static final String sqlInsertNewDrink="INSERT INTO tblDrinks (glass_id,name,instructions,category_id,flagged,favorite,custom) "	+
-			"values(2,'Darren Test 2','do some work and make a drink',1,0,0,1);";
-
-	//for each ingredient need to insert
-	public static final String sqlInsertNewDrinkIngredients ="INSERT INTO tblDrinks_ingredients (drink_id,ingredient_id,amount) " +
-			"values(9637,1,'2 oz');";
 	
 	// get new drinkid
 	public static final String sqlGetNewDrinkIdByName ="SELECT _id from tblDrinks where name ='Darren Test 2';";
@@ -113,7 +107,6 @@ public class DataDAO{
 	
 	// get ingredients ids could be many
 	public static final String sqlGetNewIngredientsIdByName ="SELECT "+COL_ROW_ID+" from "+TABLE_INGREDIENTS+" where name=?";
-	
 	
 
 	/**** CREATE STATEMENTS*****/

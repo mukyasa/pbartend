@@ -7,6 +7,8 @@ public class DetailsDomain {
 	public String drinkName;
 	public String drinkType;
 	public String glass;
+	public int glassId;
+	public int catId;
 	public String ingredients;
 	public String instructions;
 	public int id;
