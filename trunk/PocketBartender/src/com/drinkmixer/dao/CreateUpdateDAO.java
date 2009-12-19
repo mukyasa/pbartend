@@ -35,12 +35,12 @@ public class CreateUpdateDAO extends DataDAO {
 	
 	public void updateDrink(NewDrinkDomain ndd)
 	{
-		
+		String sql = "UPDATE "+TABLE_DRINK+" SET "+COL_NAME+"='"+ndd.drinkName+"', "+COL_INSTUCTIONS+"='"+ndd.instructions+"', "+COL_GLASS_ID+"="+ndd.glassId+","+COL_CAT_ID+"="+ndd.categoryId+" WHERE "+COL_ROW_ID+"="+ndd.drink_id;
 	}
 	
 	public void updateDrinkIngs(NewDrinkDomain ndd,String amount)
 	{
-		
+		String sql = "UPDATE "+TABLE_DRINK_INGREDIENTS+" SET "+COL_AMOUNT+"='"+amount+"' WHERE "+COL_DRINK_ID+"="+ndd.drink_id +" and "+ COL_INGREDIENT_ID+"=" +ndd.newing_id;
 	}
 	
 	/**
