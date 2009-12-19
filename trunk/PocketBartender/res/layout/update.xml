@@ -35,9 +35,9 @@
 				android:layout_gravity="fill_horizontal"></TextView-->
 
 		<EditText android:id="@+id/etDirections"
-			android:layout_width="wrap_content" android:textColor="#ccc"
+			android:textColor="#ccc"
 			android:inputType="textWebEditText" android:imeOptions="actionDone"
-			android:layout_height="fill_parent" android:text="@string/instructionsText"></EditText>
+			android:layout_height="fill_parent" android:text="@string/instructionsText" android:layout_width="wrap_content"></EditText>
 			<TableRow>
 			<Button android:id="@+id/btnNewCat" android:layout_height="wrap_content"
 				android:text="@string/categoryText"

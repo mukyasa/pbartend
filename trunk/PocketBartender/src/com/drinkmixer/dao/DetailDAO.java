@@ -22,6 +22,7 @@ public class DetailDAO extends DataDAO{
 		for(int i=0;i<cursor.getCount();i++)
 		{
 			ingredients.append("-"+cursor.getString(cursor.getColumnIndex(COL_AMOUNT)) + " " +  cursor.getString(cursor.getColumnIndex(COL_ING_NAME)) +  "\n");
+			drink.addIng(cursor.getString(cursor.getColumnIndex(COL_AMOUNT)) + " " +  cursor.getString(cursor.getColumnIndex(COL_ING_NAME)));
 			drink.id=(cursor.getInt(cursor.getColumnIndex(COL_ROW_ID)));
 			drink.drinkName=(cursor.getString(cursor.getColumnIndex(COL_NAME)));
 			drink.glass=(cursor.getString(cursor.getColumnIndex(COL_GLASS_NAME)));

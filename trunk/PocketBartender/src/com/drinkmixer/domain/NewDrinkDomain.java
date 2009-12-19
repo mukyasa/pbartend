@@ -21,6 +21,7 @@ public class NewDrinkDomain {
 	public String measurment=null;
 	public String ingredientsName=null;
 	private ArrayList<String> ingredients= new ArrayList<String>();
+	public int drink_id;
 	
 	private static NewDrinkDomain newDrinkDomain = null;
 	public static final int SCREEN_TYPE_CAT=0;
@@ -32,8 +33,9 @@ public class NewDrinkDomain {
 		return ingredients;
 	}
 
-	public void setIngredients(ArrayList<String> ingredients) {
-		this.ingredients = ingredients;
+	@SuppressWarnings("unchecked")
+    public void setIngredients(ArrayList<String> ingredients) {
+		this.ingredients = (ArrayList<String>)ingredients.clone();
 	}
 	
 	public void addIngredients(String ing){

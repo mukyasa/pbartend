@@ -12,9 +12,14 @@ public class DetailsDomain {
 	public int id;
 	public String favorites;
 	public ArrayList<String> drinkNames = new ArrayList<String>();
+	public ArrayList<String> ings = new ArrayList<String>();
 	
 	public DetailsDomain(){
 		
+	}
+	
+	public void addIng(String ing){
+		ings.add(ing);
 	}
 	
 	public DetailsDomain(String drinkName, 

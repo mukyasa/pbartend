@@ -17,6 +17,15 @@ public class DetailsView extends ActivityView {
 		initComponents();
 	}
 	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		setDomain();
+	    super.onResume();
+	}
+	
 	private void initComponents() {
 		drinkdetail = new DetailsDomain();
 		drinkdao = new DetailDAO();
