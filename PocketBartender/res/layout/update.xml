@@ -2,7 +2,7 @@
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:paddingBottom="10.0sp" android:paddingLeft="10.0sp"
-	android:paddingTop="10.0sp" android:background="@drawable/details_bg">
+	android:paddingTop="10.0sp" android:background="@drawable/new_bg">
 	<TableLayout android:id="@+id/TableLayout01"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
 		android:paddingRight="10.0sp">
