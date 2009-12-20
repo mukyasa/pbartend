@@ -31,6 +31,7 @@ import com.drinkmixer.dao.DetailDAO;
 import com.drinkmixer.dao.DrinkIngredientsInsert;
 import com.drinkmixer.dao.DrinkInserts;
 import com.drinkmixer.dao.MixerDbHelper;
+import com.drinkmixer.domain.NewDrinkDomain;
 import com.drinkmixer.domain.ScreenType;
 import com.drinkmixer.utils.Constants;
 
@@ -118,6 +119,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 
 		 switch (item.getItemId()) {
 			 case MENU_CREATE:
+				 	NewDrinkDomain.getInstance().clearDomain();
 					ScreenType.getInstance().screenType= -1;
 			    	Intent intent = new Intent(this, CreateUpdateView.class);
 					startActivity(intent);
