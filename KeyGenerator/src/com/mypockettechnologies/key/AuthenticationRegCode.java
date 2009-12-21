@@ -63,8 +63,9 @@ public class AuthenticationRegCode {
 	    }
 	    
 	    String emailfiller = "Thank you for your purchase.\n\nHere is the registration code you will need " +
-	    		"to register your product.\n********* COPY BELOW ********\n\t" +result.substring(0,10) + "\n******** COPY ABOVE ********\nYou will also need to use the email address (" +
-	    		salt+") you purchased the software with.\n\nDarren Mason\nmyPocket technologies\nwww.mypocket-technolgies.com";
+	    		"to register your product.\n********* COPY BELOW ********\n\t" +result.substring(0,10) + "\n******** COPY ABOVE ********\n" +
+	    				"You will also need to use the email address (" +
+	    		salt+") you purchased with.\n\nDarren Mason\nmyPocket technologies\nwww.mypocket-technolgies.com";
 	    
 	    //shorten key
 	    System.out.println(emailfiller);// + " " + result.substring(0,10).equals(passwd.substring(0,10)));
