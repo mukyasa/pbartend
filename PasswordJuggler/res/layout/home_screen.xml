@@ -10,10 +10,9 @@
 		<TableLayout android:id="@+id/TableLayout01"
 			android:background="@drawable/list_item"
 			android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="15sp">
-			<TableRow android:id="@+id/TableRow01" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:background="@drawable/item_spacer" android:gravity="center_vertical" android:paddingLeft="20sp">
+			<TableRow android:id="@+id/TableRow01" android:layout_height="wrap_content" android:background="@drawable/item_spacer" android:gravity="center_vertical" android:paddingLeft="20sp" android:layout_width="fill_parent">
 				<TextView android:id="@+id/TextView01"
-					android:layout_height="wrap_content" android:textColor="#000" android:text="Login" android:drawableLeft="@drawable/error" android:gravity="center_vertical" android:layout_width="wrap_content"></TextView>
+					android:layout_height="wrap_content" android:textColor="#000" android:text="Login" android:gravity="center_vertical" android:drawableLeft="@drawable/wallet" android:padding="4sp" android:layout_width="fill_parent"></TextView>
 			</TableRow>
 			<TableRow android:id="@+id/TableRow01" android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingLeft="20sp" android:background="@drawable/toplines">
