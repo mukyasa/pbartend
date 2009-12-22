@@ -1,5 +1,6 @@
 package com.juggler;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
@@ -11,12 +12,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
-public class AllView extends ListActivity {
+public class AllView extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_frame);
+        setContentView(R.layout.detail_frame);
 		//Intent intent = new Intent(this, FlashCardTest.class);
         initialize();
     }
@@ -46,8 +47,8 @@ public class AllView extends ListActivity {
         "Macau", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands"};
     private void initialize(){
     	
-    	setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, ENTRIES));
-    	getListView().setTextFilterEnabled(true);
+    	//setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, ENTRIES));
+    	//getListView().setTextFilterEnabled(true);
 
     	  
     	//showDialog(0);
