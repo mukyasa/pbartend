@@ -1,15 +1,16 @@
 package com.juggler;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 
-public class BaseActivity extends Activity implements OnClickListener{
+public class BaseActivity extends Activity implements OnClickListener,OnTouchListener{
 
-	protected Button bHome,bWallet,bLogins,bNotes,bPasswords,bSettings;
+	Button bNext,bPrev;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -18,43 +19,61 @@ public class BaseActivity extends Activity implements OnClickListener{
         initialize();
     }
 	
-	 private void initialize(){
-	    	
-	    	bHome = (Button)findViewById(R.id.bHome);
-	    	bHome.setOnClickListener(this);
-	    	bWallet = (Button)findViewById(R.id.bWallet);
-	    	bWallet.setOnClickListener(this);
-	    	bLogins = (Button)findViewById(R.id.bLogins);
-	    	bLogins.setOnClickListener(this);
-	    	bNotes = (Button)findViewById(R.id.bNotes);
-	    	bNotes.setOnClickListener(this);
-	    	bPasswords = (Button)findViewById(R.id.bPasswords);
-	    	bPasswords.setOnClickListener(this);
-	    	bSettings = (Button)findViewById(R.id.bSettings);
-	    	bSettings.setOnClickListener(this);
-	    	
-	    }
+	private void initialize() {
+		bNext = (Button)findViewById(R.id.butNext);
+		bNext.setOnClickListener(this);
+		bNext.setOnTouchListener(this);
+		
+		bPrev = (Button)findViewById(R.id.butPrev);
+		bPrev.setOnClickListener(this);
+		bPrev.setOnTouchListener(this);
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see android.view.View.OnTouchListener#onTouch(android.view.View,
+	 * android.view.MotionEvent)
+	 */
+	public boolean onTouch(View v, MotionEvent event) {
+		
+		if (v instanceof Button) {
+			
+			if(v==bNext)
+			{
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					((Button)v).setBackgroundResource(R.drawable.next_button_on);
+					((Button)v).setPadding(10,0,10,0);
+				} 
+				else{
+					((Button)v).setBackgroundResource(R.drawable.next_button);
+					((Button)v).setPadding(10,0,10,0);
+				}
+			}else if(v==bPrev){
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					((Button)v).setBackgroundResource(R.drawable.prev_button_on);
+					((Button)v).setPadding(20,0,10,0);
+				} 
+				else{
+					((Button)v).setBackgroundResource(R.drawable.prev_button);
+					((Button)v).setPadding(20,0,10,0);
+				}
+			}
+		}
+		
+		
+		return false;
+	}
 	
 	 /* (non-Javadoc)
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
  	   	
- 	   if(v == bHome){
- 		   	Intent intent = new Intent(this,HomeView.class);
-	    		startActivity(intent);
- 	   }else if(v == bLogins){
+ 	   if(v == bNext){
+ 		   //done or next
  		   
- 	   }else if(v == bNotes){
- 		   
- 	   }else if(v== bPasswords){
- 		   
- 	   }else if(v == bSettings){
- 		   
- 	   }else if(v ==bWallet){
- 			Intent intent = new Intent(this,DetailsActivity.class);
-	    	startActivity(intent);
- 		   
+ 	   }else if(v == bPrev){
+ 		   finish();
  	   }
     }
 }

@@ -24,7 +24,7 @@ import android.widget.TableRow;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class HomeView extends BaseActivity{
+public class HomeView extends FooterActivity{
 	
 		private TableRow trWallet,trLogins,trNotes,trGenPassword;
 		
@@ -38,7 +38,9 @@ public class HomeView extends BaseActivity{
 	    }
 	   
 	   private void initialize(){
-		   
+		   	//set screen type
+		    SCREEN_TYPE=HOME;
+		    
 		   	//hide next button
 	    	Button next = (Button)findViewById(R.id.butNext);
 	    	next.setVisibility(View.GONE);
