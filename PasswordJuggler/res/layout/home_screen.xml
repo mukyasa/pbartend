@@ -5,13 +5,6 @@
 	<TableLayout android:layout_width="fill_parent"
 		android:layout_height="fill_parent" android:id="@+id/tvMainView"
 		android:background="@drawable/base_bg" android:layout_marginBottom="45sp" android:layout_marginTop="50sp">
-		<!--LinearLayout android:id="@+id/LinearLayout02"
-			android:layout_height="wrap_content" android:background="@drawable/nav_bg"
-			android:layout_width="fill_parent" android:gravity="center_vertical|center_horizontal">
-			<TextView android:id="@+id/TextView02" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:textColor="#fff"
-				android:textStyle="bold" android:textSize="16sp" android:text="@string/createnew"></TextView>
-		</LinearLayout-->
 		<ScrollView android:id="@+id/ScrollView01"
 			android:layout_width="wrap_content" android:layout_height="wrap_content"
 			android:padding="15sp">
@@ -61,35 +54,5 @@
 			</TableLayout>
 		</ScrollView>
 	</TableLayout>
-	<!--
-		RelativeLayout android:id="@+id/LinearLayout01"
-		android:layout_height="wrap_content"
-		android:layout_width="fill_parent"
-		android:background="@drawable/footer_nav"
-		android:layout_alignParentBottom="true"> <Button
-		android:id="@+id/bHome" android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:background="@drawable/home"></Button> <Button
-		android:id="@+id/bSettings" android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_toRightOf="@+id/bHome"
-		android:background="@drawable/settings_off"></Button> <Button
-		android:id="@+id/bWallet" android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_toLeftOf="@+id/bPasswords"
-		android:background="@drawable/wallet_off"></Button> <Button
-		android:layout_width="wrap_content" android:id="@+id/bPasswords"
-		android:layout_height="wrap_content"
-		android:layout_toLeftOf="@+id/bLogins"
-		android:background="@drawable/passwords_off"></Button> <Button
-		android:id="@+id/bLogins" android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_toLeftOf="@+id/bNotes"
-		android:background="@drawable/logins_off"></Button> <Button
-		android:id="@+id/bNotes" android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_toLeftOf="@+id/bSettings"
-		android:layout_alignParentRight="true"
-		android:background="@drawable/notes_off"></Button> </RelativeLayout
-	-->
+	
 </RelativeLayout>
