@@ -7,7 +7,7 @@
  * http://www.gouvernement.lu/
  * http://www.tgen.org 
  */
-package com.juggler;
+package com.juggler.view;
 
 import android.app.Activity;
 import android.os.Bundle;

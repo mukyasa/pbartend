@@ -1,4 +1,4 @@
-package com.juggler;
+package com.juggler.view;
 
 import android.os.Bundle;
 

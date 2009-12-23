@@ -7,7 +7,9 @@
  * http://www.gouvernement.lu/
  * http://www.tgen.org 
  */
-package com.juggler;
+package com.juggler.view;
+
+import com.juggler.utils.Constants;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -39,7 +41,7 @@ public class HomeView extends FooterActivity{
 	   
 	   private void initialize(){
 		   	//set screen type
-		    SCREEN_TYPE=HOME;
+		   Constants.SCREEN_TYPE=Constants.HOME;
 		    
 		   	//hide next button
 	    	Button next = (Button)findViewById(R.id.butNext);
