@@ -10,6 +10,6 @@
 			android:paddingTop="25sp" android:textColor="#888"></TextView>
 		<ListView android:id="@+id/android:list"
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:fadingEdge="vertical" android:fadingEdgeLength="40.0sp"/>
+			android:fadingEdge="vertical" android:fadingEdgeLength="40.0sp" android:background="#ccc" android:divider="#ccc" android:dividerHeight="1sp"/>
 	</LinearLayout>
 </LinearLayout>
