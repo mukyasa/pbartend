@@ -1,74 +1,95 @@
 <RelativeLayout android:id="@+id/RelativeLayout01"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:background="@drawable/base_bg" android:layout_gravity="top">
+	android:layout_gravity="top">
 	<TableLayout android:layout_width="fill_parent"
-		android:layout_height="fill_parent" android:id="@+id/tvMainView" android:layout_marginBottom="45sp">
-		<LinearLayout android:id="@+id/LinearLayout02"
+		android:layout_height="fill_parent" android:id="@+id/tvMainView"
+		android:background="@drawable/base_bg" android:layout_marginBottom="45sp" android:layout_marginTop="50sp">
+		<!--LinearLayout android:id="@+id/LinearLayout02"
 			android:layout_height="wrap_content" android:background="@drawable/nav_bg"
 			android:layout_width="fill_parent" android:gravity="center_vertical|center_horizontal">
-		<TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#fff" android:textStyle="bold" android:textSize="16sp" android:text="@string/createnew"></TextView>
-</LinearLayout>
+			<TextView android:id="@+id/TextView02" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:textColor="#fff"
+				android:textStyle="bold" android:textSize="16sp" android:text="@string/createnew"></TextView>
+		</LinearLayout-->
 		<ScrollView android:id="@+id/ScrollView01"
 			android:layout_width="wrap_content" android:layout_height="wrap_content"
 			android:padding="15sp">
 			<TableLayout android:id="@+id/TableLayout01"
 				android:background="@drawable/list_item" android:layout_width="fill_parent"
 				android:layout_height="fill_parent">
-				<TableRow android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingLeft="20sp"
-					android:layout_width="fill_parent" android:id="@+id/trLogins" android:background="@drawable/item_spacer_arw">
-					<TextView android:id="@+id/TextView01"
-						android:layout_height="wrap_content" android:textColor="#000"
-						android:gravity="center_vertical"
-						android:padding="4sp" android:layout_width="fill_parent"
-						android:text="@string/login" android:drawableLeft="@drawable/logins_lg"></TextView>
-				</TableRow>
-				<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content"
+				<TableRow android:layout_height="wrap_content"
 					android:gravity="center_vertical" android:paddingLeft="20sp"
-					android:id="@+id/trWallet" android:background="@drawable/toplines_arw">
+					android:layout_width="fill_parent" android:id="@+id/trLogins"
+					android:background="@drawable/item_spacer_arw">
 					<TextView android:id="@+id/TextView01"
 						android:layout_height="wrap_content" android:textColor="#000"
-						android:gravity="center_vertical"
-						android:padding="4sp" android:layout_width="fill_parent"
-						android:drawableLeft="@drawable/wallet_lg" android:text="@string/wallet"></TextView>
+						android:gravity="center_vertical" android:padding="4sp"
+						android:layout_width="fill_parent" android:text="@string/login"
+						android:drawableLeft="@drawable/logins_lg"></TextView>
 				</TableRow>
-				<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:gravity="center_vertical" android:paddingLeft="20sp"
-					android:id="@+id/trNotes" android:background="@drawable/toplines_arw">
+				<TableRow android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:gravity="center_vertical"
+					android:paddingLeft="20sp" android:id="@+id/trWallet"
+					android:background="@drawable/toplines_arw">
 					<TextView android:id="@+id/TextView01"
 						android:layout_height="wrap_content" android:textColor="#000"
-						android:gravity="center_vertical"
-						android:padding="4sp" android:layout_width="fill_parent"
-						android:text="@string/notes" android:drawableLeft="@drawable/note_lg"></TextView>
+						android:gravity="center_vertical" android:padding="4sp"
+						android:layout_width="fill_parent" android:drawableLeft="@drawable/wallet_lg"
+						android:text="@string/wallet"></TextView>
 				</TableRow>
-				<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:gravity="center_vertical" android:paddingLeft="20sp"
-					android:id="@+id/trGenPassword" android:background="@drawable/toplines_arw">
+				<TableRow android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:gravity="center_vertical"
+					android:paddingLeft="20sp" android:id="@+id/trNotes"
+					android:background="@drawable/toplines_arw">
 					<TextView android:id="@+id/TextView01"
 						android:layout_height="wrap_content" android:textColor="#000"
-						android:gravity="center_vertical"
-						android:padding="4sp" android:layout_width="fill_parent"
-						android:text="@string/genpasswords" android:drawableLeft="@drawable/passwords_lg"></TextView>
+						android:gravity="center_vertical" android:padding="4sp"
+						android:layout_width="fill_parent" android:text="@string/notes"
+						android:drawableLeft="@drawable/note_lg"></TextView>
+				</TableRow>
+				<TableRow android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:gravity="center_vertical"
+					android:paddingLeft="20sp" android:id="@+id/trGenPassword"
+					android:background="@drawable/toplines_arw">
+					<TextView android:id="@+id/TextView01"
+						android:layout_height="wrap_content" android:textColor="#000"
+						android:gravity="center_vertical" android:padding="4sp"
+						android:layout_width="fill_parent" android:text="@string/genpasswords"
+						android:drawableLeft="@drawable/passwords_lg"></TextView>
 				</TableRow>
 			</TableLayout>
 		</ScrollView>
 	</TableLayout>
-	<!--RelativeLayout android:id="@+id/LinearLayout01"
-		android:layout_height="wrap_content" android:layout_width="fill_parent"
+	<!--
+		RelativeLayout android:id="@+id/LinearLayout01"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
 		android:background="@drawable/footer_nav"
-		android:layout_alignParentBottom="true">
-		<Button android:id="@+id/bHome" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:background="@drawable/home"></Button>
-		<Button android:id="@+id/bSettings" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:layout_toRightOf="@+id/bHome" android:background="@drawable/settings_off"></Button>
-		<Button android:id="@+id/bWallet" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:layout_toLeftOf="@+id/bPasswords" android:background="@drawable/wallet_off"></Button>
-		<Button android:layout_width="wrap_content" android:id="@+id/bPasswords"
-			android:layout_height="wrap_content" android:layout_toLeftOf="@+id/bLogins" android:background="@drawable/passwords_off"></Button>
-		<Button android:id="@+id/bLogins" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:layout_toLeftOf="@+id/bNotes" android:background="@drawable/logins_off"></Button>
-		<Button android:id="@+id/bNotes" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:layout_toLeftOf="@+id/bSettings"
-			android:layout_alignParentRight="true" android:background="@drawable/notes_off"></Button>
-	</RelativeLayout-->
+		android:layout_alignParentBottom="true"> <Button
+		android:id="@+id/bHome" android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/home"></Button> <Button
+		android:id="@+id/bSettings" android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/bHome"
+		android:background="@drawable/settings_off"></Button> <Button
+		android:id="@+id/bWallet" android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toLeftOf="@+id/bPasswords"
+		android:background="@drawable/wallet_off"></Button> <Button
+		android:layout_width="wrap_content" android:id="@+id/bPasswords"
+		android:layout_height="wrap_content"
+		android:layout_toLeftOf="@+id/bLogins"
+		android:background="@drawable/passwords_off"></Button> <Button
+		android:id="@+id/bLogins" android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toLeftOf="@+id/bNotes"
+		android:background="@drawable/logins_off"></Button> <Button
+		android:id="@+id/bNotes" android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toLeftOf="@+id/bSettings"
+		android:layout_alignParentRight="true"
+		android:background="@drawable/notes_off"></Button> </RelativeLayout
+	-->
 </RelativeLayout>
