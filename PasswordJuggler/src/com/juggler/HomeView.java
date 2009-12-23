@@ -36,7 +36,7 @@ public class HomeView extends Activity {
 	   private void initialize(){
 	        
 	    	Intent intent = new Intent(this,LoginView.class);
-	    	startActivity(intent);
+	    	startActivity(intent); 
 	    	
 	    	
 	    }
@@ -51,7 +51,7 @@ public class HomeView extends Activity {
 	        final View textEntryView = factory.inflate(R.layout.login, null);
 	        return new AlertDialog.Builder(HomeView.this)
 	            .setIcon(R.drawable.error)
-	            .setTitle(R.string.dialogtitle) 
+	            .setTitle(R.string.dialogtitle)  
 	            .setView(textEntryView)
 	            .setCancelable(false)
 	            .setPositiveButton(R.string.login, new DialogInterface.OnClickListener() {
