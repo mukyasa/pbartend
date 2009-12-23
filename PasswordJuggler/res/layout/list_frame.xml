@@ -2,4 +2,5 @@
 android:layout_height="fill_parent">
     <include layout="@layout/nav_layout" android:id="@+id/navBar"/>
     <include layout="@layout/generic_list" android:id="@+id/listItems"/>
+	<include layout="@layout/footer_layout" android:id="@+id/vFooter"/>
 </merge>
