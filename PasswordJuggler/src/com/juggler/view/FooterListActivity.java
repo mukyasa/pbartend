@@ -1,6 +1,6 @@
-package com.juggler;
+package com.juggler.view;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -9,14 +9,9 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 
-public class FooterActivity extends Activity implements OnClickListener,OnTouchListener{
-	protected final int HOME = 0;
-	protected final int WALLET = 1;
-	protected final int LOGINS = 2;
-	protected final int NOTES = 3;
-	protected final int PASSWORDS = 4;
-	protected final int SETTINGS = 5;
-	protected int SCREEN_TYPE=0;
+import com.juggler.utils.Constants;
+
+public class FooterListActivity extends ListActivity implements OnClickListener,OnTouchListener{
 	
 	protected Button bHome,bWallet,bLogins,bNotes,bPasswords,bSettings;
 	
@@ -56,28 +51,28 @@ public class FooterActivity extends Activity implements OnClickListener,OnTouchL
     public void onClick(View v) {
  	   	
  	   if(v == bHome){
- 		  if(SCREEN_TYPE != HOME){
+ 		  if(Constants.SCREEN_TYPE != Constants.HOME){
  		   	Intent intent = new Intent(this,HomeView.class);
 	    	startActivity(intent);
  		  }
  	   }else if(v == bLogins){
- 		  if(SCREEN_TYPE != LOGINS){
+ 		  if(Constants.SCREEN_TYPE != Constants.LOGINS){
  			  
  		  }
  	   }else if(v == bNotes){
- 		  if(SCREEN_TYPE != NOTES){
+ 		  if(Constants.SCREEN_TYPE != Constants.NOTES){
  			  
  		  }
  	   }else if(v== bPasswords){
- 		  if(SCREEN_TYPE != PASSWORDS){
+ 		  if(Constants.SCREEN_TYPE != Constants.PASSWORDS){
  			  
  		  }
  	   }else if(v == bSettings){
- 		  if(SCREEN_TYPE != SETTINGS){
+ 		  if(Constants.SCREEN_TYPE != Constants.SETTINGS){
  			  
  		  }
  	   }else if(v ==bWallet){
- 		  if(SCREEN_TYPE != WALLET){
+ 		  if(Constants.SCREEN_TYPE != Constants.WALLET){
  			Intent intent = new Intent(this,DetailsActivity.class);
 	    	startActivity(intent);
  		  }
@@ -100,7 +95,7 @@ public class FooterActivity extends Activity implements OnClickListener,OnTouchL
 					((Button)v).setBackgroundResource(R.drawable.home);
 				} 
 				else{
-					if(SCREEN_TYPE != HOME)
+					if(Constants.SCREEN_TYPE != Constants.HOME)
 						((Button)v).setBackgroundResource(R.drawable.home_off);
 				}
 			}else if(v==bLogins){
@@ -108,7 +103,7 @@ public class FooterActivity extends Activity implements OnClickListener,OnTouchL
 						((Button)v).setBackgroundResource(R.drawable.logins);
 				} 
 				else{
-					if(SCREEN_TYPE != LOGINS)
+					if(Constants.SCREEN_TYPE != Constants.LOGINS)
 						((Button)v).setBackgroundResource(R.drawable.logins_off);
 				}
 			}
@@ -117,7 +112,7 @@ public class FooterActivity extends Activity implements OnClickListener,OnTouchL
 					((Button)v).setBackgroundResource(R.drawable.wallet);
 				} 
 				else{
-					if(SCREEN_TYPE != WALLET)
+					if(Constants.SCREEN_TYPE != Constants.WALLET)
 						((Button)v).setBackgroundResource(R.drawable.wallet_off);
 				}
 			}
@@ -126,7 +121,7 @@ public class FooterActivity extends Activity implements OnClickListener,OnTouchL
 					((Button)v).setBackgroundResource(R.drawable.notes);
 				} 
 				else{
-					if(SCREEN_TYPE != NOTES)
+					if(Constants.SCREEN_TYPE != Constants.NOTES)
 						((Button)v).setBackgroundResource(R.drawable.notes_off);
 				}
 			}
@@ -135,7 +130,7 @@ public class FooterActivity extends Activity implements OnClickListener,OnTouchL
 					((Button)v).setBackgroundResource(R.drawable.passwords);
 				} 
 				else{
-					if(SCREEN_TYPE != PASSWORDS)
+					if(Constants.SCREEN_TYPE != Constants.PASSWORDS)
 						((Button)v).setBackgroundResource(R.drawable.passwords_off);
 				}
 			}
@@ -144,7 +139,7 @@ public class FooterActivity extends Activity implements OnClickListener,OnTouchL
 					((Button)v).setBackgroundResource(R.drawable.settings);
 				} 
 				else{
-					if(SCREEN_TYPE != SETTINGS)
+					if(Constants.SCREEN_TYPE != Constants.SETTINGS)
 						((Button)v).setBackgroundResource(R.drawable.settings_off);
 				}
 			}
