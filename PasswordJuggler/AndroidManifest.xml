@@ -10,8 +10,10 @@
 		</activity>
 
 		<activity android:name="LoginView" android:theme="@style/Theme.Translucent"></activity>
-		<activity android:name="AllView"></activity>
-	</application>
+		
+	<activity android:name="DetailsActivity"></activity>
+<activity android:name="WalletCatListActivity"></activity>
+</application>
 	<uses-sdk android:minSdkVersion="6" />
 
 </manifest> 
