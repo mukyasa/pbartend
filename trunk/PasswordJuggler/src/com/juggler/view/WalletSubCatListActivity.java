@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 public class WalletSubCatListActivity extends FooterListActivity{
 	private Button butPrev;
+	
+	//TODO:these need to be in a database
 	private final String[] subComputers = { "Software License", "Database", "WiFi", "Server" };
 	private final String[] subFinancial = { "Credit Card", "Bank Account (US)", "Bank Account (CA)" };
 	private final String[] subGovernment = { "Passport", "Driver's License", "Social Security Number","Hunting License" };
@@ -24,11 +26,23 @@ public class WalletSubCatListActivity extends FooterListActivity{
 	}
 	private void initialize() {
 		String[] items={""};
-		int selectedRow = getIntent().getIntExtra(WalletCatListActivity.INTENT_EXTRA_SELECTED_ROW, 0);
-		switch(selectedRow)
+		long selectedRow = getIntent().getLongExtra(WalletCatListActivity.INTENT_EXTRA_SELECTED_ROW, 0);
+		switch((int)selectedRow)
 		{
 			case 0:
 				items = subComputers;
+				break;
+			case 1:
+				items = subFinancial;
+				break;
+			case 2:
+				items = subGovernment;
+				break;
+			case 3:
+				items = subInternet;
+				break;
+			case 4:
+				items = subMembership;
 				break;
 		}
 		
