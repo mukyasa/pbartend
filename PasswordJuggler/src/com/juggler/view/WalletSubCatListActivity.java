@@ -1,22 +1,19 @@
 package com.juggler.view;
 
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 
-public class WalletCatListActivity extends FooterListActivity{
-	
-	private Intent intent;
-	protected static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
-	private static final int INTENT_NEXT_SCREEN = 0;
+public class WalletSubCatListActivity extends FooterListActivity{
 	private Button butPrev;
-	private final String[] baseCats = { "Computers", "Financial", "Government", "Internet", "Memberships" };
+	private final String[] subComputers = { "Software License", "Database", "WiFi", "Server" };
+	private final String[] subFinancial = { "Credit Card", "Bank Account (US)", "Bank Account (CA)" };
+	private final String[] subGovernment = { "Passport", "Driver's License", "Social Security Number","Hunting License" };
+	private final String[] subInternet = { "Email Account", "Instant Messenger","FTP","iTunes","ISP"};
+	private final String[] subMembership = { "Rewards Program","Membership"};
 
 	/** Called when the activity is first created. */
 	@Override
@@ -26,8 +23,15 @@ public class WalletCatListActivity extends FooterListActivity{
 		super.onCreate(savedInstanceState);
 	}
 	private void initialize() {
+		String[] items={""};
+		int selectedRow = getIntent().getIntExtra(WalletCatListActivity.INTENT_EXTRA_SELECTED_ROW, 0);
+		switch(selectedRow)
+		{
+			case 0:
+				items = subComputers;
+				break;
+		}
 		
-		intent = new Intent(this, WalletSubCatListActivity.class);
 		
 		// hide next button
 		Button next = (Button) findViewById(R.id.butNext);
@@ -38,23 +42,9 @@ public class WalletCatListActivity extends FooterListActivity{
 		butPrev = (Button) findViewById(R.id.butPrev);
 		butPrev.setOnClickListener(this);
 		butPrev.setOnTouchListener(this);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, baseCats));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, items));
 		getListView().setTextFilterEnabled(true);
 	}
-	
-	/* (non-Javadoc)
-	 * @see android.app.ListActivity#onListItemClick(android.widget.ListView, android.view.View, int, long)
-	 */
-	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-	    super.onListItemClick(l, v, position, id);
-
-	    v.setBackgroundColor(Color.rgb(239, 239, 239));
-	    
-	    intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
-		startActivityForResult(intent, INTENT_NEXT_SCREEN);
-	}
-	
 	/*
 	 * (non-Javadoc)
 	 * @see android.view.View.OnTouchListener#onTouch(android.view.View,
