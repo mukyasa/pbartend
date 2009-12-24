@@ -1,7 +1,6 @@
 package com.juggler.view;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,9 +21,19 @@ public class WalletCatListActivity extends FooterListActivity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.list_frame);
-		initialize();
+		
 		super.onCreate(savedInstanceState);
 	}
+	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+	    super.onResume();
+	    initialize();
+	}
+	
 	private void initialize() {
 		
 		intent = new Intent(this, WalletSubCatListActivity.class);
@@ -49,7 +58,8 @@ public class WalletCatListActivity extends FooterListActivity{
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 	    super.onListItemClick(l, v, position, id);
 
-	    v.setBackgroundColor(Color.rgb(239, 239, 239));
+	    v.setBackgroundResource(R.drawable.sm_item_spacer_arw_slct);
+	    v.setPadding(15, 10,10,10);
 	    
 	    intent.putExtra(INTENT_EXTRA_SELECTED_ROW, id);
 		startActivityForResult(intent, INTENT_NEXT_SCREEN);
