@@ -9,8 +9,6 @@
  */
 package com.juggler.view;
 
-import com.juggler.utils.Constants;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -21,6 +19,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableRow;
+
+import com.juggler.utils.Constants;
 
 /**
  * @author dmason
@@ -71,13 +71,21 @@ public class HomeView extends FooterActivity{
 			super.onClick(v);
 		
 			if(v==trGenPassword){
-				
+				Intent intent = new Intent(this,WalletCatListActivity.class);
+				intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT, getString(R.string.genpasswords));
+	    		startActivity(intent);
 			}else if(v==trWallet){
 				Intent intent = new Intent(this,WalletCatListActivity.class);
+				intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT, getString(R.string.wallet));
 	    		startActivity(intent);
 			}else if(v==trLogins){
-				
+				Intent intent = new Intent(this,LoginsListActivity.class);
+				intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT, getString(R.string.login));
+	    		startActivity(intent);
 			}else if(v == trNotes){
+				Intent intent = new Intent(this,WalletCatListActivity.class);
+				intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT, getString(R.string.notes));
+	    		startActivity(intent);
 				
 			}
 			

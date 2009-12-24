@@ -1,11 +1,14 @@
 package com.juggler.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.juggler.utils.Constants;
 
 public class WalletSubCatListActivity extends FooterListActivity{
 	private Button butPrev;
@@ -26,7 +29,15 @@ public class WalletSubCatListActivity extends FooterListActivity{
 	}
 	private void initialize() {
 		String[] items={""};
-		long selectedRow = getIntent().getLongExtra(WalletCatListActivity.INTENT_EXTRA_SELECTED_ROW, 0);
+		
+		//set title
+		Intent selectedIntent = getIntent();
+		long selectedRow = selectedIntent.getLongExtra(Constants.INTENT_EXTRA_SELECTED_ROW, 0);
+		CharSequence text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
+		
+		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
+		tvTitle.setText(text);
+		
 		switch((int)selectedRow)
 		{
 			case 0:
@@ -50,9 +61,6 @@ public class WalletSubCatListActivity extends FooterListActivity{
 		// hide next button
 		Button next = (Button) findViewById(R.id.butNext);
 		next.setVisibility(View.GONE);
-		// hide title
-		TextView tvTitle = (TextView) findViewById(R.id.tvTitle);
-		tvTitle.setVisibility(View.GONE);
 		butPrev = (Button) findViewById(R.id.butPrev);
 		butPrev.setOnClickListener(this);
 		butPrev.setOnTouchListener(this);
