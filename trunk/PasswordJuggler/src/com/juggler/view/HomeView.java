@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableRow;
 
+import com.juggler.dao.PasswordDbHelper;
 import com.juggler.utils.Constants;
 
 /**
@@ -40,6 +41,10 @@ public class HomeView extends FooterActivity{
 	    }
 	   
 	   private void initialize(){
+		   
+		   //init database
+		   PasswordDbHelper.getInstance(this);
+		   
 		   	//set screen type
 		   Constants.SCREEN_TYPE=Constants.HOME;
 		    

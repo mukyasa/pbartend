@@ -30,7 +30,7 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 	private boolean useLocal = false; 
 	private String dbPathToUse = DATABASE_PATH_EXTERNAL;
 
-	private static final int DATABASE_VERSION = 1;		
+	private static final int DATABASE_VERSION = 2;		
 
 	// Sections lifted from the originating class SqliteOpenHelper.java
 	private SQLiteDatabase mDatabase = null;
@@ -96,6 +96,9 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) { 
+		
+		db.execSQL(PasswordDAO.sqlCreatePasswordTable);
+		db.execSQL(PasswordDAO.sqlCreateCatsTable);
 		
 	}
 
