@@ -2,6 +2,7 @@ package com.juggler.dao;
 
 import java.io.File;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -30,7 +31,7 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 	private boolean useLocal = false; 
 	private String dbPathToUse = DATABASE_PATH_EXTERNAL;
 
-	private static final int DATABASE_VERSION = 2;		
+	private static final int DATABASE_VERSION = 3;		
 
 	// Sections lifted from the originating class SqliteOpenHelper.java
 	private SQLiteDatabase mDatabase = null;
@@ -94,12 +95,79 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 
 	}
 
+	/**
+	 * Create the tables
+	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) { 
 		
 		db.execSQL(PasswordDAO.sqlCreatePasswordTable);
 		db.execSQL(PasswordDAO.sqlCreateCatsTable);
+		db.execSQL(PasswordDAO.sqlCreateNotesTable);
+		db.execSQL(PasswordDAO.sqlCreatePasswordEntryTable);
+		db.execSQL(PasswordDAO.sqlCreateSubCatTable);
 		
+		//populate cats and sub cats
+		hydrateCategories(db);
+		
+	}
+	
+	private int subcatindex=0;
+	private void hydrateSubCategories(SQLiteDatabase db, String [] catNames, int catId) {
+		
+		ContentValues values;
+		//loop the sub cat array but the _id needs to be subcatindex
+		for(int i=0;i<catNames.length;i++)
+		{
+			values = new ContentValues();
+			values.put(PasswordDAO.COL_ID, subcatindex);
+			values.put(PasswordDAO.COL_NAME, catNames[i]); 
+			values.put(PasswordDAO.COL_CAT_ID, catId); 
+			
+			db.insert(PasswordDAO.TABLE_SUB_CATS, null, values);
+			//next subcat index
+			subcatindex++;
+		}
+		 
+	}
+
+	private void hydrateCategories(SQLiteDatabase db) {
+		
+		String[] baseCats = { "Computers", "Financial", "Government", "Internet", "Memberships" };
+		String[] list=null;
+		
+		ContentValues values;
+		
+		for(int i=0;i<baseCats.length;i++)
+		{
+			values = new ContentValues();
+			values.put(PasswordDAO.COL_ID, i);
+			values.put(PasswordDAO.COL_NAME, baseCats[i]); 
+			
+			db.insert(PasswordDAO.TABLE_CATS, null, values);
+			
+			switch(i)
+			{
+				case 0:
+					String[] list0 = { "Software License", "Database", "WiFi", "Server" };
+					list = list0;break;
+				case 1:
+					String[] list1 = { "Credit Card", "Bank Account (US)", "Bank Account (CA)" };
+					list = list1;break;
+				case 2:
+					String[] list2 = { "Passport", "Driver's License", "Social Security Number","Hunting License" };
+					list = list2;break;
+				case 3:
+					String[] list3 = { "Email Account", "Instant Messenger","FTP","iTunes","ISP"};
+					list = list3;break;
+				case 4:
+					String[] list4 = { "Rewards Program","Membership"};
+					list = list4;break;
+			}
+			//do sub cat
+			hydrateSubCategories(db,list,i);
+		}
+		 
 	}
 
 
