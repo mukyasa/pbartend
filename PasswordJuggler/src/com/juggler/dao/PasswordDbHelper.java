@@ -101,11 +101,11 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) { 
 		
-		db.execSQL(PasswordDAO.sqlCreatePasswordTable);
-		db.execSQL(PasswordDAO.sqlCreateCatsTable);
-		db.execSQL(PasswordDAO.sqlCreateNotesTable);
-		db.execSQL(PasswordDAO.sqlCreatePasswordEntryTable);
-		db.execSQL(PasswordDAO.sqlCreateSubCatTable);
+		db.execSQL(QuiresDAO.sqlCreatePasswordTable);
+		db.execSQL(QuiresDAO.sqlCreateCatsTable);
+		db.execSQL(QuiresDAO.sqlCreateNotesTable);
+		db.execSQL(QuiresDAO.sqlCreatePasswordEntryTable);
+		db.execSQL(QuiresDAO.sqlCreateSubCatTable);
 		
 		//populate cats and sub cats
 		hydrateCategories(db);
@@ -120,11 +120,11 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		for(int i=0;i<catNames.length;i++)
 		{
 			values = new ContentValues();
-			values.put(PasswordDAO.COL_ID, subcatindex);
-			values.put(PasswordDAO.COL_NAME, catNames[i]); 
-			values.put(PasswordDAO.COL_CAT_ID, catId); 
+			values.put(QuiresDAO.COL_ID, subcatindex);
+			values.put(QuiresDAO.COL_NAME, catNames[i]); 
+			values.put(QuiresDAO.COL_CAT_ID, catId); 
 			
-			db.insert(PasswordDAO.TABLE_SUB_CATS, null, values);
+			db.insert(QuiresDAO.TABLE_SUB_CATS, null, values);
 			//next subcat index
 			subcatindex++;
 		}
@@ -141,10 +141,10 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		for(int i=0;i<baseCats.length;i++)
 		{
 			values = new ContentValues();
-			values.put(PasswordDAO.COL_ID, i);
-			values.put(PasswordDAO.COL_NAME, baseCats[i]); 
+			values.put(QuiresDAO.COL_ID, i);
+			values.put(QuiresDAO.COL_NAME, baseCats[i]); 
 			
-			db.insert(PasswordDAO.TABLE_CATS, null, values);
+			db.insert(QuiresDAO.TABLE_CATS, null, values);
 			
 			switch(i)
 			{
@@ -302,8 +302,8 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 	 */
 	private void dropTables(SQLiteDatabase db)
 	{
-			db.execSQL("DROP TABLE IF EXISTS " + PasswordDAO.TABLE_PASSWORDS );
-			db.execSQL("DROP TABLE IF EXISTS " + PasswordDAO.TABLE_CATS );
+			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_PASSWORDS );
+			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_CATS );
 	}
 
 }
