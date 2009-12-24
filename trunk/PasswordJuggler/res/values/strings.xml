@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="login">Logins</string>
+	<string name="login">Add Logins</string>
 	<string name="empty">No records found.</string>
 	<string name="app_name">Password Juggler</string>
 	<string name="password">Password</string>
@@ -9,7 +9,9 @@
 
 	<string name="createnew">Create New Entry</string>
 	<string name="genpasswords">Generate Password</string>
-	<string name="wallet">Wallet</string>
-	 <string name="notes">Notes</string>
+	<string name="wallet">Add Wallet Item</string>
+	 <string name="notes">Add Notes</string>
+	 
+	 <string name="basicInfo">Standard Fields</string>
 
 </resources>
