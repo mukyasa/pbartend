@@ -11,12 +11,12 @@ import android.widget.TextView;
 
 import com.juggler.utils.Constants;
 
-public class WalletCatListActivity extends FooterListActivity{
+public class LoginsListActivity extends FooterListActivity{
 	
 	private Intent intent;
 	private static final int INTENT_NEXT_SCREEN = 0;
 	private Button butPrev;
-	private final String[] baseCats = { "Computers", "Financial", "Government", "Internet", "Memberships" };
+	private final String[] loginsTemplets = { "Standard Login", "Yahoo", "Amazon", "eBay", "Facebook","Gmail","PayPal","Twitter","Digg" };
 
 	/** Called when the activity is first created. */
 	@Override
@@ -49,10 +49,10 @@ public class WalletCatListActivity extends FooterListActivity{
 		butPrev = (Button) findViewById(R.id.butPrev);
 		butPrev.setOnClickListener(this);
 		butPrev.setOnTouchListener(this);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, baseCats));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, loginsTemplets));
 		getListView().setTextFilterEnabled(true);
 		//set next intent
-		intent = new Intent(this, WalletSubCatListActivity.class);
+		intent = new Intent(this, CreateActivity.class);
 	}
 	
 	/* (non-Javadoc)

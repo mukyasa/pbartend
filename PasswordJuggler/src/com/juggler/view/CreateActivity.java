@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class DetailsActivity extends BaseActivity {
+public class CreateActivity extends BaseActivity {
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		setContentView(R.layout.detail_frame);
+		setContentView(R.layout.create_frame);
 		initialize();
 		
 		super.onCreate(savedInstanceState);
