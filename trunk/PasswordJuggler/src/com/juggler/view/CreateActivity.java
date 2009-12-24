@@ -24,6 +24,10 @@ public class CreateActivity extends BaseActivity {
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 		tvTitle.setText(text);
 		
+		
+		//if(tvTitle.equals(getString(R.string.)))
+		
+		
 	}
 	
 }
