@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.juggler" android:versionCode="1" android:versionName="1.0">
+	package="com.juggler.view" android:versionCode="1" android:versionName="1.0">
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
 		<activity android:name=".HomeView" android:label="@string/app_name">
 			<intent-filter>
@@ -13,6 +13,7 @@
 		
 	<activity android:name="DetailsActivity"></activity>
 <activity android:name="WalletCatListActivity"></activity>
+<activity android:name="WalletSubCatListActivity"></activity>
 </application>
 	<uses-sdk android:minSdkVersion="6" />
 
