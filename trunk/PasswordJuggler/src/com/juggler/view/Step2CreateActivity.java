@@ -65,6 +65,9 @@ public class Step2CreateActivity extends BaseActivity {
 	    	//save
 	    	passDao.saveLogins();
 	    	
+	    	//reset data
+	    	np.clear();
+	    	
 	    	Intent intent = new Intent(this, HomeView.class);
 	    	startActivity(intent);
 	    	

@@ -33,7 +33,7 @@ public class HomeView extends FooterActivity implements OnClickListener{
 	        setContentView(R.layout.base_page_frame);
 	        super.onCreate(savedInstanceState);
 	        
-	        LoginAuthHandler handler = LoginAuthHandler.getInstance();
+	        LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
 	        if(!handler.isDidLogin())
 	        {
 		        //pop login window
@@ -87,7 +87,7 @@ public class HomeView extends FooterActivity implements OnClickListener{
 				intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT, getString(R.string.login));
 	    		startActivity(intent);
 			}else if(v == trNotes){
-				Intent intent = new Intent(this,WalletCatListActivity.class);
+				Intent intent = new Intent(this,CreateNoteTitleActivity.class);
 				intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT, getString(R.string.notes));
 	    		startActivity(intent);
 				

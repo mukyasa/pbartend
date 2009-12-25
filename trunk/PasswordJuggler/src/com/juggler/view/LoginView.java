@@ -41,7 +41,7 @@ public class LoginView extends Activity implements OnClickListener {
     	
     	if(true)
     	{
-		   	LoginAuthHandler handler = LoginAuthHandler.getInstance();
+		   	LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
 	   		handler.setDidLogin(true);
 	   		
 	   		finish();

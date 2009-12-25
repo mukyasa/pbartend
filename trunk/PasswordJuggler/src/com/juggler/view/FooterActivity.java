@@ -14,6 +14,7 @@ public class FooterActivity extends Activity{
         footutil = new FooterUtil(this);
         
         footutil.initialize(this);
+        
     }
 	
 }
