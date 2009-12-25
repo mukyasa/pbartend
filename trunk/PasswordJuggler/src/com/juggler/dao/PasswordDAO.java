@@ -20,12 +20,29 @@ public class PasswordDAO extends QuiresDAO {
 	
 	private SQLiteDatabase sqliteDatabase;
 	
-	
+	/**
+	 * get all cats
+	 * Dec 24, 2009
+	 * dmason
+	 * @return
+	 *
+	 */
 	public Cursor getCategories(){
-		Cursor cursor = sqliteDatabase.query(TABLE_CATS, new String[] {
+		return sqliteDatabase.query(TABLE_CATS, new String[] {
 				COL_ID, COL_NAME }, null, null, null, null, null);
-
-		return cursor;
+	}
+	
+	/**
+	 * Get all subcats
+	 * Dec 24, 2009
+	 * dmason
+	 * @param catId
+	 * @return
+	 *
+	 */
+	public Cursor getSubCategories(String catId){
+		String[]selectionArgs={catId};
+		return sqliteDatabase.rawQuery(sqlGetSubCats, selectionArgs);
 	}
 	
 	/**
