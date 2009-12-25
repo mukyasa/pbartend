@@ -23,7 +23,7 @@ public class NewPassword {
 	public String usage;
 	public String url;
 	public long catId;
-	public long catSubId;
+	public long subCatId;
 	public long noteId;
 	//password id set after insert of password
 	public int passwordId;
@@ -33,9 +33,9 @@ public class NewPassword {
 	public static NewPassword getInstance(){
 		
 		if(instance==null)
-			return new NewPassword();
-		else
-			return instance;
+			instance = new NewPassword();
+		
+		return instance;
 	}
 	
 }

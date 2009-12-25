@@ -81,7 +81,7 @@ public class FooterUtil implements OnClickListener,OnTouchListener{
 			bPasswords.setVisibility(View.GONE);
 		if(passDao.getNotesCount() <= 0)
 			bNotes.setVisibility(View.GONE);
-		
+		 
 		
 	 }
 	

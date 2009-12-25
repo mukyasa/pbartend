@@ -3,16 +3,14 @@ package com.juggler.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.juggler.domain.NewPassword;
-import com.juggler.utils.Constants;
 
-public class CreateTemplateActivity extends BaseActivity {
-	private CharSequence text;
+public class Step1CreateActivity extends BaseActivity {
 	private EditText etTitle,etURL;
-	private long selectedRow;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.create_frame);
@@ -24,18 +22,14 @@ public class CreateTemplateActivity extends BaseActivity {
 	private void initialize() {
 
 		//set title
-		Intent selectedIntent = getIntent();
-		text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
-		selectedRow =  selectedIntent.getLongExtra(Constants.INTENT_EXTRA_SELECTED_ROW, 0);
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
-		tvTitle.setText(text);
+		tvTitle.setText("");
+			
+		Button bNext = (Button)findViewById(R.id.butNext);
+		bNext.setText(getString(R.string.next));
 		
-		//change text to email and password assume templete picked
 		etTitle = (EditText)findViewById(R.id.etTitle);
 		etURL = (EditText)findViewById(R.id.etURL);
-		
-		etURL.setText(getString(R.string.email));
-		etTitle.setText(getString(R.string.password));
 		
 	}
 	
@@ -50,8 +44,12 @@ public class CreateTemplateActivity extends BaseActivity {
 	    {
 	    	NewPassword np = NewPassword.getInstance();
 	    	
-	    	np.name =text.toString();
-		    np.catId=selectedRow;
+	    	np.name =etTitle.getText().toString();
+	    	np.url = etURL.getText().toString();
+	    	np.catId=-1;
+	    	
+	    	Intent intent = new Intent(this, Step2CreateActivity.class);
+	    	startActivity(intent);
 	    	
 	    }
 	    
