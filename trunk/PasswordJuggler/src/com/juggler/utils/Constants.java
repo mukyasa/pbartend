@@ -23,6 +23,8 @@ public class Constants {
 	public static final int SETTINGS = 5;
 	public static int SCREEN_TYPE=0;
 	
+	public static String STANDARD_LOGIN = "Standard Login";
+	
 	public static final String INTENT_EXTRA_SELECTED_ROW = "selected_id";
 	public static final String INTENT_EXTRA_SELECTED_TEXT = "selected_text";
 }

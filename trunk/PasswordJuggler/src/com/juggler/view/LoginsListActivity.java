@@ -18,7 +18,8 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 	private Intent intent;
 	private static final int INTENT_NEXT_SCREEN = 0;
 	private Button butPrev;
-	private final String[] loginsTemplets = { "Standard Login", "Yahoo", "Amazon", "eBay", "Facebook","Gmail","PayPal","Twitter","Digg" };
+	private final String[] loginsTemplets = { Constants.STANDARD_LOGIN, "Yahoo", "Amazon", "eBay", "Facebook","Gmail","PayPal","Twitter","Digg" };
+	private int STANDARD_LOGIN=0;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -54,7 +55,7 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, loginsTemplets));
 		getListView().setTextFilterEnabled(true);
 		//set next intent
-		intent = new Intent(this, CreateActivity.class);
+		intent = new Intent(this, CreateTemplateActivity.class);
 	}
 	
 	/* (non-Javadoc)
@@ -66,6 +67,9 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 
 	    v.setBackgroundResource(R.drawable.sm_item_spacer_arw_slct);
 	    v.setPadding(15, 10,10,10);
+	    
+	    if(id==STANDARD_LOGIN)
+	    	intent = new Intent(this, CreateActivity.class);
 	    
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_ROW, id);
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,((TextView)v).getText());

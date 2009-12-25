@@ -9,6 +9,7 @@
  */
 package com.juggler.dao;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -108,6 +109,27 @@ public class PasswordDAO extends QuiresDAO {
 		String[]selectionArgs={QuiresDAO.LOGINS_ID+""};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetWalletCount, selectionArgs);
 		return cursor.getCount();
+	}
+	
+	/**
+	 * persists logins
+	 * Dec 24, 2009
+	 * dmason
+	 *
+	 */
+	public void saveLogins(SQLiteDatabase db)
+	{
+
+		ContentValues title = new ContentValues();
+		ContentValues nameValue = new ContentValues();
+		
+		//title.put(PasswordDAO.COL_NAME, types[i]); 
+		
+		db.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, title);
+		
+		//loop
+		db.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, nameValue);
+		
 	}
 
 }

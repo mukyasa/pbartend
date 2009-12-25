@@ -16,9 +16,9 @@
 				android:textSize="14sp" android:text="@string/basicInfo"></TextView>
 
 			<EditText android:id="@+id/etURL"
-				android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="URL" android:textColor="#ccc"></EditText>
+				android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#ccc" android:text="@string/url"></EditText>
 			<EditText android:id="@+id/etTitle"
-				android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Title" android:textColor="#ccc"></EditText>
+				android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#ccc" android:text="@string/title"></EditText>
 
 
 
