@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableRow;
@@ -27,17 +28,15 @@ import com.juggler.utils.Constants;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class HomeView extends FooterActivity{
+public class HomeView extends FooterActivity implements OnClickListener{
 	
 		private TableRow trWallet,trLogins,trNotes,trGenPassword;
 		
 	   @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        setContentView(R.layout.base_page_frame);
-	        
-	        initialize();
-	        
 	        super.onCreate(savedInstanceState);
+	        initialize();
 	    }
 	   
 	   private void initialize(){
@@ -71,9 +70,7 @@ public class HomeView extends FooterActivity{
 	    }
 	   
 	  
-	   @Override
 		public void onClick(View v) {
-			super.onClick(v);
 		
 			if(v==trGenPassword){
 				Intent intent = new Intent(this,WalletCatListActivity.class);
@@ -131,6 +128,5 @@ public class HomeView extends FooterActivity{
 	            .create();
 	        
 	    }
-
 	   
 }

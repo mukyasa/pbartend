@@ -53,5 +53,61 @@ public class PasswordDAO extends QuiresDAO {
 	public void setSQLiteDatabase(SQLiteDatabase sqliteDatabase) {
 		this.sqliteDatabase = sqliteDatabase;
 	}
+	
+	/**
+	 * Gets gen password count
+	 * Dec 24, 2009
+	 * dmason
+	 * @return
+	 *
+	 */
+	public int getPasswordsCount()
+	{
+		String[]selectionArgs={};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetPasswordCount, selectionArgs);
+		return cursor.getCount();
+	}
+	
+	/**
+	 * gets logins count
+	 * Dec 24, 2009
+	 * dmason
+	 * @return
+	 *
+	 */
+	public int getLoginsCount()
+	{
+		String[]selectionArgs={QuiresDAO.LOGINS_ID+""};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetLoginsCount, selectionArgs);
+		return cursor.getCount();
+	}
+	
+	/**
+	 * gets notes count
+	 * Dec 24, 2009
+	 * dmason
+	 * @return
+	 *
+	 */
+	public int getNotesCount()
+	{
+		String[]selectionArgs={};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetNotesCount, selectionArgs);
+		return cursor.getCount();
+	}
+	
+	/**
+	 * gets wallet iems count
+	 * Dec 24, 2009
+	 * dmason
+	 * @return
+	 *
+	 */
+	public int getWalletCount()
+	{
+		String[]selectionArgs={QuiresDAO.LOGINS_ID+""};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetWalletCount, selectionArgs);
+		return cursor.getCount();
+	}
 
 }

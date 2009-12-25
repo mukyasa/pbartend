@@ -106,6 +106,7 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		db.execSQL(QuiresDAO.sqlCreateNotesTable);
 		db.execSQL(QuiresDAO.sqlCreatePasswordEntryTable);
 		db.execSQL(QuiresDAO.sqlCreateSubCatTable);
+		db.execSQL(QuiresDAO.sqlCreateGenPassTable);		
 		
 		//populate cats and sub cats
 		hydrateCategories(db);

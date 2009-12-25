@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -11,7 +13,7 @@ import android.widget.TextView;
 
 import com.juggler.utils.Constants;
 
-public class LoginsListActivity extends FooterListActivity{
+public class LoginsListActivity extends FooterListActivity implements OnClickListener,OnTouchListener{
 	
 	private Intent intent;
 	private static final int INTENT_NEXT_SCREEN = 0;
@@ -76,7 +78,7 @@ public class LoginsListActivity extends FooterListActivity{
 	 * android.view.MotionEvent)
 	 */
 	public boolean onTouch(View v, MotionEvent event) {
-		super.onTouch(v, event);
+
 		if (v instanceof Button) {
 			
 			if(v == butPrev)
@@ -100,7 +102,7 @@ public class LoginsListActivity extends FooterListActivity{
 	 * @see android.view.View.OnClickListener#onClick(android.view.View)
 	 */
 	public void onClick(View v) {
-		super.onClick(v);
+
 		if (v == butPrev) {
 			finish();
 		}
