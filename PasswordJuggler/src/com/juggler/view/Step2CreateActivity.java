@@ -1,23 +1,30 @@
 package com.juggler.view;
 
+import java.util.Hashtable;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.juggler.dao.PasswordDAO;
+import com.juggler.dao.PasswordDbHelper;
 import com.juggler.domain.NewPassword;
-import com.juggler.utils.Constants;
 
-public class CreateActivity extends BaseActivity {
-	private CharSequence text;
-	private long selectedRow;
+public class Step2CreateActivity extends BaseActivity {
 	private EditText etTitle,etURL;
+	private PasswordDAO passDao;
+	private PasswordDbHelper myDatabaseAdapter;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.create_frame);
 		initialize();
+		
+		//set up database for use
+		passDao = new PasswordDAO();
+		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
+		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		
 		super.onCreate(savedInstanceState);
 	}
@@ -25,18 +32,15 @@ public class CreateActivity extends BaseActivity {
 	private void initialize() {
 
 		//set title
-		Intent selectedIntent = getIntent();
-		text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
-		selectedRow =  selectedIntent.getLongExtra(Constants.INTENT_EXTRA_SELECTED_ROW, 0);
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
-		tvTitle.setText(text);
+		tvTitle.setText("");
 		
 			
 		//change text to email and password assume templete picked
 		etTitle = (EditText)findViewById(R.id.etTitle);
 		etURL = (EditText)findViewById(R.id.etURL);
 		
-		etURL.setText(getString(R.string.email));
+		etURL.setText(getString(R.string.username));
 		etTitle.setText(getString(R.string.password));
 		
 		
@@ -52,9 +56,17 @@ public class CreateActivity extends BaseActivity {
 	    if(v == bNext)
 	    {
 	    	NewPassword np = NewPassword.getInstance();
-	    	
-	    	np.name =etTitle.getText().toString();
 	    	np.catId=-1;
+	    	
+	    	Hashtable<String, String> nameValue = new Hashtable<String, String>();
+	    	nameValue.put(etURL.getText().toString(), etTitle.getText().toString());
+	    	
+	    	np.nameValue=nameValue;
+	    	//save
+	    	passDao.saveLogins();
+	    	
+	    	Intent intent = new Intent(this, HomeView.class);
+	    	startActivity(intent);
 	    	
 	    }
 	    

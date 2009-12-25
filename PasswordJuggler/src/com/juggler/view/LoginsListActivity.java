@@ -69,7 +69,7 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 	    v.setPadding(15, 10,10,10);
 	    
 	    if(id==STANDARD_LOGIN)
-	    	intent = new Intent(this, CreateActivity.class);
+	    	intent = new Intent(this, Step1CreateActivity.class);
 	    
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_ROW, id);
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,((TextView)v).getText());

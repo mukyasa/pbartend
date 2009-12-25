@@ -51,4 +51,6 @@ public class QuiresDAO {
 	public static final String sqlGetWalletCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_CAT_ID+"<>?;";
 	public static final String sqlGetLoginsCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_CAT_ID+"=?;";
 	
+	public static final String sqlGetMaxId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_PASSWORDS;
+	
 }
