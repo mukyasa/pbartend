@@ -1,19 +1,14 @@
 <LinearLayout android:layout_width="fill_parent"
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:paddingTop="44sp" android:layout_height="fill_parent"
-	android:id="@+id/mainLinearLayout">
+	android:layout_height="fill_parent"
+	android:id="@+id/mainLinearLayout" android:paddingTop="50sp">
 	<ScrollView android:layout_width="fill_parent"
 		android:layout_height="fill_parent" android:background="@drawable/base_bg"
 		android:id="@+id/mainLinearLayout" android:fadingEdge="none">
 		<TableLayout android:layout_width="fill_parent"
 			android:layout_height="fill_parent" android:padding="10sp">
 
-			<TextView android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:textStyle="bold"
-				android:id="@+id/tvSubTitle1" android:shadowColor="#fff"
-				android:shadowDx="1" android:shadowDy="1" android:shadowRadius="1"
-				android:layout_marginLeft="10sp" android:textColor="#666"
-				android:textSize="14sp" android:text="@string/basicInfo"></TextView>
+			
 
 			<EditText android:id="@+id/etURL"
 				android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#ccc" android:text="@string/url"></EditText>
