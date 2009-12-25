@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -15,23 +17,24 @@ import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.utils.Constants;
 
-public class WalletCatListActivity extends FooterListActivity{
+public class WalletCatListActivity extends FooterListActivity implements OnClickListener,OnTouchListener{
 	
 	private Intent intent;
 	private static final int INTENT_NEXT_SCREEN = 0;
 	private Button butPrev;
-	private PasswordDbHelper myDatabaseAdapter;
 	private PasswordDAO passDao;
+	private PasswordDbHelper myDatabaseAdapter;
 	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.list_frame);
+		super.onCreate(savedInstanceState);
+		
 		//set up database for use
 		passDao = new PasswordDAO();
 		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
 		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-		super.onCreate(savedInstanceState);
 	}
 	
 	/* (non-Javadoc)
@@ -73,7 +76,6 @@ public class WalletCatListActivity extends FooterListActivity{
 	/* (non-Javadoc)
 	 * @see android.app.ListActivity#onListItemClick(android.widget.ListView, android.view.View, int, long)
 	 */
-	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 	    super.onListItemClick(l, v, position, id);
 
@@ -91,7 +93,6 @@ public class WalletCatListActivity extends FooterListActivity{
 	 * android.view.MotionEvent)
 	 */
 	public boolean onTouch(View v, MotionEvent event) {
-		super.onTouch(v, event);
 		if (v instanceof Button) {
 			
 			if(v == butPrev)
@@ -115,7 +116,6 @@ public class WalletCatListActivity extends FooterListActivity{
 	 * @see android.view.View.OnClickListener#onClick(android.view.View)
 	 */
 	public void onClick(View v) {
-		super.onClick(v);
 		if (v == butPrev) {
 			finish();
 		}

@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -14,21 +16,25 @@ import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.utils.Constants;
 
-public class WalletSubCatListActivity extends FooterListActivity{
+public class WalletSubCatListActivity extends FooterListActivity implements OnClickListener,OnTouchListener{
 	private Button butPrev;
-	private PasswordDbHelper myDatabaseAdapter;
 	private PasswordDAO passDao;
+	private PasswordDbHelper myDatabaseAdapter;
+	
 	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.list_frame);
+		super.onCreate(savedInstanceState);
+		
 		//set up database for use
 		passDao = new PasswordDAO();
 		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
 		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
+		
+		
 		initialize();
-		super.onCreate(savedInstanceState);
 	}
 	private void initialize() {
 		
@@ -67,7 +73,7 @@ public class WalletSubCatListActivity extends FooterListActivity{
 	 * android.view.MotionEvent)
 	 */
 	public boolean onTouch(View v, MotionEvent event) {
-		super.onTouch(v, event);
+
 		if (v instanceof Button) {
 			
 			if(v == butPrev)
@@ -91,7 +97,7 @@ public class WalletSubCatListActivity extends FooterListActivity{
 	 * @see android.view.View.OnClickListener#onClick(android.view.View)
 	 */
 	public void onClick(View v) {
-		super.onClick(v);
+
 		if (v == butPrev) {
 			finish();
 		}
