@@ -15,7 +15,9 @@
 <activity android:name="WalletCatListActivity"></activity>
 <activity android:name="WalletSubCatListActivity"></activity>
 <activity android:name="LoginsListActivity"></activity>
-<activity android:name="CreateActivity"></activity>
+<activity android:name="CreateTemplateActivity"></activity>
+<activity android:name="Step1CreateActivity"></activity>
+<activity android:name="Step2CreateActivity"></activity>
 </application>
 	<uses-sdk android:minSdkVersion="6" />
 
