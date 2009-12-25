@@ -69,10 +69,7 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
      */
     public void onClick(View v) {
  	   	
- 	   if(v == bNext){
- 		   //done or next
- 		   
- 	   }else if(v == bPrev){
+ 	   if(v == bPrev){
  		   finish();
  	   }
     }

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 
-public class CreateActivity extends BaseActivity {
+public class CreateTemplateActivity extends BaseActivity {
 	private CharSequence text;
 	private long selectedRow;
 	private EditText etTitle,etURL;
@@ -31,14 +31,8 @@ public class CreateActivity extends BaseActivity {
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 		tvTitle.setText(text);
 		
-			
-		//change text to email and password assume templete picked
-		etTitle = (EditText)findViewById(R.id.etTitle);
-		etURL = (EditText)findViewById(R.id.etURL);
-		
-		etURL.setText(getString(R.string.email));
-		etTitle.setText(getString(R.string.password));
-		
+		Button bNext = (Button)findViewById(R.id.butNext);
+		bNext.setText(getString(R.string.next));
 		
 	}
 	
@@ -53,8 +47,8 @@ public class CreateActivity extends BaseActivity {
 	    {
 	    	NewPassword np = NewPassword.getInstance();
 	    	
-	    	np.name =etTitle.getText().toString();
-	    	np.catId=-1;
+	    	np.name =text.toString();
+		    np.catId=selectedRow;
 	    	
 	    }
 	    

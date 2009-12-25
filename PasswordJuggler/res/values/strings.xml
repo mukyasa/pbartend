@@ -13,5 +13,11 @@
 	 <string name="notes">Add Notes</string>
 	 
 	 <string name="basicInfo">Standard Fields</string>
+	 
+	 <string name="url">URL</string>
+	 <string name="title">Title</string>
+	 <string name="email">Email</string>
+	  <string name="save">Save</string>
+	  <string name="next">Next</string>
 
 </resources>
