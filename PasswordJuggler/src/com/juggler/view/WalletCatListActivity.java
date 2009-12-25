@@ -27,8 +27,10 @@ public class WalletCatListActivity extends FooterListActivity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.list_frame);
+		//set up database for use
 		passDao = new PasswordDAO();
 		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
+		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		super.onCreate(savedInstanceState);
 	}
 	
@@ -43,7 +45,6 @@ public class WalletCatListActivity extends FooterListActivity{
 	
 	private void initialize() {
 		
-		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		//set title
 		Intent selectedIntent = getIntent();
 		CharSequence text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);

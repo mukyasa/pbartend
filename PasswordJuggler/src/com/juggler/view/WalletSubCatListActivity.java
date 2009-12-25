@@ -1,62 +1,49 @@
 package com.juggler.view;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import com.juggler.dao.PasswordDAO;
+import com.juggler.dao.PasswordDbHelper;
+import com.juggler.dao.QuiresDAO;
 import com.juggler.utils.Constants;
 
 public class WalletSubCatListActivity extends FooterListActivity{
 	private Button butPrev;
+	private PasswordDbHelper myDatabaseAdapter;
+	private PasswordDAO passDao;
 	
-	//TODO:these need to be in a database
-	private final String[] subComputers = { "Software License", "Database", "WiFi", "Server" };
-	private final String[] subFinancial = { "Credit Card", "Bank Account (US)", "Bank Account (CA)" };
-	private final String[] subGovernment = { "Passport", "Driver's License", "Social Security Number","Hunting License" };
-	private final String[] subInternet = { "Email Account", "Instant Messenger","FTP","iTunes","ISP"};
-	private final String[] subMembership = { "Rewards Program","Membership"};
-
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.list_frame);
+		//set up database for use
+		passDao = new PasswordDAO();
+		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
+		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		initialize();
 		super.onCreate(savedInstanceState);
 	}
 	private void initialize() {
-		String[] items={""};
 		
-		//set title
+		Cursor recordscCursor;
+		
+		//get Intent then set text
 		Intent selectedIntent = getIntent();
 		long selectedRow = selectedIntent.getLongExtra(Constants.INTENT_EXTRA_SELECTED_ROW, 0);
 		CharSequence text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
 		
+		//set title 
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 		tvTitle.setText(text);
 		
-		switch((int)selectedRow)
-		{
-			case 0:
-				items = subComputers;
-				break;
-			case 1:
-				items = subFinancial;
-				break;
-			case 2:
-				items = subGovernment;
-				break;
-			case 3:
-				items = subInternet;
-				break;
-			case 4:
-				items = subMembership;
-				break;
-		}
-		
+		recordscCursor = passDao.getSubCategories(selectedRow+"");
 		
 		// hide next button
 		Button next = (Button) findViewById(R.id.butNext);
@@ -64,9 +51,16 @@ public class WalletSubCatListActivity extends FooterListActivity{
 		butPrev = (Button) findViewById(R.id.butPrev);
 		butPrev.setOnClickListener(this);
 		butPrev.setOnTouchListener(this);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, items));
+		
+		String[] from = new String[] { QuiresDAO.COL_NAME };
+		int[] to = new int[] { R.id.list_row};
+    	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
+				R.layout.list_item, recordscCursor, from, to);
+    	setListAdapter(records);
 		getListView().setTextFilterEnabled(true);
+		
 	}
+	
 	/*
 	 * (non-Javadoc)
 	 * @see android.view.View.OnTouchListener#onTouch(android.view.View,
