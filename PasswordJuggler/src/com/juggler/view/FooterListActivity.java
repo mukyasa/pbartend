@@ -15,6 +15,7 @@ public class FooterListActivity extends ListActivity{
         footutil = new FooterUtil(this);
         
         footutil.initialize(this);
+        
     }
 	
 }

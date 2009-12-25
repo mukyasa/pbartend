@@ -30,6 +30,11 @@ public class NewPassword {
 	
 	public Hashtable<String, String> nameValue;
 	
+	public void clear()
+	{
+		instance = null;
+	}
+	
 	public static NewPassword getInstance(){
 		
 		if(instance==null)
