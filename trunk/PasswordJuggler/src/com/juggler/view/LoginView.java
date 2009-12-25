@@ -16,12 +16,13 @@ import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.juggler.utils.LoginAuthHandler;
+
 /**
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
 public class LoginView extends Activity implements OnClickListener {
-	
 	 @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -29,7 +30,6 @@ public class LoginView extends Activity implements OnClickListener {
             WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 			
 			 setContentView(R.layout.login);
-			 
 			 Button loginButton = (Button)findViewById(R.id.butLogin);
 			 loginButton.setOnClickListener(this);
 	 }
@@ -38,7 +38,13 @@ public class LoginView extends Activity implements OnClickListener {
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
-	   finish();
-	    
+    	
+    	if(true)
+    	{
+		   	LoginAuthHandler handler = LoginAuthHandler.getInstance();
+	   		handler.setDidLogin(true);
+	   		
+	   		finish();
+    	}
     }
 }

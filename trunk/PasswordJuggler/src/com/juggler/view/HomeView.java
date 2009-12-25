@@ -23,6 +23,7 @@ import android.widget.TableRow;
 
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.utils.Constants;
+import com.juggler.utils.LoginAuthHandler;
 
 /**
  * @author dmason
@@ -36,6 +37,15 @@ public class HomeView extends FooterActivity implements OnClickListener{
 	    public void onCreate(Bundle savedInstanceState) {
 	        setContentView(R.layout.base_page_frame);
 	        super.onCreate(savedInstanceState);
+	        
+	        LoginAuthHandler handler = LoginAuthHandler.getInstance();
+	        if(!handler.isDidLogin())
+	        {
+		        //pop login window
+		    	Intent intent = new Intent(this,LoginView.class);
+		    	startActivity(intent);
+	        }
+	        
 	        initialize();
 	    }
 	   
@@ -53,10 +63,6 @@ public class HomeView extends FooterActivity implements OnClickListener{
 	    	//hide next button
 	    	Button butPrev = (Button)findViewById(R.id.butPrev);
 	    	butPrev.setVisibility(View.GONE);
-	    	
-	        //pop login window
-	    	Intent intent = new Intent(this,LoginView.class);
-	    	startActivity(intent); 
 	    	
 	    	trGenPassword = (TableRow)findViewById(R.id.trGenPassword);
 	    	trGenPassword.setOnClickListener(this);
@@ -94,39 +100,5 @@ public class HomeView extends FooterActivity implements OnClickListener{
 		
 		}
        
-	   
-	   /* (non-Javadoc)
-	     * @see android.app.Activity#onCreateDialog(int)
-	     */
-	    @Override
-	    protected Dialog onCreateDialog(int id) {
-	    	
-	    	LayoutInflater factory = LayoutInflater.from(this); 
-	        final View textEntryView = factory.inflate(R.layout.login, null);
-	        return new AlertDialog.Builder(HomeView.this)
-	            .setIcon(R.drawable.error)
-	            .setTitle(R.string.dialogtitle)  
-	            .setView(textEntryView)
-	            .setCancelable(false)
-	            .setPositiveButton(R.string.login, new DialogInterface.OnClickListener() {
-	                public void onClick(DialogInterface dialog, int whichButton) {
-	                	EditText authCode =  (EditText)textEntryView.findViewById(R.id.etLogin);
-	                	
-	                    if(false)
-	                    	finish();
-	                    //else
-	                    	//Authenication.setRegPrefererences(this);
-	                    	
-	                }
-	            })
-	            .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-	                public void onClick(DialogInterface dialog, int whichButton) {
-
-	                    finish();
-	                }
-	            })
-	            .create();
-	        
-	    }
 	   
 }
