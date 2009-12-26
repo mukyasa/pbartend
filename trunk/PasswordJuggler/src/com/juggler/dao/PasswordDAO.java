@@ -17,6 +17,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.juggler.domain.NewPassword;
+import com.juggler.utils.Encrypt;
 
 /**
  * @author dmason
@@ -153,9 +154,9 @@ public class PasswordDAO extends QuiresDAO {
 		ContentValues title = new ContentValues();
 		title.put(COL_NAME, np.name);
 		title.put(COL_URL, np.url);
-		title.put(COL_CAT_ID, np.catId);
-		title.put(COL_SUB_CAT_ID, np.subCatId);
-		title.put(COL_NOTE_ID, np.noteId);
+		//title.put(COL_CAT_ID, np.catId);
+		//title.put(COL_SUB_CAT_ID, np.subCatId);
+		//title.put(COL_NOTE_ID, np.noteId);
 		title.put(COL_ENTRY_TYPE, ENTRY_TYPE_LOGINS);
 		
 		ContentValues nameValue = new ContentValues();
