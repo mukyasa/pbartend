@@ -13,13 +13,13 @@ public class QuiresDAO {
 	public static final String COL_ID = "_id";
 	public static final String COL_ENTRY_TYPE = "entrytype";
 	public static final String COL_PASSWORD_ID = "passwordId";
-	public static final String COL_NAME = "name";
+	public static final String COL_NAME = "name";//name
 	public static final String COL_CAT_ID = "catId";
 	public static final String COL_NOTE = "note";
 	public static final String COL_SUB_CAT_ID = "subCatId";
 	public static final String COL_NOTE_ID = "noteId";
 	public static final String COL_URL ="url";
-	public static final String COL_VALUE ="value";
+	public static final String COL_VALUE ="value"; //value
 	public static final String COL_PASSWORD ="pwd";
 	public static final String COL_USAGE ="usage";
 	public static final int  ENTRY_TYPE_LOGINS = 1;
