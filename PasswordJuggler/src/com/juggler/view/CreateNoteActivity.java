@@ -9,12 +9,17 @@
  */
 package com.juggler.view;
 
+import com.juggler.dao.PasswordDAO;
+import com.juggler.dao.PasswordDbHelper;
+import com.juggler.domain.NewPassword;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -24,11 +29,19 @@ import android.widget.TextView;
 public class CreateNoteActivity extends Activity implements OnClickListener {
 
 	private Button butNext,butPrev;
+	private PasswordDAO passDao;
+	private PasswordDbHelper myDatabaseAdapter;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_note_frame);
         
+      //set up database for use
+		passDao = new PasswordDAO();
+		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
+		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
+		
         initialize();
     }
 	
@@ -52,7 +65,11 @@ public class CreateNoteActivity extends Activity implements OnClickListener {
     	
     	if(v==butNext)
     	{
-    		//TODO:persist data
+    		EditText etNote = (EditText)findViewById(R.id.etNote);
+    		NewPassword np = NewPassword.getInstance();
+    		np.note = etNote.getText().toString();
+    		
+    		passDao.saveNotes();
     		
     		Intent intent = new Intent(this,HomeView.class);
     		startActivity(intent);

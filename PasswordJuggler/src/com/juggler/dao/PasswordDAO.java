@@ -83,7 +83,7 @@ public class PasswordDAO extends QuiresDAO {
 	 */
 	public int getLoginsCount()
 	{
-		String[]selectionArgs={QuiresDAO.LOGINS_ID+""};
+		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_LOGINS+""};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetLoginsCount, selectionArgs);
 		return cursor.getCount();
 	}
@@ -111,9 +111,33 @@ public class PasswordDAO extends QuiresDAO {
 	 */
 	public int getWalletCount()
 	{
-		String[]selectionArgs={QuiresDAO.LOGINS_ID+""};
+		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_WALLET+""};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetWalletCount, selectionArgs);
 		return cursor.getCount();
+	}
+	
+	/**
+	 * inserts notes
+	 * Dec 26, 2009
+	 * dmason
+	 *
+	 */
+	public void saveNotes(){
+		NewPassword np = NewPassword.getInstance();
+		ContentValues note = new ContentValues();
+		note.put(COL_NOTE, np.note);
+		
+		sqliteDatabase.insert(PasswordDAO.TABLE_NOTES, null, note);
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxNotesId, new String[]{});
+		cursor.moveToFirst();
+		String noteId = cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
+		
+		ContentValues password = new ContentValues();
+		password.put(COL_NAME,np.name);
+		password.put(COL_NOTE_ID, noteId);
+		password.put(COL_ENTRY_TYPE, ENTRY_TYPE_NOTES);
+		
+		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORDS, null, password);
 	}
 	
 	/**
@@ -132,13 +156,14 @@ public class PasswordDAO extends QuiresDAO {
 		title.put(COL_CAT_ID, np.catId);
 		title.put(COL_SUB_CAT_ID, np.subCatId);
 		title.put(COL_NOTE_ID, np.noteId);
+		title.put(COL_ENTRY_TYPE, ENTRY_TYPE_LOGINS);
 		
 		ContentValues nameValue = new ContentValues();
 		Hashtable<String, String> htable = np.nameValue;
 		Iterator<String> iter = htable.keySet().iterator();
 		
 		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORDS, null, title);
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxId, new String[]{});
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxPasswordId, new String[]{});
 		cursor.moveToFirst();
 		String passwordId = cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
 		
@@ -152,8 +177,6 @@ public class PasswordDAO extends QuiresDAO {
 	        
         }
 
-		
-		//loop
 		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, nameValue);
 		
 	}

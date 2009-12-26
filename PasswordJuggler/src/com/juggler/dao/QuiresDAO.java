@@ -11,6 +11,7 @@ public class QuiresDAO {
 	
 	//columns
 	public static final String COL_ID = "_id";
+	public static final String COL_ENTRY_TYPE = "entrytype";
 	public static final String COL_PASSWORD_ID = "passwordId";
 	public static final String COL_NAME = "name";
 	public static final String COL_CAT_ID = "catId";
@@ -21,7 +22,10 @@ public class QuiresDAO {
 	public static final String COL_VALUE ="value";
 	public static final String COL_PASSWORD ="pwd";
 	public static final String COL_USAGE ="usage";
-	public static final int LOGINS_ID = -1;
+	public static final int  ENTRY_TYPE_LOGINS = 1;
+	public static final int ENTRY_TYPE_NOTES = 2;
+	public static final int ENTRY_TYPE_GEN_PASSWORD = 3;
+	public static final int ENTRY_TYPE_WALLET = 4;
 	public static final String COL_COUNT = "[count]";
 	
 	
@@ -29,9 +33,10 @@ public class QuiresDAO {
 	COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+
 	COL_NAME+" TEXT, "+
 	COL_URL+" TEXT, "+
-	COL_CAT_ID+" INTEGER  DEFAULT "+LOGINS_ID+", "+
-	COL_SUB_CAT_ID+" INTEGER, "+
-	COL_NOTE_ID+" INTEGER);"; 
+	COL_CAT_ID+" INTEGER DEFAULT -1 ,"+
+	COL_SUB_CAT_ID+" INTEGER DEFAULT -1 , "+
+	COL_NOTE_ID+" INTEGER DEFAULT -1 ,"+
+	COL_ENTRY_TYPE+" INTEGER DEFAULT -1 );"; 
 	
 	public static final String sqlCreateGenPassTable ="CREATE TABLE "+TABLE_GEN_PASSWORD+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_NAME+" TEXT, "+COL_PASSWORD+" TEXT, "+COL_USAGE+" TEXT);";
 	
@@ -48,9 +53,10 @@ public class QuiresDAO {
 	
 	public static final String sqlGetPasswordCount = "SELECT "+COL_ID+" from "+TABLE_GEN_PASSWORD+";";
 	public static final String sqlGetNotesCount = "SELECT "+COL_ID+" from "+TABLE_NOTES+";";
-	public static final String sqlGetWalletCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_CAT_ID+"<>?;";
-	public static final String sqlGetLoginsCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_CAT_ID+"=?;";
+	public static final String sqlGetWalletCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
+	public static final String sqlGetLoginsCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
 	
-	public static final String sqlGetMaxId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_PASSWORDS;
+	public static final String sqlGetMaxNotesId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_NOTES+";";
+	public static final String sqlGetMaxPasswordId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_PASSWORDS+";";
 	
 }
