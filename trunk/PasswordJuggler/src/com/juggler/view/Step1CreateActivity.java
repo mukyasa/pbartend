@@ -46,7 +46,6 @@ public class Step1CreateActivity extends BaseActivity {
 	    	
 	    	np.name =etTitle.getText().toString();
 	    	np.url = etURL.getText().toString();
-	    	np.catId=-1;
 	    	
 	    	Intent intent = new Intent(this, Step2CreateActivity.class);
 	    	startActivity(intent);
