@@ -3,6 +3,7 @@ package com.juggler.dao;
 public class QuiresDAO {
 	
 	public static final String TABLE_PASSWORDS = "tblPassword";
+	public static final String TABLE_TEMPLATE = "tblTemplates";
 	public static final String TABLE_CATS = "tblCats";
 	public static final String TABLE_SUB_CATS = "tblSubCat";
 	public static final String TABLE_PASSWOR_ENTRY = "tblPasswordEntry";
@@ -22,6 +23,9 @@ public class QuiresDAO {
 	public static final String COL_VALUE ="value"; //value
 	public static final String COL_PASSWORD ="pwd";
 	public static final String COL_USAGE ="usage";
+	public static final String COL_TEMPLATE_LABEL ="label";
+	public static final String COL_TEMPLATE_VALUE ="value";
+	public static final String COL_TEMPLATE_ID ="templateId";
 	public static final int  ENTRY_TYPE_LOGINS = 1;
 	public static final int ENTRY_TYPE_NOTES = 2;
 	public static final int ENTRY_TYPE_GEN_PASSWORD = 3;
@@ -37,6 +41,8 @@ public class QuiresDAO {
 	COL_SUB_CAT_ID+" INTEGER DEFAULT -1 , "+
 	COL_NOTE_ID+" INTEGER DEFAULT -1 ,"+
 	COL_ENTRY_TYPE+" INTEGER DEFAULT -1 );"; 
+	
+	public static final String sqlCreateTemplateTable ="CREATE TABLE "+TABLE_TEMPLATE+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_TEMPLATE_LABEL+" TEXT, "+COL_TEMPLATE_VALUE+" TEXT, "+COL_TEMPLATE_ID+" INTEGER);";
 	
 	public static final String sqlCreateGenPassTable ="CREATE TABLE "+TABLE_GEN_PASSWORD+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_NAME+" TEXT, "+COL_PASSWORD+" TEXT, "+COL_USAGE+" TEXT);";
 	

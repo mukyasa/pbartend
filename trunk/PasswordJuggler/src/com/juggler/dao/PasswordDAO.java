@@ -17,7 +17,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.juggler.domain.NewPassword;
-import com.juggler.utils.Encrypt;
 
 /**
  * @author dmason
