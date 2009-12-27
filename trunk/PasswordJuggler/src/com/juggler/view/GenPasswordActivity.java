@@ -24,7 +24,7 @@ import com.juggler.utils.Encrypt;
  */
 public class GenPasswordActivity extends BaseActivity implements OnSeekBarChangeListener {
 	private SeekBar seekbar;
-	private TextView tvGenPassowrd,tvStrength,tvLength;
+	private TextView tvGenPassowrd,tvStrength,tvLength,tvTitle;
 	private ToggleButton tbUseNumbers;//default yes
 	private ToggleButton tbSpecialChar;//default yes
 	private final int MIN_PROGRESS=4;
@@ -46,6 +46,9 @@ public class GenPasswordActivity extends BaseActivity implements OnSeekBarChange
 	   
 	   
 	   private void initialize(){
+		   tvTitle = (TextView)findViewById(R.id.tvTitle);
+		   tvTitle.setText(getString(R.string.genpasswords));
+		   
 		   seekbar = (SeekBar)findViewById(R.id.seekBar);
 		   seekbar.setKeyProgressIncrement(1);
 		   seekbar.setProgress(MIN_PROGRESS);
