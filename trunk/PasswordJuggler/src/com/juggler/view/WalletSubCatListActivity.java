@@ -75,7 +75,8 @@ public class WalletSubCatListActivity extends FooterListActivity implements OnCl
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 	    super.onListItemClick(l, v, position, id);
 	    
-	    Intent intent = new Intent(this, Step2CreateActivity.class);
+	    Intent intent = new Intent(this, CreateWalletTemplateActivity.class);
+	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,((TextView)v).getText());
     	startActivity(intent);
 	    
 	}
