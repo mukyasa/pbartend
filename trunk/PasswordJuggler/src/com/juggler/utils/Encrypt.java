@@ -5,9 +5,8 @@
  */
 package com.juggler.utils;
 
-import java.security.MessageDigest;
-import java.util.Calendar;
-import java.util.Date;
+import java.security.SecureRandom;
+import java.util.ArrayList;
 
 /**
  * @author dmason
@@ -15,26 +14,79 @@ import java.util.Date;
  */
 public class Encrypt {
 	
-	private static final String APP_NAME = "passwordjuggler";
-	
-	public static String genPassword(int strength) throws Exception
+	public static String genPassword(int strength,boolean isNumbers,boolean isAscii) throws Exception
 	{
-		Calendar cal = Calendar.getInstance();
-		Date d = cal.getTime();
+		String result="";
+		ArrayList<String> args = new ArrayList<String>();
+		args.add(strength+"");
+		
+		int passLength = 0;
+        SecureRandom wheel = SecureRandom.getInstance("SHA1PRNG");
 
-		
-		String salt = strength+d.getSeconds()+"";
-		
-	    MessageDigest m = MessageDigest.getInstance("MD5");
-	    m.update(salt.getBytes());
-	    m.update(APP_NAME.getBytes("UTF8"));
-	    byte s[] = m.digest();
-	    String result = "";
-	    for (int i = 0; i < strength; i++) {
-	      result += Integer.toHexString((0x000000ff & s[i]) | 0xffffff00).substring(6);
-	    }
-	    
+        char[] lowerCase = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        char[] upperCase = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        char[] upperLowerCase = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        char[] numeric = new char[]{'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+
+        char[] printableAscii = new char[]{'!', '\"', '#', '$', '%', '(', ')', '*', '+', '-', '.', '/', '\'',
+            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ':', '<', '=', '>', '?', '@',
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+        char[] alphaNumberic = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+
+
+            if (isNumbers && !isAscii) {//no ascii, numbers and letters
+                passLength = Integer.parseInt(args.get(0));
+                for (int i = 0; i < passLength; i++) {
+                	int random = wheel.nextInt(alphaNumberic.length);
+                    result+=alphaNumberic[random]+"";
+                }
+            }else if (!isNumbers && !isAscii) { //no ascii no numbers
+                passLength = Integer.parseInt(args.get(0));
+                for (int i = 0; i < passLength; i++) {
+                    int random = wheel.nextInt(upperLowerCase.length);
+                    result+=upperLowerCase[random]+"";
+                }
+            } else if (isAscii) { // all
+                passLength = Integer.parseInt(args.get(0));
+                for (int i = 0; i < passLength; i++) {
+                    int random = wheel.nextInt(printableAscii.length);
+                    result+=printableAscii[random]+"";
+                }
+            
+            }
+            /*else if (args.get(1).equals("-u")) {
+                passLength = Integer.parseInt(args.get(0));
+                for (int i = 0; i < passLength; i++) {
+                    int random = wheel.nextInt(upperCase.length);
+                    result+=upperCase[random]+"";
+                }
+            } else if (args.get(1).equals("-n")) {
+                passLength = Integer.parseInt(args.get(0));
+                for (int i = 0; i < passLength; i++) {
+                    int random = wheel.nextInt(numeric.length);
+                    result+=numeric[random]+"";
+                }
+            } else if (args.get(1).equals("-a")) {
+                passLength = Integer.parseInt(args.get(0));
+                for (int i = 0; i < passLength; i++) {
+                    int random = wheel.nextInt(alphaNumberic.length);
+                    result+=alphaNumberic[random]+"";
+                }
+            } else if (args.get(1).equals("-p")) {
+                passLength = Integer.parseInt(args.get(0));
+                for (int i = 0; i < passLength; i++) {
+                    int random = wheel.nextInt(printableAscii.length);
+                    result=printableAscii[random]+"";
+                }
+            }*/
+    
 	    return result;
+	    
 	}
 	
 	// this takes a string and returns the string encrypted.

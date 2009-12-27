@@ -9,14 +9,15 @@
  */
 package com.juggler.view;
 
-import com.juggler.utils.Encrypt;
-
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+
+import com.juggler.utils.Encrypt;
 
 /**
  * @author dmason
@@ -24,9 +25,11 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
  */
 public class GenPasswordActivity extends Activity implements OnSeekBarChangeListener {
 	private SeekBar seekbar;
-	private TextView tvGenPassowrd,tvStrength;
-	private final int MIN_PROGRESS=1;
-	private final int MAX_PROGRESS=13;
+	private TextView tvGenPassowrd,tvStrength,tvLength;
+	private ToggleButton tbUseNumbers;//default yes
+	private ToggleButton tbSpecialChar;//default yes
+	private final int MIN_PROGRESS=4;
+	private final int MAX_PROGRESS=24;
 	private final String WEAK = "Weak";
 	private final String FAIR = "Fair";
 	private final String GOOD = "Good";
@@ -45,17 +48,22 @@ public class GenPasswordActivity extends Activity implements OnSeekBarChangeList
 	   
 	   private void initialize(){
 		   seekbar = (SeekBar)findViewById(R.id.seekBar);
-		   seekbar.setKeyProgressIncrement(10);
+		   seekbar.setKeyProgressIncrement(1);
 		   seekbar.setProgress(MIN_PROGRESS);
 		   seekbar.setOnSeekBarChangeListener(this);
+		   
+		   tbUseNumbers = (ToggleButton)findViewById(R.id.tbUserNumbers);
+		   tbSpecialChar = (ToggleButton)findViewById(R.id.tbSpecialChar);
 		   
 		   tvStrength = (TextView)findViewById(R.id.tvGenStrength);
 		   tvStrength.setText(WEAK);
 		   tvStrength.setTextColor(Color.rgb(204, 0, 0));
 		   
+		   tvLength = (TextView)findViewById(R.id.tvLength);
+		   
 		   tvGenPassowrd = (TextView)findViewById(R.id.tvGenPassword);
 	        try {
-	        	String newPassword = Encrypt.genPassword(MIN_PROGRESS);
+	        	String newPassword = Encrypt.genPassword(MIN_PROGRESS,tbUseNumbers.isChecked(),tbSpecialChar.isChecked());
 		        tvGenPassowrd.setText(newPassword);
 	        } catch (Exception e) {
 		        // TODO Auto-generated catch block
@@ -84,36 +92,36 @@ public class GenPasswordActivity extends Activity implements OnSeekBarChangeList
 	        
 	        String strength=WEAK;
 	        
-	        if(progress < 3)
+	        if(progress < 6)
 	        {
 	        	strength = WEAK;
 	        	tvStrength.setTextColor(Color.rgb(204, 0, 0));
 	        }
-	        else if(progress >=3 && progress <=5)
+	        else if(progress >=6 && progress <=12)
 	        {
 	        	strength = FAIR;
 	        	tvStrength.setTextColor(Color.rgb(204, 102, 51));
 	        }
-	        else if(progress >=5 && progress <=8)
+	        else if(progress >=12 && progress <=15)
 	        {
 	        	strength = GOOD;
 	        	tvStrength.setTextColor(Color.rgb(51, 102, 204));
 	        }
-	        else if(progress >=8 && progress <=10)
+	        else if(progress >=15 && progress <=20)
 	        {
 	        	strength = EXCELLENT;
 	        	tvStrength.setTextColor(Color.rgb(51, 153, 51));
 	        }
-	        else if(progress >=10)
+	        else if(progress >=20)
 	        {
 	        	strength = FANTASTIC;
 	        	tvStrength.setTextColor(Color.rgb(51, 153, 51));
 	        }
 	        
 	        tvStrength.setText(strength);
+	        tvLength.setText(progress+"");
 	        
-	        
-	        String newPassword = Encrypt.genPassword(progress);
+	        String newPassword = Encrypt.genPassword(progress,tbUseNumbers.isChecked(),tbSpecialChar.isChecked());
 	        tvGenPassowrd.setText(newPassword);
 	        
 	        
