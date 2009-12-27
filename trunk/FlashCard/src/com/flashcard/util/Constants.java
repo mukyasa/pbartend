@@ -2,7 +2,7 @@ package com.flashcard.util;
 
 
 public class Constants {
-	public static String VERSION = "1.0.4";
+	public static String VERSION = "1.0.5";
 	public static String COMPANY_NAME = "mypocket-technologies";
 	public static final String API_VERS ="1.0";
 	public static int DEFAULT_PAGE_NUMBER = 1;
