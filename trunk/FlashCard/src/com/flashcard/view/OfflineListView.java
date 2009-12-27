@@ -57,6 +57,16 @@ public class OfflineListView extends ListActivity {
         initComponents();
     }
 	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		Constants.count=0;
+		Constants.countlabel=1;
+		AppUtil.setLastVeiwedCard(this, 0);
+	    super.onResume();
+	}
 
 	
 	protected void onListItemClick(ListView l, View v, int position, long id) 

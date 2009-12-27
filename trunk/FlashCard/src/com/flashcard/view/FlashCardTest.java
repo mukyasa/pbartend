@@ -38,6 +38,7 @@ import com.flashcard.domain.CardSet;
 import com.flashcard.domain.FlashCard;
 import com.flashcard.handler.ApplicationHandler;
 import com.flashcard.util.AppUtil;
+import com.flashcard.util.Constants;
 
 /**
  * @author dmason
@@ -47,8 +48,6 @@ public class FlashCardTest extends Activity {
 	
 	private GestureDetector mGestureDetector;
 	private Context context;
-	private int count=0;
-	private int countlabel=1;
 	private int maxcount=0;
 	private boolean isBack=true;
 	private boolean isWrong=false;
@@ -87,17 +86,25 @@ public class FlashCardTest extends Activity {
      */
     @Override
     protected void onResume() {
-    	//Log.v("", "RESUMED!!!!!!!");
     	//set up cardset called here to avoid back button problems
     	initalize();
         super.onResume();
     }
     
+    /* (non-Javadoc)
+     * @see android.app.Activity#onSaveInstanceState(android.os.Bundle)
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+       //save the last card viewed
+    	AppUtil.setLastVeiwedCard(this, Constants.count);
+    	
+        super.onSaveInstanceState(outState);
+    }
+    
     @Override
     protected void onStop() {
     	super.onStop();
-    	count=0;
-    	countlabel=1;
     	maxcount=0;
     }
     
@@ -114,8 +121,8 @@ public class FlashCardTest extends Activity {
         tvTitle.setText(cardset.title);
         ArrayList<FlashCard> sets = cardset.flashcards;
         
-
-        FlashCard terms = (FlashCard)sets.get(0);
+        //save currrent card for reloading
+        FlashCard terms = (FlashCard)sets.get(AppUtil.getLastVeiwedCard(this));
         terms.wasSeen=true;
         
         tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
@@ -125,8 +132,8 @@ public class FlashCardTest extends Activity {
         //set card number tag
         cardnumber = (TextView)findViewById(R.id.tvCardNumbr);
         cardnumber2 = (TextView)findViewById(R.id.tvCardNumbr2);
-        cardnumber.setText(CARD_NUMBER + "1 of " + maxcount);
-        cardnumber2.setText(CARD_NUMBER + "1 of " + maxcount);
+        cardnumber.setText(CARD_NUMBER + (AppUtil.getLastVeiwedCard(this)+1) +" of " + maxcount);
+        cardnumber2.setText(CARD_NUMBER + (AppUtil.getLastVeiwedCard(this)+1) +" of " + maxcount);
         
         if(!"".equals(terms.imageURL) && AppUtil.isFlipped)
         	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
@@ -140,7 +147,7 @@ public class FlashCardTest extends Activity {
 				ApplicationHandler handler = ApplicationHandler.instance();
 	            CardSet cardset = handler.currentlyUsedSet;
 	            ArrayList<FlashCard> sets = cardset.flashcards;
-	            FlashCard card = (FlashCard)sets.get(count);
+	            FlashCard card = (FlashCard)sets.get(Constants.count);
 				ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
 				if(!isWrong)
 				{
@@ -208,8 +215,8 @@ public class FlashCardTest extends Activity {
  			startActivity(intent);
  	    	return true;
 	    case MENU_RETEST:
-	    	count=0;
-	    	countlabel=1;
+	    	Constants.count=0;
+	    	Constants.countlabel=1;
 	    	
 	        ArrayList<FlashCard> sets = cardset.flashcards;
 
@@ -285,7 +292,7 @@ public class FlashCardTest extends Activity {
             
             if(isBack)//flick over
             {
-            	FlashCard terms = (FlashCard)sets.get(count);
+            	FlashCard terms = (FlashCard)sets.get(Constants.count);
             	terms.wasSeen=true;
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard2);
                 tvFlashCard.setText(terms.answer);
@@ -312,7 +319,7 @@ public class FlashCardTest extends Activity {
             }
             else // flick front 
             {
-            	FlashCard terms = (FlashCard)sets.get(count);
+            	FlashCard terms = (FlashCard)sets.get(Constants.count);
             	terms.wasSeen=true;
                 TextView tvFlashCard = (TextView)findViewById(R.id.tvflashCard1);
                 tvFlashCard.setText(terms.question);
@@ -379,15 +386,15 @@ public class FlashCardTest extends Activity {
             ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
             vf.setDisplayedChild(0);
         	
-            if(e1.getX() > e2.getX() && countlabel < maxcount)//flick next 
+            if(e1.getX() > e2.getX() && Constants.countlabel < maxcount)//flick next 
             {
-            	count++;
-            	countlabel++;
+            	Constants.count++;
+            	Constants.countlabel++;
             	
             	if(isSound)
             		mp.start();
             	
-            	FlashCard terms = (FlashCard)sets.get(count);
+            	FlashCard terms = (FlashCard)sets.get(Constants.count);
                 
 		        tvFlashCard.setText(terms.question);
 		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
@@ -401,15 +408,15 @@ public class FlashCardTest extends Activity {
                 vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left)); 
                 
             }
-            else if(count > 0 && e1.getX() < e2.getX())//flick previous
+            else if(Constants.count > 0 && e1.getX() < e2.getX())//flick previous
             {
-            	count--;
-            	countlabel--;
+            	Constants.count--;
+            	Constants.countlabel--;
             	
             	if(isSound)
             		mp.start();
             	
-            	FlashCard terms = (FlashCard)sets.get(count);
+            	FlashCard terms = (FlashCard)sets.get(Constants.count);
 		        tvFlashCard.setText(terms.question);
 		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
 		        //check for images
@@ -425,11 +432,11 @@ public class FlashCardTest extends Activity {
             vf.getAnimation(); 
             
             //set card number tag
-	        cardnumber.setText(CARD_NUMBER + countlabel + " of " +  sets.size() );
-	        cardnumber2.setText(CARD_NUMBER + countlabel + " of " +  sets.size());
+	        cardnumber.setText(CARD_NUMBER + Constants.countlabel + " of " +  sets.size() );
+	        cardnumber2.setText(CARD_NUMBER + Constants.countlabel + " of " +  sets.size());
             
 	        
-	        if(countlabel == maxcount && !cardfinished)
+	        if(Constants.countlabel == maxcount && !cardfinished)
 	        {
 	        	if(isSound)
 	        	{
