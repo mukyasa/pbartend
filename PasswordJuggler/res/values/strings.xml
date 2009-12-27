@@ -22,5 +22,7 @@
 	  <string name="username">Username</string>
 	  
 	  <string name="usage">What are you using this for?</string>
+	  
+	  <!-- wallet templets -->
 
 </resources>
