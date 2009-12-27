@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
@@ -65,6 +66,18 @@ public class WalletSubCatListActivity extends FooterListActivity implements OnCl
     	setListAdapter(records);
 		getListView().setTextFilterEnabled(true);
 		
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.app.ListActivity#onListItemClick(android.widget.ListView, android.view.View, int, long)
+	 */
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+	    super.onListItemClick(l, v, position, id);
+	    
+	    Intent intent = new Intent(this, Step2CreateActivity.class);
+    	startActivity(intent);
+	    
 	}
 	
 	/*
