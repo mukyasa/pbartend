@@ -1,23 +1,33 @@
 <LinearLayout android:layout_width="fill_parent"
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_height="fill_parent"
-	android:id="@+id/mainLinearLayout" android:paddingTop="50sp">
+	android:layout_height="fill_parent" android:id="@+id/mainLinearLayout"
+	android:paddingTop="50sp">
 	<ScrollView android:layout_width="fill_parent"
 		android:layout_height="fill_parent" android:background="@drawable/base_bg"
 		android:id="@+id/mainLinearLayout" android:fadingEdge="none">
 		<TableLayout android:layout_width="fill_parent"
 			android:padding="10sp" android:layout_height="fill_parent">
-			
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:background="@drawable/list_item"
+				android:drawableLeft="@drawable/wallet_lg" android:paddingTop="4sp"
+				android:paddingBottom="4sp" android:gravity="center_vertical"
+				android:id="@+id/tvWalletTitle" android:text="The Title"
+				android:textColor="#000" android:textSize="18sp"
+				android:paddingLeft="10sp"></TextView>
 			<TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:text="Sub Title"
-				android:textStyle="bold" android:id="@+id/tvSubTitle1" android:shadowColor="#fff"
-				android:shadowDx="1" android:shadowDy="1" android:shadowRadius="1" android:layout_marginLeft="10sp" android:textColor="#666" android:textSize="14sp"></TextView>
+				android:textStyle="bold" android:id="@+id/tvSubTitle1"
+				android:shadowColor="#fff" android:shadowDx="1" android:shadowDy="1"
+				android:shadowRadius="1" android:layout_marginLeft="10sp"
+				android:textColor="#666" android:textSize="14sp"
+				android:layout_marginTop="8sp"></TextView>
 
 
 			<TableLayout android:layout_height="wrap_content"
 				android:id="@+id/tlDetails" android:background="@drawable/list_item"
-				android:layout_width="fill_parent" android:paddingRight="1sp" android:layout_marginTop="5sp" android:layout_marginBottom="10sp">
-				<TableRow android:id="@+id/TableRow01"
+				android:layout_width="fill_parent" android:paddingRight="1sp"
+				android:layout_marginTop="5sp" android:layout_marginBottom="10sp">
+				<!--TableRow android:id="@+id/TableRow01"
 					android:layout_height="wrap_content" android:gravity="center_vertical"
 					android:layout_width="fill_parent" android:padding="3sp"
 					android:background="@drawable/item_spacer">
@@ -29,7 +39,7 @@
 					<TextView android:layout_width="wrap_content"
 						android:layout_height="wrap_content" android:id="@+id/tvUserName"
 						android:text="My Password" android:paddingLeft="5sp"
-						android:textColor="#444"></TextView>
+						android:textColor="#444" android:textSize="13sp"></TextView>
 				</TableRow>
 				<TableRow android:id="@+id/TableRow02"
 					android:layout_height="wrap_content" android:gravity="center_vertical"
@@ -43,7 +53,7 @@
 					<TextView android:layout_width="wrap_content"
 						android:layout_height="wrap_content" android:id="@+id/tvUserName"
 						android:text="My Password" android:paddingLeft="5sp"
-						android:textColor="#444"></TextView>
+						android:textColor="#444" android:textSize="13sp"></TextView>
 				</TableRow>
 				<TableRow android:id="@+id/TableRow03"
 					android:layout_height="wrap_content" android:gravity="center_vertical"
@@ -57,27 +67,11 @@
 					<TextView android:layout_width="wrap_content"
 						android:layout_height="wrap_content" android:id="@+id/tvUserName"
 						android:text="My Password" android:paddingLeft="5sp"
-						android:textColor="#444"></TextView>
-				</TableRow>
+						android:textColor="#444" android:textSize="13sp"></TextView>
+				</TableRow-->
 			</TableLayout>
+
 			
-			<TableLayout android:layout_height="wrap_content"
-				android:id="@+id/tlDetails" android:background="@drawable/list_item"
-				android:layout_width="fill_parent" android:paddingRight="1sp" android:layout_marginTop="5sp">
-				<TableRow android:id="@+id/TableRow01"
-					android:layout_height="wrap_content" android:gravity="center_vertical"
-					android:layout_width="fill_parent" android:padding="3sp"
-					android:background="@drawable/item_spacer">
-					<TextView android:layout_width="wrap_content"
-						android:layout_height="wrap_content" android:id="@+id/tvUserName"
-						android:textColor="#1a63a1" android:textStyle="bold" android:layout_marginLeft="15sp"
-						android:gravity="right" android:textSize="11sp" android:text="          password:"></TextView>
-					<TextView android:layout_width="wrap_content"
-						android:layout_height="wrap_content" android:id="@+id/tvUserName"
-						android:text="My Password" android:paddingLeft="5sp"
-						android:textColor="#444"></TextView>
-				</TableRow>
-			</TableLayout>
 		</TableLayout>
 	</ScrollView>
 </LinearLayout>
