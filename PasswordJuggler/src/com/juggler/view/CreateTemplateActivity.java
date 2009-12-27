@@ -34,8 +34,8 @@ public class CreateTemplateActivity extends BaseActivity {
 		etTitle = (EditText)findViewById(R.id.etTitle);
 		etURL = (EditText)findViewById(R.id.etURL);
 		
-		etURL.setText(getString(R.string.email));
-		etTitle.setText(getString(R.string.password));
+		etURL.setText(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_STEP2_FIELD1));
+		etTitle.setText(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_STEP2_FIELD2));
 		
 	}
 	

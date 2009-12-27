@@ -70,6 +70,11 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 	    
 	    if(id==STANDARD_LOGIN)
 	    	intent = new Intent(this, Step1CreateActivity.class);
+	    else
+	    {//pass the titles along
+	    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD1, getString(R.string.email));
+	    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD2, getString(R.string.password));
+	    }
 	    
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_ROW, id);
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,((TextView)v).getText());
