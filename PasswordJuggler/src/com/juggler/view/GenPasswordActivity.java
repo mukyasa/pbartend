@@ -9,7 +9,6 @@
  */
 package com.juggler.view;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.SeekBar;
@@ -23,7 +22,7 @@ import com.juggler.utils.Encrypt;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class GenPasswordActivity extends Activity implements OnSeekBarChangeListener {
+public class GenPasswordActivity extends BaseActivity implements OnSeekBarChangeListener {
 	private SeekBar seekbar;
 	private TextView tvGenPassowrd,tvStrength,tvLength;
 	private ToggleButton tbUseNumbers;//default yes
