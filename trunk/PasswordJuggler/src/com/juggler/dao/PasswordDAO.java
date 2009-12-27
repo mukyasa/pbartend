@@ -141,6 +141,18 @@ public class PasswordDAO extends QuiresDAO {
 		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORDS, null, password);
 	}
 	
+	public void saveGenPassword(){
+		
+NewPassword np = NewPassword.getInstance();
+		
+		ContentValues genpassword = new ContentValues();
+		genpassword.put(COL_NAME, np.name);
+		genpassword.put(COL_PASSWORD, np.genPassword);
+		genpassword.put(COL_USAGE, np.usage);
+		
+		sqliteDatabase.insert(PasswordDAO.TABLE_GEN_PASSWORD, null, genpassword);
+	}
+	
 	/**
 	 * persists logins
 	 * Dec 24, 2009
