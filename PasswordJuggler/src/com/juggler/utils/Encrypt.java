@@ -5,11 +5,38 @@
  */
 package com.juggler.utils;
 
+import java.security.MessageDigest;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
 public class Encrypt {
+	
+	private static final String APP_NAME = "passwordjuggler";
+	
+	public static String genPassword(int strength) throws Exception
+	{
+		Calendar cal = Calendar.getInstance();
+		Date d = cal.getTime();
+
+		
+		String salt = strength+d.getSeconds()+"";
+		
+	    MessageDigest m = MessageDigest.getInstance("MD5");
+	    m.update(salt.getBytes());
+	    m.update(APP_NAME.getBytes("UTF8"));
+	    byte s[] = m.digest();
+	    String result = "";
+	    for (int i = 0; i < strength; i++) {
+	      result += Integer.toHexString((0x000000ff & s[i]) | 0xffffff00).substring(6);
+	    }
+	    
+	    return result;
+	}
+	
 	// this takes a string and returns the string encrypted.
 	public static String encryptA(String str) {
 		char[] letters = str.toCharArray();

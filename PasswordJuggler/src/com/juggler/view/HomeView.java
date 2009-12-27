@@ -75,7 +75,7 @@ public class HomeView extends FooterActivity implements OnClickListener{
 		public void onClick(View v) {
 		
 			if(v==trGenPassword){
-				Intent intent = new Intent(this,WalletCatListActivity.class);
+				Intent intent = new Intent(this,GenPasswordActivity.class);
 				intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT, getString(R.string.genpasswords));
 	    		startActivity(intent);
 			}else if(v==trWallet){
