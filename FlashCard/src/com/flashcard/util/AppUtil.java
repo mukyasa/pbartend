@@ -43,6 +43,7 @@ public class AppUtil extends Constants {
 	public static final String PREF_BOOKMARKS = "bookmarks";
 	public static final String BOOKMARKS = "rootbookmarks";
 	public static final String PREF_SAVED_CARDS = "savedcards";
+	public static final String PREF_CURRENT_CARD = "currentcard";
 	public static boolean isFlipped = false;
 	public static String searchTerm;
 
@@ -144,6 +145,29 @@ public class AppUtil extends Constants {
 	        e.printStackTrace();
         }
 	}
+	
+	/**
+	 * gets the last known viewed card
+	 * Dec 27, 2009
+	 * dmason
+	 * @param context
+	 * @return
+	 *
+	 */
+	public static int getLastVeiwedCard(Context context) {
+		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		return settings.getInt(PREF_CURRENT_CARD, 0);
+	}
+	
+	public static void setLastVeiwedCard(Context context,int cardNumber) {
+		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putInt(AppUtil.PREF_CURRENT_CARD, cardNumber);
+		// Don't forget to commit your edits!!!
+		editor.commit();
+	}
+	
+	
 	/**
 	 * Gets the sound preferences
 	 * 

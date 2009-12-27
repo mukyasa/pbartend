@@ -30,7 +30,6 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -56,12 +55,9 @@ public class CardSetList extends ListActivity{
 	private ProgressDialog pd;
 	private Context context;
 	private boolean firtTimeIn=true;
-	private ListAdapter adapter;
 	private String sortType = Constants.SORT_TYPE_DEFALUT;
 	private final int MENU_NEW=0;
 	private final int MENU_LOCAL=1;
-	private int scrollpagenumber=1;
-	private final Handler mHandler = new Handler();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +129,16 @@ public class CardSetList extends ListActivity{
 		super.onStop();
 	}
 	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		Constants.count=0;
+		Constants.countlabel=1;
+		AppUtil.setLastVeiwedCard(this, 0);
+	    super.onResume();
+	}
 	
 	 /******************************************/
 

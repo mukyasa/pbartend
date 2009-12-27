@@ -62,6 +62,18 @@ public class Home extends Activity implements OnTouchListener,Runnable {
         	showDialog(Authenication.ISDEMO);
     }
     
+    
+    /* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		Constants.count=0;
+		Constants.countlabel=1;
+		AppUtil.setLastVeiwedCard(this, 0);
+	    super.onResume();
+	}
+	
     private Handler handler = new Handler() {
         
         @Override

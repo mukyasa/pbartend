@@ -13,4 +13,8 @@ public class Constants {
 	public static final String DEV_KEY="f4ndi00uluokcc0c";
 	public static final int CARDS_PER_PAGE=25;
 	public static final String EXTRAS ="&per_page="+CARDS_PER_PAGE+"&extended=on";
+	
+	//keep this in here so they get reset properly
+	public static int count=0;
+	public static int countlabel=1;
 }
