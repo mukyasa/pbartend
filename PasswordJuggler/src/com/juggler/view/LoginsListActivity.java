@@ -55,7 +55,7 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, loginsTemplets));
 		getListView().setTextFilterEnabled(true);
 		//set next intent
-		intent = new Intent(this, CreateTemplateActivity.class);
+		intent = new Intent(this, CreateLoginTemplateActivity.class);
 	}
 	
 	/* (non-Javadoc)
