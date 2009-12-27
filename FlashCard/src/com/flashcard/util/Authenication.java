@@ -24,7 +24,7 @@ public class Authenication {
 	
 	/***************************/
 	//IF THIS "IS" A DEMO THEN SET THIS TO FALSE
-	private static boolean isNotDemo= true;
+	private static boolean isNotDemo= false;
 	/***************************/
 	
 	private static final String appname="flashcard101";
