@@ -20,6 +20,7 @@
 <activity android:name="Step2CreateActivity"></activity>
 <activity android:name="CreateNoteActivity"></activity>
 <activity android:name="CreateNoteTitleActivity"></activity>
+<activity android:name="GenPasswordActivity"></activity>
 </application>
 	<uses-sdk android:minSdkVersion="6" />
 
