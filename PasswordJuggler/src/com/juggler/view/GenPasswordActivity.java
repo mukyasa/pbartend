@@ -92,27 +92,27 @@ public class GenPasswordActivity extends Activity implements OnSeekBarChangeList
 	        
 	        String strength=WEAK;
 	        
-	        if(progress < 6)
+	        if(progress < 5)
 	        {
 	        	strength = WEAK;
 	        	tvStrength.setTextColor(Color.rgb(204, 0, 0));
 	        }
-	        else if(progress >=6 && progress <=12)
+	        else if(progress >=5 && progress <=8)
 	        {
 	        	strength = FAIR;
 	        	tvStrength.setTextColor(Color.rgb(204, 102, 51));
 	        }
-	        else if(progress >=12 && progress <=15)
+	        else if(progress >=8 && progress <=12)
 	        {
 	        	strength = GOOD;
 	        	tvStrength.setTextColor(Color.rgb(51, 102, 204));
 	        }
-	        else if(progress >=15 && progress <=20)
+	        else if(progress >=12 && progress <=19)
 	        {
 	        	strength = EXCELLENT;
 	        	tvStrength.setTextColor(Color.rgb(51, 153, 51));
 	        }
-	        else if(progress >=20)
+	        else if(progress >=19)
 	        {
 	        	strength = FANTASTIC;
 	        	tvStrength.setTextColor(Color.rgb(51, 153, 51));
