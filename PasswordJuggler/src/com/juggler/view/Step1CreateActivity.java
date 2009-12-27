@@ -51,6 +51,7 @@ public class Step1CreateActivity extends BaseActivity {
 	    	Intent intent = new Intent(this, Step2CreateActivity.class);
 	    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD1, getString(R.string.username));
 	    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD2, getString(R.string.password));
+	    	intent.putExtra(Constants.INTENT_EXTRA_IS_GENPASSWORD,  "false" );
 	    	startActivity(intent);
 	    	
 	    }

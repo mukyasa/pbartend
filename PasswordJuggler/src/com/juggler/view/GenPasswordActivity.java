@@ -103,6 +103,7 @@ public class GenPasswordActivity extends BaseActivity implements OnSeekBarChange
 		    	Intent intent = new Intent(this, Step2CreateActivity.class);
 		    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD1, getString(R.string.usage));
 		    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD2,  sdf.format(c.getTime()) );
+		    	intent.putExtra(Constants.INTENT_EXTRA_IS_GENPASSWORD,  "true" );
 		    	startActivity(intent);
 		    	
 		    }

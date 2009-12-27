@@ -17,6 +17,7 @@ public class Step2CreateActivity extends BaseActivity {
 	private EditText etTitle,etURL;
 	private PasswordDAO passDao;
 	private PasswordDbHelper myDatabaseAdapter;
+	private Intent selectedIntent;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.create_frame);
@@ -41,7 +42,7 @@ public class Step2CreateActivity extends BaseActivity {
 		etTitle = (EditText)findViewById(R.id.etTitle);
 		etURL = (EditText)findViewById(R.id.etURL);
 		
-		Intent selectedIntent = getIntent();
+		selectedIntent = getIntent();
 		
 		etURL.setText(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_STEP2_FIELD1));
 		etTitle.setText(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_STEP2_FIELD2));
@@ -59,14 +60,22 @@ public class Step2CreateActivity extends BaseActivity {
 	    if(v == bNext)
 	    {
 	    	NewPassword np = NewPassword.getInstance();
-	    	np.catId=-1;
 	    	
 	    	Hashtable<String, String> nameValue = new Hashtable<String, String>();
 	    	nameValue.put(etURL.getText().toString(), etTitle.getText().toString());
 	    	
 	    	np.nameValue=nameValue;
-	    	//save
-	    	passDao.saveLogins();
+	    	
+	    	//save gen password
+	    	if(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_IS_GENPASSWORD) != null && 
+	    			selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_IS_GENPASSWORD).equals("true"))
+	    	{
+	    		np.usage=etURL.getText().toString();
+	    		np.name=etTitle.getText().toString();
+		    	passDao.saveGenPassword();
+	    	}
+	    	else //save logins
+	    		passDao.saveLogins();
 	    	
 	    	//reset data
 	    	np.clear();
