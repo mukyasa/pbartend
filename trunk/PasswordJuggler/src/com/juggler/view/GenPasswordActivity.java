@@ -9,13 +9,22 @@
  */
 package com.juggler.view;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.format.DateFormat;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
+import com.juggler.domain.NewPassword;
+import com.juggler.utils.Constants;
 import com.juggler.utils.Encrypt;
 
 /**
@@ -46,6 +55,10 @@ public class GenPasswordActivity extends BaseActivity implements OnSeekBarChange
 	   
 	   
 	   private void initialize(){
+		   
+		   Button bNext = (Button)findViewById(R.id.butNext);
+		   bNext.setText(getString(R.string.next));
+		   
 		   tvTitle = (TextView)findViewById(R.id.tvTitle);
 		   tvTitle.setText(getString(R.string.genpasswords));
 		   
@@ -73,6 +86,29 @@ public class GenPasswordActivity extends BaseActivity implements OnSeekBarChange
 	        }
 	   }
 
+	   /**
+	    * override the click of the next button
+	    */
+	   @Override
+		public void onClick(View v) {
+		    super.onClick(v);
+		    
+		    Calendar c = Calendar.getInstance();
+		    SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, yyyy");
+		    if(v == bNext)
+		    {
+		    	NewPassword np = NewPassword.getInstance();
+		    	np.genPassword=tvGenPassowrd.getText().toString();
+		    	
+		    	Intent intent = new Intent(this, Step2CreateActivity.class);
+		    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD1, getString(R.string.usage));
+		    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD2,  sdf.format(c.getTime()) );
+		    	startActivity(intent);
+		    	
+		    }
+		    
+		    
+		}
 
 	/* (non-Javadoc)
      * @see android.widget.SeekBar.OnSeekBarChangeListener#onProgressChanged(android.widget.SeekBar, int, boolean)

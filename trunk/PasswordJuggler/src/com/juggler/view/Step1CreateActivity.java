@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.juggler.domain.NewPassword;
+import com.juggler.utils.Constants;
 
 public class Step1CreateActivity extends BaseActivity {
 	private EditText etTitle,etURL;
@@ -48,6 +49,8 @@ public class Step1CreateActivity extends BaseActivity {
 	    	np.url = etURL.getText().toString();
 	    	
 	    	Intent intent = new Intent(this, Step2CreateActivity.class);
+	    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD1, getString(R.string.username));
+	    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD2, getString(R.string.password));
 	    	startActivity(intent);
 	    	
 	    }

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.domain.NewPassword;
+import com.juggler.utils.Constants;
 
 public class Step2CreateActivity extends BaseActivity {
 	private EditText etTitle,etURL;
@@ -40,8 +41,10 @@ public class Step2CreateActivity extends BaseActivity {
 		etTitle = (EditText)findViewById(R.id.etTitle);
 		etURL = (EditText)findViewById(R.id.etURL);
 		
-		etURL.setText(getString(R.string.username));
-		etTitle.setText(getString(R.string.password));
+		Intent selectedIntent = getIntent();
+		
+		etURL.setText(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_STEP2_FIELD1));
+		etTitle.setText(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_STEP2_FIELD2));
 		
 		
 	}
