@@ -101,7 +101,7 @@ public class TempletUtil {
 	 * @return
 	 *
 	 */
-	public static TableRow getRow(Context context,String lbl,String val,boolean isFirst){
+	public static TableRow getRow(Context context,String lbl,String val,boolean isFirst,int id){
 		
 		TableRow tr = new TableRow(context);
 		
@@ -140,6 +140,7 @@ public class TempletUtil {
 		 */
 		TextView value = new TextView(context);
 		value.setText(val);
+		value.setId(id);
 		value.setTextSize(13);
 		value.setTextColor(Color.rgb(68, 68, 68));
 		value.setPadding(5, 0, 0, 0);

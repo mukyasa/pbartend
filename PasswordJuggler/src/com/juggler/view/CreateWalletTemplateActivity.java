@@ -39,6 +39,13 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	@Override
 	protected void onResume() {
 	    // TODO populate the fields with the new data
+		TextView tvNote = (TextView)findViewById(R.string.note);
+		if(tvNote != null)
+		{
+			NewPassword np = NewPassword.getInstance();
+			
+			tvNote.setText(np.note);
+		}
 	    super.onResume();
 	}
 	
@@ -85,7 +92,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 					
 				}
 				
-				TableRow tr = TempletUtil.getRow(this,label,"",isFirst);
+				TableRow tr = TempletUtil.getRow(this,label,"",isFirst,label.hashCode()+i);
 				tr.setOnClickListener(this);
 				
 				detailLayout.addView(tr);
@@ -98,9 +105,8 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 			};
 			
 			//setup not field
-			NewPassword np = NewPassword.getInstance();
 			
-			TableRow tr = TempletUtil.getRow(this,getString(R.string.note),np.note,true);
+			TableRow tr = TempletUtil.getRow(this,getString(R.string.note),"",true,R.string.note);
 			tr.setOnClickListener(this);
 			
 			TextView tvSubTitle = TempletUtil.getTextView(this,"");
