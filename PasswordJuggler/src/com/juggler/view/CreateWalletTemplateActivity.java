@@ -6,18 +6,20 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.TableRow.LayoutParams;
 
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
-import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 import com.juggler.utils.TempletUtil;
 
-public class CreateWalletTemplateActivity extends BaseActivity {
+public class CreateWalletTemplateActivity extends BaseActivity implements OnClickListener {
 	private CharSequence text;
 	private PasswordDAO passDao;
 	private PasswordDbHelper myDatabaseAdapter;
@@ -37,6 +39,10 @@ public class CreateWalletTemplateActivity extends BaseActivity {
 
 	private void initialize() {
 
+		//hide next button
+		Button bNext = (Button)findViewById(R.id.butNext);
+		bNext.setVisibility(View.GONE);
+		
 		//set title
 		Intent selectedIntent = getIntent();
 		text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
@@ -95,7 +101,10 @@ public class CreateWalletTemplateActivity extends BaseActivity {
 					
 				}
 				
-				detailLayout.addView(TempletUtil.getRow(this,label,"",isFirst));
+				TableRow tr = TempletUtil.getRow(this,label,"",isFirst);
+				tr.setOnClickListener(this);
+				
+				detailLayout.addView(tr);
 				isFirst=false;
 				
 				//move to next row
@@ -118,9 +127,14 @@ public class CreateWalletTemplateActivity extends BaseActivity {
 	public void onClick(View v) {
 	    super.onClick(v);
 	    
-	    if(v == bNext)
+	    if(v instanceof TableRow)
 	    {
-	    	NewPassword np = NewPassword.getInstance();
+	    	
+	    	Intent intent = new Intent(this, CreateWalletField.class);
+	    	View view =((TableRow)v).getChildAt(0);
+	    	
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,((TextView)view).getText());
+	    	startActivity(intent);
 	    	
 	    }
 	    
