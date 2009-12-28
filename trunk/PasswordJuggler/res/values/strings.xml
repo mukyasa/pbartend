@@ -22,21 +22,6 @@
 	  <string name="username">Username</string>
 	  
 	  <string name="usage">What are you using this for?</string>
+	  <string name="note">Notes</string>
 	  
-	  <!-- wallet templets -->
-	<string name="product">Product</string>
-	<string name="version">Version</string>
-	<string name="licTo">Licensed To</string>
-	<string name="licKey">License Key</string>
-	<string name="regEmail">Reg Email</string>
-	<string name="company">Company</string>
-	<string name="download">Download</string>
-	<string name="publisher">Publisher</string>
-	<string name="website">Website</string>
-	<string name="retailprice">Retail Price</string>
-	<string name="suport">Support</string>
-	<string name="order">Order</string>
-	<string name="orderNum">Order#</string>
-	<string name="orderTotal">Order Total</string>
-	
 </resources>

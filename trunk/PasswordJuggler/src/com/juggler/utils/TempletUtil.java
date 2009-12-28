@@ -27,6 +27,33 @@ import android.widget.TableRow.LayoutParams;
 public class TempletUtil {
 	
 	/**
+	android:textStyle="bold" 
+	android:shadowColor="#fff" 
+	android:shadowDx="1" 
+	android:shadowDy="1"
+	android:shadowRadius="1" 
+	android:layout_marginLeft="10sp"
+	android:textColor="#666" 
+	android:textSize="14sp"
+	android:layout_marginTop="8sp"
+	 */
+	public static TextView getTextView(Context context,String section){
+		
+		TextView tvSubTitle = new TextView(context);
+		tvSubTitle.setTextColor(Color.rgb(102, 102, 102));
+		tvSubTitle.setTypeface(Typeface.DEFAULT_BOLD);
+		tvSubTitle.setShadowLayer(1, 1, 1, Color.WHITE);
+		LayoutParams params = new LayoutParams();
+		params.leftMargin=10;
+		params.topMargin=8;
+		tvSubTitle.setLayoutParams(params);
+		tvSubTitle.setTextSize(14);
+		tvSubTitle.setText(section);
+		
+		return tvSubTitle;
+	}
+	
+	/**
 	 * Creates a single detail row
 	 * Dec 27, 2009
 	 * dmason
