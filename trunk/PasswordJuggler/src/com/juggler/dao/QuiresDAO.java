@@ -9,6 +9,7 @@ public class QuiresDAO {
 	public static final String TABLE_PASSWOR_ENTRY = "tblPasswordEntry";
 	public static final String TABLE_NOTES = "tblNotes";
 	public static final String TABLE_GEN_PASSWORD ="tblGenPassword";
+	public static final String TABLE_LOGIN_TEMPLATE ="tblLoginTemplate";
 	
 	//columns
 	public static final String COL_ID = "_id";
@@ -41,6 +42,8 @@ public class QuiresDAO {
 	COL_SUB_CAT_ID+" INTEGER DEFAULT -1 , "+
 	COL_NOTE_ID+" INTEGER DEFAULT -1 ,"+
 	COL_ENTRY_TYPE+" INTEGER DEFAULT -1 );"; 
+	
+	public static final String sqlCreateLoginTemplateTable = "CREATE TABLE "+TABLE_LOGIN_TEMPLATE+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_NAME+" TEXT, "+COL_URL+" TEXT);";
 	
 	public static final String sqlCreateTemplateTable ="CREATE TABLE "+TABLE_TEMPLATE+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_TEMPLATE_LABEL+" TEXT, "+COL_TEMPLATE_ID+" INTEGER, "+COL_TEMPLATE_SECTION_TITLE+" TEXT);";
 	

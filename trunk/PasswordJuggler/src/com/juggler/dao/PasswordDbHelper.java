@@ -110,11 +110,17 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		db.execSQL(QuiresDAO.sqlCreateSubCatTable);
 		db.execSQL(QuiresDAO.sqlCreateGenPassTable);	
 		db.execSQL(QuiresDAO.sqlCreateTemplateTable);
+		db.execSQL(QuiresDAO.sqlCreateLoginTemplateTable);		
 		
 		//create templets
 		String[] templates = InsertTemplate.sqlInsertTemplates;
 		for(int i=0;i<templates.length;i++)
 			db.execSQL(templates[i]);
+		
+		String[] logintemplates = InsertTemplate.sqlInsertLoginTemplate;
+		for(int i=0;i<logintemplates.length;i++)
+			db.execSQL(logintemplates[i]);
+		
 		
 		//populate cats and sub cats
 		hydrateCategories(db);
