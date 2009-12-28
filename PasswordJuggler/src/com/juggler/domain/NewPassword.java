@@ -18,11 +18,11 @@ import java.util.Hashtable;
 public class NewPassword {
 	
 	private static NewPassword instance=null;
-	public String name;
-	public String genPassword;
-	public String note;
-	public String usage;
-	public String url;
+	public String name="";
+	public String genPassword="";
+	public String note="";
+	public String usage="";
+	public String url="";
 	public long catId;
 	public long subCatId;
 	public long noteId;

@@ -9,16 +9,17 @@
  */
 package com.juggler.utils;
 
-import com.juggler.view.R;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.view.Gravity;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.TableRow.LayoutParams;
+
+import com.juggler.view.R;
 
 /**
  * @author dmason
@@ -51,6 +52,38 @@ public class TempletUtil {
 		tvSubTitle.setText(section);
 		
 		return tvSubTitle;
+	}
+	
+	/**
+	android:background="@drawable/list_item"
+	android:drawableLeft="@drawable/wallet_lg" 
+	android:paddingTop="4sp"
+	android:paddingBottom="4sp" 
+	android:gravity="center_vertical"
+	android:id="@+id/tvWalletTitle" 
+	android:text="The Title"
+	android:textColor="#000" 
+	android:textSize="18sp"
+	android:paddingLeft="10sp"
+	 * Dec 27, 2009
+	 * dmason
+	 * @return
+	 *
+	 */
+	public static TextView getTitleView(Context context,String section)
+	{
+		TextView tvTitle = new TextView(context);
+		tvTitle.setTextColor(Color.rgb(0, 0, 0));
+		tvTitle.setBackgroundResource(R.drawable.list_item);
+		Drawable wallet = context.getResources().getDrawable(R.drawable.wallet_lg);
+		tvTitle.setCompoundDrawablesWithIntrinsicBounds(wallet, null, null, null);
+		tvTitle.setTextSize(18);
+		tvTitle.setGravity(Gravity.CENTER_VERTICAL);
+		tvTitle.setId(R.id.tvWalletTitle);
+		tvTitle.setPadding(10, 4, 0, 4);
+		tvTitle.setText(section);
+		
+		return tvTitle;
 	}
 	
 	/**

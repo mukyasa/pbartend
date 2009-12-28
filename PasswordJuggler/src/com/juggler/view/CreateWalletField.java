@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TableRow.LayoutParams;
 
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;

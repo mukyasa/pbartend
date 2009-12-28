@@ -2,8 +2,6 @@ package com.juggler.view;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,11 +9,11 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.TableRow.LayoutParams;
 
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
+import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 import com.juggler.utils.TempletUtil;
 
@@ -31,12 +29,19 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 		passDao = new PasswordDAO();
 		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
 		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-		
 		initialize();
-		
 		super.onCreate(savedInstanceState);
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+	    // TODO populate the fields with the new data
+	    super.onResume();
+	}
+	
 	private void initialize() {
 
 		//hide next button
@@ -92,10 +97,13 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 				sectionTitle = section;
 			};
 			
-			TableRow tr = TempletUtil.getRow(this,getString(R.string.note),"",true);
+			//setup not field
+			NewPassword np = NewPassword.getInstance();
+			
+			TableRow tr = TempletUtil.getRow(this,getString(R.string.note),np.note,true);
 			tr.setOnClickListener(this);
 			
-			TextView tvSubTitle = TempletUtil.getTextView(this, "");
+			TextView tvSubTitle = TempletUtil.getTextView(this,"");
 			detailLayout = TempletUtil.getNewTableLayout(this);
 			detailLayout_wrapper.addView(tvSubTitle);
 			detailLayout.addView(tr);
@@ -116,9 +124,27 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    {
 	    	
 	    	Intent intent = new Intent(this, CreateWalletField.class);
-	    	View view =((TableRow)v).getChildAt(0);
+	    	View label =((TableRow)v).getChildAt(0);
+	    	View value =((TableRow)v).getChildAt(1);
 	    	
-	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,((TextView)view).getText());
+	    	if(((TextView)label).getText().equals(getString(R.string.note)+":"))
+	    	{
+	    		intent = new Intent(this, CreateNoteActivity.class);
+	    		intent.putExtra(Constants.INTENT_EXTRA_NOTE,true);
+	    	}
+	    	
+	    	/*if the value has not been filled the next field 
+	    	will be the label otherwise make it the value*/
+	    	String theValue="";
+	    	if(value.equals(""))
+	    		theValue = ((TextView)label).getText().toString();
+	    	else
+	    		theValue = ((TextView)value).getText().toString();
+	    	
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
+	    	intent.putExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,((TextView)value).getId());
+	    	
+	    			
 	    	startActivity(intent);
 	    	
 	    }
