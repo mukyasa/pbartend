@@ -29,7 +29,20 @@ public class NewPassword {
 	//password id set after insert of password
 	public int passwordId;
 	
-	public Hashtable<String, String> nameValue;
+	//this is the temp holding zone for the currently selected textview id in CreateWalletTemplate
+	public int templateId;
+	
+	private Hashtable<String, String> nameValue = new Hashtable<String, String>();
+	
+	public void addNameValue(String key,String value)
+	{
+		nameValue.put(key, value);
+	}
+	
+	public Hashtable<String, String> getNameValue(){
+		
+		return nameValue;
+	}
 	
 	public void clear()
 	{

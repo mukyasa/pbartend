@@ -189,7 +189,7 @@ NewPassword np = NewPassword.getInstance();
 		title.put(COL_ENTRY_TYPE, ENTRY_TYPE_LOGINS);
 		
 		ContentValues nameValue = new ContentValues();
-		Hashtable<String, String> htable = np.nameValue;
+		Hashtable<String, String> htable = np.getNameValue();
 		Iterator<String> iter = htable.keySet().iterator();
 		
 		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORDS, null, title);

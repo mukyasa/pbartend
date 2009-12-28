@@ -61,12 +61,8 @@ public class CreateLoginTemplateActivity extends BaseActivity {
 	    	NewPassword np = NewPassword.getInstance();
 	    	np.name =text.toString();
 		    np.catId=selectedRow;
-		    
 	    	
-	    	Hashtable<String, String> nameValue = new Hashtable<String, String>();
-	    	nameValue.put(etURL.getText().toString(), etTitle.getText().toString());
-	    	
-	    	np.nameValue=nameValue;
+	    	np.addNameValue(etURL.getText().toString(), etTitle.getText().toString());
 	    	
 	    	passDao.saveLogins();
 	    	

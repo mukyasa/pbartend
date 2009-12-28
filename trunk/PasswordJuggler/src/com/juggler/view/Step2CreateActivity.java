@@ -61,10 +61,7 @@ public class Step2CreateActivity extends BaseActivity {
 	    {
 	    	NewPassword np = NewPassword.getInstance();
 	    	
-	    	Hashtable<String, String> nameValue = new Hashtable<String, String>();
-	    	nameValue.put(etURL.getText().toString(), etTitle.getText().toString());
-	    	
-	    	np.nameValue=nameValue;
+	    	np.addNameValue(etURL.getText().toString(), etTitle.getText().toString());
 	    	
 	    	//save gen password
 	    	if(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_IS_GENPASSWORD) != null && 
