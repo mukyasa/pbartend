@@ -5,8 +5,8 @@
 
 	<LinearLayout android:id="@+id/LinearLayout01"
 		android:layout_height="fill_parent" android:layout_width="fill_parent" android:padding="10sp" android:background="@drawable/base_bg">
-		<EditText android:textColor="#ccc" android:id="@+id/etNote"
-			android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="top"></EditText>
+		<EditText android:id="@+id/etNote"
+			android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="top" android:textColor="#000"></EditText>
 	</LinearLayout>
 
 
