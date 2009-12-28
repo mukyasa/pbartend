@@ -72,28 +72,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 				//check if new section is needed
 				if(section != null && !section.equals(sectionTitle)) 
 				{
-					/**
-					android:textStyle="bold" 
-					android:shadowColor="#fff" 
-					android:shadowDx="1" 
-					android:shadowDy="1"
-					android:shadowRadius="1" 
-					android:layout_marginLeft="10sp"
-					android:textColor="#666" 
-					android:textSize="14sp"
-					android:layout_marginTop="8sp"
-					 */
-					TextView tvSubTitle = new TextView(this);
-					tvSubTitle.setTextColor(Color.rgb(102, 102, 102));
-					tvSubTitle.setTypeface(Typeface.DEFAULT_BOLD);
-					tvSubTitle.setShadowLayer(1, 1, 1, Color.WHITE);
-					LayoutParams params = new LayoutParams();
-					params.leftMargin=10;
-					params.topMargin=8;
-					tvSubTitle.setLayoutParams(params);
-					tvSubTitle.setTextSize(14);
-					tvSubTitle.setText(section);
-					
+					TextView tvSubTitle = TempletUtil.getTextView(this, section);
 					detailLayout = TempletUtil.getNewTableLayout(this);
 					detailLayout_wrapper.addView(tvSubTitle);
 					detailLayout_wrapper.addView(detailLayout);
@@ -113,10 +92,16 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 				sectionTitle = section;
 			};
 			
+			TableRow tr = TempletUtil.getRow(this,getString(R.string.note),"",true);
+			tr.setOnClickListener(this);
+			
+			TextView tvSubTitle = TempletUtil.getTextView(this, "");
+			detailLayout = TempletUtil.getNewTableLayout(this);
+			detailLayout_wrapper.addView(tvSubTitle);
+			detailLayout.addView(tr);
+			detailLayout_wrapper.addView(detailLayout);
+			
 		}
-		
-		
-		
 		
 	}
 	
