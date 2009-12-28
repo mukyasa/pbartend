@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
@@ -43,8 +44,12 @@ public class CreateWalletField extends BaseActivity {
 		//get Intent then set text
 		Intent selectedIntent = getIntent();
 		CharSequence text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
-		etTitle.setText(text.toString().substring(0, text.toString().length()-1));
+		String subString = text.toString().substring(0, text.toString().length()-1);
+		
+		etTitle.setText(subString);
 	    
+		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
+	    tvTitle.setText(subString);
 	    
 	    super.onCreate(savedInstanceState);
 	}
@@ -54,7 +59,7 @@ public class CreateWalletField extends BaseActivity {
 	 */
 	@Override
 	public void onClick(View v) {
-super.onClick(v);
+		super.onClick(v);
 	    
 	    if(v == bNext)
 	    {
