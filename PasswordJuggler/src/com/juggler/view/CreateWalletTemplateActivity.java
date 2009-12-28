@@ -65,7 +65,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 			startManagingCursor(cursor);
 			String sectionTitle="";
 			boolean isFirst = true;
-			do{
+			for(int i=0;i<cursor.getCount();i++){
 				String label = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_TEMPLATE_LABEL));
 				String section = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_TEMPLATE_SECTION_TITLE));
 				
@@ -111,7 +111,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 				cursor.moveToNext();
 				//reset title
 				sectionTitle = section;
-			}while(!cursor.isLast());
+			};
 			
 		}
 		
