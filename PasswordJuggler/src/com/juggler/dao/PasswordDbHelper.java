@@ -2,6 +2,8 @@ package com.juggler.dao;
 
 import java.io.File;
 
+import com.juggler.domain.InsertTemplate;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -108,6 +110,11 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		db.execSQL(QuiresDAO.sqlCreateSubCatTable);
 		db.execSQL(QuiresDAO.sqlCreateGenPassTable);	
 		db.execSQL(QuiresDAO.sqlCreateTemplateTable);
+		
+		//create templets
+		String[] templates = InsertTemplate.sqlInsertTemplates;
+		for(int i=0;i<templates.length;i++)
+			db.execSQL(templates[i]);
 		
 		//populate cats and sub cats
 		hydrateCategories(db);

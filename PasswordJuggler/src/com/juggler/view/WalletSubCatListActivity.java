@@ -77,6 +77,7 @@ public class WalletSubCatListActivity extends FooterListActivity implements OnCl
 	    
 	    Intent intent = new Intent(this, CreateWalletTemplateActivity.class);
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,((TextView)v).getText());
+	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_ROW, id);
     	startActivity(intent);
 	    
 	}

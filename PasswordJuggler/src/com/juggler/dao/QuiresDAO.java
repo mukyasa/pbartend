@@ -24,8 +24,8 @@ public class QuiresDAO {
 	public static final String COL_PASSWORD ="pwd";
 	public static final String COL_USAGE ="usage";
 	public static final String COL_TEMPLATE_LABEL ="label";
-	public static final String COL_TEMPLATE_VALUE ="value";
-	public static final String COL_TEMPLATE_ID ="templateId";
+	public static final String COL_TEMPLATE_ID ="subCatId";
+	public static final String COL_TEMPLATE_SECTION_TITLE ="sectionTitle";
 	public static final int  ENTRY_TYPE_LOGINS = 1;
 	public static final int ENTRY_TYPE_NOTES = 2;
 	public static final int ENTRY_TYPE_GEN_PASSWORD = 3;
@@ -42,7 +42,7 @@ public class QuiresDAO {
 	COL_NOTE_ID+" INTEGER DEFAULT -1 ,"+
 	COL_ENTRY_TYPE+" INTEGER DEFAULT -1 );"; 
 	
-	public static final String sqlCreateTemplateTable ="CREATE TABLE "+TABLE_TEMPLATE+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_TEMPLATE_LABEL+" TEXT, "+COL_TEMPLATE_VALUE+" TEXT, "+COL_TEMPLATE_ID+" INTEGER);";
+	public static final String sqlCreateTemplateTable ="CREATE TABLE "+TABLE_TEMPLATE+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_TEMPLATE_LABEL+" TEXT, "+COL_TEMPLATE_ID+" INTEGER, "+COL_TEMPLATE_SECTION_TITLE+" TEXT);";
 	
 	public static final String sqlCreateGenPassTable ="CREATE TABLE "+TABLE_GEN_PASSWORD+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_NAME+" TEXT, "+COL_PASSWORD+" TEXT, "+COL_USAGE+" TEXT);";
 	
@@ -56,6 +56,7 @@ public class QuiresDAO {
 	
 	
 	public static final String sqlGetSubCats= "SELECT "+COL_ID+","+COL_NAME+" from "+TABLE_SUB_CATS+" WHERE "+COL_CAT_ID+"=?";
+	public static final String sqlGetTemplate= "SELECT * from "+TABLE_TEMPLATE+" WHERE "+COL_SUB_CAT_ID+"=?";
 	
 	public static final String sqlGetPasswordCount = "SELECT "+COL_ID+" from "+TABLE_GEN_PASSWORD+";";
 	public static final String sqlGetNotesCount = "SELECT "+COL_ID+" from "+TABLE_NOTES+";";

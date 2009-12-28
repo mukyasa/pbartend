@@ -52,6 +52,19 @@ public class PasswordDAO extends QuiresDAO {
 	}
 	
 	/**
+	 * gets a template based on template id
+	 * Dec 27, 2009
+	 * dmason
+	 * @param catId
+	 * @return
+	 *
+	 */
+	public Cursor getTemplate(long templateId){
+		String[]selectionArgs={templateId+""};
+		return sqliteDatabase.rawQuery(sqlGetTemplate, selectionArgs);
+	}
+	
+	/**
 	 * Sets the sqlite db name
 	 * 
 	 * @param sqliteDatabase

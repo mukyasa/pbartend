@@ -6,7 +6,7 @@
 		android:layout_height="fill_parent" android:background="@drawable/base_bg"
 		android:id="@+id/mainLinearLayout" android:fadingEdge="none">
 		<TableLayout android:layout_width="fill_parent"
-			android:padding="10sp" android:layout_height="fill_parent">
+			android:padding="10sp" android:layout_height="fill_parent" android:id="@+id/tblDetailsWrapper">
 			<TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:background="@drawable/list_item"
 				android:drawableLeft="@drawable/wallet_lg" android:paddingTop="4sp"
@@ -14,13 +14,13 @@
 				android:id="@+id/tvWalletTitle" android:text="The Title"
 				android:textColor="#000" android:textSize="18sp"
 				android:paddingLeft="10sp"></TextView>
-			<TextView android:layout_width="wrap_content"
+			<!--TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:text="Sub Title"
 				android:textStyle="bold" android:id="@+id/tvSubTitle1"
 				android:shadowColor="#fff" android:shadowDx="1" android:shadowDy="1"
 				android:shadowRadius="1" android:layout_marginLeft="10sp"
 				android:textColor="#666" android:textSize="14sp"
-				android:layout_marginTop="8sp"></TextView>
+				android:layout_marginTop="8sp"></TextView-->
 
 
 			<TableLayout android:layout_height="wrap_content"
