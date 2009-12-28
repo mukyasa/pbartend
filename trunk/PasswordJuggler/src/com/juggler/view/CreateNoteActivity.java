@@ -12,6 +12,7 @@ package com.juggler.view;
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.domain.NewPassword;
+import com.juggler.utils.Constants;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -47,6 +48,10 @@ public class CreateNoteActivity extends Activity implements OnClickListener {
 	
 	private void initialize(){
 		
+		EditText etNote = (EditText)findViewById(R.id.etNote);
+		String text = getIntent().getStringExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
+		etNote.setText(text);
+		
 		//set title
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 		tvTitle.setText("");
@@ -69,17 +74,23 @@ public class CreateNoteActivity extends Activity implements OnClickListener {
     		NewPassword np = NewPassword.getInstance();
     		np.note = etNote.getText().toString();
     		
-    		passDao.saveNotes();
+    		boolean isWalletNote = getIntent().getBooleanExtra(Constants.INTENT_EXTRA_NOTE, false);
     		
-    		Intent intent = new Intent(this,HomeView.class);
-    		startActivity(intent);
+    		if(!isWalletNote)
+    		{
+	    		passDao.saveNotes();
+	    		
+	    		Intent intent = new Intent(this,HomeView.class);
+	    		startActivity(intent);
+    		}
+    		else
+    			finish();
     	}
     	else
     	{
     		finish();
     	}
     	
-	    
     }
 }
 
