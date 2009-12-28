@@ -141,8 +141,8 @@ public class TempletUtil {
 		TextView value = new TextView(context);
 		value.setText(val);
 		value.setId(id);
-		value.setTextSize(13);
-		value.setTextColor(Color.rgb(68, 68, 68));
+		value.setTextSize(14);
+		value.setTextColor(Color.rgb(33, 33, 33));
 		value.setPadding(5, 0, 0, 0);
 		
 		//add text views to row

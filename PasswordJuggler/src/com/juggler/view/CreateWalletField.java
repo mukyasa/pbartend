@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.TableRow.LayoutParams;
 
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
@@ -27,6 +26,8 @@ import com.juggler.utils.Constants;
 public class CreateWalletField extends BaseActivity {
 	
 	private Button bNext;
+	private int id;
+	private EditText etTitle;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -41,10 +42,11 @@ public class CreateWalletField extends BaseActivity {
 	    EditText etURL = (EditText)findViewById(R.id.etURL);
 	    etURL.setVisibility(View.GONE);
 	    
-	    EditText etTitle = (EditText)findViewById(R.id.etTitle);
+	    etTitle = (EditText)findViewById(R.id.etTitle);
 		//get Intent then set text
 		Intent selectedIntent = getIntent();
 		CharSequence text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
+		id =  selectedIntent.getIntExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,-1);
 		String subString = text.toString().substring(0, text.toString().length()-1);
 		
 		etTitle.setText(subString);
@@ -65,6 +67,10 @@ public class CreateWalletField extends BaseActivity {
 	    if(v == bNext)
 	    {
 	    	NewPassword np = NewPassword.getInstance();
+	    	String temp = etTitle.getText().toString();
+	    	np.addNameValue(id+"", etTitle.getText().toString());
+	    	
+	    	finish();
 	    	
 	    }
 	}

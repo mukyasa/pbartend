@@ -1,5 +1,7 @@
 package com.juggler.view;
 
+import java.util.Hashtable;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -38,15 +40,25 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	 */
 	@Override
 	protected void onResume() {
-	    // TODO populate the fields with the new data
-		TextView tvNote = (TextView)findViewById(R.string.note);
-		if(tvNote != null)
+
+		NewPassword np = NewPassword.getInstance();
+		
+		//i know what notes is so do it seperate
+		TextView note = (TextView)findViewById(R.string.note);
+		if(note != null)
+			note.setText(np.note);
+		
+		//for other nv pairs
+		Hashtable<String, String> nvpair = np.getNameValue();
+		if(nvpair != null)
 		{
-			NewPassword np = NewPassword.getInstance();
-			
-			tvNote.setText(np.note);
+			String value = nvpair.get(np.templateId+"");
+			TextView selected = (TextView)findViewById(np.templateId);
+			if(selected != null)
+				selected.setText(value);
 		}
-	    super.onResume();
+
+		super.onResume();
 	}
 	
 	private void initialize() {
@@ -130,8 +142,8 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    {
 	    	
 	    	Intent intent = new Intent(this, CreateWalletField.class);
-	    	View label =((TableRow)v).getChildAt(0);
-	    	View value =((TableRow)v).getChildAt(1);
+	    	TextView label =(TextView)((TableRow)v).getChildAt(0);
+	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
 	    	
 	    	if(((TextView)label).getText().equals(getString(R.string.note)+":"))
 	    	{
@@ -142,13 +154,17 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	/*if the value has not been filled the next field 
 	    	will be the label otherwise make it the value*/
 	    	String theValue="";
-	    	if(value.equals(""))
-	    		theValue = ((TextView)label).getText().toString();
+	    	if(value.getText().toString().equals(""))
+	    		theValue = label.getText().toString();
 	    	else
-	    		theValue = ((TextView)value).getText().toString();
+	    		theValue = value.getText().toString();
 	    	
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
 	    	intent.putExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,((TextView)value).getId());
+	    	
+	    	//for notes and the key to the hashtable
+	    	NewPassword np = NewPassword.getInstance();
+	    	np.templateId = ((TextView)value).getId();
 	    	
 	    			
 	    	startActivity(intent);
