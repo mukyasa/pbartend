@@ -38,6 +38,11 @@ public class PasswordDAO extends QuiresDAO {
 				COL_ID, COL_NAME }, null, null, null, null, null);
 	}
 	
+	public Cursor getLoginTemplates(){
+		return sqliteDatabase.query(TABLE_LOGIN_TEMPLATE, new String[] {
+				COL_ID, COL_NAME }, null, null, null, null, null);
+	}
+	
 	/**
 	 * Get all subcats
 	 * Dec 24, 2009

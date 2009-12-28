@@ -1,22 +1,32 @@
 package com.juggler.view;
 
+import java.util.Hashtable;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.juggler.dao.PasswordDAO;
+import com.juggler.dao.PasswordDbHelper;
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 
 public class CreateLoginTemplateActivity extends BaseActivity {
 	private CharSequence text;
 	private EditText etTitle,etURL;
+	private PasswordDAO passDao;
+	private PasswordDbHelper myDatabaseAdapter;
 	private long selectedRow;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.create_frame);
 		initialize();
+		//set up database for use
+		passDao = new PasswordDAO();
+		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
+		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		
 		super.onCreate(savedInstanceState);
 	}
@@ -49,11 +59,26 @@ public class CreateLoginTemplateActivity extends BaseActivity {
 	    if(v == bNext)
 	    {
 	    	NewPassword np = NewPassword.getInstance();
-	    	
 	    	np.name =text.toString();
 		    np.catId=selectedRow;
+		    
+	    	
+	    	Hashtable<String, String> nameValue = new Hashtable<String, String>();
+	    	nameValue.put(etURL.getText().toString(), etTitle.getText().toString());
+	    	
+	    	np.nameValue=nameValue;
+	    	
+	    	passDao.saveLogins();
+	    	
+	    	//reset data
+	    	np.clear();
+	    	
+	    	Intent intent = new Intent(this, HomeView.class);
+	    	startActivity(intent);
 	    	
 	    }
+	    
+	    
 	    
 	    
 	}

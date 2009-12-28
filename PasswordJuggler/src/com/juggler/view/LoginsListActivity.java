@@ -1,16 +1,20 @@
 package com.juggler.view;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import com.juggler.dao.PasswordDAO;
+import com.juggler.dao.PasswordDbHelper;
+import com.juggler.dao.QuiresDAO;
 import com.juggler.utils.Constants;
 
 public class LoginsListActivity extends FooterListActivity implements OnClickListener,OnTouchListener{
@@ -18,13 +22,19 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 	private Intent intent;
 	private static final int INTENT_NEXT_SCREEN = 0;
 	private Button butPrev;
-	private final String[] loginsTemplets = { Constants.STANDARD_LOGIN, "Yahoo", "Amazon", "eBay", "Facebook","Gmail","PayPal","Twitter","Digg" };
-	private int STANDARD_LOGIN=0;
+	private int STANDARD_LOGIN=1;
+	private PasswordDAO passDao;
+	private PasswordDbHelper myDatabaseAdapter;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.list_frame);
+		
+		//set up database for use
+		passDao = new PasswordDAO();
+		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
+		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		
 		super.onCreate(savedInstanceState);
 	}
@@ -52,8 +62,17 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 		butPrev = (Button) findViewById(R.id.butPrev);
 		butPrev.setOnClickListener(this);
 		butPrev.setOnTouchListener(this);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, loginsTemplets));
+		
+		Cursor recordscCursor = passDao.getLoginTemplates();
+		
+		String[] from = new String[] { QuiresDAO.COL_NAME };
+		int[] to = new int[] { R.id.list_row};
+    	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
+				R.layout.list_item, recordscCursor, from, to);
+    	setListAdapter(records);
+		/*setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, baseCats));*/
 		getListView().setTextFilterEnabled(true);
+		
 		//set next intent
 		intent = new Intent(this, CreateLoginTemplateActivity.class);
 	}
