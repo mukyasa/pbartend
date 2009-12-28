@@ -91,32 +91,19 @@ public class FooterUtil implements OnClickListener,OnTouchListener{
  public void onClick(View v) {
 	   	
 	   if(v == bHome){
-		  //if(Constants.SCREEN_TYPE != Constants.HOME){
 		   	Intent intent = new Intent(context,HomeView.class);
 	    	context.startActivity(intent);
-		  //}
 	   }else if(v == bLogins){
-		  if(Constants.SCREEN_TYPE != Constants.LOGINS){
-			  
-		  }
+		   
 	   }else if(v == bNotes){
-		  if(Constants.SCREEN_TYPE != Constants.NOTES){
-			  
-		  }
+
 	   }else if(v== bPasswords){
-		  if(Constants.SCREEN_TYPE != Constants.PASSWORDS){
-			  
-		  }
+
 	   }else if(v == bSettings){
-		  if(Constants.SCREEN_TYPE != Constants.SETTINGS){
-			  
-		  }
+
 	   }else if(v ==bWallet){
-		  if(Constants.SCREEN_TYPE != Constants.WALLET){
 			Intent intent = new Intent(context,DetailsActivity.class);
 			context.startActivity(intent);
-		  }
-		   
 	   }
  }
 
