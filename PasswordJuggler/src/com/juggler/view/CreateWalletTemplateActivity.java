@@ -77,6 +77,8 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 		tvWalletTitle.setText(text);
 		tvWalletTitle.setId(R.string.wallet);
 		tvWalletTitle.setOnClickListener(this);
+		NewPassword np = NewPassword.getInstance();
+		np.name = text.toString();
 		
 		TableLayout detailLayout = (TableLayout)findViewById(R.id.tlDetails);
 		TableLayout detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);

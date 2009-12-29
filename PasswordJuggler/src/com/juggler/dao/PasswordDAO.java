@@ -15,6 +15,7 @@ import java.util.Iterator;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.juggler.domain.NewPassword;
 
@@ -174,8 +175,20 @@ public class PasswordDAO extends QuiresDAO {
 		
 		NewPassword np = NewPassword.getInstance();
 		
-		//np.note;
-		//np.name
+		Log.v("",np.note);
+		Log.v("",np.name);
+		Log.v("",np.catId+"");
+		Log.v("",np.subCatId+"");
+		Hashtable<String, String> passwordDetails = np.getNameValue();
+		Iterator<String> Iter = passwordDetails.keySet().iterator();
+		
+		while (Iter.hasNext()) {
+	        String key = (String) Iter.next();
+	        String value = passwordDetails.get(key);
+	        Log.v("",key);
+	        Log.v("",value);
+	        
+        }
 		
 		
 	}

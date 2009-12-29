@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
+import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 
 public class WalletSubCatListActivity extends FooterListActivity implements OnClickListener,OnTouchListener{
@@ -74,6 +75,9 @@ public class WalletSubCatListActivity extends FooterListActivity implements OnCl
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 	    super.onListItemClick(l, v, position, id);
+	    
+	    NewPassword np = NewPassword.getInstance();
+	    np.subCatId = id;
 	    
 	    Intent intent = new Intent(this, CreateWalletTemplateActivity.class);
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,((TextView)v).getText());
