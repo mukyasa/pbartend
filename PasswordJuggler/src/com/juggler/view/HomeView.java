@@ -30,10 +30,24 @@ public class HomeView extends FooterActivity implements OnClickListener{
 		
 	   @Override
 	    public void onCreate(Bundle savedInstanceState) {
-	        setContentView(R.layout.base_page_frame);
+	        setContentView(R.layout.home_screen_frame);
 	        super.onCreate(savedInstanceState);
 	        
-	        LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
+	    }
+	   
+	   /* (non-Javadoc)
+	* @see com.juggler.view.FooterActivity#onResume()
+	*/
+	@Override
+	protected void onResume() {
+		initialize();
+		super.onResume();
+	}
+	   
+	   
+	   private void initialize(){
+		   
+		   LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
 	        if(!handler.isDidLogin())
 	        {
 		        //pop login window
@@ -41,12 +55,6 @@ public class HomeView extends FooterActivity implements OnClickListener{
 		    	startActivity(intent);
 	        }
 	        
-	        initialize();
-	    }
-	   
-	   
-	   private void initialize(){
-		   
 		   //init database
 		   PasswordDbHelper.getInstance(this);
 		   
