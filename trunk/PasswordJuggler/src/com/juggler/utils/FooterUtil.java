@@ -23,6 +23,7 @@ import com.juggler.dao.PasswordDbHelper;
 import com.juggler.view.DetailsActivity;
 import com.juggler.view.HomeView;
 import com.juggler.view.R;
+import com.juggler.view.SettingsActivity;
 
 /**
  * @author dmason
@@ -44,21 +45,27 @@ public class FooterUtil implements OnClickListener,OnTouchListener{
 	public void initialize(Activity activity){
 	    	
 	    	bHome = (Button)activity.findViewById(R.id.bHome);
+	    	bHome.setBackgroundResource(R.drawable.home_off);
 	    	bHome.setOnClickListener(this);
 	    	bHome.setOnTouchListener(this);
 	    	bWallet = (Button)activity.findViewById(R.id.bWallet);
+	    	bWallet.setBackgroundResource(R.drawable.wallet_off);
 	    	bWallet.setOnClickListener(this);
 	    	bWallet.setOnTouchListener(this);
 	    	bLogins = (Button)activity.findViewById(R.id.bLogins);
+	    	bLogins.setBackgroundResource(R.drawable.logins_off);
 	    	bLogins.setOnClickListener(this);
 	    	bLogins.setOnTouchListener(this);
 	    	bNotes = (Button)activity.findViewById(R.id.bNotes);
+	    	bNotes.setBackgroundResource(R.drawable.notes_off);
 	    	bNotes.setOnClickListener(this);
 	    	bNotes.setOnTouchListener(this);
 	    	bPasswords = (Button)activity.findViewById(R.id.bPasswords);
+	    	bPasswords.setBackgroundResource(R.drawable.passwords_off);
 	    	bPasswords.setOnClickListener(this);
 	    	bPasswords.setOnTouchListener(this);
 	    	bSettings = (Button)activity.findViewById(R.id.bSettings);
+	    	bSettings.setBackgroundResource(R.drawable.settings_off);
 	    	bSettings.setOnClickListener(this);
 	    	bSettings.setOnTouchListener(this);
 	    	
@@ -81,6 +88,22 @@ public class FooterUtil implements OnClickListener,OnTouchListener{
 			bPasswords.setVisibility(View.GONE);
 		if(passDao.getNotesCount() <= 0)
 			bNotes.setVisibility(View.GONE);
+		
+		switch(Constants.SCREEN_TYPE){
+			case Constants.HOME: bHome.setBackgroundResource(R.drawable.home);
+				break;
+			case Constants.LOGINS: bLogins.setBackgroundResource(R.drawable.logins);
+				break;
+			case Constants.NOTES: bNotes.setBackgroundResource(R.drawable.notes);
+				break;
+			case Constants.PASSWORDS: bPasswords.setBackgroundResource(R.drawable.passwords);
+				break;
+			case Constants.SETTINGS: bSettings.setBackgroundResource(R.drawable.settings);
+				break;
+			case Constants.WALLET: bWallet.setBackgroundResource(R.drawable.wallet);
+				break;
+				
+		}
 		 
 		
 	 }
@@ -100,10 +123,11 @@ public class FooterUtil implements OnClickListener,OnTouchListener{
 	   }else if(v== bPasswords){
 
 	   }else if(v == bSettings){
-
+		   Intent intent = new Intent(context,SettingsActivity.class);
+		   context.startActivity(intent);
 	   }else if(v ==bWallet){
-			Intent intent = new Intent(context,DetailsActivity.class);
-			context.startActivity(intent);
+		   Intent intent = new Intent(context,DetailsActivity.class);
+		   context.startActivity(intent);
 	   }
  }
 
