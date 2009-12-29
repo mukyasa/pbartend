@@ -129,6 +129,7 @@ public class TempletUtil {
 		label.setTypeface(Typeface.DEFAULT_BOLD);
 		label.setGravity(Gravity.RIGHT);
 		label.setTextSize(11);
+		label.setWidth(80);
 		LayoutParams lavelParams = new LayoutParams();
 		lavelParams.leftMargin=15;
 		label.setLayoutParams(lavelParams);
@@ -141,6 +142,7 @@ public class TempletUtil {
 		TextView value = new TextView(context);
 		value.setText(val);
 		value.setId(id);
+		value.setGravity(Gravity.LEFT);
 		value.setTextSize(14);
 		value.setTextColor(Color.rgb(33, 33, 33));
 		value.setPadding(5, 0, 0, 0);

@@ -28,6 +28,7 @@ public class CreateWalletField extends BaseActivity {
 	private Button bNext;
 	private int id;
 	private EditText etTitle;
+	private Intent selectedIntent;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -44,15 +45,13 @@ public class CreateWalletField extends BaseActivity {
 	    
 	    etTitle = (EditText)findViewById(R.id.etTitle);
 		//get Intent then set text
-		Intent selectedIntent = getIntent();
+		selectedIntent = getIntent();
 		CharSequence text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
 		id =  selectedIntent.getIntExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,-1);
-		String subString = text.toString().substring(0, text.toString().length()-1);
-		
-		etTitle.setText(subString);
+		etTitle.setText(text.toString());
 	    
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
-	    tvTitle.setText(subString);
+	    tvTitle.setText(text.toString());
 	    
 	    super.onCreate(savedInstanceState);
 	}
@@ -67,8 +66,11 @@ public class CreateWalletField extends BaseActivity {
 	    if(v == bNext)
 	    {
 	    	NewPassword np = NewPassword.getInstance();
-	    	String temp = etTitle.getText().toString();
-	    	np.addNameValue(id+"", etTitle.getText().toString());
+	    	String value = etTitle.getText().toString();
+	    	np.addTemplateSaver(id+"", value);
+	    	//set for database
+	    	CharSequence key =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_LABEL);
+	    	np.addNameValue(key.toString(), value);
 	    	
 	    	finish();
 	    	
