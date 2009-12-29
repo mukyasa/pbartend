@@ -160,7 +160,7 @@ public class PasswordDAO extends QuiresDAO {
 	
 	public void saveGenPassword(){
 		
-NewPassword np = NewPassword.getInstance();
+		NewPassword np = NewPassword.getInstance();
 		
 		ContentValues genpassword = new ContentValues();
 		genpassword.put(COL_NAME, np.name);
@@ -168,6 +168,16 @@ NewPassword np = NewPassword.getInstance();
 		genpassword.put(COL_USAGE, np.usage);
 		
 		sqliteDatabase.insert(PasswordDAO.TABLE_GEN_PASSWORD, null, genpassword);
+	}
+	
+	public void saveWallet(){
+		
+		NewPassword np = NewPassword.getInstance();
+		
+		//np.note;
+		//np.name
+		
+		
 	}
 	
 	/**

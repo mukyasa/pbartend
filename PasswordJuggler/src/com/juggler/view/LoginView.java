@@ -11,9 +11,11 @@ package com.juggler.view;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 
 import com.juggler.utils.LoginAuthHandler;
@@ -22,7 +24,7 @@ import com.juggler.utils.LoginAuthHandler;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class LoginView extends Activity implements OnClickListener {
+public class LoginView extends Activity implements OnClickListener,OnTouchListener {
 	 @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -46,5 +48,13 @@ public class LoginView extends Activity implements OnClickListener {
 	   		
 	   		finish();
     	}
+    }
+
+	/* (non-Javadoc)
+     * @see android.view.View.OnTouchListener#onTouch(android.view.View, android.view.MotionEvent)
+     */
+    public boolean onTouch(View v, MotionEvent event) {
+	    // TODO Auto-generated method stub
+	    return false;
     }
 }
