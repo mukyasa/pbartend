@@ -5,6 +5,7 @@ import java.util.Hashtable;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -21,6 +22,7 @@ import com.juggler.utils.TempletUtil;
 
 public class CreateWalletTemplateActivity extends BaseActivity implements OnClickListener {
 	private CharSequence text;
+	private TextView tvWalletTitle;
 	private PasswordDAO passDao;
 	private PasswordDbHelper myDatabaseAdapter;
 	@Override
@@ -71,8 +73,10 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 		tvTitle.setText("");
 		
-		TextView tvWalletTitle = (TextView)findViewById(R.id.tvWalletTitle);
+		tvWalletTitle = (TextView)findViewById(R.id.tvWalletTitle);
 		tvWalletTitle.setText(text);
+		tvWalletTitle.setId(R.string.wallet);
+		tvWalletTitle.setOnClickListener(this);
 		
 		TableLayout detailLayout = (TableLayout)findViewById(R.id.tlDetails);
 		TableLayout detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
@@ -136,10 +140,25 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	public void onClick(View v) {
 	    super.onClick(v);
 	    
-	    if(v instanceof TableRow)
+	    Intent intent = new Intent(this, CreateWalletField.class);
+	    
+	    if(v == tvWalletTitle)
+	    {
+	    	String title = ((TextView)v).getText().toString();
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,title);
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,getString(R.string.title));
+	    	intent.putExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,((TextView)v).getId());
+	    	
+	    	//for notes and the key to the hashtable
+	    	NewPassword np = NewPassword.getInstance();
+	    	np.templateId = ((TextView)v).getId();
+	    	Log.v("TEMP ID", np.templateId+"");
+	    	startActivity(intent);
+	    	 
+	    }
+	    else if(v instanceof TableRow)
 	    {
 	    	
-	    	Intent intent = new Intent(this, CreateWalletField.class);
 	    	TextView label =(TextView)((TableRow)v).getChildAt(0);
 	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
 	    	
@@ -162,8 +181,10 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	else
 	    		theValue = value.getText().toString();
 	    	
+	    	String labelValue =label.getText().toString();
+	    	
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
-	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,label.getText());
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
 	    	intent.putExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,((TextView)value).getId());
 	    	
 	    	//for notes and the key to the hashtable
@@ -173,6 +194,10 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    			
 	    	startActivity(intent);
 	    	
+	    }
+	    else if(v == bNext)
+	    {
+	    	passDao.saveWallet();
 	    }
 	    
 	    
