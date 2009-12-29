@@ -41,15 +41,11 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	@Override
 	protected void onResume() {
 
+		//this is mainly used when you come back into the screen after you save the value
 		NewPassword np = NewPassword.getInstance();
 		
-		//i know what notes is so do it seperate
-		TextView note = (TextView)findViewById(R.string.note);
-		if(note != null)
-			note.setText(np.note);
-		
 		//for other nv pairs
-		Hashtable<String, String> nvpair = np.getNameValue();
+		Hashtable<String, String> nvpair = np.getTemplateSaver();
 		if(nvpair != null)
 		{
 			String value = nvpair.get(np.templateId+"");
@@ -65,7 +61,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 
 		//hide next button
 		Button bNext = (Button)findViewById(R.id.butNext);
-		bNext.setVisibility(View.GONE);
+		bNext.setText(getString(R.string.save));
 		
 		//set title
 		Intent selectedIntent = getIntent();
@@ -104,7 +100,11 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 					
 				}
 				
-				TableRow tr = TempletUtil.getRow(this,label,"",isFirst,label.hashCode()+i);
+				int elmId=label.hashCode()+i;
+				if(elmId <0)
+					elmId=(elmId  *-1);
+					
+				TableRow tr = TempletUtil.getRow(this,label,"",isFirst,elmId);
 				tr.setOnClickListener(this);
 				
 				detailLayout.addView(tr);
@@ -115,8 +115,6 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 				//reset title
 				sectionTitle = section;
 			};
-			
-			//setup not field
 			
 			TableRow tr = TempletUtil.getRow(this,getString(R.string.note),"",true,R.string.note);
 			tr.setOnClickListener(this);
@@ -145,6 +143,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	TextView label =(TextView)((TableRow)v).getChildAt(0);
 	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
 	    	
+	    	//needed to determine the save button reaction
 	    	if(((TextView)label).getText().equals(getString(R.string.note)+":"))
 	    	{
 	    		intent = new Intent(this, CreateNoteActivity.class);
@@ -155,11 +154,16 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	will be the label otherwise make it the value*/
 	    	String theValue="";
 	    	if(value.getText().toString().equals(""))
+	    	{
 	    		theValue = label.getText().toString();
+	    		//get ride of the :
+	    		theValue = theValue.substring(0, theValue.length()-1);
+	    	}
 	    	else
 	    		theValue = value.getText().toString();
 	    	
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,label.getText());
 	    	intent.putExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,((TextView)value).getId());
 	    	
 	    	//for notes and the key to the hashtable

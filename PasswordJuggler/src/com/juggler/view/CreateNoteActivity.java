@@ -32,6 +32,7 @@ public class CreateNoteActivity extends Activity implements OnClickListener {
 	private Button butNext,butPrev;
 	private PasswordDAO passDao;
 	private PasswordDbHelper myDatabaseAdapter;
+	private int id;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,8 +50,12 @@ public class CreateNoteActivity extends Activity implements OnClickListener {
 	private void initialize(){
 		
 		EditText etNote = (EditText)findViewById(R.id.etNote);
-		String text = getIntent().getStringExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
-		etNote.setText(text);
+		Intent selectedIntent = getIntent();
+		String text = selectedIntent.getStringExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
+		
+		etNote.setText(text.toString());
+		
+		id =  selectedIntent.getIntExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,-1);
 		
 		//set title
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
@@ -72,7 +77,11 @@ public class CreateNoteActivity extends Activity implements OnClickListener {
     	{
     		EditText etNote = (EditText)findViewById(R.id.etNote);
     		NewPassword np = NewPassword.getInstance();
-    		np.note = etNote.getText().toString();
+    		String note = etNote.getText().toString();
+    		np.note = note;
+
+    		//set so we can add to screen
+	    	np.addTemplateSaver(id+"", note);
     		
     		boolean isWalletNote = getIntent().getBooleanExtra(Constants.INTENT_EXTRA_NOTE, false);
     		

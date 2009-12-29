@@ -33,6 +33,17 @@ public class NewPassword {
 	public int templateId;
 	
 	private Hashtable<String, String> nameValue = new Hashtable<String, String>();
+	private Hashtable<String, String> templateSaver = new Hashtable<String, String>();
+	
+	public void addTemplateSaver(String key,String value)
+	{
+		templateSaver.put(key, value);
+	}
+	
+	public Hashtable<String, String> getTemplateSaver(){
+		
+		return templateSaver;
+	}
 	
 	public void addNameValue(String key,String value)
 	{
