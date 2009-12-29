@@ -12,10 +12,17 @@ public class FooterListActivity extends ListActivity{
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        footutil = new FooterUtil(this);
-        
-        footutil.initialize(this);
         
     }
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		footutil = new FooterUtil(this);
+        
+        footutil.initialize(this);
+	    super.onResume();
+	}
 	
 }

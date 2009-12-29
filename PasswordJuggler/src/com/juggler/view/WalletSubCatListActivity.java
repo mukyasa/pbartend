@@ -38,6 +38,17 @@ public class WalletSubCatListActivity extends FooterListActivity implements OnCl
 		
 		initialize();
 	}
+	
+	/* (non-Javadoc)
+	 * @see com.juggler.view.FooterListActivity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		//set screen type
+		Constants.SCREEN_TYPE=Constants.HOME;
+	    super.onResume();
+	}
+	
 	private void initialize() {
 		
 		Cursor recordscCursor;

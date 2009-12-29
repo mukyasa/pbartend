@@ -43,12 +43,15 @@ public class WalletCatListActivity extends FooterListActivity implements OnClick
 	 */
 	@Override
 	protected void onResume() {
-	    super.onResume();
 	    initialize();
+	    super.onResume();
 	}
 	
 	private void initialize() {
 		
+		//set screen type
+		Constants.SCREEN_TYPE=Constants.HOME;
+		   
 		//set title
 		Intent selectedIntent = getIntent();
 		CharSequence text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
