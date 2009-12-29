@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
+import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 
 public class WalletCatListActivity extends FooterListActivity implements OnClickListener,OnTouchListener{
@@ -79,6 +80,9 @@ public class WalletCatListActivity extends FooterListActivity implements OnClick
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 	    super.onListItemClick(l, v, position, id);
 
+	    NewPassword np = NewPassword.getInstance();
+	    np.catId = id;
+	    
 	    v.setBackgroundResource(R.drawable.sm_item_spacer_arw_slct);
 	    v.setPadding(15, 10,10,10);
 	    
