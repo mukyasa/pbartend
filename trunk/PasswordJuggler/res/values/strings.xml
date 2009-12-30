@@ -26,6 +26,9 @@
 	  <string name="usage">What are you using this for?</string>
 	  <string name="note">Notes</string>
 	  <string name="allpasswords">All Wallet Items</string>
+	  <string name="allnotes">All Note Items</string>
+	  <string name="alllogins">All Login Items</string>
+	  <string name="allgenpasswords">All Passwords</string>
 	  
 	  
 </resources>
