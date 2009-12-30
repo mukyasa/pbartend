@@ -149,12 +149,13 @@ public class PasswordDAO extends QuiresDAO {
 		cursor.moveToFirst();
 		return cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
 	}
+	
 	/**
 	 * inserts notes
 	 * Dec 26, 2009
 	 * dmason
 	 *
-	 */
+	 */ 
 	public void saveNotes(){
 		NewPassword np = NewPassword.getInstance();
 		ContentValues note = new ContentValues();
@@ -181,7 +182,7 @@ public class PasswordDAO extends QuiresDAO {
 	private String savePassword(ContentValues password){
 		
 		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORDS, null, password);
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetPasswordCount, new String[]{});
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxPasswordId, new String[]{});
 		cursor.moveToFirst();
 		return cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
 		
@@ -218,7 +219,6 @@ public class PasswordDAO extends QuiresDAO {
 		note.put(COL_NOTE, np.note);
 		
 		String noteId = saveNote(note);
-		
 		
 		ContentValues password = new ContentValues();
 		password.put(COL_NAME,np.name);

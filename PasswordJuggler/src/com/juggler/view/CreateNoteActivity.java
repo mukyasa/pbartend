@@ -89,8 +89,7 @@ public class CreateNoteActivity extends Activity implements OnClickListener {
     		{
 	    		passDao.saveNotes();
 	    		
-	    		Intent intent = new Intent(this,HomeView.class);
-	    		startActivity(intent);
+	    		startActivity(new Intent(this,HomeView.class));
     		}
     		else
     			finish();
