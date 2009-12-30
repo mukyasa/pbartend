@@ -135,6 +135,20 @@ public class PasswordDAO extends QuiresDAO {
 		return cursor.getCount();
 	}
 	
+	
+	/** 
+	 * Just saves a note in the note table
+	 * Dec 29, 2009
+	 * dmason
+	 *
+	 */
+	private String saveNote(ContentValues note)
+	{
+		sqliteDatabase.insert(PasswordDAO.TABLE_NOTES, null, note);
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxNotesId, new String[]{});
+		cursor.moveToFirst();
+		return cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
+	}
 	/**
 	 * inserts notes
 	 * Dec 26, 2009
@@ -146,19 +160,39 @@ public class PasswordDAO extends QuiresDAO {
 		ContentValues note = new ContentValues();
 		note.put(COL_NOTE, np.note);
 		
-		sqliteDatabase.insert(PasswordDAO.TABLE_NOTES, null, note);
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxNotesId, new String[]{});
-		cursor.moveToFirst();
-		String noteId = cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
+		String noteId = saveNote(note);
 		
 		ContentValues password = new ContentValues();
 		password.put(COL_NAME,np.name);
 		password.put(COL_NOTE_ID, noteId);
 		password.put(COL_ENTRY_TYPE, ENTRY_TYPE_NOTES);
 		
-		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORDS, null, password);
+		savePassword(password);
 	}
 	
+	/**
+	 * inserts into table and returns its id
+	 * Dec 29, 2009
+	 * dmason
+	 * @param password
+	 * @return
+	 *
+	 */
+	private String savePassword(ContentValues password){
+		
+		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORDS, null, password);
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetPasswordCount, new String[]{});
+		cursor.moveToFirst();
+		return cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
+		
+	}
+	
+	/**
+	 * Saves a Generated Password to the db
+	 * Dec 29, 2009
+	 * dmason
+	 *
+	 */
 	public void saveGenPassword(){
 		
 		NewPassword np = NewPassword.getInstance();
@@ -171,26 +205,45 @@ public class PasswordDAO extends QuiresDAO {
 		sqliteDatabase.insert(PasswordDAO.TABLE_GEN_PASSWORD, null, genpassword);
 	}
 	
+	/**
+	 * Saves a wallet item
+	 * Dec 29, 2009
+	 * dmason
+	 *
+	 */
 	public void saveWallet(){
 		
 		NewPassword np = NewPassword.getInstance();
+		ContentValues note = new ContentValues();
+		note.put(COL_NOTE, np.note);
 		
-		Log.v("",np.note);
-		Log.v("",np.name);
-		Log.v("",np.catId+"");
-		Log.v("",np.subCatId+"");
+		String noteId = saveNote(note);
+		
+		
+		ContentValues password = new ContentValues();
+		password.put(COL_NAME,np.name);
+		password.put(COL_NOTE_ID, noteId);
+		password.put(COL_CAT_ID, np.catId);
+		password.put(COL_SUB_CAT_ID, np.subCatId);
+		password.put(COL_ENTRY_TYPE, ENTRY_TYPE_WALLET);
+		
+		String passwordId = savePassword(password);
+		
 		Hashtable<String, String> passwordDetails = np.getNameValue();
 		Iterator<String> Iter = passwordDetails.keySet().iterator();
 		
 		while (Iter.hasNext()) {
+			ContentValues entry = new ContentValues();
 	        String key = (String) Iter.next();
 	        String value = passwordDetails.get(key);
-	        Log.v("",key);
-	        Log.v("",value);
+	        
+	        entry.put(COL_NAME, key);
+	        entry.put(COL_VALUE, value);
+	        entry.put(COL_PASSWORD_ID, passwordId);
+	        
+	        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, entry);
 	        
         }
-		
-		
 	}
 	
 	/**
