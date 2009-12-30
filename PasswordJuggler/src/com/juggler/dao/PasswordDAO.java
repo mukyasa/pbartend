@@ -79,6 +79,10 @@ public class PasswordDAO extends QuiresDAO {
 		this.sqliteDatabase = sqliteDatabase;
 	}
 	
+	public Cursor getAllPasswords(){
+		return sqliteDatabase.rawQuery(sqlGetAllPasswords, null);
+	}
+	
 	/**
 	 * Gets gen password count
 	 * Dec 24, 2009
@@ -116,7 +120,7 @@ public class PasswordDAO extends QuiresDAO {
 	 */
 	public int getNotesCount()
 	{
-		String[]selectionArgs={};
+		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_NOTES+""};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetNotesCount, selectionArgs);
 		return cursor.getCount();
 	}

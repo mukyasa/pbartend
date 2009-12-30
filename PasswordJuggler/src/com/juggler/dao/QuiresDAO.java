@@ -1,5 +1,7 @@
 package com.juggler.dao;
 
+import com.juggler.utils.Constants;
+
 public class QuiresDAO {
 	
 	public static final String TABLE_PASSWORDS = "tblPassword";
@@ -62,11 +64,16 @@ public class QuiresDAO {
 	public static final String sqlGetTemplate= "SELECT * from "+TABLE_TEMPLATE+" WHERE "+COL_SUB_CAT_ID+"=?";
 	
 	public static final String sqlGetPasswordCount = "SELECT "+COL_ID+" from "+TABLE_GEN_PASSWORD+";";
-	public static final String sqlGetNotesCount = "SELECT "+COL_ID+" from "+TABLE_NOTES+";";
+	public static final String sqlGetNotesCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
 	public static final String sqlGetWalletCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
 	public static final String sqlGetLoginsCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
 	
 	public static final String sqlGetMaxNotesId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_NOTES+";";
 	public static final String sqlGetMaxPasswordId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_PASSWORDS+";";
+	
+	public static final String sqlGetAllPasswords ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"="+ENTRY_TYPE_WALLET+";";
+	public static final String sqlGetAllGenPasswords ="SELECT * FROM "+TABLE_GEN_PASSWORD+";";
+	public static final String sqlGetAllNotesPasswords ="SELECT * FROM "+TABLE_NOTES+";";
+	public static final String sqlGetAllLoginsPasswords ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"="+ENTRY_TYPE_LOGINS+";";
 	
 }
