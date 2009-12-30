@@ -20,8 +20,8 @@ import android.widget.Button;
 
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
+import com.juggler.view.AllNotesActivity;
 import com.juggler.view.AllPasswordsActivity;
-import com.juggler.view.DetailsActivity;
 import com.juggler.view.HomeView;
 import com.juggler.view.R;
 import com.juggler.view.SettingsActivity;
@@ -119,7 +119,7 @@ public class FooterUtil implements OnClickListener,OnTouchListener{
 	   }else if(v == bLogins){
 		   
 	   }else if(v == bNotes){
-
+		   context.startActivity(new Intent(context,AllNotesActivity.class));
 	   }else if(v== bPasswords){
 		   context.startActivity(new Intent(context,AllPasswordsActivity.class));
 	   }else if(v == bSettings){

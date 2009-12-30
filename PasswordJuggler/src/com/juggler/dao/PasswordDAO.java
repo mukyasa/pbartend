@@ -79,8 +79,48 @@ public class PasswordDAO extends QuiresDAO {
 		this.sqliteDatabase = sqliteDatabase;
 	}
 	
+	/**
+	 * get all wallet items
+	 * Dec 29, 2009
+	 * dmason
+	 * @return
+	 *
+	 */
 	public Cursor getAllPasswords(){
 		return sqliteDatabase.rawQuery(sqlGetAllPasswords, null);
+	}
+	
+	/**
+	 * gets all login items
+	 * Dec 29, 2009
+	 * dmason
+	 * @return
+	 *
+	 */
+	public Cursor getAllLogins(){
+		return sqliteDatabase.rawQuery(sqlGetAllLogins, null);
+	}
+	
+	/**
+	 * gets all notes
+	 * Dec 29, 2009
+	 * dmason
+	 * @return
+	 *
+	 */
+	public Cursor getAllNotes(){
+		return sqliteDatabase.rawQuery(sqlGetAllNotes, null);
+	}
+	
+	/**
+	 * gets all gen passwords
+	 * Dec 29, 2009
+	 * dmason
+	 * @return
+	 *
+	 */
+	public Cursor getAllGenPasswords(){
+		return sqliteDatabase.rawQuery(sqlGetAllGenPasswords, null);
 	}
 	
 	/**

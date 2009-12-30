@@ -73,7 +73,7 @@ public class QuiresDAO {
 	
 	public static final String sqlGetAllPasswords ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"="+ENTRY_TYPE_WALLET+";";
 	public static final String sqlGetAllGenPasswords ="SELECT * FROM "+TABLE_GEN_PASSWORD+";";
-	public static final String sqlGetAllNotesPasswords ="SELECT * FROM "+TABLE_NOTES+";";
-	public static final String sqlGetAllLoginsPasswords ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"="+ENTRY_TYPE_LOGINS+";";
+	public static final String sqlGetAllNotes ="SELECT * FROM "+TABLE_PASSWORDS+" p INNER JOIN "+TABLE_NOTES+" n on p."+COL_NOTE_ID+" = n."+COL_ID+" WHERE p."+COL_ENTRY_TYPE+" = "+ENTRY_TYPE_NOTES+";";
+	public static final String sqlGetAllLogins ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"="+ENTRY_TYPE_LOGINS+";";
 	
 }
