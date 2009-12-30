@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.juggler.domain.NewPassword;
+import com.juggler.utils.Constants;
 
 /**
  * @author dmason
@@ -65,6 +66,7 @@ public class CreateNoteTitleActivity extends Activity implements OnClickListener
     		np.name = name.getText().toString();
     		
     		Intent intent = new Intent(this,CreateNoteActivity.class);
+    		intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,"");
     		startActivity(intent);
     	}
     	else
