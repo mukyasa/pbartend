@@ -86,8 +86,8 @@ public class PasswordDAO extends QuiresDAO {
 	 * @return
 	 *
 	 */
-	public Cursor getAllPasswords(){
-		return sqliteDatabase.rawQuery(sqlGetAllPasswords, null);
+	public Cursor getAllWallet(){
+		return sqliteDatabase.rawQuery(sqlGetAllWallet, null);
 	}
 	
 	/**
@@ -119,7 +119,7 @@ public class PasswordDAO extends QuiresDAO {
 	 * @return
 	 *
 	 */
-	public Cursor getAllGenPasswords(){
+	public Cursor getAllPasswords(){
 		return sqliteDatabase.rawQuery(sqlGetAllGenPasswords, null);
 	}
 	

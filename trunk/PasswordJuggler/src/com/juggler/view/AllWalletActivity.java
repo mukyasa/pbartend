@@ -19,7 +19,7 @@ import com.juggler.utils.Constants;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class AllPasswordsActivity extends AllViewActivity implements OnClickListener {
+public class AllWalletActivity extends AllViewActivity implements OnClickListener {
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -39,12 +39,12 @@ public class AllPasswordsActivity extends AllViewActivity implements OnClickList
 		
 		//set title
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
-		tvTitle.setText(getString(R.string.allgenpasswords));
+		tvTitle.setText(getString(R.string.allpasswords));
 		
-		recordscCursor = passDao.getAllPasswords();
+		recordscCursor = passDao.getAllWallet();
 		
 		//set screen type
-		Constants.SCREEN_TYPE=Constants.PASSWORDS;
+		Constants.SCREEN_TYPE=Constants.WALLET;
 		
 	}
 }
