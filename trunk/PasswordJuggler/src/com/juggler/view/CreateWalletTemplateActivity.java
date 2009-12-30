@@ -52,7 +52,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 		{
 			String value = nvpair.get(np.templateId+"");
 			TextView selected = (TextView)findViewById(np.templateId);
-			if(selected != null)
+			if(selected != null && value != null)
 				selected.setText(value);
 		}
 
@@ -200,6 +200,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    else if(v == bNext)
 	    {
 	    	passDao.saveWallet();
+    		startActivity(new Intent(this,HomeView.class));
 	    }
 	    
 	    
