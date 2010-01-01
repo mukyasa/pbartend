@@ -36,8 +36,8 @@ public class AllNotesActivity extends AllViewActivity implements OnClickListener
 	    super.onResume();
 	}
 	
-	private void initialize() {
-		
+	protected void initialize() {
+		super.initialize();
 		//set title
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 		tvTitle.setText(getString(R.string.allnotes));

@@ -9,13 +9,13 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.utils.Constants;
+import com.juggler.utils.CustomCursorAdapter;
 
 public class LoginsListActivity extends FooterListActivity implements OnClickListener,OnTouchListener{
 	
@@ -65,12 +65,11 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 		
 		Cursor recordscCursor = passDao.getLoginTemplates();
 		
-		String[] from = new String[] { QuiresDAO.COL_NAME };
+		String[] from = new String[] { QuiresDAO.COL_NAME,QuiresDAO.COL_URL };
 		int[] to = new int[] { R.id.list_row};
-    	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
+    	CustomCursorAdapter records = new CustomCursorAdapter(this,
 				R.layout.list_item, recordscCursor, from, to);
     	setListAdapter(records);
-		/*setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, baseCats));*/
 		getListView().setTextFilterEnabled(true);
 		
 		//set next intent
@@ -97,6 +96,7 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 	    
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_ROW, id);
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,((TextView)v).getText());
+	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_URL,((TextView)v).getHint());
 		startActivityForResult(intent, INTENT_NEXT_SCREEN);
 	}
 	
