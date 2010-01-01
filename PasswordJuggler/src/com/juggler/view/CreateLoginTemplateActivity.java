@@ -1,7 +1,5 @@
 package com.juggler.view;
 
-import java.util.Hashtable;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +12,7 @@ import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 
 public class CreateLoginTemplateActivity extends BaseActivity {
-	private CharSequence text;
+	private CharSequence text,url;
 	private EditText etTitle,etURL;
 	private PasswordDAO passDao;
 	private PasswordDbHelper myDatabaseAdapter;
@@ -36,6 +34,7 @@ public class CreateLoginTemplateActivity extends BaseActivity {
 		//set title
 		Intent selectedIntent = getIntent();
 		text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
+		url =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_URL);
 		selectedRow =  selectedIntent.getLongExtra(Constants.INTENT_EXTRA_SELECTED_ROW, 0);
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 		tvTitle.setText(text);
@@ -61,8 +60,10 @@ public class CreateLoginTemplateActivity extends BaseActivity {
 	    	NewPassword np = NewPassword.getInstance();
 	    	np.name =text.toString();
 		    np.catId=selectedRow;
-	    	
-	    	np.addNameValue(etURL.getText().toString(), etTitle.getText().toString());
+	    	np.url=url.toString();
+		    
+	    	np.addNameValue(getString(R.string.password), etTitle.getText().toString());
+	    	np.addNameValue(getString(R.string.email), etURL.getText().toString());
 	    	
 	    	passDao.saveLogins();
 	    	

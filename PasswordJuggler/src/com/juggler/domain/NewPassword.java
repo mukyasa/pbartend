@@ -23,11 +23,11 @@ public class NewPassword {
 	public String note="";
 	public String usage="";
 	public String url="";
-	public long catId;
-	public long subCatId;
-	public long noteId;
+	public long catId=-1;
+	public long subCatId=-1;
+	public long noteId=-1;
 	//password id set after insert of password
-	public int passwordId;
+	public long passwordId;
 	
 	//this is the temp holding zone for the currently selected textview id in CreateWalletTemplate
 	public int templateId;

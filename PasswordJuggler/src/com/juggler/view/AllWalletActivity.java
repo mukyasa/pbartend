@@ -35,8 +35,8 @@ public class AllWalletActivity extends AllViewActivity implements OnClickListene
 	    super.onResume();
 	}
 	
-	private void initialize() {
-		
+	protected void initialize() {
+		super.initialize();
 		//set title
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 		tvTitle.setText(getString(R.string.allpasswords));

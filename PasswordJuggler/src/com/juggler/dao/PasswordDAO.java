@@ -15,7 +15,6 @@ import java.util.Iterator;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.juggler.domain.NewPassword;
 
@@ -41,7 +40,7 @@ public class PasswordDAO extends QuiresDAO {
 	
 	public Cursor getLoginTemplates(){
 		return sqliteDatabase.query(TABLE_LOGIN_TEMPLATE, new String[] {
-				COL_ID, COL_NAME }, null, null, null, null, null);
+				COL_ID, COL_NAME,COL_URL }, null, null, null, null, null);
 	}
 	
 	/**
@@ -68,6 +67,25 @@ public class PasswordDAO extends QuiresDAO {
 	public Cursor getTemplate(long templateId){
 		String[]selectionArgs={templateId+""};
 		return sqliteDatabase.rawQuery(sqlGetTemplate, selectionArgs);
+	}
+	
+	public Cursor getNotes(String noteId){
+		String[]selectionArgs={noteId};
+		return sqliteDatabase.rawQuery(sqlGetNotes, selectionArgs);
+	}
+	
+	
+	/**
+	 * 
+	 * Dec 31, 2009
+	 * dmason
+	 * @param templateId
+	 * @return
+	 *
+	 */
+	public Cursor getDetail(long templateId){
+		String[]selectionArgs={templateId+""};
+		return sqliteDatabase.rawQuery(sqlGetDetail, selectionArgs);
 	}
 	
 	/**
@@ -216,6 +234,19 @@ public class PasswordDAO extends QuiresDAO {
 	}
 	
 	/**
+	 * Update Notes
+	 * Jan 1, 2010
+	 * dmason
+	 *
+	 */
+	private void updateNote(ContentValues note,NewPassword np){
+		
+		String[] whereArgs ={np.noteId+""};
+		sqliteDatabase.update(PasswordDAO.TABLE_NOTES,note, COL_ID +"=?", whereArgs);
+
+	}
+	
+	/**
 	 * inserts into table and returns its id
 	 * Dec 29, 2009
 	 * dmason
@@ -226,6 +257,25 @@ public class PasswordDAO extends QuiresDAO {
 	private String savePassword(ContentValues password){
 		
 		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORDS, null, password);
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxPasswordId, new String[]{});
+		cursor.moveToFirst();
+		return cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
+		
+	}
+	
+	/**
+	 * Updates password table
+	 * Jan 1, 2010
+	 * dmason
+	 * @param password
+	 * @param whereArg
+	 * @return
+	 *
+	 */
+	private String updatePassword(ContentValues password,String whereArg){
+		
+		String[] whereArgs = {whereArg};
+		sqliteDatabase.update(QuiresDAO.TABLE_PASSWORDS, password, QuiresDAO.COL_ID+"=?", whereArgs);
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxPasswordId, new String[]{});
 		cursor.moveToFirst();
 		return cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
@@ -250,6 +300,47 @@ public class PasswordDAO extends QuiresDAO {
 		sqliteDatabase.insert(PasswordDAO.TABLE_GEN_PASSWORD, null, genpassword);
 	}
 	
+	/**
+	 * updates the login
+	 * Dec 31, 2009
+	 * dmason
+	 *
+	 */
+	public void updateLogin(){
+		
+		NewPassword np = NewPassword.getInstance();
+		ContentValues note = new ContentValues();
+		note.put(COL_NOTE, np.note);
+		
+		updateNote(note,np);
+		
+		ContentValues password = new ContentValues();
+		password.put(COL_NAME,np.name);
+		password.put(COL_ID, np.passwordId);
+		password.put(COL_CAT_ID, np.catId);
+		password.put(COL_SUB_CAT_ID, np.subCatId);
+		password.put(COL_ENTRY_TYPE, ENTRY_TYPE_LOGINS);
+		
+		String passwordId = updatePassword(password,np.passwordId+"");
+		
+		Hashtable<String, String> passwordDetails = np.getNameValue();
+		Iterator<String> Iter = passwordDetails.keySet().iterator();
+		
+		while (Iter.hasNext()) {
+			ContentValues entry = new ContentValues();
+	        String key = (String) Iter.next();
+	        String value = passwordDetails.get(key);
+	        
+	        entry.put(COL_NAME, key);
+	        entry.put(COL_VALUE, value);
+	        entry.put(COL_PASSWORD_ID, passwordId);
+	        
+	        String[] whereArgs = {key,passwordId};
+			sqliteDatabase.update(QuiresDAO.TABLE_PASSWOR_ENTRY, entry, QuiresDAO.COL_NAME+"=? AND "+COL_PASSWORD_ID+"=?", whereArgs);
+	        
+        }
+		
+	}
 	/**
 	 * Saves a wallet item
 	 * Dec 29, 2009
@@ -324,10 +415,8 @@ public class PasswordDAO extends QuiresDAO {
 	        nameValue.put(COL_NAME, key);
 	        nameValue.put(COL_VALUE, value);	        
 	        nameValue.put(COL_PASSWORD_ID, passwordId);
-	        
+	        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, nameValue);
         }
-
-		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, nameValue);
 		
 	}
 

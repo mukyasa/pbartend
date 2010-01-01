@@ -52,7 +52,7 @@ public class HomeView extends FooterActivity implements OnClickListener{
 	        {
 		        //pop login window
 		    	Intent intent = new Intent(this,LoginView.class);
-		    	startActivity(intent);
+		    	//startActivity(intent);
 	        }
 	        
 		   //init database
