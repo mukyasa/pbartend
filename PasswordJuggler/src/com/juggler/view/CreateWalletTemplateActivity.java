@@ -151,6 +151,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,title);
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,getString(R.string.title));
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)v).getId());
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_SECTION,((TextView)v).getHint());
 	    	
 	    	//for notes and the key to the hashtable
 	    	NewPassword np = NewPassword.getInstance();

@@ -31,26 +31,30 @@ public class TempletUtil {
 	
 	public static int determineSection(String sectionName)
 	{
-		if(sectionName.equalsIgnoreCase("SMTP"))
-			return PasswordDetail.SMTP;
-		else if(sectionName.equalsIgnoreCase("publisher"))
-			return PasswordDetail.PUBLISHER;
-		else if(sectionName.equalsIgnoreCase("order"))
-			return PasswordDetail.ORDER;
-		else if(sectionName.equalsIgnoreCase("More Information"))
-			return PasswordDetail.MORE_INFO;
-		else if(sectionName.equalsIgnoreCase("Hosting Provider Details"))
-			return PasswordDetail.HOST;
-		else if(sectionName.equalsIgnoreCase("Contact Information"))
-			return PasswordDetail.CONTACT_INFO;
-		else if(sectionName.equalsIgnoreCase("Contact"))
-			return PasswordDetail.CONTACT;
-		else if(sectionName.equalsIgnoreCase("Branch Information"))
-			return PasswordDetail.BRANCH_INFO;
-		else if(sectionName.equalsIgnoreCase("Administration Console"))
-			return PasswordDetail.ADMIN_CONSOLE;
-		else if(sectionName.equalsIgnoreCase("Additional Details"))
-			return PasswordDetail.ADD_DETAILS;
+		if(sectionName!=null){
+			if(sectionName.equalsIgnoreCase("SMTP")) 
+				return PasswordDetail.SMTP;
+			else if(sectionName.equalsIgnoreCase("publisher"))
+				return PasswordDetail.PUBLISHER;
+			else if(sectionName.equalsIgnoreCase("order"))
+				return PasswordDetail.ORDER;
+			else if(sectionName.equalsIgnoreCase("More Information"))
+				return PasswordDetail.MORE_INFO;
+			else if(sectionName.equalsIgnoreCase("Hosting Provider Details"))
+				return PasswordDetail.HOST;
+			else if(sectionName.equalsIgnoreCase("Contact Information"))
+				return PasswordDetail.CONTACT_INFO;
+			else if(sectionName.equalsIgnoreCase("Contact"))
+				return PasswordDetail.CONTACT;
+			else if(sectionName.equalsIgnoreCase("Branch Information"))
+				return PasswordDetail.BRANCH_INFO;
+			else if(sectionName.equalsIgnoreCase("Administration Console"))
+				return PasswordDetail.ADMIN_CONSOLE;
+			else if(sectionName.equalsIgnoreCase("Additional Details"))
+				return PasswordDetail.ADD_DETAILS;
+			else
+				return PasswordDetail.GENERIC;
+		}
 		else
 			return PasswordDetail.GENERIC;
 		

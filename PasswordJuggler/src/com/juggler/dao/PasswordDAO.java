@@ -376,6 +376,7 @@ public class PasswordDAO extends QuiresDAO {
 	        entry.put(COL_NAME, key);
 	        entry.put(COL_VALUE, detail.value);
 	        entry.put(COL_PASSWORD_ID, passwordId);
+	        entry.put(COL_SECTION, detail.section);
 	        
 	        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, entry);
 	        
