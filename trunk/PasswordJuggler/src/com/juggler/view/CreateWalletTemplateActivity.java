@@ -151,7 +151,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,title);
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,getString(R.string.title));
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)v).getId());
-	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_SECTION,((TextView)v).getHint());
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_SECTION,(Integer)((TextView)v).getTag());
 	    	
 	    	//for notes and the key to the hashtable
 	    	NewPassword np = NewPassword.getInstance();
@@ -190,6 +190,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_SECTION,(Integer)((TextView)value).getTag());
 	    	
 	    	//for notes and the key to the hashtable
 	    	NewPassword np = NewPassword.getInstance();
