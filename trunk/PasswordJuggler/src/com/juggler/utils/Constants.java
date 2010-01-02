@@ -27,12 +27,14 @@ public class Constants {
 	
 	public static final String INTENT_EXTRA_SELECTED_ROW = "selected_id";
 	public static final String INTENT_EXTRA_SELECTED_TEXT = "selected_text";
-	public static final String INTENT_EXTRA_SELECTED_URL = "selected_url";
+	public static final String INTENT_EXTRA_SELECTED_URL = "selected_url"; //hint
 	public static final String INTENT_EXTRA_SELECTED_LABEL = "selected_label";
+	public static final String INTENT_EXTRA_SELECTED_SECTION = "section"; // tag
 	public static final String INTENT_EXTRA_NOTE = "isnote";
-	public static final String INTENT_EXTRA_CHOSEN_FIELD = "cf";
+	public static final String INTENT_EXTRA_SELECTED_FIELD_ID = "cf";
 	
 	public static final String INTENT_EXTRA_STEP2_FIELD1 = "field1";
 	public static final String INTENT_EXTRA_STEP2_FIELD2 = "field2";
 	public static final String INTENT_EXTRA_IS_GENPASSWORD ="isgenpassword";
+	
 }

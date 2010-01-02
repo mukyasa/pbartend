@@ -32,7 +32,7 @@ public class NewPassword {
 	//this is the temp holding zone for the currently selected textview id in CreateWalletTemplate
 	public int templateId;
 	
-	private Hashtable<String, String> nameValue = new Hashtable<String, String>();
+	private Hashtable<String, PasswordDetail> nameValue = new Hashtable<String, PasswordDetail>();
 	private Hashtable<String, String> templateSaver = new Hashtable<String, String>();
 	
 	public void addTemplateSaver(String key,String value)
@@ -45,12 +45,12 @@ public class NewPassword {
 		return templateSaver;
 	}
 	
-	public void addNameValue(String key,String value)
+	public void addNameValue(String key,PasswordDetail value)
 	{
 		nameValue.put(key, value);
 	}
 	
-	public Hashtable<String, String> getNameValue(){
+	public Hashtable<String, PasswordDetail> getNameValue(){
 		
 		return nameValue;
 	}

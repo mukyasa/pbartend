@@ -17,6 +17,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.juggler.domain.NewPassword;
+import com.juggler.domain.PasswordDetail;
 
 /**
  * @author dmason
@@ -323,16 +324,16 @@ public class PasswordDAO extends QuiresDAO {
 		
 		String passwordId = updatePassword(password,np.passwordId+"");
 		
-		Hashtable<String, String> passwordDetails = np.getNameValue();
+		Hashtable<String, PasswordDetail> passwordDetails = np.getNameValue();
 		Iterator<String> Iter = passwordDetails.keySet().iterator();
 		
 		while (Iter.hasNext()) {
 			ContentValues entry = new ContentValues();
 	        String key = (String) Iter.next();
-	        String value = passwordDetails.get(key);
+	        PasswordDetail detail = passwordDetails.get(key);
 	        
 	        entry.put(COL_NAME, key);
-	        entry.put(COL_VALUE, value);
+	        entry.put(COL_VALUE, detail.value);
 	        entry.put(COL_PASSWORD_ID, passwordId);
 	        
 	        String[] whereArgs = {key,passwordId};
@@ -364,16 +365,16 @@ public class PasswordDAO extends QuiresDAO {
 		
 		String passwordId = savePassword(password);
 		
-		Hashtable<String, String> passwordDetails = np.getNameValue();
+		Hashtable<String, PasswordDetail> passwordDetails = np.getNameValue();
 		Iterator<String> Iter = passwordDetails.keySet().iterator();
 		
 		while (Iter.hasNext()) {
 			ContentValues entry = new ContentValues();
 	        String key = (String) Iter.next();
-	        String value = passwordDetails.get(key);
+	        PasswordDetail detail = passwordDetails.get(key);
 	        
 	        entry.put(COL_NAME, key);
-	        entry.put(COL_VALUE, value);
+	        entry.put(COL_VALUE, detail.value);
 	        entry.put(COL_PASSWORD_ID, passwordId);
 	        
 	        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, entry);
@@ -394,13 +395,10 @@ public class PasswordDAO extends QuiresDAO {
 		ContentValues title = new ContentValues();
 		title.put(COL_NAME, np.name);
 		title.put(COL_URL, np.url);
-		//title.put(COL_CAT_ID, np.catId);
-		//title.put(COL_SUB_CAT_ID, np.subCatId);
-		//title.put(COL_NOTE_ID, np.noteId);
 		title.put(COL_ENTRY_TYPE, ENTRY_TYPE_LOGINS);
 		
 		ContentValues nameValue = new ContentValues();
-		Hashtable<String, String> htable = np.getNameValue();
+		Hashtable<String, PasswordDetail> htable = np.getNameValue();
 		Iterator<String> iter = htable.keySet().iterator();
 		
 		sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORDS, null, title);
@@ -410,10 +408,11 @@ public class PasswordDAO extends QuiresDAO {
 		
 		while (iter.hasNext()) {
 	        String key = (String) iter.next();
-	        String value = htable.get(key);
+	        PasswordDetail detail = htable.get(key);
 	        
 	        nameValue.put(COL_NAME, key);
-	        nameValue.put(COL_VALUE, value);	        
+	        nameValue.put(COL_VALUE, detail.value);	 
+	        nameValue.put(COL_SECTION,detail.section);
 	        nameValue.put(COL_PASSWORD_ID, passwordId);
 	        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, nameValue);
         }

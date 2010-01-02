@@ -55,7 +55,7 @@ public class CreateNoteActivity extends Activity implements OnClickListener {
 		
 		etNote.setText(text.toString());
 		
-		id =  selectedIntent.getIntExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,-1);
+		id =  selectedIntent.getIntExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,-1);
 		
 		//set title
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);

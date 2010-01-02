@@ -16,6 +16,7 @@ import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
+import com.juggler.domain.PasswordDetail;
 import com.juggler.utils.Constants;
 import com.juggler.utils.TempletUtil;
 
@@ -99,7 +100,7 @@ public class DetailsActivity extends BaseActivity {
 			//url if applicable
 			if(url!=null)
 			{
-				tr = TempletUtil.getRow(this,getString(R.string.url),url.toString(),isFirst,R.string.url);
+				tr = TempletUtil.getRow(this,getString(R.string.url),url.toString(),isFirst,R.string.url,PasswordDetail.GENERIC);
 				tr.setOnClickListener(this);
 				detailLayout.addView(tr);
 				isFirst=false;
@@ -109,13 +110,14 @@ public class DetailsActivity extends BaseActivity {
 				
 				String label = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME));
 				noteId = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE_ID));
-				String section = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE));
+				String value = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE));
+				int section = cursor.getInt(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
 				
 				int elmId=label.hashCode()+i;
 				if(elmId <0)
 					elmId=(elmId  *-1);
 					
-				tr = TempletUtil.getRow(this,label,section,isFirst,elmId);
+				tr = TempletUtil.getRow(this,label,value,isFirst,elmId,section);
 				tr.setOnClickListener(this);
 				
 				detailLayout.addView(tr);
@@ -133,7 +135,7 @@ public class DetailsActivity extends BaseActivity {
 				startManagingCursor(c);
 				for(int i=0;i<c.getCount();i++){
 					String label = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME));
-					tr = TempletUtil.getRow(this,getString(R.string.note),label,true,R.string.note);
+					tr = TempletUtil.getRow(this,getString(R.string.note),label,true,R.string.note,PasswordDetail.GENERIC);
 					tr.setOnClickListener(this);
 					
 					TextView tvSubTitle = TempletUtil.getTextView(this,"");
@@ -164,7 +166,7 @@ public class DetailsActivity extends BaseActivity {
 	    	String title = ((TextView)v).getText().toString();
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,title);
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,getString(R.string.title));
-	    	intent.putExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,((TextView)v).getId());
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)v).getId());
 	    	
 	    	//for notes and the key to the hashtable
 	    	NewPassword np = NewPassword.getInstance();
@@ -202,7 +204,7 @@ public class DetailsActivity extends BaseActivity {
 	    	
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
-	    	intent.putExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,((TextView)value).getId());
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
 	    	
 	    	//for notes and the key to the hashtable
 	    	NewPassword np = NewPassword.getInstance();
