@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.domain.NewPassword;
+import com.juggler.domain.PasswordDetail;
 import com.juggler.utils.Constants;
 
 public class Step2CreateActivity extends BaseActivity {
@@ -60,8 +61,9 @@ public class Step2CreateActivity extends BaseActivity {
 	    if(v == bNext)
 	    {
 	    	NewPassword np = NewPassword.getInstance();
+	    	PasswordDetail pd = new PasswordDetail(PasswordDetail.GENERIC, etTitle.getText().toString(), "");
 	    	
-	    	np.addNameValue(etURL.getText().toString(), etTitle.getText().toString());
+	    	np.addNameValue(etURL.getText().toString(), pd);
 	    	
 	    	//save gen password
 	    	if(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_IS_GENPASSWORD) != null && 

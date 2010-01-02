@@ -72,8 +72,6 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
     	setListAdapter(records);
 		getListView().setTextFilterEnabled(true);
 		
-		//set next intent
-		intent = new Intent(this, CreateLoginTemplateActivity.class);
 	}
 	
 	/* (non-Javadoc)
@@ -83,10 +81,13 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 	    super.onListItemClick(l, v, position, id);
 
+	    //set next intent for template
+		intent = new Intent(this, CreateLoginTemplateActivity.class);
+		
 	    v.setBackgroundResource(R.drawable.sm_item_spacer_arw_slct);
 	    v.setPadding(15, 10,10,10);
 	    
-	    if(id==STANDARD_LOGIN)
+	    if(id==STANDARD_LOGIN) //set intent for none template
 	    	intent = new Intent(this, Step1CreateActivity.class);
 	    else
 	    {//pass the titles along

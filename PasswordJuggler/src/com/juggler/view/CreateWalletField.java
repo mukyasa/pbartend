@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.juggler.domain.NewPassword;
+import com.juggler.domain.PasswordDetail;
 import com.juggler.utils.Constants;
 
 /**
@@ -50,7 +51,7 @@ public class CreateWalletField extends BaseActivity{
 		//get Intent then set text
 		selectedIntent = getIntent();
 		CharSequence text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
-		id =  selectedIntent.getIntExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,-1);
+		id =  selectedIntent.getIntExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,-1);
 		label =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_LABEL);
 		etTitle.setText(text.toString());
 		etTitle.setOnTouchListener(this);
@@ -100,10 +101,12 @@ public class CreateWalletField extends BaseActivity{
 	    	np.addTemplateSaver(id+"", value);
 	    	//set for database
 	    	
+	    	PasswordDetail pd = new PasswordDetail(PasswordDetail.GENERIC, value, "");
+	    	
 	    	if(label.equals(getString(R.string.title)))
 	    		np.name=value;
 	    	else
-	    		np.addNameValue(label.toString(), value);
+	    		np.addNameValue(label.toString(), pd);
 	    	
 	    	finish();
 	    	

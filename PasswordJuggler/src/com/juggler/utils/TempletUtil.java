@@ -19,6 +19,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.TableRow.LayoutParams;
 
+import com.juggler.domain.PasswordDetail;
 import com.juggler.view.R;
 
 /**
@@ -26,6 +27,34 @@ import com.juggler.view.R;
  * @version $Revision$ $Date$ $Author$ $Id$
  */
 public class TempletUtil {
+	
+	
+	public static int determineSection(String sectionName)
+	{
+		if(sectionName.equalsIgnoreCase("SMTP"))
+			return PasswordDetail.SMTP;
+		else if(sectionName.equalsIgnoreCase("publisher"))
+			return PasswordDetail.PUBLISHER;
+		else if(sectionName.equalsIgnoreCase("order"))
+			return PasswordDetail.ORDER;
+		else if(sectionName.equalsIgnoreCase("More Information"))
+			return PasswordDetail.MORE_INFO;
+		else if(sectionName.equalsIgnoreCase("Hosting Provider Details"))
+			return PasswordDetail.HOST;
+		else if(sectionName.equalsIgnoreCase("Contact Information"))
+			return PasswordDetail.CONTACT_INFO;
+		else if(sectionName.equalsIgnoreCase("Contact"))
+			return PasswordDetail.CONTACT;
+		else if(sectionName.equalsIgnoreCase("Branch Information"))
+			return PasswordDetail.BRANCH_INFO;
+		else if(sectionName.equalsIgnoreCase("Administration Console"))
+			return PasswordDetail.ADMIN_CONSOLE;
+		else if(sectionName.equalsIgnoreCase("Additional Details"))
+			return PasswordDetail.ADD_DETAILS;
+		else
+			return PasswordDetail.GENERIC;
+		
+	}
 	
 	/**
 	android:textStyle="bold" 
@@ -101,7 +130,7 @@ public class TempletUtil {
 	 * @return
 	 *
 	 */
-	public static TableRow getRow(Context context,String lbl,String val,boolean isFirst,int id){
+	public static TableRow getRow(Context context,String lbl,String val,boolean isFirst,int id,int section){
 		
 		TableRow tr = new TableRow(context);
 		
@@ -144,6 +173,7 @@ public class TempletUtil {
 		value.setId(id);
 		value.setGravity(Gravity.LEFT);
 		value.setTextSize(14);
+		value.setTag(section);
 		value.setTextColor(Color.rgb(33, 33, 33));
 		value.setPadding(5, 0, 0, 0);
 		

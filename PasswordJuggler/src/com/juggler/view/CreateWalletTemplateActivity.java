@@ -17,6 +17,7 @@ import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
+import com.juggler.domain.PasswordDetail;
 import com.juggler.utils.Constants;
 import com.juggler.utils.TempletUtil;
 
@@ -93,12 +94,12 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 			boolean isFirst = true;
 			for(int i=0;i<cursor.getCount();i++){
 				String label = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_TEMPLATE_LABEL));
-				String section = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_TEMPLATE_SECTION_TITLE));
+				String sectionname = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_TEMPLATE_SECTION_TITLE));
 				
 				//check if new section is needed
-				if(section != null && !section.equals(sectionTitle)) 
+				if(sectionname != null && !sectionname.equals(sectionTitle)) 
 				{
-					TextView tvSubTitle = TempletUtil.getTextView(this, section);
+					TextView tvSubTitle = TempletUtil.getTextView(this, sectionname);
 					detailLayout = TempletUtil.getNewTableLayout(this);
 					detailLayout_wrapper.addView(tvSubTitle);
 					detailLayout_wrapper.addView(detailLayout);
@@ -110,7 +111,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 				if(elmId <0)
 					elmId=(elmId  *-1);
 					
-				TableRow tr = TempletUtil.getRow(this,label,"",isFirst,elmId);
+				TableRow tr = TempletUtil.getRow(this,label,"",isFirst,elmId,TempletUtil.determineSection(sectionname));
 				tr.setOnClickListener(this);
 				
 				detailLayout.addView(tr);
@@ -119,10 +120,10 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 				//move to next row
 				cursor.moveToNext();
 				//reset title
-				sectionTitle = section;
+				sectionTitle = sectionname;
 			};
 			
-			TableRow tr = TempletUtil.getRow(this,getString(R.string.note),"",true,R.string.note);
+			TableRow tr = TempletUtil.getRow(this,getString(R.string.note),"",true,R.string.note,PasswordDetail.GENERIC);
 			tr.setOnClickListener(this);
 			
 			TextView tvSubTitle = TempletUtil.getTextView(this,"");
@@ -149,7 +150,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	String title = ((TextView)v).getText().toString();
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,title);
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,getString(R.string.title));
-	    	intent.putExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,((TextView)v).getId());
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)v).getId());
 	    	
 	    	//for notes and the key to the hashtable
 	    	NewPassword np = NewPassword.getInstance();
@@ -187,7 +188,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
-	    	intent.putExtra(Constants.INTENT_EXTRA_CHOSEN_FIELD,((TextView)value).getId());
+	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
 	    	
 	    	//for notes and the key to the hashtable
 	    	NewPassword np = NewPassword.getInstance();
