@@ -1,7 +1,5 @@
 package com.juggler.view;
 
-import java.util.Hashtable;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
