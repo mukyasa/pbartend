@@ -30,10 +30,10 @@ import com.juggler.utils.TempletUtil;
 public class CreateWalletField extends BaseActivity{
 	
 	private Button bNext;
-	private int id;
+	private int id,section;
 	private EditText etTitle;
 	private Intent selectedIntent;
-	private CharSequence label,section;
+	private CharSequence label;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -54,7 +54,7 @@ public class CreateWalletField extends BaseActivity{
 		CharSequence text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
 		id =  selectedIntent.getIntExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,-1);
 		label =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_LABEL);
-		section =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_SECTION);
+		section =  selectedIntent.getIntExtra(Constants.INTENT_EXTRA_SELECTED_SECTION,0);
 		etTitle.setText(text.toString());
 		etTitle.setOnTouchListener(this);
 		//if the title has been changed make it black
@@ -104,10 +104,10 @@ public class CreateWalletField extends BaseActivity{
 	    	//set for database
 	    	PasswordDetail pd=null;
 	    	//check for null on section
-	    	if(section == null)
+	    	if(section == 0)
 	    		pd = new PasswordDetail(PasswordDetail.GENERIC, value, "");
 	    	else
-	    		pd = new PasswordDetail(TempletUtil.determineSection(section.toString()), value, "");
+	    		pd = new PasswordDetail(section, value, "");
 	    	
 	    	
 	    	if(label.equals(getString(R.string.title)))

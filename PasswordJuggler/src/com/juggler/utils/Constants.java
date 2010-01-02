@@ -27,9 +27,9 @@ public class Constants {
 	
 	public static final String INTENT_EXTRA_SELECTED_ROW = "selected_id";
 	public static final String INTENT_EXTRA_SELECTED_TEXT = "selected_text";
-	public static final String INTENT_EXTRA_SELECTED_URL = "selected_url"; //hint
+	public static final String INTENT_EXTRA_SELECTED_URL = "selected_url"; //hint for url
 	public static final String INTENT_EXTRA_SELECTED_LABEL = "selected_label";
-	public static final String INTENT_EXTRA_SELECTED_SECTION = "section"; // tag
+	public static final String INTENT_EXTRA_SELECTED_SECTION = "section"; // tag for section
 	public static final String INTENT_EXTRA_NOTE = "isnote";
 	public static final String INTENT_EXTRA_SELECTED_FIELD_ID = "cf";
 	
