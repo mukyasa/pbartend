@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
 import com.juggler.utils.Constants;
+import com.juggler.utils.TempletUtil;
 
 /**
  * @author dmason
@@ -32,7 +33,7 @@ public class CreateWalletField extends BaseActivity{
 	private int id;
 	private EditText etTitle;
 	private Intent selectedIntent;
-	private CharSequence label;
+	private CharSequence label,section;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -53,6 +54,7 @@ public class CreateWalletField extends BaseActivity{
 		CharSequence text =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_TEXT);
 		id =  selectedIntent.getIntExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,-1);
 		label =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_LABEL);
+		section =  selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_SECTION);
 		etTitle.setText(text.toString());
 		etTitle.setOnTouchListener(this);
 		//if the title has been changed make it black
@@ -100,8 +102,13 @@ public class CreateWalletField extends BaseActivity{
 	    	String value = etTitle.getText().toString();
 	    	np.addTemplateSaver(id+"", value);
 	    	//set for database
+	    	PasswordDetail pd=null;
+	    	//check for null on section
+	    	if(section == null)
+	    		pd = new PasswordDetail(PasswordDetail.GENERIC, value, "");
+	    	else
+	    		pd = new PasswordDetail(TempletUtil.determineSection(section.toString()), value, "");
 	    	
-	    	PasswordDetail pd = new PasswordDetail(PasswordDetail.GENERIC, value, "");
 	    	
 	    	if(label.equals(getString(R.string.title)))
 	    		np.name=value;
