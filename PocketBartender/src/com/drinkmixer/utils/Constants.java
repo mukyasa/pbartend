@@ -7,6 +7,6 @@ public class Constants {
 	public static long selectedCat=-1;
 	
 	/**
-	 * 1.1.1 - added new measurement types
+	 * 1.1.1 - added new measurement types, added feed back for deleting ingredient
 	 */
 }
