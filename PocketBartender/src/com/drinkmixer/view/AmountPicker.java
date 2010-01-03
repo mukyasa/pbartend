@@ -22,6 +22,7 @@ import com.drinkmixer.dao.DrinkListDAO;
 import com.drinkmixer.dao.IngredientsDAO;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.NewDrinkDomain;
+import com.drinkmixer.domain.ScreenType;
 
 public class AmountPicker extends BaseActivity  implements OnClickListener{
 	
@@ -42,6 +43,11 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
         		
     }
 
+    @Override
+    protected void onResume() {
+    	 ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_NEW);
+    	super.onResume();
+    }
     
     protected void initComponents() 
     {

@@ -39,9 +39,10 @@ public class IngredientsListView extends ListViews {
         if(ScreenType.getInstance().screenType == ScreenType.SCREEN_TYPE_NEW)
         	intent = new Intent(this, AmountPicker.class);
         else
+        {
         	intent = new Intent(this, DrinkListView.class);
-        
-        ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_ING);
+        	ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_ING);
+        }
     }
     
    protected void initComponents() {
