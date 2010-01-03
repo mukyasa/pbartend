@@ -11,8 +11,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.Path.FillType;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
@@ -21,6 +23,7 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.TableRow.LayoutParams;
 
 import com.drinkmixer.R;
 import com.drinkmixer.dao.CreateUpdateDAO;
@@ -98,6 +101,7 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 				tv.setTextColor(Color.WHITE);
 				tv.setTextSize(16f); 
 				tv.setOnLongClickListener(this);
+				tv.setOnTouchListener(this);
 				Drawable d = getResources().getDrawable(R.drawable.delete);
 				tv.setCompoundDrawablesWithIntrinsicBounds(d, null, null, null);
 				tr.addView(tv);
@@ -320,6 +324,33 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 		} catch (Exception e) {
 		}
 		
+	    return false;
+    }
+    
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+	    super.onTouch(v, event);
+	    //when touched set tag to background color then set back if touched again
+	  	if(v instanceof TextView )
+	  	{
+	  		
+	  		if(event.getAction()== MotionEvent.ACTION_DOWN)
+	  		{
+	  			if(v.getTag() != null && ((String)v.getTag()).equals("true"))
+	  			{
+	  				v.setBackgroundColor(Color.TRANSPARENT);
+	  				v.setTag("false");
+	  			}
+	  			else
+	  			{
+	  				v.setBackgroundColor(Color.rgb(104, 119, 152)); //104,119,152
+	  				v.setTag("true");
+	  			}
+	  		}
+	  	}
+	  	
+	  	
+	  
 	    return false;
     }
 		
