@@ -104,7 +104,6 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 					detailLayout_wrapper.addView(tvSubTitle);
 					detailLayout_wrapper.addView(detailLayout);
 					isFirst=true;
-					
 				}
 				
 				int elmId=label.hashCode()+i;

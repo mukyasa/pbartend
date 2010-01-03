@@ -2,6 +2,7 @@ package com.juggler.view;
 
 import java.util.Hashtable;
 
+import android.R.integer;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -83,8 +84,8 @@ public class DetailsActivity extends BaseActivity {
 		NewPassword np = NewPassword.getInstance();
 		np.name = text.toString();
 		
-		TableLayout detailLayout = (TableLayout)findViewById(R.id.tlDetails);
 		TableLayout detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
+		TableLayout detailLayout = (TableLayout)findViewById(R.id.tlDetails);
 		
 		//get template
 		Cursor cursor = passDao.getDetail(selectedRow);
@@ -94,7 +95,7 @@ public class DetailsActivity extends BaseActivity {
 			startManagingCursor(cursor);
 			boolean isFirst = true;
 			String noteId="";
-			
+			String sectionTitle="";
 			TableRow tr=null;
 			
 			//url if applicable
@@ -113,6 +114,20 @@ public class DetailsActivity extends BaseActivity {
 				String value = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE));
 				int section = cursor.getInt(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
 				
+				/********  section name *********/
+				String sectionname = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
+				
+				//check if new section is needed
+				if(sectionname != null && Integer.valueOf(sectionname) > PasswordDetail.GENERIC) 
+				{
+					TextView tvSubTitle = TempletUtil.getTextView(this, TempletUtil.determineSectionName(sectionname));
+					detailLayout = TempletUtil.getNewTableLayout(this); 
+					detailLayout_wrapper.addView(tvSubTitle);
+					detailLayout_wrapper.addView(detailLayout);
+					isFirst=true;				
+				}
+				/********  section name *********/
+				
 				int elmId=label.hashCode()+i;
 				if(elmId <0)
 					elmId=(elmId  *-1);
@@ -126,6 +141,7 @@ public class DetailsActivity extends BaseActivity {
 				//move to next row
 				cursor.moveToNext();
 				//reset title
+				sectionTitle = sectionname;
 			};
 			
 			//get the notes now
@@ -134,7 +150,7 @@ public class DetailsActivity extends BaseActivity {
 				c.moveToFirst();
 				startManagingCursor(c);
 				for(int i=0;i<c.getCount();i++){
-					String label = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME));
+					String label = c.getString(c.getColumnIndex(QuiresDAO.COL_NOTE));
 					tr = TempletUtil.getRow(this,getString(R.string.note),label,true,R.string.note,PasswordDetail.GENERIC);
 					tr.setOnClickListener(this);
 					

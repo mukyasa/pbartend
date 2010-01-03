@@ -28,7 +28,59 @@ import com.juggler.view.R;
  */
 public class TempletUtil {
 	
+	/**
+	 * Gets the section name from the id
+	 * Jan 2, 2010
+	 * dmason
+	 * @param sectionName
+	 * @return
+	 *
+	 */
+	public static String determineSectionName(String sectionId)
+	{
+		
+		if(sectionId != null)
+		{
+			int key = Integer.valueOf(sectionId); 
+			
+			switch (key) {
+				case PasswordDetail.SMTP:
+	            	return "SMTP";
+				case PasswordDetail.PUBLISHER:
+	            	return "Publisher";
+				case PasswordDetail.ORDER:
+	            	return "Order";
+				case PasswordDetail.MORE_INFO:
+	            	return "More Information";
+				case PasswordDetail.HOST:
+	            	return "Hosting Provider Details";
+				case PasswordDetail.CONTACT_INFO:
+	            	return "Contact Information";
+				case PasswordDetail.CONTACT:
+	            	return "Contact";
+				case PasswordDetail.BRANCH_INFO:
+	            	return "Branch Information";
+				case PasswordDetail.ADMIN_CONSOLE:
+	            	return "Administration Console";
+				case PasswordDetail.ADD_DETAILS:
+	            	return "Additional Details";
+	            default:
+		            return "";
+            }
+		}
+		else
+			return "";
+		
+	}
 	
+	/**
+	 * Takes the section string name and gets the int value
+	 * Jan 2, 2010
+	 * dmason
+	 * @param sectionName
+	 * @return
+	 *
+	 */
 	public static int determineSection(String sectionName)
 	{
 		if(sectionName!=null){
