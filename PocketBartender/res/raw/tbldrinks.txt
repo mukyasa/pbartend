@@ -1180,7 +1180,7 @@
 1426|8|Chambord Royale|Shake with ice and strain into a cocktail glass.|1|0|0|0
 1427|7|Chamborlada|Blend all ingredients (except Chambord) with ice until smooth. Pour the Chambord into the bottom of a large wine glass and add slowly the mixture on top to layer it. Float a little Chambord on top.|1|0|0|0
 1428|2|Champagne Bleu|Serve in a chilled champagne flute. Pour Alize Blue and fill with Champagne.|1|0|0|0
-1429|2|Champagne Blitz|Build in a champagne flute.|1|0|0|0
+1429|10|Champagne Blitz|Build in a champagne flute.|1|0|0|0
 1430|2|Champagne Cobbler|Put the sugar in a tumbler with some thin parings of orange and lemon peels. Fill 1/3 of the glass with shaved ice and top up with champagne. Stir and garnish with fruit and 2 straws.|1|0|0|0
 1431|2|Champagne Cocktail|Place sugar cube and Bitters in a chilled champagne flute. Fill with champagne. Garnish with the twist of a lemon peel and serve.|1|0|0|0
 1433|7|Champagne Cooler|Pour the liquors into a large wine glass and fill with champagne. Garnish with a sprig of mint.|1|0|0|0
