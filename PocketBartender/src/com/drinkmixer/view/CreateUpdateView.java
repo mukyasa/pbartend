@@ -101,7 +101,7 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 				tv.setTextColor(Color.WHITE);
 				tv.setTextSize(16f); 
 				tv.setOnLongClickListener(this);
-				tv.setOnTouchListener(this);
+				tr.setOnTouchListener(this);
 				Drawable d = getResources().getDrawable(R.drawable.delete);
 				tv.setCompoundDrawablesWithIntrinsicBounds(d, null, null, null);
 				tr.addView(tv);
@@ -331,7 +331,7 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
     public boolean onTouch(View v, MotionEvent event) {
 	    super.onTouch(v, event);
 	    //when touched set tag to background color then set back if touched again
-	  	if(v instanceof TextView )
+	  	if(v instanceof TableRow )
 	  	{
 	  		
 	  		if(event.getAction()== MotionEvent.ACTION_DOWN)
