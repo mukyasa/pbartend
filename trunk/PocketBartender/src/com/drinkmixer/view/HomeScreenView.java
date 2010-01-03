@@ -163,25 +163,21 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 			{
 				pd = ProgressDialog.show(this, null,"LOADING...");
 				ScreenType.getInstance().screenType= -1;
-				intent = new Intent(this, DrinkListView.class);
-				startActivity(intent);
+				startActivity(new Intent(this, DrinkListView.class));
 			}
 			else if(view==btnCat)
 			{	
-				intent = new Intent(this, CategoryListView.class);
-				startActivity(intent);
+				startActivity( new Intent(this, CategoryListView.class));
 			}
 			else if(view == btnFav)
 			{
 				ScreenType.getInstance().screenType= -1;
-				intent = new Intent(this, FavoriteListView.class);
-				startActivity(intent);
+				startActivity(new Intent(this, FavoriteListView.class));
 			}
 			else if(view == btnIng)
 			{
 				ScreenType.getInstance().screenType= ScreenType.SCREEN_TYPE_ING;
-				intent = new Intent(this, IngredientsHomeView.class);
-				startActivity(intent);
+				startActivity(new Intent(this, IngredientsHomeView.class));
 			}
 			else if(view == info){
 				showDialog(DIALOG_ABOUT);
