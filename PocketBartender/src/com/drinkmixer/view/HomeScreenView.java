@@ -232,7 +232,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                     	
                         mp.start();
 
-                    	pd = ProgressDialog.show(context, null,"Building the database, please be patient it only happens once.");
+                    	pd = ProgressDialog.show(context, null,getString(R.string.buildingdb));
                     	
                     	thread.start();
                         	
