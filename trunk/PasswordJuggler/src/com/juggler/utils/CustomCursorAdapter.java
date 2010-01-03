@@ -32,11 +32,11 @@ public class CustomCursorAdapter extends SimpleCursorAdapter {
 	 public void bindView(View view, Context context, Cursor cursor) {
 		 
 		 try {
-			 //get hint and set it incase of excpetion
+			 //get hint and set it in case of exception
 			 String hint =cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_URL));
 			 ((TextView)view).setHint(hint);
 			 
-			 //probably going throw exception on login templete
+			 //probably going throw exception on login template
 			 String section_tag =cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
 			 ((TextView)view).setTag(section_tag);
         } catch (Exception e) {
