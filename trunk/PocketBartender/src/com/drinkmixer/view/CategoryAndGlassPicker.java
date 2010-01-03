@@ -25,10 +25,11 @@ import com.drinkmixer.dao.DataDAO;
 import com.drinkmixer.dao.DrinkListDAO;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.NewDrinkDomain;
+import com.drinkmixer.domain.ScreenType;
 
 public class CategoryAndGlassPicker extends BaseActivity implements OnClickListener {
 	
-	private CategoryDAO dataDAO = new CategoryDAO();
+	private CategoryDAO dataDAO = new CategoryDAO(); 
 	protected MixerDbHelper myDatabaseAdapter;
 	private ListView listCategories,listGlasses; 
 	private Button btnSave,btnCancel;
@@ -43,6 +44,12 @@ public class CategoryAndGlassPicker extends BaseActivity implements OnClickListe
         initComponents();
     }
    
+    @Override
+    protected void onResume() {
+    	 ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_NEW);
+    	super.onResume();
+    }
+    
     public void onClick(View v) {
 
     	if(v==btnSave)

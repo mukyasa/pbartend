@@ -11,7 +11,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.Path.FillType;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -23,7 +22,6 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.TableRow.LayoutParams;
 
 import com.drinkmixer.R;
 import com.drinkmixer.dao.CreateUpdateDAO;
@@ -34,8 +32,10 @@ import com.drinkmixer.domain.ScreenType;
 
 public class CreateUpdateView extends BaseActivity implements OnClickListener, OnLongClickListener {
 
+	private final String HINT="created";
 	private Intent intent;
-	private Button btnIng, btnSave,btnCat,btnCancel,btnReset;
+	private Button btnSave,btnCancel,btnReset;
+	private TextView btnIng,btnCat;
 	private EditText drinkName,directions;
 	long selectedRow=-1;
 	protected MixerDbHelper myDatabaseAdapter;
@@ -48,7 +48,6 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.update);
 		myDatabaseAdapter = MixerDbHelper.getInstance(this);
-		ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_NEW);
 		
 		initComponents();
 	}
@@ -59,6 +58,8 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 	@Override
 	protected void onResume() {
 	    super.onResume();
+	    ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_NEW);
+	    
 	    if(!drinkName.getText().toString().equals(this.getString(R.string.create_drink_title)))
 	    	drinkName.setTextColor(Color.BLACK);	
 	    if(!directions.getText().toString().equals(this.getString(R.string.instructionsText))) 
@@ -100,7 +101,9 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 				tv.setTypeface(Typeface.DEFAULT_BOLD);
 				tv.setTextColor(Color.WHITE);
 				tv.setTextSize(16f); 
+				tv.setHint(HINT);
 				tv.setOnLongClickListener(this);
+				tv.setOnTouchListener(this);
 				tr.setOnTouchListener(this);
 				Drawable d = getResources().getDrawable(R.drawable.delete);
 				tv.setCompoundDrawablesWithIntrinsicBounds(d, null, null, null);
@@ -126,10 +129,10 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 		btnCancel.setOnClickListener(this);
 		btnCancel.setOnTouchListener(this);
 		
-		btnIng = (Button) findViewById(R.id.btnNewIng);
+		btnIng = (TextView) findViewById(R.id.tvNewIngredients);
 		btnIng.setOnClickListener(this);
 			
-		btnCat = (Button) findViewById(R.id.btnNewCat);
+		btnCat = (TextView) findViewById(R.id.tvNewCategory);
 		btnCat.setOnClickListener(this);
 	
 		btnSave = (Button)findViewById(R.id.btnSave);
@@ -331,9 +334,8 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
     public boolean onTouch(View v, MotionEvent event) {
 	    super.onTouch(v, event);
 	    //when touched set tag to background color then set back if touched again
-	  	if(v instanceof TableRow )
+	  	if(v instanceof TableRow)
 	  	{
-	  		
 	  		if(event.getAction()== MotionEvent.ACTION_DOWN)
 	  		{
 	  			if(v.getTag() != null && ((String)v.getTag()).equals("true"))
@@ -347,6 +349,27 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 	  				v.setTag("true");
 	  			}
 	  		}
+	  	}
+	  	else if(v instanceof TextView )
+	  	{
+	  		try { //catch exception if its a editview
+				TextView tv = (TextView)v;
+				
+				if(event.getAction()== MotionEvent.ACTION_DOWN && tv.getHint().toString().equals(HINT))
+				{
+					if(((TableRow)tv.getParent()).getTag() != null && ((String)((TableRow)tv.getParent()).getTag()).equals("true"))
+					{
+						((TableRow)tv.getParent()).setBackgroundColor(Color.TRANSPARENT);
+						((TableRow)tv.getParent()).setTag("false");
+					}
+					else
+					{
+						((TableRow)tv.getParent()).setBackgroundColor(Color.rgb(104, 119, 152)); //104,119,152
+						((TableRow)tv.getParent()).setTag("true");
+					}
+				}
+			} catch (Exception e) {
+			}
 	  	}
 	  	
 	  	
