@@ -40,7 +40,6 @@ public class CustomCursorAdapter extends SimpleCursorAdapter {
 			 String section_tag =cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
 			 ((TextView)view).setTag(section_tag);
         } catch (Exception e) {
-	        e.printStackTrace();
         }
 		    
 		 super.bindView(view, context, cursor);
