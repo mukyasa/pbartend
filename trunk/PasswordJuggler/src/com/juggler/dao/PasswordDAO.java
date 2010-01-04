@@ -106,7 +106,7 @@ public class PasswordDAO extends QuiresDAO {
 	 *
 	 */
 	public Cursor getAllWallet(){
-		return sqliteDatabase.rawQuery(sqlGetAllWallet, null);
+		return sqliteDatabase.rawQuery(sqlGetAll, new String[] {QuiresDAO.ENTRY_TYPE_WALLET+""});
 	}
 	
 	/**
@@ -117,7 +117,7 @@ public class PasswordDAO extends QuiresDAO {
 	 *
 	 */
 	public Cursor getAllLogins(){
-		return sqliteDatabase.rawQuery(sqlGetAllLogins, null);
+		return sqliteDatabase.rawQuery(sqlGetAll, new String[] {QuiresDAO.ENTRY_TYPE_LOGINS+""});
 	}
 	
 	/**
@@ -139,7 +139,7 @@ public class PasswordDAO extends QuiresDAO {
 	 *
 	 */
 	public Cursor getAllPasswords(){
-		return sqliteDatabase.rawQuery(sqlGetAllGenPasswords, null);
+		return sqliteDatabase.rawQuery(sqlGetAll, new String[] {QuiresDAO.ENTRY_TYPE_GEN_PASSWORD+""});
 	}
 	
 	/**
@@ -151,8 +151,8 @@ public class PasswordDAO extends QuiresDAO {
 	 */
 	public int getPasswordsCount()
 	{
-		String[]selectionArgs={};
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetPasswordCount, selectionArgs);
+		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_GEN_PASSWORD+""};
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetCount, selectionArgs);
 		return cursor.getCount();
 	}
 	
@@ -166,7 +166,7 @@ public class PasswordDAO extends QuiresDAO {
 	public int getLoginsCount()
 	{
 		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_LOGINS+""};
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetLoginsCount, selectionArgs);
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetCount, selectionArgs);
 		return cursor.getCount();
 	}
 	
@@ -180,7 +180,7 @@ public class PasswordDAO extends QuiresDAO {
 	public int getNotesCount()
 	{
 		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_NOTES+""};
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetNotesCount, selectionArgs);
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetCount, selectionArgs);
 		return cursor.getCount();
 	}
 	
@@ -194,7 +194,7 @@ public class PasswordDAO extends QuiresDAO {
 	public int getWalletCount()
 	{
 		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_WALLET+""};
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetWalletCount, selectionArgs);
+		Cursor cursor = sqliteDatabase.rawQuery(sqlGetCount, selectionArgs);
 		return cursor.getCount();
 	}
 	
@@ -293,12 +293,20 @@ public class PasswordDAO extends QuiresDAO {
 		
 		NewPassword np = NewPassword.getInstance();
 		
-		ContentValues genpassword = new ContentValues();
-		genpassword.put(COL_NAME, np.name);
-		genpassword.put(COL_PASSWORD, np.genPassword);
-		genpassword.put(COL_USAGE, np.usage);
+		ContentValues password = new ContentValues();
+		password.put(COL_NAME,np.name);
+		password.put(COL_ENTRY_TYPE, ENTRY_TYPE_GEN_PASSWORD);
 		
-		sqliteDatabase.insert(PasswordDAO.TABLE_GEN_PASSWORD, null, genpassword);
+		String passwordId = savePassword(password);
+		
+		ContentValues entry = new ContentValues();
+        
+        entry.put(COL_NAME, np.usage);
+        entry.put(COL_VALUE, np.genPassword);
+        entry.put(COL_PASSWORD_ID, passwordId);
+        entry.put(COL_SECTION, PasswordDetail.GENERIC);
+        
+        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, entry);
 	}
 	
 	/**

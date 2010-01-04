@@ -9,7 +9,7 @@ public class QuiresDAO {
 	public static final String TABLE_SUB_CATS = "tblSubCat";
 	public static final String TABLE_PASSWOR_ENTRY = "tblPasswordEntry";
 	public static final String TABLE_NOTES = "tblNotes";
-	public static final String TABLE_GEN_PASSWORD ="tblGenPassword";
+	//public static final String TABLE_GEN_PASSWORD ="tblGenPassword";
 	public static final String TABLE_LOGIN_TEMPLATE ="tblLoginTemplate";
 	
 	//columns
@@ -51,7 +51,7 @@ public class QuiresDAO {
 	
 	public static final String sqlCreateTemplateTable ="CREATE TABLE "+TABLE_TEMPLATE+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_TEMPLATE_LABEL+" TEXT, "+COL_TEMPLATE_ID+" INTEGER, "+COL_TEMPLATE_SECTION_TITLE+" TEXT);";
 	
-	public static final String sqlCreateGenPassTable ="CREATE TABLE "+TABLE_GEN_PASSWORD+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_NAME+" TEXT, "+COL_PASSWORD+" TEXT, "+COL_USAGE+" TEXT);";
+	//public static final String sqlCreateGenPassTable ="CREATE TABLE "+TABLE_GEN_PASSWORD+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_NAME+" TEXT, "+COL_PASSWORD+" TEXT, "+COL_USAGE+" TEXT);";
 	
 	public static final String sqlCreateCatsTable = "CREATE TABLE "+TABLE_CATS+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_NAME+" TEXT);";
 	
@@ -66,18 +66,13 @@ public class QuiresDAO {
 	public static final String sqlGetTemplate= "SELECT * from "+TABLE_TEMPLATE+" WHERE "+COL_SUB_CAT_ID+"=?";
 	public static final String sqlGetDetail = "SELECT p."+COL_NAME+"["+COL_PASSWORD_NAME+"],d."+COL_NAME+",d."+COL_VALUE+",p."+COL_NOTE_ID+",d."+COL_ID+"["+COL_DETAIL_ID+"],d."+COL_SECTION+" FROM "+TABLE_PASSWORDS+" p INNER JOIN "+TABLE_PASSWOR_ENTRY+" d on d."+COL_PASSWORD_ID+" = p."+COL_ID+" WHERE p."+COL_ID+"=? ORDER BY "+COL_SECTION+";";
 	
-	public static final String sqlGetPasswordCount = "SELECT "+COL_ID+" from "+TABLE_GEN_PASSWORD+";";
-	public static final String sqlGetNotesCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
-	public static final String sqlGetWalletCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
-	public static final String sqlGetLoginsCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
+	public static final String sqlGetCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
 	
 	public static final String sqlGetMaxNotesId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_NOTES+";";
 	public static final String sqlGetMaxPasswordId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_PASSWORDS+";";
 	
-	public static final String sqlGetAllWallet ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"="+ENTRY_TYPE_WALLET+";";
-	public static final String sqlGetAllGenPasswords ="SELECT * FROM "+TABLE_GEN_PASSWORD+";";
+	public static final String sqlGetAll ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
 	public static final String sqlGetAllNotes ="SELECT * FROM "+TABLE_PASSWORDS+" p INNER JOIN "+TABLE_NOTES+" n on p."+COL_NOTE_ID+" = n."+COL_ID+" WHERE p."+COL_ENTRY_TYPE+" = "+ENTRY_TYPE_NOTES+";";
-	public static final String sqlGetAllLogins ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"="+ENTRY_TYPE_LOGINS+";";
 	
 	public static final String sqlGetNotes ="SELECT * FROM "+TABLE_NOTES+" WHERE "+COL_ID+"=?;";
 }

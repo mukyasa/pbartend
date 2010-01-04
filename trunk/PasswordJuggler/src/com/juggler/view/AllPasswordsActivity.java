@@ -16,8 +16,6 @@ import android.view.View.OnClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.juggler.dao.QuiresDAO;
-import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 
 /**
@@ -41,8 +39,6 @@ public class AllPasswordsActivity extends AllViewActivity implements OnClickList
 	}
 	
 	protected void initialize() {
-		//set columns
-		from = new String[] { QuiresDAO.COL_NAME};
 		super.initialize();
 		//set title
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
