@@ -64,7 +64,18 @@ public class QuiresDAO {
 	
 	public static final String sqlGetSubCats= "SELECT "+COL_ID+","+COL_NAME+" from "+TABLE_SUB_CATS+" WHERE "+COL_CAT_ID+"=?";
 	public static final String sqlGetTemplate= "SELECT * from "+TABLE_TEMPLATE+" WHERE "+COL_SUB_CAT_ID+"=?";
-	public static final String sqlGetDetail = "SELECT p."+COL_NAME+"["+COL_PASSWORD_NAME+"],d."+COL_NAME+",d."+COL_VALUE+",p."+COL_NOTE_ID+",d."+COL_ID+"["+COL_DETAIL_ID+"],d."+COL_SECTION+" FROM "+TABLE_PASSWORDS+" p INNER JOIN "+TABLE_PASSWOR_ENTRY+" d on d."+COL_PASSWORD_ID+" = p."+COL_ID+" WHERE p."+COL_ID+"=? ORDER BY "+COL_SECTION+";";
+	public static final String sqlGetDetail1 = "SELECT p."+COL_NAME+"["+COL_PASSWORD_NAME+"],d."+COL_NAME+",d."+COL_VALUE+",p."+COL_NOTE+",d."+COL_ID+"["+COL_DETAIL_ID+"],d."+COL_SECTION+
+	" FROM "+TABLE_PASSWORDS+" p INNER JOIN "
+	+TABLE_PASSWOR_ENTRY+" d on d."+COL_PASSWORD_ID+" = p."+COL_ID+
+	" LEFT JOIN "+TABLE_NOTES+" n on "+
+	" WHERE p."+COL_ID+"=? ORDER BY "+COL_SECTION+";";
+	
+	public static final String sqlGetDetail = "SELECT p."+COL_NAME+"["+COL_PASSWORD_NAME+"],d."+COL_NAME+",d."+COL_VALUE+",n."+COL_NOTE+",d."+COL_ID+"["+COL_DETAIL_ID+"],d."+COL_SECTION+ " FROM tblPassword p"+
+	" INNER JOIN "+TABLE_NOTES+" n ON n."+COL_ID+"=p.noteId"  +
+	" LEFT  JOIN "+TABLE_PASSWOR_ENTRY+" d  ON p."+COL_ID+"=d."+COL_PASSWORD_ID+" " +
+			"WHERE p."+COL_ID+"=? ORDER BY "+COL_SECTION+";";
+	
+	
 	
 	public static final String sqlGetCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
 	
@@ -72,7 +83,7 @@ public class QuiresDAO {
 	public static final String sqlGetMaxPasswordId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_PASSWORDS+";";
 	
 	public static final String sqlGetAll ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
-	public static final String sqlGetAllNotes ="SELECT * FROM "+TABLE_PASSWORDS+" p INNER JOIN "+TABLE_NOTES+" n on p."+COL_NOTE_ID+" = n."+COL_ID+" WHERE p."+COL_ENTRY_TYPE+" = "+ENTRY_TYPE_NOTES+";";
+	public static final String sqlGetAllNotes ="SELECT p."+COL_NAME+",p."+COL_ID+",n."+COL_NOTE+",p."+COL_URL+" FROM "+TABLE_PASSWORDS+" p INNER JOIN "+TABLE_NOTES+" n on p."+COL_NOTE_ID+" = n."+COL_ID+" WHERE p."+COL_ENTRY_TYPE+" = "+ENTRY_TYPE_NOTES+";";
 	
 	public static final String sqlGetNotes ="SELECT * FROM "+TABLE_NOTES+" WHERE "+COL_ID+"=?;";
 }
