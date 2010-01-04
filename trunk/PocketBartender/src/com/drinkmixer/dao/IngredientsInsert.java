@@ -1269,6 +1269,8 @@ public class IngredientsInsert {
 ,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1344,'St. Ides Premium Malt Liquor','',1,56);"
 ,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1345,'Orange Brandy','',1,2);"
 ,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1347,'Polish Potato Vodka','',1,18);"
-,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1348,'Grey Goose Vodka','',1,18);"};
+,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1348,'Grey Goose Vodka','',1,18);"
+,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1349,'Hypnotiq','',1,18);"};
+	
 	
 }
