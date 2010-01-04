@@ -71,7 +71,7 @@ public class QuiresDAO {
 	" WHERE p."+COL_ID+"=? ORDER BY "+COL_SECTION+";";
 	
 	public static final String sqlGetDetail = "SELECT p."+COL_NAME+"["+COL_PASSWORD_NAME+"],d."+COL_NAME+",d."+COL_VALUE+",n."+COL_NOTE+",d."+COL_ID+"["+COL_DETAIL_ID+"],d."+COL_SECTION+ " FROM tblPassword p"+
-	" INNER JOIN "+TABLE_NOTES+" n ON n."+COL_ID+"=p.noteId"  +
+	" LEFT JOIN "+TABLE_NOTES+" n ON n."+COL_ID+"=p.noteId"  +
 	" LEFT  JOIN "+TABLE_PASSWOR_ENTRY+" d  ON p."+COL_ID+"=d."+COL_PASSWORD_ID+" " +
 			"WHERE p."+COL_ID+"=? ORDER BY "+COL_SECTION+";";
 	
