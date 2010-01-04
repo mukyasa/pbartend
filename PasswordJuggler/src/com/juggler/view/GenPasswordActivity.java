@@ -92,16 +92,16 @@ public class GenPasswordActivity extends BaseActivity implements OnSeekBarChange
 		public void onClick(View v) {
 		    super.onClick(v);
 		    
-		    Calendar c = Calendar.getInstance();
-		    SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, yyyy");
+		   // Calendar c = Calendar.getInstance();
+		    //SimpleDateFormat sdf = new SimpleDateFormat("EEE, MMM d, yyyy");
 		    if(v == bNext)
 		    {
 		    	NewPassword np = NewPassword.getInstance();
 		    	np.genPassword=tvGenPassowrd.getText().toString();
 		    	
 		    	Intent intent = new Intent(this, Step2CreateActivity.class);
-		    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD1, getString(R.string.usage));
-		    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD2,  sdf.format(c.getTime()) );
+		    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD2, getString(R.string.usage));
+		    	intent.putExtra(Constants.INTENT_EXTRA_STEP2_FIELD1,  getString(R.string.title));// sdf.format(c.getTime()) );
 		    	intent.putExtra(Constants.INTENT_EXTRA_IS_GENPASSWORD,  "true" );
 		    	startActivity(intent);
 		    	
