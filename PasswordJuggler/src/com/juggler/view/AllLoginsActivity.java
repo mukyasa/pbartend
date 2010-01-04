@@ -16,6 +16,7 @@ import android.view.View.OnClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 
@@ -56,6 +57,8 @@ public class AllLoginsActivity extends AllViewActivity implements OnClickListene
 	}
 	
 	protected void initialize() {
+		//set columns
+		from = new String[] { QuiresDAO.COL_NAME,QuiresDAO.COL_URL };
 		super.initialize();
 		//set title
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);

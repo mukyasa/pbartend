@@ -2,7 +2,6 @@ package com.juggler.view;
 
 import java.util.Hashtable;
 
-import android.R.integer;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
