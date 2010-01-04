@@ -96,6 +96,8 @@ public class DetailsActivity extends BaseActivity {
 			String noteId="";
 			String sectionTitle="";
 			TableRow tr=null;
+			String note="";
+			boolean isNote=false;
 			
 			//url if applicable
 			if(url!=null)
@@ -106,12 +108,20 @@ public class DetailsActivity extends BaseActivity {
 				isFirst=false;
 			}
 			
+			
 			for(int i=0;i<cursor.getCount();i++){
 				
 				String label = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME));
-				noteId = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE_ID));
 				String value = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE));
 				int section = cursor.getInt(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
+				note = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE));
+				
+				//if the label is null get out because its just a note
+				if(label == null)
+				{
+					isNote=true;
+					break;
+				}
 				
 				/********  section name *********/
 				String sectionname = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
@@ -143,26 +153,22 @@ public class DetailsActivity extends BaseActivity {
 				sectionTitle = sectionname;
 			};
 			
-			//get the notes now
-			Cursor c = passDao.getNotes(noteId);
-			if (c != null) {
-				c.moveToFirst();
-				startManagingCursor(c);
-				for(int i=0;i<c.getCount();i++){
-					String label = c.getString(c.getColumnIndex(QuiresDAO.COL_NOTE));
-					tr = TempletUtil.getRow(this,getString(R.string.note),label,true,R.string.note,PasswordDetail.GENERIC);
-					tr.setOnClickListener(this);
-					
-					TextView tvSubTitle = TempletUtil.getTextView(this,"");
-					detailLayout = TempletUtil.getNewTableLayout(this);
-					detailLayout_wrapper.addView(tvSubTitle);
-					detailLayout.addView(tr);
-					detailLayout_wrapper.addView(detailLayout);
-				}
-					
+			//add note at the end
+			tr = TempletUtil.getRow(this,getString(R.string.note),note,true,R.string.note,PasswordDetail.GENERIC);
+			tr.setOnClickListener(this);
+			
+			TextView tvSubTitle = TempletUtil.getTextView(this,"");
+			//if not a note add new one
+			if(!isNote)
+			{
+				detailLayout = TempletUtil.getNewTableLayout(this);
+				detailLayout_wrapper.addView(tvSubTitle);
+				detailLayout.addView(tr);
+				detailLayout_wrapper.addView(detailLayout);
 			}
-			
-			
+			else
+				detailLayout.addView(tr);
+					
 		}
 		
 	}
