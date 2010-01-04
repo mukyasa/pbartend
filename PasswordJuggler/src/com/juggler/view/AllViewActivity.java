@@ -30,7 +30,6 @@ public class AllViewActivity extends FooterListActivity implements OnClickListen
 	private Button bPrev;
 	protected PasswordDAO passDao;
 	private PasswordDbHelper myDatabaseAdapter;
-	protected String[] from;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +61,7 @@ public class AllViewActivity extends FooterListActivity implements OnClickListen
 		bPrev = (Button)findViewById(R.id.butPrev);
 		bPrev.setOnClickListener(this);
 		
+		String[] from = new String[] { QuiresDAO.COL_NAME,QuiresDAO.COL_URL };
 		int[] to = new int[] { R.id.list_row};
     	CustomCursorAdapter records = new CustomCursorAdapter(this,
 				R.layout.list_item, recordscCursor, from, to);
