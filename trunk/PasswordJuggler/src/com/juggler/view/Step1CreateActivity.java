@@ -1,7 +1,9 @@
 package com.juggler.view;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +32,9 @@ public class Step1CreateActivity extends BaseActivity {
 		bNext.setText(getString(R.string.next));
 		
 		etTitle = (EditText)findViewById(R.id.etTitle);
+		etTitle.setOnTouchListener(this);
 		etURL = (EditText)findViewById(R.id.etURL);
+		etURL.setOnTouchListener(this);
 		
 	}
 	
@@ -59,4 +63,29 @@ public class Step1CreateActivity extends BaseActivity {
 	    
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see android.view.View.OnTouchListener#onTouch(android.view.View,
+	 * android.view.MotionEvent)
+	 */
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		super.onTouch(v, event);
+		
+		if (v instanceof EditText) {
+			
+			if (event.getAction() == MotionEvent.ACTION_UP) {
+				String template = ((EditText)v).getText().toString();
+
+				if(template.equals(getString(R.string.url)) || template.equals(getString(R.string.title)))
+				{
+					((EditText)v).setText("");
+					((EditText)v).setTextColor(Color.BLACK);
+				}
+			} 
+			
+		}
+		return false;
+	
+	}
 }
