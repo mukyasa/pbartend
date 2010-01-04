@@ -9,13 +9,11 @@
  */
 package com.juggler.view;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -61,6 +59,7 @@ public class GenPasswordActivity extends BaseActivity implements OnSeekBarChange
 		   tvTitle = (TextView)findViewById(R.id.tvTitle);
 		   tvTitle.setText(getString(R.string.genpasswords));
 		   
+		   
 		   seekbar = (SeekBar)findViewById(R.id.seekBar);
 		   seekbar.setKeyProgressIncrement(1);
 		   seekbar.setProgress(MIN_PROGRESS);
@@ -68,6 +67,7 @@ public class GenPasswordActivity extends BaseActivity implements OnSeekBarChange
 		   
 		   tbUseNumbers = (ToggleButton)findViewById(R.id.tbUserNumbers);
 		   tbSpecialChar = (ToggleButton)findViewById(R.id.tbSpecialChar);
+		   tbSpecialChar.setOnClickListener(this);
 		   
 		   tvStrength = (TextView)findViewById(R.id.tvGenStrength);
 		   tvStrength.setText(WEAK);
@@ -105,6 +105,10 @@ public class GenPasswordActivity extends BaseActivity implements OnSeekBarChange
 		    	intent.putExtra(Constants.INTENT_EXTRA_IS_GENPASSWORD,  "true" );
 		    	startActivity(intent);
 		    	
+		    }
+		    else if(v == tbSpecialChar)
+		    {
+		    	tbUseNumbers.setChecked(true);
 		    }
 		    
 		    

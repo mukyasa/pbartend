@@ -31,5 +31,10 @@
 	  <string name="alllogins">All Login Items</string>
 	  <string name="allgenpasswords">All Passwords</string>
 	  
+	  <string name="showpassword">Show passwords</string>
+	  <string name="changepassword">Change password</string>
+	  <string name="autolock">Auto Lock</string>
+	   <string name="database">Database</string>
+	  
 	  
 </resources>
