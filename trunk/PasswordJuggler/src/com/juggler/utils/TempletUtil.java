@@ -196,7 +196,7 @@ public class TempletUtil {
 			tr.setBackgroundResource(R.drawable.toplines);
 		
 		tr.setGravity(Gravity.CENTER_VERTICAL);
-		tr.setPadding(3, 3, 3, 3);
+		tr.setPadding(3, 3, 0, 3);
 		LayoutParams params = new LayoutParams();
 		params.width = LayoutParams.FILL_PARENT;
 		tr.setLayoutParams(params);
@@ -228,10 +228,13 @@ public class TempletUtil {
 		value.setText(val);
 		value.setId(id);
 		value.setGravity(Gravity.LEFT);
+		lavelParams=new LayoutParams();
+		lavelParams.width = LayoutParams.WRAP_CONTENT;
+		value.setLayoutParams(lavelParams);
 		value.setTextSize(14);
 		value.setTag(section);
 		value.setTextColor(Color.rgb(33, 33, 33));
-		value.setPadding(5, 0, 0, 0);
+		value.setPadding(5, 0, 105, 0);
 		
 		//add text views to row
 		tr.addView(label);
