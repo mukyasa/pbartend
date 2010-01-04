@@ -93,7 +93,6 @@ public class DetailsActivity extends BaseActivity {
 			cursor.moveToFirst();
 			startManagingCursor(cursor);
 			boolean isFirst = true;
-			String noteId="";
 			String sectionTitle="";
 			TableRow tr=null;
 			String note="";
@@ -158,7 +157,7 @@ public class DetailsActivity extends BaseActivity {
 			tr.setOnClickListener(this);
 			
 			TextView tvSubTitle = TempletUtil.getTextView(this,"");
-			//if not a note add new one
+			//if not a note add new table
 			if(!isNote)
 			{
 				detailLayout = TempletUtil.getNewTableLayout(this);
