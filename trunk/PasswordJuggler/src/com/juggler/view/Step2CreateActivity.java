@@ -16,7 +16,6 @@ import com.juggler.utils.Constants;
 
 public class Step2CreateActivity extends BaseActivity {
 	private EditText etTitle,etURL;
-	private String date;
 	private PasswordDAO passDao;
 	private PasswordDbHelper myDatabaseAdapter;
 	private Intent selectedIntent;
@@ -48,10 +47,8 @@ public class Step2CreateActivity extends BaseActivity {
 		
 		selectedIntent = getIntent();
 		
-		date = (String) selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_STEP2_FIELD2);
-		
 		etURL.setText(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_STEP2_FIELD1));
-		etTitle.setText(date);
+		etTitle.setText(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_STEP2_FIELD2));
 		
 		
 	}
@@ -73,7 +70,7 @@ public class Step2CreateActivity extends BaseActivity {
 				if(template.equals(getString(R.string.username)) ||
 						template.equals(getString(R.string.password))||
 						template.equals(getString(R.string.usage))||
-						template.equals(date))
+						template.equals(getString(R.string.title)))
 				{
 					((EditText)v).setText("");
 					((EditText)v).setTextColor(Color.BLACK);
@@ -95,20 +92,25 @@ public class Step2CreateActivity extends BaseActivity {
 	    if(v == bNext)
 	    {
 	    	NewPassword np = NewPassword.getInstance();
-	    	PasswordDetail pd = new PasswordDetail(PasswordDetail.GENERIC, etTitle.getText().toString(), "");
-	    	
-	    	np.addNameValue(etURL.getText().toString(), pd);
 	    	
 	    	//save gen password
 	    	if(selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_IS_GENPASSWORD) != null && 
 	    			selectedIntent.getCharSequenceExtra(Constants.INTENT_EXTRA_IS_GENPASSWORD).equals("true"))
 	    	{
-	    		np.usage=etURL.getText().toString();
-	    		np.name=etTitle.getText().toString();
+	    		np.usage=etTitle.getText().toString();
+	    		np.name=etURL.getText().toString();
 		    	passDao.saveGenPassword();
 	    	}
 	    	else //save logins
+	    	{
+	    		PasswordDetail pd = new PasswordDetail(PasswordDetail.GENERIC, etURL.getText().toString(), "");
+		    	np.addNameValue(getString(R.string.username), pd);
+		    	
+		    	pd = new PasswordDetail(PasswordDetail.GENERIC, etTitle.getText().toString(), "");
+		    	np.addNameValue(getString(R.string.password), pd);
+		    	
 	    		passDao.saveLogins();
+	    	}
 	    	
 	    	//reset data
 	    	np.clear();

@@ -11,9 +11,12 @@ package com.juggler.view;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,7 +28,7 @@ import com.juggler.utils.Constants;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class CreateNoteTitleActivity extends Activity implements OnClickListener {
+public class CreateNoteTitleActivity extends Activity implements OnClickListener,OnTouchListener {
 
 	private Button butNext,butPrev;
 	@Override
@@ -36,6 +39,30 @@ public class CreateNoteTitleActivity extends Activity implements OnClickListener
         initialize();
     }
 	
+	/*
+	 * (non-Javadoc)
+	 * @see android.view.View.OnTouchListener#onTouch(android.view.View,
+	 * android.view.MotionEvent)
+	 */
+	public boolean onTouch(View v, MotionEvent event) {
+		
+		if (v instanceof EditText) {
+			
+			if (event.getAction() == MotionEvent.ACTION_UP) {
+				String template = ((EditText)v).getText().toString();
+
+				if(template.equals(getString(R.string.title)))
+				{
+					((EditText)v).setText("");
+					((EditText)v).setTextColor(Color.BLACK);
+				}
+			} 
+			
+		}
+		return false;
+	
+	}
+	
 	private void initialize(){
 		
 		//set title
@@ -45,6 +72,9 @@ public class CreateNoteTitleActivity extends Activity implements OnClickListener
 		//hide url field
 		EditText etUrl = (EditText)findViewById(R.id.etURL);
 		etUrl.setVisibility(View.GONE);
+		
+		EditText etTitle = (EditText)findViewById(R.id.etTitle);
+		etTitle.setOnTouchListener(this);
 		
 		butNext= (Button)findViewById(R.id.butNext);
 		butNext.setText(getString(R.string.next));
