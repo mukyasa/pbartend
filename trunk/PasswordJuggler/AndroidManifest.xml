@@ -25,6 +25,7 @@
 <activity android:name="AllNotesActivity"></activity>
 <activity android:name="Step2CreateActivity"></activity>
 <activity android:name="CreateNoteActivity"></activity>
+<activity android:name="AutoLockAcivity"></activity>
 <activity android:name="SettingsActivity"></activity>
 <activity android:name="CreateNoteTitleActivity"></activity>
 <activity android:name="CreateWalletField"></activity>

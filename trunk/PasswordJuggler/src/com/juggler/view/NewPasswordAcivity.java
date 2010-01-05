@@ -10,7 +10,6 @@
 package com.juggler.view;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -35,7 +34,8 @@ public class NewPasswordAcivity extends FooterActivity implements OnClickListene
 	    
 	    View details = (LinearLayout)findViewById(R.id.vDetails);
 	    details.setVisibility(View.GONE);
-	    
+	    View details3 = (LinearLayout)findViewById(R.id.vDetails3);
+	    details3.setVisibility(View.GONE);
 	    
 	    super.onCreate(savedInstanceState);
 	}
@@ -52,7 +52,7 @@ public class NewPasswordAcivity extends FooterActivity implements OnClickListene
 	private void initialize()
 	{
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
-		tvTitle.setText(getString(R.string.settings));
+		tvTitle.setText(getString(R.string.newpassword));
 		
 		bPrev = (Button)findViewById(R.id.butPrev);
 		bPrev.setOnClickListener(this);
