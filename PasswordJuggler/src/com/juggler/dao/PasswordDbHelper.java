@@ -16,7 +16,6 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
 
-import com.juggler.domain.InsertTemplate;
 import com.juggler.utils.Encrypt;
 import com.juggler.view.R;
 
@@ -123,17 +122,9 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		db.execSQL(QuiresDAO.sqlCreateTemplateTable);
 		db.execSQL(QuiresDAO.sqlCreateLoginTemplateTable);		
 		
-		//create templets
+		//create templates
 		hydrateTemplate(db);
-		/*String[] templates = InsertTemplate.sqlInsertTemplates;
-		for(int i=0;i<templates.length;i++)
-			db.execSQL(templates[i]);
-		*/
 		hydrateLoginTemplate(db);
-		/*String[] logintemplates = InsertTemplate.sqlInsertLoginTemplate;
-		for(int i=0;i<logintemplates.length;i++)
-			db.execSQL(logintemplates[i]);
-		*/
 		
 		//populate cats and sub cats
 		hydrateCategories(db);
