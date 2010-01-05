@@ -21,6 +21,7 @@
 <activity android:name="AllPasswordsActivity"></activity>
 <activity android:name="AllWalletActivity"></activity>
 <activity android:name="AllLoginsActivity"></activity>
+<activity android:name="NewPasswordAcivity"></activity>
 <activity android:name="AllNotesActivity"></activity>
 <activity android:name="Step2CreateActivity"></activity>
 <activity android:name="CreateNoteActivity"></activity>
