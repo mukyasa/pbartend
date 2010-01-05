@@ -1,5 +1,5 @@
 /**
- * Date: Dec 27, 2009
+ * Date: Jan 4, 2010
  * Project: PasswordJuggler
  * User: dmason
  * This software is subject to license of
@@ -9,8 +9,8 @@
  */
 package com.juggler.view;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -23,19 +23,19 @@ import com.juggler.utils.Constants;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class SettingsActivity extends FooterActivity implements OnClickListener{
+public class NewPasswordAcivity extends FooterActivity implements OnClickListener {
 	
 	private Button bNext,bPrev;
-	private TextView tvChangePwd;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    setContentView(R.layout.settings_frame);
-
-	    View details = (LinearLayout)findViewById(R.id.vDetails2);
+	    
+	    View details = (LinearLayout)findViewById(R.id.vDetails);
 	    details.setVisibility(View.GONE);
+	    
 	    
 	    super.onCreate(savedInstanceState);
 	}
@@ -63,12 +63,6 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
 	    
 		//set screen type
 		Constants.SCREEN_TYPE=Constants.SETTINGS;
-		
-		//attach events
-		tvChangePwd = (TextView)findViewById(R.id.tvChangePassword);
-		tvChangePwd.setOnClickListener(this);
-		
-		
 	}
 
 	/* (non-Javadoc)
@@ -84,12 +78,6 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
     	else if(v == bPrev){
     		finish();
     	}
-    	else if(v == tvChangePwd)
-    	{
-    		startActivity(new Intent(this,NewPasswordAcivity.class));
-    		
-    	}
 	    
     }
-	
 }
