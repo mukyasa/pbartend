@@ -17,7 +17,8 @@ import com.juggler.dao.QuiresDAO;
  */
 public class InsertTemplate {
 	
-	public static String[] sqlInsertLoginTemplate = {"INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES(1,'Standard Login',NULL);",
+	public static String[] sqlInsertLoginTemplate = {
+	"INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES(1,'Standard Login',NULL);",
 	"INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES(2,'Yahoo','www.yahoo.com');",
 	"INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES(3,'Amazon','www.amazon.com');",
 	"INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES(4,'eBay','www.ebay.com');",
@@ -25,9 +26,11 @@ public class InsertTemplate {
 	"INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES(6,'Gmail','www.gmail.com');",
 	"INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES(7,'PayPal','www.paypal.com');",
 	"INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES(8,'Twitter','www.twitter.com');",
-	"INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES(9,'Digg','www.digg.com');"};
+	"INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES(9,'Digg','www.digg.com');"
+	};
 	
-	public static String[] sqlInsertTemplates = {"INSERT INTO "+QuiresDAO.TABLE_TEMPLATE+" VALUES(0,'Product',0,NULL);",
+	public static String[] sqlInsertTemplates = {
+		"INSERT INTO "+QuiresDAO.TABLE_TEMPLATE+" VALUES(0,'Product',0,NULL);",
 		"INSERT INTO "+QuiresDAO.TABLE_TEMPLATE+" VALUES(1,'Version',0,NULL);",
 		"INSERT INTO "+QuiresDAO.TABLE_TEMPLATE+" VALUES(2,'Licensed To',0,NULL);",
 		"INSERT INTO "+QuiresDAO.TABLE_TEMPLATE+" VALUES(3,'License Key',0,NULL);",

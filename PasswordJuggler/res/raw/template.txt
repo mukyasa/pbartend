@@ -1,0 +1,160 @@
+0|Product|0|NULL
+1|Version|0|NULL
+2|Licensed To|0|NULL
+3|License Key|0|NULL
+4|Reg Email|0|NULL
+5|Company|0|NULL
+6|Download|0|NULL
+7|Publisher|0|Publisher
+8|Website|0|Publisher
+9|Retail Price|0|Publisher
+10|Support|0|Publisher
+11|Purchased|0|Order
+12|Order#|0|Order
+13|Order Total|0|Order
+14|Hostname|1|NULL
+15|Port|1|NULL
+16|Database|1|NULL
+17|Username|1|NULL
+18|Password|1|NULL
+19|Name|2|NULL
+20|Password|2|NULL
+21|Server|2|NULL
+22|SSID|2|NULL
+23|Network|2|NULL
+24|Security|2|NULL
+25|Password|2|NULL
+26|Storage|2|NULL
+27|URL|3|NULL
+28|Username|3|NULL
+29|Password|3|NULL
+30|URL|3|Administration Console
+31|Username|3|Administration Console
+32|Password|3|Administration Console
+33|Name|3|Hosting Provider Details
+34|Website|3|Hosting Provider Details
+35|Support|3|Hosting Provider Details
+36|Support URL|3|Hosting Provider Details
+37|Support Phone|3|Hosting Provider Details
+38|Cardholder|4|NULL
+39|Type|4|NULL
+40|Number|4|NULL
+41|CVV|4|NULL
+42|Expire Date|4|NULL
+43|Valid Form|4|NULL
+44|Issued By|4|Contact Information
+45|Local Tel|4|Contact Information
+46|Toll Free|4|Contact Information
+47|Intl Tel|4|Contact Information
+48|Website|4|Contact Information
+49|PIN|4|Additional Details
+50|Credit Limit|4|Additional Details
+51|WithDr Limit|4|Additional Details
+52|Interest|4|Additional Details
+53|Issue Num|4|Additional Details
+54|Bank Name|5|NULL
+55|Owner|5|NULL
+56|Type|5|NULL
+57|Routing #|5|NULL
+58|Account #|5|NULL
+59|SWIFT|5|NULL
+60|IBAN|5|NULL
+61|PIN|5|NULL
+62|Phone|5|Branch Information
+63|Address|5|Branch Information
+64|Bank Name|6|NULL
+65|Owner|6|NULL
+66|Type|6|NULL
+67|Transit #|6|NULL
+68|Inst #|6|NULL
+69|Account #|6|NULL
+70|SWIFT|6|NULL
+71|IBAN|6|NULL
+72|Tel PIN|6|NULL
+73|Phone|6|Branch Information
+74|Address|6|Branch Information
+75|Type|7|NULL
+76|Country|7|NULL
+77|Full Name|7|NULL
+78|Sex|7|NULL
+79|Nationality|7|NULL
+80|Authority|7|NULL
+81|Birthdate|7|NULL
+82|Issued On|7|NULL
+83|Expiry Date|7|NULL
+84|Full Name|8|NULL
+85|Address|8|NULL
+86|Birthdate|8|NULL
+87|Sex|8|NULL
+88|Height|8|NULL
+89|Number|8|NULL
+90|Class|8|NULL
+91|Restrictions|8|NULL
+92|State|8|NULL
+93|Country|8|NULL
+94|Name|9|NULL
+95|Number|9|NULL
+96|Full Name|10|NULL
+97|Valid From|10|NULL
+98|Expires|10|NULL
+99|Wildlife|10|NULL
+100|Quota|10|NULL
+101|State|10|NULL
+102|County|10|NULL
+103|Type|11|NULL
+104|Username|11|NULL
+105|Server|11|NULL
+106|Port Number|11|NULL
+107|Password|11|NULL
+108|Uses SSL|11|NULL
+109|Auth Type|11|NULL
+110|Server|11|SMTP
+111|Port #|11|SMTP
+112|Username|11|SMTP
+113|Password|11|SMTP
+114|Uses SSL|11|SMTP
+115|Auth Type|11|SMTP
+116|Provider|11|Contact
+117|Website|11|Contact
+118|Local Tel|11|Contact
+119|Toll Free|11|Contact
+120|Type|12|NULL
+121|Username|12|NULL
+122|Password|12|NULL
+123|Server|12|NULL
+124|Port|12|NULL
+125|Server|13|NULL
+126|Path|13|NULL
+127|Username|13|NULL
+128|Password|13|NULL
+129|Provider|13|Contact
+130|Website|13|Contact
+131|Local Tel|13|Contact
+132|Toll Free|13|Contact
+133|iTunes ID|14|NULL
+134|Password|14|NULL
+135|Security Q|14|NULL
+136|Security A|14|NULL
+137|User Id|15|NULL
+138|Password|15|NULL
+139|PIN|15|NULL
+140|Dial Up #|15|NULL
+141|Website|15|Contact
+142|Local Tel|15|Contact
+143|Toll Free|15|Contact
+144|Company|16|NULL
+145|Member|16|NULL
+146|Membership|16|NULL
+147|PIN|16|NULL
+148|Additional|16|More Information
+149|Since|16|More Information
+150|Service|16|More Information
+151|Reserv|16|More Information
+152|Website|16|More Information
+153|Organization|17|NULL
+154|Website|17|NULL
+155|Telephone|17|NULL
+156|Member|17|NULL
+157|Since|17|NULL
+158|Membership|17|NULL
+159|Password|17|NULL

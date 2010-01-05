@@ -1,15 +1,24 @@
 package com.juggler.dao;
 
+import java.io.BufferedReader;
 import java.io.File;
-
-import com.juggler.domain.InsertTemplate;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.StringTokenizer;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
+
+import com.juggler.domain.InsertTemplate;
+import com.juggler.utils.Encrypt;
+import com.juggler.view.R;
 
 /**
  * 
@@ -38,6 +47,7 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 	// Sections lifted from the originating class SqliteOpenHelper.java
 	private SQLiteDatabase mDatabase = null;
 	private boolean mIsInitializing = false;
+	private static Context context;
 
 	
 	/**
@@ -55,6 +65,7 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		
 		if(instance == null) {
 			instance = new PasswordDbHelper(context);
+			instance.context = context;
 			sqliteDb = instance.getWritableDatabase();
 		}
 	}
@@ -113,18 +124,97 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		db.execSQL(QuiresDAO.sqlCreateLoginTemplateTable);		
 		
 		//create templets
-		String[] templates = InsertTemplate.sqlInsertTemplates;
+		hydrateTemplate(db);
+		/*String[] templates = InsertTemplate.sqlInsertTemplates;
 		for(int i=0;i<templates.length;i++)
 			db.execSQL(templates[i]);
-		
-		String[] logintemplates = InsertTemplate.sqlInsertLoginTemplate;
+		*/
+		hydrateLoginTemplate(db);
+		/*String[] logintemplates = InsertTemplate.sqlInsertLoginTemplate;
 		for(int i=0;i<logintemplates.length;i++)
 			db.execSQL(logintemplates[i]);
-		
+		*/
 		
 		//populate cats and sub cats
 		hydrateCategories(db);
 		
+	}
+	
+	/**
+	 * hydrates login templates
+	 * Jan 4, 2010
+	 * dmason
+	 * @param db
+	 *
+	 */
+	private void hydrateLoginTemplate(SQLiteDatabase db){
+		 
+		 try {
+			 	InputStream in = context.getResources().openRawResource(R.raw.logintemplate);
+			 
+		        Reader inr = new InputStreamReader(in);
+		        
+		        String sCurrentLine;
+		        
+		        BufferedReader bin = new BufferedReader(inr); 
+		        
+		        while ((sCurrentLine = bin.readLine()) != null) 
+		        {
+		        	StringTokenizer toker = new StringTokenizer(sCurrentLine,"|");
+		        	
+		        	String id =toker.nextToken();
+		        	String label = toker.nextToken();
+		        	String url = toker.nextToken();
+		        	
+		        	String sql = "INSERT INTO "+QuiresDAO.TABLE_LOGIN_TEMPLATE+" VALUES("+id+",'"+Encrypt.encryptA(label)+"','"+ Encrypt.encryptA(url)+"');";
+		        	db.execSQL(sql); 
+		        	
+		        }
+	        } catch (SQLException e) {
+		        e.printStackTrace();
+	        } catch (IOException e) {
+		        e.printStackTrace();
+	        }
+	        
+	}
+	
+	/**
+	 * put templates in database
+	 * Jan 4, 2010
+	 * dmason
+	 * @param db
+	 *
+	 */
+	private void hydrateTemplate(SQLiteDatabase db){
+		 
+		 try {
+			 	InputStream in = context.getResources().openRawResource(R.raw.template);
+			 
+		        Reader inr = new InputStreamReader(in);
+		        
+		        String sCurrentLine;
+		        
+		        BufferedReader bin = new BufferedReader(inr); 
+		        
+		        while ((sCurrentLine = bin.readLine()) != null) 
+		        {
+		        	StringTokenizer toker = new StringTokenizer(sCurrentLine,"|");
+		        	
+		        	String id =toker.nextToken();
+		        	String label = toker.nextToken();
+		        	String subCatId = toker.nextToken();
+		        	String sectionTitle = toker.nextToken();
+		        	
+		        	String sql = "INSERT INTO "+QuiresDAO.TABLE_TEMPLATE+" VALUES("+id+",'"+Encrypt.encryptA(label)+"',"+subCatId+",'"+ Encrypt.encryptA(sectionTitle)+"');";
+		        	db.execSQL(sql); 
+		        	
+		        }
+	        } catch (SQLException e) {
+		        e.printStackTrace();
+	        } catch (IOException e) {
+		        e.printStackTrace();
+	        }
+	        
 	}
 	
 	private int subcatindex=0;
@@ -136,7 +226,7 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		{
 			values = new ContentValues();
 			values.put(QuiresDAO.COL_ID, subcatindex);
-			values.put(QuiresDAO.COL_NAME, catNames[i]); 
+			values.put(QuiresDAO.COL_NAME, Encrypt.encryptA(catNames[i])); 
 			values.put(QuiresDAO.COL_CAT_ID, catId); 
 			
 			db.insert(QuiresDAO.TABLE_SUB_CATS, null, values);
@@ -157,7 +247,7 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		{
 			values = new ContentValues();
 			values.put(QuiresDAO.COL_ID, i);
-			values.put(QuiresDAO.COL_NAME, baseCats[i]); 
+			values.put(QuiresDAO.COL_NAME, Encrypt.encryptA(baseCats[i])); 
 			
 			db.insert(QuiresDAO.TABLE_CATS, null, values);
 			
