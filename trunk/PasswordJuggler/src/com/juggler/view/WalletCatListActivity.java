@@ -17,6 +17,7 @@ import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
+import com.juggler.utils.CustomCursorAdapter;
 
 public class WalletCatListActivity extends FooterListActivity implements OnClickListener,OnTouchListener{
 	
@@ -68,7 +69,7 @@ public class WalletCatListActivity extends FooterListActivity implements OnClick
 		Cursor recordscCursor = passDao.getCategories();
 		String[] from = new String[] { QuiresDAO.COL_NAME };
 		int[] to = new int[] { R.id.list_row};
-    	SimpleCursorAdapter records = new SimpleCursorAdapter(this,
+    	CustomCursorAdapter records = new CustomCursorAdapter(this,
 				R.layout.list_item, recordscCursor, from, to);
     	setListAdapter(records);
 		/*setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, baseCats));*/
