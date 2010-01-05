@@ -155,12 +155,12 @@ public class AppUtil extends Constants {
 	 *
 	 */
 	public static int getLastVeiwedCard(Context context) {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		return settings.getInt(PREF_CURRENT_CARD, 0);
 	}
 	
 	public static void setLastVeiwedCard(Context context,int cardNumber) {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putInt(AppUtil.PREF_CURRENT_CARD, cardNumber);
 		// Don't forget to commit your edits!!!
@@ -175,7 +175,7 @@ public class AppUtil extends Constants {
 	 * @return
 	 */
 	public static boolean getSound(Context context) {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		return settings.getBoolean(PREF_SOUND, true);
 	}
 	/**
@@ -185,7 +185,7 @@ public class AppUtil extends Constants {
 	 * @return
 	 */
 	public static String getBookmarks(Context context) {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		String bookmarks = settings.getString(PREF_BOOKMARKS, "");
 		return bookmarks;
 	}
@@ -196,7 +196,7 @@ public class AppUtil extends Constants {
 	 * @return
 	 */
 	public static String getSavedCards(Context context) {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		String savedCards = settings.getString(PREF_SAVED_CARDS, "");
 		return savedCards;
 	}
@@ -208,7 +208,7 @@ public class AppUtil extends Constants {
 	 * @throws JSONException
 	 */
 	public static MessageHandler setSavedCards(Context context, CardSet cardset) throws JSONException {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		String oldCards = getSavedCards(context);
 		MessageHandler msg = new MessageHandler();
 		// Log.v("", "SAVED_CARDS from pref="+oldCards);
@@ -249,7 +249,7 @@ public class AppUtil extends Constants {
 			root.put("sets", sets);
 			// get existing cards first
 			SharedPreferences.Editor editor = settings.edit();
-			editor.putString(AppUtil.PREF_SAVED_CARDS, root.toString());
+			editor.putString(PREF_SAVED_CARDS, root.toString());
 			// Don't forget to commit your edits!!!
 			// check to see if the cards exists if so dont do it
 			if (sets.length() <= 10) editor.commit();
@@ -267,7 +267,7 @@ public class AppUtil extends Constants {
 		return msg;
 	}
 	public static void deleteBookmarks(Context context, Integer id) throws JSONException {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		String oldbookmarks = getBookmarks(context);
 		JSONObject newbookmark = new JSONObject();
 		JSONArray newbookmarkwrapper = new JSONArray();
@@ -285,13 +285,13 @@ public class AppUtil extends Constants {
 		// get existing bookmarks first
 		// Log.v("", "bookmarks="+bookmarks.toString());
 		SharedPreferences.Editor editor = settings.edit();
-		editor.putString(AppUtil.PREF_BOOKMARKS, newbookmark.toString());
+		editor.putString(PREF_BOOKMARKS, newbookmark.toString());
 		// Don't forget to commit your edits!!!
 		// check to see if the bookmark exists if so dont do it
 		editor.commit();
 	}
 	public static void deleteCard(Context context, Integer id) throws JSONException {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		String oldCards = getSavedCards(context);
 		// Log.v("", "SAVED_CARDS from pref="+oldCards);
 		JSONArray sets = null;
@@ -312,7 +312,7 @@ public class AppUtil extends Constants {
 		root.put("sets", newsets);
 		// get existing cards first
 		SharedPreferences.Editor editor = settings.edit();
-		editor.putString(AppUtil.PREF_SAVED_CARDS, root.toString());
+		editor.putString(PREF_SAVED_CARDS, root.toString());
 		// Don't forget to commit your edits!!!
 		// check to see if the cards exists if so dont do it
 		editor.commit();
@@ -326,10 +326,10 @@ public class AppUtil extends Constants {
 	public static void switchQuestionAnswer(Context context, CardSet cardset) {
 		ArrayList<FlashCard> flashCards = cardset.flashcards;
 		Iterator<FlashCard> iter = flashCards.iterator();
-		if(!AppUtil.isFlipped)
-			AppUtil.isFlipped=true;
+		if(!isFlipped)
+			isFlipped=true;
 		else
-			AppUtil.isFlipped=false;
+			isFlipped=false;
 		
 		while (iter.hasNext()) {
 			FlashCard flashCard = (FlashCard) iter.next();
@@ -341,7 +341,7 @@ public class AppUtil extends Constants {
 		}
 	}
 	public static void setBookmarks(Context context, CardSet cardset) throws JSONException {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		String oldbookmarks = getBookmarks(context);
 		// Log.v("", "bookmarks from pref="+oldbookmarks);
 		JSONObject bookmarks = null;
@@ -368,7 +368,7 @@ public class AppUtil extends Constants {
 		// get existing bookmarks first
 		// Log.v("", "bookmarks="+bookmarks.toString());
 		SharedPreferences.Editor editor = settings.edit();
-		editor.putString(AppUtil.PREF_BOOKMARKS, bookmarks.toString());
+		editor.putString(PREF_BOOKMARKS, bookmarks.toString());
 		// Don't forget to commit your edits!!!
 		// check to see if the bookmark exists if so dont do it
 		editor.commit();
@@ -570,7 +570,7 @@ public class AppUtil extends Constants {
 	 * @return
 	 */
 	public static boolean chooseFontSize(Context context, String radioText) {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		String fontSize = settings.getString(PREF_FONT_SIZE, context.getString(R.string.autosize));
 		if (fontSize.equals(radioText)) return true;
 		else return false;
@@ -581,7 +581,7 @@ public class AppUtil extends Constants {
 	 * @return
 	 */
 	public static float getFontSize(Context context, String cardText,FlashCard flashcard) {
-		SharedPreferences settings = context.getSharedPreferences(AppUtil.PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		String fontSize = settings.getString(PREF_FONT_SIZE, context.getString(R.string.autosize));
 		if (fontSize.equals(context.getString(R.string.smaller))) return 12;
 		else if (fontSize.equals(context.getString(R.string.normal))) return 16;
