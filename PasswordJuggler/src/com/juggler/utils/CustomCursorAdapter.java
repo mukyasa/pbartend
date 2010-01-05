@@ -32,9 +32,15 @@ public class CustomCursorAdapter extends SimpleCursorAdapter {
 	 public void bindView(View view, Context context, Cursor cursor) {
 		 
 		 try {
+			 String text =cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME));
+			 ((TextView)view).setText(Encrypt.decryptA(text));
+			 
+			 String id =cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_ID));
+			 ((TextView)view).setId(Integer.valueOf(id));
+			 
 			 //get hint and set it in case of exception
 			 String hint =cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_URL));
-			 ((TextView)view).setHint(hint);
+			 ((TextView)view).setHint(Encrypt.decryptA(hint));
 			 
 			 //probably going throw exception on login template
 			 String section_tag =cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
@@ -42,6 +48,6 @@ public class CustomCursorAdapter extends SimpleCursorAdapter {
         } catch (Exception e) {
         }
 		    
-		 super.bindView(view, context, cursor);
+		// super.bindView(view, context, cursor);
 	 }
 }
