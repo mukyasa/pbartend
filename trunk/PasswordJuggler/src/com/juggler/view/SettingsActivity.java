@@ -9,6 +9,8 @@
  */
 package com.juggler.view;
 
+import java.util.HashMap;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,8 +18,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.juggler.utils.Constants;
+import com.juggler.utils.TempletUtil;
 
 /**
  * @author dmason
@@ -82,6 +86,13 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
     	
     	if(v == bNext)
  	    {
+    		//clear text button
+    		ToggleButton tbclear = (ToggleButton)findViewById(R.id.tbClearText);
+    		
+    		HashMap<String, String> map = new HashMap<String, String>();
+    		map.put(TempletUtil.PREFS_CLEAR_TEXT, tbclear.isChecked()+"");
+    		//save settings
+    		TempletUtil.setSettings(this, map);
  	    	finish();
  	    	
  	    }

@@ -9,7 +9,10 @@
  */
 package com.juggler.utils;
 
+import java.util.HashMap;
+
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -27,6 +30,31 @@ import com.juggler.view.R;
  * @version $Revision$ $Date$ $Author$ $Id$
  */
 public class TempletUtil {
+	
+	private static final String PREFS_NAME = "app_pref";
+	public static final String PREFS_CLEAR_TEXT = "app_cleartext";
+	private static final String PREFS_PASSWORD = Encrypt.encryptA("app_password");
+	public static final String PREFS_AUTO_LOCK = "app_auto_time";
+	
+	/**
+	 * Sets the user settings
+	 * Jan 4, 2010
+	 * dmason
+	 *
+	 */
+	public static void setSettings(Context context,HashMap<String, String> map){
+		
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		
+		SharedPreferences.Editor editor = settings.edit();
+		if(map.get(PREFS_CLEAR_TEXT) != null)
+			editor.putString(PREFS_CLEAR_TEXT, map.get(PREFS_CLEAR_TEXT));
+		if(map.get(PREFS_AUTO_LOCK) != null)
+			editor.putString(PREFS_AUTO_LOCK, map.get(PREFS_AUTO_LOCK));
+		
+		// Don't forget to commit your edits!!!
+		editor.commit();
+	}
 	
 	/**
 	 * Gets the section name from the id
