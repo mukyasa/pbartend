@@ -91,39 +91,49 @@ public class Encrypt {
 	
 	// this takes a string and returns the string encrypted.
 	public static String encryptA(String str) {
-		char[] letters = str.toCharArray();
-		StringBuffer sb = new StringBuffer();
-		for (int i = 0; i < letters.length; i++) // loop through char array
+		if(str != null)
 		{
-			// add the new encrypted char to a string
-			sb.append(crypto(letters[i] + i));
+			char[] letters = str.toCharArray();
+			StringBuffer sb = new StringBuffer();
+			for (int i = 0; i < letters.length; i++) // loop through char array
+			{
+				// add the new encrypted char to a string
+				sb.append(crypto(letters[i] + i));
+			}
+			return sb.toString();
 		}
-		return sb.toString();
+		else 
+			return str;
 	}
 	public static String decryptA(String str) {
-		int newInt = 0; // gets the int that the encryptions returns
-		int k = 0;
-		// char letters;
-		StringBuffer letters = new StringBuffer();
-		String sub;
-		for (int i = 0; i <= (str.length() - 2); i++) {
-			
-			if (i % 2 == 0 && i != 0)// only take every other letter
-			{
-				sub = str.substring(i, i+2);
-				newInt = decrypto(sub);
-				newInt = newInt - k;
-				letters.append((char) newInt);
-				k++;
-			} else if (i == 0) // this only is for the first one because we
-			{				   // don"t want to sub off 1
-				sub = str.substring(i, i+2);
-				newInt = decrypto(sub);
-				letters.append((char) newInt);
-				k++;
+		if(str != null)
+		{
+			int newInt = 0; // gets the int that the encryptions returns 
+			int k = 0;
+			// char letters;
+			StringBuffer letters = new StringBuffer();
+			String sub;
+			for (int i = 0; i <= (str.length() - 2); i++) {
+				
+				if (i % 2 == 0 && i != 0)// only take every other letter
+				{
+					sub = str.substring(i, i+2);
+					newInt = decrypto(sub);
+					newInt = newInt - k;
+					letters.append((char) newInt);
+					k++;
+				} else if (i == 0) // this only is for the first one because we
+				{				   // don"t want to sub off 1
+					sub = str.substring(i, i+2);
+					newInt = decrypto(sub);
+					letters.append((char) newInt);
+					k++;
+				}
 			}
+			return letters.toString();
 		}
-		return letters.toString();
+		else
+			return str;
 	}
 	private static int decrypto(String chars) {
 		String[] code =

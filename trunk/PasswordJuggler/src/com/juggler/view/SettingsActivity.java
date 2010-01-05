@@ -84,7 +84,7 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
      */
     public void onClick(View v) {
     	
-    	if(v == bNext)
+    	if(v == bNext) 
  	    {
     		//clear text button
     		ToggleButton tbclear = (ToggleButton)findViewById(R.id.tbClearText);

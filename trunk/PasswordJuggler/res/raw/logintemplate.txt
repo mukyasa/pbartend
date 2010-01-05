@@ -1,0 +1,9 @@
+1|Standard Login|NULL
+2|Yahoo|www.yahoo.com
+3|Amazon|www.amazon.com
+4|eBay|www.ebay.com
+5|Facebook|www.facebook.com
+6|Gmail|www.gmail.com
+7|PayPal|www.paypal.com
+8|Twitter|www.twitter.com
+9|Digg|www.digg.com
