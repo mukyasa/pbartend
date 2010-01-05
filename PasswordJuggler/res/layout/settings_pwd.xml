@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content" android:paddingTop="50sp"
+	android:layout_width="fill_parent">
+	<TableLayout android:id="@+id/LinearLayout01"
+		android:layout_height="wrap_content" android:background="@drawable/base_bg"
+		android:layout_width="fill_parent" android:padding="10sp">
+		<EditText android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/etNewPassword1" android:text="@string/newpassword" android:textColor="#ccc"></EditText>
+			<EditText android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/etNewPassword2" android:text="@string/confirmnew" android:textColor="#ccc"></EditText>
+	</TableLayout>
+</LinearLayout>

@@ -34,7 +34,9 @@
 	  <string name="showpassword">Show passwords</string>
 	  <string name="changepassword">Change password</string>
 	  <string name="autolock">Auto Lock</string>
-	   <string name="database">Database</string>
+	  <string name="database">Reset database</string>
 	  
+	  <string name="newpassword">New Password</string>
+	  <string name="confirmnew">Confirm Password</string>
 	  
 </resources>

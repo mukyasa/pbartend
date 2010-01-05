@@ -2,5 +2,6 @@
 android:layout_height="fill_parent">
     <include layout="@layout/nav_layout" android:id="@+id/vNav"/>
   	<include layout="@layout/settings" android:id="@+id/vDetails"/>
+  	<include layout="@layout/settings_pwd" android:id="@+id/vDetails2"/>
   	<include layout="@layout/footer_layout" android:id="@+id/vFooter"/> 
 </merge>
