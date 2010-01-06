@@ -18,6 +18,7 @@ import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
 import com.juggler.utils.Constants;
+import com.juggler.utils.Encrypt;
 import com.juggler.utils.TempletUtil;
 
 public class DetailsActivity extends BaseActivity {
@@ -110,16 +111,16 @@ public class DetailsActivity extends BaseActivity {
 			
 			for(int i=0;i<cursor.getCount();i++){
 				
-				String label = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME));
-				String value = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE));
+				String label = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME)));
+				String value = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE)));
 				int section = cursor.getInt(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
-				note = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE));
+				note = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE)));
 				
 				//if the label is null get out because its just a note
 				if(label == null)
 				{
 					isNote=true;
-					break;
+					break; 
 				}
 				
 				/********  section name *********/
