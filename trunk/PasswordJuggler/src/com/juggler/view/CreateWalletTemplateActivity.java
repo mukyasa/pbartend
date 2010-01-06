@@ -19,6 +19,7 @@ import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
 import com.juggler.utils.Constants;
+import com.juggler.utils.Encrypt;
 import com.juggler.utils.TempletUtil;
 
 public class CreateWalletTemplateActivity extends BaseActivity implements OnClickListener {
@@ -93,11 +94,15 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 			String sectionTitle="";
 			boolean isFirst = true;
 			for(int i=0;i<cursor.getCount();i++){
-				String label = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_TEMPLATE_LABEL));
+				String label = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_TEMPLATE_LABEL)));
 				String sectionname = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_TEMPLATE_SECTION_TITLE));
 				
+				//check sectionname for null
+				if(!sectionname.equalsIgnoreCase("null"))
+					sectionname = Encrypt.decryptA(sectionname);
+				
 				//check if new section is needed
-				if(sectionname != null && !sectionname.equals(sectionTitle)) 
+				if(!sectionname.equalsIgnoreCase("null") && !sectionname.equals(sectionTitle)) 
 				{
 					TextView tvSubTitle = TempletUtil.getTextView(this, sectionname);
 					detailLayout = TempletUtil.getNewTableLayout(this);

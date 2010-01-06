@@ -193,10 +193,13 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		        	
 		        	String id =toker.nextToken();
 		        	String label = toker.nextToken();
-		        	String subCatId = toker.nextToken();
+		        	String subCatId = toker.nextToken(); 
 		        	String sectionTitle = toker.nextToken();
 		        	
-		        	String sql = "INSERT INTO "+QuiresDAO.TABLE_TEMPLATE+" VALUES("+id+",'"+Encrypt.encryptA(label)+"',"+subCatId+",'"+ Encrypt.encryptA(sectionTitle)+"');";
+		        	String sql = "INSERT INTO "+QuiresDAO.TABLE_TEMPLATE+" VALUES("+id+",'"+
+		        		Encrypt.encryptA(label)+"',"+subCatId+",'"+ 
+		        		(sectionTitle.equalsIgnoreCase("null") ? sectionTitle : Encrypt.encryptA(sectionTitle))+"');";
+		        	
 		        	db.execSQL(sql); 
 		        	
 		        }
