@@ -244,7 +244,18 @@ public class PasswordDAO extends QuiresDAO {
 	private void updateNote(ContentValues note,NewPassword np){
 		
 		String[] whereArgs ={np.noteId+""};
-		sqliteDatabase.update(PasswordDAO.TABLE_NOTES,note, COL_ID +"=?", whereArgs);
+		
+		if(np.noteId >-1) // if its less than zero then it no exist
+			sqliteDatabase.update(PasswordDAO.TABLE_NOTES,note, COL_ID +"=?", whereArgs);
+		else
+		{
+			String noteId = saveNote(note);
+			ContentValues password = new ContentValues();
+			password.put(COL_NOTE_ID, noteId);
+			
+			String[] passwordWhereArgs = {np.passwordId+""};
+			sqliteDatabase.update(QuiresDAO.TABLE_PASSWORDS, password, QuiresDAO.COL_ID+"=?", passwordWhereArgs); 
+		}
 
 	}
 	
