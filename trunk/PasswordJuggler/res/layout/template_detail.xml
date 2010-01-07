@@ -70,7 +70,18 @@
 						android:textColor="#444" android:textSize="13sp"></TextView>
 				</TableRow-->
 			</TableLayout>
-
+<!--RelativeLayout android:layout_height="wrap_content" android:layout_marginTop="10sp"
+			android:layout_width="fill_parent" android:background="@drawable/list_item"
+			android:gravity="center_vertical" android:padding="10sp"
+			android:id="@+id/resetdb">
+			<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:textColor="#000" android:layout_marginLeft="5sp"
+				android:layout_marginRight="5sp" android:layout_centerVertical="true" android:text="@string/extraprotection"></TextView>
+			<ToggleButton android:text="@+id/tbResetDB"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_centerInParent="true" android:id="@+id/tbExtraPro"></ToggleButton>
+		</RelativeLayout-->
 			
 		</TableLayout>
 	</ScrollView>

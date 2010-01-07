@@ -21,7 +21,6 @@ import android.widget.TextView;
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
 import com.juggler.utils.Constants;
-import com.juggler.utils.TempletUtil;
 
 /**
  * @author dmason
