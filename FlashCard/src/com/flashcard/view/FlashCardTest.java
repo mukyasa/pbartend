@@ -33,7 +33,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import com.flashcard.R;
 import com.flashcard.domain.CardSet;
 import com.flashcard.domain.FlashCard;
 import com.flashcard.handler.ApplicationHandler;
@@ -79,6 +78,7 @@ public class FlashCardTest extends Activity {
 	//	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		mGestureDetector = new GestureDetector(this, new LearnGestureListener());
 		context = getBaseContext();
+		
     }
 	
     /* (non-Javadoc)
@@ -88,6 +88,7 @@ public class FlashCardTest extends Activity {
     protected void onResume() {
     	//set up cardset called here to avoid back button problems
     	initalize();
+    	startActivity(new Intent(this,InstructionsActivity.class));
         super.onResume();
     }
     

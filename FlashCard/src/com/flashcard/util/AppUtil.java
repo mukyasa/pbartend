@@ -30,11 +30,11 @@ import android.view.Gravity;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.flashcard.R;
 import com.flashcard.domain.CardSet;
 import com.flashcard.domain.FlashCard;
 import com.flashcard.domain.MessageHandler;
 import com.flashcard.handler.ApplicationHandler;
+import com.flashcard.view.R;
 
 public class AppUtil extends Constants {
 	public static final String PREFS_NAME = "app_pref";
