@@ -9,6 +9,9 @@
  */
 package com.juggler.view;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +23,7 @@ import android.widget.TextView;
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.utils.Constants;
+import com.juggler.utils.LoginAuthHandler;
 
 /**
  * @author dmason
@@ -88,14 +92,39 @@ public class NewPasswordAcivity extends FooterActivity implements OnClickListene
     	
     	if(v == bNext)
  	    {
-    		//save password
-    		passDao.updateRootLogin(pwd.getText().toString(),pwdconfirm.getText().toString());
- 	    	finish();
+    		if(pwd.getText().toString().equals(pwdconfirm.getText().toString()))
+    		{
+    			//save password
+        		passDao.updateRootLogin(pwd.getText().toString(),pwdconfirm.getText().toString());
+        		LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
+        		handler.setDidLogin(true);
+     	    	finish();
+    		}
+    		else
+    			showDialog(0);
  	    	
  	    }
     	else if(v == bPrev){
     		finish();
     	}
 	    
+    }
+    
+    /* (non-Javadoc)
+     * @see android.app.Activity#onCreateDialog(int)
+     */
+    @Override
+    protected Dialog onCreateDialog(int id) {
+    	
+    	return new AlertDialog.Builder(NewPasswordAcivity.this)
+        .setIcon(R.drawable.error)
+        .setMessage("I'm sorry your password does not match.")
+        .setTitle("Error")
+        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+               dismissDialog(0);
+            }
+        })      
+       .create();
     }
 }
