@@ -19,6 +19,7 @@
 <activity android:name="CreateWalletTemplateActivity"></activity>
 <activity android:name="Step1CreateActivity"></activity>
 <activity android:name="AllPasswordsActivity"></activity>
+<activity android:name="CreateLoginPasswordActivity"></activity>
 <activity android:name="AllWalletActivity"></activity>
 <activity android:name="AllLoginsActivity"></activity>
 <activity android:name="NewPasswordAcivity"></activity>
