@@ -9,7 +9,7 @@ public class QuiresDAO {
 	public static final String TABLE_SUB_CATS = "tblSubCat";
 	public static final String TABLE_PASSWOR_ENTRY = "tblPasswordEntry";
 	public static final String TABLE_NOTES = "tblNotes";
-	//public static final String TABLE_GEN_PASSWORD ="tblGenPassword";
+	public static final String TABLE_LOGIN ="tblLogin";
 	public static final String TABLE_LOGIN_TEMPLATE ="tblLoginTemplate";
 	
 	//columns
@@ -36,6 +36,7 @@ public class QuiresDAO {
 	public static final int ENTRY_TYPE_WALLET = 4;
 	public static final String COL_COUNT = "[count]";
 	
+	public static final String sqlCreateLoginTable = "CREATE TABLE "+TABLE_LOGIN+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL ,"+COL_PASSWORD+" TEXT);";
 	
 	public static final String sqlCreatePasswordTable = "CREATE TABLE "+TABLE_PASSWORDS+" ("+
 	COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+
@@ -77,6 +78,7 @@ public class QuiresDAO {
 	
 	
 	public static final String sqlGetCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
+	public static final String sqlGetLoginCount = "SELECT * from "+TABLE_LOGIN+";";
 	
 	public static final String sqlGetMaxNotesId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_NOTES+";";
 	public static final String sqlGetMaxPasswordId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_PASSWORDS+";";

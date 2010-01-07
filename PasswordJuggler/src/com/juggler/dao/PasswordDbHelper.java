@@ -118,7 +118,7 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 		db.execSQL(QuiresDAO.sqlCreateNotesTable);
 		db.execSQL(QuiresDAO.sqlCreatePasswordEntryTable);
 		db.execSQL(QuiresDAO.sqlCreateSubCatTable);
-		//db.execSQL(QuiresDAO.sqlCreateGenPassTable);	
+		db.execSQL(QuiresDAO.sqlCreateLoginTable);	
 		db.execSQL(QuiresDAO.sqlCreateTemplateTable);
 		db.execSQL(QuiresDAO.sqlCreateLoginTemplateTable);		
 		
@@ -403,7 +403,7 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 	{
 			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_PASSWORDS );
 			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_CATS );
-			//db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_GEN_PASSWORD );
+			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_LOGIN );
 			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_NOTES );
 			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_PASSWOR_ENTRY );
 			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_SUB_CATS);

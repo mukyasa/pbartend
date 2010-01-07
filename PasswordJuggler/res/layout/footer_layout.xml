@@ -5,9 +5,8 @@
 	android:layout_gravity="bottom">
 	<Button android:id="@+id/bHome" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:background="@drawable/home"></Button>
-	<Button android:id="@+id/bSettings" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:layout_toRightOf="@+id/bHome"
-		android:background="@drawable/settings_off"></Button>
+	<Button android:id="@+id/bSettings" android:layout_height="wrap_content" android:layout_toRightOf="@+id/bHome"
+		android:background="@drawable/settings_off" android:layout_width="wrap_content"></Button>
 	<Button android:id="@+id/bWallet" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:layout_toLeftOf="@+id/bPasswords"
 		android:background="@drawable/wallet_off"></Button>

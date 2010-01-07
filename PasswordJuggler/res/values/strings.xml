@@ -39,11 +39,16 @@
 	  <string name="newpassword">New Password</string>
 	  <string name="confirmnew">Confirm Password</string>
 	  
+	  <string name="extraprotection">Set Extra Protection</string>
+	  <string name="setuppassword">Setup Password</string>
+	  
 	  <string name="min1">1 Minute</string>
 	  <string name="min2">2 Minute</string>
 	  <string name="min3">3 Minute</string>
 	  <string name="min4">4 Minute</string>
 	  <string name="min5">5 Minute</string>
 	  <string name="min10">10 Minute</string>
+	  
+	  <string name="loginInstructions">Before you begin you will need to set up your data protection. Set a password that you will use to login to the application. Make sure this is a secure password. We suggest you use numbers and mixed case for the password.</string>
 	  
 </resources>

@@ -10,14 +10,21 @@
 package com.juggler.view;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.EditText;
 
+import com.juggler.dao.PasswordDAO;
+import com.juggler.dao.PasswordDbHelper;
+import com.juggler.dao.QuiresDAO;
+import com.juggler.utils.Encrypt;
 import com.juggler.utils.LoginAuthHandler;
 
 /**
@@ -25,19 +32,37 @@ import com.juggler.utils.LoginAuthHandler;
  * @version $Revision$ $Date$ $Author$ $Id$
  */
 public class LoginView extends Activity implements OnClickListener,OnTouchListener {
-	 @Override
+	 
+		private PasswordDAO passDao;
+		private PasswordDbHelper myDatabaseAdapter;
+		private String dbPwd="";
+	
+		@Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 			getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
             WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 			
+			
+			//set up database for use
+			passDao = new PasswordDAO();
+			myDatabaseAdapter = PasswordDbHelper.getInstance(this);
+			passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
+			Cursor cursor = passDao.checkForPassword();
+			if (cursor != null) 
+			{
+				cursor.moveToFirst();
+				startManagingCursor(cursor);
+				dbPwd = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_PASSWORD)));
+			}
+			 
 			 setContentView(R.layout.login);
 			 Button loginButton = (Button)findViewById(R.id.butLogin);
 			 loginButton.setOnClickListener(this);
 	 }
 
 	/* (non-Javadoc)
-     * @see android.view.View.OnClickListener#onClick(android.view.View)
+     * @see android.view.View.OnClickListener#onClick(android.view.View) 
      */
     public void onClick(View v) {
     	
@@ -45,8 +70,10 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
     	{
 		   	LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
 	   		handler.setDidLogin(true);
-	   		
-	   		finish();
+	   		EditText loginpwd = (EditText)findViewById(R.id.etLogin);
+	   		//Log.v(loginpwd.getText().toString(),dbPwd);
+	   		if(dbPwd.equals(loginpwd.getText().toString()))
+	   			finish();
     	}
     }
 

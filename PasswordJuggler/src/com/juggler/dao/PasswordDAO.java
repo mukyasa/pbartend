@@ -107,7 +107,7 @@ public class PasswordDAO extends QuiresDAO {
 	 *
 	 */
 	public Cursor getAllWallet(){
-		return sqliteDatabase.rawQuery(sqlGetAll, new String[] {QuiresDAO.ENTRY_TYPE_WALLET+""});
+		return sqliteDatabase.rawQuery(sqlGetAll, new String[] {ENTRY_TYPE_WALLET+""});
 	}
 	
 	/**
@@ -118,7 +118,7 @@ public class PasswordDAO extends QuiresDAO {
 	 *
 	 */
 	public Cursor getAllLogins(){
-		return sqliteDatabase.rawQuery(sqlGetAll, new String[] {QuiresDAO.ENTRY_TYPE_LOGINS+""});
+		return sqliteDatabase.rawQuery(sqlGetAll, new String[] {ENTRY_TYPE_LOGINS+""});
 	}
 	
 	/**
@@ -140,7 +140,7 @@ public class PasswordDAO extends QuiresDAO {
 	 *
 	 */
 	public Cursor getAllPasswords(){
-		return sqliteDatabase.rawQuery(sqlGetAll, new String[] {QuiresDAO.ENTRY_TYPE_GEN_PASSWORD+""});
+		return sqliteDatabase.rawQuery(sqlGetAll, new String[] {ENTRY_TYPE_GEN_PASSWORD+""});
 	}
 	
 	/**
@@ -152,7 +152,7 @@ public class PasswordDAO extends QuiresDAO {
 	 */
 	public int getPasswordsCount()
 	{
-		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_GEN_PASSWORD+""};
+		String[]selectionArgs={ENTRY_TYPE_GEN_PASSWORD+""};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetCount, selectionArgs);
 		return cursor.getCount();
 	}
@@ -166,7 +166,7 @@ public class PasswordDAO extends QuiresDAO {
 	 */
 	public int getLoginsCount()
 	{
-		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_LOGINS+""};
+		String[]selectionArgs={ENTRY_TYPE_LOGINS+""};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetCount, selectionArgs);
 		return cursor.getCount();
 	}
@@ -180,7 +180,7 @@ public class PasswordDAO extends QuiresDAO {
 	 */
 	public int getNotesCount()
 	{
-		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_NOTES+""};
+		String[]selectionArgs={ENTRY_TYPE_NOTES+""};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetCount, selectionArgs);
 		return cursor.getCount();
 	}
@@ -194,7 +194,7 @@ public class PasswordDAO extends QuiresDAO {
 	 */
 	public int getWalletCount()
 	{
-		String[]selectionArgs={QuiresDAO.ENTRY_TYPE_WALLET+""};
+		String[]selectionArgs={ENTRY_TYPE_WALLET+""};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetCount, selectionArgs);
 		return cursor.getCount();
 	}
@@ -254,7 +254,7 @@ public class PasswordDAO extends QuiresDAO {
 			password.put(COL_NOTE_ID, noteId);
 			
 			String[] passwordWhereArgs = {np.passwordId+""};
-			sqliteDatabase.update(QuiresDAO.TABLE_PASSWORDS, password, QuiresDAO.COL_ID+"=?", passwordWhereArgs); 
+			sqliteDatabase.update(TABLE_PASSWORDS, password,COL_ID+"=?", passwordWhereArgs); 
 		}
 
 	}
@@ -288,7 +288,7 @@ public class PasswordDAO extends QuiresDAO {
 	private String updatePassword(ContentValues password,String whereArg){
 		
 		String[] whereArgs = {whereArg};
-		sqliteDatabase.update(QuiresDAO.TABLE_PASSWORDS, password, QuiresDAO.COL_ID+"=?", whereArgs);
+		sqliteDatabase.update(TABLE_PASSWORDS, password, COL_ID+"=?", whereArgs);
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxPasswordId, new String[]{});
 		cursor.moveToFirst();
 		return cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
@@ -320,6 +320,54 @@ public class PasswordDAO extends QuiresDAO {
         
         sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, entry);
 	}
+	
+	/**
+	 * updates users password returns rows effected
+	 * Jan 6, 2010
+	 * dmason
+	 * @param pwd
+	 * @param Org
+	 * @return
+	 *
+	 */
+	public int updateRootLogin(String pwd,String Org){
+		
+		ContentValues creditials = new ContentValues();
+		creditials.put(COL_PASSWORD, Encrypt.encryptA(pwd));
+		String[] whereArgs = {Encrypt.encryptA(Org)};
+		return sqliteDatabase.update(TABLE_LOGIN, creditials, COL_PASSWORD+"=?", whereArgs);
+		
+	}
+	
+	/**
+	 * Sets initial password
+	 * Jan 6, 2010
+	 * dmason
+	 * @param pwd
+	 * @return
+	 *
+	 */
+	public long setRootLogin(String pwd){
+		
+		ContentValues creditials = new ContentValues();
+		creditials.put(COL_PASSWORD, Encrypt.encryptA(pwd));
+		
+		return sqliteDatabase.insert(TABLE_LOGIN, null, creditials);
+		
+	}
+	
+	/**
+	 * check to see if a password exists
+	 * Jan 6, 2010
+	 * dmason
+	 * @return
+	 *
+	 */
+	public Cursor checkForPassword()
+	{
+		return sqliteDatabase.rawQuery(sqlGetLoginCount, null);
+	}
+	
 	
 	/**
 	 * updates the login
@@ -357,7 +405,7 @@ public class PasswordDAO extends QuiresDAO {
 	        entry.put(COL_PASSWORD_ID, passwordId);
 	        
 	        String[] whereArgs = {Encrypt.encryptA(key),passwordId};
-			sqliteDatabase.update(QuiresDAO.TABLE_PASSWOR_ENTRY, entry, QuiresDAO.COL_NAME+"=? AND "+COL_PASSWORD_ID+"=?", whereArgs);
+			sqliteDatabase.update(TABLE_PASSWOR_ENTRY, entry, COL_NAME+"=? AND "+COL_PASSWORD_ID+"=?", whereArgs);
 	        
         }
 		
