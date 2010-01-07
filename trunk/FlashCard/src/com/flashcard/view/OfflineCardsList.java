@@ -28,7 +28,6 @@ import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 
-import com.flashcard.R;
 import com.flashcard.domain.BookmarkDomain;
 import com.flashcard.domain.CardSet;
 import com.flashcard.handler.ApplicationHandler;

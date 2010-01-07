@@ -19,8 +19,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.flashcard.R;
 import com.flashcard.domain.BookmarkDomain;
+import com.flashcard.view.R;
 
 /**
  * @author dmason

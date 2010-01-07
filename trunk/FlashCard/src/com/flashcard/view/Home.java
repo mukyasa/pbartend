@@ -24,7 +24,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
-import com.flashcard.R;
 import com.flashcard.util.AppUtil;
 import com.flashcard.util.Authenication;
 import com.flashcard.util.Constants;

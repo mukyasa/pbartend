@@ -21,7 +21,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 
-import com.flashcard.R;
 import com.flashcard.util.AppUtil;
 
 /**

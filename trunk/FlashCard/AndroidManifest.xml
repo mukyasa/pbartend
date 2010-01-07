@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.flashcard" android:versionName="1.0.5" android:versionCode="7">
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="false">
-        <activity android:name=".view.Home"
-                  android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+	package="com.flashcard.view" android:versionName="1.0.5"
+	android:versionCode="7">
+	<application android:icon="@drawable/icon" android:label="@string/app_name"
+		android:debuggable="false">
+		<activity android:name=".Home" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
 
-    <activity android:name=".view.CardSetList"></activity>
-<activity android:name=".view.FlashCardTest"></activity>
-<activity android:name=".view.Results"></activity>
-<activity android:name=".view.UserPrefActivity"></activity>
-<activity android:name=".view.BookmarkList"></activity>
-<activity android:name=".view.OfflineListView"></activity>
-<activity android:name=".view.OfflineCardsList"></activity>
-</application>
-    <uses-sdk android:minSdkVersion="3" />
+		<activity android:name="InstructionsActivity" android:theme="@style/Theme.Translucent"></activity>
 
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+		<activity android:name="CardSetList"></activity>
+		<activity android:name="FlashCardTest"></activity>
+		<activity android:name="Results"></activity>
+		<activity android:name="UserPrefActivity"></activity>
+		<activity android:name="BookmarkList"></activity>
+		<activity android:name="OfflineListView"></activity>
+		<activity android:name="OfflineCardsList"></activity>
+	</application>
+	<uses-sdk android:minSdkVersion="3" />
+
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest> 

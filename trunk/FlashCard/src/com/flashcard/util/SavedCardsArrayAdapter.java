@@ -17,11 +17,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
-import com.flashcard.R;
 import com.flashcard.domain.BookmarkDomain;
+import com.flashcard.view.R;
 
 /**
  * @author dmason

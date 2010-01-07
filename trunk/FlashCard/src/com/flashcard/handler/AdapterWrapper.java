@@ -15,10 +15,6 @@
 
 package com.flashcard.handler;
 
-import com.flashcard.R;
-import com.flashcard.domain.CardSet;
-import com.flashcard.view.OfflineListView;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -28,6 +24,10 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+
+import com.flashcard.domain.CardSet;
+import com.flashcard.view.OfflineListView;
+import com.flashcard.view.R;
 
 /**
  * Adapter that delegates to a wrapped LisAdapter, much as CursorWrapper
