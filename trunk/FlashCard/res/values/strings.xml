@@ -31,5 +31,4 @@
 <string name="cancel">Cancel</string>
 <string name="offline">Selecting these will save to your local drive. (MAX 10) </string>
 <string name="deletesaved">Click and hold item to delete. </string>
-<string name="instructions">Double tap screen to see the other side of the card.</string>
 </resources>
