@@ -47,7 +47,19 @@ public class AppUtil extends Constants {
 	public static final String PREF_CURRENT_CARD = "currentcard";
 	public static boolean isFlipped = false;
 	public static String searchTerm;
+	public boolean isCalled=false;
 
+	private static AppUtil instance=null;
+	
+	//singleton for one reason that is the instructions
+	public static AppUtil getInstance()
+	{
+		if(instance==null)
+			instance = new AppUtil();
+		
+		return instance;
+	}
+	
 	//<img src="http://i.quizlet.com/i/4400a18b1ea131770665eacf8d002de9_m.jpg" width="155" height="240" />
 	/**
 	 * Takes a html image tag and gets the url

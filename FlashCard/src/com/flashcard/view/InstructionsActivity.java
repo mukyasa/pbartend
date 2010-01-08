@@ -11,6 +11,7 @@ package com.flashcard.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -44,9 +45,9 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
 		  window.setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 		  
 		  screenOne = new DemoScreenOne(this);
-		  setContentView(screenOne); 
 		  screenOne.setOnTouchListener(this);
-		  
+		  setContentView(screenOne); 
+		  setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 	    }
 	  
 	  private static class DemoScreenOne extends View{
@@ -151,6 +152,8 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
     	{
     		screenTwo = new DemoScreenTwo(this);  
     		screenTwo.setOnTouchListener(this);
+    		v.clearAnimation();
+    		v.setVisibility(View.GONE);
 			setContentView(screenTwo);	
     	}
     	else if(wizardcount ==1)
