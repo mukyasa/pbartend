@@ -88,7 +88,10 @@ public class FlashCardTest extends Activity {
     protected void onResume() {
     	//set up cardset called here to avoid back button problems
     	initalize();
-    	startActivity(new Intent(this,InstructionsActivity.class));
+    	
+    	if(AppUtil.getSawDirections(this) <=0)
+    		startActivity(new Intent(this,InstructionsActivity.class));
+    	
         super.onResume();
     }
     

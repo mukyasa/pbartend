@@ -40,6 +40,7 @@ public class AppUtil extends Constants {
 	public static final String PREFS_NAME = "app_pref";
 	public static final String PREF_SOUND = "silentMode";
 	public static final String PREF_FONT_SIZE = "fontSize";
+	public static final String PREF_SAW_DIRECTIONS = "directions";
 	public static final String PREF_BOOKMARKS = "bookmarks";
 	public static final String BOOKMARKS = "rootbookmarks";
 	public static final String PREF_SAVED_CARDS = "savedcards";
@@ -163,6 +164,27 @@ public class AppUtil extends Constants {
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putInt(AppUtil.PREF_CURRENT_CARD, cardNumber);
+		// Don't forget to commit your edits!!!
+		editor.commit();
+	}
+	
+	/**
+	 * shows directions
+	 * Jan 7, 2010
+	 * dmason
+	 * @param context
+	 * @return
+	 *
+	 */
+	public static int getSawDirections(Context context) {
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		return settings.getInt(PREF_SAW_DIRECTIONS, 0);
+	}
+	
+	public static void setSawDirections(Context context) {
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putInt(AppUtil.PREF_SAW_DIRECTIONS, 1);
 		// Don't forget to commit your edits!!!
 		editor.commit();
 	}

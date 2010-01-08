@@ -9,6 +9,8 @@
  */
 package com.flashcard.view;
 
+import com.flashcard.util.AppUtil;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -29,7 +31,7 @@ import android.view.animation.TranslateAnimation;
  */
 public class InstructionsActivity extends Activity implements OnTouchListener{
 	
-	private View screenOne,screenTwo;
+	private View screenOne,screenTwo,screenThree;
 	private int wizardcount =0;
 	/**
 	 * This will be transparent and there is a theme involved see values/style
@@ -41,10 +43,39 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
 		  Window window = getWindow();
 		  window.setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 		  
-		  View screenOne = new DemoScreenOne(this);
+		  screenOne = new DemoScreenOne(this);
 		  setContentView(screenOne); 
 		  screenOne.setOnTouchListener(this);
 		  
+	    }
+	  private static class DemoScreenOne extends View{
+	        private AnimateDrawable mDrawable;
+
+	        public DemoScreenOne(Context context) {
+	            super(context);
+	            setFocusable(true);
+	            setFocusableInTouchMode(true);
+
+	            Drawable dr = context.getResources().getDrawable(R.drawable.finger_dwn);
+	            dr.setBounds(0, 0, dr.getIntrinsicWidth(), dr.getIntrinsicHeight());
+	            
+	            Animation an = new TranslateAnimation(100, 100, -20, 0);
+	            an.setDuration(800);
+	            an.setRepeatCount(-1);
+	            an.initialize(10, 10, 10, 10);
+	            
+	            mDrawable = new AnimateDrawable(dr, an);
+	            an.startNow();
+	        }
+	        
+	        
+	        @Override protected void onDraw(Canvas canvas) {
+	        	
+	        	setBackgroundResource(R.drawable.tap_bg);
+	        	
+	            mDrawable.draw(canvas); 
+	            invalidate();
+	        }
 	    }
 	  
 	  private static class DemoScreenTwo extends View{
@@ -78,18 +109,18 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
 	        }
 	    }
 	  
-	  private static class DemoScreenOne extends View{
+	  private static class DemoScreenThree extends View{
 	        private AnimateDrawable mDrawable;
 
-	        public DemoScreenOne(Context context) {
+	        public DemoScreenThree(Context context) {
 	            super(context);
 	            setFocusable(true);
 	            setFocusableInTouchMode(true);
 
-	            Drawable dr = context.getResources().getDrawable(R.drawable.finger_dwn);
+	            Drawable dr = context.getResources().getDrawable(R.drawable.score_finger);
 	            dr.setBounds(0, 0, dr.getIntrinsicWidth(), dr.getIntrinsicHeight());
 	            
-	            Animation an = new TranslateAnimation(100, 100, -20, 0);
+	            Animation an = new TranslateAnimation(50, 30, -10, -10);
 	            an.setDuration(800);
 	            an.setRepeatCount(-1);
 	            an.initialize(10, 10, 10, 10);
@@ -101,7 +132,7 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
 	        
 	        @Override protected void onDraw(Canvas canvas) {
 	        	
-	        	setBackgroundResource(R.drawable.tap_bg);
+	        	setBackgroundResource(R.drawable.score_bg);
 	        	
 	            mDrawable.draw(canvas); 
 	            invalidate();
@@ -121,8 +152,17 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
     		screenTwo.setOnTouchListener(this);
 			setContentView(screenTwo);			
     	}
-    	else
+    	else if(wizardcount ==1)
+    	{
+    		screenThree = new DemoScreenThree(this);
+    		screenThree.setOnTouchListener(this);
+			setContentView(screenThree);	
+			
+    	}else
+    	{
+    		AppUtil.setSawDirections(this);
     		finish();
+    	}
     	
     	wizardcount++;
 			
