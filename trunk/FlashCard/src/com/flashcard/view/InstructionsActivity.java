@@ -151,14 +151,12 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
     	{
     		screenTwo = new DemoScreenTwo(this);  
     		screenTwo.setOnTouchListener(this);
-    		finish();
 			setContentView(screenTwo);	
     	}
     	else if(wizardcount ==1)
     	{
     		screenThree = new DemoScreenThree(this);
     		screenThree.setOnTouchListener(this);
-    		finish();
 			setContentView(screenThree);
 			
     	}else
