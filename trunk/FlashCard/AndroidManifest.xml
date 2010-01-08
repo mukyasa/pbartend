@@ -11,6 +11,7 @@
 		</activity>
 
 		<activity android:name="InstructionsActivity" android:theme="@style/Theme.Translucent"></activity>
+		<activity android:name="HomeInstructionsActivity" android:theme="@style/Theme.Translucent"></activity>
 
 		<activity android:name="CardSetList"></activity>
 		<activity android:name="FlashCardTest"></activity>
