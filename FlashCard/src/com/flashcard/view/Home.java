@@ -59,6 +59,9 @@ public class Home extends Activity implements OnTouchListener,Runnable {
       //for demo
         if(!Authenication.getRegPrefererences(this))
         	showDialog(Authenication.ISDEMO);
+        
+        if(AppUtil.getSawDirections(this) <=0)
+        	startActivity(new Intent(this,HomeInstructionsActivity.class));
     }
     
     
@@ -120,19 +123,15 @@ public class Home extends Activity implements OnTouchListener,Runnable {
 
 	/* Handles item selections */
 	public boolean onOptionsItemSelected(MenuItem item) {
-		Intent intent;
 	    switch (item.getItemId()) {
 	    	 case MENU_RESULTS:
-	 	    	intent = new Intent(this, Results.class);
-	 			startActivity(intent);
+	 			startActivity(new Intent(this, Results.class));
 	 	    	return true;
 	    	 case MENU_USER_PREF:
-		 	    	intent = new Intent(this, UserPrefActivity.class);
-		 			startActivity(intent);
+		 			startActivity(new Intent(this, UserPrefActivity.class));
 		 	    	return true;
 	    	 case MENU_BOOKMARKS:
-		 	    	intent = new Intent(this, BookmarkList.class);
-		 			startActivity(intent);
+		 			startActivity(new Intent(this, BookmarkList.class));
 		 	    	return true;
 	 	    }
 	    

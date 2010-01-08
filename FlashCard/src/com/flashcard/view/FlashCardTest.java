@@ -17,6 +17,7 @@ import org.json.JSONException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -75,7 +76,7 @@ public class FlashCardTest extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_frame);  
 		//force to be landscape
-	//	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		mGestureDetector = new GestureDetector(this, new LearnGestureListener());
 		context = getBaseContext();
 		
@@ -89,7 +90,7 @@ public class FlashCardTest extends Activity {
     	//set up cardset called here to avoid back button problems
     	initalize();
     	
-    	if(AppUtil.getSawDirections(this) <=0)
+    	if(AppUtil.getSawDirections(this) <=1)
     		startActivity(new Intent(this,InstructionsActivity.class));
     	
         super.onResume();
@@ -347,6 +348,12 @@ public class FlashCardTest extends Activity {
                 vf.getAnimation(); 
                 
                 isBack=true;
+                
+                
+                //show layover
+                
+                
+                
             }
 	            
 	        return true;
