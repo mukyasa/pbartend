@@ -9,8 +9,6 @@
  */
 package com.flashcard.view;
 
-import com.flashcard.util.AppUtil;
-
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -25,6 +23,8 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 
+import com.flashcard.util.AppUtil;
+
 /**
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
@@ -38,7 +38,7 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
 	 * then in the manifest you need to apply this theme to this class
 	 */
 	  @Override
-		protected void onCreate(Bundle savedInstanceState) {
+		protected void onCreate(Bundle savedInstanceState) {  
 		  super.onCreate(savedInstanceState);
 		  Window window = getWindow();
 		  window.setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
@@ -48,6 +48,7 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
 		  screenOne.setOnTouchListener(this);
 		  
 	    }
+	  
 	  private static class DemoScreenOne extends View{
 	        private AnimateDrawable mDrawable;
 
@@ -148,19 +149,21 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
 
     	if(wizardcount==0)
     	{
-    		screenTwo = new DemoScreenTwo(this);
+    		screenTwo = new DemoScreenTwo(this);  
     		screenTwo.setOnTouchListener(this);
-			setContentView(screenTwo);			
+    		finish();
+			setContentView(screenTwo);	
     	}
     	else if(wizardcount ==1)
     	{
     		screenThree = new DemoScreenThree(this);
     		screenThree.setOnTouchListener(this);
-			setContentView(screenThree);	
+    		finish();
+			setContentView(screenThree);
 			
     	}else
     	{
-    		AppUtil.setSawDirections(this);
+    		AppUtil.setSawDirections(this,2);
     		finish();
     	}
     	

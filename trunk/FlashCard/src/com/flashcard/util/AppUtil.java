@@ -181,10 +181,10 @@ public class AppUtil extends Constants {
 		return settings.getInt(PREF_SAW_DIRECTIONS, 0);
 	}
 	
-	public static void setSawDirections(Context context) {
+	public static void setSawDirections(Context context,int wizardInt) {
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		SharedPreferences.Editor editor = settings.edit();
-		editor.putInt(AppUtil.PREF_SAW_DIRECTIONS, 1);
+		editor.putInt(AppUtil.PREF_SAW_DIRECTIONS, wizardInt);
 		// Don't forget to commit your edits!!!
 		editor.commit();
 	}
