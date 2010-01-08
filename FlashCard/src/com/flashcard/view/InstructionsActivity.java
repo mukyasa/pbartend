@@ -10,16 +10,27 @@
 package com.flashcard.view;
 
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.View.OnTouchListener;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 
 /**
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class InstructionsActivity extends Activity {
+public class InstructionsActivity extends Activity implements OnTouchListener{
 	
+	private View screenOne,screenTwo;
+	private int wizardcount =0;
 	/**
 	 * This will be transparent and there is a theme involved see values/style
 	 * then in the manifest you need to apply this theme to this class
@@ -29,8 +40,92 @@ public class InstructionsActivity extends Activity {
 		  super.onCreate(savedInstanceState);
 		  Window window = getWindow();
 		  window.setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
-			
-		  setContentView(R.layout.instructions); 
+		  
+		  View screenOne = new DemoScreenOne(this);
+		  setContentView(screenOne); 
+		  screenOne.setOnTouchListener(this);
 		  
 	    }
+	  
+	  private static class DemoScreenTwo extends View{
+	        private AnimateDrawable mDrawable;
+
+	        public DemoScreenTwo(Context context) {
+	            super(context);
+	            setFocusable(true);
+	            setFocusableInTouchMode(true);
+
+	            Drawable dr = context.getResources().getDrawable(R.drawable.finger_dwn);
+	            dr.setBounds(0, 0, dr.getIntrinsicWidth(), dr.getIntrinsicHeight());
+	            
+	            Animation an = new TranslateAnimation(45, 330, 0, 0);
+	            an.setDuration(1000);
+	            an.setRepeatCount(-1);
+	            an.setInterpolator(new AccelerateDecelerateInterpolator());
+	            an.initialize(10, 10, 10, 10);
+	            
+	            mDrawable = new AnimateDrawable(dr, an);
+	            an.startNow();
+	        }
+	        
+	        @Override 
+	        protected void onDraw(Canvas canvas) {
+	        	
+	        	setBackgroundResource(R.drawable.swipe_bg);
+	        	
+	            mDrawable.draw(canvas);
+	            invalidate();
+	        }
+	    }
+	  
+	  private static class DemoScreenOne extends View{
+	        private AnimateDrawable mDrawable;
+
+	        public DemoScreenOne(Context context) {
+	            super(context);
+	            setFocusable(true);
+	            setFocusableInTouchMode(true);
+
+	            Drawable dr = context.getResources().getDrawable(R.drawable.finger_dwn);
+	            dr.setBounds(0, 0, dr.getIntrinsicWidth(), dr.getIntrinsicHeight());
+	            
+	            Animation an = new TranslateAnimation(100, 100, -20, 0);
+	            an.setDuration(800);
+	            an.setRepeatCount(-1);
+	            an.initialize(10, 10, 10, 10);
+	            
+	            mDrawable = new AnimateDrawable(dr, an);
+	            an.startNow();
+	        }
+	        
+	        
+	        @Override protected void onDraw(Canvas canvas) {
+	        	
+	        	setBackgroundResource(R.drawable.tap_bg);
+	        	
+	            mDrawable.draw(canvas); 
+	            invalidate();
+	        }
+	    }
+	  
+	  
+
+	/* (non-Javadoc)
+     * @see android.view.View.OnTouchListener#onTouch(android.view.View, android.view.MotionEvent)
+     */
+    public boolean onTouch(View v, MotionEvent event) {
+
+    	if(wizardcount==0)
+    	{
+    		screenTwo = new DemoScreenTwo(this);
+    		screenTwo.setOnTouchListener(this);
+			setContentView(screenTwo);			
+    	}
+    	else
+    		finish();
+    	
+    	wizardcount++;
+			
+		return false;
+    }
 }
