@@ -76,10 +76,15 @@ public class FlashCardTest extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_frame);  
 		//force to be landscape
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+		//setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		mGestureDetector = new GestureDetector(this, new LearnGestureListener());
 		context = getBaseContext();
-		
+		AppUtil apput = AppUtil.getInstance();
+		if(AppUtil.getSawDirections(this) <=1 && !apput.isCalled)
+		{
+			apput.isCalled=true;
+    		startActivity(new Intent(this,InstructionsActivity.class));
+		}
     }
 	
     /* (non-Javadoc)
@@ -89,10 +94,6 @@ public class FlashCardTest extends Activity {
     protected void onResume() {
     	//set up cardset called here to avoid back button problems
     	initalize();
-    	
-    	if(AppUtil.getSawDirections(this) <=1)
-    		startActivity(new Intent(this,InstructionsActivity.class));
-    	
         super.onResume();
     }
     
