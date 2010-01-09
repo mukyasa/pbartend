@@ -35,6 +35,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
+import com.flashcard.R;
 import com.flashcard.domain.CardSet;
 import com.flashcard.handler.ApplicationHandler;
 import com.flashcard.handler.EndlessAdapter;

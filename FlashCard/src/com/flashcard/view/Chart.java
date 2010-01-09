@@ -20,6 +20,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
 
+import com.flashcard.R;
 import com.flashcard.domain.CardSet;
 import com.flashcard.domain.FlashCard;
 import com.flashcard.domain.ResultsBean;

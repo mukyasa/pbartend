@@ -24,6 +24,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 
+import com.flashcard.R;
 import com.flashcard.util.AppUtil;
 
 /**

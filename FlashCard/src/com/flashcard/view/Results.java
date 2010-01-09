@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.flashcard.R;
 import com.flashcard.domain.CardSet;
 import com.flashcard.domain.ResultsBean;
 import com.flashcard.handler.ApplicationHandler;
