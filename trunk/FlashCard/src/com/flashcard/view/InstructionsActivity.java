@@ -66,7 +66,7 @@ public class InstructionsActivity extends Activity implements OnTouchListener{
 	            an.setRepeatCount(-1);
 	            an.initialize(10, 10, 10, 10);
 	            
-	            mDrawable = new AnimateDrawable(dr, an);
+	            mDrawable = new AnimateDrawable(dr, an); 
 	            an.startNow();
 	        }
 	        
