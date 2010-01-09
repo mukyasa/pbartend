@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import android.view.View.OnTouchListener;
 import android.widget.TextView;
 
+import com.flashcard.R;
 import com.flashcard.util.AppUtil;
 
 /**

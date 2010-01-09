@@ -30,6 +30,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.flashcard.R;
 import com.flashcard.domain.CardSet;
 import com.flashcard.domain.MessageHandler;
 import com.flashcard.handler.ApplicationHandler;
