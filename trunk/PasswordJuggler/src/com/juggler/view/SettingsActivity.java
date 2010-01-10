@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.juggler.utils.AppUtils;
 import com.juggler.utils.Constants;
 import com.juggler.utils.TempletUtil;
 
@@ -31,6 +32,7 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
 	
 	private Button bNext,bPrev;
 	private TextView tvChangePwd,tvAutoLock;
+	private ToggleButton tbClearText;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -59,6 +61,11 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
 	{
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 		tvTitle.setText(getString(R.string.settings));
+		
+		tbClearText = (ToggleButton)findViewById(R.id.tbClearText);
+		String isClear = AppUtils.getClearTextSetting(this);
+		if(isClear.equalsIgnoreCase("true"))
+			tbClearText.setChecked(true);
 		
 		bPrev = (Button)findViewById(R.id.butPrev);
 		bPrev.setOnClickListener(this);
@@ -90,9 +97,9 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
     		ToggleButton tbclear = (ToggleButton)findViewById(R.id.tbClearText);
     		
     		HashMap<String, String> map = new HashMap<String, String>();
-    		map.put(TempletUtil.PREFS_CLEAR_TEXT, tbclear.isChecked()+"");
+    		map.put(AppUtils.PREFS_CLEAR_TEXT, tbclear.isChecked()+"");
     		//save settings
-    		TempletUtil.setSettings(this, map);
+    		AppUtils.setSettings(this, map);
  	    	finish();
  	    	
  	    }
@@ -102,7 +109,7 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
     	else if(v == tvChangePwd)
     		startActivity(new Intent(this,NewPasswordAcivity.class));
     	else if(v==tvAutoLock)
-    		startActivity(new Intent(this,AutoLockAcivity.class));	    
+    		startActivity(new Intent(this,AutoLockAcivity.class));	
     }
 	
 }
