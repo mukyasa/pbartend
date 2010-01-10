@@ -23,18 +23,11 @@ public class LoginsListActivity extends FooterListActivity implements OnClickLis
 	private static final int INTENT_NEXT_SCREEN = 0;
 	private Button butPrev;
 	private int STANDARD_LOGIN=1;
-	private PasswordDAO passDao;
-	private PasswordDbHelper myDatabaseAdapter;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.list_frame);
-		
-		//set up database for use
-		passDao = new PasswordDAO();
-		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
-		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		
 		super.onCreate(savedInstanceState);
 	}

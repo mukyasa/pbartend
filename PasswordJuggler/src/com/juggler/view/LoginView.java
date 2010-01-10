@@ -43,6 +43,8 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
 	        Window window = getWindow();			  
 			window.setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 			
+			LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+			lah.setLoginRequired(false);
 			
 			//set up database for use
 			passDao = new PasswordDAO();

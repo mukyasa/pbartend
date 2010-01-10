@@ -9,8 +9,6 @@ import android.view.View.OnTouchListener;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.juggler.dao.PasswordDAO;
-import com.juggler.dao.PasswordDbHelper;
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
 import com.juggler.utils.Constants;
@@ -18,19 +16,12 @@ import com.juggler.utils.Constants;
 public class CreateLoginTemplateActivity extends BaseActivity implements OnTouchListener {
 	private CharSequence text,url;
 	private EditText etTitle,etURL;
-	private PasswordDAO passDao;
-	private PasswordDbHelper myDatabaseAdapter;
 	private long selectedRow;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.create_frame);
-		initialize();
-		//set up database for use
-		passDao = new PasswordDAO();
-		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
-		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-		
 		super.onCreate(savedInstanceState);
+		initialize();
 	}
 
 	private void initialize() {

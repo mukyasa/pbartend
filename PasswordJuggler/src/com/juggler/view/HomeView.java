@@ -16,10 +16,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TableRow;
 
-import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.utils.Constants;
-import com.juggler.utils.LoginAuthHandler;
 
 /**
  * @author dmason
@@ -28,8 +26,6 @@ import com.juggler.utils.LoginAuthHandler;
 public class HomeView extends FooterActivity implements OnClickListener{
 	
 		private TableRow trWallet,trLogins,trNotes,trGenPassword;
-		private PasswordDAO passDao;
-		private PasswordDbHelper myDatabaseAdapter;
 		
 	   @Override
 	    public void onCreate(Bundle savedInstanceState) {
@@ -50,21 +46,6 @@ public class HomeView extends FooterActivity implements OnClickListener{
 	   
 	   private void initialize(){
 		   
-			//set up database for use
-			passDao = new PasswordDAO();
-			myDatabaseAdapter = PasswordDbHelper.getInstance(this);
-			passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-			
-			LoginAuthHandler handler = LoginAuthHandler.getInstance(this); 
-			if(!handler.isDidLogin())
-			{
-			    //pop login window
-				if(passDao.checkForPassword().getCount() > 0)
-					startActivity(new Intent(this,LoginView.class));
-				else
-					startActivity(new Intent(this,CreateLoginPasswordActivity.class));
-			}
-	        
 		   //init database
 		   PasswordDbHelper.getInstance(this);
 		   

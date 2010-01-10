@@ -8,17 +8,16 @@ import com.juggler.view.LoginView;
 
 public class LoginAuthHandler extends CountDownTimer {
 	private static Context context; 
+	private  boolean loginRequired=true;
+	private static LoginAuthHandler handler=null;
+	private boolean didLogin=false;
+	private static long timeout=5000; // 5 minutes
+
 	
 	public LoginAuthHandler(long millisInFuture, long countDownInterval) {
 		super(millisInFuture, countDownInterval);
 		// TODO Auto-generated constructor stub
 	}
-
-	private static LoginAuthHandler handler=null;
-	private boolean didLogin=false;
-	
-	private static long timeout=5000; // 5 minutes
-
 	public boolean isDidLogin() {
 		return didLogin;
 	}
@@ -57,6 +56,12 @@ public class LoginAuthHandler extends CountDownTimer {
 		// TODO Auto-generated method stub
 		
 	}
+	public boolean isLoginRequired() {
+    	return loginRequired;
+    }
+	public void setLoginRequired(boolean loginRequired) {
+    	this.loginRequired = loginRequired;
+    }
 	
 	
 	
