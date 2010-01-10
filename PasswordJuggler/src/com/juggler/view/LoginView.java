@@ -12,9 +12,9 @@ package com.juggler.view;
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
@@ -31,7 +31,7 @@ import com.juggler.utils.LoginAuthHandler;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class LoginView extends Activity implements OnClickListener,OnTouchListener {
+public class LoginView extends Activity implements OnClickListener,OnTouchListener { 
 	 
 		private PasswordDAO passDao;
 		private PasswordDbHelper myDatabaseAdapter;
@@ -40,8 +40,8 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
 		@Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
-			getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
-            WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+	        Window window = getWindow();			  
+			window.setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 			
 			
 			//set up database for use

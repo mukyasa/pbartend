@@ -17,6 +17,7 @@ import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
+import com.juggler.utils.AppUtils;
 import com.juggler.utils.Constants;
 import com.juggler.utils.Encrypt;
 import com.juggler.utils.TempletUtil;
@@ -112,7 +113,17 @@ public class DetailsActivity extends BaseActivity {
 			for(int i=0;i<cursor.getCount();i++){
 				
 				String label = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME)));
-				String value = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE)));
+				String value="";
+				//if concealed then only show **************
+				if(label != null && AppUtils.passwordTypes.containsKey(label))
+				{
+					if(AppUtils.getClearTextSetting(this).equalsIgnoreCase("true"))
+						value = "**************";
+					else
+						value = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE)));
+				}else
+					value = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE)));
+				
 				int section = cursor.getInt(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
 				note = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE)));
 				
@@ -192,7 +203,7 @@ public class DetailsActivity extends BaseActivity {
 	    	//for notes and the key to the hashtable
 	    	NewPassword np = NewPassword.getInstance();
 	    	np.templateId = ((TextView)v).getId();
-	    	Log.v("TEMP ID", np.templateId+"");
+	    	//Log.v("TEMP ID", np.templateId+"");
 	    	startActivity(intent);
 	    	 
 	    }

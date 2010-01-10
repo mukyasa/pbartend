@@ -28,8 +28,8 @@
 				android:layout_marginRight="5sp" android:layout_centerVertical="true"></TextView>
 			<ToggleButton android:text="@+id/tbResetDB"
 				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:id="@+id/tbClearText" android:layout_alignParentRight="true"
-				android:layout_centerInParent="true"></ToggleButton>
+				android:layout_alignParentRight="true"
+				android:layout_centerInParent="true" android:id="@+id/tbRestDb"></ToggleButton>
 		</RelativeLayout>
 		<LinearLayout android:background="@drawable/list_item"
 			android:layout_width="fill_parent" android:layout_height="wrap_content"

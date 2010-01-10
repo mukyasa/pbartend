@@ -10,6 +10,8 @@
 package com.juggler.utils;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -25,6 +27,15 @@ public class AppUtils {
 	private static final String PREFS_PASSWORD = Encrypt.encryptA("app_password");
 	public static final String PREFS_AUTO_LOCK = "app_auto_time";
 	
+	public static Map<String, String> passwordTypes = new TreeMap<String, String>();
+	
+	static{
+		passwordTypes.put("Password", "");
+		passwordTypes.put("License Key", "");
+		passwordTypes.put("Number", "");
+		passwordTypes.put("PIN", "");
+		passwordTypes.put("SSID", "");
+	}
 	
 	public static String getClearTextSetting(Context context){
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);

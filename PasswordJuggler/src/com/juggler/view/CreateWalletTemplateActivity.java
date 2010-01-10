@@ -160,7 +160,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	//for notes and the key to the hashtable
 	    	NewPassword np = NewPassword.getInstance();
 	    	np.templateId = ((TextView)v).getId();
-	    	Log.v("TEMP ID", np.templateId+"");
+	    	//Log.v("TEMP ID", np.templateId+"");
 	    	startActivity(intent);
 	    	 
 	    }
