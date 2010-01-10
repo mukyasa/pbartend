@@ -49,6 +49,7 @@
 	  <string name="min5">5 Minute</string>
 	  <string name="min10">10 Minute</string>
 	  
-	  <string name="loginInstructions">Before you begin you will need to set up your data protection. Set a password that you will use to login to the application. Make sure this is a secure password. We suggest you use numbers and mixed case for the password.</string>
+	  <string name="confirmrest">You are about to delete all your passwords and the database are you sure you want to do this?</string>
+	  <string name="loginInstructions">Before you begin you will need to set up your data protection. \n\nSet a password that you will use to login to the application. Make sure this is a secure password. We suggest you use numbers and mixed case letters for the password.</string>
 	  
 </resources>
