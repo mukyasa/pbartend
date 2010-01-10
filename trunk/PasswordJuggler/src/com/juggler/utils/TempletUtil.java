@@ -13,6 +13,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.text.util.Linkify;
 import android.view.Gravity;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -226,6 +227,7 @@ public class TempletUtil {
 		 */
 		TextView value = new TextView(context);
 		value.setText(val);
+		Linkify.addLinks(value, Linkify.ALL);
 		value.setId(id);
 		value.setGravity(Gravity.LEFT);
 		lavelParams=new LayoutParams();
