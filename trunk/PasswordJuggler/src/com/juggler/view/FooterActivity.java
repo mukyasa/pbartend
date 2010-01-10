@@ -14,6 +14,7 @@ public class FooterActivity extends Activity{
         
         
     }
+
 	
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()

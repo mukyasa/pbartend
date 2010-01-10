@@ -178,7 +178,7 @@ public class DetailsActivity extends BaseActivity {
 				detailLayout_wrapper.addView(detailLayout);
 			}
 			else
-				detailLayout.addView(tr);
+				detailLayout.addView(tr); 
 					
 		}
 		
@@ -200,7 +200,7 @@ public class DetailsActivity extends BaseActivity {
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,getString(R.string.title));
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)v).getId());
 	    	
-	    	//for notes and the key to the hashtable
+	    	//for notes and the key to the hash table
 	    	NewPassword np = NewPassword.getInstance();
 	    	np.templateId = ((TextView)v).getId();
 	    	//Log.v("TEMP ID", np.templateId+"");

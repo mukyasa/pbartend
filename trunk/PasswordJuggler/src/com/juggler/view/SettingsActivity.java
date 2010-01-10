@@ -9,10 +9,16 @@
  */
 package com.juggler.view;
 
+import java.io.File;
 import java.util.HashMap;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -20,9 +26,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.juggler.dao.PasswordDbHelper;
 import com.juggler.utils.AppUtils;
 import com.juggler.utils.Constants;
-import com.juggler.utils.TempletUtil;
 
 /**
  * @author dmason
@@ -32,7 +38,8 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
 	
 	private Button bNext,bPrev;
 	private TextView tvChangePwd,tvAutoLock;
-	private ToggleButton tbClearText;
+	private ToggleButton tbClearText,tbDeleteDb;
+	private Context context;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -44,7 +51,7 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
 	    details2.setVisibility(View.GONE);
 	    View details3 = (LinearLayout)findViewById(R.id.vDetails3);
 	    details3.setVisibility(View.GONE);
-	    
+	    context=this;
 	    super.onCreate(savedInstanceState);
 	}
 	
@@ -67,6 +74,9 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
 		if(isClear.equalsIgnoreCase("true"))
 			tbClearText.setChecked(true);
 		
+		tbDeleteDb = (ToggleButton)findViewById(R.id.tbRestDb);
+		tbDeleteDb.setOnClickListener(this); 
+		
 		bPrev = (Button)findViewById(R.id.butPrev);
 		bPrev.setOnClickListener(this);
 		
@@ -86,6 +96,33 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
 		
 	}
 
+	 @Override
+	    protected Dialog onCreateDialog(int id) {
+	    	
+	    	return new AlertDialog.Builder(SettingsActivity.this)
+	        .setIcon(R.drawable.error)
+	        .setMessage(getString(R.string.confirmrest))
+	        .setTitle("Database Reset")
+	        .setPositiveButton("Delete it", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					//delete db
+					File dbfile = new File(Environment.getExternalStorageDirectory(), PasswordDbHelper.DATABASE_EXTERNAL_FOLDER+"/"+PasswordDbHelper.DATABASE_NAME);
+					if(dbfile.exists())
+                		dbfile.delete();
+					
+					//System.exit(0);
+					android.os.Process.killProcess(android.os.Process.myPid());
+					
+				}
+			})
+	        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int whichButton) {
+	            	tbDeleteDb.setChecked(false);
+	               dismissDialog(0);
+	            }
+	        })      
+	       .create();
+	 }
 	/* (non-Javadoc)
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
@@ -110,6 +147,11 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
     		startActivity(new Intent(this,NewPasswordAcivity.class));
     	else if(v==tvAutoLock)
     		startActivity(new Intent(this,AutoLockAcivity.class));	
+    	else if(v==tbDeleteDb)
+    	{
+    		showDialog(0);
+    		
+    	}
     }
 	
 }
