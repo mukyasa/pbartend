@@ -21,21 +21,12 @@ import com.juggler.utils.CustomCursorAdapter;
 
 public class WalletSubCatListActivity extends FooterListActivity implements OnClickListener,OnTouchListener{
 	private Button butPrev;
-	private PasswordDAO passDao;
-	private PasswordDbHelper myDatabaseAdapter;
-	
 	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.list_frame);
 		super.onCreate(savedInstanceState);
-		
-		//set up database for use
-		passDao = new PasswordDAO();
-		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
-		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-		
 		
 		initialize();
 	}

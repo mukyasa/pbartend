@@ -5,15 +5,12 @@ import java.util.Hashtable;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.juggler.dao.PasswordDAO;
-import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
@@ -26,19 +23,12 @@ public class DetailsActivity extends BaseActivity {
 	
 	private CharSequence text;
 	private TextView tvWalletTitle;
-	private PasswordDAO passDao;
-	private PasswordDbHelper myDatabaseAdapter;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.template_frame);
-		
-		//set up database for use
-		passDao = new PasswordDAO();
-		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
-		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
-		initialize();
 		super.onCreate(savedInstanceState);
+		initialize();
 	}
 	
 	/* (non-Javadoc)

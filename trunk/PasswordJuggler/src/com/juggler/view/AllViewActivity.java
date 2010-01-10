@@ -28,8 +28,6 @@ public class AllViewActivity extends FooterListActivity implements OnClickListen
 	
 	protected Cursor recordscCursor;
 	private Button bPrev;
-	protected PasswordDAO passDao;
-	private PasswordDbHelper myDatabaseAdapter;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -48,11 +46,6 @@ public class AllViewActivity extends FooterListActivity implements OnClickListen
 	}
 	
 	protected void initialize() {
-		
-		//set up database for use
-		passDao = new PasswordDAO();
-		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
-		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 		
 		// hide next button
 		Button next = (Button) findViewById(R.id.butNext);

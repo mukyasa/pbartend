@@ -71,13 +71,9 @@ public class AutoLockAcivity extends FooterActivity implements OnClickListener {
     public void onClick(View v) {
     	
     	if(v == bNext)
- 	    {
  	    	finish();
- 	    	
- 	    }
-    	else if(v == bPrev){
+    	else if(v == bPrev)
     		finish();
-    	}
 	    
     }
 }

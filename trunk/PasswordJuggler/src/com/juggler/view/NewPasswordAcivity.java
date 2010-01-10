@@ -32,8 +32,6 @@ import com.juggler.utils.LoginAuthHandler;
 public class NewPasswordAcivity extends FooterActivity implements OnClickListener {
 	
 	private Button bNext,bPrev;
-	private PasswordDAO passDao;
-	private PasswordDbHelper myDatabaseAdapter;
 	private EditText pwdconfirm,pwd;
 	
 	/* (non-Javadoc)
@@ -47,11 +45,6 @@ public class NewPasswordAcivity extends FooterActivity implements OnClickListene
 	    details.setVisibility(View.GONE);
 	    View details3 = (LinearLayout)findViewById(R.id.vDetails3);
 	    details3.setVisibility(View.GONE);
-	    
-	    //set up database for use
-		passDao = new PasswordDAO();
-		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
-		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 	    
 	    super.onCreate(savedInstanceState);
 	}

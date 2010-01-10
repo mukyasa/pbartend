@@ -24,8 +24,6 @@ public class WalletCatListActivity extends FooterListActivity implements OnClick
 	private Intent intent;
 	private static final int INTENT_NEXT_SCREEN = 0;
 	private Button butPrev;
-	private PasswordDAO passDao;
-	private PasswordDbHelper myDatabaseAdapter;
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -33,10 +31,6 @@ public class WalletCatListActivity extends FooterListActivity implements OnClick
 		setContentView(R.layout.list_frame);
 		super.onCreate(savedInstanceState);
 		
-		//set up database for use
-		passDao = new PasswordDAO();
-		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
-		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
 	}
 	
 	/* (non-Javadoc)

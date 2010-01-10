@@ -1,5 +1,9 @@
 package com.juggler.view;
 
+import com.juggler.dao.PasswordDAO;
+import com.juggler.dao.PasswordDbHelper;
+import com.juggler.utils.LoginAuthHandler;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -10,14 +14,40 @@ import android.widget.Button;
 
 public class BaseActivity extends Activity implements OnClickListener,OnTouchListener{
 
-	Button bNext,bPrev;
+	protected Button bNext,bPrev;
+	protected PasswordDAO passDao;
+	protected PasswordDbHelper myDatabaseAdapter;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+        //set up database for use
+		passDao = new PasswordDAO();
+		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
+		passDao.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
         initialize();
     }
+	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onPause()
+	 */
+	@Override
+	protected void onPause() {
+	    // TODO Auto-generated method stub
+	    super.onPause();
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onStop()
+	 */
+	@Override
+	protected void onStop() {
+		
+		//check for login required again
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+		//lah.setLoginRequired(true);
+	    super.onStop();
+	}
 	
 	private void initialize() {
 		bNext = (Button)findViewById(R.id.butNext);
