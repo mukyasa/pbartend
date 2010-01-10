@@ -20,6 +20,7 @@
 	 <string name="title">Title</string>
 	 <string name="email">Email</string>
 	  <string name="save">Save</string>
+	  <string name="edit">Edit</string>
 	  <string name="commit">Commit</string>
 	  <string name="next">Next</string>
 	  <string name="username">Username</string>
