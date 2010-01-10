@@ -90,6 +90,7 @@ public class CreateLoginPasswordActivity extends Activity implements OnClickList
         		passDao.setRootLogin(pwd.getText().toString());
         		LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
         		handler.setDidLogin(true);
+        		handler.setLoginRequired(false);
      	    	finish();
     		}
     		else
