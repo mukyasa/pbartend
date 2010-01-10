@@ -5,6 +5,7 @@ import java.util.Hashtable;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -56,8 +57,8 @@ public class DetailsActivity extends BaseActivity {
 	private void initialize() {
 
 		//hide next button
-		Button bNext = (Button)findViewById(R.id.butNext);
-		bNext.setText(getString(R.string.commit));
+		bNext = (Button)findViewById(R.id.butNext);
+		bNext.setText(getString(R.string.edit));
 		
 		//set title
 		Intent selectedIntent = getIntent();
@@ -141,7 +142,7 @@ public class DetailsActivity extends BaseActivity {
 				int elmId=label.hashCode()+i;
 				if(elmId <0)
 					elmId=(elmId  *-1);
-					
+				
 				tr = TempletUtil.getRow(this,label,value,isFirst,elmId,section);
 				tr.setOnClickListener(this);
 				
@@ -182,66 +183,75 @@ public class DetailsActivity extends BaseActivity {
 	    super.onClick(v);
 	    
 	    Intent intent = new Intent(this, CreateWalletField.class);
+	    String nextButtonText =bNext.getText().toString();
+	    //only if they have hit edit
+	    if(nextButtonText.equals(getString(R.string.commit)))
+	    {
 	    
-	    if(v == tvWalletTitle)
-	    {
-	    	String title = ((TextView)v).getText().toString();
-	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,title);
-	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,getString(R.string.title));
-	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)v).getId());
-	    	
-	    	//for notes and the key to the hash table
-	    	NewPassword np = NewPassword.getInstance();
-	    	np.templateId = ((TextView)v).getId();
-	    	//Log.v("TEMP ID", np.templateId+"");
-	    	startActivity(intent);
-	    	 
+		    if(v == tvWalletTitle)
+		    {
+		    	String title = ((TextView)v).getText().toString();
+		    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,title);
+		    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,getString(R.string.title));
+		    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)v).getId());
+		    	
+		    	//for notes and the key to the hash table
+		    	NewPassword np = NewPassword.getInstance();
+		    	np.templateId = ((TextView)v).getId();
+		    	//Log.v("TEMP ID", np.templateId+"");
+		    	startActivity(intent);
+		    	 
+		    }
+		    else if(v instanceof TableRow)
+		    {
+		    	
+		    	TextView label =(TextView)((TableRow)v).getChildAt(0);
+		    	TextView value =(TextView)((TableRow)v).getChildAt(1);
+		    	
+		    	//needed to determine the save button reaction
+		    	if(((TextView)label).getText().equals(getString(R.string.note)+":"))
+		    	{
+		    		intent = new Intent(this, CreateNoteActivity.class);
+		    		intent.putExtra(Constants.INTENT_EXTRA_NOTE,true);
+		    	}
+		    	
+		    	/*if the value has not been filled the next field 
+		    	will be the label otherwise make it the value*/
+		    	String theValue="";
+		    	if(value.getText().toString().equals(""))
+		    	{
+		    		theValue = label.getText().toString();
+		    		//get ride of the :
+		    		theValue = theValue.substring(0, theValue.length()-1);
+		    	}
+		    	else
+		    		theValue = value.getText().toString();
+		    	
+		    	String labelValue =label.getText().toString();
+		    	
+		    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
+		    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
+		    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
+		    	
+		    	//for notes and the key to the hashtable
+		    	NewPassword np = NewPassword.getInstance();
+		    	np.templateId = ((TextView)value).getId();
+		    	
+		    			
+		    	startActivity(intent);
+		    	
+		    }
+		    else if(v == bNext)
+		    {
+		    	passDao.updateLogin();
+	    		startActivity(new Intent(this,HomeView.class));
+		    }
 	    }
-	    else if(v instanceof TableRow)
-	    {
-	    	
-	    	TextView label =(TextView)((TableRow)v).getChildAt(0);
-	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
-	    	
-	    	//needed to determine the save button reaction
-	    	if(((TextView)label).getText().equals(getString(R.string.note)+":"))
-	    	{
-	    		intent = new Intent(this, CreateNoteActivity.class);
-	    		intent.putExtra(Constants.INTENT_EXTRA_NOTE,true);
-	    	}
-	    	
-	    	/*if the value has not been filled the next field 
-	    	will be the label otherwise make it the value*/
-	    	String theValue="";
-	    	if(value.getText().toString().equals(""))
-	    	{
-	    		theValue = label.getText().toString();
-	    		//get ride of the :
-	    		theValue = theValue.substring(0, theValue.length()-1);
-	    	}
-	    	else
-	    		theValue = value.getText().toString();
-	    	
-	    	String labelValue =label.getText().toString();
-	    	
-	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
-	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
-	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
-	    	
-	    	//for notes and the key to the hashtable
-	    	NewPassword np = NewPassword.getInstance();
-	    	np.templateId = ((TextView)value).getId();
-	    	
-	    			
-	    	startActivity(intent);
-	    	
-	    }
-	    else if(v == bNext)
-	    {
-	    	passDao.updateLogin();
-    		startActivity(new Intent(this,HomeView.class));
-	    }
-	    
+	    else if(v == bNext){
+	    	if(nextButtonText.equals(getString(R.string.edit)))
+	    			bNext.setText(getString(R.string.commit));
+	    }	
+	   
 	    
 	}
 	

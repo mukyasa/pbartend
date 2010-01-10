@@ -29,6 +29,7 @@ public class AppUtils {
 	
 	public static Map<String, String> passwordTypes = new TreeMap<String, String>();
 	
+	
 	static{
 		passwordTypes.put("Password", "");
 		passwordTypes.put("License Key", "");
