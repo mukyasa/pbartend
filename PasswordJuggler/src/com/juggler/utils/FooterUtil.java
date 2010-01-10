@@ -93,17 +93,29 @@ public class FooterUtil implements OnClickListener,OnTouchListener{
 			bNotes.setVisibility(View.GONE);
 		
 		switch(Constants.SCREEN_TYPE){
-			case Constants.HOME: bHome.setBackgroundResource(R.drawable.home);
+			case Constants.HOME: 
+				bHome.setBackgroundResource(R.drawable.home);
+				bHome.setClickable(false);
 				break;
-			case Constants.LOGINS: bLogins.setBackgroundResource(R.drawable.logins);
+			case Constants.LOGINS: 
+				bLogins.setBackgroundResource(R.drawable.logins);
+				bLogins.setClickable(false);
 				break;
-			case Constants.NOTES: bNotes.setBackgroundResource(R.drawable.notes);
+			case Constants.NOTES: 
+				bNotes.setBackgroundResource(R.drawable.notes);
+				bNotes.setClickable(false);
 				break;
-			case Constants.PASSWORDS: bPasswords.setBackgroundResource(R.drawable.passwords);
+			case Constants.PASSWORDS: 
+				bPasswords.setBackgroundResource(R.drawable.passwords);
+				bPasswords.setClickable(false);
 				break;
-			case Constants.SETTINGS: bSettings.setBackgroundResource(R.drawable.settings);
+			case Constants.SETTINGS: 
+				bSettings.setBackgroundResource(R.drawable.settings);
+				bSettings.setClickable(false);
 				break;
-			case Constants.WALLET: bWallet.setBackgroundResource(R.drawable.wallet);
+			case Constants.WALLET: 
+				bWallet.setBackgroundResource(R.drawable.wallet);
+				bWallet.setClickable(false);
 				break;
 				
 		}

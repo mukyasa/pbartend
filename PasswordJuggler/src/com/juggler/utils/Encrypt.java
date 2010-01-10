@@ -59,31 +59,6 @@ public class Encrypt {
                 }
             
             }
-            /*else if (args.get(1).equals("-u")) {
-                passLength = Integer.parseInt(args.get(0));
-                for (int i = 0; i < passLength; i++) {
-                    int random = wheel.nextInt(upperCase.length);
-                    result+=upperCase[random]+"";
-                }
-            } else if (args.get(1).equals("-n")) {
-                passLength = Integer.parseInt(args.get(0));
-                for (int i = 0; i < passLength; i++) {
-                    int random = wheel.nextInt(numeric.length);
-                    result+=numeric[random]+"";
-                }
-            } else if (args.get(1).equals("-a")) {
-                passLength = Integer.parseInt(args.get(0));
-                for (int i = 0; i < passLength; i++) {
-                    int random = wheel.nextInt(alphaNumberic.length);
-                    result+=alphaNumberic[random]+"";
-                }
-            } else if (args.get(1).equals("-p")) {
-                passLength = Integer.parseInt(args.get(0));
-                for (int i = 0; i < passLength; i++) {
-                    int random = wheel.nextInt(printableAscii.length);
-                    result=printableAscii[random]+"";
-                }
-            }*/
     
 	    return result;
 	    
@@ -91,6 +66,7 @@ public class Encrypt {
 	
 	// this takes a string and returns the string encrypted.
 	public static String encryptA(String str) {
+		
 		if(str != null)
 		{
 			char[] letters = str.toCharArray();
