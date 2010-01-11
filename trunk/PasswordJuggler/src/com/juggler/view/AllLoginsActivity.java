@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
+import com.juggler.utils.LoginAuthHandler;
 
 /**
  * @author dmason
@@ -44,6 +45,10 @@ public class AllLoginsActivity extends AllViewActivity implements OnClickListene
 	 */
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
+		/*this is required to reset boolean on every action if the 
+		activty is stoped with out this set the login screen shows*/
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+	 	lah.setLoginRequired(false);
 	    super.onListItemClick(l, v, position, id);
 	    NewPassword np = NewPassword.getInstance();
 	    np.passwordId = id;

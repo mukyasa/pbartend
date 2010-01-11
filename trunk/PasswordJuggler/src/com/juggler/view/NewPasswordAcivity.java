@@ -29,7 +29,7 @@ import com.juggler.utils.LoginAuthHandler;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class NewPasswordAcivity extends FooterActivity implements OnClickListener {
+public class NewPasswordAcivity extends FooterActivity {
 	
 	private Button bNext,bPrev;
 	private EditText pwdconfirm,pwd;
@@ -82,7 +82,7 @@ public class NewPasswordAcivity extends FooterActivity implements OnClickListene
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
-    	
+    	super.onClick(v);
     	if(v == bNext)
  	    {
     		if(pwd.getText().toString().equals(pwdconfirm.getText().toString()))

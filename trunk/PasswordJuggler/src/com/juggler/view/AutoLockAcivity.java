@@ -22,7 +22,7 @@ import com.juggler.utils.Constants;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class AutoLockAcivity extends FooterActivity implements OnClickListener {
+public class AutoLockAcivity extends FooterActivity{
 	
 	private Button bNext,bPrev;
 	/* (non-Javadoc)
@@ -69,7 +69,7 @@ public class AutoLockAcivity extends FooterActivity implements OnClickListener {
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
-    	
+    	super.onClick(v);
     	if(v == bNext)
  	    	finish();
     	else if(v == bPrev)

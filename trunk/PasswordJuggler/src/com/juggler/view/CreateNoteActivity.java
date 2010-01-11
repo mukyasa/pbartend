@@ -13,6 +13,7 @@ import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
+import com.juggler.utils.LoginAuthHandler;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -72,7 +73,11 @@ public class CreateNoteActivity extends Activity implements OnClickListener {
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
-    	
+    	/*this is required to reset boolean on every action if the 
+		activty is stoped with out this set the login screen shows*/
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+	 	lah.setLoginRequired(false);
+	 	
     	if(v==butNext)
     	{
     		EditText etNote = (EditText)findViewById(R.id.etNote);

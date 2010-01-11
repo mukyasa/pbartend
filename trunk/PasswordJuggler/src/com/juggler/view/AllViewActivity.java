@@ -12,11 +12,8 @@ package com.juggler.view;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.juggler.dao.PasswordDAO;
-import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.utils.CustomCursorAdapter;
 
@@ -24,7 +21,7 @@ import com.juggler.utils.CustomCursorAdapter;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class AllViewActivity extends FooterListActivity implements OnClickListener {
+public class AllViewActivity extends FooterListActivity  {
 	
 	protected Cursor recordscCursor;
 	private Button bPrev;
@@ -68,7 +65,8 @@ public class AllViewActivity extends FooterListActivity implements OnClickListen
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
-    	
+    	super.onClick(v);
+
     	if(v == bPrev){
     		finish();
     	}

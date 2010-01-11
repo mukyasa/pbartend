@@ -34,7 +34,7 @@ import com.juggler.utils.Constants;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class SettingsActivity extends FooterActivity implements OnClickListener{
+public class SettingsActivity extends FooterActivity{
 	
 	private Button bNext,bPrev;
 	private TextView tvChangePwd,tvAutoLock;
@@ -127,6 +127,7 @@ public class SettingsActivity extends FooterActivity implements OnClickListener{
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
+    	super.onClick(v);
     	
     	if(v == bNext) 
  	    {

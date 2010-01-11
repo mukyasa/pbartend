@@ -18,12 +18,13 @@ import android.widget.TableRow;
 
 import com.juggler.dao.PasswordDbHelper;
 import com.juggler.utils.Constants;
+import com.juggler.utils.LoginAuthHandler;
 
 /**
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class HomeView extends FooterActivity implements OnClickListener{
+public class HomeView extends FooterActivity{
 	
 		private TableRow trWallet,trLogins,trNotes,trGenPassword;
 		
@@ -73,6 +74,8 @@ public class HomeView extends FooterActivity implements OnClickListener{
 	  
 		public void onClick(View v) {
 		
+			super.onClick(v);
+		 	
 			if(v==trGenPassword){
 				Intent intent = new Intent(this,GenPasswordActivity.class);
 				intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT, getString(R.string.genpasswords));

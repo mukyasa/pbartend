@@ -5,21 +5,18 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-import com.juggler.dao.PasswordDAO;
-import com.juggler.dao.PasswordDbHelper;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 import com.juggler.utils.CustomCursorAdapter;
+import com.juggler.utils.LoginAuthHandler;
 
-public class WalletCatListActivity extends FooterListActivity implements OnClickListener,OnTouchListener{
+public class WalletCatListActivity extends FooterListActivity implements OnTouchListener{
 	
 	private Intent intent;
 	private static final int INTENT_NEXT_SCREEN = 0;
@@ -76,6 +73,10 @@ public class WalletCatListActivity extends FooterListActivity implements OnClick
 	 * @see android.app.ListActivity#onListItemClick(android.widget.ListView, android.view.View, int, long)
 	 */
 	protected void onListItemClick(ListView l, View v, int position, long id) {
+		/*this is required to reset boolean on every action if the 
+		activty is stoped with out this set the login screen shows*/
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+	 	lah.setLoginRequired(false);
 	    super.onListItemClick(l, v, position, id);
 
 	    NewPassword np = NewPassword.getInstance();
@@ -118,6 +119,7 @@ public class WalletCatListActivity extends FooterListActivity implements OnClick
 	 * @see android.view.View.OnClickListener#onClick(android.view.View)
 	 */
 	public void onClick(View v) {
+		super.onClick(v);
 		if (v == butPrev) {
 			finish();
 		}
