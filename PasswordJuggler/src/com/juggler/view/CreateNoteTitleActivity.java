@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
+import com.juggler.utils.LoginAuthHandler;
 
 /**
  * @author dmason
@@ -88,7 +89,10 @@ public class CreateNoteTitleActivity extends Activity implements OnClickListener
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
-    	
+    	/*this is required to reset boolean on every action if the 
+		activty is stoped with out this set the login screen shows*/
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+	 	lah.setLoginRequired(false);
     	if(v==butNext)
     	{
     		NewPassword np = NewPassword.getInstance();

@@ -127,7 +127,9 @@ public class FooterUtil implements OnClickListener,OnTouchListener{
   * @see android.view.View.OnClickListener#onClick(android.view.View)
   */
  public void onClick(View v) {
-	   	
+	 	LoginAuthHandler lah = LoginAuthHandler.getInstance(context);
+	 	lah.setLoginRequired(false);
+	 
 	   if(v == bHome){
 	    	context.startActivity(new Intent(context,HomeView.class));
 	   }else if(v == bLogins){

@@ -6,6 +6,7 @@ import com.juggler.utils.LoginAuthHandler;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,24 +29,19 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
         initialize();
     }
 	
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onPause()
-	 */
-	@Override
-	protected void onPause() {
-	    // TODO Auto-generated method stub
-	    super.onPause();
-	}
 	
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onStop()
 	 */
 	@Override
-	protected void onStop() {
-		
-		//check for login required again
+	protected void onPause() {
 		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-		//lah.setLoginRequired(true);
+		
+		if(lah.isLoginRequired() || !lah.isDidLogin())
+		{
+			Log.v("","Log in was required");
+		}
+		lah.setLoginRequired(true);
 	    super.onStop();
 	}
 	
@@ -65,6 +61,10 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 	 * android.view.MotionEvent)
 	 */
 	public boolean onTouch(View v, MotionEvent event) {
+		/*this is required to reset boolean on every action if the 
+		activty is stoped with out this set the login screen shows*/
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+	 	lah.setLoginRequired(false);
 		
 		if (v instanceof Button) {
 			
@@ -98,6 +98,11 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
+    	
+    	/*this is required to reset boolean on every action if the 
+		activty is stoped with out this set the login screen shows*/
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+	 	lah.setLoginRequired(false);
  	   	
  	   if(v == bPrev){
  		   finish();
