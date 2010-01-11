@@ -5,6 +5,7 @@ import com.juggler.dao.PasswordDbHelper;
 import com.juggler.utils.LoginAuthHandler;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -39,7 +40,7 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 		
 		if(lah.isLoginRequired() || !lah.isDidLogin())
 		{
-			Log.v("","Log in was required");
+			startActivity(new Intent(this,LoginView.class));
 		}
 		lah.setLoginRequired(true);
 	    super.onStop();

@@ -37,7 +37,7 @@ public class FooterActivity extends Activity implements OnClickListener {
 		
 		if(lah.isLoginRequired() || !lah.isDidLogin())
 		{
-			Log.v("","Log in was required");
+			startActivity(new Intent(this,LoginView.class));
 		}
 		lah.setLoginRequired(true);
 	    super.onStop();
