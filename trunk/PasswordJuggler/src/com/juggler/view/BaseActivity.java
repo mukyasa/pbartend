@@ -36,14 +36,35 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 	 */
 	@Override
 	protected void onPause() {
-		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+		/*LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
 		
 		if(lah.isLoginRequired() || !lah.isDidLogin())
 		{
 			startActivity(new Intent(this,LoginView.class));
 		}
-		lah.setLoginRequired(true);
+		lah.setLoginRequired(true);*/
 	    super.onStop();
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		//check for login required again
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+		
+		if(lah.isLoginRequired() || !lah.isDidLogin())
+		{
+			lah.setLoginRequired(false);
+		    //pop login window
+			if(passDao.checkForPassword().getCount() > 0)
+				startActivity(new Intent(this,LoginView.class));
+			else
+				startActivity(new Intent(this,CreateLoginPasswordActivity.class));
+		} 
+		lah.setLoginRequired(true);
+	    super.onResume();
 	}
 	
 	private void initialize() {

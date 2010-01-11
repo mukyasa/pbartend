@@ -33,13 +33,14 @@ public class FooterActivity extends Activity implements OnClickListener {
 	 */
 	@Override
 	protected void onPause() {
-		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+		/*LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
 		
 		if(lah.isLoginRequired() || !lah.isDidLogin())
 		{
 			startActivity(new Intent(this,LoginView.class));
 		}
 		lah.setLoginRequired(true);
+		*/
 	    super.onStop();
 	}
 	
@@ -65,12 +66,14 @@ public class FooterActivity extends Activity implements OnClickListener {
 		
 		if(lah.isLoginRequired() || !lah.isDidLogin())
 		{
+			lah.setLoginRequired(false);
 		    //pop login window
 			if(passDao.checkForPassword().getCount() > 0)
 				startActivity(new Intent(this,LoginView.class));
 			else
 				startActivity(new Intent(this,CreateLoginPasswordActivity.class));
 		} 
+		lah.setLoginRequired(true);
 		
 		footutil = new FooterUtil(this);
         footutil.initialize(this);
