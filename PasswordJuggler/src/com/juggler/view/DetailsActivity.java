@@ -5,7 +5,6 @@ import java.util.Hashtable;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.text.util.Linkify;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -172,7 +171,6 @@ public class DetailsActivity extends BaseActivity {
 				detailLayout.addView(tr); 
 					
 		}
-		
 	}
 	
 	/* (non-Javadoc)
@@ -246,6 +244,14 @@ public class DetailsActivity extends BaseActivity {
 		    	passDao.updateLogin();
 	    		startActivity(new Intent(this,HomeView.class));
 		    }
+	    }
+	    else if(v instanceof TableRow)
+	    {
+	    	TextView label =(TextView)((TableRow)v).getChildAt(0);
+	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
+	    	
+	    	startActivity(new Intent(this,WebViewActivity.class));
+	    	
 	    }
 	    else if(v == bNext){
 	    	if(nextButtonText.equals(getString(R.string.edit)))
