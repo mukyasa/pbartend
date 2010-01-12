@@ -227,7 +227,7 @@ public class TempletUtil {
 		 */
 		TextView value = new TextView(context);
 		value.setText(val);
-		Linkify.addLinks(value, Linkify.ALL);
+		Linkify.addLinks(value, Linkify.WEB_URLS);
 		value.setId(id);
 		value.setGravity(Gravity.LEFT);
 		lavelParams=new LayoutParams();

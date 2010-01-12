@@ -9,8 +9,8 @@ import com.juggler.view.LoginView;
 public class LoginAuthHandler extends CountDownTimer {
 	private static Context context; 
 	private  boolean loginRequired=false;
-	private static LoginAuthHandler handler=null;
 	private boolean didLogin=false;
+	private static LoginAuthHandler handler=null;
 	private static long timeout=5000; // 5 minutes
 
 	

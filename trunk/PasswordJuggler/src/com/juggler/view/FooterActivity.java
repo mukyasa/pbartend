@@ -3,7 +3,6 @@ package com.juggler.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -29,22 +28,6 @@ public class FooterActivity extends Activity implements OnClickListener {
 	
 	
 	/* (non-Javadoc)
-	 * @see android.app.Activity#onStop()
-	 */
-	@Override
-	protected void onPause() {
-		/*LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-		
-		if(lah.isLoginRequired() || !lah.isDidLogin())
-		{
-			startActivity(new Intent(this,LoginView.class));
-		}
-		lah.setLoginRequired(true);
-		*/
-	    super.onStop();
-	}
-	
-	/* (non-Javadoc)
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
@@ -55,29 +38,36 @@ public class FooterActivity extends Activity implements OnClickListener {
 	    
     }
     
+    
+    private void callLoginActivity()
+    {
+	    	//check for login required again
+			LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+			
+			if(lah.isLoginRequired() || !lah.isDidLogin())
+			{
+				lah.setLoginRequired(false);
+			    //pop login window
+				if(passDao.checkForPassword().getCount() > 0)
+					startActivity(new Intent(this,LoginView.class));
+				else
+					startActivity(new Intent(this,CreateLoginPasswordActivity.class));
+			} 
+			lah.setLoginRequired(true);
+    }
+    
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()
 	 */
 	@Override
 	protected void onResume() {
 		
-		//check for login required again
-		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-		
-		if(lah.isLoginRequired() || !lah.isDidLogin())
-		{
-			lah.setLoginRequired(false);
-		    //pop login window
-			if(passDao.checkForPassword().getCount() > 0)
-				startActivity(new Intent(this,LoginView.class));
-			else
-				startActivity(new Intent(this,CreateLoginPasswordActivity.class));
-		} 
-		lah.setLoginRequired(true);
-		
+		callLoginActivity();
 		footutil = new FooterUtil(this);
         footutil.initialize(this);
-	    super.onResume();
+        
+		super.onResume();
+	   
 	}
 	
 }

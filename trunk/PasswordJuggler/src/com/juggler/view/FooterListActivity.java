@@ -28,20 +28,6 @@ public class FooterListActivity extends ListActivity implements OnClickListener{
         
     }
 	
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onStop()
-	 */
-	@Override
-	protected void onPause() {
-		/*LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-		
-		if(lah.isLoginRequired() || !lah.isDidLogin())
-		{
-			startActivity(new Intent(this,LoginView.class));
-		}
-		lah.setLoginRequired(true);*/
-	    super.onStop();
-	}
 	
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()
