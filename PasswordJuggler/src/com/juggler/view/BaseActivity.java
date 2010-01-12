@@ -1,18 +1,17 @@
 package com.juggler.view;
 
-import com.juggler.dao.PasswordDAO;
-import com.juggler.dao.PasswordDbHelper;
-import com.juggler.utils.LoginAuthHandler;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+
+import com.juggler.dao.PasswordDAO;
+import com.juggler.dao.PasswordDbHelper;
+import com.juggler.utils.LoginAuthHandler;
 
 public class BaseActivity extends Activity implements OnClickListener,OnTouchListener{
 
@@ -30,21 +29,6 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
         initialize();
     }
 	
-	
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onStop()
-	 */
-	@Override
-	protected void onPause() {
-		/*LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-		
-		if(lah.isLoginRequired() || !lah.isDidLogin())
-		{
-			startActivity(new Intent(this,LoginView.class));
-		}
-		lah.setLoginRequired(true);*/
-	    super.onStop();
-	}
 	
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()

@@ -10,6 +10,7 @@
 package com.juggler.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -40,9 +41,9 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
 		@Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
+	        
 	        Window window = getWindow();			  
 			window.setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
-			
 			LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
 			lah.setLoginRequired(false);
 			
