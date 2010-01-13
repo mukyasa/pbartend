@@ -17,20 +17,25 @@
 ** limitations under the License.
 */
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:paddingTop="50sp">
-    
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:paddingTop="50sp">
+    <TableRow android:background="#fff">
         <TextView  
             android:layout_width="fill_parent" 
             android:layout_height="wrap_content" 
             android:text="my test"
             android:padding="4dip"
             android:textSize="16sp"
-            />
-    
+            android:textColor="#000" android:id="@+id/tvWebUserName"/>
+            <TextView  
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content" 
+            android:text="my test"
+            android:padding="4dip"
+            android:textSize="16sp"
+            android:textColor="#000" android:id="@+id/tvWebPwd"/>
+    </TableRow>
     <WebView
         android:id="@+id/webview"
         android:layout_width="fill_parent" 
@@ -38,5 +43,5 @@
         android:layout_weight="1"
         />
         
-</LinearLayout>
+</TableLayout>
 
