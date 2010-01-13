@@ -10,13 +10,15 @@
 package com.juggler.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.TextView;
+
+import com.juggler.utils.Constants;
 
 /**
  * @author dmason
@@ -29,13 +31,21 @@ public class WebViewActivity extends Activity {
 
 	    
 	@Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+	public void onCreate(Bundle savedInstanceState) {
+		setContentView(R.layout.web_view);
+		super.onCreate(savedInstanceState);
+		initialize();
+	}
+	
+    private void initialize() {
         
-        setContentView(R.layout.web_frame);
        // TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 		//tvTitle.setText("Web");
-        
+		Intent intent = getIntent();
+		//hide next button
+		//bNext = (Button)findViewById(R.id.butNext);
+		//bNext.setVisibility(View.GONE);
+		
         mWebView = (WebView) findViewById(R.id.webview);
 
         WebSettings webSettings = mWebView.getSettings();
@@ -48,7 +58,7 @@ public class WebViewActivity extends Activity {
 
         mWebView.addJavascriptInterface(new DemoJavaScriptInterface(), "demo");
 
-        mWebView.loadUrl("http://www.google.com");
+        mWebView.loadUrl("http://"+intent.getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_URL).toString());
     }
 	
 	 final class DemoJavaScriptInterface {

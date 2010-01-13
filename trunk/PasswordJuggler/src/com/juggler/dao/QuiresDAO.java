@@ -83,7 +83,7 @@ public class QuiresDAO {
 	public static final String sqlGetMaxNotesId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_NOTES+";";
 	public static final String sqlGetMaxPasswordId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_PASSWORDS+";";
 	
-	public static final String sqlGetAll ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
+	public static final String sqlGetAll ="SELECT * FROM "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=? ORDER BY "+COL_NAME+";";
 	public static final String sqlGetAllNotes ="SELECT p."+COL_NAME+",p."+COL_ID+",n."+COL_NOTE+",p."+COL_URL+" FROM "+TABLE_PASSWORDS+" p INNER JOIN "+TABLE_NOTES+" n on p."+COL_NOTE_ID+" = n."+COL_ID+" WHERE p."+COL_ENTRY_TYPE+" = "+ENTRY_TYPE_NOTES+";";
 	
 	public static final String sqlGetNotes ="SELECT * FROM "+TABLE_NOTES+" WHERE "+COL_ID+"=?;";

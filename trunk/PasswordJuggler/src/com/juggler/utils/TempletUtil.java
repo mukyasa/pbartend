@@ -235,7 +235,11 @@ public class TempletUtil {
 		value.setLayoutParams(lavelParams);
 		value.setTextSize(14);
 		value.setTag(section);
-		value.setTextColor(Color.rgb(33, 33, 33));
+		//if(label.getText().equals(context.getString(R.string.url)+":"))
+		//	value.setTextColor(Color.rgb(51, 102, 225));
+		//else
+			value.setTextColor(Color.rgb(33, 33, 33));
+		
 		value.setPadding(5, 0, 105, 0);
 		
 		//add text views to row
