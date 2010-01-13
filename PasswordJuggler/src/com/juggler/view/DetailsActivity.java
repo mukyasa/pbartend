@@ -4,7 +4,9 @@ import java.util.Hashtable;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.ClipboardManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -247,18 +249,29 @@ public class DetailsActivity extends BaseActivity {
 	    }
 	    else if(v instanceof TableRow)
 	    {
+	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
+	    	
+	    	ClipboardManager clip = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+	    	clip.setText(value.getText().toString());
+	    	
+	    }
+	    /*else if(v instanceof TableRow)
+	    {
 	    	TextView label =(TextView)((TableRow)v).getChildAt(0);
 	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
 	    	
-	    	startActivity(new Intent(this,WebViewActivity.class));
+	    	if(label.getText().toString().equals(getString(R.string.url)+":"))
+	    	{
+	    		intent = new Intent(this,WebViewActivity.class);
+	    		intent.putExtra(Constants.INTENT_EXTRA_SELECTED_URL, value.getText().toString());
+	    		startActivity(intent);
+	    	}
 	    	
-	    }
+	    }*/
 	    else if(v == bNext){
 	    	if(nextButtonText.equals(getString(R.string.edit)))
 	    			bNext.setText(getString(R.string.commit));
+	    	
 	    }	
-	   
-	    
 	}
-	
 }

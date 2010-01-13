@@ -61,7 +61,7 @@ public class CreateWalletField extends BaseActivity{
 				etTitle.setTextColor(Color.BLACK);
 	    
 		TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
-	    tvTitle.setText(text.toString());
+		tvTitle.setText(label);
 	    
 	    super.onCreate(savedInstanceState);
 	}
