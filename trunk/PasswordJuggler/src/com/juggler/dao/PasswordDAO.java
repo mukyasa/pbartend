@@ -15,7 +15,6 @@ import java.util.Iterator;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
