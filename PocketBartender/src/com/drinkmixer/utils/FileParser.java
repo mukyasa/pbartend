@@ -17,6 +17,7 @@ import java.io.Reader;
 import java.util.StringTokenizer;
 
 import android.database.SQLException;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.drinkmixer.R;
@@ -87,6 +88,8 @@ public class FileParser {
 				imgGlassType.setBackgroundResource(R.drawable.cordial);
 			else if(glasses[20].equalsIgnoreCase(glassName))
 				imgGlassType.setBackgroundResource(R.drawable.collins);
+			else
+				imgGlassType.setBackgroundResource(R.drawable.detail_info);
 			
 		}
 		
