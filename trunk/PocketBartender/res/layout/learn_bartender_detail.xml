@@ -1,20 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:padding="10sp" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:background="@drawable/new_bg">
-	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="fill_parent" android:id="@+id/ll_detail_wrapper">
-		<TableLayout android:layout_width="fill_parent"
-			android:layout_height="fill_parent" android:background="@drawable/list_item"
-			android:id="@+id/tlDetails" android:padding="10sp">
-			<!--TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:textColor="#000"
-				android:text="Label" android:textStyle="bold"></TextView>
-			<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:textColor="#666"
-				android:text="Details details details details details details details details details details details details details details details details details"
-				android:layout_marginBottom="10sp"
-				android:singleLine="false"></TextView-->
-		</TableLayout>
-	</LinearLayout>
+<ScrollView android:id="@+id/ScrollView01" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent" 
+xmlns:android="http://schemas.android.com/apk/res/android" 
+android:paddingBottom="10.0sp" 
+android:background="@drawable/details2_bg">
+<TableLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_height="wrap_content" android:layout_width="fill_parent">
+	<TableRow android:layout_width="fill_parent" android:background="@drawable/picker_bg" android:layout_marginBottom="5sp" android:paddingLeft="20sp">
+		<ImageButton android:id="@+id/imgFav" 
+			android:background="@drawable/star" 
+			android:layout_width="36.0px" 
+			android:layout_height="36.0px" 
+			android:layout_gravity="left|center_vertical"></ImageButton>
+		<TextView android:layout_height="wrap_content" 
+			android:layout_marginTop="10.0sp" 
+			android:id="@+id/tvDrinkName" 
+			android:textColor="#000" 
+			android:textStyle="bold" 
+			android:layout_marginBottom="10.0sp" 
+			android:text="This is where a long name would go." 
+			android:gravity="left" 
+			android:layout_width="wrap_content" 
+			android:textSize="19sp" 
+			android:layout_gravity="center_vertical" 
+			android:paddingRight="80sp"></TextView>
+	</TableRow>
+	<TableRow android:paddingLeft="10sp">
+		<ImageView android:id="@+id/imgGlassType" android:background="@drawable/cocktail" android:layout_width="48.0px" android:layout_height="48.0px" android:layout_gravity="top|left"></ImageView>
+	<TableLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="10sp">
+		 <TableRow android:layout_width="fill_parent">
+			
+		</TableRow>
+		 <TableRow android:layout_width="fill_parent"> 
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:id="@+id/tvIng1" android:text="All ingredients will go here each one will go to the next line." android:layout_marginTop="5.0sp" android:paddingRight="80sp" android:layout_gravity="left|center" android:paddingBottom="5sp" android:textColor="#fff"></TextView>
+		</TableRow>
+		 
+		 
+	</TableLayout>
+	</TableRow>
+	
+	
+</TableLayout>
 </ScrollView>

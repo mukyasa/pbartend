@@ -33,7 +33,7 @@ import com.drinkmixer.utils.FileParser;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class KnowledgeDetailActivity extends ListActivity {
+public class KnowledgeListActivity extends ListActivity {
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) { 
@@ -42,9 +42,26 @@ public class KnowledgeDetailActivity extends ListActivity {
         setContentView(R.layout.list_frame);
         
         
-		 CharSequence key = getIntent().getCharSequenceExtra(FileParser.BE_A_BARTENDER_DETAILS); 
+		 int key = getIntent().getIntExtra(FileParser.BE_A_BARTENDER, -1); 
 		 
-		
+		 InputStream in=null;
+		 
+		 switch (key) {
+	        case FileParser.TERMINOLOGY://terminology
+	   		 in = getResources().openRawResource(R.raw.terminology);
+	   		 break;
+	        case FileParser.GLASSES: //glass info
+			 in = getResources().openRawResource(R.raw.glasses);
+			 break;
+	        case FileParser.BASIC_TEQ://techniques
+			 in = getResources().openRawResource(R.raw.basictechniques);
+			 break;
+	        case FileParser.BARSTOCK: //bar stock
+			 in = getResources().openRawResource(R.raw.barstock);
+			 break;
+       }
+		 
+		 FileParser.loadBarStock(in);
 		 
 		 initialize();
 	}
@@ -68,42 +85,30 @@ public class KnowledgeDetailActivity extends ListActivity {
 
 		}
 		
+		/* (non-Javadoc)
+		 * @see android.app.ListActivity#onListItemClick(android.widget.ListView, android.view.View, int, long)
+		 */
+		@Override
+		protected void onListItemClick(ListView l, View v, int position, long id) {
+			
+			String text = ((TextView)v).getText().toString();	
+			Intent intent = new Intent(this,KnowledgeDetailActivity.class);
+			intent.putExtra(FileParser.BE_A_BARTENDER_DETAILS, text);
+			
+			startActivity(intent);
+			
+		    super.onListItemClick(l, v, position, id);
+		}
 	
-	private void initialize(){
+		private void initialize(){
+		
+		LearnBartender lbartend = LearnBartender.getInstance();
+		TreeMap<String, String> hashtable = lbartend.lesson;
+		Set<String> set = hashtable.keySet();
+		String[] titles = set.toArray(new String[set.size()]);
+		
+		setListAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow,titles));
+		getListView().setTextFilterEnabled(true);
 
-		
-		/* <TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:textColor="#000"
-				android:text="Label" android:textStyle="bold"></TextView>
-			<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:textColor="#666"
-				android:text="Details"
-				android:layout_marginBottom="10sp"></TextView>
-		 
-		TableLayout detailstable = (TableLayout)findViewById(R.id.tlDetails);
-		
-		Iterator<String> iter = hashtable.keySet().iterator();
-		
-		while (iter.hasNext()) {
-	        String key = (String) iter.next();
-	        String details = hashtable.get(key);
-	        
-	        TextView tvLabel = new TextView(this);
-			tvLabel.setText(key);
-			tvLabel.setTextColor(Color.BLACK);
-			tvLabel.setTypeface(Typeface.DEFAULT_BOLD);
-			
-			detailstable.addView(tvLabel);
-			
-			TextView tvDetails = new TextView(this);
-			tvDetails.setText(details);
-			tvDetails.setTextColor(Color.rgb(102, 102, 102));
-			LayoutParams params = new LayoutParams();
-			params.bottomMargin=10;
-			tvDetails.setLayoutParams(params);
-			
-			detailstable.addView(tvDetails);
-        }
-		*/
 	}
 }
