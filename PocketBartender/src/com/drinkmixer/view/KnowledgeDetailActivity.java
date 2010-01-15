@@ -9,18 +9,12 @@
  */
 package com.drinkmixer.view;
 
-import java.io.InputStream;
-import java.util.Set;
-import java.util.TreeMap;
-
-import android.app.ListActivity;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.drinkmixer.R;
@@ -33,19 +27,14 @@ import com.drinkmixer.utils.FileParser;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class KnowledgeDetailActivity extends ListActivity {
+public class KnowledgeDetailActivity extends Activity {
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState);
         //progress menu bar
-        setContentView(R.layout.list_frame);
+        setContentView(R.layout.learn_bartender_detail);
         
-        
-		 CharSequence key = getIntent().getCharSequenceExtra(FileParser.BE_A_BARTENDER_DETAILS); 
-		 
-		
-		 
 		 initialize();
 	}
 	
@@ -70,40 +59,20 @@ public class KnowledgeDetailActivity extends ListActivity {
 		
 	
 	private void initialize(){
-
-		
-		/* <TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:textColor="#000"
-				android:text="Label" android:textStyle="bold"></TextView>
-			<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:textColor="#666"
-				android:text="Details"
-				android:layout_marginBottom="10sp"></TextView>
 		 
-		TableLayout detailstable = (TableLayout)findViewById(R.id.tlDetails);
+		CharSequence key = getIntent().getCharSequenceExtra(FileParser.BE_A_BARTENDER_DETAILS);
+		LearnBartender lb = LearnBartender.getInstance();
+		String details_str = (String)lb.lesson.get(key);
 		
-		Iterator<String> iter = hashtable.keySet().iterator();
+		ImageView glass = (ImageView)findViewById(R.id.imgGlassType);
+		FileParser.getGlassImage(glass, key.toString());
 		
-		while (iter.hasNext()) {
-	        String key = (String) iter.next();
-	        String details = hashtable.get(key);
-	        
-	        TextView tvLabel = new TextView(this);
-			tvLabel.setText(key);
-			tvLabel.setTextColor(Color.BLACK);
-			tvLabel.setTypeface(Typeface.DEFAULT_BOLD);
-			
-			detailstable.addView(tvLabel);
-			
-			TextView tvDetails = new TextView(this);
-			tvDetails.setText(details);
-			tvDetails.setTextColor(Color.rgb(102, 102, 102));
-			LayoutParams params = new LayoutParams();
-			params.bottomMargin=10;
-			tvDetails.setLayoutParams(params);
-			
-			detailstable.addView(tvDetails);
-        }
-		*/
+		TextView title = (TextView)findViewById(R.id.tvDrinkName);
+		title.setText(key);
+		
+		TextView details = (TextView)findViewById(R.id.tvDetails);
+		details.setText(details_str);
+		
+		
 	}
 }

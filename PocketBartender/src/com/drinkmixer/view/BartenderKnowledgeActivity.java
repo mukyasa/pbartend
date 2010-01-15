@@ -54,7 +54,7 @@ public class BartenderKnowledgeActivity extends BaseActivity implements OnClickL
      */
     public void onClick(View v) {
 	   
-    	Intent intent = new Intent(this,KnowledgeDetailActivity.class);
+    	Intent intent = new Intent(this,KnowledgeListActivity.class);
     	LearnBartender.getInstance().clear();
     	if(v == btnGlasses)
     		intent.putExtra(FileParser.BE_A_BARTENDER, FileParser.GLASSES);
