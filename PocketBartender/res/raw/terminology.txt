@@ -20,12 +20,12 @@ Julep|A drink made of bourbon, mint, sugar and crushed ice.
 Lowball|A short drink made of spirits served with ice, water or soda in a small glass.
 Mist|A liquor served over a glass filled with crushed ice, often a way of serving liqueur as an after dinner drink.
 Mulls|A sweetened and spiced heated liquor, wine or beer, served as a hot punch.
-Neat|The consumption of a spirit as a straight, unaccompanied shot.
+Neat|The consumption of a spirit as a straight, unaccompanied shot. Pour liquor directly from the bottle into the glass without chilling it over ice. 
 Negus|A punch-like combination containing a wine, such as port, heated with spices and sweetened.
 Nip|A quarter of a bottle.
 Nightcap|A wine or liquor taken before bedtime.
 On The Rocks|A wine or liquor poured over ice cubes.
-Pick-Me-Up|A drink designed to relieve the effects of overindulgence in alcohol.
+Pick-Me-Up|A drink designed to relieve the effects of over indulgence in alcohol.
 Posset|An old british drink from which the eggnog was derived. It consists of a mixture of heated ale or wine curdled with milk, eggs, and spices.
 Puff|A traditional afternoon drink made of equal parts spirit and milk, topped with club soda and served over ice.
 Punch|A party-size beverage consisting of fruit, fruit juices, flavorings and sweeteners, soft drinks, and a wine or liquor base.
@@ -43,3 +43,5 @@ Toddy|A sweetened drink of liquor and hot water, often with spices and served in
 Tot|A small amount of liquor.
 Virgin|A non-alcoholic drink.
 Well Drink|A liquor and mixer, of which neither are defined brands. (ie. Gin and Tonic, Rum and Coke)
+Straight up|Strain a pre-chilled beverage over ice into a glass without ice.
+
