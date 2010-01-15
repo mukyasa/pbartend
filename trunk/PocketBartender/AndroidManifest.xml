@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.drinkmixer" android:versionName="1.1.1" android:versionCode="15">
+      package="com.drinkmixer" android:versionName="1.2.0" android:versionCode="16">
     <application android:label="@string/app_name" 
     android:icon="@drawable/pbartender" 
     android:debuggable="false">
@@ -19,6 +19,7 @@
 <activity android:name=".view.CreateUpdateView"></activity>
 
 
+<activity android:name=".view.KnowledgeListActivity"></activity>
 <activity android:name=".view.BartenderKnowledgeActivity"></activity>
 <activity android:name=".view.KnowledgeDetailActivity"></activity>
 <activity android:name=".view.IngredientsListView"></activity>
