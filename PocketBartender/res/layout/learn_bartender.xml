@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:padding="10sp"
+	android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="@drawable/new_bg">
+<TableLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_marginRight="10.0sp"
+		android:id="@+id/btnStock" android:height="20.0sp" android:background="@drawable/button_bg"
+		android:gravity="left|center_vertical" android:paddingBottom="10sp"
+		android:paddingLeft="60.0sp" android:textColor="#fff"
+		android:textStyle="bold" android:paddingRight="0sp"
+		android:paddingTop="0sp" android:layout_marginBottom="5sp" android:text="@string/stock"></Button>
+		
+		<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_marginRight="10.0sp"
+		android:id="@+id/btnGlasses" android:height="20.0sp" android:background="@drawable/button_bg"
+		android:gravity="left|center_vertical" android:paddingBottom="10sp"
+		android:paddingLeft="60.0sp" android:textColor="#fff"
+		android:textStyle="bold" android:paddingRight="0sp"
+		android:paddingTop="0sp" android:layout_marginBottom="5sp" android:text="@string/glasses"></Button>
+		
+		<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_marginRight="10.0sp"
+		android:id="@+id/btnTech" android:height="20.0sp" android:background="@drawable/button_bg"
+		android:gravity="left|center_vertical" android:paddingBottom="10sp"
+		android:paddingLeft="60.0sp" android:textColor="#fff"
+		android:textStyle="bold" android:paddingRight="0sp"
+		android:paddingTop="0sp" android:layout_marginBottom="5sp" android:text="@string/tech"></Button>
+		
+		<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_marginRight="10.0sp"
+		android:id="@+id/btnTerms" android:height="20.0sp" android:background="@drawable/button_bg"
+		android:gravity="left|center_vertical" android:paddingBottom="10sp"
+		android:paddingLeft="60.0sp" android:textColor="#fff"
+		android:textStyle="bold" android:paddingRight="0sp"
+		android:paddingTop="0sp" android:layout_marginBottom="5sp" android:text="@string/term"></Button>
+</TableLayout>
+</ScrollView>

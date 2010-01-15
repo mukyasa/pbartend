@@ -1,0 +1,96 @@
+|
+Liquors
+~
+Gin
+Vodka
+Rum (light/dark)
+Whiskey
+- Bourbon
+- Scotch
+- Rye/Canadian
+- Irish Cream
+Wine
+- White (dry)
+- Red (dry)
+- Champagne
+- Vermouth (dry/sweet)
+Tequila
+Brandy/Cognac
+Beer
+|
+Fruit
+~
+Apples
+Bananas
+Cherries
+Lemons
+Limes
+Oranges
+Pineapples
+Strawberries
+|
+Fruit Juice
+~
+Apple
+Cranberry
+Grapefruit
+Lemon
+Lime
+Orange
+Pineapple
+Tomato 
+|
+Liqueurs
+~
+Amaretto (almond)
+Blue Curacao (orange)
+Chambord (raspberry)
+Cointreau (orange)
+Creme de Banana (banana)
+Creme de Cacao (chocolate)
+Creme de Menthe (mint)
+Frangelico (hazelnut)
+Galliano (herb)
+Godiva (chocolate)
+Goldschlager (cinnamon)
+Grand Marnier (orange)
+Jagermeister (herb)
+Kahlua (coffee)
+Midori (melon)
+Rumple Minze (peppermint)
+Sambuca (anise)
+Schnapps (various flavors)
+Southern Comfort (peach)
+Tia Maria (coffee)
+Triple Sec (orange) 
+|
+Mixers
+~
+Angosturas Bitters
+Lemonade
+Cola
+Cream
+Eggs
+Ginger Ale
+Grenadine
+Ice Cream
+Milk
+Orange Bitters
+Sour Mix
+Sprite/7-Up
+Tea/Coffee
+Water
+- Soda
+- Tonic
+|
+Garnishes/Other
+~
+Cinnamon
+Ice
+Maraschino Cherries
+Nutmeg
+Olives (black/green)
+Salt/Pepper Sugar
+Sugar Syrup
+Tabasco Sauce
+Worcestershire Sauce

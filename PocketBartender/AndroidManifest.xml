@@ -19,6 +19,8 @@
 <activity android:name=".view.CreateUpdateView"></activity>
 
 
+<activity android:name=".view.BartenderKnowledgeActivity"></activity>
+<activity android:name=".view.KnowledgeDetailActivity"></activity>
 <activity android:name=".view.IngredientsListView"></activity>
 <activity android:name=".view.IngredientsHomeView"></activity>
 <activity android:name=".view.LiquorListView"></activity>

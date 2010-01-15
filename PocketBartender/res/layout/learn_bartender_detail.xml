@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:padding="10sp" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/new_bg">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:id="@+id/ll_detail_wrapper">
+		<TableLayout android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:background="@drawable/list_item"
+			android:id="@+id/tlDetails" android:padding="10sp">
+			<!--TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:textColor="#000"
+				android:text="Label" android:textStyle="bold"></TextView>
+			<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:textColor="#666"
+				android:text="Details details details details details details details details details details details details details details details details details"
+				android:layout_marginBottom="10sp"
+				android:singleLine="false"></TextView-->
+		</TableLayout>
+	</LinearLayout>
+</ScrollView>
