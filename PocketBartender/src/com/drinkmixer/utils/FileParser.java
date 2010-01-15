@@ -31,6 +31,8 @@ public class FileParser {
 	public static final int GLASSES=2;
 	public static final int TERMINOLOGY=3;
 	public static final String BE_A_BARTENDER="learn";
+	public static final String BE_A_BARTENDER_DETAILS="learndetails";
+	
 	
 	
 	public static void loadBarStock(InputStream in)
