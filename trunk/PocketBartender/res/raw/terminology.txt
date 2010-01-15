@@ -44,5 +44,3 @@ Toddy|A sweetened drink of liquor and hot water, often with spices and served in
 Tot|A small amount of liquor.
 Virgin|A non-alcoholic drink.
 Well Drink|A liquor and mixer, of which neither are defined brands. (ie. Gin and Tonic, Rum and Coke)
-
-

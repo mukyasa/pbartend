@@ -2,8 +2,7 @@ Blending|An electric blender is needed for recipes containing fruit or other ing
 Building|When building a cocktail, the ingredients are poured into the glass in which the cocktail will be served. Usually, the ingredients are floated on top of each other, but occasionally, a swizzle stick is put in the glass, allowing the ingredients to be mixed.
 Blend|Mix with blender using liquids first ice last. Always use a high end commercial blender for a consistent smooth texture.
 Build|combine the ingredients directly into the glass with or without ice.
-Chilling|Chilling is a procedure, which consists of cooling the glass with ice and water prior to pouring the drink. Carbonated soda speeds up the process due to the sodium content.
-Do not throw ice and water back into the ice bin, but rather into the dump sink.
+Chilling|Chilling is a procedure, which consists of cooling the glass with ice and water prior to pouring the drink. Carbonated soda speeds up the process due to the sodium content. Do not throw ice and water back into the ice bin, but rather into the dump sink.
 Coating|The coating technique consists of rinsing a glass with a small amount of liquid using a clockwise movement until the glass is coated evenly and thoroughly. The excess liquid is removed by holding the glass upside down until the glass is empty. This is a common practice for drinks such as Pink Gin and Sazerac. In some circumstances, recipes may call for "coated with chocolate syrup" too.
 Combine|Pour all ingredients in order directly into glassware. Ice is usually not required. 
 Dust|Garnishing by sprinkling ground nutmeg, grated cinnamon stick, or chocolate powder on top of a drink.
