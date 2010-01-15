@@ -36,6 +36,7 @@ Shrub|Spirits, fruit juices, and sugar, aged in a sealed container such as a cas
 Sling|A tall drink made with either brandy, whiskey or gin, with lemon juice, sugar and soda water. It is served both hot and cold.
 Smash|A short julep made of liquor, sugar, and mint, served in a small glass.
 Sour|A short drink consisting of liquor, lemon/lime juice and sugar.
+Straight up|Strain a pre-chilled beverage over ice into a glass without ice.
 Supercall|Also known as top shelf or super premium. The high octane, often higher proof alcohols, or super-aged or flavored versions.
 Swizzle|A tall, traditionally rum-based cocktail filled with cracked ice. A stirring rod or swizzle stick is quickly rotated between the palm of the hands to form frost on the glass.
 Syllabub|A beverage made from a mixture of sweetened milk/cream, wine and spices.
@@ -43,5 +44,5 @@ Toddy|A sweetened drink of liquor and hot water, often with spices and served in
 Tot|A small amount of liquor.
 Virgin|A non-alcoholic drink.
 Well Drink|A liquor and mixer, of which neither are defined brands. (ie. Gin and Tonic, Rum and Coke)
-Straight up|Strain a pre-chilled beverage over ice into a glass without ice.
+
 
