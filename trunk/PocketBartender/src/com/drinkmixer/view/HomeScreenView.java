@@ -38,7 +38,6 @@ import com.drinkmixer.utils.Constants;
 public class HomeScreenView extends Activity implements OnClickListener,OnTouchListener,Runnable {
 
 	/** Called when the activity is first created. */
-	private Intent intent;
 	private Button btnAll, btnCat, btnIng, btnFav; 
 	private ImageView info;
 	private MixerDbHelper myDatabaseAdapter;
@@ -50,6 +49,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 	private final int MENU_CREATE=0;
 	private final int MENU_MOVE=1;
 	private final int DIALOG_CHANGE_LOC=2;
+	private final int MENU_LESSONS =3;
 	private Thread thread;
 	private File dbfile;
 	private File dbfilesd;
@@ -111,6 +111,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, MENU_CREATE, 0, "Create New").setIcon(android.R.drawable.ic_menu_add);
 		menu.add(0, MENU_MOVE, 0, "Move Database").setIcon(android.R.drawable.ic_menu_share);
+		menu.add(0, MENU_LESSONS, 0, "Learn Bartending").setIcon(android.R.drawable.ic_menu_help);
 	    return true;
 	}
 
@@ -121,8 +122,10 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 			 case MENU_CREATE:
 				 	NewDrinkDomain.getInstance().clearDomain();
 					ScreenType.getInstance().screenType= -1;
-			    	Intent intent = new Intent(this, CreateUpdateView.class);
-					startActivity(intent);
+					startActivity(new Intent(this, CreateUpdateView.class));
+			    	return true;
+			 case MENU_LESSONS:
+					startActivity(new Intent(this, BartenderKnowledgeActivity.class));
 			    	return true;
 			 case MENU_MOVE:
 				 thread = new Thread(this);

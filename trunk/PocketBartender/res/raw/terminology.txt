@@ -1,0 +1,45 @@
+Box|Pour into and out of a shaker, usually only once. Gives the drink a quick mixing without shaking.
+Call Drink|A liquor and mixer, of which the liquor is a defined brand. (ie. Tanqueray and Tonic, Bacardi and Coke)
+Cobbler|A tall drink of any liquor served in a collins or highball glass with shaved or crushed ice and garnished with fresh fruit and mint sprigs.
+Chaser|A mixer that is consumed immediately after a straight shot of liquor to create a different taste.
+Cocktail|Any of various alcoholic beverages consisting usually of brandy, whiskey, vodka, or gin combined with fruit juices or other liquors and often served chilled.
+Collins|A drink akin to a sour which is served in a tall glass with soda water or seltzer water.
+Cooler|A drink consisting of ginger ale, soda water, and a fresh spiral or twist of citrus fruit rind, served in a collins or highball glass.
+Crusta|A sour-type drink served in a glass that is completely lined with an orange or lemon peel cut in a continuous strip.
+Cup|A punch-type drink that made up in quantities of cups or glasses in preference to a punch bowl.
+Daisy|An oversize drink of the sour type, normally made with rum or gin. It is served over crushed ice with a straw, and sweetened with a fruit syrup.
+Lace|Normally applies to the last ingredient in a recipe, meaning to pour onto the top of the drink.
+Eggnog|A traditional holiday drink containing a combination of eggs beaten with cream or milk, sugar, and a liquor such as brandy, rum, or bourbon.
+Fix|A sour-type drink similar to the daisy, made with crushed ice in a large goblet.
+Fizz|An effervescent beverage. (ie. that which is carbonated or which emits small bubbles.)
+Flip|A chilled, creamy drink made of eggs, sugar, and a wine or spirit. Brandy and sherry flips are two of the better known kinds.
+Frappe|A partially frozen, often fruity drink. It is usually a mixture of ingredients served over a mound of crushed ice.
+Grog|A rum-based beverage with water, fruit juice and sugar, commonly served in a large mug.
+Highball|Any spirit served with ice and soda water in a medium to tall glass (often a highball glass).
+Julep|A drink made of bourbon, mint, sugar and crushed ice.
+Lowball|A short drink made of spirits served with ice, water or soda in a small glass.
+Mist|A liquor served over a glass filled with crushed ice, often a way of serving liqueur as an after dinner drink.
+Mulls|A sweetened and spiced heated liquor, wine or beer, served as a hot punch.
+Neat|The consumption of a spirit as a straight, unaccompanied shot.
+Negus|A punch-like combination containing a wine, such as port, heated with spices and sweetened.
+Nip|A quarter of a bottle.
+Nightcap|A wine or liquor taken before bedtime.
+On The Rocks|A wine or liquor poured over ice cubes.
+Pick-Me-Up|A drink designed to relieve the effects of overindulgence in alcohol.
+Posset|An old british drink from which the eggnog was derived. It consists of a mixture of heated ale or wine curdled with milk, eggs, and spices.
+Puff|A traditional afternoon drink made of equal parts spirit and milk, topped with club soda and served over ice.
+Punch|A party-size beverage consisting of fruit, fruit juices, flavorings and sweeteners, soft drinks, and a wine or liquor base.
+Rickey|A drink made a liquor, usually gin, a half lime and soda water. It is sometimes sweetened, and often served with ice in a rickey glass.
+Sangaree|A tall chilled and sweetened wine/liquor garnished with nutmeg.
+Shooter|A straight shot of whiskey or other kind of spirit taken neat.
+Shrub|Spirits, fruit juices, and sugar, aged in a sealed container such as a cask or crock, then usually bottled.
+Sling|A tall drink made with either brandy, whiskey or gin, with lemon juice, sugar and soda water. It is served both hot and cold.
+Smash|A short julep made of liquor, sugar, and mint, served in a small glass.
+Sour|A short drink consisting of liquor, lemon/lime juice and sugar.
+Supercall|Also known as top shelf or super premium. The high octane, often higher proof alcohols, or super-aged or flavored versions.
+Swizzle|A tall, traditionally rum-based cocktail filled with cracked ice. A stirring rod or swizzle stick is quickly rotated between the palm of the hands to form frost on the glass.
+Syllabub|A beverage made from a mixture of sweetened milk/cream, wine and spices.
+Toddy|A sweetened drink of liquor and hot water, often with spices and served in a tall glass.
+Tot|A small amount of liquor.
+Virgin|A non-alcoholic drink.
+Well Drink|A liquor and mixer, of which neither are defined brands. (ie. Gin and Tonic, Rum and Coke)
