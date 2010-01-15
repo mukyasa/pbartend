@@ -17,7 +17,9 @@ import java.io.Reader;
 import java.util.StringTokenizer;
 
 import android.database.SQLException;
+import android.widget.ImageView;
 
+import com.drinkmixer.R;
 import com.drinkmixer.domain.LearnBartender;
 
 /**
@@ -35,6 +37,59 @@ public class FileParser {
 	
 	
 	
+	public static final String[] glasses= {"champagne","cocktail","highball","hurricane","irish coffee",
+		"pint","margarita","mug","parfait","pilsner","pousse cafe","punch","rocks","shot","snifter","sour",
+		"white wine","red wine","old-fashioned","cordial","collins"};
+		
+		public static void getGlassImage(ImageView imgGlassType,String glassName)
+		{
+			//set glass image
+			if(glasses[0].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.champ);
+			else if(glasses[1].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.cocktail);
+			else if(glasses[2].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.highball);
+			else if(glasses[3].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.hurricane);
+			else if(glasses[4].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.irish);
+			else if(glasses[5].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.pint);
+			else if(glasses[6].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.margarita);
+			else if(glasses[7].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.mug);
+			else if(glasses[8].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.parfait);
+			else if(glasses[9].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.pilsner);
+			else if(glasses[10].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.pousse_cafe);
+			else if(glasses[11].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.punch);
+			else if(glasses[12].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.rocks);
+			else if(glasses[13].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.shot);
+			else if(glasses[14].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.snifter);
+			else if(glasses[15].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.sour);
+			else if(glasses[16].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.whitewine);
+			else if(glasses[17].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.redwine);
+			
+			else if(glasses[18].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.old_fashion);
+			else if(glasses[19].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.cordial);
+			else if(glasses[20].equalsIgnoreCase(glassName))
+				imgGlassType.setBackgroundResource(R.drawable.collins);
+			
+		}
+		
 	public static void loadBarStock(InputStream in)
 	{
 		 try {

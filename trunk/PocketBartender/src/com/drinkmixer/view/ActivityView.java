@@ -14,6 +14,7 @@ import com.drinkmixer.dao.DetailDAO;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.DetailsDomain;
 import com.drinkmixer.domain.NewDrinkDomain;
+import com.drinkmixer.utils.FileParser;
 
 public class ActivityView extends Activity {
 	
@@ -32,8 +33,6 @@ public class ActivityView extends Activity {
 	private static final int MENU_HOME=2;
 	private static final int MENU_MODIFY=3;
 	
-	public static final String[] glasses= {"champagne","cocktail","highball","hurricane","irish coffee",
-	"pint","margarita","mug","parfait","pilsner","pousse cafe","punch","rocks","shot","snifter","sour","white wine","red wine"};
 	
 	/**
 	 * sets shared values to domain object
@@ -52,43 +51,7 @@ public class ActivityView extends Activity {
 		else
 			params.height=36;
 		
-		//set glass image
-		if(glasses[0].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.champ);
-		else if(glasses[1].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.cocktail);
-		else if(glasses[2].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.highball);
-		else if(glasses[3].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.hurricane);
-		else if(glasses[4].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.irish);
-		else if(glasses[5].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.pint);
-		else if(glasses[6].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.margarita);
-		else if(glasses[7].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.mug);
-		else if(glasses[8].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.parfait);
-		else if(glasses[9].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.pilsner);
-		else if(glasses[10].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.pousse_cafe);
-		else if(glasses[11].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.punch);
-		else if(glasses[12].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.rocks);
-		else if(glasses[13].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.shot);
-		else if(glasses[14].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.snifter);
-		else if(glasses[15].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.sour);
-		else if(glasses[16].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.whitewine);
-		else if(glasses[17].equalsIgnoreCase(drinkdetail.glass))
-			imgGlassType.setBackgroundResource(R.drawable.redwine);
+		FileParser.getGlassImage(imgGlassType, drinkdetail.glass);
 		
 	}
 	
