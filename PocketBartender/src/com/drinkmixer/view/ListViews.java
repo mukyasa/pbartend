@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
-import android.view.KeyEvent;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,7 +21,7 @@ import com.drinkmixer.domain.DetailsDomain;
 import com.drinkmixer.domain.ScreenType;
 import com.drinkmixer.utils.Constants;
 
-public abstract class ListViews extends ListActivity{
+public abstract class ListViews extends ListActivity implements TextWatcher{
 	
 	protected static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
 	protected static final int INTENT_NEXT_SCREEN = 0;
@@ -81,7 +81,7 @@ public abstract class ListViews extends ListActivity{
 	protected void setListenter()
 	{
 		searchbox = (EditText)findViewById(R.id.etSearch);
-		searchbox.setOnKeyListener(edSearchBoxListener);
+		searchbox.addTextChangedListener(this);
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -96,65 +96,61 @@ public abstract class ListViews extends ListActivity{
 	    	return true;
 	}
 	
-	/**
-	 * capture key up and filter list
-	 */
-	private EditText.OnKeyListener edSearchBoxListener =
-
-		new EditText.OnKeyListener() {
-		
-			public boolean onKey(View v, int keyCode, KeyEvent event) {
-				
-				
-				try {
-	                if((event.getAction() == KeyEvent.ACTION_UP  || 
-	                		event.getAction() == KeyEvent.KEYCODE_ENTER) 
-	                		&& (event.getAction() != KeyEvent.KEYCODE_SOFT_LEFT || event.getAction() != KeyEvent.KEYCODE_SOFT_RIGHT)) //dont call on back button
-	                {
-	                	int row_item =R.layout.item_row;
-	                	Editable et = searchbox.getText(); //searchbox text
-	                	Cursor recordscCursor=null;
-	                	ListActivity laType = getCurrentListActivity();
-	                	String[] from = new String[] { DataDAO.COL_NAME };
-	                	
-	                	if(laType instanceof FavoriteListView)//filter FAVORITES
-	                	{
-	                		row_item = R.layout.fav_item_row;
-	                		recordscCursor = ((FavoriteListView) laType).dataDAO.retrieveAllFilteredFavorites(et.toString().trim());
-	                	}
-	                	else if(laType instanceof DrinkListView)//filter ALL DRINKS
-	                	{
-	                		if(ScreenType.getInstance().screenType == ScreenType.SCREEN_TYPE_CAT)
-	                			recordscCursor = ((DrinkListView) laType).dataDAO.retrieveAllFilteredDrinksByTypes(et.toString().trim(),Constants.selectedCat);
-	                		else
-	                			recordscCursor = ((DrinkListView) laType).dataDAO.retrieveAllFilteredDrinks(et.toString().trim());
-	                	}
-	                	else if(laType instanceof CategoryListView)//filter CATEGORIES
-	                		recordscCursor = ((CategoryListView) laType).dataDAO.retrieveAllFilteredDrinktypes(et.toString().trim());
-	                	else if(laType instanceof IngredientsListView)
-	                	{
-	                		from = new String[] { DataDAO.COL_CAT_NAME };
-	                		recordscCursor = ((IngredientsListView) laType).dataDAO.retrieveAllFilteredIngredients(ScreenType.getInstance().type, et.toString().trim());
-	                	}
-	                	
-	                	startManagingCursor(recordscCursor);
-	                	int[] to = new int[] { R.id.tfName};
-	                	SimpleCursorAdapter records;
-	                	if(laType instanceof IngredientsListView || laType instanceof CategoryListView || laType instanceof FavoriteListView)
-	                		records = new SimpleCursorAdapter(getCurrentListActivity(),	row_item, recordscCursor, from, to);
-	                	else
-	                		records = new ImageAndTextAdapter(getCurrentListActivity(),	row_item, recordscCursor, from, to);
-	                	
-	                	setListAdapter(records);
-	                	
-	                }
-                } catch (Exception e) {
-                	//Log.v("", e.getMessage());
-                }				
-				
-				return false;
-			}
-
-	};
+	/* (non-Javadoc)
+     * @see android.text.TextWatcher#afterTextChanged(android.text.Editable)
+     */
+    public void afterTextChanged(Editable s) {
+        // TODO Auto-generated method stub
+        
+    }
+	/* (non-Javadoc)
+     * @see android.text.TextWatcher#beforeTextChanged(java.lang.CharSequence, int, int, int)
+     */
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        // TODO Auto-generated method stub
+        
+    }
+	/* (non-Javadoc)
+     * @see android.text.TextWatcher#onTextChanged(java.lang.CharSequence, int, int, int)
+     */
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+    	
+    	int row_item =R.layout.item_row;
+    	Editable et = searchbox.getText(); //searchbox text
+    	Cursor recordscCursor=null;
+    	ListActivity laType = getCurrentListActivity();
+    	String[] from = new String[] { DataDAO.COL_NAME };
+    	
+    	if(laType instanceof FavoriteListView)//filter FAVORITES
+    	{
+    		row_item = R.layout.fav_item_row;
+    		recordscCursor = ((FavoriteListView) laType).dataDAO.retrieveAllFilteredFavorites(et.toString().trim());
+    	}
+    	else if(laType instanceof DrinkListView)//filter ALL DRINKS
+    	{
+    		if(ScreenType.getInstance().screenType == ScreenType.SCREEN_TYPE_CAT)
+    			recordscCursor = ((DrinkListView) laType).dataDAO.retrieveAllFilteredDrinksByTypes(et.toString().trim(),Constants.selectedCat);
+    		else
+    			recordscCursor = ((DrinkListView) laType).dataDAO.retrieveAllFilteredDrinks(et.toString().trim());
+    	}
+    	else if(laType instanceof CategoryListView)//filter CATEGORIES
+    		recordscCursor = ((CategoryListView) laType).dataDAO.retrieveAllFilteredDrinktypes(et.toString().trim());
+    	else if(laType instanceof IngredientsListView)
+    	{
+    		from = new String[] { DataDAO.COL_CAT_NAME };
+    		recordscCursor = ((IngredientsListView) laType).dataDAO.retrieveAllFilteredIngredients(ScreenType.getInstance().type, et.toString().trim());
+    	}
+    	
+    	startManagingCursor(recordscCursor);
+    	int[] to = new int[] { R.id.tfName};
+    	SimpleCursorAdapter records;
+    	if(laType instanceof IngredientsListView || laType instanceof CategoryListView || laType instanceof FavoriteListView)
+    		records = new SimpleCursorAdapter(getCurrentListActivity(),	row_item, recordscCursor, from, to);
+    	else
+    		records = new ImageAndTextAdapter(getCurrentListActivity(),	row_item, recordscCursor, from, to);
+    	
+    	setListAdapter(records);
+    }
+	
 
 }
