@@ -18,11 +18,10 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.view.KeyEvent;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnKeyListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -38,7 +37,7 @@ import com.drinkmixer.utils.FileParser;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class KnowledgeListActivity extends ListActivity implements OnKeyListener {
+public class KnowledgeListActivity extends ListActivity implements TextWatcher {
 	
 	private boolean isGlasses = false;
 	protected EditText searchbox;
@@ -115,7 +114,7 @@ public class KnowledgeListActivity extends ListActivity implements OnKeyListener
 		Set<String> set = hashtable.keySet();
 		String[] titles = set.toArray(new String[set.size()]); 
 		searchbox = (EditText)findViewById(R.id.etSearch);
-		searchbox.setOnKeyListener(this);
+		searchbox.addTextChangedListener(this);
 		
 		if(isGlasses)
 			setListAdapter(new ImageAndTextListAdapter(this,R.layout.item_row,titles));
@@ -125,47 +124,47 @@ public class KnowledgeListActivity extends ListActivity implements OnKeyListener
 
 	}
 		/* (non-Javadoc)
-         * @see android.view.View.OnKeyListener#onKey(android.view.View, int, android.view.KeyEvent)
+         * @see android.text.TextWatcher#afterTextChanged(android.text.Editable)
          */
-        public boolean onKey(View v, int keyCode, KeyEvent event) {
+        public void afterTextChanged(Editable s) {
+	        // TODO Auto-generated method stub
+	        
+        }
+		/* (non-Javadoc)
+         * @see android.text.TextWatcher#beforeTextChanged(java.lang.CharSequence, int, int, int)
+         */
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+	        // TODO Auto-generated method stub
+	        
+        }
+		/* (non-Javadoc)
+         * @see android.text.TextWatcher#onTextChanged(java.lang.CharSequence, int, int, int)
+         */
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        	Editable et = searchbox.getText();
+        	String letters =et.toString().trim();
+    	
+        	LearnBartender lbartend = LearnBartender.getInstance();
+    		TreeMap<String, String> hashtable = lbartend.lesson;
+        	Set<String> set = hashtable.keySet();
+    		String[] titles = set.toArray(new String[set.size()]);
+    		ArrayList<String> newTitles = new ArrayList<String>();
+    		
+    		for (int i = 0; i < titles.length; i++) {
+    			String key = titles[i];
+    			
+    			if(key.toLowerCase().startsWith(letters.toLowerCase()))
+    				newTitles.add(key);
+			
+            }
+    		
+    		titles = newTitles.toArray(new String[newTitles.size()]);
         	
-        	try {
-                if((event.getAction() == KeyEvent.ACTION_UP  || 
-                		event.getAction() == KeyEvent.KEYCODE_ENTER) 
-                		&& (event.getAction() != KeyEvent.KEYCODE_SOFT_LEFT || 
-                				event.getAction() != KeyEvent.KEYCODE_SOFT_RIGHT)) //dont call on back button
-	                {
-	                	Editable et = searchbox.getText();
-	                	String letters =et.toString().trim();
-                	
-	                	LearnBartender lbartend = LearnBartender.getInstance();
-	            		TreeMap<String, String> hashtable = lbartend.lesson;
-	                	Set<String> set = hashtable.keySet();
-	            		String[] titles = set.toArray(new String[set.size()]);
-	            		ArrayList<String> newTitles = new ArrayList<String>();
-	            		
-	            		for (int i = 0; i < titles.length; i++) {
-	            			String key = titles[i];
-	            			
-	            			if(key.toLowerCase().startsWith(letters.toLowerCase()))
-	            				newTitles.add(key);
-            			
-                        }
-	            		
-	            		titles = newTitles.toArray(new String[newTitles.size()]);
-	                	
-	            		if(isGlasses)
-        					setListAdapter(new ImageAndTextListAdapter(this,R.layout.item_row,titles));
-        				else
-        					setListAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow,titles));
-        				getListView().setTextFilterEnabled(true);
-                	
-	                }
-                
-                }catch(Exception e){
-        	
-                }
-        	
-        	return false;
+    		if(isGlasses)
+				setListAdapter(new ImageAndTextListAdapter(this,R.layout.item_row,titles));
+			else
+				setListAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow,titles));
+			getListView().setTextFilterEnabled(true);
         }
 }
