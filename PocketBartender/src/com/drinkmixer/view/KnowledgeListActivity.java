@@ -10,16 +10,21 @@
 package com.drinkmixer.view;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeMap;
 
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnKeyListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -33,9 +38,10 @@ import com.drinkmixer.utils.FileParser;
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class KnowledgeListActivity extends ListActivity {
+public class KnowledgeListActivity extends ListActivity implements OnKeyListener {
 	
 	private boolean isGlasses = false;
+	protected EditText searchbox;
 	@Override
     public void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState);
@@ -108,6 +114,8 @@ public class KnowledgeListActivity extends ListActivity {
 		TreeMap<String, String> hashtable = lbartend.lesson;
 		Set<String> set = hashtable.keySet();
 		String[] titles = set.toArray(new String[set.size()]); 
+		searchbox = (EditText)findViewById(R.id.etSearch);
+		searchbox.setOnKeyListener(this);
 		
 		if(isGlasses)
 			setListAdapter(new ImageAndTextListAdapter(this,R.layout.item_row,titles));
@@ -116,4 +124,48 @@ public class KnowledgeListActivity extends ListActivity {
 		getListView().setTextFilterEnabled(true);
 
 	}
+		/* (non-Javadoc)
+         * @see android.view.View.OnKeyListener#onKey(android.view.View, int, android.view.KeyEvent)
+         */
+        public boolean onKey(View v, int keyCode, KeyEvent event) {
+        	
+        	try {
+                if((event.getAction() == KeyEvent.ACTION_UP  || 
+                		event.getAction() == KeyEvent.KEYCODE_ENTER) 
+                		&& (event.getAction() != KeyEvent.KEYCODE_SOFT_LEFT || 
+                				event.getAction() != KeyEvent.KEYCODE_SOFT_RIGHT)) //dont call on back button
+	                {
+	                	Editable et = searchbox.getText();
+	                	String letters =et.toString().trim();
+                	
+	                	LearnBartender lbartend = LearnBartender.getInstance();
+	            		TreeMap<String, String> hashtable = lbartend.lesson;
+	                	Set<String> set = hashtable.keySet();
+	            		String[] titles = set.toArray(new String[set.size()]);
+	            		ArrayList<String> newTitles = new ArrayList<String>();
+	            		
+	            		for (int i = 0; i < titles.length; i++) {
+	            			String key = titles[i];
+	            			
+	            			if(key.toLowerCase().startsWith(letters.toLowerCase()))
+	            				newTitles.add(key);
+            			
+                        }
+	            		
+	            		titles = newTitles.toArray(new String[newTitles.size()]);
+	                	
+	            		if(isGlasses)
+        					setListAdapter(new ImageAndTextListAdapter(this,R.layout.item_row,titles));
+        				else
+        					setListAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow,titles));
+        				getListView().setTextFilterEnabled(true);
+                	
+	                }
+                
+                }catch(Exception e){
+        	
+                }
+        	
+        	return false;
+        }
 }
