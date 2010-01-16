@@ -11,12 +11,16 @@ package com.drinkmixer.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.drinkmixer.R;
 import com.drinkmixer.domain.LearnBartender;
+import com.drinkmixer.domain.NewDrinkDomain;
+import com.drinkmixer.domain.ScreenType;
 import com.drinkmixer.utils.FileParser;
 
 /**
@@ -35,6 +39,24 @@ public class BartenderKnowledgeActivity extends BaseActivity implements OnClickL
 	        initialize();
 	 }
 	 
+	 public boolean onCreateOptionsMenu(Menu menu) {
+			menu.add(0, 0, 0, "Home").setIcon(R.drawable.home);
+		    return true;
+		}
+
+		/* Handles item selections */
+		public boolean onOptionsItemSelected(MenuItem item) {
+
+			 switch (item.getItemId()) {
+				 case 0:
+					 	NewDrinkDomain.getInstance().clearDomain();
+						ScreenType.getInstance().screenType= -1;
+						startActivity(new Intent(this, HomeScreenView.class));
+				    	return true;
+			 }
+			 return false;
+
+		}
 	 private void initialize(){
 		 
 		 btnTech = (Button)findViewById(R.id.btnTech);
