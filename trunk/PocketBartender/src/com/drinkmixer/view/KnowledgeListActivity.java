@@ -35,6 +35,7 @@ import com.drinkmixer.utils.FileParser;
  */
 public class KnowledgeListActivity extends ListActivity {
 	
+	private boolean isGlasses = false;
 	@Override
     public void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState);
@@ -51,8 +52,9 @@ public class KnowledgeListActivity extends ListActivity {
 	   		 in = getResources().openRawResource(R.raw.terminology);
 	   		 break;
 	        case FileParser.GLASSES: //glass info
-			 in = getResources().openRawResource(R.raw.glasses);
-			 break;
+	        	isGlasses=true;
+	        	in = getResources().openRawResource(R.raw.glasses);
+	        	break;
 	        case FileParser.BASIC_TEQ://techniques
 			 in = getResources().openRawResource(R.raw.basictechniques);
 			 break;
@@ -65,7 +67,6 @@ public class KnowledgeListActivity extends ListActivity {
 		 
 		 initialize();
 	}
-	
 	 public boolean onCreateOptionsMenu(Menu menu) {
 			menu.add(0, 0, 0, "Go Back").setIcon(android.R.drawable.ic_menu_directions);
 		    return true;
@@ -84,6 +85,7 @@ public class KnowledgeListActivity extends ListActivity {
 			 return false;
 
 		}
+	
 		
 		/* (non-Javadoc)
 		 * @see android.app.ListActivity#onListItemClick(android.widget.ListView, android.view.View, int, long)
@@ -105,9 +107,12 @@ public class KnowledgeListActivity extends ListActivity {
 		LearnBartender lbartend = LearnBartender.getInstance();
 		TreeMap<String, String> hashtable = lbartend.lesson;
 		Set<String> set = hashtable.keySet();
-		String[] titles = set.toArray(new String[set.size()]);
+		String[] titles = set.toArray(new String[set.size()]); 
 		
-		setListAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow,titles));
+		if(isGlasses)
+			setListAdapter(new ImageAndTextListAdapter(this,R.layout.item_row,titles));
+		else
+			setListAdapter(new ArrayAdapter<String>(this,R.layout.textviewrow,titles));
 		getListView().setTextFilterEnabled(true);
 
 	}
