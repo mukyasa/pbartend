@@ -28,6 +28,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 	
 	private CharSequence text;
 	private TextView tvWalletTitle;
+	TableLayout detailLayout_wrapper;
+	TableLayout detailLayout;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -80,8 +82,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 		NewPassword np = NewPassword.getInstance();
 		np.name = text.toString();
 		
-		TableLayout detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
-		TableLayout detailLayout = (TableLayout)findViewById(R.id.tlDetails);
+		detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
+		detailLayout = (TableLayout)findViewById(R.id.tlDetails);
 		
 		//get template
 		Cursor cursor = passDao.getDetail(selectedRow);
@@ -271,17 +273,26 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 	    			bNext.setText(getString(R.string.commit));
 	    			TextView addmore = new TextView(this);
 	    			addmore.setText("Click to add more rows.");
-	    			addmore.setBackgroundResource(R.drawable.list_item);
+	    			//addmore.setBackgroundResource(R.drawable.list_item);
 	    			addmore.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.addmore), null,null,null);
-	    			addmore.setPadding(3, 3, 0, 3);
 	    			addmore.setGravity(Gravity.CENTER_VERTICAL);
-	    			LayoutParams params = new LayoutParams();
-	    			params.topMargin = 10;
-	    			params.width = LayoutParams.FILL_PARENT;
-	    			addmore.setLayoutParams(params);
 	    			
-	    			TableLayout detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
-	    			detailLayout_wrapper.addView(addmore);
+	    			TextView tvSubTitle = TempletUtil.getTextView(this,"");
+	    			
+	    			TableRow tr = new TableRow(this);
+	    			tr.addView(addmore);
+	    			tr.setBackgroundResource(R.drawable.item_spacer);
+	    			
+	    			tr.setGravity(Gravity.CENTER_VERTICAL);
+	    			tr.setPadding(3, 3, 0, 3);
+	    			LayoutParams params = new LayoutParams();
+	    			params.width = LayoutParams.FILL_PARENT;
+	    			tr.setLayoutParams(params);
+	    			
+	    			detailLayout = TempletUtil.getNewTableLayout(this);
+					detailLayout.addView(tr);
+					detailLayout_wrapper.addView(tvSubTitle);
+					detailLayout_wrapper.addView(detailLayout);
 	    	}
 	    	
 	    }	
