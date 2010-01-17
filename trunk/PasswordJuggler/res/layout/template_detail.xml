@@ -14,6 +14,7 @@
 				android:id="@+id/tvWalletTitle" android:text="The Title"
 				android:textColor="#000" android:textSize="18sp"
 				android:paddingLeft="10sp"></TextView>
+				<TextView android:textColor="#000" android:layout_marginTop="5sp" android:textSize="11sp" android:layout_marginLeft="5sp" android:text="Click row to copy or edit" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
 			<!--TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:text="Sub Title"
 				android:textStyle="bold" android:id="@+id/tvSubTitle1"
@@ -26,7 +27,7 @@
 			<TableLayout android:layout_height="wrap_content"
 				android:id="@+id/tlDetails" android:background="@drawable/list_item"
 				android:layout_width="fill_parent" android:paddingRight="1sp"
-				android:layout_marginTop="5sp" android:layout_marginBottom="10sp">
+				android:layout_marginTop="5sp" android:layout_marginBottom="10sp" android:paddingBottom="5sp">
 				<!--TableRow android:id="@+id/TableRow01"
 					android:layout_height="wrap_content" android:gravity="center_vertical"
 					android:layout_width="fill_parent" android:padding="3sp"

@@ -4,14 +4,17 @@ import java.util.Hashtable;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.ClipboardManager;
+import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.TableRow.LayoutParams;
 
 import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
@@ -21,7 +24,7 @@ import com.juggler.utils.Constants;
 import com.juggler.utils.Encrypt;
 import com.juggler.utils.TempletUtil;
 
-public class DetailsActivity extends BaseActivity {
+public class DetailsActivity extends BaseActivity implements OnTouchListener {
 	
 	private CharSequence text;
 	private TextView tvWalletTitle;
@@ -146,6 +149,7 @@ public class DetailsActivity extends BaseActivity {
 				
 				tr = TempletUtil.getRow(this,label,value,isFirst,elmId,section);
 				tr.setOnClickListener(this);
+				tr.setOnTouchListener(this);
 				
 				detailLayout.addView(tr);
 				isFirst=false;
@@ -247,14 +251,7 @@ public class DetailsActivity extends BaseActivity {
 	    		startActivity(new Intent(this,HomeView.class));
 		    }
 	    }
-	    else if(v instanceof TableRow)
-	    {
-	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
-	    	
-	    	ClipboardManager clip = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
-	    	clip.setText(value.getText().toString());
-	    	
-	    }
+	    
 	    /*else if(v instanceof TableRow)
 	    {
 	    	TextView label =(TextView)((TableRow)v).getChildAt(0);
@@ -270,8 +267,58 @@ public class DetailsActivity extends BaseActivity {
 	    }*/
 	    else if(v == bNext){
 	    	if(nextButtonText.equals(getString(R.string.edit)))
+	    	{
 	    			bNext.setText(getString(R.string.commit));
+	    			TextView addmore = new TextView(this);
+	    			addmore.setText("Click to add more rows.");
+	    			addmore.setBackgroundResource(R.drawable.list_item);
+	    			addmore.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.addmore), null,null,null);
+	    			addmore.setPadding(3, 3, 0, 3);
+	    			addmore.setGravity(Gravity.CENTER_VERTICAL);
+	    			LayoutParams params = new LayoutParams();
+	    			params.topMargin = 10;
+	    			params.width = LayoutParams.FILL_PARENT;
+	    			addmore.setLayoutParams(params);
+	    			
+	    			TableLayout detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
+	    			detailLayout_wrapper.addView(addmore);
+	    	}
 	    	
 	    }	
 	}
+
+	public boolean onTouch(View v, MotionEvent event) {
+		super.onTouch(v, event);
+		
+		String nextButtonText =bNext.getText().toString();
+		
+		if(!nextButtonText.equals(getString(R.string.commit)))
+	    {
+			if(v instanceof TableRow)
+		    {
+				TextView value =(TextView)((TableRow)v).getChildAt(1);
+				
+				((TableRow)v).setPadding(3, 3, 0, 3);
+				LayoutParams params = new LayoutParams();
+				params.width = LayoutParams.FILL_PARENT;
+				((TableRow)v).setLayoutParams(params);
+				
+				if(event.getAction() == MotionEvent.ACTION_DOWN)
+				{
+			    	ClipboardManager clip = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+			    	clip.setText(value.getText().toString());
+			    	
+					((TableRow)v).setBackgroundResource(R.drawable.toplines_clk);
+				}
+				else if(event.getAction() == MotionEvent.ACTION_UP)
+				{
+					((TableRow)v).setBackgroundResource(R.drawable.toplines);
+				}
+		    }
+	    }
+		
+		
+		return false;
+	}
+
 }
