@@ -78,13 +78,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 					}
 					if(label != null && value!=null)
 					{
-						int elmId=label.hashCode()+100;
-						//add new row
-						TableRow tr = TempletUtil.getRow(this,label,value,false,elmId,PasswordDetail.GENERIC);
-						tr.setOnClickListener(this);
-						tr.setOnTouchListener(this);
-						detailLayout = (TableLayout)findViewById(R.id.tlDetails);
-						detailLayout.addView(tr);
+						addNewRow(label,value);
 						
 						if(addmoreTR!=null)
 						{
@@ -327,9 +321,15 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 	/***
 	 * generic new row
 	 */
-	private void addNewRow(){
+	private void addNewRow(String label,String value){
 		
-		
+		int elmId=label.hashCode()+100;
+		//add new row
+		TableRow tr = TempletUtil.getRow(this,label,value,false,elmId,PasswordDetail.GENERIC);
+		tr.setOnClickListener(this);
+		tr.setOnTouchListener(this);
+		detailLayout = (TableLayout)findViewById(R.id.tlDetails);
+		detailLayout.addView(tr);
 	}
 	
 	/**
