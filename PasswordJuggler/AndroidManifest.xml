@@ -12,6 +12,7 @@
 		<activity android:name="LoginView" android:theme="@style/Theme.Translucent"></activity>
 		
 	<activity android:name="DetailsActivity"></activity>
+	<activity android:name="CreateNewRowActivity"></activity>
 	<activity android:name="WebViewActivity"></activity>
 <activity android:name="WalletCatListActivity"></activity>
 <activity android:name="WalletSubCatListActivity"></activity>
