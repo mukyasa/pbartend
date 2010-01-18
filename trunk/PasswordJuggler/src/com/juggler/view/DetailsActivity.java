@@ -28,8 +28,9 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 	
 	private CharSequence text;
 	private TextView tvWalletTitle;
-	TableLayout detailLayout_wrapper;
-	TableLayout detailLayout;
+	private TableLayout detailLayout_wrapper;
+	private TableLayout detailLayout;
+	private TableRow addmoreTR;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -170,10 +171,10 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 			//if not a note add new table
 			if(!isNote)
 			{
-				detailLayout = TempletUtil.getNewTableLayout(this);
+				TableLayout detailLayoutNotes = TempletUtil.getNewTableLayout(this);
 				detailLayout_wrapper.addView(tvSubTitle);
-				detailLayout.addView(tr);
-				detailLayout_wrapper.addView(detailLayout);
+				detailLayoutNotes.addView(tr);
+				detailLayout_wrapper.addView(detailLayoutNotes);
 			}
 			else
 				detailLayout.addView(tr); 
@@ -210,41 +211,47 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 		    }
 		    else if(v instanceof TableRow)
 		    {
-		    	
-		    	TextView label =(TextView)((TableRow)v).getChildAt(0);
-		    	TextView value =(TextView)((TableRow)v).getChildAt(1);
-		    	
-		    	//needed to determine the save button reaction
-		    	if(((TextView)label).getText().equals(getString(R.string.note)+":"))
-		    	{
-		    		intent = new Intent(this, CreateNoteActivity.class);
-		    		intent.putExtra(Constants.INTENT_EXTRA_NOTE,true);
-		    	}
-		    	
-		    	/*if the value has not been filled the next field 
-		    	will be the label otherwise make it the value*/
-		    	String theValue="";
-		    	if(value.getText().toString().equals(""))
-		    	{
-		    		theValue = label.getText().toString();
-		    		//get ride of the :
-		    		theValue = theValue.substring(0, theValue.length()-1);
-		    	}
+		    	if( v ==addmoreTR)
+			    {
+			    	
+			    }
 		    	else
-		    		theValue = value.getText().toString();
-		    	
-		    	String labelValue =label.getText().toString();
-		    	
-		    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
-		    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
-		    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
-		    	
-		    	//for notes and the key to the hashtable
-		    	NewPassword np = NewPassword.getInstance();
-		    	np.templateId = ((TextView)value).getId();
-		    	
-		    			
-		    	startActivity(intent);
+		    	{
+			    	TextView label =(TextView)((TableRow)v).getChildAt(0);
+			    	TextView value =(TextView)((TableRow)v).getChildAt(1);
+			    	
+			    	//needed to determine the save button reaction
+			    	if(((TextView)label).getText().equals(getString(R.string.note)+":"))
+			    	{
+			    		intent = new Intent(this, CreateNoteActivity.class);
+			    		intent.putExtra(Constants.INTENT_EXTRA_NOTE,true);
+			    	}
+			    	
+			    	/*if the value has not been filled the next field 
+			    	will be the label otherwise make it the value*/
+			    	String theValue="";
+			    	if(value.getText().toString().equals(""))
+			    	{
+			    		theValue = label.getText().toString();
+			    		//get ride of the :
+			    		theValue = theValue.substring(0, theValue.length()-1);
+			    	}
+			    	else
+			    		theValue = value.getText().toString();
+			    	
+			    	String labelValue =label.getText().toString();
+			    	
+			    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
+			    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
+			    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
+			    	
+			    	//for notes and the key to the hashtable
+			    	NewPassword np = NewPassword.getInstance();
+			    	np.templateId = ((TextView)value).getId();
+			    	
+			    			
+			    	startActivity(intent);
+		    	}
 		    	
 		    }
 		    else if(v == bNext)
@@ -270,29 +277,29 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 	    else if(v == bNext){
 	    	if(nextButtonText.equals(getString(R.string.edit)))
 	    	{
-	    			bNext.setText(getString(R.string.commit));
-	    			TextView addmore = new TextView(this);
-	    			addmore.setText("Click to add more rows.");
-	    			//addmore.setBackgroundResource(R.drawable.list_item);
-	    			addmore.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.addmore), null,null,null);
-	    			addmore.setGravity(Gravity.CENTER_VERTICAL);
-	    			
-	    			TextView tvSubTitle = TempletUtil.getTextView(this,"");
-	    			
-	    			TableRow tr = new TableRow(this);
-	    			tr.addView(addmore);
-	    			tr.setBackgroundResource(R.drawable.item_spacer);
-	    			
-	    			tr.setGravity(Gravity.CENTER_VERTICAL);
-	    			tr.setPadding(3, 3, 0, 3);
-	    			LayoutParams params = new LayoutParams();
-	    			params.width = LayoutParams.FILL_PARENT;
-	    			tr.setLayoutParams(params);
-	    			
-	    			detailLayout = TempletUtil.getNewTableLayout(this);
-					detailLayout.addView(tr);
-					detailLayout_wrapper.addView(tvSubTitle);
-					detailLayout_wrapper.addView(detailLayout);
+	    	
+	    		bNext.setText(getString(R.string.commit));
+	    		TextView addmore = new TextView(this);
+    			addmore.setText("Click to add more rows.");
+    			addmore.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.addmore), null,null,null);
+    			addmore.setGravity(Gravity.CENTER_VERTICAL);
+    			LayoutParams addmoreparams = new LayoutParams();
+    			addmoreparams.span=2;
+    			addmoreparams.column=0;
+    			addmoreparams.weight=2;
+    			addmore.setLayoutParams(addmoreparams);
+    			addmoreTR = new TableRow(this);
+    			addmoreTR.addView(addmore);
+    			addmoreTR.setBackgroundResource(R.drawable.toplines);
+    			addmoreTR.setGravity(Gravity.CENTER_VERTICAL);
+    			addmoreTR.setPadding(3, 3, 0, 3);
+    			LayoutParams params = new LayoutParams();
+    			params.width = LayoutParams.FILL_PARENT;
+    			addmoreTR.setLayoutParams(params);
+    			addmoreTR.setOnClickListener(this);
+    			
+				detailLayout.addView(addmoreTR);
+    			
 	    	}
 	    	
 	    }	
