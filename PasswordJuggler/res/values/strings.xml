@@ -36,6 +36,9 @@
 	  <string name="changepassword">Change password</string>
 	  <string name="autolock">Auto Lock</string>
 	  <string name="database">Reset database</string>
+	  <string name="newrow">New Row</string>
+	  <string name="label">New Label</string>
+	  <string name="value">New Value</string>
 	  
 	  <string name="newpassword">New Password</string>
 	  <string name="confirmnew">Confirm Password</string>

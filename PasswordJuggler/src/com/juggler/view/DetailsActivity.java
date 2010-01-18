@@ -1,10 +1,13 @@
 package com.juggler.view;
 
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Set;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.test.MoreAsserts;
 import android.text.ClipboardManager;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -31,6 +34,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 	private TableLayout detailLayout_wrapper;
 	private TableLayout detailLayout;
 	private TableRow addmoreTR;
+	private int ADDMOREID =15987422;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -53,9 +57,48 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 		if(nvpair != null)
 		{
 			String value = nvpair.get(np.templateId+"");
-			TextView selected = (TextView)findViewById(np.templateId);
-			if(selected != null && value != null)
-				selected.setText(value);
+			String label="";
+			
+			if(value!= null)
+			{
+				TextView selected = (TextView)findViewById(np.templateId);
+				if(selected != null && value != null)
+					selected.setText(value);
+			}
+			else
+			{
+				Set<String> set = nvpair.keySet();
+				if(set!=null)
+				{
+					Iterator<String> iter = set.iterator();
+					
+					while (iter.hasNext()) {
+						label = (String) iter.next();
+						value = nvpair.get(label);
+					}
+					if(label != null && value!=null)
+					{
+						int elmId=label.hashCode()+100;
+						//add new row
+						TableRow tr = TempletUtil.getRow(this,label,value,false,elmId,PasswordDetail.GENERIC);
+						tr.setOnClickListener(this);
+						tr.setOnTouchListener(this);
+						detailLayout = (TableLayout)findViewById(R.id.tlDetails);
+						detailLayout.addView(tr);
+						
+						if(addmoreTR!=null)
+						{
+							TableRow trnew = (TableRow)findViewById(ADDMOREID);
+							//re-add new row button
+							detailLayout.removeView(trnew);
+							addNewRowButton();
+							Hashtable<String, String> tmphash = np.getTemplateSaver();
+							tmphash.clear();
+						}
+					}
+				}
+				
+			}
 		}
 
 		super.onResume();
@@ -213,7 +256,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 		    {
 		    	if( v ==addmoreTR)
 			    {
-			    	
+			    	//when clicking on the addnew row
+		    		startActivity(new Intent(this,CreateNewRowActivity.class));
 			    }
 		    	else
 		    	{
@@ -276,33 +320,46 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 	    }*/
 	    else if(v == bNext){
 	    	if(nextButtonText.equals(getString(R.string.edit)))
-	    	{
-	    	
-	    		bNext.setText(getString(R.string.commit));
-	    		TextView addmore = new TextView(this);
-    			addmore.setText("Click to add more rows.");
-    			addmore.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.addmore), null,null,null);
-    			addmore.setGravity(Gravity.CENTER_VERTICAL);
-    			LayoutParams addmoreparams = new LayoutParams();
-    			addmoreparams.span=2;
-    			addmoreparams.column=0;
-    			addmoreparams.weight=2;
-    			addmore.setLayoutParams(addmoreparams);
-    			addmoreTR = new TableRow(this);
-    			addmoreTR.addView(addmore);
-    			addmoreTR.setBackgroundResource(R.drawable.toplines);
-    			addmoreTR.setGravity(Gravity.CENTER_VERTICAL);
-    			addmoreTR.setPadding(3, 3, 0, 3);
-    			LayoutParams params = new LayoutParams();
-    			params.width = LayoutParams.FILL_PARENT;
-    			addmoreTR.setLayoutParams(params);
-    			addmoreTR.setOnClickListener(this);
-    			
-				detailLayout.addView(addmoreTR);
-    			
-	    	}
-	    	
+	    		addNewRowButton();	    	
 	    }	
+	}
+	
+	/***
+	 * generic new row
+	 */
+	private void addNewRow(){
+		
+		
+	}
+	
+	/**
+	 * adds a new row button to add new rows
+	 */
+	private void addNewRowButton()
+	{
+		bNext.setText(getString(R.string.commit));
+		TextView addmore = new TextView(this);
+		
+		addmore.setText("Click to add more rows.");
+		addmore.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.addmore), null,null,null);
+		addmore.setGravity(Gravity.CENTER_VERTICAL);
+		LayoutParams addmoreparams = new LayoutParams();
+		addmoreparams.span=2;
+		addmoreparams.column=0;
+		addmoreparams.weight=2;
+		addmore.setLayoutParams(addmoreparams);
+		addmoreTR = new TableRow(this);
+		addmoreTR.setId(ADDMOREID);
+		addmoreTR.addView(addmore);
+		addmoreTR.setBackgroundResource(R.drawable.toplines);
+		addmoreTR.setGravity(Gravity.CENTER_VERTICAL);
+		addmoreTR.setPadding(3, 3, 0, 3);
+		LayoutParams params = new LayoutParams();
+		params.width = LayoutParams.FILL_PARENT;
+		addmoreTR.setLayoutParams(params);
+		addmoreTR.setOnClickListener(this);
+		
+		detailLayout.addView(addmoreTR);
 	}
 
 	public boolean onTouch(View v, MotionEvent event) {
