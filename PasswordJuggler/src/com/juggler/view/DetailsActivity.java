@@ -6,8 +6,10 @@ import java.util.Set;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.ClipboardManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -37,6 +39,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	private int ADDMORE_ID =15987422;
 	private int NOTE_ROW_ID=1234556789;
 	private boolean wasDelete=false;
+	private Drawable bgHolder=null;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -253,7 +256,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		    }
 		    else if(v instanceof TableRow)
 		    {
-		    	if( v ==addmoreTR)
+		    	if( ((TableRow)v).getId() == ADDMORE_ID)
 			    {
 			    	//when clicking on the addnew row
 		    		startActivity(new Intent(this,CreateNewRowActivity.class));
@@ -387,7 +390,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				TableRow trAdd = new TableRow(this);
 				trAdd.setId(ADDMORE_ID);
 				trAdd.addView(addmore);
-				trAdd.setBackgroundResource(R.drawable.toplines);
+				trAdd.setBackgroundResource(R.drawable.botlines);
 				trAdd.setGravity(Gravity.CENTER_VERTICAL);
 				trAdd.setPadding(3, 3, 0, 3);
 				LayoutParams params = new LayoutParams();
@@ -396,7 +399,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				trAdd.setOnClickListener(this);
 				
 				if(tblDetails.getChildAt(0).getId() != NOTE_ROW_ID)
-					tblDetails.addView(trAdd);
+					tblDetails.addView(trAdd, 0);
 			}
 		}
 	}
@@ -421,12 +424,12 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				{
 			    	ClipboardManager clip = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
 			    	clip.setText(value.getText().toString());
-			    	
+			    	bgHolder=((TableRow)v).getBackground();
 					((TableRow)v).setBackgroundResource(R.drawable.toplines_clk);
 				}
 				else if(event.getAction() == MotionEvent.ACTION_UP)
 				{
-					((TableRow)v).setBackgroundResource(R.drawable.toplines);
+					((TableRow)v).setBackgroundDrawable(bgHolder);
 				}
 		    }
 	    }
