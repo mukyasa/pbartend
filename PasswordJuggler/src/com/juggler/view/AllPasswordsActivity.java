@@ -16,6 +16,8 @@ import android.view.View.OnClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.juggler.dao.QuiresDAO;
+import com.juggler.domain.NewPassword;
 import com.juggler.utils.Constants;
 import com.juggler.utils.LoginAuthHandler;
 
@@ -62,6 +64,8 @@ public class AllPasswordsActivity extends AllViewActivity implements OnClickList
 		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
 	 	lah.setLoginRequired(false);
 	    super.onListItemClick(l, v, position, id);
+	    NewPassword np = NewPassword.getInstance();
+	    np.entry_type = QuiresDAO.ENTRY_TYPE_GEN_PASSWORD;
 	    
 	    Intent intent = new Intent(this, DetailsActivity.class);
 	    intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,((TextView)v).getText());
