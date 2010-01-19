@@ -24,6 +24,8 @@
 	  <string name="commit">Done</string>
 	  <string name="next">Next</string>
 	  <string name="username">Username</string>
+	  <string name="viewDirections">Click row to copy value.</string>
+	  <string name="editDirections">Click row to edit, hold to delete.</string>
 	  
 	  <string name="usage">What are you using this for?</string>
 	  <string name="note">Notes</string>
