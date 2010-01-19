@@ -374,7 +374,7 @@ public class PasswordDAO extends QuiresDAO {
 	 * dmason
 	 *
 	 */
-	public void updateLogin(){
+	public void updateEntry(){
 		
 		NewPassword np = NewPassword.getInstance();
 		ContentValues note = new ContentValues();
@@ -387,7 +387,8 @@ public class PasswordDAO extends QuiresDAO {
 		password.put(COL_ID, np.passwordId);
 		password.put(COL_CAT_ID, np.catId);
 		password.put(COL_SUB_CAT_ID, np.subCatId);
-		password.put(COL_ENTRY_TYPE, ENTRY_TYPE_LOGINS);
+		
+		password.put(COL_ENTRY_TYPE, np.entry_type);
 		
 		String passwordId = updatePassword(password,np.passwordId+"");
 		
