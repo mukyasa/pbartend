@@ -18,8 +18,7 @@
 					<TextView android:id="@+id/TextView01"
 						android:layout_height="wrap_content" android:textColor="#000"
 						android:gravity="center_vertical" android:padding="4sp"
-						android:layout_width="fill_parent" android:text="@string/login"
-						android:drawableLeft="@drawable/logins_lg"></TextView>
+						android:layout_width="fill_parent" android:text="@string/login" android:drawableLeft="@drawable/logins_add_lg"></TextView>
 				</TableRow>
 				<TableRow android:layout_width="wrap_content"
 					android:layout_height="wrap_content" android:gravity="center_vertical"
@@ -28,8 +27,7 @@
 					<TextView android:id="@+id/TextView01"
 						android:layout_height="wrap_content" android:textColor="#000"
 						android:gravity="center_vertical" android:padding="4sp"
-						android:layout_width="fill_parent" android:drawableLeft="@drawable/wallet_lg"
-						android:text="@string/wallet"></TextView>
+						android:layout_width="fill_parent" android:text="@string/wallet" android:drawableLeft="@drawable/wallet_add_lg"></TextView>
 				</TableRow>
 				<TableRow android:layout_width="wrap_content"
 					android:layout_height="wrap_content" android:gravity="center_vertical"
@@ -38,8 +36,7 @@
 					<TextView android:id="@+id/TextView01"
 						android:layout_height="wrap_content" android:textColor="#000"
 						android:gravity="center_vertical" android:padding="4sp"
-						android:layout_width="fill_parent" android:text="@string/notes"
-						android:drawableLeft="@drawable/note_lg"></TextView>
+						android:layout_width="fill_parent" android:text="@string/notes" android:drawableLeft="@drawable/note_add_lg"></TextView>
 				</TableRow>
 				<TableRow android:layout_width="wrap_content"
 					android:layout_height="wrap_content" android:gravity="center_vertical"
@@ -48,8 +45,7 @@
 					<TextView android:id="@+id/TextView01"
 						android:layout_height="wrap_content" android:textColor="#000"
 						android:gravity="center_vertical" android:padding="4sp"
-						android:layout_width="fill_parent" android:text="@string/genpasswords"
-						android:drawableLeft="@drawable/passwords_lg"></TextView>
+						android:layout_width="fill_parent" android:text="@string/genpasswords" android:drawableLeft="@drawable/passwords_add_lg"></TextView>
 				</TableRow>
 			</TableLayout>
 		</ScrollView>
