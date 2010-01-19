@@ -9,7 +9,6 @@ import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.ClipboardManager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -122,10 +121,20 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		tvTitle.setText("");
 		
 		tvWalletTitle = (TextView)findViewById(R.id.tvWalletTitle);
+		
+		NewPassword np = NewPassword.getInstance();
+		if(np.entry_type == QuiresDAO.ENTRY_TYPE_GEN_PASSWORD)
+			tvWalletTitle.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.passwords_lg), null,null,null);
+		else if(np.entry_type == QuiresDAO.ENTRY_TYPE_LOGINS)
+			tvWalletTitle.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.logins_lg), null,null,null);
+		else if(np.entry_type == QuiresDAO.ENTRY_TYPE_NOTES)
+			tvWalletTitle.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.note_lg), null,null,null);
+		else if(np.entry_type == QuiresDAO.ENTRY_TYPE_WALLET)
+			tvWalletTitle.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.wallet_lg), null,null,null);
+		
 		tvWalletTitle.setText(text);
 		tvWalletTitle.setId(R.string.wallet);
 		tvWalletTitle.setOnClickListener(this);
-		NewPassword np = NewPassword.getInstance();
 		np.name = text.toString();
 		
 		detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
