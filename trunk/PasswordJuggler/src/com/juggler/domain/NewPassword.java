@@ -29,6 +29,8 @@ public class NewPassword {
 	//password id set after insert of password
 	public long passwordId;
 	
+	public int entry_type;
+	
 	//this is the temp holding zone for the currently selected textview id in CreateWalletTemplate
 	public int templateId;
 	

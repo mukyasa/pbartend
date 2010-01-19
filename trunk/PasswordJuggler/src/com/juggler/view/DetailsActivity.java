@@ -39,6 +39,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	private int ADDMORE_ID =15987422;
 	private int NOTE_ROW_ID=1234556789;
 	private boolean wasDelete=false;
+	private TextView directions=null;
 	private Drawable bgHolder=null;
 	
 	@Override
@@ -105,6 +106,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 
 	private void initialize() {
 
+		directions = (TextView)findViewById(R.id.tvDirections);
+		
 		//hide next button
 		bNext = (Button)findViewById(R.id.butNext);
 		bNext.setText(getString(R.string.edit));
@@ -300,29 +303,19 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				    			
 				    	startActivity(intent);
 		    		}
+		    		else
+		    			wasDelete = false;
 		    	}
 		    	
 		    }
 		    else if(v == bNext)
 		    {
-		    	passDao.updateLogin();
+		    	/******DATABASE CALLS******/
+		    		passDao.updateEntry();
+		    	/******DATABASE CALLS******/
 	    		startActivity(new Intent(this,HomeView.class));
 		    }
 	    }
-	    
-	    /*else if(v instanceof TableRow)
-	    {
-	    	TextView label =(TextView)((TableRow)v).getChildAt(0);
-	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
-	    	
-	    	if(label.getText().toString().equals(getString(R.string.url)+":"))
-	    	{
-	    		intent = new Intent(this,WebViewActivity.class);
-	    		intent.putExtra(Constants.INTENT_EXTRA_SELECTED_URL, value.getText().toString());
-	    		startActivity(intent);
-	    	}
-	    	
-	    }*/
 	    else if(v == bNext){
 	    	if(nextButtonText.equals(getString(R.string.edit)))
 	    	{
@@ -339,9 +332,13 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			    		for(int i=0;i<tblDetails.getChildCount();i++)
 			    		{
 			    			TableRow tr =  (TableRow)tblDetails.getChildAt(i);
-			    			TextView labelview = (TextView)tr.getChildAt(0);
 			    			if(tr.getId() != ADDMORE_ID && tr.getId() != NOTE_ROW_ID)
-			    				labelview.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.delete_icon), null,null,null);
+			    			{
+			    				if(i==1)
+			    					tr.setBackgroundResource(R.drawable.item_spacer_delete);
+			    				else
+			    					tr.setBackgroundResource(R.drawable.toplines_delete);
+			    			}
 			    		}
 	    			}
 	    		}
@@ -370,6 +367,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	private void addNewRowButton()
 	{
 		bNext.setText(getString(R.string.commit));
+		directions.setText(getString(R.string.editDirections));
+		
 		
 		TableLayout tblDetails_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
 		
@@ -433,7 +432,6 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				}
 		    }
 	    }
-		
 		
 		return false;
 	}
