@@ -15,10 +15,10 @@
 				android:id="@+id/tvWalletTitle" android:text="The Title"
 				android:textColor="#000" android:textSize="18sp"
 				android:paddingLeft="10sp"></TextView>
-			<TextView android:textColor="#000" android:layout_marginTop="5sp"
+			<TextView android:layout_marginTop="5sp"
 				android:textSize="11sp" android:layout_marginLeft="5sp"
 				android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:text="@string/viewDirections" android:id="@+id/tvDirections"></TextView>
+				android:layout_height="wrap_content" android:text="@string/viewDirections" android:id="@+id/tvDirections" android:textColor="#cc0000"></TextView>
 			<!--
 				TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:text="Sub Title"
