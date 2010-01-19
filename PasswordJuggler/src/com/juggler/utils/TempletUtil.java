@@ -29,6 +29,8 @@ import com.juggler.view.R;
  */
 public class TempletUtil {
 	
+	public static final int STADARD_LABEL_ID = 1909099;
+	
 	/**
 	 * Gets the section name from the id
 	 * Jan 2, 2010
@@ -219,6 +221,7 @@ public class TempletUtil {
 		LayoutParams lavelParams = new LayoutParams();
 		lavelParams.leftMargin=15;
 		label.setLayoutParams(lavelParams);
+		label.setId(STADARD_LABEL_ID);
 		
 		/**
 		 * android:paddingLeft="5sp"

@@ -7,11 +7,11 @@ import java.util.Set;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.test.MoreAsserts;
 import android.text.ClipboardManager;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -27,14 +27,16 @@ import com.juggler.utils.Constants;
 import com.juggler.utils.Encrypt;
 import com.juggler.utils.TempletUtil;
 
-public class DetailsActivity extends BaseActivity implements OnTouchListener {
+public class DetailsActivity extends BaseActivity implements OnTouchListener,OnLongClickListener {
 	
 	private CharSequence text;
 	private TextView tvWalletTitle;
 	private TableLayout detailLayout_wrapper;
 	private TableLayout detailLayout;
 	private TableRow addmoreTR;
-	private int ADDMOREID =15987422;
+	private int ADDMORE_ID =15987422;
+	private int NOTE_ROW_ID=1234556789;
+	private boolean wasDelete=false;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -82,7 +84,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 						
 						if(addmoreTR!=null)
 						{
-							TableRow trnew = (TableRow)findViewById(ADDMOREID);
+							TableRow trnew = (TableRow)findViewById(ADDMORE_ID);
 							//re-add new row button
 							detailLayout.removeView(trnew);
 							addNewRowButton();
@@ -140,6 +142,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 			{
 				tr = TempletUtil.getRow(this,getString(R.string.url),url.toString(),isFirst,R.string.url,PasswordDetail.GENERIC);
 				tr.setOnClickListener(this);
+				tr.setOnLongClickListener(this);
 				detailLayout.addView(tr);
 				isFirst=false;
 			}
@@ -190,6 +193,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 				tr = TempletUtil.getRow(this,label,value,isFirst,elmId,section);
 				tr.setOnClickListener(this);
 				tr.setOnTouchListener(this);
+				tr.setOnLongClickListener(this);
 				
 				detailLayout.addView(tr);
 				isFirst=false;
@@ -203,6 +207,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 			//add note at the end
 			tr = TempletUtil.getRow(this,getString(R.string.note),note,true,R.string.note,PasswordDetail.GENERIC);
 			tr.setOnClickListener(this);
+			tr.setId(NOTE_ROW_ID);
 			
 			TextView tvSubTitle = TempletUtil.getTextView(this,"");
 			//if not a note add new table
@@ -255,40 +260,43 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 			    }
 		    	else
 		    	{
-			    	TextView label =(TextView)((TableRow)v).getChildAt(0);
-			    	TextView value =(TextView)((TableRow)v).getChildAt(1);
-			    	
-			    	//needed to determine the save button reaction
-			    	if(((TextView)label).getText().equals(getString(R.string.note)+":"))
-			    	{
-			    		intent = new Intent(this, CreateNoteActivity.class);
-			    		intent.putExtra(Constants.INTENT_EXTRA_NOTE,true);
-			    	}
-			    	
-			    	/*if the value has not been filled the next field 
-			    	will be the label otherwise make it the value*/
-			    	String theValue="";
-			    	if(value.getText().toString().equals(""))
-			    	{
-			    		theValue = label.getText().toString();
-			    		//get ride of the :
-			    		theValue = theValue.substring(0, theValue.length()-1);
-			    	}
-			    	else
-			    		theValue = value.getText().toString();
-			    	
-			    	String labelValue =label.getText().toString();
-			    	
-			    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
-			    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
-			    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
-			    	
-			    	//for notes and the key to the hashtable
-			    	NewPassword np = NewPassword.getInstance();
-			    	np.templateId = ((TextView)value).getId();
-			    	
-			    			
-			    	startActivity(intent);
+		    		if(!wasDelete) //if this was a long delete then we dont want to do this.
+		    		{
+				    	TextView label =(TextView)((TableRow)v).getChildAt(0);
+				    	TextView value =(TextView)((TableRow)v).getChildAt(1);
+				    	
+				    	//needed to determine the save button reaction
+				    	if(((TextView)label).getText().equals(getString(R.string.note)+":"))
+				    	{
+				    		intent = new Intent(this, CreateNoteActivity.class);
+				    		intent.putExtra(Constants.INTENT_EXTRA_NOTE,true);
+				    	}
+				    	
+				    	/*if the value has not been filled the next field 
+				    	will be the label otherwise make it the value*/
+				    	String theValue="";
+				    	if(value.getText().toString().equals(""))
+				    	{
+				    		theValue = label.getText().toString();
+				    		//get ride of the :
+				    		theValue = theValue.substring(0, theValue.length()-1);
+				    	}
+				    	else
+				    		theValue = value.getText().toString();
+				    	
+				    	String labelValue =label.getText().toString();
+				    	
+				    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
+				    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
+				    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
+				    	
+				    	//for notes and the key to the hashtable
+				    	NewPassword np = NewPassword.getInstance();
+				    	np.templateId = ((TextView)value).getId();
+				    	
+				    			
+				    	startActivity(intent);
+		    		}
 		    	}
 		    	
 		    }
@@ -314,7 +322,28 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 	    }*/
 	    else if(v == bNext){
 	    	if(nextButtonText.equals(getString(R.string.edit)))
-	    		addNewRowButton();	    	
+	    	{
+	    		addNewRowButton();
+	    		
+	    		TableLayout tblDetails_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
+	    		
+	    		for(int x =0;x<tblDetails_wrapper.getChildCount();x++)
+	    		{
+	    			if(tblDetails_wrapper.getChildAt(x) instanceof TableLayout)
+	    			{
+		    			TableLayout tblDetails = (TableLayout)tblDetails_wrapper.getChildAt(x);
+		    		
+			    		for(int i=0;i<tblDetails.getChildCount();i++)
+			    		{
+			    			TableRow tr =  (TableRow)tblDetails.getChildAt(i);
+			    			TextView labelview = (TextView)tr.getChildAt(0);
+			    			if(tr.getId() != ADDMORE_ID && tr.getId() != NOTE_ROW_ID)
+			    				labelview.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.delete_icon), null,null,null);
+			    		}
+	    			}
+	    		}
+	    		
+	    	}
 	    }	
 	}
 	
@@ -338,28 +367,38 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 	private void addNewRowButton()
 	{
 		bNext.setText(getString(R.string.commit));
-		TextView addmore = new TextView(this);
 		
-		addmore.setText("Click to add more rows.");
-		addmore.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.addmore), null,null,null);
-		addmore.setGravity(Gravity.CENTER_VERTICAL);
-		LayoutParams addmoreparams = new LayoutParams();
-		addmoreparams.span=2;
-		addmoreparams.column=0;
-		addmoreparams.weight=2;
-		addmore.setLayoutParams(addmoreparams);
-		addmoreTR = new TableRow(this);
-		addmoreTR.setId(ADDMOREID);
-		addmoreTR.addView(addmore);
-		addmoreTR.setBackgroundResource(R.drawable.toplines);
-		addmoreTR.setGravity(Gravity.CENTER_VERTICAL);
-		addmoreTR.setPadding(3, 3, 0, 3);
-		LayoutParams params = new LayoutParams();
-		params.width = LayoutParams.FILL_PARENT;
-		addmoreTR.setLayoutParams(params);
-		addmoreTR.setOnClickListener(this);
+		TableLayout tblDetails_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
 		
-		detailLayout.addView(addmoreTR);
+		for(int x =0;x<tblDetails_wrapper.getChildCount();x++)
+		{
+			if(tblDetails_wrapper.getChildAt(x) instanceof TableLayout)
+			{
+				TextView addmore = new TextView(this);
+    			TableLayout tblDetails = (TableLayout)tblDetails_wrapper.getChildAt(x);
+				addmore.setText("Click to add more rows.");
+				addmore.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.addmore), null,null,null);
+				addmore.setGravity(Gravity.CENTER_VERTICAL);
+				LayoutParams addmoreparams = new LayoutParams();
+				addmoreparams.span=2;
+				addmoreparams.column=0;
+				addmoreparams.weight=2;
+				addmore.setLayoutParams(addmoreparams);
+				TableRow trAdd = new TableRow(this);
+				trAdd.setId(ADDMORE_ID);
+				trAdd.addView(addmore);
+				trAdd.setBackgroundResource(R.drawable.toplines);
+				trAdd.setGravity(Gravity.CENTER_VERTICAL);
+				trAdd.setPadding(3, 3, 0, 3);
+				LayoutParams params = new LayoutParams();
+				params.width = LayoutParams.FILL_PARENT;
+				trAdd.setLayoutParams(params);
+				trAdd.setOnClickListener(this);
+				
+				if(tblDetails.getChildAt(0).getId() != NOTE_ROW_ID)
+					tblDetails.addView(trAdd);
+			}
+		}
 	}
 
 	public boolean onTouch(View v, MotionEvent event) {
@@ -395,5 +434,20 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener {
 		
 		return false;
 	}
+
+	/* (non-Javadoc)
+     * @see android.view.View.OnLongClickListener#onLongClick(android.view.View)
+     */
+    public boolean onLongClick(View v) {
+	    
+    	String nextButtonText =bNext.getText().toString();
+    	
+    	 if(nextButtonText.equals(getString(R.string.commit)))
+    	 {
+	    	((TableRow)v).setVisibility(View.GONE);
+	    	wasDelete=true;
+    	 }
+	    return false;
+    }
 
 }
