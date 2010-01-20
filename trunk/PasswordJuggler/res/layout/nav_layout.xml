@@ -5,21 +5,27 @@
 	android:background="@drawable/base_bg" android:layout_width="fill_parent">
 	<RelativeLayout android:layout_height="wrap_content"
 		android:background="@drawable/nav_bg" android:layout_width="fill_parent"
-		android:paddingLeft="5sp" android:paddingRight="5sp" android:gravity="center_vertical" android:paddingBottom="5sp">
+		android:paddingLeft="5sp" android:paddingRight="5sp" android:gravity="center_vertical"
+		android:paddingBottom="5sp">
 
 		<Button android:id="@+id/butPrev" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:textColor="#fff"
 			android:textStyle="bold" android:background="@drawable/prev_button"
 			android:text="Previous" android:textSize="12sp"
-			android:layout_alignParentLeft="true" android:paddingRight="10sp" android:paddingLeft="20sp"></Button>
+			android:layout_alignParentLeft="true" android:paddingRight="10sp"
+			android:paddingLeft="20sp"></Button>
 
-		<TextView android:layout_height="wrap_content" android:textColor="#fff"
-			android:textStyle="bold" android:text="@string/createnew" android:layout_centerHorizontal="true" android:layout_width="wrap_content" android:id="@+id/tvTitle" android:layout_marginTop="2sp" android:textSize="15sp"></TextView>
+		<TextView android:layout_height="wrap_content"
+			android:textColor="#fff" android:textStyle="bold" android:text="@string/createnew"
+			android:layout_centerHorizontal="true" android:layout_width="wrap_content"
+			android:id="@+id/tvTitle" android:layout_marginTop="2sp"
+			android:textSize="15sp"></TextView>
 		<Button android:id="@+id/butNext" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:background="@drawable/next_button"
-			android:textColor="#fff" android:textStyle="bold"
-			android:textSize="12sp" android:layout_alignParentRight="true" android:paddingLeft="10sp" android:paddingRight="10sp" android:text="@string/save"></Button>
+			android:textColor="#fff" android:textStyle="bold" android:textSize="12sp"
+			android:layout_alignParentRight="true" android:paddingLeft="10sp"
+			android:paddingRight="10sp" android:text="@string/save"></Button>
 
 
-</RelativeLayout>
+	</RelativeLayout>
 </LinearLayout>

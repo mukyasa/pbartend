@@ -266,6 +266,12 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		    	startActivity(intent);
 		    	 
 		    }
+		    else if( v == bDelete)
+		    {
+		    	//delete this entry
+		    	passDao.deleteEntry();
+		    	startActivity(new Intent(this,HomeView.class));
+		    }
 		    else if(v instanceof TableRow)
 		    {
 		    	if( ((TableRow)v).getId() == ADDMORE_ID)
@@ -377,6 +383,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	{
 		bNext.setText(getString(R.string.commit));
 		directions.setText(getString(R.string.editDirections));
+		
+		bDelete.setVisibility(View.VISIBLE);
 		
 		
 		TableLayout tblDetails_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);

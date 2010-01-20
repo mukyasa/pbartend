@@ -7,29 +7,29 @@ public class QuiresDAO {
 	public static final String TABLE_TEMPLATE = "tblTemplates";
 	public static final String TABLE_CATS = "tblCats";
 	public static final String TABLE_SUB_CATS = "tblSubCat";
-	public static final String TABLE_PASSWOR_ENTRY = "tblPasswordEntry";
+	public static final String TABLE_PASSWORD_ENTRY = "tblPasswordEntry";
 	public static final String TABLE_NOTES = "tblNotes";
 	public static final String TABLE_LOGIN ="tblLogin";
 	public static final String TABLE_LOGIN_TEMPLATE ="tblLoginTemplate";
 	
 	//columns
 	public static final String COL_ID = "_id";
-	public static final String COL_SECTION = "s34kder";//"section";
-	public static final String 	COL_DETAIL_ID = "d993id";//"detail_id";
-	public static final String COL_ENTRY_TYPE = "ekdiekk";//"entrytype";
-	public static final String COL_PASSWORD_ID = "p3dddid";//"passwordId";
-	public static final String COL_NAME = "n883iid";//"name";
-	public static final String COL_PASSWORD_NAME = "pn33ddd";//"password_name";	
-	public static final String COL_CAT_ID = "ce9id";//"catId";
-	public static final String COL_NOTE = "n34fv";//"note";
-	public static final String COL_SUB_CAT_ID = "sc33e5id";//"subCatId";
-	public static final String COL_NOTE_ID = "nii33id";//"noteId";
-	public static final String COL_URL ="u33er";//"url";
-	public static final String COL_VALUE ="v33i3";//"value"; 
-	public static final String COL_PASSWORD ="p28283i";//"pwd";
-	public static final String COL_USAGE ="u383iid";//"usage";
-	public static final String COL_TEMPLATE_LABEL ="leodk33";//"label";
-	public static final String COL_TEMPLATE_SECTION_TITLE ="s338ieie";//"sectionTitle";
+	public static final String COL_SECTION = "section";//"s34kder";//"section";
+	public static final String 	COL_DETAIL_ID = "detail_id";//"d993id";//"detail_id";
+	public static final String COL_ENTRY_TYPE = "entrytype";//"ekdiekk";//"entrytype";
+	public static final String COL_PASSWORD_ID = "passwordId";//"p3dddid";//"passwordId";
+	public static final String COL_NAME = "name";//"n883iid";//"name";
+	public static final String COL_PASSWORD_NAME = "password_name";//"pn33ddd";//"password_name";	
+	public static final String COL_CAT_ID = "catId";//"ce9id";//"catId";
+	public static final String COL_NOTE = "note";//"n34fv";//"note";
+	public static final String COL_SUB_CAT_ID = "subCatId";//"sc33e5id";//"subCatId";
+	public static final String COL_NOTE_ID = "noteId";//"nii33id";//"noteId";
+	public static final String COL_URL ="url";//"u33er";//"url";
+	public static final String COL_VALUE ="value";//"v33i3";//"value"; 
+	public static final String COL_PASSWORD ="pwd";//"p28283i";//"pwd";
+	public static final String COL_USAGE ="usage";//"u383iid";//"usage";
+	public static final String COL_TEMPLATE_LABEL ="label";//"leodk33";//"label";
+	public static final String COL_TEMPLATE_SECTION_TITLE ="sectionTitle";//"s338ieie";//"sectionTitle";
 	public static final int  ENTRY_TYPE_LOGINS = 1;
 	public static final int ENTRY_TYPE_NOTES = 2;
 	public static final int ENTRY_TYPE_GEN_PASSWORD = 3;
@@ -57,7 +57,7 @@ public class QuiresDAO {
 	
 	public static final String sqlCreateNotesTable = "CREATE TABLE "+TABLE_NOTES+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "+COL_NOTE+");";
 	
-	public static final String sqlCreatePasswordEntryTable = "CREATE TABLE "+TABLE_PASSWOR_ENTRY+" ("+COL_ID+" INTEGER PRIMARY KEY  NOT NULL , "+COL_NAME+" TEXT,"+COL_VALUE+" TEXT,"+COL_PASSWORD_ID+" INTEGER, "+COL_SECTION+" INTEGER DEFAULT 0);";
+	public static final String sqlCreatePasswordEntryTable = "CREATE TABLE "+TABLE_PASSWORD_ENTRY+" ("+COL_ID+" INTEGER PRIMARY KEY  NOT NULL , "+COL_NAME+" TEXT,"+COL_VALUE+" TEXT,"+COL_PASSWORD_ID+" INTEGER, "+COL_SECTION+" INTEGER DEFAULT 0);";
 	
 	public static final String sqlCreateSubCatTable = "CREATE TABLE "+TABLE_SUB_CATS+" ("+COL_ID+" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL ,  "+COL_NAME+" TEXT, "+COL_CAT_ID+" INTEGER);";
 	
@@ -66,13 +66,13 @@ public class QuiresDAO {
 	public static final String sqlGetTemplate= "SELECT * from "+TABLE_TEMPLATE+" WHERE "+COL_SUB_CAT_ID+"=?";
 	public static final String sqlGetDetail1 = "SELECT p."+COL_NAME+"["+COL_PASSWORD_NAME+"],d."+COL_NAME+",d."+COL_VALUE+",p."+COL_NOTE+",d."+COL_ID+"["+COL_DETAIL_ID+"],d."+COL_SECTION+
 	" FROM "+TABLE_PASSWORDS+" p INNER JOIN "
-	+TABLE_PASSWOR_ENTRY+" d on d."+COL_PASSWORD_ID+" = p."+COL_ID+
+	+TABLE_PASSWORD_ENTRY+" d on d."+COL_PASSWORD_ID+" = p."+COL_ID+
 	" LEFT JOIN "+TABLE_NOTES+" n on "+
 	" WHERE p."+COL_ID+"=? ORDER BY "+COL_SECTION+";";
 	
 	public static final String sqlGetDetail = "SELECT p."+COL_NAME+"["+COL_PASSWORD_NAME+"],d."+COL_NAME+",d."+COL_VALUE+",n."+COL_NOTE+",d."+COL_ID+"["+COL_DETAIL_ID+"],d."+COL_SECTION+ " FROM "+TABLE_PASSWORDS+" p"+
 	" LEFT JOIN "+TABLE_NOTES+" n ON n."+COL_ID+"=p."+ COL_NOTE_ID  +
-	" LEFT  JOIN "+TABLE_PASSWOR_ENTRY+" d  ON p."+COL_ID+"=d."+COL_PASSWORD_ID+" " +
+	" LEFT  JOIN "+TABLE_PASSWORD_ENTRY+" d  ON p."+COL_ID+"=d."+COL_PASSWORD_ID+" " +
 			"WHERE p."+COL_ID+"=? ORDER BY "+COL_SECTION+";";
 	
 	

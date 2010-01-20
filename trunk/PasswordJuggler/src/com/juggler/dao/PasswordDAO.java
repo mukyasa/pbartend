@@ -317,7 +317,7 @@ public class PasswordDAO extends QuiresDAO {
         entry.put(COL_PASSWORD_ID, passwordId);
         entry.put(COL_SECTION, PasswordDetail.GENERIC);
         
-        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, entry);
+        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORD_ENTRY, null, entry);
 	}
 	
 	/**
@@ -353,6 +353,16 @@ public class PasswordDAO extends QuiresDAO {
 		
 		return sqliteDatabase.insert(TABLE_LOGIN, null, creditials);
 		
+	}
+	
+	public void deleteEntry()
+	{
+		NewPassword np = NewPassword.getInstance();
+		
+		
+		String[] whereArgs = {np.passwordId+""};
+		sqliteDatabase.delete(TABLE_PASSWORD_ENTRY, COL_PASSWORD_ID+"=?", whereArgs);
+		sqliteDatabase.delete(TABLE_PASSWORDS, COL_ID+"=?", whereArgs);
 	}
 	
 	/**
@@ -405,11 +415,11 @@ public class PasswordDAO extends QuiresDAO {
 	        entry.put(COL_PASSWORD_ID, passwordId); 
 	        
 	        String[] whereArgs = {Encrypt.encryptA(key),passwordId};
-			int rowseffected = sqliteDatabase.update(TABLE_PASSWOR_ENTRY, entry, COL_NAME+"=? AND "+COL_PASSWORD_ID+"=?", whereArgs);
+			int rowseffected = sqliteDatabase.update(TABLE_PASSWORD_ENTRY, entry, COL_NAME+"=? AND "+COL_PASSWORD_ID+"=?", whereArgs);
 			if(rowseffected==0)//if we dont update then we need to add
 			{
 				//add new
-				 sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, entry);
+				 sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORD_ENTRY, null, entry);
 			}
         }
 		np.clear();
@@ -451,7 +461,7 @@ public class PasswordDAO extends QuiresDAO {
 	        entry.put(COL_PASSWORD_ID, passwordId);
 	        entry.put(COL_SECTION, detail.section);
 	        
-	        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, entry);
+	        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORD_ENTRY, null, entry);
 	        
         }
 	}
@@ -488,7 +498,7 @@ public class PasswordDAO extends QuiresDAO {
 	        nameValue.put(COL_VALUE, Encrypt.encryptA(detail.value));	 
 	        nameValue.put(COL_SECTION,detail.section);
 	        nameValue.put(COL_PASSWORD_ID, passwordId);
-	        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWOR_ENTRY, null, nameValue);
+	        sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORD_ENTRY, null, nameValue);
         }
 		
 	}

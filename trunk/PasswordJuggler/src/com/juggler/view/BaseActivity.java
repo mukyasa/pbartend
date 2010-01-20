@@ -15,7 +15,7 @@ import com.juggler.utils.LoginAuthHandler;
 
 public class BaseActivity extends Activity implements OnClickListener,OnTouchListener{
 
-	protected Button bNext,bPrev;
+	protected Button bNext,bPrev,bDelete;
 	protected PasswordDAO passDao;
 	protected PasswordDbHelper myDatabaseAdapter;
 	
@@ -59,6 +59,13 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 		bPrev = (Button)findViewById(R.id.butPrev);
 		bPrev.setOnClickListener(this);
 		bPrev.setOnTouchListener(this);
+		
+		bDelete = (Button)findViewById(R.id.butDelete);
+		if(bDelete != null)
+		{
+			bDelete.setOnClickListener(this);
+			bDelete.setOnTouchListener(this);
+		}
 	}
 	
 	/*
@@ -92,6 +99,16 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 				else{
 					((Button)v).setBackgroundResource(R.drawable.prev_button);
 					((Button)v).setPadding(20,0,10,0);
+				}
+			}else if(v == bDelete)
+			{
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					((Button)v).setBackgroundResource(R.drawable.delete_entry_on);
+					((Button)v).setPadding(10,0,10,0);
+				} 
+				else{
+					((Button)v).setBackgroundResource(R.drawable.delete_entry);
+					((Button)v).setPadding(10,0,10,0);
 				}
 			}
 		}
