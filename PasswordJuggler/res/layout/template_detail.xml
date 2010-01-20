@@ -8,6 +8,13 @@
 		<TableLayout android:layout_width="fill_parent"
 			android:padding="10sp" android:layout_height="fill_parent"
 			android:id="@+id/tblDetailsWrapper">
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="@string/delete"
+				android:background="@drawable/delete_entry"
+				android:id="@+id/butDelete"
+				android:textColor="#fff"
+				android:textStyle="bold" android:textSize="12sp"
+				android:paddingLeft="10sp" android:paddingRight="10sp" android:layout_marginBottom="10sp" android:visibility="gone"></Button>
 			<TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:background="@drawable/list_item"
 				android:drawableLeft="@drawable/wallet_lg" android:paddingTop="4sp"
@@ -97,14 +104,6 @@
 				android:layout_centerInParent="true"
 				android:id="@+id/tbExtraPro"></ToggleButton> </RelativeLayout
 			-->
-
-			<Button android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:text="@string/delete"
-				android:background="@drawable/delete_entry"
-				android:id="@+id/butDelete"
-				android:visibility="gone" android:textColor="#fff"
-				android:textStyle="bold" android:textSize="12sp"
-				android:paddingLeft="10sp" android:paddingRight="10sp"></Button>
 		</TableLayout>
 	</ScrollView>
 </LinearLayout>
