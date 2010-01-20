@@ -405,7 +405,7 @@ public class PasswordDbHelper extends SQLiteOpenHelper {
 			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_CATS );
 			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_LOGIN );
 			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_NOTES );
-			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_PASSWOR_ENTRY );
+			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_PASSWORD_ENTRY );
 			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_SUB_CATS);
 			db.execSQL("DROP TABLE IF EXISTS " + QuiresDAO.TABLE_TEMPLATE);
 	}

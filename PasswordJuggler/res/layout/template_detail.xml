@@ -15,10 +15,10 @@
 				android:id="@+id/tvWalletTitle" android:text="The Title"
 				android:textColor="#000" android:textSize="18sp"
 				android:paddingLeft="10sp"></TextView>
-			<TextView android:layout_marginTop="5sp"
-				android:textSize="11sp" android:layout_marginLeft="5sp"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:text="@string/viewDirections" android:id="@+id/tvDirections" android:textColor="#cc0000"></TextView>
+			<TextView android:layout_marginTop="5sp" android:textSize="11sp"
+				android:layout_marginLeft="5sp" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="@string/viewDirections"
+				android:id="@+id/tvDirections" android:textColor="#cc0000"></TextView>
 			<!--
 				TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:text="Sub Title"
@@ -98,6 +98,13 @@
 				android:id="@+id/tbExtraPro"></ToggleButton> </RelativeLayout
 			-->
 
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="@string/delete"
+				android:background="@drawable/delete_entry"
+				android:id="@+id/butDelete"
+				android:visibility="gone" android:textColor="#fff"
+				android:textStyle="bold" android:textSize="12sp"
+				android:paddingLeft="10sp" android:paddingRight="10sp"></Button>
 		</TableLayout>
 	</ScrollView>
 </LinearLayout>

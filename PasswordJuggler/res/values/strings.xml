@@ -41,6 +41,7 @@
 	  <string name="newrow">New Row</string>
 	  <string name="label">New Label</string>
 	  <string name="value">New Value</string>
+	  <string name="delete">Delete</string>
 	  
 	  <string name="newpassword">New Password</string>
 	  <string name="confirmnew">Confirm Password</string>
