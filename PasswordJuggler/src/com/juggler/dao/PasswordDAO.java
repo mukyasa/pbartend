@@ -107,7 +107,7 @@ public class PasswordDAO extends QuiresDAO {
 	 * @return
 	 *
 	 */
-	public Cursor getAllWallet(){
+	public Cursor getAllWallet(){ 
 		return sqliteDatabase.rawQuery(sqlGetAll, new String[] {ENTRY_TYPE_WALLET+""});
 	}
 	
@@ -220,16 +220,18 @@ public class PasswordDAO extends QuiresDAO {
 	 */ 
 	public void saveNotes(){
 		NewPassword np = NewPassword.getInstance();
-		ContentValues note = new ContentValues();
-		note.put(COL_NOTE, Encrypt.encryptA(np.note));
-		
-		saveNote(note);
 		
 		ContentValues password = new ContentValues();
 		password.put(COL_NAME,Encrypt.encryptA(np.name));
 		password.put(COL_ENTRY_TYPE, ENTRY_TYPE_NOTES);
 		
-		savePassword(password);
+		String passwordId = savePassword(password);
+		
+		ContentValues note = new ContentValues();
+		note.put(COL_NOTE, Encrypt.encryptA(np.note));
+		note.put(COL_PASSWORD_ID, passwordId);
+		
+		saveNote(note);
 	}
 	
 	/**
@@ -240,10 +242,10 @@ public class PasswordDAO extends QuiresDAO {
 	 */
 	private void updateNote(ContentValues note,NewPassword np){
 		
-		String[] whereArgs ={np.noteId+""};
+		String[] whereArgs ={(String)note.get(COL_PASSWORD_ID)};
 		
-		if(np.noteId >-1) // if its less than zero then it no exist
-			sqliteDatabase.update(PasswordDAO.TABLE_NOTES,note, COL_ID +"=?", whereArgs);
+		if((String)note.get(COL_PASSWORD_ID) != null) // if its less than zero then it no exist
+			sqliteDatabase.update(PasswordDAO.TABLE_NOTES,note, COL_PASSWORD_ID +"=?", whereArgs);
 		else
 			saveNote(note);
 
