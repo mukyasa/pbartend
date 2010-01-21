@@ -127,6 +127,7 @@ public class Encrypt {
 	
 	// this takes a string and returns the string encrypted.
 	public static String encryptA(String str) {
+		return str;/*
         if(str != null)
         {
         	try {
@@ -138,11 +139,14 @@ public class Encrypt {
              }
         }else
         	return str;
+        	*/
        
 	}
 	
 	public static String decryptA(String str) {
 
+		return str;
+		/*
 		if(str != null)
 		{
 			try {
@@ -155,5 +159,6 @@ public class Encrypt {
 	        }
 		}else
 			return str;
+			*/
 	}
 }
