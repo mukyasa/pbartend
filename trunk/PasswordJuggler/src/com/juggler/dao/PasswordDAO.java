@@ -207,12 +207,9 @@ public class PasswordDAO extends QuiresDAO {
 	 * dmason
 	 *
 	 */
-	private String saveNote(ContentValues note)
+	private void saveNote(ContentValues note)
 	{
 		sqliteDatabase.insert(PasswordDAO.TABLE_NOTES, null, note);
-		Cursor cursor = sqliteDatabase.rawQuery(sqlGetMaxNotesId, new String[]{});
-		cursor.moveToFirst();
-		return cursor.getString(cursor.getColumnIndex(PasswordDAO.COL_ID));
 	}
 	
 	/**
@@ -226,11 +223,10 @@ public class PasswordDAO extends QuiresDAO {
 		ContentValues note = new ContentValues();
 		note.put(COL_NOTE, Encrypt.encryptA(np.note));
 		
-		String noteId = saveNote(note);
+		saveNote(note);
 		
 		ContentValues password = new ContentValues();
 		password.put(COL_NAME,Encrypt.encryptA(np.name));
-		password.put(COL_NOTE_ID, noteId);
 		password.put(COL_ENTRY_TYPE, ENTRY_TYPE_NOTES);
 		
 		savePassword(password);
@@ -249,14 +245,7 @@ public class PasswordDAO extends QuiresDAO {
 		if(np.noteId >-1) // if its less than zero then it no exist
 			sqliteDatabase.update(PasswordDAO.TABLE_NOTES,note, COL_ID +"=?", whereArgs);
 		else
-		{
-			String noteId = saveNote(note);
-			ContentValues password = new ContentValues();
-			password.put(COL_NOTE_ID, noteId);
-			
-			String[] passwordWhereArgs = {np.passwordId+""};
-			sqliteDatabase.update(TABLE_PASSWORDS, password,COL_ID+"=?", passwordWhereArgs); 
-		}
+			saveNote(note);
 
 	}
 	
@@ -363,6 +352,7 @@ public class PasswordDAO extends QuiresDAO {
 		String[] whereArgs = {np.passwordId+""};
 		sqliteDatabase.delete(TABLE_PASSWORD_ENTRY, COL_PASSWORD_ID+"=?", whereArgs);
 		sqliteDatabase.delete(TABLE_PASSWORDS, COL_ID+"=?", whereArgs);
+		sqliteDatabase.delete(TABLE_NOTES, COL_PASSWORD_ID+"=?", whereArgs);
 	}
 	
 	/**
@@ -387,10 +377,6 @@ public class PasswordDAO extends QuiresDAO {
 	public void updateEntry(){
 		
 		NewPassword np = NewPassword.getInstance();
-		ContentValues note = new ContentValues();
-		note.put(COL_NOTE, Encrypt.encryptA(np.note));
-		
-		updateNote(note,np);
 		
 		ContentValues password = new ContentValues();
 		password.put(COL_NAME,Encrypt.encryptA(np.name));
@@ -402,6 +388,12 @@ public class PasswordDAO extends QuiresDAO {
 		
 		String passwordId = updatePassword(password,np.passwordId+"");
 		
+		ContentValues note = new ContentValues();
+		note.put(COL_NOTE, Encrypt.encryptA(np.note));
+		note.put(COL_PASSWORD_ID, passwordId);
+		
+		updateNote(note,np);
+		 
 		Hashtable<String, PasswordDetail> passwordDetails = np.getNameValue();
 		Iterator<String> Iter = passwordDetails.keySet().iterator();
 		
@@ -434,19 +426,20 @@ public class PasswordDAO extends QuiresDAO {
 	public void saveWallet(){
 		
 		NewPassword np = NewPassword.getInstance();
-		ContentValues note = new ContentValues();
-		note.put(COL_NOTE, Encrypt.encryptA(np.note));
-		
-		String noteId = saveNote(note);
 		
 		ContentValues password = new ContentValues();
 		password.put(COL_NAME,Encrypt.encryptA(np.name));
-		password.put(COL_NOTE_ID, noteId);
 		password.put(COL_CAT_ID, np.catId);
 		password.put(COL_SUB_CAT_ID, np.subCatId);
 		password.put(COL_ENTRY_TYPE, ENTRY_TYPE_WALLET);
 		
 		String passwordId = savePassword(password);
+		
+		ContentValues note = new ContentValues();
+		note.put(COL_NOTE, Encrypt.encryptA(np.note));
+		note.put(COL_PASSWORD_ID, passwordId);
+		
+		saveNote(note);
 		
 		Hashtable<String, PasswordDetail> passwordDetails = np.getNameValue();
 		Iterator<String> Iter = passwordDetails.keySet().iterator();
