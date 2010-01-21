@@ -81,7 +81,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 						label = (String) iter.next();
 						value = nvpair.get(label);
 					}
-					if(label != null && value!=null)
+					if(label != null && !label.equals("-1") && value!=null)
 					{
 						addNewRow(label,value);
 						
@@ -179,6 +179,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				
 				int section = cursor.getInt(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
 				note = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE)));
+				np.passwordId = cursor.getLong(cursor.getColumnIndex(QuiresDAO.COL_ID));
 				
 				//if the label is null get out because its just a note
 				if(label == null)
