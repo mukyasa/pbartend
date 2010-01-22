@@ -167,15 +167,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				
 				String label = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME)));
 				String value="";
-				//if concealed then only show **************
-				if(label != null && AppUtils.passwordTypes.containsKey(label))
-				{
-					if(AppUtils.getClearTextSetting(this).equalsIgnoreCase("true"))
-						value = "**************";
-					else
-						value = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE)));
-				}else
-					value = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE)));
+
+				value = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE)));
 				
 				int section = cursor.getInt(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
 				note = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE)));
@@ -465,6 +458,14 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
     	 if(nextButtonText.equals(getString(R.string.commit)))
     	 {
 	    	((TableRow)v).setVisibility(View.GONE);
+	    	
+	    	TextView label =(TextView)((TableRow)v).getChildAt(0);
+	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
+	    	
+	    	String theValue = label.getText().toString();
+	    	theValue = theValue.substring(0, theValue.length()-1);
+	    	//call delete db
+	    	passDao.deleteRow(theValue,value.getHint().toString());
 	    	wasDelete=true;
     	 }
 	    return false;
