@@ -36,7 +36,7 @@ import com.juggler.utils.Constants;
 public class SettingsActivity extends FooterActivity{
 	
 	private Button bNext,bPrev;
-	private TextView tvChangePwd,tvAutoLock;
+	private TextView tvChangePwd;
 	private ToggleButton tbClearText,tbDeleteDb;
 	private Context context;
 	/* (non-Javadoc)
@@ -90,8 +90,8 @@ public class SettingsActivity extends FooterActivity{
 		tvChangePwd = (TextView)findViewById(R.id.tvChangePassword);
 		tvChangePwd.setOnClickListener(this);
 		
-		tvAutoLock = (TextView)findViewById(R.id.tvAutoLock);
-		tvAutoLock.setOnClickListener(this);
+		//tvAutoLock = (TextView)findViewById(R.id.tvAutoLock);
+		//tvAutoLock.setOnClickListener(this);
 		
 	}
 
@@ -140,13 +140,13 @@ public class SettingsActivity extends FooterActivity{
  	    	finish();
  	    	
  	    }
-    	else if(v == bPrev){
+    	else if(v == bPrev){ 
     		finish();
     	}
     	else if(v == tvChangePwd)
     		startActivity(new Intent(this,NewPasswordAcivity.class));
-    	else if(v==tvAutoLock)
-    		startActivity(new Intent(this,AutoLockAcivity.class));	
+    	//else if(v==tvAutoLock)
+    		//startActivity(new Intent(this,AutoLockAcivity.class));	
     	else if(v==tbDeleteDb)
     	{
     		showDialog(0);
