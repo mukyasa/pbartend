@@ -155,7 +155,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			//url if applicable
 			if(url!=null)
 			{
-				tr = TempletUtil.getRow(this,getString(R.string.url),url.toString(),isFirst,R.string.url,PasswordDetail.GENERIC);
+				tr = TempletUtil.getRow(this,getString(R.string.url),url.toString(),isFirst,R.string.url,PasswordDetail.GENERIC,false);
 				tr.setOnClickListener(this);
 				tr.setOnLongClickListener(this);
 				detailLayout.addView(tr);
@@ -200,7 +200,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				if(elmId <0)
 					elmId=(elmId  *-1);
 				
-				tr = TempletUtil.getRow(this,label,value,isFirst,elmId,section);
+				tr = TempletUtil.getRow(this,label,value,isFirst,elmId,section,false);
 				tr.setOnClickListener(this);
 				tr.setOnTouchListener(this);
 				tr.setOnLongClickListener(this);
@@ -215,7 +215,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			};
 			
 			//add note at the end
-			tr = TempletUtil.getRow(this,getString(R.string.note),note,true,R.string.note,PasswordDetail.GENERIC);
+			tr = TempletUtil.getRow(this,getString(R.string.note),note,true,R.string.note,PasswordDetail.GENERIC,false);
 			tr.setOnClickListener(this);
 			tr.setId(NOTE_ROW_ID);
 			
@@ -362,11 +362,17 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	 */
 	private void addNewRow(String label,String value){
 		
+		boolean isDeleteMode = false;
+		String nextButtonText =bNext.getText().toString();
+		if(nextButtonText.equals(getString(R.string.commit)))//if we are in edit mode we need to add a delete bg
+			isDeleteMode = true;
+			
 		int elmId=label.hashCode()+100;
 		//add new row
-		TableRow tr = TempletUtil.getRow(this,label,value,false,elmId,PasswordDetail.GENERIC);
+		TableRow tr = TempletUtil.getRow(this,label,value,false,elmId,PasswordDetail.GENERIC,isDeleteMode);
 		tr.setOnClickListener(this);
 		tr.setOnTouchListener(this);
+		tr.setOnLongClickListener(this);
 		detailLayout = (TableLayout)findViewById(R.id.tlDetails);
 		detailLayout.addView(tr);
 	}
@@ -467,6 +473,11 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	    	//call delete db
 	    	passDao.deleteRow(theValue,value.getHint().toString());
 	    	wasDelete=true;
+	    	//REMOVE OUT OF THE NP IF NEWLY ADDED TOO
+	    	NewPassword np = NewPassword.getInstance();
+	    	Hashtable<String, PasswordDetail> hashnamevalue = np.getNameValue();
+	    	hashnamevalue.remove(theValue);
+	    	
     	 }
 	    return false;
     }

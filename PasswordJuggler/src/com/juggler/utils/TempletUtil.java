@@ -191,7 +191,7 @@ public class TempletUtil {
 	 * @return
 	 *
 	 */
-	public static TableRow getRow(Context context,String lbl,String val,boolean isFirst,int id,int section){
+	public static TableRow getRow(Context context,String lbl,String val,boolean isFirst,int id,int section,boolean isDeleteMode){
 		
 		TableRow tr = new TableRow(context);
 		
@@ -199,6 +199,14 @@ public class TempletUtil {
 			tr.setBackgroundResource(R.drawable.item_spacer);
 		else
 			tr.setBackgroundResource(R.drawable.toplines);
+		
+		if(isDeleteMode)
+		{
+			if(isFirst)
+				tr.setBackgroundResource(R.drawable.item_spacer_delete);
+			else
+				tr.setBackgroundResource(R.drawable.toplines_delete);
+		}
 		
 		tr.setGravity(Gravity.CENTER_VERTICAL);
 		tr.setPadding(3, 3, 0, 3);

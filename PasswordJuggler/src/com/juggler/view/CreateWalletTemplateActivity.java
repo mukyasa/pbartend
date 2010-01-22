@@ -105,7 +105,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 				if(elmId <0)
 					elmId=(elmId  *-1);
 					
-				TableRow tr = TempletUtil.getRow(this,label,"",isFirst,elmId,TempletUtil.determineSection(sectionname));
+				TableRow tr = TempletUtil.getRow(this,label,"",isFirst,elmId,TempletUtil.determineSection(sectionname),false);
 				tr.setOnClickListener(this);
 				
 				detailLayout.addView(tr);
@@ -117,7 +117,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 				sectionTitle = sectionname;
 			};
 			
-			TableRow tr = TempletUtil.getRow(this,getString(R.string.note),"",true,R.string.note,PasswordDetail.GENERIC);
+			TableRow tr = TempletUtil.getRow(this,getString(R.string.note),"",true,R.string.note,PasswordDetail.GENERIC,false);
 			tr.setOnClickListener(this);
 			
 			TextView tvSubTitle = TempletUtil.getTextView(this,"");
