@@ -14,6 +14,7 @@ public class QuiresDAO {
 	
 	//columns
 	public static final String COL_ID = "_id";
+	public static final String COL_NOTE_ID = "note_id";
 	public static final String COL_SECTION = "section";//"s34kder";//"section";
 	public static final String 	COL_DETAIL_ID = "detail_id";//"d993id";//"detail_id";
 	public static final String COL_ENTRY_TYPE = "entrytype";//"ekdiekk";//"entrytype";
@@ -68,7 +69,7 @@ public class QuiresDAO {
 	" LEFT JOIN "+TABLE_NOTES+" n on "+
 	" WHERE p."+COL_ID+"=? ORDER BY "+COL_SECTION+";";
 	
-	public static final String sqlGetDetail = "SELECT p."+COL_ID+",p."+COL_NAME+"["+COL_PASSWORD_NAME+"],d."+COL_NAME+",d."+COL_VALUE+",n."+COL_NOTE+",d."+COL_ID+"["+COL_DETAIL_ID+"],d."+COL_SECTION+ " FROM "+TABLE_PASSWORDS+" p"+
+	public static final String sqlGetDetail = "SELECT p."+COL_ID+",p."+COL_NAME+"["+COL_PASSWORD_NAME+"],d."+COL_NAME+",d."+COL_VALUE+",n."+COL_NOTE+",n."+COL_ID+"["+COL_NOTE_ID+"],d."+COL_ID+"["+COL_DETAIL_ID+"],d."+COL_SECTION+ " FROM "+TABLE_PASSWORDS+" p"+
 	" LEFT JOIN "+TABLE_NOTES+" n ON n."+COL_PASSWORD_ID+"=p."+ COL_ID  +
 	" LEFT  JOIN "+TABLE_PASSWORD_ENTRY+" d  ON p."+COL_ID+"=d."+COL_PASSWORD_ID+" " +
 			"WHERE p."+COL_ID+"=? ORDER BY "+COL_SECTION+";";

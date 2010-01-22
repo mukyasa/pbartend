@@ -244,11 +244,10 @@ public class PasswordDAO extends QuiresDAO {
 		
 		String[] whereArgs ={(String)note.get(COL_PASSWORD_ID)};
 		
-		if((String)note.get(COL_PASSWORD_ID) != null) // if its less than zero then it no exist
+		if(np.noteId >0) // if its less than zero then it no exist
 			sqliteDatabase.update(PasswordDAO.TABLE_NOTES,note, COL_PASSWORD_ID +"=?", whereArgs);
 		else
 			saveNote(note);
-
 	}
 	
 	/**
