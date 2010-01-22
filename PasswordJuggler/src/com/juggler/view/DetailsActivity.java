@@ -162,7 +162,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				isFirst=false;
 			}
 			
-			
+			 
 			for(int i=0;i<cursor.getCount();i++){
 				
 				String label = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME)));
@@ -180,6 +180,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				int section = cursor.getInt(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
 				note = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE)));
 				np.passwordId = cursor.getLong(cursor.getColumnIndex(QuiresDAO.COL_ID));
+				np.noteId = cursor.getLong(cursor.getColumnIndex(QuiresDAO.COL_NOTE_ID));
 				
 				//if the label is null get out because its just a note
 				if(label == null)
