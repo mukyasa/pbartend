@@ -88,7 +88,7 @@ public class NewPasswordAcivity extends FooterActivity {
     		if(pwd.getText().toString().equals(pwdconfirm.getText().toString()))
     		{
     			//save password
-        		passDao.updateRootLogin(pwd.getText().toString(),pwdconfirm.getText().toString());
+        		passDao.updateRootLogin(pwd.getText().toString(),LoginAuthHandler.getInstance(this).getAppPwd());
         		LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
         		handler.setDidLogin(true);
      	    	finish();

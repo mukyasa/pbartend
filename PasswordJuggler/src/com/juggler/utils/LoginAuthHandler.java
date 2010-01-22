@@ -12,6 +12,7 @@ public class LoginAuthHandler extends CountDownTimer {
 	private boolean didLogin=false;
 	private static LoginAuthHandler handler=null;
 	private static long timeout=5000; // 5 minutes
+	private String appPwd;
 
 	
 	public LoginAuthHandler(long millisInFuture, long countDownInterval) {
@@ -50,7 +51,14 @@ public class LoginAuthHandler extends CountDownTimer {
     	context.startActivity(intent);
 		
 	}
-
+	
+	public String getAppPwd() {
+    	return appPwd;
+    }
+	public void setAppPwd(String appPwd) {
+    	this.appPwd = appPwd;
+    }
+	
 	@Override
 	public void onTick(long millisUntilFinished) {
 		// TODO Auto-generated method stub
