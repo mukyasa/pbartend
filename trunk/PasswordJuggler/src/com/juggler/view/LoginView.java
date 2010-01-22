@@ -56,6 +56,8 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
 				cursor.moveToFirst();
 				startManagingCursor(cursor);
 				dbPwd = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_PASSWORD)));
+				LoginAuthHandler logauth = LoginAuthHandler.getInstance(this);
+				logauth.setAppPwd(dbPwd);
 			}
 			 
 			 setContentView(R.layout.login);

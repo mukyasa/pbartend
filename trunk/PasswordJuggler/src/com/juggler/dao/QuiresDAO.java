@@ -77,7 +77,7 @@ public class QuiresDAO {
 	
 	
 	public static final String sqlGetCount = "SELECT "+COL_ID+" from "+TABLE_PASSWORDS+" WHERE "+COL_ENTRY_TYPE+"=?;";
-	public static final String sqlGetLoginCount = "SELECT * from "+TABLE_LOGIN+";";
+	public static final String sqlGeAppLogin = "SELECT * from "+TABLE_LOGIN+";";
 	
 	public static final String sqlGetMaxNotesId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_NOTES+";";
 	public static final String sqlGetMaxPasswordId ="SELECT MAX(_ID)["+COL_ID+"]  FROM "+TABLE_PASSWORDS+";";

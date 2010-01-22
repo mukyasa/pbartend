@@ -319,11 +319,11 @@ public class PasswordDAO extends QuiresDAO {
 	 * @return
 	 *
 	 */
-	public int updateRootLogin(String pwd,String Org){
+	public int updateRootLogin(String pwd,String org){
 		
 		ContentValues creditials = new ContentValues();
 		creditials.put(COL_PASSWORD, Encrypt.encryptA(pwd));
-		String[] whereArgs = {Encrypt.encryptA(Org)};
+		String[] whereArgs = {Encrypt.encryptA(org)};
 		return sqliteDatabase.update(TABLE_LOGIN, creditials, COL_PASSWORD+"=?", whereArgs);
 		
 	}
@@ -365,7 +365,7 @@ public class PasswordDAO extends QuiresDAO {
 	 */
 	public Cursor checkForPassword()
 	{
-		return sqliteDatabase.rawQuery(sqlGetLoginCount, null);
+		return sqliteDatabase.rawQuery(sqlGeAppLogin, null);
 	}
 	
 	
