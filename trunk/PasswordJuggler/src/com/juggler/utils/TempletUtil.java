@@ -13,6 +13,8 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.text.method.PasswordTransformationMethod;
+import android.text.method.TransformationMethod;
 import android.text.util.Linkify;
 import android.view.Gravity;
 import android.widget.TableLayout;
@@ -229,7 +231,16 @@ public class TempletUtil {
 		 * android:textSize="13sp"
 		 */
 		TextView value = new TextView(context);
+		
+		if(lbl != null && AppUtils.passwordTypes.containsKey(lbl) && AppUtils.getClearTextSetting(context).equalsIgnoreCase("true"))
+		{
+				PasswordTransformationMethod ptm = PasswordTransformationMethod.getInstance();
+				ptm.getTransformation("*", value);
+				value.setTransformationMethod(ptm);
+		}
+		
 		value.setText(val);
+		value.setHint(val);
 		Linkify.addLinks(value, Linkify.WEB_URLS);
 		value.setId(id);
 		value.setGravity(Gravity.LEFT);

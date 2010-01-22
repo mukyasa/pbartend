@@ -356,6 +356,16 @@ public class PasswordDAO extends QuiresDAO {
 		sqliteDatabase.delete(TABLE_NOTES, COL_PASSWORD_ID+"=?", whereArgs);
 	}
 	
+	public void deleteRow(String label,String value)
+	{
+		NewPassword np = NewPassword.getInstance();
+		
+		String[] whereArgs = {label,value,np.passwordId+""};
+		
+		sqliteDatabase.delete(TABLE_PASSWORD_ENTRY, COL_NAME+"=? AND "+COL_VALUE + "=? AND "+COL_PASSWORD_ID+"=?", whereArgs);
+		
+	}
+	
 	/**
 	 * check to see if a password exists
 	 * Jan 6, 2010
@@ -409,7 +419,7 @@ public class PasswordDAO extends QuiresDAO {
 	        
 	        String[] whereArgs = {Encrypt.encryptA(key),passwordId};
 			int rowseffected = sqliteDatabase.update(TABLE_PASSWORD_ENTRY, entry, COL_NAME+"=? AND "+COL_PASSWORD_ID+"=?", whereArgs);
-			if(rowseffected==0)//if we dont update then we need to add
+			if(rowseffected==0)//if we don't update then we need to add
 			{
 				//add new
 				 sqliteDatabase.insert(PasswordDAO.TABLE_PASSWORD_ENTRY, null, entry);
