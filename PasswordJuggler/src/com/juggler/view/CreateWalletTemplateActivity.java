@@ -95,7 +95,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 				if(!sectionname.equalsIgnoreCase("null") && !sectionname.equals(sectionTitle)) 
 				{
 					TextView tvSubTitle = TempletUtil.getTextView(this, sectionname);
-					detailLayout = TempletUtil.getNewTableLayout(this);
+					detailLayout = TempletUtil.getNewTableLayout(this,"",i);
 					detailLayout_wrapper.addView(tvSubTitle);
 					detailLayout_wrapper.addView(detailLayout);
 					isFirst=true;
@@ -121,7 +121,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 			tr.setOnClickListener(this);
 			
 			TextView tvSubTitle = TempletUtil.getTextView(this,"");
-			detailLayout = TempletUtil.getNewTableLayout(this);
+			detailLayout = TempletUtil.getNewTableLayout(this,"",R.string.note);
 			detailLayout_wrapper.addView(tvSubTitle);
 			detailLayout.addView(tr);
 			detailLayout_wrapper.addView(detailLayout);
