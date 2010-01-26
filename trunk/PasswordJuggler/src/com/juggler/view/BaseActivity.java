@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
+import com.juggler.domain.NewPassword;
 import com.juggler.utils.LoginAuthHandler;
 
 public class BaseActivity extends Activity implements OnClickListener,OnTouchListener{
@@ -128,6 +129,8 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 	 	lah.setLoginRequired(false);
  	   	
  	   if(v == bPrev){
+ 		   NewPassword np = NewPassword.getInstance();
+ 		   np.clear();
  		   finish();
  	   }
     }

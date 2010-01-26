@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.ClipboardManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,7 +24,6 @@ import android.widget.TableRow.LayoutParams;
 import com.juggler.dao.QuiresDAO;
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
-import com.juggler.utils.AppUtils;
 import com.juggler.utils.Constants;
 import com.juggler.utils.Encrypt;
 import com.juggler.utils.TempletUtil;
@@ -40,6 +40,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	private boolean wasDelete=false;
 	private TextView directions=null;
 	private Drawable bgHolder=null;
+	private String tag="";
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -83,7 +84,25 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 					}
 					if(label != null && !label.equals("-1") && value!=null)
 					{
-						addNewRow(label,value);
+						//loop the tables and find the correct one based on the tag
+						TableLayout tblDetails_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
+						int xx=0;
+						for(int x =0;x<tblDetails_wrapper.getChildCount();x++)
+						{
+							if(tblDetails_wrapper.getChildAt(x) instanceof TableLayout)
+							{
+								xx++;
+								Log.v(tblDetails_wrapper.getChildAt(xx).getTag()+""," TAG: " + tag + " XX: " +xx);
+								if(tag.equals(tblDetails_wrapper.getChildAt(xx).getTag()))
+								{
+									TableLayout dl = (TableLayout)findViewById(xx);
+									Log.v(dl.getTag()+"","T.A.G.: " + tag + " ID: " + xx);
+									addNewRow(label,value,dl);
+									break;
+								}
+							}
+						}
+						
 						
 						if(addmoreTR!=null)
 						{
@@ -139,6 +158,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		
 		detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
 		detailLayout = (TableLayout)findViewById(R.id.tlDetails);
+		detailLayout.setId(1);
+		detailLayout.setTag("detailLayout_"+1);
 		
 		//get template
 		Cursor cursor = passDao.getDetail(selectedRow);
@@ -189,7 +210,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				if(sectionname != null && Integer.valueOf(sectionname) > PasswordDetail.GENERIC) 
 				{
 					TextView tvSubTitle = TempletUtil.getTextView(this, TempletUtil.determineSectionName(sectionname));
-					detailLayout = TempletUtil.getNewTableLayout(this); 
+					detailLayout = TempletUtil.getNewTableLayout(this,"detailLayout_"+i,i); 
 					detailLayout_wrapper.addView(tvSubTitle);
 					detailLayout_wrapper.addView(detailLayout);
 					isFirst=true;				
@@ -223,7 +244,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			//if not a note add new table
 			if(!isNote)
 			{
-				TableLayout detailLayoutNotes = TempletUtil.getNewTableLayout(this);
+				TableLayout detailLayoutNotes = TempletUtil.getNewTableLayout(this,"detailLayout_"+note,R.string.note);
 				detailLayout_wrapper.addView(tvSubTitle);
 				detailLayoutNotes.addView(tr);
 				detailLayout_wrapper.addView(detailLayoutNotes);
@@ -272,6 +293,9 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		    	if( ((TableRow)v).getId() == ADDMORE_ID)
 			    {
 			    	//when clicking on the addnew row
+		    		detailLayout = (TableLayout)((TableRow)v).getParent();
+		    		tag = (String)detailLayout.getTag();
+		    		Log.v(tag+"",detailLayout.getId()+"");
 		    		startActivity(new Intent(this,CreateNewRowActivity.class));
 			    }
 		    	else
@@ -360,7 +384,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	/***
 	 * generic new row
 	 */
-	private void addNewRow(String label,String value){
+	private void addNewRow(String label,String value,TableLayout dl){
 		
 		boolean isDeleteMode = false;
 		String nextButtonText =bNext.getText().toString();
@@ -373,8 +397,9 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		tr.setOnClickListener(this);
 		tr.setOnTouchListener(this);
 		tr.setOnLongClickListener(this);
-		detailLayout = (TableLayout)findViewById(R.id.tlDetails);
-		detailLayout.addView(tr);
+		dl = (TableLayout)findViewById(R.id.tlDetails);
+		dl.addView(tr);
+		Log.v(dl.getTag()+"",dl.getId()+"");
 	}
 	
 	/**
