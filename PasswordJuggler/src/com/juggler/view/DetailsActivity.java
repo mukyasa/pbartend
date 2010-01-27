@@ -9,7 +9,6 @@ import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.ClipboardManager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -92,11 +91,11 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 							if(tblDetails_wrapper.getChildAt(x) instanceof TableLayout)
 							{
 								xx++;
-								Log.v(tblDetails_wrapper.getChildAt(xx).getTag()+""," TAG: " + tag + " XX: " +xx);
-								if(tag.equals(tblDetails_wrapper.getChildAt(xx).getTag()))
+								//Log.v(tblDetails_wrapper.getChildAt(x).getTag()+""," TAG: " + tag + " XX: " +xx);
+								if(tag.equals(tblDetails_wrapper.getChildAt(x).getTag()))
 								{
 									TableLayout dl = (TableLayout)findViewById(xx);
-									Log.v(dl.getTag()+"","T.A.G.: " + tag + " ID: " + xx);
+									//Log.v(dl.getTag()+"","T.A.G.: " + tag + " ID: " + xx);
 									addNewRow(label,value,dl);
 									break;
 								}
@@ -183,7 +182,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				isFirst=false;
 			}
 			
-			 
+			int sectionId=0;
+			
 			for(int i=0;i<cursor.getCount();i++){
 				
 				String label = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NAME)));
@@ -204,16 +204,17 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				}
 				
 				/********  section name *********/
-				String sectionname = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
+				String sectionId_db = cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
 				
 				//check if new section is needed
-				if(sectionname != null && Integer.valueOf(sectionname) > PasswordDetail.GENERIC) 
+				if(sectionId_db != null && Integer.valueOf(sectionId_db) > sectionId) 
 				{
-					TextView tvSubTitle = TempletUtil.getTextView(this, TempletUtil.determineSectionName(sectionname));
-					detailLayout = TempletUtil.getNewTableLayout(this,"detailLayout_"+i,i); 
+					TextView tvSubTitle = TempletUtil.getTextView(this, TempletUtil.determineSectionName(sectionId_db));
+					detailLayout = TempletUtil.getNewTableLayout(this,sectionId_db+"",i); 
 					detailLayout_wrapper.addView(tvSubTitle);
 					detailLayout_wrapper.addView(detailLayout);
-					isFirst=true;				
+					isFirst=true;		
+					sectionId = Integer.valueOf(sectionId_db);
 				}
 				/********  section name *********/
 				
@@ -232,7 +233,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				//move to next row
 				cursor.moveToNext();
 				//reset title
-				sectionTitle = sectionname;
+				sectionTitle = sectionId_db;
 			};
 			
 			//add note at the end
@@ -244,7 +245,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			//if not a note add new table
 			if(!isNote)
 			{
-				TableLayout detailLayoutNotes = TempletUtil.getNewTableLayout(this,"detailLayout_"+note,R.string.note);
+				TableLayout detailLayoutNotes = TempletUtil.getNewTableLayout(this,"",R.string.note);
 				detailLayout_wrapper.addView(tvSubTitle);
 				detailLayoutNotes.addView(tr);
 				detailLayout_wrapper.addView(detailLayoutNotes);
@@ -294,9 +295,11 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			    {
 			    	//when clicking on the addnew row
 		    		detailLayout = (TableLayout)((TableRow)v).getParent();
-		    		tag = (String)detailLayout.getTag();
-		    		Log.v(tag+"",detailLayout.getId()+"");
-		    		startActivity(new Intent(this,CreateNewRowActivity.class));
+		    		tag = (String)detailLayout.getTag(); //get table tag
+		    		intent = new Intent(this,CreateNewRowActivity.class);
+			    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_SECTION,tag);
+		    		//Log.v(tag+"",detailLayout.getId()+"");
+		    		startActivity(intent);
 			    }
 		    	else
 		    	{
@@ -329,6 +332,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_TEXT,theValue);
 				    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
 				    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
+				    	
 				    	
 				    	//for notes and the key to the hashtable
 				    	NewPassword np = NewPassword.getInstance();
@@ -397,9 +401,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		tr.setOnClickListener(this);
 		tr.setOnTouchListener(this);
 		tr.setOnLongClickListener(this);
-		dl = (TableLayout)findViewById(R.id.tlDetails);
 		dl.addView(tr);
-		Log.v(dl.getTag()+"",dl.getId()+"");
+		//Log.v(dl.getTag()+"",dl.getId()+"");
 	}
 	
 	/**

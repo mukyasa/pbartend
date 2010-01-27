@@ -15,7 +15,6 @@ import java.util.Iterator;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
@@ -416,6 +415,7 @@ public class PasswordDAO extends QuiresDAO {
 	        entry.put(COL_NAME, Encrypt.encryptA(key));
 	        entry.put(COL_VALUE, Encrypt.encryptA(detail.value));
 	        entry.put(COL_PASSWORD_ID, passwordId); 
+	        entry.put(COL_SECTION, detail.section);
 	        
 	        String[] whereArgs = {Encrypt.encryptA(key),passwordId};
 			int rowseffected = sqliteDatabase.update(TABLE_PASSWORD_ENTRY, entry, COL_NAME+"=? AND "+COL_PASSWORD_ID+"=?", whereArgs);
