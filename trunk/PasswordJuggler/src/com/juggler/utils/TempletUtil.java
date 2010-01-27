@@ -14,9 +14,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.text.method.PasswordTransformationMethod;
-import android.text.method.TransformationMethod;
 import android.text.util.Linkify;
-import android.util.Log;
 import android.view.Gravity;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -290,7 +288,7 @@ public class TempletUtil {
 		TableLayout tl = new TableLayout(context);
 		tl.setTag(tag);
 		tl.setId(id);
-		Log.v("TAG:"+ tag,"ID:"+id);
+//		Log.v("TAG:"+ tag,"ID:"+id);
 		tl.setBackgroundResource(R.drawable.list_item);
 		return tl;
 	}

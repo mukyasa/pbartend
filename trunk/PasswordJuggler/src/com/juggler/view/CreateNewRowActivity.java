@@ -9,9 +9,11 @@ import android.widget.TextView;
 
 import com.juggler.domain.NewPassword;
 import com.juggler.domain.PasswordDetail;
+import com.juggler.utils.Constants;
 
 public class CreateNewRowActivity extends BaseActivity {
 	private EditText etTitle,etURL;
+	private String section="0";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.create_frame);
@@ -33,6 +35,8 @@ public class CreateNewRowActivity extends BaseActivity {
 		
 		etURL.setText(getString(R.string.label));
 		etTitle.setText(getString(R.string.value));
+		
+		section =  (String) getIntent().getCharSequenceExtra(Constants.INTENT_EXTRA_SELECTED_SECTION);
 		
 		
 	}
@@ -78,7 +82,7 @@ public class CreateNewRowActivity extends BaseActivity {
 	    	
 	    	np.addTemplateSaver(label, value);
 	    	//set for database
-	    	PasswordDetail pd = new PasswordDetail(PasswordDetail.GENERIC, value, "");
+	    	PasswordDetail pd = new PasswordDetail(Integer.valueOf(section).intValue(), value, "");
 	    	
 	    	np.addNameValue(label, pd);
 	    	
