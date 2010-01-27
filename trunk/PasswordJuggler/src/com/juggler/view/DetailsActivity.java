@@ -158,7 +158,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
 		detailLayout = (TableLayout)findViewById(R.id.tlDetails);
 		detailLayout.setId(1);
-		detailLayout.setTag("detailLayout_"+1);
+		detailLayout.setTag(0);
 		
 		//get template
 		Cursor cursor = passDao.getDetail(selectedRow);
