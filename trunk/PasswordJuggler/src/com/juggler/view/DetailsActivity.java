@@ -66,7 +66,17 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			
 			if(value!= null)
 			{
-				TextView selected = (TextView)findViewById(np.templateId);
+				TextView selected=null;
+				
+				if(findViewById(np.templateId) instanceof TableLayout)
+				{
+					TableLayout notesTbl = (TableLayout)findViewById(np.templateId); //notes only
+					TableRow notetr = (TableRow)notesTbl.getChildAt(0);
+					selected = (TextView)notetr.getChildAt(1);
+				}
+				else
+					selected = (TextView)findViewById(np.templateId);
+				
 				if(selected != null && value != null)
 					selected.setText(value);
 			}
@@ -158,7 +168,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
 		detailLayout = (TableLayout)findViewById(R.id.tlDetails);
 		detailLayout.setId(1);
-		detailLayout.setTag(0);
+		detailLayout.setTag("0");
 		
 		//get template
 		Cursor cursor = passDao.getDetail(selectedRow);
@@ -169,7 +179,6 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			boolean isFirst = true;
 			String sectionTitle="";
 			TableRow tr=null;
-			String note="";
 			boolean isNote=false;
 			
 			//url if applicable
@@ -192,7 +201,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				value = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_VALUE)));
 				
 				int section = cursor.getInt(cursor.getColumnIndex(QuiresDAO.COL_SECTION));
-				note = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE)));
+				np.note = Encrypt.decryptA(cursor.getString(cursor.getColumnIndex(QuiresDAO.COL_NOTE)));
 				np.passwordId = cursor.getLong(cursor.getColumnIndex(QuiresDAO.COL_ID));
 				np.noteId = cursor.getLong(cursor.getColumnIndex(QuiresDAO.COL_NOTE_ID));
 				
@@ -237,7 +246,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			};
 			
 			//add note at the end
-			tr = TempletUtil.getRow(this,getString(R.string.note),note,true,R.string.note,PasswordDetail.GENERIC,false);
+			tr = TempletUtil.getRow(this,getString(R.string.note),np.note,true,R.string.note,PasswordDetail.GENERIC,false);
 			tr.setOnClickListener(this);
 			tr.setId(NOTE_ROW_ID);
 			
