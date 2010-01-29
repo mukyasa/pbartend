@@ -17,7 +17,7 @@ public class QuiresDAO {
 	//columns
 	public static final String COL_ID = "_id";
 	public static final String COL_NOTE_ID = "note_id";
-	public static final String COL_SECTION = DEBUG_ENCRYPT ? "section" :"s34kder";
+	public static final String COL_SECTION = DEBUG_ENCRYPT ? "s34kder":"section";
 	public static final String 	COL_DETAIL_ID = DEBUG_ENCRYPT ? "d993id":"detail_id";
 	public static final String COL_ENTRY_TYPE = DEBUG_ENCRYPT ? "ekdiekk":"entrytype";
 	public static final String COL_PASSWORD_ID = DEBUG_ENCRYPT ? "p3dddid":"passwordId";
