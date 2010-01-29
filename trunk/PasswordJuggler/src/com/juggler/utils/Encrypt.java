@@ -13,11 +13,13 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+
+import com.juggler.dao.QuiresDAO;
 /**
  * @author dmason
  * @version $Revision$ $Date$ $Author$ $Id$
  */
-public class Encrypt {
+public class Encrypt extends QuiresDAO {
 	
 	private static String seed="dJm4S0n9";
 	
@@ -127,38 +129,43 @@ public class Encrypt {
 	
 	// this takes a string and returns the string encrypted.
 	public static String encryptA(String str) {
-		return str;/*
-        if(str != null)
-        {
-        	try {
-	        	byte[] rawKey = getRawKey(seed.getBytes());
-	        	byte[] result = encrypt(rawKey, str.getBytes());
-	        	return toHex(result);
-        	} catch (Exception e) {
-        		return str;
-             }
-        }else
-        	return str;
-        	*/
+		if(DEBUG_ENCRYPT)
+		{
+			 if(str != null)
+		        {
+		        	try {
+			        	byte[] rawKey = getRawKey(seed.getBytes());
+			        	byte[] result = encrypt(rawKey, str.getBytes());
+			        	return toHex(result);
+		        	} catch (Exception e) {
+		        		return str;
+		             }
+		        }else
+		        	return str;
+		}
+		else
+			return str;
        
 	}
 	
 	public static String decryptA(String str) {
 
-		return str;
-		/*
-		if(str != null)
+		if(DEBUG_ENCRYPT)
 		{
-			try {
-		        byte[] rawKey = getRawKey(seed.getBytes());
-		        byte[] enc = toByte(str);
-		        byte[] result = decrypt(rawKey, enc);
-		        return new String(result);
-	        } catch (Exception e) {
-	        	return str;
-	        }
-		}else
+			if(str != null)
+			{
+				try {
+			        byte[] rawKey = getRawKey(seed.getBytes());
+			        byte[] enc = toByte(str);
+			        byte[] result = decrypt(rawKey, enc);
+			        return new String(result);
+		        } catch (Exception e) {
+		        	return str;
+		        }
+			}else
+				return str;
+		}
+		else
 			return str;
-			*/
 	}
 }

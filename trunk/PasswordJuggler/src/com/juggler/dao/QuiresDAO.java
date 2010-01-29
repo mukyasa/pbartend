@@ -3,6 +3,8 @@ package com.juggler.dao;
 
 public class QuiresDAO {
 	
+	protected static boolean DEBUG_ENCRYPT=false;
+	
 	public static final String TABLE_PASSWORDS = "tblPassword";
 	public static final String TABLE_TEMPLATE = "tblTemplates";
 	public static final String TABLE_CATS = "tblCats";
@@ -15,21 +17,21 @@ public class QuiresDAO {
 	//columns
 	public static final String COL_ID = "_id";
 	public static final String COL_NOTE_ID = "note_id";
-	public static final String COL_SECTION = "section";//"s34kder";//"section";
-	public static final String 	COL_DETAIL_ID = "detail_id";//"d993id";//"detail_id";
-	public static final String COL_ENTRY_TYPE = "entrytype";//"ekdiekk";//"entrytype";
-	public static final String COL_PASSWORD_ID = "passwordId";//"p3dddid";//"passwordId";
-	public static final String COL_NAME = "name";//"n883iid";//"name";
-	public static final String COL_PASSWORD_NAME = "password_name";//"pn33ddd";//"password_name";	
-	public static final String COL_CAT_ID = "catId";//"ce9id";//"catId";
-	public static final String COL_NOTE = "note";//"n34fv";//"note";
-	public static final String COL_SUB_CAT_ID = "subCatId";//"sc33e5id";//"subCatId";
-	public static final String COL_URL ="url";//"u33er";//"url";
-	public static final String COL_VALUE ="value";//"v33i3";//"value"; 
-	public static final String COL_PASSWORD ="pwd";//"p28283i";//"pwd";
-	public static final String COL_USAGE ="usage";//"u383iid";//"usage";
-	public static final String COL_TEMPLATE_LABEL ="label";//"leodk33";//"label";
-	public static final String COL_TEMPLATE_SECTION_TITLE ="sectionTitle";//"s338ieie";//"sectionTitle";
+	public static final String COL_SECTION = DEBUG_ENCRYPT ? "section" :"s34kder";
+	public static final String 	COL_DETAIL_ID = DEBUG_ENCRYPT ? "d993id":"detail_id";
+	public static final String COL_ENTRY_TYPE = DEBUG_ENCRYPT ? "ekdiekk":"entrytype";
+	public static final String COL_PASSWORD_ID = DEBUG_ENCRYPT ? "p3dddid":"passwordId";
+	public static final String COL_NAME = DEBUG_ENCRYPT ? "n883iid":"name";
+	public static final String COL_PASSWORD_NAME = DEBUG_ENCRYPT ? "pn33ddd":"password_name";	
+	public static final String COL_CAT_ID = DEBUG_ENCRYPT ? "ce9id":"catId";
+	public static final String COL_NOTE = DEBUG_ENCRYPT ? "n34fv":"note";
+	public static final String COL_SUB_CAT_ID = DEBUG_ENCRYPT ? "sc33e5id":"subCatId";
+	public static final String COL_URL = DEBUG_ENCRYPT ? "u33er":"url";
+	public static final String COL_VALUE = DEBUG_ENCRYPT ? "v33i3":"value"; 
+	public static final String COL_PASSWORD = DEBUG_ENCRYPT ? "p28283i":"pwd";
+	public static final String COL_USAGE = DEBUG_ENCRYPT ? "u383iid":"usage";
+	public static final String COL_TEMPLATE_LABEL = DEBUG_ENCRYPT ? "leodk33":"label";
+	public static final String COL_TEMPLATE_SECTION_TITLE = DEBUG_ENCRYPT ? "s338ieie":"sectionTitle";
 	public static final int  ENTRY_TYPE_LOGINS = 1;
 	public static final int ENTRY_TYPE_NOTES = 2;
 	public static final int ENTRY_TYPE_GEN_PASSWORD = 3;
