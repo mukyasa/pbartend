@@ -43,9 +43,24 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 		if(nvpair != null)
 		{
 			String value = nvpair.get(np.templateId+"");
-			TextView selected = (TextView)findViewById(np.templateId);
-			if(selected != null && value != null)
-				selected.setText(value);
+			
+			if(value!= null)
+			{
+				TextView selected=null;
+				
+				if(findViewById(np.templateId) instanceof TableLayout)
+				{
+					TableLayout notesTbl = (TableLayout)findViewById(np.templateId); //notes only
+					TableRow notetr = (TableRow)notesTbl.getChildAt(0);
+					selected = (TextView)notetr.getChildAt(1);
+				}
+				else
+					selected = (TextView)findViewById(np.templateId);
+				
+				if(selected != null && value != null)
+					selected.setText(value);
+			}
+
 		}
 
 		super.onResume();
