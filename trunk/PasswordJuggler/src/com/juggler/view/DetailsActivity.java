@@ -345,11 +345,9 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_LABEL,labelValue.substring(0, labelValue.length()-1));
 				    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_FIELD_ID,((TextView)value).getId());
 				    	
-				    	
 				    	//for notes and the key to the hashtable
 				    	NewPassword np = NewPassword.getInstance();
 				    	np.templateId = ((TextView)value).getId();
-				    	
 				    			
 				    	startActivity(intent);
 		    		}
