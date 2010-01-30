@@ -3,7 +3,7 @@ package com.juggler.dao;
 
 public class QuiresDAO {
 	
-	protected static boolean DEBUG_ENCRYPT=false;
+	protected static boolean DEBUG_ENCRYPT=true;
 	
 	public static final String TABLE_PASSWORDS = "tblPassword";
 	public static final String TABLE_TEMPLATE = "tblTemplates";
