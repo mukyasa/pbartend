@@ -10,8 +10,11 @@
 package com.juggler.view;
 
 import android.app.Activity;
+import android.app.Application;
+import android.content.pm.ApplicationInfo;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
