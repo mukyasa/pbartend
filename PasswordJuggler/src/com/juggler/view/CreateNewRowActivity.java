@@ -1,5 +1,7 @@
 package com.juggler.view;
 
+import java.util.Hashtable;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -77,6 +79,7 @@ public class CreateNewRowActivity extends BaseActivity {
 	    if(v == bNext)
 	    {
 	    	NewPassword np = NewPassword.getInstance();
+	    	np.resetTemplateSaver();//clear out any old ones we dont need 
 	    	String label = etURL.getText().toString();
 	    	String value = etTitle.getText().toString();
 	    	

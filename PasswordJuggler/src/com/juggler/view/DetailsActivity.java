@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.ClipboardManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -95,16 +96,15 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 					{
 						//loop the tables and find the correct one based on the tag
 						TableLayout tblDetails_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
-						int xx=0;
+
 						for(int x =0;x<tblDetails_wrapper.getChildCount();x++)
 						{
 							if(tblDetails_wrapper.getChildAt(x) instanceof TableLayout)
 							{
-								xx++;
-								//Log.v(tblDetails_wrapper.getChildAt(x).getTag()+""," TAG: " + tag + " XX: " +xx);
+								Log.v("","RESUME TABLE ID: "+tblDetails_wrapper.getChildAt(x).getId());
 								if(tag.equals(tblDetails_wrapper.getChildAt(x).getTag()))
 								{
-									TableLayout dl = (TableLayout)findViewById(xx);
+									TableLayout dl = (TableLayout)findViewById(tblDetails_wrapper.getChildAt(x).getId());
 									//Log.v(dl.getTag()+"","T.A.G.: " + tag + " ID: " + xx);
 									addNewRow(label,value,dl);
 									break;
@@ -167,7 +167,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		
 		detailLayout_wrapper = (TableLayout)findViewById(R.id.tblDetailsWrapper);
 		detailLayout = (TableLayout)findViewById(R.id.tlDetails);
-		detailLayout.setId(1);
+		detailLayout.setId(0);
 		detailLayout.setTag("0");
 		
 		//get template
@@ -192,6 +192,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			}
 			
 			int sectionId=0;
+			int tableId = 0;
 			
 			for(int i=0;i<cursor.getCount();i++){
 				
@@ -218,8 +219,9 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				//check if new section is needed
 				if(sectionId_db != null && Integer.valueOf(sectionId_db) > sectionId) 
 				{
+					tableId++;
 					TextView tvSubTitle = TempletUtil.getTextView(this, TempletUtil.determineSectionName(sectionId_db));
-					detailLayout = TempletUtil.getNewTableLayout(this,sectionId_db+"",i); 
+					detailLayout = TempletUtil.getNewTableLayout(this,sectionId_db+"",tableId); 
 					detailLayout_wrapper.addView(tvSubTitle);
 					detailLayout_wrapper.addView(detailLayout);
 					isFirst=true;		
@@ -305,6 +307,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			    	//when clicking on the addnew row
 		    		detailLayout = (TableLayout)((TableRow)v).getParent();
 		    		tag = (String)detailLayout.getTag(); //get table tag
+		    		Log.v("","ONCLICK TABLE ID: "+ detailLayout.getId()+"");
 		    		intent = new Intent(this,CreateNewRowActivity.class);
 			    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_SECTION,tag);
 		    		//Log.v(tag+"",detailLayout.getId()+"");

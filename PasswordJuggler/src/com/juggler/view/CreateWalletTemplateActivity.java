@@ -40,6 +40,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 		
 		//for other nv pairs
 		Hashtable<String, String> nvpair = np.getTemplateSaver();
+
 		if(nvpair != null)
 		{
 			String value = nvpair.get(np.templateId+"");

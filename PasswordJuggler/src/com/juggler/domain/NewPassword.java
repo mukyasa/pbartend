@@ -37,6 +37,10 @@ public class NewPassword {
 	private Hashtable<String, PasswordDetail> nameValue = new Hashtable<String, PasswordDetail>();
 	private Hashtable<String, String> templateSaver = new Hashtable<String, String>();
 	
+	public void resetTemplateSaver(){
+		templateSaver = new Hashtable<String, String>();
+	}
+	
 	public void addTemplateSaver(String key,String value)
 	{
 		templateSaver.put(key, value);
