@@ -13,8 +13,16 @@ public class LoginAuthHandler extends CountDownTimer {
 	private static LoginAuthHandler handler=null;
 	private static long timeout=5000; // 5 minutes
 	private String appPwd;
+	private boolean loginScreenShowing=false;
 
 	
+	
+	public boolean isLoginScreenShowing() {
+    	return loginScreenShowing;
+    }
+	public void setLoginScreenShowing(boolean loginScreenShowing) {
+    	this.loginScreenShowing = loginScreenShowing;
+    }
 	public LoginAuthHandler(long millisInFuture, long countDownInterval) {
 		super(millisInFuture, countDownInterval);
 		// TODO Auto-generated constructor stub

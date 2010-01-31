@@ -10,11 +10,8 @@
 package com.juggler.view;
 
 import android.app.Activity;
-import android.app.Application;
-import android.content.pm.ApplicationInfo;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -69,19 +66,32 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
 	 }
 
 	/* (non-Javadoc)
+	* @see android.app.Activity#onResume()
+	*/
+	@Override
+	protected void onResume() {
+		
+	LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+	lah.setLoginScreenShowing(true);
+	super.onResume();
+	}
+		
+	/* (non-Javadoc)
      * @see android.view.View.OnClickListener#onClick(android.view.View) 
      */
     public void onClick(View v) {
     	
-    	if(true)
-    	{
-		   	LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
-	   		handler.setDidLogin(true);
-	   		EditText loginpwd = (EditText)findViewById(R.id.etLogin);
-	   		//Log.v(loginpwd.getText().toString(),dbPwd);
-	   		if(dbPwd.equals(loginpwd.getText().toString()))
-	   			finish();
-    	}
+	   	LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
+   		handler.setDidLogin(true);
+   		EditText loginpwd = (EditText)findViewById(R.id.etLogin);
+   		//Log.v(loginpwd.getText().toString(),dbPwd);
+   		if(dbPwd.equals(loginpwd.getText().toString()))
+   		{
+   			LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+   			lah.setLoginScreenShowing(false);
+   			lah.setDidLogin(true);
+   			finish();
+   		}
     }
 
 	/* (non-Javadoc)
