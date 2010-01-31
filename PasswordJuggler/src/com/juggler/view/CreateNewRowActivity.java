@@ -1,7 +1,8 @@
 package com.juggler.view;
 
-import java.util.Hashtable;
-
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -69,6 +70,20 @@ public class CreateNewRowActivity extends BaseActivity {
 	
 	}
 	
+	 protected Dialog onCreateDialog(int id) {
+	    	
+	    	return new AlertDialog.Builder(CreateNewRowActivity.this)
+	        .setIcon(R.drawable.error)
+	        .setMessage("Please fill in both values.")
+	        .setTitle("Error")
+	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int whichButton) {
+	               dismissDialog(0);
+	            }
+	        })      
+	       .create();
+	 }
+	
 	/* (non-Javadoc)
 	 * @see com.juggler.view.BaseActivity#onClick(android.view.View)
 	 */
@@ -83,13 +98,18 @@ public class CreateNewRowActivity extends BaseActivity {
 	    	String label = etURL.getText().toString();
 	    	String value = etTitle.getText().toString();
 	    	
-	    	np.addTemplateSaver(label, value);
-	    	//set for database
-	    	PasswordDetail pd = new PasswordDetail(Integer.valueOf(section).intValue(), value, "");
-	    	
-	    	np.addNameValue(label, pd);
-	    	
-	    	finish();
+	    	if(label.equals("") || value.equals(""))
+	    		showDialog(0);
+	    	else
+	    	{
+		    	np.addTemplateSaver(label, value);
+		    	//set for database
+		    	PasswordDetail pd = new PasswordDetail(Integer.valueOf(section).intValue(), value, "");
+		    	
+		    	np.addNameValue(label, pd);
+		    	
+		    	finish();
+	    	}
 	    	
 	    }
 	    
