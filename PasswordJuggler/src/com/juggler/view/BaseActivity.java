@@ -2,12 +2,12 @@ package com.juggler.view;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
 
 import com.juggler.dao.PasswordDAO;
@@ -24,7 +24,7 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+       // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //set up database for use
 		passDao = new PasswordDAO();
 		myDatabaseAdapter = PasswordDbHelper.getInstance(this);
@@ -32,6 +32,12 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
         initialize();
     }
 	
+	@Override
+	public void onWindowAttributesChanged(LayoutParams params) {
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+		lah.setLoginRequired(false);
+	    super.onWindowAttributesChanged(params);
+	}
 	
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()
@@ -46,7 +52,10 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 			lah.setLoginRequired(false);
 		    //pop login window
 			if(passDao.checkForPassword().getCount() > 0)
+			{
+				if(!lah.isLoginScreenShowing())
 				startActivity(new Intent(this,LoginView.class));
+			}
 			else
 				startActivity(new Intent(this,CreateLoginPasswordActivity.class));
 		} 
