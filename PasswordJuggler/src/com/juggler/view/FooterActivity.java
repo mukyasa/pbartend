@@ -61,7 +61,7 @@ public class FooterActivity extends Activity implements OnClickListener {
 				if(passDao.checkForPassword().getCount() > 0 )
 				{
 					if(!lah.isLoginScreenShowing())
-					startActivity(new Intent(this,LoginView.class));
+						startActivity(new Intent(this,LoginView.class));
 				}
 				else
 					startActivity(new Intent(this,CreateLoginPasswordActivity.class));

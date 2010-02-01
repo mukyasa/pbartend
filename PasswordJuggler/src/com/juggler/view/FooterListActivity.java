@@ -52,12 +52,13 @@ public class FooterListActivity extends ListActivity implements OnClickListener{
 			if(passDao.checkForPassword().getCount() > 0 )
 			{
 				if(!lah.isLoginScreenShowing())
-				startActivity(new Intent(this,LoginView.class));
+					startActivity(new Intent(this,LoginView.class));
 			}
 			else
 				startActivity(new Intent(this,CreateLoginPasswordActivity.class));
 		} 
 		lah.setLoginRequired(true);
+		lah.setLoginScreenShowing(false);
 		
 		footutil = new FooterUtil(this);
         

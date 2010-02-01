@@ -18,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -65,6 +66,13 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
 			 loginButton.setOnClickListener(this);
 	 }
 
+	@Override
+	public void onWindowAttributesChanged(LayoutParams params) {
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+		lah.setLoginScreenShowing(true);
+	    super.onWindowAttributesChanged(params);
+	}
+		
 	/* (non-Javadoc)
 	* @see android.app.Activity#onResume()
 	*/
