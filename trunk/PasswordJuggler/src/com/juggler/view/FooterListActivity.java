@@ -28,6 +28,15 @@ public class FooterListActivity extends ListActivity implements OnClickListener{
         
     }
 	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onRetainNonConfigurationInstance()
+	 */
+	@Override
+	public Object onRetainNonConfigurationInstance() {
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+		lah.setDidRotate(true);
+	    return super.onRetainNonConfigurationInstance();
+	}
 	
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()
@@ -38,12 +47,18 @@ public class FooterListActivity extends ListActivity implements OnClickListener{
 		//check for login required again
 		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
 		
-		if(lah.isLoginRequired() || !lah.isDidLogin())
+		if(lah.showLoginScreen())
 		{
 			lah.setLoginRequired(false);
 		    //pop login window
 			if(passDao.checkForPassword().getCount() > 0 )
-				startActivity(new Intent(this,LoginView.class));
+			{
+				if(!lah.isDidRotate())
+				{
+					lah.setDidRotate(false);
+					startActivity(new Intent(this,LoginView.class));
+				}
+			}
 			else
 				startActivity(new Intent(this,CreateLoginPasswordActivity.class));
 		} 

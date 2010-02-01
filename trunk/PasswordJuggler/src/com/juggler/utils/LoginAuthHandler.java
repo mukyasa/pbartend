@@ -13,6 +13,26 @@ public class LoginAuthHandler extends CountDownTimer {
 	private static LoginAuthHandler handler=null;
 	private static long timeout=5000; // 5 minutes
 	private String appPwd;
+	private boolean didRotate=false;
+	
+	
+	
+	public boolean isDidRotate() {
+    	return didRotate;
+    }
+
+	public void setDidRotate(boolean didRotate) {
+    	this.didRotate = didRotate;
+    }
+
+	//shows loging screen
+	public boolean showLoginScreen()
+	{
+		if(loginRequired || ! didLogin)
+			return true;
+		else
+			return false;
+	}
 
 	public LoginAuthHandler(long millisInFuture, long countDownInterval) {
 		super(millisInFuture, countDownInterval);

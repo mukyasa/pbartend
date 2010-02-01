@@ -7,7 +7,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
 
 import com.juggler.dao.PasswordDAO;
@@ -33,6 +32,16 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
     }
 	
 	/* (non-Javadoc)
+	 * @see android.app.Activity#onRetainNonConfigurationInstance()
+	 */
+	@Override
+	public Object onRetainNonConfigurationInstance() {
+		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+		lah.setDidRotate(true);
+	    return super.onRetainNonConfigurationInstance();
+	}
+	
+	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()
 	 */
 	@Override
@@ -40,12 +49,18 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 		//check for login required again
 		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
 		
-		if(lah.isLoginRequired() || !lah.isDidLogin())
+		if(lah.showLoginScreen())
 		{
 			lah.setLoginRequired(false);
 		    //pop login window
-			if(passDao.checkForPassword().getCount() > 0)
+			if(passDao.checkForPassword().getCount() > 0 )
+			{
+				if(!lah.isDidRotate())
+				{
+					lah.setDidRotate(false);
 					startActivity(new Intent(this,LoginView.class));
+				}
+			}
 			else
 				startActivity(new Intent(this,CreateLoginPasswordActivity.class));
 		} 
