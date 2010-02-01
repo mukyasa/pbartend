@@ -66,23 +66,6 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
 			 loginButton.setOnClickListener(this);
 	 }
 
-	@Override
-	public void onWindowAttributesChanged(LayoutParams params) {
-		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-		lah.setLoginScreenShowing(true);
-	    super.onWindowAttributesChanged(params);
-	}
-		
-	/* (non-Javadoc)
-	* @see android.app.Activity#onResume()
-	*/
-	@Override
-	protected void onResume() {
-		
-	LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-	lah.setLoginScreenShowing(true);
-	super.onResume();
-	}
 		
 	/* (non-Javadoc)
      * @see android.view.View.OnClickListener#onClick(android.view.View) 
@@ -94,12 +77,7 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
    		EditText loginpwd = (EditText)findViewById(R.id.etLogin);
    		//Log.v(loginpwd.getText().toString(),dbPwd);
    		if(dbPwd.equals(loginpwd.getText().toString()))
-   		{
-   			LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-   			lah.setLoginScreenShowing(false);
-   			lah.setDidLogin(true);
    			finish();
-   		}
     }
 
 	/* (non-Javadoc)

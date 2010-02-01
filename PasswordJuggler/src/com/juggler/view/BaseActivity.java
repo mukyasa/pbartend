@@ -32,13 +32,6 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
         initialize();
     }
 	
-	@Override
-	public void onWindowAttributesChanged(LayoutParams params) {
-		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-		lah.setLoginRequired(false);
-	    super.onWindowAttributesChanged(params);
-	}
-	
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()
 	 */
@@ -52,10 +45,7 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 			lah.setLoginRequired(false);
 		    //pop login window
 			if(passDao.checkForPassword().getCount() > 0)
-			{
-				if(!lah.isLoginScreenShowing())
 					startActivity(new Intent(this,LoginView.class));
-			}
 			else
 				startActivity(new Intent(this,CreateLoginPasswordActivity.class));
 		} 
