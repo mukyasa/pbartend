@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.WindowManager.LayoutParams;
 
 import com.juggler.dao.PasswordDAO;
 import com.juggler.dao.PasswordDbHelper;
@@ -29,12 +28,6 @@ public class FooterListActivity extends ListActivity implements OnClickListener{
         
     }
 	
-	@Override
-	public void onWindowAttributesChanged(LayoutParams params) {
-		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-		lah.setLoginRequired(false);
-	    super.onWindowAttributesChanged(params);
-	}
 	
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()
@@ -50,15 +43,11 @@ public class FooterListActivity extends ListActivity implements OnClickListener{
 			lah.setLoginRequired(false);
 		    //pop login window
 			if(passDao.checkForPassword().getCount() > 0 )
-			{
-				if(!lah.isLoginScreenShowing())
-					startActivity(new Intent(this,LoginView.class));
-			}
+				startActivity(new Intent(this,LoginView.class));
 			else
 				startActivity(new Intent(this,CreateLoginPasswordActivity.class));
 		} 
 		lah.setLoginRequired(true);
-		lah.setLoginScreenShowing(false);
 		
 		footutil = new FooterUtil(this);
         

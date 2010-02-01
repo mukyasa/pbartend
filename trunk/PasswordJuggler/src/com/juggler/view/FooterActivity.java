@@ -3,6 +3,7 @@ package com.juggler.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager.LayoutParams;
@@ -29,14 +30,14 @@ public class FooterActivity extends Activity implements OnClickListener {
     }
 	
 	/* (non-Javadoc)
-	 * @see android.app.Activity#onWindowAttributesChanged(android.view.WindowManager.LayoutParams)
+	 * @see android.app.Activity#onRetainNonConfigurationInstance()
 	 */
 	@Override
-	public void onWindowAttributesChanged(LayoutParams params) {
-		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-		lah.setLoginRequired(false);
-	    super.onWindowAttributesChanged(params);
-	}
+	public Object onRetainNonConfigurationInstance() {
+	    // TODO Auto-generated method stub
+	    return super.onRetainNonConfigurationInstance();
+	}	
+	
 	/* (non-Javadoc)
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
@@ -53,16 +54,14 @@ public class FooterActivity extends Activity implements OnClickListener {
     {
 	    	//check for login required again
 			LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
+			Log.v("Is Login Required? "+lah.isLoginRequired()," Did Login: "+!lah.isDidLogin());
 			
 			if(lah.isLoginRequired() || !lah.isDidLogin())
 			{
 				lah.setLoginRequired(false);
 			    //pop login window
 				if(passDao.checkForPassword().getCount() > 0 )
-				{
-					if(!lah.isLoginScreenShowing())
-						startActivity(new Intent(this,LoginView.class));
-				}
+					startActivity(new Intent(this,LoginView.class));
 				else
 					startActivity(new Intent(this,CreateLoginPasswordActivity.class));
 			} 
