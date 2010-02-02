@@ -12,6 +12,7 @@ package com.juggler.view;
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -73,11 +74,15 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
     public void onClick(View v) {
     	
 	   	LoginAuthHandler handler = LoginAuthHandler.getInstance(this);
-   		handler.setDidLogin(true);
    		EditText loginpwd = (EditText)findViewById(R.id.etLogin);
    		//Log.v(loginpwd.getText().toString(),dbPwd);
+   		//Log.v("LOGIN DID ROTATE: ",handler.isDidRotate()+"");
    		if(dbPwd.equals(loginpwd.getText().toString()))
+   		{
+   			handler.setDidLogin(true);
+   			handler.setLoginRequired(false);
    			finish();
+   		}
     }
 
 	/* (non-Javadoc)

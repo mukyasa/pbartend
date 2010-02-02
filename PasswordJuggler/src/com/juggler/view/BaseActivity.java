@@ -3,6 +3,7 @@ package com.juggler.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,7 +49,7 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 	protected void onResume() {
 		//check for login required again
 		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-		
+		//Log.v("DID ROTATE: ",lah.isDidRotate()+"");
 		if(lah.showLoginScreen())
 		{
 			lah.setLoginRequired(false);
@@ -60,6 +61,8 @@ public class BaseActivity extends Activity implements OnClickListener,OnTouchLis
 					lah.setDidRotate(false);
 					startActivity(new Intent(this,LoginView.class));
 				}
+				else
+					lah.setDidRotate(false);
 			}
 			else
 				startActivity(new Intent(this,CreateLoginPasswordActivity.class));
