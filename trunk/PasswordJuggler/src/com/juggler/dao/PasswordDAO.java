@@ -359,7 +359,7 @@ public class PasswordDAO extends QuiresDAO {
 	{
 		NewPassword np = NewPassword.getInstance();
 		
-		String[] whereArgs = {label,value,np.passwordId+""};
+		String[] whereArgs = {Encrypt.encryptA(label),Encrypt.encryptA(value),np.passwordId+""};
 		
 		sqliteDatabase.delete(TABLE_PASSWORD_ENTRY, COL_NAME+"=? AND "+COL_VALUE + "=? AND "+COL_PASSWORD_ID+"=?", whereArgs);
 		
