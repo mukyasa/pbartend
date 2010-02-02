@@ -15,6 +15,9 @@ package com.juggler.utils;
  */
 public class Constants {
 	
+	public static String VERSION = "1.0.0";
+	public static String COMPANY_NAME = "mypocket-technologies";
+	
 	public static final int HOME = 0;
 	public static final int WALLET = 1;
 	public static final int LOGINS = 2;

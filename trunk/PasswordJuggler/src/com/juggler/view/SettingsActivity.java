@@ -10,6 +10,7 @@
 package com.juggler.view;
 
 import java.io.File;
+import java.util.Calendar;
 import java.util.HashMap;
 
 import android.app.AlertDialog;
@@ -36,9 +37,10 @@ import com.juggler.utils.Constants;
 public class SettingsActivity extends FooterActivity{
 	
 	private Button bNext,bPrev;
-	private TextView tvChangePwd;
+	private TextView tvChangePwd,tvAbout;
 	private ToggleButton tbClearText,tbDeleteDb;
 	private Context context;
+	private int MENU_ABOUT=0;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -83,6 +85,9 @@ public class SettingsActivity extends FooterActivity{
 	    bNext.setText(getString(R.string.save));
 	    bNext.setOnClickListener(this);
 	    
+	    tvAbout = (TextView)findViewById(R.id.tvAbout);
+	    tvAbout.setOnClickListener(this);
+	    
 		//set screen type
 		Constants.SCREEN_TYPE=Constants.SETTINGS;
 		
@@ -98,6 +103,23 @@ public class SettingsActivity extends FooterActivity{
 	 @Override
 	    protected Dialog onCreateDialog(int id) {
 	    	
+		 if(id == MENU_ABOUT)
+		 {
+			 Calendar c = Calendar.getInstance();
+		 
+	    	return new AlertDialog.Builder(SettingsActivity.this)
+	        .setIcon(R.drawable.info)
+	        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright "+c.get(Calendar.YEAR))
+	        .setTitle("Application Information")
+	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int whichButton) {
+	
+	               dismissDialog(0);
+	            }
+	        })      
+	       .create();
+		 }else
+		 {
 	    	return new AlertDialog.Builder(SettingsActivity.this)
 	        .setIcon(R.drawable.error)
 	        .setMessage(getString(R.string.confirmrest))
@@ -121,8 +143,11 @@ public class SettingsActivity extends FooterActivity{
 	            }
 	        })      
 	       .create();
+		 }
 	 }
-	/* (non-Javadoc)
+	 
+
+	 /* (non-Javadoc)
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
@@ -142,6 +167,10 @@ public class SettingsActivity extends FooterActivity{
  	    }
     	else if(v == bPrev){ 
     		finish();
+    	}
+    	else if(v == tvAbout)
+    	{
+    		showDialog(MENU_ABOUT);
     	}
     	else if(v == tvChangePwd)
     		startActivity(new Intent(this,NewPasswordAcivity.class));
