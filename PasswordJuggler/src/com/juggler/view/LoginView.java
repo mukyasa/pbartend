@@ -10,6 +10,9 @@
 package com.juggler.view;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -80,9 +83,31 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
    			handler.setDidLogin(true);
    			handler.setLoginRequired(false);
    			finish();
+   		}else
+   		{
+   			loginpwd.setText("");
+   			showDialog(0);
    		}
     }
 
+    /* (non-Javadoc)
+     * @see android.app.Activity#onCreateDialog(int)
+     */
+    @Override
+    protected Dialog onCreateDialog(int id) {
+    	
+    	return new AlertDialog.Builder(LoginView.this)
+        .setIcon(R.drawable.error)
+        .setMessage("I'm sorry your password is incorrect.")
+        .setTitle("Error")
+        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+               dismissDialog(0);
+            }
+        })      
+       .create();
+    }
+    
 	/* (non-Javadoc)
      * @see android.view.View.OnTouchListener#onTouch(android.view.View, android.view.MotionEvent)
      */
