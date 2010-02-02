@@ -3,7 +3,6 @@ package com.juggler.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -55,7 +54,7 @@ public class FooterActivity extends Activity implements OnClickListener {
     {
 	    	//check for login required again
 			LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-			Log.v("Is Login Required? "+lah.isLoginRequired()," Did Login: "+!lah.isDidLogin());
+			//Log.v("Is Login Required? "+lah.isLoginRequired()," Did Login: "+!lah.isDidLogin());
 			//Log.v("DID ROTATE: ",lah.isDidRotate()+"");
 			if(lah.showLoginScreen())
 			{
