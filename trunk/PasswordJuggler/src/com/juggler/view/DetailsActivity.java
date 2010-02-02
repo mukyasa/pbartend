@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.view.View.OnTouchListener;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -101,7 +102,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 						{
 							if(tblDetails_wrapper.getChildAt(x) instanceof TableLayout)
 							{
-								Log.v("","RESUME TABLE ID: "+tblDetails_wrapper.getChildAt(x).getId());
+								//Log.v("","RESUME TABLE ID: "+tblDetails_wrapper.getChildAt(x).getId());
 								if(tag.equals(tblDetails_wrapper.getChildAt(x).getTag()))
 								{
 									TableLayout dl = (TableLayout)findViewById(tblDetails_wrapper.getChildAt(x).getId());
@@ -307,7 +308,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 			    	//when clicking on the addnew row
 		    		detailLayout = (TableLayout)((TableRow)v).getParent();
 		    		tag = (String)detailLayout.getTag(); //get table tag
-		    		Log.v("","ONCLICK TABLE ID: "+ detailLayout.getId()+"");
+		    		//Log.v("","ONCLICK TABLE ID: "+ detailLayout.getId()+"");
 		    		intent = new Intent(this,CreateNewRowActivity.class);
 			    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_SECTION,tag);
 		    		//Log.v(tag+"",detailLayout.getId()+"");
@@ -483,9 +484,9 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 					((TableRow)v).setBackgroundResource(R.drawable.toplines_clk);
 				}
 				else if(event.getAction() == MotionEvent.ACTION_UP)
-				{
 					((TableRow)v).setBackgroundDrawable(bgHolder);
-				}
+				else
+					((TableRow)v).setBackgroundDrawable(bgHolder);
 		    }
 	    }
 		
@@ -519,5 +520,14 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
     	 }
 	    return false;
     }
+
+	/* (non-Javadoc)
+     * @see android.widget.AbsListView.OnScrollListener#onScroll(android.widget.AbsListView, int, int, int)
+     */
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+	    // TODO Auto-generated method stub
+	    
+    }
+
 
 }
