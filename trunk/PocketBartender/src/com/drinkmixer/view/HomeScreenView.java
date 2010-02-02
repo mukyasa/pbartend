@@ -1,6 +1,7 @@
 package com.drinkmixer.view;
 
 import java.io.File;
+import java.util.Calendar;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -193,11 +194,13 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     @Override
     protected Dialog onCreateDialog(int id) {
     	
+    	Calendar c = Calendar.getInstance();
+    	
     	if(id==DIALOG_ABOUT)
     	{
 	    	return new AlertDialog.Builder(HomeScreenView.this)
 	        .setIcon(R.drawable.info)
-	        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright 2009")
+	        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright "+ c.get(Calendar.YEAR))
 	        .setTitle("Application Information")
 	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int whichButton) {
