@@ -3,6 +3,7 @@ package com.juggler.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -34,6 +35,7 @@ public class FooterActivity extends Activity implements OnClickListener {
 	public Object onRetainNonConfigurationInstance() {
 		LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
 		lah.setDidRotate(true);
+		//Log.v(" ","onRetainNonConfigurationInstance called");
 	    return super.onRetainNonConfigurationInstance();
 	}	
 	
@@ -53,10 +55,11 @@ public class FooterActivity extends Activity implements OnClickListener {
     {
 	    	//check for login required again
 			LoginAuthHandler lah = LoginAuthHandler.getInstance(this);
-			//Log.v("Is Login Required? "+lah.isLoginRequired()," Did Login: "+!lah.isDidLogin());
-			
+			Log.v("Is Login Required? "+lah.isLoginRequired()," Did Login: "+!lah.isDidLogin());
+			//Log.v("DID ROTATE: ",lah.isDidRotate()+"");
 			if(lah.showLoginScreen())
 			{
+				//Log.v("MADE IT IN DID ROTATE: ",lah.isDidRotate()+"");
 				lah.setLoginRequired(false);
 			    //pop login window
 				if(passDao.checkForPassword().getCount() > 0 )
@@ -66,6 +69,8 @@ public class FooterActivity extends Activity implements OnClickListener {
 						lah.setDidRotate(false);
 						startActivity(new Intent(this,LoginView.class));
 					}
+					else
+						lah.setDidRotate(false);
 				}
 				else
 					startActivity(new Intent(this,CreateLoginPasswordActivity.class));
