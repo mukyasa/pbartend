@@ -20,5 +20,6 @@ public class Constants {
 	
 	/*
 	 * 1.0.6 - 1/7/2010 Added instuctions
+	 * 1.0.7 - 1/7/2010 Added new info in the about menu
 	 * */
 }
