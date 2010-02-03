@@ -115,7 +115,7 @@ public class SettingsActivity extends FooterActivity{
 	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int whichButton) {
 	
-	               dismissDialog(MENU_ABOUT);
+	               dismissDialog(MENU_ABOUT); 
 	            }
 	        })      
 	       .create();
