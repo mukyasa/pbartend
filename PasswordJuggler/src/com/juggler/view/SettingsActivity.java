@@ -41,6 +41,7 @@ public class SettingsActivity extends FooterActivity{
 	private ToggleButton tbClearText,tbDeleteDb;
 	private Context context;
 	private int MENU_ABOUT=0;
+	private int MENU_DELETE=1;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -114,11 +115,11 @@ public class SettingsActivity extends FooterActivity{
 	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int whichButton) {
 	
-	               dismissDialog(0);
+	               dismissDialog(MENU_ABOUT);
 	            }
 	        })      
 	       .create();
-		 }else
+		 }else 
 		 {
 	    	return new AlertDialog.Builder(SettingsActivity.this)
 	        .setIcon(R.drawable.error)
@@ -139,7 +140,7 @@ public class SettingsActivity extends FooterActivity{
 	        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int whichButton) {
 	            	tbDeleteDb.setChecked(false);
-	               dismissDialog(0);
+	               dismissDialog(MENU_DELETE);
 	            }
 	        })      
 	       .create();
@@ -178,7 +179,7 @@ public class SettingsActivity extends FooterActivity{
     		//startActivity(new Intent(this,AutoLockAcivity.class));	
     	else if(v==tbDeleteDb)
     	{
-    		showDialog(0);
+    		showDialog(MENU_DELETE);
     		
     	}
     }
