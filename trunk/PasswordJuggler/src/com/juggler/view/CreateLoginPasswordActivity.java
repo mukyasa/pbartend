@@ -84,7 +84,7 @@ public class CreateLoginPasswordActivity extends Activity implements OnClickList
     	
     	if(v == bNext)
  	    {
-    		if(pwd.getText().toString().equals(pwdconfirm.getText().toString()))
+    		if(!pwd.getText().toString().trim().equals("") &&  pwd.getText().toString().trim().equals(pwdconfirm.getText().toString().trim()))
     		{
     			//save password
         		passDao.setRootLogin(pwd.getText().toString());
