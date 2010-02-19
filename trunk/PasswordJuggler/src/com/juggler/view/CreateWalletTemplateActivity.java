@@ -154,6 +154,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    super.onClick(v);
 	    
 	    Intent intent = new Intent(this, CreateWalletField.class);
+	    NewPassword np = NewPassword.getInstance();
 	    
 	    if(v == tvWalletTitle)
 	    {
@@ -164,7 +165,6 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_SECTION,(Integer)((TextView)v).getTag());
 	    	
 	    	//for notes and the key to the hashtable
-	    	NewPassword np = NewPassword.getInstance();
 	    	np.templateId = ((TextView)v).getId();
 	    	//Log.v("TEMP ID", np.templateId+"");
 	    	startActivity(intent);
@@ -203,7 +203,6 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    	intent.putExtra(Constants.INTENT_EXTRA_SELECTED_SECTION,(Integer)((TextView)value).getTag());
 	    	
 	    	//for notes and the key to the hashtable
-	    	NewPassword np = NewPassword.getInstance();
 	    	np.templateId = ((TextView)value).getId();
 	    	
 	    			
@@ -213,6 +212,7 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	    else if(v == bNext)
 	    {
 	    	passDao.saveWallet();
+	    	np.resetTemplateSaver();
     		startActivity(new Intent(this,HomeView.class));
 	    }
 	    
@@ -220,3 +220,4 @@ public class CreateWalletTemplateActivity extends BaseActivity implements OnClic
 	}
 	
 }
+

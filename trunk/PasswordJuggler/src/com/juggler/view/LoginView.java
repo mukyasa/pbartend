@@ -91,6 +91,14 @@ public class LoginView extends Activity implements OnClickListener,OnTouchListen
     }
 
     /* (non-Javadoc)
+    * @see android.app.Activity#onBackPressed()
+    */
+    @Override
+    public void onBackPressed() {
+    // do nothing here
+    }
+    
+    /* (non-Javadoc)
      * @see android.app.Activity#onCreateDialog(int)
      */
     @Override

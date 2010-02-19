@@ -15,10 +15,11 @@ package com.juggler.utils;
  */
 public class Constants {
 	
-	public static String VERSION = "1.0.2";
+	public static String VERSION = "1.0.3";
 	public static String COMPANY_NAME = "mypocket-technologies";
 	
 	/**
+	 * <li>1.0.3 Fixed Bug disable back button. Cleaned up text fields</li>
 	 * <li>1.0.2 Fixed Bug when deleting database.</li>
 	 * <li>1.0.1 Fixed Bug when deleting row. Removed internet access permission.</li>
 	 * <li>1.0.0 Initial release</li>
