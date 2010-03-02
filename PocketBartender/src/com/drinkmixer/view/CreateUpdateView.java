@@ -212,13 +212,14 @@ public class CreateUpdateView extends BaseActivity implements OnClickListener, O
 			 directions.setTextColor(Color.LTGRAY);
 			 TableLayout ll = (TableLayout)findViewById(R.id.lling);
 			 ll.removeAllViews();
-			// TextView newIngNm = (TextView)findViewById(R.id.tvNewIngredients);
-			 //newIngNm.setText("");
+			 
+			 TextView tvDeleteInstructions = (TextView)findViewById(R.id.tvDeleteInstructions);  
+			 tvDeleteInstructions.setText(getString(R.string.delete));
+			 
 			 TextView newCatNm = (TextView)findViewById(R.id.tvNewCategory);
-			// ImageView newGlass = (ImageView)findViewById(R.id.imgNewGlass);
-			 newCatNm.setText("");
-			 newCatNm.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
-			// newGlass.setBackgroundResource(R.drawable.blank);
+			 newCatNm.setText(getString(R.string.newCat));
+			 Drawable d = getResources().getDrawable(R.drawable.glasstemplate);
+			 newCatNm.setCompoundDrawablesWithIntrinsicBounds(d, null, null, null);  
 			 
 		}
 		else if(view==btnCat) 
