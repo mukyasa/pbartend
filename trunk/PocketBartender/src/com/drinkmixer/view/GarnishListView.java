@@ -8,6 +8,11 @@ public class GarnishListView extends IngredientsListView {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ingtype.type=(TYPE_GARNISH);
-        initComponents();
+        try {
+	        initComponents();
+        } catch (Exception e) {
+        	showDialog(0);
+        };
 	}
+	
 }

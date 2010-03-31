@@ -8,7 +8,12 @@ public class LiquorListView extends IngredientsListView {
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        ingtype.type=(TYPE_LIQUOR);
-	        initComponents();
+	        try {
+		        initComponents();
+	        } catch (Exception e) {
+	        	showDialog(0);//Log.e("", "Whoa! some error trying to open your db.", e);
+	        }
 	    }
+	  
 	    
 }

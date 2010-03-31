@@ -29,15 +29,18 @@ public class CategoryListView extends ListViews {
         
         intent = new Intent(this, DrinkListView.class);
         
-        initComponents();
+        try {
+	        initComponents();
+        } catch (Exception e) {
+        	showDialog(0);//Log.e("", "Whoa! some error trying to open your db.", e);
+        }
         ScreenType.getInstance().screenType=(ScreenType.SCREEN_TYPE_CAT);
     }
-    
     
     /**
      * init screen list
      */
-    private void initComponents() {
+    private void initComponents() throws Exception {
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor = dataDAO.retrieveAllDrinktypes();
     	startManagingCursor(recordscCursor);

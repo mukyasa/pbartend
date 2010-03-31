@@ -286,7 +286,10 @@ public class MixerDbHelper extends SQLiteOpenHelper {
 					}
 					db.setVersion(DATABASE_VERSION);
 					db.setTransactionSuccessful();
-				} finally {
+				} catch(Exception e){
+					//Log.e(TAG, "Whoa! some error trying to open your db.", e);
+					
+				}finally {
 					db.endTransaction();
 				}
 			}
@@ -294,7 +297,11 @@ public class MixerDbHelper extends SQLiteOpenHelper {
 			onOpen(db);
 			success = true;
 			return db;
-		} finally {
+		} catch(Exception e){
+			//Log.e(TAG, "Whoa! some error trying to open your db. Try rebuilding it.", e);
+			return null;
+			
+		}finally {
 			mIsInitializing = false;
 			if (success) {
 				if (mDatabase != null) {

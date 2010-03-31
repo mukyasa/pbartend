@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
@@ -26,6 +29,7 @@ import com.drinkmixer.dao.DrinkListDAO;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.NewDrinkDomain;
 import com.drinkmixer.domain.ScreenType;
+import com.drinkmixer.utils.Constants;
 
 public class CategoryAndGlassPicker extends BaseActivity implements OnClickListener {
 	
@@ -41,8 +45,26 @@ public class CategoryAndGlassPicker extends BaseActivity implements OnClickListe
         super.onCreate(savedInstanceState);
         myDatabaseAdapter = MixerDbHelper.getInstance(this);
         setContentView(com.drinkmixer.R.layout.cat_glass);
-        initComponents();
+        try {
+	        initComponents();
+        } catch (Exception e) {
+        	showDialog(0);//Log.e("", "Whoa! some error trying to open your db.", e);
+        }
     }
+    
+    protected Dialog onCreateDialog(int id) {
+    	
+    	return new AlertDialog.Builder(CategoryAndGlassPicker.this)
+        .setIcon(R.drawable.info)
+        .setMessage(Constants.WHOA_ERROR)
+        .setTitle("Database Error.")
+        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+               dismissDialog(0);
+            }
+        })      
+       .create();
+	}
    
     @Override
     protected void onResume() {
@@ -65,7 +87,7 @@ public class CategoryAndGlassPicker extends BaseActivity implements OnClickListe
     	
 	}
     
-    private void initComponents() {
+    private void initComponents()  throws Exception{
 
     	btnSave = (Button) findViewById(R.id.btnSave);
     	btnSave.setOnClickListener(this);

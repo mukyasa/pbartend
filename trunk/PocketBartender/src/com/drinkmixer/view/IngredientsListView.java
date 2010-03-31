@@ -45,7 +45,7 @@ public class IngredientsListView extends ListViews {
         }
     }
     
-   protected void initComponents() {
+   protected void initComponents() throws Exception{
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor = dataDAO.retrieveAllIngredients(ingtype.type);
     	startManagingCursor(recordscCursor);
