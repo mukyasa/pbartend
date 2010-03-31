@@ -24,7 +24,7 @@ public class DrinkListDAO extends DataDAO{
 		return cursor;
 	}
 	
-	public Cursor retrieveAllDrinkAndGlass()
+	public Cursor retrieveAllDrinkAndGlass() throws Exception
 	{
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllDrinksAndGlass, new String[]{});
 

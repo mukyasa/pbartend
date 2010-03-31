@@ -24,13 +24,18 @@ public class DrinkListView extends ListViews {
         
         selectedRow = getIntent().getLongExtra(ListViews.INTENT_EXTRA_SELECTED_ROW, 0);
         Constants.selectedCat=selectedRow;
-        initComponents();
+        try {
+	        initComponents();
+        } catch (Exception e) {
+        	showDialog(0);//Log.e("", "Whoa! some error trying to open your db.", e);
+        }
     }
     
+   
     /**
      * init screen list
      */
-    private void initComponents() {
+    private void initComponents() throws Exception {
     	drinkdetail = new DetailsDomain();
     	drinkdetail.id=((int) selectedRow);
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());

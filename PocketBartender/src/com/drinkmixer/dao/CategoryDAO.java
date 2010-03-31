@@ -9,7 +9,7 @@ public class CategoryDAO extends DataDAO {
 	 * 
 	 * @return   
 	 */
-	public Cursor retrieveAllDrinktypes() {
+	public Cursor retrieveAllDrinktypes() throws Exception {
 		Cursor cursor = sqliteDatabase.query(TABLE_DRINK_CAT, new String[] {
 				COL_ROW_ID, COL_NAME }, null, null, null, null, null);
 

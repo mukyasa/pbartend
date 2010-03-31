@@ -10,7 +10,7 @@ public class IngredientsDAO extends DataDAO {
 	 * @return
 	 */
 	
-	public Cursor retrieveAllIngredients(String searchresult) {
+	public Cursor retrieveAllIngredients(String searchresult) throws Exception{
 		
 		String [] selectionArgs = {searchresult};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllIngredients, selectionArgs);

@@ -18,14 +18,19 @@ public class FavoriteListView extends ListViews {
         super.onCreate(savedInstanceState);
         setCurrentListActivity(this);
         intent = new Intent(this, DetailsView.class);
-        initComponents();
+        try {
+	        initComponents();
+        } catch (Exception e) {
+        	showDialog(0);//Log.e("", "Whoa! some error trying to open your db.", e);
+        }
     }
     
     
     /**
      * init screen list
      */
-    private void initComponents() {
+    private void initComponents() throws Exception {
+    	
     	dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
     	Cursor recordscCursor = dataDAO.retrieveAllFavorites();
     	startManagingCursor(recordscCursor);

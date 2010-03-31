@@ -9,7 +9,7 @@ public class FavoritesListDAO extends DataDAO{
 	/**
 	 * gets all records for name
 	 */
-	public Cursor retrieveAllFavorites() {
+	public Cursor retrieveAllFavorites() throws Exception {
 		
 		String [] selectionArgs = {DataDAO.FAV_YES};
 		Cursor cursor = sqliteDatabase.rawQuery(sqlGetAllFavorites, selectionArgs);
