@@ -5,7 +5,7 @@ public class Constants {
 	public static String COMPANY_NAME = "mypocket-technologies";
 	
 	public static long selectedCat=-1;
-	public static String WHOA_ERROR = "Whoa! Looks like something happen when you first created your database. Go back to the home screen, open the menu, and move the database. If you get this message again contact support.";
+	public static String WHOA_ERROR = "Whoa! Looks like something happened when you first created your database. Go back to the home screen, open the menu, and move the database. If you get this message again contact support.";
 	
 	/**
 	 * 1.1.1 - added new measurement types, added feed back for deleting ingredient,fixed but when adding new ingredient and updated UI buttons
