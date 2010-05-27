@@ -54,7 +54,7 @@ public class ViewerCountDown extends CountDownTimer {
 	    // TODO Auto-generated method stub
     	gallery.setVisibility(Gallery.INVISIBLE);
     	view.setPadding(0, 0, 0, 0);
-	    
+    	
     }
 
 	/* (non-Javadoc)
