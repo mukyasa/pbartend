@@ -3,9 +3,11 @@ package com.fbhotties.view;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.View.OnTouchListener;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
@@ -31,8 +33,8 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_view);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.home_view);
 
         mRatingBar = (RatingBar)findViewById(R.id.rating_bar);
         mRatingBar.setOnRatingBarChangeListener(this);
@@ -67,24 +69,9 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
      * @see android.widget.RatingBar.OnRatingBarChangeListener#onRatingChanged(android.widget.RatingBar, float, boolean)
      */
     public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-    	final int numStars = ratingBar.getNumStars();
     	final float ratingBarStepSize = ratingBar.getStepSize();
     	
-        // Since this rating bar is updated to reflect any of the other rating
-        // bars, we should update it to the current values.
-        if (mRatingBar.getNumStars() != numStars) {
-        	mRatingBar.setNumStars(numStars);
-            mSmallRatingBar.setNumStars(numStars);
-        }
-        if (mRatingBar.getRating() != rating) {
-        	mRatingBar.setRating(rating);
-            mSmallRatingBar.setRating(rating);
-        }
-        
-        if (mRatingBar.getStepSize() != ratingBarStepSize) {
-        	mRatingBar.setStepSize(ratingBarStepSize);
-            mSmallRatingBar.setStepSize(ratingBarStepSize);
-        }
+    	mSmallRatingBar.setRating(rating);
 	    
     }
     
