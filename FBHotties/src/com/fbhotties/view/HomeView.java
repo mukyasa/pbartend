@@ -71,7 +71,8 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
     public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
     	final float ratingBarStepSize = ratingBar.getStepSize();
     	
-    	mSmallRatingBar.setRating(rating);
+    	if(rating>0)
+    		mSmallRatingBar.setRating(rating);
 	    
     }
     
@@ -129,6 +130,7 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
         public View getView(int position, View convertView, ViewGroup parent) {
             ImageView i = new ImageView(mContext);
             mRatingBar.setRating(0f);
+            mSmallRatingBar.setRating(0f);
             i.setImageResource(mThumbIds[position]);
             i.setAdjustViewBounds(true);
             i.setLayoutParams(new Gallery.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
