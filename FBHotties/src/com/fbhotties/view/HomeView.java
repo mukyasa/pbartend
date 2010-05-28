@@ -41,7 +41,6 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
         
         mSmallRatingBar = (RatingBar) findViewById(R.id.small_ratingbar);
         
-        
         mSwitcher = (ImageSwitcher) findViewById(R.id.switcher);
         mSwitcher.setFactory(this);
         mSwitcher.setInAnimation(AnimationUtils.loadAnimation(this,android.R.anim.fade_in));
@@ -59,6 +58,9 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
      */
     public void onItemSelected(AdapterView parent, View v, int position, long id) {
     	ViewerCountDown vcd = ViewerCountDown.getInstance(g,mSwitcher);
+    	mRatingBar.setRating(0f);
+        mSmallRatingBar.setRating(0f);
+    	
     	vcd.cancel();
     	vcd.start();
     	mSwitcher.setImageResource(mImageIds[position]);
@@ -129,8 +131,6 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
 
         public View getView(int position, View convertView, ViewGroup parent) {
             ImageView i = new ImageView(mContext);
-            mRatingBar.setRating(0f);
-            mSmallRatingBar.setRating(0f);
             i.setImageResource(mThumbIds[position]);
             i.setAdjustViewBounds(true);
             i.setLayoutParams(new Gallery.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
