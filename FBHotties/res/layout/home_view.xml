@@ -2,7 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
     android:layout_width="fill_parent" 
-    android:layout_height="fill_parent"> 
+    android:layout_height="fill_parent" android:background="@drawable/base_bg"> 
     
     <RatingBar
 	    android:id="@+id/rating_bar"
@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:numStars="5"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true" android:layout_marginTop="5px"/>
     
      
     <ImageSwitcher android:id="@+id/switcher"
