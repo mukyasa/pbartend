@@ -20,7 +20,7 @@ import android.widget.Gallery;
 public class ViewerCountDown extends CountDownTimer {
 
 	private static ViewerCountDown handler=null;
-	private static long timeout=2000; // 2 seconds
+	private static long timeout=3000; // 3 seconds
 	private static Gallery gallery;
 	private static View view;
 	

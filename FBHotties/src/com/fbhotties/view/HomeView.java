@@ -3,11 +3,9 @@ package com.fbhotties.view;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.View.OnTouchListener;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
@@ -82,7 +80,7 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
      * @see android.view.View.OnTouchListener#onTouch(android.view.View, android.view.MotionEvent)
      */
     public boolean onTouch(View v, MotionEvent event) {
-    	v.setPadding(0, 70, 0, 0);
+    	v.setPadding(0, 61, 0, 0);
     	g.setVisibility(Gallery.VISIBLE);
     	
     	ViewerCountDown vcd = ViewerCountDown.getInstance(g,v);
