@@ -10,17 +10,22 @@
 package com.flashcard.view;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Iterator;
 
 import org.json.JSONException;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -29,6 +34,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -38,6 +44,7 @@ import com.flashcard.domain.CardSet;
 import com.flashcard.domain.FlashCard;
 import com.flashcard.handler.ApplicationHandler;
 import com.flashcard.util.AppUtil;
+import com.flashcard.util.Authenication;
 import com.flashcard.util.Constants;
 
 /**
@@ -67,6 +74,7 @@ public class FlashCardTest extends Activity {
 	private boolean cardfinished=false;
 	private boolean isSound=false;
 	private MediaPlayer mp;
+	private final int DIALOG_ERROR=0;
 	
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +101,11 @@ public class FlashCardTest extends Activity {
     @Override
     protected void onResume() {
     	//set up cardset called here to avoid back button problems
-    	initalize();
+    	try {
+			initalize();
+		} catch (Exception e) {
+			initalizeError();
+		}
         super.onResume();
     }
     
@@ -114,7 +126,7 @@ public class FlashCardTest extends Activity {
     	maxcount=0;
     }
     
-	private void initalize(){
+	private void initalize() throws Exception{
 		
 		//get user prefs
 		isSound = AppUtil.getSound(this);
@@ -147,7 +159,6 @@ public class FlashCardTest extends Activity {
         //the correct button
         ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
         answered.setOnClickListener(new OnClickListener() {
-
             
 			public void onClick(View v) {
 				ApplicationHandler handler = ApplicationHandler.instance();
@@ -202,7 +213,11 @@ public class FlashCardTest extends Activity {
             vf.setDisplayedChild(0);
             vf.getAnimation();
             isBack=true;
-	    	initalize();
+	    	try {
+				initalize();
+			} catch (Exception e1) {
+				initalizeError();
+			}
 	    	return true;
     	case MENU_RESULTS:
 	    	intent = new Intent(this, Results.class);
@@ -257,7 +272,11 @@ public class FlashCardTest extends Activity {
             vf.setDisplayedChild(0);
             vf.getAnimation();
             isBack=true;
-	    	initalize();
+	    	try {
+				initalize();
+			} catch (Exception e1) {
+				initalizeError();
+			}
 	    	return true;
 	    case MENU_NEW:
 	    	intent = new Intent(this, Home.class);
@@ -282,6 +301,26 @@ public class FlashCardTest extends Activity {
 	        return false;
 	}
 	
+	private void initalizeError()
+	{
+		//alert box here
+		showDialog(DIALOG_ERROR);
+	}
+	
+	 protected Dialog onCreateDialog(int id) {
+	    	
+    	return new AlertDialog.Builder(FlashCardTest.this)
+        .setIcon(R.drawable.error)
+        .setMessage("Whoa! Some major error happen? If you continue to get this error contact support.")
+        .setTitle("Error")
+        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+               dismissDialog(DIALOG_ERROR);
+            }
+        })      
+       .create();
+	    }
+	 
 	protected class LearnGestureListener extends GestureDetector.SimpleOnGestureListener{
 
 		
