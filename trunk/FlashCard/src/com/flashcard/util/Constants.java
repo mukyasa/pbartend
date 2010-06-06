@@ -21,5 +21,7 @@ public class Constants {
 	/*
 	 * 1.0.6 - 1/7/2010 Added instuctions
 	 * 1.0.7 - 1/7/2010 Added new info in the about menu
+	 * 1.0.8 - 6/6/2010 Added error handling to fling and init methods on FlashcardTest
+	 * 1.0.9 - 6/6/2010 Added error handling to fling and init methods on FlashcardTest
 	 * */
 }
