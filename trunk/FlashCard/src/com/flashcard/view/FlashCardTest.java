@@ -21,6 +21,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources.NotFoundException;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -425,77 +426,81 @@ public class FlashCardTest extends Activity {
 	    @Override
 	    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
 	        
-    		//reset values on fling
-            isBack=true;
-            isWrong=false;
-            ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
-	        answered.setBackgroundResource(R.drawable.correct);
-            ApplicationHandler handler = ApplicationHandler.instance();
-            CardSet cardsets = handler.currentlyUsedSet;
-        	ArrayList<FlashCard> sets = cardsets.flashcards;
-        	// Get the ViewFlipper from the layout
-            ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
-            vf.setDisplayedChild(0);
-        	
-            if(e1.getX() > e2.getX() && Constants.countlabel < maxcount)//flick next 
-            {
-            	Constants.count++;
-            	Constants.countlabel++;
-            	
-            	if(isSound)
-            		mp.start();
-            	
-            	FlashCard terms = (FlashCard)sets.get(Constants.count);
-                
-		        tvFlashCard.setText(terms.question);
-		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
-		        //check for images
-		        if(!"".equals(terms.imageURL) && AppUtil.isFlipped)
-		        	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
-		        
-		        terms.wasSeen=true;
-                // Set an animation from res/anim: 
-		        // Get the ViewFlipper from the layout
-                vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left)); 
-                
-            }
-            else if(Constants.count > 0 && e1.getX() < e2.getX())//flick previous
-            {
-            	Constants.count--;
-            	Constants.countlabel--;
-            	
-            	if(isSound)
-            		mp.start();
-            	
-            	FlashCard terms = (FlashCard)sets.get(Constants.count);
-		        tvFlashCard.setText(terms.question);
-		        tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
-		        //check for images
-		        if(!"".equals(terms.imageURL)  && AppUtil.isFlipped)
-		        	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
-		        
-		        terms.wasSeen=true;
-		        // Set an animation from res/anim: 
-            	// Get the ViewFlipper from the layout
-                vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_right));
-            }
-            
-            vf.getAnimation(); 
-            
-            //set card number tag
-	        cardnumber.setText(CARD_NUMBER + Constants.countlabel + " of " +  sets.size() );
-	        cardnumber2.setText(CARD_NUMBER + Constants.countlabel + " of " +  sets.size());
-            
-	        
-	        if(Constants.countlabel == maxcount && !cardfinished)
-	        {
-	        	if(isSound)
-	        	{
-		        	MediaPlayer mpfinish = MediaPlayer.create(context, R.raw.wind);
-		        	mpfinish.start();
-	        	}
-                cardfinished=true;
-	        }
+    		try {
+				//reset values on fling
+				isBack=true;
+				isWrong=false;
+				ImageView answered = (ImageView)findViewById(R.id.ivAnswered);
+				answered.setBackgroundResource(R.drawable.correct);
+				ApplicationHandler handler = ApplicationHandler.instance();
+				CardSet cardsets = handler.currentlyUsedSet;
+				ArrayList<FlashCard> sets = cardsets.flashcards;
+				// Get the ViewFlipper from the layout
+				ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
+				vf.setDisplayedChild(0);
+				
+				if(e1.getX() > e2.getX() && Constants.countlabel < maxcount)//flick next 
+				{
+					Constants.count++;
+					Constants.countlabel++;
+					
+					if(isSound)
+						mp.start();
+					
+					FlashCard terms = (FlashCard)sets.get(Constants.count);
+				    
+				    tvFlashCard.setText(terms.question);
+				    tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
+				    //check for images
+				    if(!"".equals(terms.imageURL) && AppUtil.isFlipped)
+				    	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
+				    
+				    terms.wasSeen=true;
+				    // Set an animation from res/anim: 
+				    // Get the ViewFlipper from the layout
+				    vf.setAnimation(AnimationUtils.loadAnimation(context,  R.anim.slide_left)); 
+				    
+				}
+				else if(Constants.count > 0 && e1.getX() < e2.getX())//flick previous
+				{
+					Constants.count--;
+					Constants.countlabel--;
+					
+					if(isSound)
+						mp.start();
+					
+					FlashCard terms = (FlashCard)sets.get(Constants.count);
+				    tvFlashCard.setText(terms.question);
+				    tvFlashCard.setTextSize(AppUtil.getFontSize(context,terms.question,terms));
+				    //check for images
+				    if(!"".equals(terms.imageURL)  && AppUtil.isFlipped)
+				    	AppUtil.getsizedDrawableFromURL(terms.imageURL,context,tvFlashCard);
+				    
+				    terms.wasSeen=true;
+				    // Set an animation from res/anim: 
+					// Get the ViewFlipper from the layout
+				    vf.setAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_right));
+				}
+				
+				vf.getAnimation(); 
+				
+				//set card number tag
+				cardnumber.setText(CARD_NUMBER + Constants.countlabel + " of " +  sets.size() );
+				cardnumber2.setText(CARD_NUMBER + Constants.countlabel + " of " +  sets.size());
+				
+				
+				if(Constants.countlabel == maxcount && !cardfinished)
+				{
+					if(isSound)
+					{
+				    	MediaPlayer mpfinish = MediaPlayer.create(context, R.raw.wind);
+				    	mpfinish.start();
+					}
+				    cardfinished=true;
+				}
+			} catch (Exception e) {
+				showDialog(DIALOG_ERROR);
+			} 
 	        
 	        return true;
 	    }
