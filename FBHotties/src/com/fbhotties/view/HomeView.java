@@ -137,7 +137,7 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
         }
 
         public int getCount() {
-            return mThumbIds.length;
+            return mImageIds.length;
         }
 
         public Object getItem(int position) {
@@ -150,7 +150,7 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
 
         public View getView(int position, View convertView, ViewGroup parent) {
             ImageView i = new ImageView(mContext);
-            i.setImageResource(mThumbIds[position]);
+            i.setImageResource(mImageIds[position]);
             i.setAdjustViewBounds(true);
             i.setLayoutParams(new Gallery.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
             return i;
@@ -160,13 +160,8 @@ AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory, OnTouchListener,On
 
     }
     
-    private Integer[] mThumbIds = {R.drawable.p00006,R.drawable.p00008,R.drawable.p00387,R.drawable.p00388
-    		,R.drawable.p00389,R.drawable.p00393,R.drawable.p00395,R.drawable.p00396,R.drawable.p00398
-    		,R.drawable.p00402,R.drawable.p00404,R.drawable.p00406,R.drawable.p00411};
 
-    private Integer[] mImageIds = {R.drawable.p00006,R.drawable.p00008,R.drawable.p00387,R.drawable.p00388
-    		,R.drawable.p00389,R.drawable.p00393,R.drawable.p00395,R.drawable.p00396,R.drawable.p00398
-    		,R.drawable.p00402,R.drawable.p00404,R.drawable.p00406,R.drawable.p00411};
+    private Integer[] mImageIds = {};
 
 
     private class HotGirlListener extends SimpleAdListener
