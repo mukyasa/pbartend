@@ -4,15 +4,17 @@
       android:versionCode="1"
       android:versionName="1.0">
     <application android:icon="@drawable/icon" android:label="@string/app_name">
-        <activity android:name=".HomeView"
+        <activity android:name=".SplashScreenView"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+<!-- The application's publisher ID assigned by AdMob -->
+        <meta-data android:value="a14c0eeee8d5e3b"  android:name="ADMOB_PUBLISHER_ID" />
     </application>
     <uses-sdk android:minSdkVersion="1" />
 
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest> 
