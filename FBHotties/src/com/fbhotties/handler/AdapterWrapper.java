@@ -15,19 +15,15 @@
 
 package com.fbhotties.handler;
 
-import com.fbhotties.view.HomeView;
-
-import android.R;
 import android.app.Activity;
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
-import android.widget.TextView;
+
+import com.fbhotties.view.HomeView;
 
 /**
  * Adapter that delegates to a wrapped LisAdapter, much as CursorWrapper
