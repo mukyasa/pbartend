@@ -14,5 +14,6 @@ public class Constants {
 	 * 1.2.2 - fixed small bug when reset was pushed on create new drink.
 	 * 1.2.3 - fixed force close issues.
 	 * 1.2.4 -4/25/2010 Added new look.
+	 * 1.2.5 -4/25/2010 Added new booze Wild Turkey American Honey.
 	 */
 }
