@@ -1270,7 +1270,8 @@ public class IngredientsInsert {
 ,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1345,'Orange Brandy','',1,2);"
 ,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1347,'Polish Potato Vodka','',1,18);"
 ,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1348,'Grey Goose Vodka','',1,18);"
-,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1349,'Hypnotiq','',1,18);"};
+,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1349,'Hypnotiq','',1,18);"
+,"INSERT INTO "+DataDAO.TABLE_INGREDIENTS+" VALUES(1350,'Wild Turkey American Honey','',1,19);"};
 	
 	
 }
