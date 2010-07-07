@@ -21,6 +21,7 @@ import com.drinkmixer.R;
 import com.drinkmixer.dao.DataDAO;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.DetailsDomain;
+import com.drinkmixer.domain.NewDrinkDomain;
 import com.drinkmixer.domain.ScreenType;
 import com.drinkmixer.utils.Constants;
 
@@ -28,6 +29,10 @@ public abstract class ListViews extends ListActivity implements TextWatcher{
 	
 	protected static final String INTENT_EXTRA_SELECTED_ROW = "SELECTED_ROW";
 	protected static final int INTENT_NEXT_SCREEN = 0;
+	protected final int MENU_CREATE_LIQUOR=0;
+	protected final int MENU_CREATE_MIXER=2;
+	protected final int MENU_CREATE_GARNISH=3;
+	private final int MENU_HOME=1;
 	protected MixerDbHelper myDatabaseAdapter;
 	protected EditText searchbox;
 	protected Intent intent;
@@ -102,15 +107,35 @@ public abstract class ListViews extends ListActivity implements TextWatcher{
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 0, 0, "Home").setIcon(R.drawable.home);
+		menu.add(0, MENU_HOME, 0, "Home").setIcon(R.drawable.home);
 	    return true;
 	}
 	
 	//home menu option
 	public boolean onOptionsItemSelected(MenuItem item) {
-	    	Intent intent = new Intent(this, HomeScreenView.class);
-			startActivity(intent);
-	    	return true;
+	    	
+	    	 switch (item.getItemId()) {
+				 case MENU_CREATE_LIQUOR:
+					 	NewDrinkDomain.getInstance().clearDomain();
+						startActivity(new Intent(this, AddNewLiquor.class));
+				    	return true;
+				  
+				 case MENU_CREATE_MIXER:
+					 	NewDrinkDomain.getInstance().clearDomain();
+						startActivity(new Intent(this, AddNewMixer.class));
+				    	return true;
+				 case MENU_CREATE_GARNISH:
+					 	NewDrinkDomain.getInstance().clearDomain();
+						startActivity(new Intent(this, AddNewGarnish.class));
+				    	return true;
+				    	
+				 case MENU_HOME:
+					 	NewDrinkDomain.getInstance().clearDomain();
+						startActivity(new Intent(this, HomeScreenView.class));
+				    	return true;
+				    	
+			 }
+			 return false;
 	}
 	
 	/* (non-Javadoc)

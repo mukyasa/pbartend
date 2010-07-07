@@ -21,7 +21,7 @@ public class CreateUpdateDAO extends DataDAO {
 			values.put(COL_INSTUCTIONS, instructions);
 			values.put(COL_FLAGGED, 0);
 			values.put(COL_FAVORITE, 0);
-			values.put(COL_CUSTOM, 1);
+			values.put(COL_CUSTOM, 1); 
 			
 			sqliteDatabase.insert(TABLE_DRINK, null, values);
 			
@@ -31,6 +31,83 @@ public class CreateUpdateDAO extends DataDAO {
 			
 			NewDrinkDomain ndd = NewDrinkDomain.getInstance();
 			ndd.newDrinkId = newDrinkId;
+	}
+	
+	/***
+	 * adds new liquor returns row id of new insert or -1 if fail
+	 * Jul 6, 2010
+	 * dmason
+	 * @param drinknm
+	 * @return
+	 *
+	 */
+	public void insertNewLiquor(String drinknm,String baseCatId){
+		
+		int cat_id =1;
+		ContentValues values = new ContentValues();
+		
+		values.put(COL_CAT_ID, cat_id);
+		values.put(COL_NAME, drinknm);
+		values.put(COL_CABINET, 0);		
+		sqliteDatabase.insert(TABLE_INGREDIENTS_SUB_CAT, null, values);
+		
+		values = new ContentValues();
+		
+		values.put(COL_NAME, drinknm);
+		values.put(COL_DESCRIPTION, "");
+		values.put(COL_CAT_ID, cat_id);
+		values.put(COL_SUB_CAT_ID, baseCatId);
+		sqliteDatabase.insert(TABLE_INGREDIENTS, null, values);
+		
+	}
+	
+public void insertNewMixer(String drinknm,String baseCatId){
+		
+		int cat_id =2;
+		ContentValues values = new ContentValues();
+		
+		values.put(COL_CAT_ID, cat_id);
+		values.put(COL_NAME, drinknm);
+		values.put(COL_CABINET, 0);		
+		sqliteDatabase.insert(TABLE_INGREDIENTS_SUB_CAT, null, values);
+		
+		values = new ContentValues();
+		
+		values.put(COL_NAME, drinknm);
+		values.put(COL_DESCRIPTION, "");
+		values.put(COL_CAT_ID, cat_id);
+		values.put(COL_SUB_CAT_ID, baseCatId);
+		sqliteDatabase.insert(TABLE_INGREDIENTS, null, values);
+		
+	}
+
+
+public void insertNewGarnish(String drinknm){
+	
+	int cat_id =3;
+	ContentValues values = new ContentValues();
+	
+	values.put(COL_CAT_ID, cat_id);
+	values.put(COL_NAME, drinknm);
+	values.put(COL_CABINET, 0);		
+	sqliteDatabase.insert(TABLE_INGREDIENTS_SUB_CAT, null, values);
+	
+	values = new ContentValues();
+	
+	values.put(COL_NAME, drinknm);
+	values.put(COL_DESCRIPTION, "");
+	values.put(COL_CAT_ID, cat_id);
+	values.put(COL_SUB_CAT_ID, "");
+	sqliteDatabase.insert(TABLE_INGREDIENTS, null, values);
+	
+}
+
+	
+	public Cursor retrieveAllBaseIngredients() throws Exception {
+		Cursor cursor = sqliteDatabase.query(TABLE_INGREDIENTS_SUB_CAT, new String[] {
+				COL_ROW_ID, COL_NAME }, null, null, null, null, null);
+
+		return cursor;
 	}
 	
 	public void updateDrink(NewDrinkDomain ndd)
@@ -43,7 +120,7 @@ public class CreateUpdateDAO extends DataDAO {
 		values.put(COL_CAT_ID, ndd.categoryId);
 		
 		sqliteDatabase.update(TABLE_DRINK, values, COL_ROW_ID+"=?",selectionArgs);
-		//blow away ings before readding
+		//blow away ings before reading
 		sqliteDatabase.delete(TABLE_DRINK_INGREDIENTS, COL_DRINK_ID+"=?",selectionArgs);
 	}
 	

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="empty">No records found.</string>
+    <string name="newLiquorName">New Liquor Name</string>
+    <string name="newMixerName">New Mixer Name</string>
+    <string name="newGarnishName">New Garnish Name</string>
     <string name="app_name">Bartender</string>
     <string name="create_drink_title">Drink Title</string>
     <string name="search_filter">Search Filter</string>
@@ -31,6 +34,9 @@
 <string name="newCat">(Add new category)</string>
 <string name="newIng">(Add new ingredients)</string>
 
+
+<string name="newLiquorTypeAdded">Liquor Type:</string>
+<string name="newMixerTypeAdded">Mixer Type:</string>
 <string name="stock">Bar Stock</string>
 <string name="tech">Basic Techniques</string>
 <string name="glasses">Glasses</string>
