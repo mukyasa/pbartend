@@ -11,6 +11,7 @@ package com.drinkmixer.view;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -70,7 +71,15 @@ public class AddNewGarnish extends BaseActivity  implements OnClickListener {
     public void onClick(View view) {
     	if(view==btnSave)
 		{
-    		dataDAO.insertNewGarnish(garnishName.getText().toString());
+    		if(!"".equals(garnishName.getText().toString()) && !getString(R.string.newGarnishName).equals(garnishName.getText().toString()))
+    		{
+	    		dataDAO.insertNewGarnish(garnishName.getText().toString());
+	    		
+	    		garnishName.setText(getString(R.string.newGarnishName));
+	    		garnishName.setTextColor(Color.LTGRAY);
+    		}
+    		else
+    			showDialog(DIALOG_TYPE_ERROR);
     		
 		}
 		else if(view==btnCancel)

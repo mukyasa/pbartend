@@ -11,6 +11,7 @@ package com.drinkmixer.view;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -94,7 +95,19 @@ public class AddNewLiquor extends BaseActivity  implements OnClickListener {
     public void onClick(View view) {
     	if(view==btnSave)
 		{
-    		dataDAO.insertNewLiquor(liquorName.getText().toString(),baseCatId);
+    		if(!baseCatId.equals("") && ("".equals(liquorName.getText().toString())
+    				&& !getString(R.string.newLiquorName).equals(liquorName.getText().toString())))
+    		{
+	    		dataDAO.insertNewLiquor(liquorName.getText().toString(),baseCatId);
+	    		
+	    		liquorName.setText(getString(R.string.newLiquorName));
+	    		liquorName.setTextColor(Color.LTGRAY);
+	    		
+	    		liquorType.setText(getString(R.string.newLiquorTypeAdded));
+	    		showDialog(DIALOG_TYPE_SUCCESS);
+    		}
+    		else
+    			showDialog(DIALOG_TYPE_ERROR);
     		
 		}
 		else if(view==btnCancel)

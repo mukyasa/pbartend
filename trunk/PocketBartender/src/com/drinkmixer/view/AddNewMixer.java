@@ -11,6 +11,7 @@ package com.drinkmixer.view;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -93,7 +94,19 @@ public class AddNewMixer extends BaseActivity  implements OnClickListener {
     public void onClick(View view) {
     	if(view==btnSave)
 		{
-    		dataDAO.insertNewMixer(mixerName.getText().toString(),baseCatId);
+    		if(!baseCatId.equals("") && ("".equals(mixerName.getText().toString())
+    				&& !getString(R.string.newMixerName).equals(mixerName.getText().toString())))
+    		{
+	    		dataDAO.insertNewMixer(mixerName.getText().toString(),baseCatId);
+	    		
+	    		mixerName.setText(getString(R.string.newMixerName));
+	    		mixerName.setTextColor(Color.LTGRAY);
+	    		mixerType.setText(getString(R.string.newMixerTypeAdded));
+	    		showDialog(DIALOG_TYPE_SUCCESS);
+    		}
+    		else
+    			showDialog(DIALOG_TYPE_ERROR);
+    			
     		
 		}
 		else if(view==btnCancel)
