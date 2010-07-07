@@ -46,7 +46,7 @@ public class BaseActivity extends Activity implements OnTouchListener {
 		if (id == DIALOG_TYPE_ERROR) {
 			return new AlertDialog.Builder(BaseActivity.this).setIcon(
 					R.drawable.info).setMessage(
-					"Looks like you forgot to choose a type.").setTitle(
+					"Looks like you forgot to fill in something.").setTitle(
 					"Add New Error").setNegativeButton("Close",
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog,

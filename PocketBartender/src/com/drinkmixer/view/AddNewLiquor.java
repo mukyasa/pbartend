@@ -95,8 +95,8 @@ public class AddNewLiquor extends BaseActivity  implements OnClickListener {
     public void onClick(View view) {
     	if(view==btnSave)
 		{
-    		if(!baseCatId.equals("") && ("".equals(liquorName.getText().toString())
-    				&& !getString(R.string.newLiquorName).equals(liquorName.getText().toString())))
+    		if(!baseCatId.equals("") && "".equals(liquorName.getText().toString().trim())
+    				&& !getString(R.string.newLiquorName).equals(liquorName.getText().toString()))
     		{
 	    		dataDAO.insertNewLiquor(liquorName.getText().toString(),baseCatId);
 	    		
