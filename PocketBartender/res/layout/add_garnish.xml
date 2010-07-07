@@ -6,16 +6,17 @@
 	<TableLayout android:id="@+id/TableLayout01"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
 		android:paddingRight="10.0sp">
-		<EditText android:layout_height="wrap_content" android:textColor="#ccc"
-			android:layout_width="fill_parent"
-			android:layout_marginLeft="0.0sp" android:layout_marginTop="0sp" android:id="@+id/etNewGarnishNm" android:text="@string/newGarnishName"></EditText>
-		
-			
+		<EditText android:layout_height="wrap_content"
+			android:textColor="#ccc" android:layout_width="fill_parent"
+			android:layout_marginLeft="0.0sp" android:layout_marginTop="0sp"
+			android:id="@+id/etNewGarnishNm" android:text="@string/newGarnishName"></EditText>
+
+
 		<TableLayout android:id="@+id/lling" android:layout_width="fill_parent"
 			android:layout_height="wrap_content" android:layout_marginBottom="5sp">
 		</TableLayout>
 
-		
+
 		<TableRow>
 
 			<Button android:id="@+id/btnCancel" android:layout_height="wrap_content"
