@@ -77,6 +77,7 @@ public class AddNewGarnish extends BaseActivity  implements OnClickListener {
 	    		
 	    		garnishName.setText(getString(R.string.newGarnishName));
 	    		garnishName.setTextColor(Color.LTGRAY);
+	    		showDialog(DIALOG_TYPE_SUCCESS);
     		}
     		else
     			showDialog(DIALOG_TYPE_ERROR);
