@@ -94,8 +94,8 @@ public class AddNewMixer extends BaseActivity  implements OnClickListener {
     public void onClick(View view) {
     	if(view==btnSave)
 		{
-    		if(!baseCatId.equals("") && ("".equals(mixerName.getText().toString())
-    				&& !getString(R.string.newMixerName).equals(mixerName.getText().toString())))
+    		if(!baseCatId.equals("") && "".equals(mixerName.getText().toString().trim())
+    				&& !getString(R.string.newMixerName).equals(mixerName.getText().toString()))
     		{
 	    		dataDAO.insertNewMixer(mixerName.getText().toString(),baseCatId);
 	    		
