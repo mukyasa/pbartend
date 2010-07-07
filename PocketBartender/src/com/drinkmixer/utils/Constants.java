@@ -1,7 +1,7 @@
 package com.drinkmixer.utils;
 
 public class Constants {
-	public static String VERSION = "1.2.4";
+	public static String VERSION = "1.2.6";
 	public static String COMPANY_NAME = "mypocket-technologies";
 	
 	public static long selectedCat=-1;
@@ -14,6 +14,7 @@ public class Constants {
 	 * 1.2.2 - fixed small bug when reset was pushed on create new drink.
 	 * 1.2.3 - fixed force close issues.
 	 * 1.2.4 -4/25/2010 Added new look.
-	 * 1.2.5 -4/25/2010 Added new booze Wild Turkey American Honey.
+	 * 1.2.5 -6/29/2010 Added new booze Wild Turkey American Honey.
+	 * 1.2.6 -7/6/2010 Added Add Liquor Screen.
 	 */
 }

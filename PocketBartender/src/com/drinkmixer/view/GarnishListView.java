@@ -1,6 +1,7 @@
 package com.drinkmixer.view;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 public class GarnishListView extends IngredientsListView {
 
@@ -14,5 +15,11 @@ public class GarnishListView extends IngredientsListView {
         	showDialog(0);
         };
 	}
+	
+	 public boolean onCreateOptionsMenu(Menu menu) {
+		  	super.onCreateOptionsMenu(menu);
+			menu.add(0, MENU_CREATE_GARNISH, 0, "Add New Garnish").setIcon(android.R.drawable.ic_menu_add);
+		    return true;
+		}
 	
 }

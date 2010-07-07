@@ -47,11 +47,15 @@ public class BaseActivity extends Activity implements OnTouchListener {
 		  		{
 		  			//clear base text
 		  			if(((EditText)v).getText().toString().equals(this.getString(R.string.create_drink_title))
-		  					||((EditText)v).getText().toString().equals(this.getString(R.string.instructionsText))) 
+		  					||((EditText)v).getText().toString().equals(this.getString(R.string.instructionsText)) ||
+		  					((EditText)v).getText().toString().equals(this.getString(R.string.newLiquorName))||
+		  					((EditText)v).getText().toString().equals(this.getString(R.string.newMixerName))||
+		  					((EditText)v).getText().toString().equals(this.getString(R.string.newGarnishName))) 
 		  			{
 		  				((EditText)v).setText("");
 		  				((EditText)v).setTextColor(Color.BLACK);
 		  			}
+		  			
 		  			
 		  		}
 
