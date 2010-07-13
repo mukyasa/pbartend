@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@class AVCamDemoCaptureManager,AVCamDemoPreviewView;
+@class AVCamDemoCaptureManager;
 
 @interface CamerTestViewController : UIViewController <UIGestureRecognizerDelegate>{
 
