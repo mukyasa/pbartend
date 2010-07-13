@@ -1,0 +1,643 @@
+TCamerTest
+v7
+r0
+t300682863.582951
+cCheck dependencies
+cCpResource build/Debug-iphoneos/CamerTest.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+cProcessInfoPlistFile /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/Info.plist CamerTest-Info.plist
+cCompileXIB /Users/dmason/IPHONE/HeadFirst/CamerTest/MainWindow.xib
+cCompileXIB /Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTestViewController.xib
+cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/timecover.png timecover.png
+cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch.gch CamerTest_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch.gch CamerTest_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/main.o /Users/dmason/IPHONE/HeadFirst/CamerTest/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTestAppDelegate.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTestViewController.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoCaptureManager.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoPreviewView.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/main.o /Users/dmason/IPHONE/HeadFirst/CamerTest/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTestAppDelegate.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTest normal armv6
+cCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTestViewController.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoCaptureManager.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoPreviewView.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTest normal armv7
+cCreateUniversalBinary /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTest normal "armv6 armv7"
+cGenerateDSYMFile /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app.dSYM /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTest
+cProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision" /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/embedded.mobileprovision
+cTouch /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app
+cProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest.xcent
+cCodeSign /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk
+c000000004C372B250000000000000110
+t1278683941
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
+c000000004BF4B7F900000000000001A7
+t1274329081
+s423
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+c000000004BF4B7F900000000000001E5
+t1274329081
+s485
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c000000004C0473C400000000001AA470
+t1275360196
+s1746032
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.h
+c000000004C0473B9000000000000065C
+t1275360185
+s1628
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
+c000000004C048296000000000001E310
+t1275363990
+s123664
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/AssetsLibrary.h
+c000000004C0482940000000000000133
+t1275363988
+s307
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFE06FA000000000034A850
+t1274939130
+s3450960
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
+c000000004C04586000000000000D6920
+t1275353184
+s878880
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+c000000004BFE08A7000000000002ECC0
+t1274939559
+s191680
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFE07D200000000003E1EB0
+t1274939346
+s4071088
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFE07B10000000000001466
+t1274939313
+s5222
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+c000000004C04812E0000000000252100
+t1275363630
+s2433280
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/Headers/UTCoreTypes.h
+c000000004BFF3B78000000000000520D
+t1275018104
+s21005
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+c000000004BFF3B7800000000000A4890
+t1275018104
+s673936
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000004C045AEF0000000000253180
+t1275353839
+s2437504
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C04711400000000000009CD
+t1275359508
+s2509
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471FC0000000002D563E0
+t1275359740
+s47539168
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.h
+c000000004C129F9D0000000000000BC7
+t1276288925
+s3015
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m
+c000000004C129F9D00000000000010BF
+t1276288925
+s4287
+i"AVCamDemoPreviewView.h"
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTestViewController.xib
+c000000004C3B8544000000000000702A
+t1278969156
+s28714
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTest_Prefix.pch
+c000000004C3B476600000000000000BB
+t1278953318
+s187
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.h
+c000000004C3B8D13000000000000138D
+t1278971155
+s5005
+i<Foundation/Foundation.h>
+i<AVFoundation/AVFoundation.h>
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m
+c000000004C3B9C5A00000000000076AA
+t1278975066
+s30378
+i"AVCamDemoCaptureManager.h"
+i<MobileCoreServices/UTCoreTypes.h>
+i<AssetsLibrary/AssetsLibrary.h>
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.h
+c000000004C129F9D0000000000000BC7
+t1276288925
+s3015
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m
+c000000004C129F9D00000000000010BF
+t1276288925
+s4287
+i"AVCamDemoPreviewView.h"
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.h
+c000000004C3B476600000000000001DE
+t1278953318
+s478
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m
+c000000004C3B47660000000000000A88
+t1278953318
+s2696
+i"CamerTestAppDelegate.h"
+i"CamerTestViewController.h"
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.h
+c000000004C3BD6EE0000000000000608
+t1278990062
+s1544
+i<UIKit/UIKit.h>
+i<AVFoundation/AVFoundation.h>
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m
+c000000004C3BD6E40000000000001147
+t1278990052
+s4423
+i"CamerTestViewController.h"
+i"AVCamDemoCaptureManager.h"
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/MainWindow.xib
+c000000004C3B47660000000000004E41
+t1278953318
+s20033
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest.xcent
+t1278962295
+s424
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoCaptureManager.o
+t1278977214
+s87168
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoPreviewView.o
+t1278961884
+s41736
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTest
+t1278990063
+s71260
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTest.LinkFileList
+c000000004C3B68DB00000000000002A8
+t1278961883
+s680
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTestAppDelegate.o
+t1278990063
+s48724
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTestViewController.o
+t1278990063
+s64072
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/main.o
+t1278961884
+s6444
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoCaptureManager.o
+t1278977214
+s85348
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoPreviewView.o
+t1278961885
+s41620
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTest
+t1278990063
+s71148
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTest.LinkFileList
+c000000004C3B68DB00000000000002A8
+t1278961883
+s680
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTestAppDelegate.o
+t1278990063
+s48644
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTestViewController.o
+t1278990063
+s63704
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/main.o
+t1278961884
+s6428
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app
+t1278990063
+s408
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app.dSYM
+t1278990063
+s102
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTest
+t1278990063
+s148972
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTestViewController.nib
+t1278969230
+s1858
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/Info.plist
+t1278962294
+s734
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/MainWindow.nib
+t1278961883
+s1127
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/PkgInfo
+t1278962294
+s8
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/ResourceRules.plist
+t1278961883
+s485
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/embedded.mobileprovision
+t1278961885
+s7176
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/timecover.png
+t1278972925
+s16289
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/main.m
+c000000004C3B4766000000000000015E
+t1278953318
+s350
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/HeadFirst/CamerTest/timecover.png
+c000000004C3B93EF0000000000003FD2
+t1278972911
+s16338
+
+N/Users/dmason/IPHONE/WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.h
+c000000004C129F9D0000000000000BC7
+t1276288925
+s3015
+i<UIKit/UIKit.h>
+
+N/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision
+c000000004C2C271E0000000000001C08
+t1277962014
+s7176
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch.gch
+t1278961884
+s9831984
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch.gch
+t1278961884
+s10290736
+
+NCamerTest-Info.plist
+c000000004C3B6A750000000000000387
+t1278962293
+s903
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies300682862#300682862#0(0"0(0#1#0"8622816352#0"0#
+
+CCodeSign /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app
+s300682863.395536
+e300682863.582905
+r1
+xCodeSign
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app
+lSLF07#2@43"CodeSign build/Debug-iphoneos/CamerTest.app300682863#300682863#0(0"0(0#0#75"/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app8623368032#666"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Darren Mason (J4HX2LYKXS)" --resource-rules=/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/ResourceRules.plist --entitlements /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest.xcent /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoCaptureManager.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300670013.611442
+e300670014.099579
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoCaptureManager.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m300670013#300670014#0(0"0(0#0#74"/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m8622974432#1839"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoCaptureManager.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoPreviewView.o /Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300652893.593206
+e300652893.813034
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoPreviewView.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@117"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m300652893#300652893#0(0"0(0#0#109"/Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m8644287840#1871"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoPreviewView.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoPreviewView.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300654684.791929
+e300654684.860707
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoPreviewView.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m300654684#300654684#0(0"0(0#0#71"/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m8617698720#1833"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/AVCamDemoPreviewView.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTestAppDelegate.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300682862.897378
+e300682863.083811
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTestAppDelegate.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m300682862#300682863#0(0"0(0#0#71"/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m8614890368#1833"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTestAppDelegate.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTestViewController.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300682862.898508
+e300682863.094107
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTestViewController.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m300682862#300682863#0(0"0(0#0#74"/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m8623713856#1839"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTestViewController.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/main.o /Users/dmason/IPHONE/HeadFirst/CamerTest/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300654684.509977
+e300654684.645792
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/main.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@55"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/main.m300654684#300654684#0(0"0(0#0#47"/Users/dmason/IPHONE/HeadFirst/CamerTest/main.m8617512384#1793"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/main.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/main.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoCaptureManager.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300670013.685220
+e300670014.060820
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoCaptureManager.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m300670013#300670014#0(0"0(0#0#74"/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m8656134976#1839"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoCaptureManager.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoCaptureManager.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoPreviewView.o /Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300652894.143539
+e300652894.228949
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoPreviewView.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@117"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m300652894#300652894#0(0"0(0#0#109"/Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m8640742464#1871"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/../../WWDC10-SampleCode/iOS/AVCamDemo/Classes/AVCamDemoPreviewView.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoPreviewView.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoPreviewView.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300654685.186729
+e300654685.268735
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoPreviewView.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m300654685#300654685#0(0"0(0#0#71"/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m8606511200#1833"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/AVCamDemoPreviewView.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/AVCamDemoPreviewView.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTestAppDelegate.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300682863.084136
+e300682863.198649
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTestAppDelegate.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m300682863#300682863#0(0"0(0#0#71"/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m8623321056#1833"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestAppDelegate.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTestAppDelegate.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTestViewController.o /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300682863.198740
+e300682863.322411
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTestViewController.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m300682863#300682863#0(0"0(0#0#74"/Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m8622923872#1839"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/Classes/CamerTestViewController.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTestViewController.o0#
+
+CCompileC build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/main.o /Users/dmason/IPHONE/HeadFirst/CamerTest/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300654684.860814
+e300654684.915345
+r1
+xCompileC
+xbuild/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/main.o
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@55"Compile /Users/dmason/IPHONE/HeadFirst/CamerTest/main.m300654684#300654684#0(0"0(0#0#47"/Users/dmason/IPHONE/HeadFirst/CamerTest/main.m8615256000#1793"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/main.m -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/main.o0#
+
+CCompileXIB /Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTestViewController.xib
+s300662029.795223
+e300662030.208897
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTestViewController.xib
+lSLF07#2@38"CompileXIB CamerTestViewController.xib300662029#300662030#0(0"0(0#0#68"/Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTestViewController.xib8641210048#576"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTestViewController.nib /Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTestViewController.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/HeadFirst/CamerTest/MainWindow.xib
+s300654683.163984
+e300654683.560219
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib300654683#300654683#0(0"0(0#0#55"/Users/dmason/IPHONE/HeadFirst/CamerTest/MainWindow.xib32651591227146344#550"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/MainWindow.nib /Users/dmason/IPHONE/HeadFirst/CamerTest/MainWindow.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
+
+CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/timecover.png timecover.png
+s300665725.139852
+e300665725.711709
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/timecover.png
+xtimecover.png
+lSLF07#2@74"CopyPNGFile build/Debug-iphoneos/CamerTest.app/timecover.png timecover.png300665725#300665725#0(0"0(0#0#54"/Users/dmason/IPHONE/HeadFirst/CamerTest/timecover.png8642334144#574"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/CamerTest/timecover.png /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/timecover.png0#
+
+CCpResource build/Debug-iphoneos/CamerTest.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+s300654683.146792
+e300654683.154341
+r1
+xCpResource
+xbuild/Debug-iphoneos/CamerTest.app/ResourceRules.plist
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist300654683#300654683#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist8617408544#486"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app0#
+
+CCreateUniversalBinary /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTest normal "armv6 armv7"
+s300682863.354782
+e300682863.357950
+r1
+xCreateUniversalBinary
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTest
+xnormal
+xarmv6 armv7
+lSLF07#2@87"CreateUniversalBinary build/Debug-iphoneos/CamerTest.app/CamerTest normal "armv6 armv7"300682863#300682863#0(0"0(0#0#52"/Users/dmason/IPHONE/HeadFirst/CamerTest/armv6 armv78614494496#542"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTest /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTest -output /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTest0#
+
+CGenerateDSYMFile /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app.dSYM /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTest
+s300682863.358043
+e300682863.392744
+r1
+xGenerateDSYMFile
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app.dSYM
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTest
+lSLF07#2@101"GenerateDSYMFile build/Debug-iphoneos/CamerTest.app.dSYM build/Debug-iphoneos/CamerTest.app/CamerTest300682863#300682863#0(0"0(0#0#85"/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTest8612664256#374"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/CamerTest -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app.dSYM0#
+
+CLd /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTest normal armv6
+s300682863.094195
+e300682863.234027
+r1
+xLd
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTest
+xnormal
+xarmv6
+lSLF07#2@129"Link /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTest300682863#300682863#0(0"0(0#0#0"8623268960#982"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -L/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -filelist /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTest.LinkFileList -dead_strip -miphoneos-version-min=4.0 -framework Foundation -framework UIKit -framework CoreGraphics -framework AssetsLibrary -framework AVFoundation -framework MobileCoreServices -framework QuartzCore -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv6/CamerTest0#
+
+CLd /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTest normal armv7
+s300682863.322508
+e300682863.354656
+r1
+xLd
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTest
+xnormal
+xarmv7
+lSLF07#2@129"Link /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTest300682863#300682863#0(0"0(0#0#0"8615073696#982"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -L/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -filelist /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTest.LinkFileList -dead_strip -miphoneos-version-min=4.0 -framework Foundation -framework UIKit -framework CoreGraphics -framework AssetsLibrary -framework AVFoundation -framework MobileCoreServices -framework QuartzCore -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/Objects-normal/armv7/CamerTest0#
+
+CProcessInfoPlistFile /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/Info.plist CamerTest-Info.plist
+s300655094.966454
+e300655095.010730
+r1
+xProcessInfoPlistFile
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/Info.plist
+xCamerTest-Info.plist
+lSLF07#2@28"Process CamerTest-Info.plist300655094#300655095#0(0"0(0#0#61"/Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTest-Info.plist8619564032#578"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility CamerTest-Info.plist -genpkginfo /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/ResourceRules.plist -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/Info.plist0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch.gch CamerTest_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300654683.606711
+e300654684.414658
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch.gch
+xCamerTest_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile CamerTest_Prefix.pch300654683#300654684#0(0"0(0#0#61"/Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTest_Prefix.pch8616621312#1687"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -c /Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTest_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-dknowfoqpomddaeehuonvvnpbioe/CamerTest_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch.gch CamerTest_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300654683.607573
+e300654684.509872
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch.gch
+xCamerTest_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile CamerTest_Prefix.pch300654683#300654684#0(0"0(0#0#61"/Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTest_Prefix.pch8616061696#1687"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/DerivedSources -c /Users/dmason/IPHONE/HeadFirst/CamerTest/CamerTest_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CamerTest_Prefix-eeodrenrwiwpzshhjcsvmbihqcyo/CamerTest_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision" /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/embedded.mobileprovision
+s300654685.564704
+e300654685.567404
+r1
+xProcessProductPackaging
+x/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/embedded.mobileprovision
+lSLF07#2@195"ProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision" build/Debug-iphoneos/CamerTest.app/embedded.mobileprovision300654685#300654685#0(0"0(0#0#100"/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/embedded.mobileprovision8617192768#430"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision" -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app/embedded.mobileprovision0#
+
+CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest.xcent
+s300655095.014924
+e300655095.055862
+r1
+xProcessProductPackaging
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest.xcent
+lSLF07#2@181"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest.xcent300655095#300655095#0(0"0(0#0#109"/Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest.xcent8620215488#442"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist -entitlements -format xml -o /Users/dmason/IPHONE/HeadFirst/CamerTest/build/CamerTest.build/Debug-iphoneos/CamerTest.build/CamerTest.xcent0#
+
+CTouch /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app
+s300682863.392925
+e300682863.395383
+r1
+xTouch
+x/Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app
+lSLF07#2@81"Touch /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app300682863#300682863#0(0"0(0#0#0"8623459328#270"    cd /Users/dmason/IPHONE/HeadFirst/CamerTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dmason/IPHONE/HeadFirst/CamerTest/build/Debug-iphoneos/CamerTest.app0#
+
