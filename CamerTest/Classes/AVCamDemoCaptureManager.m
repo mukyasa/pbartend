@@ -287,8 +287,8 @@
 		[image1 drawInRect:CGRectMake(0, 0, image1.size.width, image1.size.height)];
 	}
 	
-	NSLog(@"Image 1 Width:%f Height: %f", image1.size.width, image1.size.height);
-	NSLog(@"Image 2 Width:%f Height: %f", image2.size.width, image2.size.height);	
+	//NSLog(@"Image 1 Width:%f Height: %f", image1.size.width, image1.size.height);
+	//NSLog(@"Image 2 Width:%f Height: %f", image2.size.width, image2.size.height);	
 	
 	UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
 	
