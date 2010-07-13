@@ -15,11 +15,12 @@
 
 	IBOutlet UIBarButtonItem *featureButton;
 	AVCamDemoCaptureManager *captureManager;
-	AVCamDemoPreviewView *videoPreviewView;
+	UIView *videoPreviewView;
 	AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 	IBOutlet UIBarButtonItem *cameraToggleButton;
 	IBOutlet UIBarButtonItem *stillImageButton;
 	IBOutlet UIImageView *magoverlay;
+	BOOL sessionStarted;
 	
 	/* for manipulation*/
 	// for dragging
@@ -40,12 +41,15 @@
 @property (nonatomic,retain) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 
 @property (nonatomic,retain) IBOutlet UIBarButtonItem *cameraToggleButton;
-@property (nonatomic,retain) IBOutlet AVCamDemoPreviewView *videoPreviewView;
+@property (nonatomic,retain) IBOutlet UIView *videoPreviewView;
 @property(nonatomic,retain) UIBarButtonItem *featureButton;
 @property (nonatomic,retain) AVCamDemoCaptureManager *captureManager;
 
 - (IBAction)cameraToggle:(id)sender;
 - (IBAction)still:(id)sender;
+- (void)makeAndApplyAffineTransform;
+- (void)_setupPreviewLayer;
+- (void)applyDefaults;
 
 @end
 
