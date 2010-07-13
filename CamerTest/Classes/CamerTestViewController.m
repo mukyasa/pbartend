@@ -155,6 +155,22 @@
 	return NO;
 }
 
+- (void)handleSingleTapFrom:(UITapGestureRecognizer *)recognizer
+{
+	CGPoint location = [recognizer locationInView:videoPreviewView];
+	CGPoint convertedLocation = [captureVideoPreviewLayer convertPoint:location fromLayer:captureVideoPreviewLayer.superlayer];
+	if ( [captureVideoPreviewLayer containsPoint:convertedLocation] ) {
+		// cycle to next video gravity mode.
+		NSString *videoGravity = captureVideoPreviewLayer.videoGravity;
+		if ( [videoGravity isEqualToString:AVLayerVideoGravityResizeAspect] )
+			captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+		else if ( [videoGravity isEqualToString:AVLayerVideoGravityResizeAspectFill] )
+			captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResize;
+		else if ( [videoGravity isEqualToString:AVLayerVideoGravityResize] )
+			captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+	}
+}
+
 - (void)handleRotationFrom:(UIRotationGestureRecognizer *)recognizer
 {
 	BOOL allTouchesAreOnThePreviewLayer = YES;
