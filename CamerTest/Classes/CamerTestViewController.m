@@ -57,10 +57,9 @@
         
         [captureVideoPreviewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
 		
-		
         
         [self setCaptureVideoPreviewLayer:captureVideoPreviewLayer];
-		
+		 
 		
 		//[captureManager setDelegate:self];
 		
