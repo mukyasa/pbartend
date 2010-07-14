@@ -79,10 +79,10 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
         	showDialog(DIALOG_LOC);
         }
         
-       AdManager.setTestDevices( new String[] {
+       /*AdManager.setTestDevices( new String[] {
                 AdManager.TEST_EMULATOR ,         // Android emulator
                "ffffffff-9eaf-9658-ffff-ffff99d603a9",
-        } );
+        } );*/
  		AdManager.setAllowUseOfLocation(true);
  		
 		mAd = (AdView) findViewById(R.id.ad);
