@@ -21,8 +21,8 @@ public class IngredientsHomeView extends BaseActivity implements OnClickListener
         
     }
     
-	private void initComponents() {
-		
+	protected void initComponents() {
+		super.initialize();
 		btnLiquor = (Button) findViewById(R.id.btnLiquor);
 		btnLiquor.setOnClickListener(this);
 		btnLiquor.setOnTouchListener(this);
