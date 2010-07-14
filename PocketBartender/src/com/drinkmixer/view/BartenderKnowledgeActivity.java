@@ -15,13 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 
-import com.admob.android.ads.AdManager;
-import com.admob.android.ads.AdView;
-import com.admob.android.ads.SimpleAdListener;
 import com.drinkmixer.R;
 import com.drinkmixer.domain.LearnBartender;
 import com.drinkmixer.domain.NewDrinkDomain;
