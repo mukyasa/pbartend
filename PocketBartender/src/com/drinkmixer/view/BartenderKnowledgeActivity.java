@@ -15,8 +15,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 
+import com.admob.android.ads.AdManager;
+import com.admob.android.ads.AdView;
+import com.admob.android.ads.SimpleAdListener;
 import com.drinkmixer.R;
 import com.drinkmixer.domain.LearnBartender;
 import com.drinkmixer.domain.NewDrinkDomain;
@@ -30,14 +35,15 @@ import com.drinkmixer.utils.FileParser;
 public class BartenderKnowledgeActivity extends BaseActivity implements OnClickListener {
 	
 	Button btnGlasses,btnTech,btnTerms,btnStock;
-	 
 	 @Override
 	    public void onCreate(Bundle savedInstanceState) { 
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.learn_bartender);
 	        
 	        initialize();
+	        
 	 }
+	 
 	 
 	 public boolean onCreateOptionsMenu(Menu menu) {
 			menu.add(0, 0, 0, "Home").setIcon(R.drawable.home);
@@ -57,8 +63,8 @@ public class BartenderKnowledgeActivity extends BaseActivity implements OnClickL
 			 return false;
 
 		}
-	 private void initialize(){
-		 
+		protected void initialize(){
+		 super.initialize();
 		 btnTech = (Button)findViewById(R.id.btnTech);
 		 btnTech.setOnClickListener(this);
 		 btnTerms = (Button)findViewById(R.id.btnTerms);

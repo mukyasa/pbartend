@@ -9,28 +9,23 @@
  */
 package com.drinkmixer.view;
 
-import java.util.Calendar;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.media.MediaPlayer;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 
+import com.admob.android.ads.AdManager;
+import com.admob.android.ads.AdView;
+import com.admob.android.ads.SimpleAdListener;
 import com.drinkmixer.R;
-import com.drinkmixer.dao.DrinkIngredientsInsert;
-import com.drinkmixer.dao.DrinkInserts;
-import com.drinkmixer.dao.MixerDbHelper;
-import com.drinkmixer.utils.Constants;
 
 /**
  * @author dmason
@@ -40,6 +35,7 @@ public class BaseActivity extends Activity implements OnTouchListener {
 
 	protected int DIALOG_TYPE_ERROR = 0;
 	protected int DIALOG_TYPE_SUCCESS = 1;
+	private AdView mAd; 
 
 	protected Dialog onCreateDialog(int id) {
 
@@ -70,6 +66,70 @@ public class BaseActivity extends Activity implements OnTouchListener {
 		}
 	}
 
+	protected void initialize(){
+		
+		 AdManager.setTestDevices( new String[] {
+	                AdManager.TEST_EMULATOR ,         // Android emulator
+	               "ffffffff-9eaf-9658-ffff-ffff99d603a9",
+	        } );
+	 		AdManager.setAllowUseOfLocation(true);
+	 		
+			mAd = (AdView) findViewById(R.id.ad);
+			mAd.setAdListener(new AdMobListener());
+			mAd.setVisibility( View.VISIBLE  );
+	        // The ad will fade in over 0.4 seconds.
+	 		AlphaAnimation animation = new AlphaAnimation( 0.0f, 1.0f );
+	 		animation.setDuration( 400 );
+	 		animation.setFillAfter( true );
+	 		animation.setInterpolator( new AccelerateInterpolator() );
+	 		mAd.startAnimation( animation );
+
+	}
+	protected class AdMobListener extends SimpleAdListener
+    {
+
+		/* (non-Javadoc)
+		 * @see com.admob.android.ads.AdView.SimpleAdListener#onFailedToReceiveAd(com.admob.android.ads.AdView)
+		 */
+		@Override
+		public void onFailedToReceiveAd(AdView adView)
+		{
+			// TODO Auto-generated method stub
+			super.onFailedToReceiveAd(adView);
+		}
+
+		/* (non-Javadoc)
+		 * @see com.admob.android.ads.AdView.SimpleAdListener#onFailedToReceiveRefreshedAd(com.admob.android.ads.AdView)
+		 */
+		@Override
+		public void onFailedToReceiveRefreshedAd(AdView adView)
+		{
+			// TODO Auto-generated method stub
+			super.onFailedToReceiveRefreshedAd(adView);
+		}
+
+		/* (non-Javadoc)
+		 * @see com.admob.android.ads.AdView.SimpleAdListener#onReceiveAd(com.admob.android.ads.AdView)
+		 */
+		@Override
+		public void onReceiveAd(AdView adView)
+		{
+			// TODO Auto-generated method stub
+			super.onReceiveAd(adView);
+		}
+
+		/* (non-Javadoc)
+		 * @see com.admob.android.ads.AdView.SimpleAdListener#onReceiveRefreshedAd(com.admob.android.ads.AdView)
+		 */
+		@Override
+		public void onReceiveRefreshedAd(AdView adView)
+		{
+			// TODO Auto-generated method stub
+			super.onReceiveRefreshedAd(adView);
+		}
+    	
+    }
+	
 	public boolean onTouch(View v, MotionEvent event) {
 
 		if (v instanceof Button) {

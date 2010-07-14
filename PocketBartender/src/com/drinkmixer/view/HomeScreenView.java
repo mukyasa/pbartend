@@ -22,10 +22,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
+import com.admob.android.ads.AdManager;
+import com.admob.android.ads.AdView;
+import com.admob.android.ads.SimpleAdListener;
 import com.drinkmixer.R;
 import com.drinkmixer.dao.DataDAO;
 import com.drinkmixer.dao.DetailDAO;
@@ -54,6 +59,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 	private Thread thread;
 	private File dbfile;
 	private File dbfilesd;
+	private AdView mAd; 
 	
     @Override
     public void onCreate(Bundle savedInstanceState) { 
@@ -73,6 +79,35 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
         	showDialog(DIALOG_LOC);
         }
         
+       AdManager.setTestDevices( new String[] {
+                AdManager.TEST_EMULATOR ,         // Android emulator
+               "ffffffff-9eaf-9658-ffff-ffff99d603a9",
+        } );
+ 		AdManager.setAllowUseOfLocation(true);
+ 		
+		mAd = (AdView) findViewById(R.id.ad);
+		mAd.setAdListener(new AdMobListener());
+		mAd.setVisibility( View.VISIBLE  );
+        // The ad will fade in over 0.4 seconds.
+ 		AlphaAnimation animation = new AlphaAnimation( 0.0f, 1.0f );
+ 		animation.setDuration( 400 );
+ 		animation.setFillAfter( true );
+ 		animation.setInterpolator( new AccelerateInterpolator() );
+ 		mAd.startAnimation( animation );
+ 		
+ 		
+ 		/*final TelephonyManager tm = (TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
+
+ 	    final String tmDevice, tmSerial, tmPhone, androidId;
+ 	    tmDevice = "" + tm.getDeviceId();
+ 	    tmSerial = "" + tm.getSimSerialNumber();
+ 	    androidId = "" + android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
+
+ 	    UUID deviceUuid = new UUID(androidId.hashCode(), ((long)tmDevice.hashCode() << 32) | tmSerial.hashCode());
+ 	    String deviceId = deviceUuid.toString();
+ 	    System.out.println("DEVICE ID:"+deviceId);*/
+
+ 			 
     }
     
     /* (non-Javadoc)
@@ -307,5 +342,53 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
          dataDAO.setSQLiteDatabase(myDatabaseAdapter.getDatabase());
          handler.sendEmptyMessage(0);
 	    
+    }
+    
+    
+    
+    
+    private class AdMobListener extends SimpleAdListener
+    {
+
+		/* (non-Javadoc)
+		 * @see com.admob.android.ads.AdView.SimpleAdListener#onFailedToReceiveAd(com.admob.android.ads.AdView)
+		 */
+		@Override
+		public void onFailedToReceiveAd(AdView adView)
+		{
+			// TODO Auto-generated method stub
+			super.onFailedToReceiveAd(adView);
+		}
+
+		/* (non-Javadoc)
+		 * @see com.admob.android.ads.AdView.SimpleAdListener#onFailedToReceiveRefreshedAd(com.admob.android.ads.AdView)
+		 */
+		@Override
+		public void onFailedToReceiveRefreshedAd(AdView adView)
+		{
+			// TODO Auto-generated method stub
+			super.onFailedToReceiveRefreshedAd(adView);
+		}
+
+		/* (non-Javadoc)
+		 * @see com.admob.android.ads.AdView.SimpleAdListener#onReceiveAd(com.admob.android.ads.AdView)
+		 */
+		@Override
+		public void onReceiveAd(AdView adView)
+		{
+			// TODO Auto-generated method stub
+			super.onReceiveAd(adView);
+		}
+
+		/* (non-Javadoc)
+		 * @see com.admob.android.ads.AdView.SimpleAdListener#onReceiveRefreshedAd(com.admob.android.ads.AdView)
+		 */
+		@Override
+		public void onReceiveRefreshedAd(AdView adView)
+		{
+			// TODO Auto-generated method stub
+			super.onReceiveRefreshedAd(adView);
+		}
+    	
     }
 }
