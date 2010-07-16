@@ -1,0 +1,568 @@
+TMagPicMe
+v7
+r0
+t300948707.328198
+cCheck dependencies
+cProcessInfoPlistFile /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/Info.plist MagPicMe-Info.plist
+cCompileXIB /Users/dmason/IPHONE/MagPicMe/FlipsideView.xib
+cCompileXIB /Users/dmason/IPHONE/MagPicMe/MainView.xib
+cCompileXIB /Users/dmason/IPHONE/MagPicMe/MainWindow.xib
+cCpResource build/Debug-iphonesimulator/MagPicMe.app/home.png home.png
+cCpResource build/Debug-iphonesimulator/MagPicMe.app/cover1.png cover1.png
+cCpResource build/Debug-iphonesimulator/MagPicMe.app/cover2.png cover2.png
+cCpResource build/Debug-iphonesimulator/MagPicMe.app/cover3.png cover3.png
+cCpResource build/Debug-iphonesimulator/MagPicMe.app/cover4.png cover4.png
+cCpResource build/Debug-iphonesimulator/MagPicMe.app/cover5.png cover5.png
+cCpResource build/Debug-iphonesimulator/MagPicMe.app/magstackbackground.png magstackbackground.png
+cCompileXIB /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib
+cCpResource build/Debug-iphonesimulator/MagPicMe.app/camera.png camera.png
+cCpResource build/Debug-iphonesimulator/MagPicMe.app/save.png save.png
+cCpResource build/Debug-iphonesimulator/MagPicMe.app/text.png text.png
+cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MagPicMe_Prefix-duedpjdgmgwcmvgoarytkzkcsnwq/MagPicMe_Prefix.pch.gch MagPicMe_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/main.o /Users/dmason/IPHONE/MagPicMe/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MagPicMeAppDelegate.o /Users/dmason/IPHONE/MagPicMe/Classes/MagPicMeAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MainViewController.o /Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/FlipsideViewController.o /Users/dmason/IPHONE/MagPicMe/Classes/FlipsideViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MainMagPicViewController.o /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk
+c000000004C32AE6E0000000000000132
+t1278389870
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c000000004C32ADE600000000000C4460
+t1278389734
+s803936
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.h
+c000000004C32ADE00000000000000703
+t1278389728
+s1795
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C329D010000000000294890
+t1278385409
+s2705552
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C329D3D000000000029E570
+t1278385469
+s2745712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C329D2E0000000000001466
+t1278385454
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C32AD7A00000000000009CD
+t1278389626
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C32AEFA0000000001E19FB0
+t1278390010
+s31563696
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/iAd.framework/iAd
+c000000004C354C240000000000051320
+t1278561316
+s332576
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/usr/include/Availability.h
+c000000004C329DA40000000000001A5C
+t1278385572
+s6748
+
+N/Users/dmason/IPHONE/MagPicMe/Classes/FlipsideViewController.h
+c000000004C3FC4DD0000000000000225
+t1279247581
+s549
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MagPicMe/Classes/FlipsideViewController.m
+c000000004C3FC4DD000000000000044A
+t1279247581
+s1098
+i"FlipsideViewController.h"
+
+N/Users/dmason/IPHONE/MagPicMe/Classes/MagPicMeAppDelegate.h
+c000000004C3FD3F400000000000001D0
+t1279251444
+s464
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MagPicMe/Classes/MagPicMeAppDelegate.m
+c000000004C3FD4000000000000000A8C
+t1279251456
+s2700
+i"MagPicMeAppDelegate.h"
+i"MainViewController.h"
+
+N/Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.h
+c000000004C3FDCA3000000000000022D
+t1279253667
+s557
+i"FlipsideViewController.h"
+
+N/Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m
+c000000004C3FDC9C0000000000000EF4
+t1279253660
+s3828
+i"MainViewController.h"
+
+N/Users/dmason/IPHONE/MagPicMe/FlipsideView.xib
+c000000004C3FC52C00000000000059BE
+t1279247660
+s22974
+
+N/Users/dmason/IPHONE/MagPicMe/MagPicMe_Prefix.pch
+c000000004C3FC4DD0000000000000142
+t1279247581
+s322
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.h
+c000000004C3FE558000000000000049E
+t1279255896
+s1182
+i<UIKit/UIKit.h>
+i<AVFoundation/AVFoundation.h>
+
+N/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m
+c000000004C3FE4BF0000000000000BF7
+t1279255743
+s3063
+i"MainMagPicViewController.h"
+
+N/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib
+c000000004C3FE48E0000000000006356
+t1279255694
+s25430
+
+N/Users/dmason/IPHONE/MagPicMe/MainView.xib
+c000000004C3FDE000000000000007377
+t1279254016
+s29559
+
+N/Users/dmason/IPHONE/MagPicMe/MainWindow.xib
+c000000004C3FDC7000000000000077B6
+t1279253616
+s30646
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app
+t2
+s0
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app.dSYM
+t2
+s0
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/FlipsideView.nib
+t1279255905
+s3635
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/Info.plist
+t1279255905
+s595
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MagPicMe
+t2
+s0
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MainMagPicViewController.nib
+t1279255906
+s2896
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MainView.nib
+t1279255905
+s4452
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MainWindow.nib
+t1279255906
+s3314
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/PkgInfo
+t1279255905
+s8
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/camera.png
+t1279255906
+s1300
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/cover1.png
+t1279255905
+s30422
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/cover2.png
+t1279255905
+s30422
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/cover3.png
+t1279255905
+s30422
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/cover4.png
+t1279255905
+s30422
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/cover5.png
+t1279255905
+s30422
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/home.png
+t1279255905
+s1488
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/magstackbackground.png
+t1279255905
+s76513
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/save.png
+t1279255906
+s398
+
+N/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/text.png
+t1279255906
+s319
+
+N/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/FlipsideViewController.o
+t1279255907
+s37764
+
+N/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MagPicMe.LinkFileList
+c000000004C3FE5610000000000000282
+t1279255905
+s642
+
+N/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MagPicMeAppDelegate.o
+t1279255907
+s50416
+
+N/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MainMagPicViewController.o
+t2
+s0
+
+N/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MainViewController.o
+t1279255907
+s46156
+
+N/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/main.o
+t1279255907
+s6284
+
+N/Users/dmason/IPHONE/MagPicMe/camera.png
+c000000004C3FD05B0000000000000514
+t1279250523
+s1300
+
+N/Users/dmason/IPHONE/MagPicMe/cover1.png
+c000000004C3FCAD400000000000076D6
+t1279249108
+s30422
+
+N/Users/dmason/IPHONE/MagPicMe/cover2.png
+c000000004C3FCAD400000000000076D6
+t1279249108
+s30422
+
+N/Users/dmason/IPHONE/MagPicMe/cover3.png
+c000000004C3FCAD400000000000076D6
+t1279249108
+s30422
+
+N/Users/dmason/IPHONE/MagPicMe/cover4.png
+c000000004C3FCAD400000000000076D6
+t1279249108
+s30422
+
+N/Users/dmason/IPHONE/MagPicMe/cover5.png
+c000000004C3FCAD400000000000076D6
+t1279249108
+s30422
+
+N/Users/dmason/IPHONE/MagPicMe/home.png
+c000000004C3FC6C800000000000005D0
+t1279248072
+s1488
+
+N/Users/dmason/IPHONE/MagPicMe/magstackbackground.png
+c000000004C3FCEDB0000000000012AE1
+t1279250139
+s76513
+
+N/Users/dmason/IPHONE/MagPicMe/main.m
+c000000004C3FC4DD000000000000015D
+t1279247581
+s349
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MagPicMe/save.png
+c000000004C3FE01A000000000000018E
+t1279254554
+s398
+
+N/Users/dmason/IPHONE/MagPicMe/text.png
+c000000004C3FDFF4000000000000013F
+t1279254516
+s319
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MagPicMe_Prefix-duedpjdgmgwcmvgoarytkzkcsnwq/MagPicMe_Prefix.pch.gch
+t1279255906
+s15211536
+
+NMagPicMe-Info.plist
+c000000004C3FC4DD000000000000038D
+t1279247581
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies300948705#300948705#0(0"0(0#1#0"8620042080#0"0#
+
+CCompileC build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/FlipsideViewController.o /Users/dmason/IPHONE/MagPicMe/Classes/FlipsideViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s300948707.160049
+e300948707.240074
+r1
+xCompileC
+xbuild/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/FlipsideViewController.o
+x/Users/dmason/IPHONE/MagPicMe/Classes/FlipsideViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@70"Compile /Users/dmason/IPHONE/MagPicMe/Classes/FlipsideViewController.m300948707#300948707#0(0"0(0#0#62"/Users/dmason/IPHONE/MagPicMe/Classes/FlipsideViewController.m8621516160#1886"    cd /Users/dmason/IPHONE/MagPicMe    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -fexceptions -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-generated-files.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-own-target-headers.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-all-target-headers.hmap -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-project-headers.hmap -F/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator -I/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/include -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources/i386 -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MagPicMe_Prefix-duedpjdgmgwcmvgoarytkzkcsnwq/MagPicMe_Prefix.pch -c /Users/dmason/IPHONE/MagPicMe/Classes/FlipsideViewController.m -o /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/FlipsideViewController.o0#
+
+CCompileC build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MagPicMeAppDelegate.o /Users/dmason/IPHONE/MagPicMe/Classes/MagPicMeAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s300948707.064212
+e300948707.159947
+r1
+xCompileC
+xbuild/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MagPicMeAppDelegate.o
+x/Users/dmason/IPHONE/MagPicMe/Classes/MagPicMeAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/dmason/IPHONE/MagPicMe/Classes/MagPicMeAppDelegate.m300948707#300948707#0(0"0(0#0#59"/Users/dmason/IPHONE/MagPicMe/Classes/MagPicMeAppDelegate.m8614357344#1880"    cd /Users/dmason/IPHONE/MagPicMe    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -fexceptions -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-generated-files.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-own-target-headers.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-all-target-headers.hmap -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-project-headers.hmap -F/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator -I/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/include -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources/i386 -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MagPicMe_Prefix-duedpjdgmgwcmvgoarytkzkcsnwq/MagPicMe_Prefix.pch -c /Users/dmason/IPHONE/MagPicMe/Classes/MagPicMeAppDelegate.m -o /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MagPicMeAppDelegate.o0#
+
+CCompileC build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MainMagPicViewController.o /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s300948707.240174
+e300948707.328123
+r0
+xCompileC
+xbuild/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MainMagPicViewController.o
+x/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m:9:
+o/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.h:20: error: expected specifier-qualifier-list before 'AVCaptureVideoPreviewLayer'
+lSLF07#2@64"Compile /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m300948707#300948707#0(220"In file included from /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m:9:/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.h:20: error: expected specifier-qualifier-list before 'AVCaptureVideoPreviewLayer'1(4@69"Expected specifier-qualifier-list before 'AVCaptureVideoPreviewLayer'300948707#82#138#2(7@78"In file included from /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m300948707#18446744073709551615#0#0(6@56"/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m300948543#9#0#9#0#0"0(13@129"Expected specifier-qualifier-list before 'AVCaptureVideoPreviewLayer' in /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.h300948707#18446744073709551615#0#0(6@56"/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.h300948696#20#0#20#0#0"0(6@56"/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.h300948696#20#0#20#0#19"expected * before *0(0#0#56"/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m8619780896#1882"    cd /Users/dmason/IPHONE/MagPicMe    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -fexceptions -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-generated-files.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-own-target-headers.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-all-target-headers.hmap -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-project-headers.hmap -F/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator -I/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/include -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources/i386 -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MagPicMe_Prefix-duedpjdgmgwcmvgoarytkzkcsnwq/MagPicMe_Prefix.pch -c /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.m -o /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MainMagPicViewController.o1#
+
+CCompileC build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MainViewController.o /Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s300948707.143069
+e300948707.250684
+r1
+xCompileC
+xbuild/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MainViewController.o
+x/Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m:132: warning: incomplete implementation of class 'MainViewController'
+o/Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m:132: warning: method definition for '-showMagPicScreen:' not found
+lSLF07#2@66"Compile /Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m300948707#300948707#0(255"/Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m:132: warning: incomplete implementation of class 'MainViewController'/Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m:132: warning: method definition for '-showMagPicScreen:' not found2(22@55"Incomplete implementation of class 'MainViewController'300948707#0#129#0(6@58"/Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m300946460#132#0#132#0#38"incomplete implementation of class '*'0(22@52"Method definition for '-showMagPicScreen:' not found300948707#129#126#0(6@58"/Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m300946460#132#0#132#0#35"method definition for '*' not found0(0#0#58"/Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m8622275232#1878"    cd /Users/dmason/IPHONE/MagPicMe    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -fexceptions -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-generated-files.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-own-target-headers.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-all-target-headers.hmap -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-project-headers.hmap -F/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator -I/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/include -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources/i386 -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MagPicMe_Prefix-duedpjdgmgwcmvgoarytkzkcsnwq/MagPicMe_Prefix.pch -c /Users/dmason/IPHONE/MagPicMe/Classes/MainViewController.m -o /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MainViewController.o0#
+
+CCompileC build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/main.o /Users/dmason/IPHONE/MagPicMe/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s300948707.062877
+e300948707.142971
+r1
+xCompileC
+xbuild/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/main.o
+x/Users/dmason/IPHONE/MagPicMe/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@44"Compile /Users/dmason/IPHONE/MagPicMe/main.m300948707#300948707#0(0"0(0#0#36"/Users/dmason/IPHONE/MagPicMe/main.m8619570752#1842"    cd /Users/dmason/IPHONE/MagPicMe    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -fexceptions -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-generated-files.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-own-target-headers.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-all-target-headers.hmap -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-project-headers.hmap -F/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator -I/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/include -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources/i386 -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MagPicMe_Prefix-duedpjdgmgwcmvgoarytkzkcsnwq/MagPicMe_Prefix.pch -c /Users/dmason/IPHONE/MagPicMe/main.m -o /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/dmason/IPHONE/MagPicMe/FlipsideView.xib
+s300948705.229163
+e300948705.807916
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/MagPicMe/FlipsideView.xib
+lSLF07#2@27"CompileXIB FlipsideView.xib300948705#300948705#0(0"0(0#0#46"/Users/dmason/IPHONE/MagPicMe/FlipsideView.xib8604789984#548"    cd /Users/dmason/IPHONE/MagPicMe    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/FlipsideView.nib /Users/dmason/IPHONE/MagPicMe/FlipsideView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib
+s300948705.864331
+e300948706.334506
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib
+o/* com.apple.ibtool.document.warnings */
+o/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib:18: warning: This bar button item's style is set to 'plain'. This configuration is not supported when in a navigation item.
+o/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib:17: warning: This bar button item's style is set to 'plain'. This configuration is not supported when in a navigation item.
+lSLF07#2@39"CompileXIB MainMagPicViewController.xib300948705#300948706#0(407"/* com.apple.ibtool.document.warnings *//Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib:18: warning: This bar button item's style is set to 'plain'. This configuration is not supported when in a navigation item./Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib:17: warning: This bar button item's style is set to 'plain'. This configuration is not supported when in a navigation item.2(22@110"This bar button item's style is set to 'plain'. This configuration is not supported when in a navigation item.300948706#18446744073709551615#0#0(6@58"/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib300948494#18#0#18#0#0"0(22@110"This bar button item's style is set to 'plain'. This configuration is not supported when in a navigation item.300948706#18446744073709551615#0#0(6@58"/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib300948494#17#0#17#0#0"0(0#0#58"/Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib8619194368#572"    cd /Users/dmason/IPHONE/MagPicMe    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MainMagPicViewController.nib /Users/dmason/IPHONE/MagPicMe/MainMagPicViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/MagPicMe/MainView.xib
+s300948705.229951
+e300948705.839780
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/MagPicMe/MainView.xib
+lSLF07#2@23"CompileXIB MainView.xib300948705#300948705#0(0"0(0#0#42"/Users/dmason/IPHONE/MagPicMe/MainView.xib8604455872#540"    cd /Users/dmason/IPHONE/MagPicMe    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MainView.nib /Users/dmason/IPHONE/MagPicMe/MainView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/MagPicMe/MainWindow.xib
+s300948705.808178
+e300948706.296262
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/MagPicMe/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib300948705#300948706#0(0"0(0#0#44"/Users/dmason/IPHONE/MagPicMe/MainWindow.xib8620215872#544"    cd /Users/dmason/IPHONE/MagPicMe    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MainWindow.nib /Users/dmason/IPHONE/MagPicMe/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCpResource build/Debug-iphonesimulator/MagPicMe.app/camera.png camera.png
+s300948706.296348
+e300948706.307619
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MagPicMe.app/camera.png
+xcamera.png
+lSLF07#2@15"Copy camera.png300948706#300948706#0(0"0(0#0#40"/Users/dmason/IPHONE/MagPicMe/camera.png8615144512#428"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/MagPicMe/camera.png /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
+CCpResource build/Debug-iphonesimulator/MagPicMe.app/cover1.png cover1.png
+s300948705.841789
+e300948705.874153
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MagPicMe.app/cover1.png
+xcover1.png
+lSLF07#2@15"Copy cover1.png300948705#300948705#0(0"0(0#0#40"/Users/dmason/IPHONE/MagPicMe/cover1.png8619897536#428"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/MagPicMe/cover1.png /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
+CCpResource build/Debug-iphonesimulator/MagPicMe.app/cover2.png cover2.png
+s300948705.848408
+e300948705.874246
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MagPicMe.app/cover2.png
+xcover2.png
+lSLF07#2@15"Copy cover2.png300948705#300948705#0(0"0(0#0#40"/Users/dmason/IPHONE/MagPicMe/cover2.png8619785056#428"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/MagPicMe/cover2.png /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
+CCpResource build/Debug-iphonesimulator/MagPicMe.app/cover3.png cover3.png
+s300948705.850683
+e300948705.874339
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MagPicMe.app/cover3.png
+xcover3.png
+lSLF07#2@15"Copy cover3.png300948705#300948705#0(0"0(0#0#40"/Users/dmason/IPHONE/MagPicMe/cover3.png8619712288#428"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/MagPicMe/cover3.png /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
+CCpResource build/Debug-iphonesimulator/MagPicMe.app/cover4.png cover4.png
+s300948705.853023
+e300948705.874436
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MagPicMe.app/cover4.png
+xcover4.png
+lSLF07#2@15"Copy cover4.png300948705#300948705#0(0"0(0#0#40"/Users/dmason/IPHONE/MagPicMe/cover4.png8619670400#428"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/MagPicMe/cover4.png /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
+CCpResource build/Debug-iphonesimulator/MagPicMe.app/cover5.png cover5.png
+s300948705.855594
+e300948705.874530
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MagPicMe.app/cover5.png
+xcover5.png
+lSLF07#2@15"Copy cover5.png300948705#300948705#0(0"0(0#0#40"/Users/dmason/IPHONE/MagPicMe/cover5.png8619546144#428"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/MagPicMe/cover5.png /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
+CCpResource build/Debug-iphonesimulator/MagPicMe.app/home.png home.png
+s300948705.840030
+e300948705.874039
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MagPicMe.app/home.png
+xhome.png
+lSLF07#2@13"Copy home.png300948705#300948705#0(0"0(0#0#38"/Users/dmason/IPHONE/MagPicMe/home.png8619995168#426"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/MagPicMe/home.png /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
+CCpResource build/Debug-iphonesimulator/MagPicMe.app/magstackbackground.png magstackbackground.png
+s300948705.863138
+e300948705.874628
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MagPicMe.app/magstackbackground.png
+xmagstackbackground.png
+lSLF07#2@27"Copy magstackbackground.png300948705#300948705#0(0"0(0#0#52"/Users/dmason/IPHONE/MagPicMe/magstackbackground.png8619417120#440"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/MagPicMe/magstackbackground.png /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
+CCpResource build/Debug-iphonesimulator/MagPicMe.app/save.png save.png
+s300948706.297836
+e300948706.303264
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MagPicMe.app/save.png
+xsave.png
+lSLF07#2@13"Copy save.png300948706#300948706#0(0"0(0#0#38"/Users/dmason/IPHONE/MagPicMe/save.png8614269568#426"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/MagPicMe/save.png /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
+CCpResource build/Debug-iphonesimulator/MagPicMe.app/text.png text.png
+s300948706.298939
+e300948706.307416
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MagPicMe.app/text.png
+xtext.png
+lSLF07#2@13"Copy text.png300948706#300948706#0(0"0(0#0#38"/Users/dmason/IPHONE/MagPicMe/text.png8613679424#426"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/MagPicMe/text.png /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
+CGenerateDSYMFile /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app.dSYM /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MagPicMe
+s300948215.631787
+e300948215.658513
+r1
+xGenerateDSYMFile
+x/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app.dSYM
+x/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MagPicMe
+lSLF07#2@112"GenerateDSYMFile build/Debug-iphonesimulator/MagPicMe.app.dSYM build/Debug-iphonesimulator/MagPicMe.app/MagPicMe300948215#300948215#0(0"0(0#0#79"/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MagPicMe8603248864#359"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MagPicMe -o /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app.dSYM0#
+
+CLd /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MagPicMe normal i386
+s300948215.608049
+e300948215.631705
+r1
+xLd
+x/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MagPicMe
+xnormal
+xi386
+lSLF07#2@84"Link /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MagPicMe300948215#300948215#0(0"0(0#0#0"8603416096#875"    cd /Users/dmason/IPHONE/MagPicMe    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -L/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator -F/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator -filelist /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/Objects-normal/i386/MagPicMe.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework iAd -o /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/MagPicMe0#
+
+CProcessInfoPlistFile /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/Info.plist MagPicMe-Info.plist
+s300948705.224021
+e300948705.229077
+r1
+xProcessInfoPlistFile
+x/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/Info.plist
+xMagPicMe-Info.plist
+lSLF07#2@27"Process MagPicMe-Info.plist300948705#300948705#0(0"0(0#0#49"/Users/dmason/IPHONE/MagPicMe/MagPicMe-Info.plist8613900320#455"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility MagPicMe-Info.plist -genpkginfo /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app/Info.plist0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MagPicMe_Prefix-duedpjdgmgwcmvgoarytkzkcsnwq/MagPicMe_Prefix.pch.gch MagPicMe_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s300948706.334623
+e300948707.062669
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MagPicMe_Prefix-duedpjdgmgwcmvgoarytkzkcsnwq/MagPicMe_Prefix.pch.gch
+xMagPicMe_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile MagPicMe_Prefix.pch300948706#300948707#0(0"0(0#0#49"/Users/dmason/IPHONE/MagPicMe/MagPicMe_Prefix.pch8612288576#1742"    cd /Users/dmason/IPHONE/MagPicMe    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -fexceptions -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-generated-files.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-own-target-headers.hmap -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-all-target-headers.hmap -iquote /Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/MagPicMe-project-headers.hmap -F/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator -I/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/include -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources/i386 -I/Users/dmason/IPHONE/MagPicMe/build/MagPicMe.build/Debug-iphonesimulator/MagPicMe.build/DerivedSources -c /Users/dmason/IPHONE/MagPicMe/MagPicMe_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MagPicMe_Prefix-duedpjdgmgwcmvgoarytkzkcsnwq/MagPicMe_Prefix.pch.gch0#
+
+CTouch /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app
+s300948215.658598
+e300948215.661114
+r1
+xTouch
+x/Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app
+lSLF07#2@76"Touch /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app300948215#300948215#0(0"0(0#0#0"8618823648#261"    cd /Users/dmason/IPHONE/MagPicMe    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dmason/IPHONE/MagPicMe/build/Debug-iphonesimulator/MagPicMe.app0#
+
