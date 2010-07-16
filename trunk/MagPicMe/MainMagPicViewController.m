@@ -166,6 +166,7 @@
 		imagePicker.wantsFullScreenLayout = YES;
 		
 		[self presentModalViewController:imagePicker animated:YES];
+		
     }
 	else if(buttonIndex ==1) {
 		 //NSLog(@"Libaray");
@@ -178,6 +179,12 @@
 	}
 
 
+}
+
+/* the image after taken or picked */
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	[picker dismissModalViewControllerAnimated:YES];
+	previewImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 }
 
 -(void)done:(id)sender{
