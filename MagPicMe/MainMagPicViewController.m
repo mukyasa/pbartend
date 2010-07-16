@@ -64,13 +64,13 @@
 
 - (void)handleSingleTapFrom:(UITapGestureRecognizer *)recognizer
 {
-	NSLog(@"Single Tap");
+	//NSLog(@"Single Tap");
 	[self moveNavViewOffscreen];
 }
 
 - (void)handlePinchFrom:(UIPinchGestureRecognizer *)recognizer
 {
-	NSLog(@"Pinch");
+	//NSLog(@"Pinch");
 	[self moveNavViewOffscreen];
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
@@ -83,7 +83,7 @@
 
 - (void)handleDragFrom:(UIPanGestureRecognizer *)recognizer
 {
-	NSLog(@"Pan");
+	//NSLog(@"Pan");
 	[self moveNavViewOffscreen];
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
@@ -108,7 +108,7 @@
 
 - (void)handleRotationFrom:(UIRotationGestureRecognizer *)recognizer
 {
-	NSLog(@"Rotate");
+	//NSLog(@"Rotate");
 	[self moveNavViewOffscreen];
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
