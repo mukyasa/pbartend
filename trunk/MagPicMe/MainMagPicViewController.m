@@ -198,7 +198,7 @@
 	newBannerview.origin.y = 0;
 	
 	[UIView beginAnimations:@"navViewShow" context:NULL];
-	[UIView setAnimationDuration:1.0];
+	[UIView setAnimationDuration:.5];
 	self.saveNavBar.frame = newBannerview;
 	[UIView commitAnimations];
 	
