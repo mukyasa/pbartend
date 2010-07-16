@@ -65,7 +65,7 @@
 - (void)handleSingleTapFrom:(UITapGestureRecognizer *)recognizer
 {
 	//NSLog(@"Single Tap");
-	[self moveNavViewOffscreen];
+	[self moveNavViewOnscreen];
 }
 
 - (void)handlePinchFrom:(UIPinchGestureRecognizer *)recognizer
@@ -126,6 +126,59 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+
+-(IBAction)showPictureControls:(id)sender  {
+	
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose your photo source." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Photo Library", nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+	[actionSheet showInView:self.view];	
+	
+	[actionSheet release];
+
+
+}
+
+
+-(IBAction)saveMagCover:(id)sender{
+
+
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // the user clicked one of the OK/Cancel buttons
+    if (buttonIndex == 0) //camera
+    {
+        //NSLog(@"Camera");		
+		imagePicker = [[UIImagePickerController alloc] init];
+		imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+		
+		
+		imagePicker.mediaTypes = [NSArray arrayWithObject:@"public.image"];
+		imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+		
+		
+		imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+		imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
+	    
+		imagePicker.delegate = self;
+		imagePicker.wantsFullScreenLayout = YES;
+		
+		[self presentModalViewController:imagePicker animated:YES];
+    }
+	else if(buttonIndex ==1) {
+		 //NSLog(@"Libaray");
+		imagePicker = [[UIImagePickerController alloc] init];
+		imagePicker.delegate = self;		
+		imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+	
+		[self presentModalViewController:imagePicker animated:YES];
+		
+	}
+
+
+}
 
 -(void)done:(id)sender{
 
