@@ -13,33 +13,35 @@
 
 @interface MainMagPicViewController : UIViewController <UIGestureRecognizerDelegate> {
 	
-	UITapGestureRecognizer *tapRecognizer;
-	UISwipeGestureRecognizer *swipeLeftRecognizer;
+	
 	
 	id <MainMagPicViewControllerDelegate> delegate;
 	IBOutlet UINavigationBar *saveNavBar;
 	IBOutlet UIImageView  *previewImageView;
+	IBOutlet UIView *parentPreviewImageView;
 	
 	// for dragging
-    CGPoint beginGestureTranslation; // upper-left corner, unscaled, unrotated
-	CGPoint effectiveTranslation;
+   CGPoint effectiveTranslation;
 	
     // for scaling
 	CGFloat beginGestureScale;
-	CGFloat effectiveScale;
 	
     // for rotating
 	CGFloat beginGestureRotationRadians;
-	CGFloat effectiveRotationRadians;
+	CGFloat oldX,oldY;
+	
+	BOOL inImage;
 
 	
 }
+
+@property(nonatomic,retain)UIView *parentPreviewImageView;
 @property (nonatomic, retain) UITapGestureRecognizer *tapRecognizer;
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeLeftRecognizer;
 @property(nonatomic,retain)UINavigationBar *saveNavBar;
 -(void) moveNavViewOnscreen;
 -(void) moveNavViewOffscreen;
-
+-(BOOL)point:(CGPoint)p inView:(UIView *)view;
 
 @property (nonatomic, assign) id <MainMagPicViewControllerDelegate> delegate;
 	- (IBAction)done:(id)sender;

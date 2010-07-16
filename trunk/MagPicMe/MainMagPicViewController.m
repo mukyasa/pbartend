@@ -10,7 +10,7 @@
 
 @implementation MainMagPicViewController
 
-@synthesize saveNavBar,delegate,swipeLeftRecognizer, tapRecognizer;
+@synthesize saveNavBar,delegate,swipeLeftRecognizer, tapRecognizer,parentPreviewImageView;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -30,49 +30,31 @@
 	
 	[self moveNavViewOffscreen];
 	
-	/*
-     Create and configure the four recognizers. Add each to the view as a gesture recognizer.
-     */
+	// clip sub-layer contents
+	parentPreviewImageView.layer.masksToBounds = YES;
+	
+	// do one time set-up of gesture recognizers
 	UIGestureRecognizer *recognizer;
 	
-    /*
-     Create a tap recognizer and add it to the view.
-     Keep a reference to the recognizer to test in gestureRecognizer:shouldReceiveTouch:.
-     */
-	recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapFrom:)];
-	[self.view addGestureRecognizer:recognizer];
-    self.tapRecognizer = (UITapGestureRecognizer *)recognizer;
-    recognizer.delegate = self;
+	recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapFrom:)];
+	recognizer.delegate = self;
+	[parentPreviewImageView addGestureRecognizer:recognizer];
 	[recognizer release];
 	
-    /*
-     Create a swipe gesture recognizer to recognize right swipes (the default).
-     We're only interested in receiving messages from this recognizer, and the view will take ownership of it, so we don't need to keep a reference to it.
-     */
-	recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
-	[self.view addGestureRecognizer:recognizer];
+	recognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchFrom:)];
+	recognizer.delegate = self;
+	[parentPreviewImageView addGestureRecognizer:recognizer];
 	[recognizer release];
 	
-    /*
-     Create a swipe gesture recognizer to recognize left swipes.
-     Keep a reference to the recognizer so that it can be added to and removed from the view in takeLeftSwipeRecognitionEnabledFrom:.
-     Add the recognizer to the view if the segmented control shows that left swipe recognition is allowed.
-     */
-	recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
-	self.swipeLeftRecognizer = (UISwipeGestureRecognizer *)recognizer;
-    swipeLeftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-
-	[self.view addGestureRecognizer:swipeLeftRecognizer];
-    
-    self.swipeLeftRecognizer = (UISwipeGestureRecognizer *)recognizer;
+	recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDragFrom:)];
+	recognizer.delegate = self;
+	((UIPanGestureRecognizer *)recognizer).maximumNumberOfTouches = 1;
+	[parentPreviewImageView addGestureRecognizer:recognizer];
 	[recognizer release];
 	
-    /*
-     Create a rotation gesture recognizer.
-     We're only interested in receiving messages from this recognizer, and the view will take ownership of it, so we don't need to keep a reference to it.
-     */
 	recognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotationFrom:)];
-	[self.view addGestureRecognizer:recognizer];
+	recognizer.delegate = self;
+	[parentPreviewImageView addGestureRecognizer:recognizer];
 	[recognizer release];
     
 	
@@ -80,48 +62,61 @@
     [super viewDidLoad];
 }
 
--(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-
-	if ( [gestureRecognizer isKindOfClass:[UIPinchGestureRecognizer class]] ) {
-		beginGestureScale = effectiveScale;
-	}
-	else if ( [gestureRecognizer isKindOfClass:[UIRotationGestureRecognizer class]] ) {
-		beginGestureRotationRadians = effectiveRotationRadians;
-	}
-	if ( [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] ) {
-        CGPoint location = [gestureRecognizer locationInView:self.view];
-        beginGestureTranslation = CGPointMake(effectiveTranslation.x - location.x, effectiveTranslation.x - location.y);
-	}
-	return YES;
-	
+- (void)handleSingleTapFrom:(UITapGestureRecognizer *)recognizer
+{
+	NSLog(@"Single Tap");
+	[self moveNavViewOffscreen];
 }
 
-
-- (void)handleTapFrom:(UITapGestureRecognizer *)recognizer {
-	NSLog(@"TAPPING");
+- (void)handlePinchFrom:(UIPinchGestureRecognizer *)recognizer
+{
+	NSLog(@"Pinch");
 	[self moveNavViewOffscreen];
 	
-}
-
-- (void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
-	NSLog(@"SWIPPING");
+	if (recognizer.state == UIGestureRecognizerStateBegan) {
+		beginGestureScale = 1;
+	}
+	previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
+	beginGestureScale = recognizer.scale;
 	
-
-	
-	
-}
-- (void)handleRotationFrom:(UIRotationGestureRecognizer *)recognizer {
-	NSLog(@"ROTATING");
-	[self moveNavViewOffscreen];
-    
-    CGAffineTransform transform = CGAffineTransformMakeRotation([recognizer rotation]);
-    previewImageView.transform = transform;
-
-
 }
 
 - (void)handleDragFrom:(UIPanGestureRecognizer *)recognizer
 {
+	NSLog(@"Pan");
+	[self moveNavViewOffscreen];
+	
+	if (recognizer.state == UIGestureRecognizerStateBegan) {
+		CGPoint startPoint = [recognizer locationOfTouch:0 inView:previewImageView];
+		inImage = [self point:startPoint inView:previewImageView];
+		oldX = 0;
+		oldY = 0;
+	}
+	if (inImage) {
+		CGPoint translate = [recognizer translationInView: previewImageView];
+		previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, translate.x-oldX, translate.y-oldY);
+		oldX = translate.x;
+		oldY = translate.y;
+	}
+	
+}
+
+-(BOOL)point:(CGPoint)p inView:(UIView *)view {
+	return p.x > 0 && p.x < view.bounds.size.width && p.y > 0 && p.y < view.bounds.size.height;
+}
+
+
+- (void)handleRotationFrom:(UIRotationGestureRecognizer *)recognizer
+{
+	NSLog(@"Rotate");
+	[self moveNavViewOffscreen];
+	
+	if (recognizer.state == UIGestureRecognizerStateBegan) {
+		beginGestureRotationRadians	= 0;
+	}
+	previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
+	beginGestureRotationRadians = recognizer.rotation;
+	
 }
 
 /*
@@ -178,6 +173,7 @@
 - (void)dealloc {
 	[tapRecognizer release];
 	[swipeLeftRecognizer release];
+	[parentPreviewImageView release];
 
 	[saveNavBar release];
     [super dealloc];
