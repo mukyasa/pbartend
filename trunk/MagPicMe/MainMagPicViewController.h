@@ -11,7 +11,7 @@
 
 @protocol MainMagPicViewControllerDelegate;
 
-@interface MainMagPicViewController : UIViewController <UIGestureRecognizerDelegate> {
+@interface MainMagPicViewController : UIViewController <UIGestureRecognizerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate> {
 	
 	
 	
@@ -19,6 +19,7 @@
 	IBOutlet UINavigationBar *saveNavBar;
 	IBOutlet UIImageView  *previewImageView;
 	IBOutlet UIView *parentPreviewImageView;
+	UIImagePickerController *imagePicker;
 	
 	// for dragging
    CGPoint effectiveTranslation;
@@ -42,6 +43,8 @@
 -(void) moveNavViewOnscreen;
 -(void) moveNavViewOffscreen;
 -(BOOL)point:(CGPoint)p inView:(UIView *)view;
+-(IBAction)showPictureControls:(id)sender;
+-(IBAction)saveMagCover:(id)sender;
 
 @property (nonatomic, assign) id <MainMagPicViewControllerDelegate> delegate;
 	- (IBAction)done:(id)sender;
