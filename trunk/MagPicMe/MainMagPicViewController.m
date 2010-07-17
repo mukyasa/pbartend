@@ -148,10 +148,86 @@
 
 }
 
+/*
+//over lay is image 1 picture is image2
+- (UIImage *)addImage:(UIImage *)image1 toImage:(UIImage *)image2 {
+	
+	float size1 = image1.size.height; //overlay
+	float size2 = image2.size.height; //picture
+	
+	if(size1 > size2)//if overlay is bigger than picture use picture
+	{
+		UIGraphicsBeginImageContext(image2.size);
+		// Draw image1
+		[image2 drawInRect:CGRectMake(0, 0, image2.size.width, image2.size.height)];
+		
+		// Draw image2
+		[image1 drawInRect:CGRectMake(0, 0, image2.size.width, image2.size.height)];
+	}
+	else
+	{
+		UIGraphicsBeginImageContext(image1.size);
+		// Draw image1
+		[image2 drawInRect:CGRectMake(0, 0, image1.size.width, image1.size.height)];
+		
+		// Draw image2
+		[image1 drawInRect:CGRectMake(0, 0, image1.size.width, image1.size.height)];
+	}
+	
+	//NSLog(@"Image 1 Width:%f Height: %f", image1.size.width, image1.size.height);
+	//NSLog(@"Image 2 Width:%f Height: %f", image2.size.width, image2.size.height);	
+	
+	UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+	
+	UIGraphicsEndImageContext();
+	
+	return resultingImage;
+}
+ */
+
+-(UIImage*)addImage:(UIImageView*)imageview1 toImage:(UIImageView*)imageView2{
+
+	UIGraphicsBeginImageContext(imageView2.frame.size);
+	// Draw image1
+	[imageView2.image drawInRect:CGRectMake(0, 0, imageView2.frame.size.width, imageView2.frame.size.height)];
+	
+	// Draw image2
+	[imageview1.image drawInRect:CGRectMake(0, 0, imageView2.frame.size.width, imageView2.frame.size.height)];
+
+	
+	//NSLog(@"Image 1 Width:%f Height: %f", image1.size.width, image1.size.height);
+	//NSLog(@"Image 2 Width:%f Height: %f", image2.size.width, image2.size.height);	
+	
+	UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+	
+	UIGraphicsEndImageContext();
+	
+	return resultingImage;
+}
 
 -(IBAction)saveMagCover:(id)sender{
 
+	UIImageWriteToSavedPhotosAlbum([self addImage:parentPreviewImageView toImage:previewImageView], self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
 
+}
+
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+	NSString *message;
+	NSString *title;
+	if (!error) {
+		title = NSLocalizedString(@"SaveSuccessTitle", @"");
+		message = NSLocalizedString(@"SaveSuccessMessage", @"");
+	} else {
+		title = NSLocalizedString(@"SaveFailedTitle", @"");
+		message = [error description];
+	}
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+													message:message
+												   delegate:nil
+										  cancelButtonTitle:NSLocalizedString(@"ButtonOK", @"")
+										  otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 
