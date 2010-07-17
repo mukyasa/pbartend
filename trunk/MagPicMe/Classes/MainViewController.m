@@ -21,7 +21,7 @@ const NSUInteger kNumImages		= 5;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	//default cover
-	pickedCover = [UIImage imageNamed:@"cover1.png"];
+	pickedCover = [UIImage imageNamed:@"clearcover1.png"];
 	// 1. setup the scrollview for multiple images and add it to the view controller
 	//
 	// note: the following can be done in Interface Builder, but we show this in code for clarity
@@ -68,7 +68,7 @@ const NSUInteger kNumImages		= 5;
 
 	CGFloat pageWidth = magizineScrollView.frame.size.width-10; 
 	int page = ((scrollView.contentOffset.x / pageWidth) + 1);
-	pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"cover%i.png",page] ];
+	pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"clearcover%i.png",page] ];
 
 	
 	//NSLog(@"SCROLL OFFSET: %d",page);
