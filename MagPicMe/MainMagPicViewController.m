@@ -85,7 +85,7 @@
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureScale = 1;
 	}
-	previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
+	parentPreviewView.transform = CGAffineTransformScale(parentPreviewView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
 	beginGestureScale = recognizer.scale;
 	
 }
@@ -96,19 +96,22 @@
 	[self moveNavViewOffscreen];
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
-		CGPoint startPoint = [recognizer locationOfTouch:0 inView:previewImageView];
-		inImage = [self point:startPoint inView:previewImageView];
+		CGPoint startPoint = [recognizer locationOfTouch:0 inView:parentPreviewView];
+		inImage = [self point:startPoint inView:parentPreviewView];
 		oldX = 0;
 		oldY = 0;
 	}
 	if (inImage) {
-		CGPoint translate = [recognizer translationInView: previewImageView];
-		previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, translate.x-oldX, translate.y-oldY);
+		CGPoint translate = [recognizer translationInView: parentPreviewView];
+		parentPreviewView.transform = CGAffineTransformTranslate(parentPreviewView.transform, translate.x-oldX, translate.y-oldY);
 		oldX = translate.x;
 		oldY = translate.y;
 	}
+	 
+	 
 	
 }
+
 
 -(BOOL)point:(CGPoint)p inView:(UIView *)view {
 	return p.x > 0 && p.x < view.bounds.size.width && p.y > 0 && p.y < view.bounds.size.height;
@@ -123,7 +126,7 @@
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureRotationRadians	= 0;
 	}
-	previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
+	parentPreviewView.transform = CGAffineTransformRotate(parentPreviewView.transform, (recognizer.rotation - beginGestureRotationRadians));
 	beginGestureRotationRadians = recognizer.rotation;
 	
 }
@@ -148,55 +151,15 @@
 
 }
 
-/*
-//over lay is image 1 picture is image2
-- (UIImage *)addImage:(UIImage *)image1 toImage:(UIImage *)image2 {
-	
-	float size1 = image1.size.height; //overlay
-	float size2 = image2.size.height; //picture
-	
-	if(size1 > size2)//if overlay is bigger than picture use picture
-	{
-		UIGraphicsBeginImageContext(image2.size);
-		// Draw image1
-		[image2 drawInRect:CGRectMake(0, 0, image2.size.width, image2.size.height)];
-		
-		// Draw image2
-		[image1 drawInRect:CGRectMake(0, 0, image2.size.width, image2.size.height)];
-	}
-	else
-	{
-		UIGraphicsBeginImageContext(image1.size);
-		// Draw image1
-		[image2 drawInRect:CGRectMake(0, 0, image1.size.width, image1.size.height)];
-		
-		// Draw image2
-		[image1 drawInRect:CGRectMake(0, 0, image1.size.width, image1.size.height)];
-	}
-	
-	//NSLog(@"Image 1 Width:%f Height: %f", image1.size.width, image1.size.height);
-	//NSLog(@"Image 2 Width:%f Height: %f", image2.size.width, image2.size.height);	
-	
-	UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
-	
-	UIGraphicsEndImageContext();
-	
-	return resultingImage;
-}
- */
-
--(UIImage*)addImage:(UIImageView*)imageview1 toImage:(UIImageView*)imageView2{
+-(UIImage*)addImage:(UIImageView*)imageview1 toImageView:(UIImageView*)imageView2 toImage:(UIImage*)image2{
 
 	UIGraphicsBeginImageContext(imageView2.frame.size);
 	// Draw image1
-	[imageView2.image drawInRect:CGRectMake(0, 0, imageView2.frame.size.width, imageView2.frame.size.height)];
+	[image2 drawInRect:CGRectMake(0, 0, imageView2.frame.size.width, imageView2.frame.size.height)];
 	
 	// Draw image2
 	[imageview1.image drawInRect:CGRectMake(0, 0, imageView2.frame.size.width, imageView2.frame.size.height)];
 
-	
-	//NSLog(@"Image 1 Width:%f Height: %f", image1.size.width, image1.size.height);
-	//NSLog(@"Image 2 Width:%f Height: %f", image2.size.width, image2.size.height);	
 	
 	UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
 	
@@ -207,7 +170,25 @@
 
 -(IBAction)saveMagCover:(id)sender{
 
-	UIImageWriteToSavedPhotosAlbum([self addImage:parentPreviewImageView toImage:previewImageView], self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+	//CGFloat width = previewImageView.frame.size.width;
+	//CGFloat height = previewImageView.frame.size.height;
+	
+	UIGraphicsBeginImageContext(previewImageView.frame.size);
+	
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	
+	//CGContextScaleCTM(context, - 1.0f, 1.0f);
+	//CGContextTranslateCTM(context, -height, 0.0f);
+	CGContextConcatCTM(context, parentPreviewView.transform);
+	
+//	CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, width, height), previewImageView.image.CGImage);
+	CGContextDrawImage(context, parentPreviewView.frame, previewImageView.image.CGImage);
+	
+	UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
+	
+	UIGraphicsEndImageContext();
+	
+	UIImageWriteToSavedPhotosAlbum([self addImage:parentPreviewImageView toImageView:previewImageView toImage:imageCopy], self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
 
 }
 
@@ -215,16 +196,16 @@
 	NSString *message;
 	NSString *title;
 	if (!error) {
-		title = NSLocalizedString(@"SaveSuccessTitle", @"");
-		message = NSLocalizedString(@"SaveSuccessMessage", @"");
+		title = NSLocalizedString(@"Picture Saved", @"");
+		message = NSLocalizedString(@"Your picture was saved in your photo library.", @"");
 	} else {
-		title = NSLocalizedString(@"SaveFailedTitle", @"");
+		title = NSLocalizedString(@"Picture Saved", @"");
 		message = [error description];
 	}
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
 													message:message
 												   delegate:nil
-										  cancelButtonTitle:NSLocalizedString(@"ButtonOK", @"")
+										  cancelButtonTitle:NSLocalizedString(@"Ok", @"")
 										  otherButtonTitles:nil];
 	[alert show];
 	[alert release];
@@ -239,6 +220,7 @@
         //NSLog(@"Camera");		
 		imagePicker = [[UIImagePickerController alloc] init];
 		imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+		imagePicker.videoQuality = UIImagePickerControllerQualityTypeHigh;
 		
 		
 		imagePicker.mediaTypes = [NSArray arrayWithObject:@"public.image"];
