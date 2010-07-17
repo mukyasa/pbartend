@@ -255,7 +255,7 @@
 						<int key="objectID">13</int>
 						<reference key="object" ref="78834715"/>
 						<reference key="parent" ref="191373211"/>
-						<string key="objectName">Parent Prieview Image</string>
+						<string key="objectName">Parent Preview Image</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">22</int>
