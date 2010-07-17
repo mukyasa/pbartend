@@ -12,13 +12,14 @@
 	
 	IBOutlet UITabBarItem *magPicMe;
 	IBOutlet UIScrollView *magizineScrollView;
+	UIImage *pickedCover;
 }
 
+@property(nonatomic,retain)UIImage *pickedCover;
 @property(nonatomic,retain)UITabBarItem *magPicMe;
 @property(nonatomic,retain)UIScrollView *magizineScrollView;
 
 - (IBAction)showInfo:(id)sender;
 - (void)layoutScrollImages;
--(IBAction)showMagPicScreen:(id)sender;
 
 @end

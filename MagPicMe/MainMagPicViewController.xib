@@ -56,7 +56,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">girlface-large.jpg</string>
+									<string key="NSResourceName">basebackground.png</string>
 								</object>
 							</object>
 						</object>
@@ -78,10 +78,6 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">clearcover.png</string>
-						</object>
 					</object>
 					<object class="IBUINavigationBar" id="741666575">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -156,14 +152,6 @@
 					<int key="connectionID">23</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">parentPreviewImageView</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1061995021"/>
-					</object>
-					<int key="connectionID">26</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">showPictureControls:</string>
 						<reference key="source" ref="517092084"/>
@@ -178,6 +166,22 @@
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">28</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">parentPreviewImageView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="78834715"/>
+					</object>
+					<int key="connectionID">29</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">parentPreviewView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1061995021"/>
+					</object>
+					<int key="connectionID">30</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -243,16 +247,19 @@
 							<reference ref="277011310"/>
 						</object>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">Parent Preview</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
 						<reference key="object" ref="78834715"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">Parent Prieview Image</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">22</int>
 						<reference key="object" ref="277011310"/>
 						<reference key="parent" ref="1061995021"/>
+						<string key="objectName">Preview Image</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
@@ -283,7 +290,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>MainMagPicViewController</string>
 					<string>UIResponder</string>
-					<string>{{382, 290}, {320, 480}}</string>
+					<string>{{613, 392}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
@@ -316,7 +323,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">28</int>
+			<int key="maxID">30</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -369,12 +376,14 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>delegate</string>
 							<string>parentPreviewImageView</string>
+							<string>parentPreviewView</string>
 							<string>previewImageView</string>
 							<string>saveNavBar</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>id</string>
+							<string>UIImageView</string>
 							<string>UIView</string>
 							<string>UIImageView</string>
 							<string>UINavigationBar</string>
@@ -386,6 +395,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>delegate</string>
 							<string>parentPreviewImageView</string>
+							<string>parentPreviewView</string>
 							<string>previewImageView</string>
 							<string>saveNavBar</string>
 						</object>
@@ -397,6 +407,10 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">parentPreviewImageView</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">parentPreviewView</string>
 								<string key="candidateClassName">UIView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
@@ -650,16 +664,14 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>basebackground.png</string>
 				<string>camera_sm.png</string>
-				<string>clearcover.png</string>
-				<string>girlface-large.jpg</string>
 				<string>save.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{320, 480}</string>
 				<string>{23, 18}</string>
-				<string>{223, 290}</string>
-				<string>{518, 683}</string>
 				<string>{17, 18}</string>
 			</object>
 		</object>

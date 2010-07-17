@@ -7,10 +7,11 @@
 //
 
 #import "MainViewController.h"
+#import "MainMagPicViewController.h"
 
 @implementation MainViewController
 
-@synthesize magPicMe,magizineScrollView;
+@synthesize magPicMe,magizineScrollView,pickedCover;
 
 const CGFloat kScrollObjHeight	= 319.0;
 const CGFloat kScrollObjWidth	= 244.0;
@@ -19,8 +20,8 @@ const NSUInteger kNumImages		= 5;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	
-	
+	//default cover
+	pickedCover = [UIImage imageNamed:@"cover1.png"];
 	// 1. setup the scrollview for multiple images and add it to the view controller
 	//
 	// note: the following can be done in Interface Builder, but we show this in code for clarity
@@ -56,6 +57,23 @@ const NSUInteger kNumImages		= 5;
 	[self layoutScrollImages];	// now place the photos in serial layout within the scrollview
 	
 	[super viewDidLoad];
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	//pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"cover%i.png",coverId] ];
+	//NSLog(@"SELECTED COVER: %d",coverId);
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+	CGFloat pageWidth = magizineScrollView.frame.size.width-10; 
+	int page = ((scrollView.contentOffset.x / pageWidth) + 1);
+	pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"cover%i.png",page] ];
+
+	
+	//NSLog(@"SCROLL OFFSET: %d",page);
+
+	
 }
 
 - (void)layoutScrollImages
@@ -123,6 +141,7 @@ const NSUInteger kNumImages		= 5;
 
 
 - (void)dealloc {
+	[pickedCover release];
 	[magizineScrollView release];
 	[magPicMe release];
     [super dealloc];
