@@ -19,6 +19,7 @@
 	IBOutlet UIView *parentPreviewView;
 	IBOutlet UIImageView *parentPreviewImageView;
 	UIImagePickerController *imagePicker;
+	BOOL isSaving;
 	
 	// for dragging
     CGPoint effectiveTranslation;
@@ -43,6 +44,7 @@
 -(BOOL)point:(CGPoint)p inView:(UIView *)view;
 -(IBAction)showPictureControls:(id)sender;
 -(IBAction)saveMagCover:(id)sender;
+-(void)doSave;
 
 @property (nonatomic, assign) id <MainMagPicViewControllerDelegate> delegate;
 	- (IBAction)done:(id)sender;

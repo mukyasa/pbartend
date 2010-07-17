@@ -85,8 +85,9 @@
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureScale = 1;
 	}
-	parentPreviewView.transform = CGAffineTransformScale(parentPreviewView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
+	previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
 	beginGestureScale = recognizer.scale;
+	
 	
 }
 
@@ -96,14 +97,14 @@
 	[self moveNavViewOffscreen];
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
-		CGPoint startPoint = [recognizer locationOfTouch:0 inView:parentPreviewView];
-		inImage = [self point:startPoint inView:parentPreviewView];
+		CGPoint startPoint = [recognizer locationOfTouch:0 inView:previewImageView];
+		inImage = [self point:startPoint inView:previewImageView];
 		oldX = 0;
 		oldY = 0;
 	}
 	if (inImage) {
 		CGPoint translate = [recognizer translationInView: parentPreviewView];
-		parentPreviewView.transform = CGAffineTransformTranslate(parentPreviewView.transform, translate.x-oldX, translate.y-oldY);
+		previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, translate.x-oldX, translate.y-oldY);
 		oldX = translate.x;
 		oldY = translate.y;
 	}
@@ -126,7 +127,7 @@
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureRotationRadians	= 0;
 	}
-	parentPreviewView.transform = CGAffineTransformRotate(parentPreviewView.transform, (recognizer.rotation - beginGestureRotationRadians));
+	previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
 	beginGestureRotationRadians = recognizer.rotation;
 	
 }
@@ -140,9 +141,9 @@
 */
 
 -(IBAction)showPictureControls:(id)sender  {
-	
+	isSaving=NO;
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose your photo source." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Photo Library", nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    actionSheet.actionSheetStyle = UIBarStyleBlackTranslucent;
 	
 	[actionSheet showInView:self.parentPreviewView];	
 	
@@ -168,29 +169,47 @@
 	return resultingImage;
 }
 
--(IBAction)saveMagCover:(id)sender{
 
-	//CGFloat width = previewImageView.frame.size.width;
-	//CGFloat height = previewImageView.frame.size.height;
+
+-(IBAction)saveMagCover:(id)sender{
 	
-	UIGraphicsBeginImageContext(previewImageView.frame.size);
+	isSaving=YES;
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Save your photo?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Save" otherButtonTitles:nil];
+    actionSheet.actionSheetStyle = UIBarStyleBlackTranslucent;
+	
+	[actionSheet showInView:self.parentPreviewView];	
+	
+	[actionSheet release];
+}
+
+-(void)doSave{
+	
+	/*UIGraphicsBeginImageContext(parentPreviewImageView.frame.size);
 	
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
-	//CGContextScaleCTM(context, - 1.0f, 1.0f);
-	//CGContextTranslateCTM(context, -height, 0.0f);
-	CGContextConcatCTM(context, parentPreviewView.transform);
+	//CGContextTranslateCTM(context, 0.0, previewImageView.frame.size.height);
+    //CGContextScaleCTM(context, 1.0, -1.0);
 	
-//	CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, width, height), previewImageView.image.CGImage);
-	CGContextDrawImage(context, parentPreviewView.frame, previewImageView.image.CGImage);
+	CGContextConcatCTM(context, CGContextGetCTM(context));
+	
+	//	CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, width, height), previewImageView.image.CGImage);
+	CGContextDrawImage(context, parentPreviewImageView.frame, previewImageView.image.CGImage);
 	
 	UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
 	
 	UIGraphicsEndImageContext();
 	
+	
 	UIImageWriteToSavedPhotosAlbum([self addImage:parentPreviewImageView toImageView:previewImageView toImage:imageCopy], self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
-
+	 */
+	//UIImageWriteToSavedPhotosAlbum([self scaleAndRotateImage:previewImageView.image], self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+	
+		
+	
 }
+
+
 
 - (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
 	NSString *message;
@@ -214,36 +233,43 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    // the user clicked one of the OK/Cancel buttons
-    if (buttonIndex == 0) //camera
-    {
-        //NSLog(@"Camera");		
-		imagePicker = [[UIImagePickerController alloc] init];
-		imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-		imagePicker.videoQuality = UIImagePickerControllerQualityTypeHigh;
+	if(isSaving)
+	{
+		if (buttonIndex == 0) //camera
+			[self doSave];		
 		
+	}else{
+		// the user clicked one of the OK/Cancel buttons
+		if (buttonIndex == 0) //camera
+		{
+			//NSLog(@"Camera");		
+			imagePicker = [[UIImagePickerController alloc] init];
+			imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+			imagePicker.videoQuality = UIImagePickerControllerQualityTypeHigh;
+			
+			
+			imagePicker.mediaTypes = [NSArray arrayWithObject:@"public.image"];
+			imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+			
+			
+			imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+			imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
+			
+			imagePicker.delegate = self;
+			imagePicker.wantsFullScreenLayout = YES;
+			
+			[self presentModalViewController:imagePicker animated:YES];
+			
+		}
+		else if(buttonIndex ==1) {
+			 //NSLog(@"Libaray");
+			imagePicker = [[UIImagePickerController alloc] init];
+			imagePicker.delegate = self;		
+			imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 		
-		imagePicker.mediaTypes = [NSArray arrayWithObject:@"public.image"];
-		imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-		
-		
-		imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-		imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
-	    
-		imagePicker.delegate = self;
-		imagePicker.wantsFullScreenLayout = YES;
-		
-		[self presentModalViewController:imagePicker animated:YES];
-		
-    }
-	else if(buttonIndex ==1) {
-		 //NSLog(@"Libaray");
-		imagePicker = [[UIImagePickerController alloc] init];
-		imagePicker.delegate = self;		
-		imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-	
-		[self presentModalViewController:imagePicker animated:YES];
-		
+			[self presentModalViewController:imagePicker animated:YES];
+			
+		}
 	}
 
 
