@@ -7,10 +7,11 @@
 //
 
 #import "MainMagPicViewController.h"
+#import "MainViewController.h"
 
 @implementation MainMagPicViewController
 
-@synthesize saveNavBar,delegate,swipeLeftRecognizer, tapRecognizer,parentPreviewImageView;
+@synthesize saveNavBar,delegate,swipeLeftRecognizer, tapRecognizer,parentPreviewView,parentPreviewImageView;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -25,39 +26,46 @@
 [self moveNavViewOnscreen];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+	//parentPreviewView
+	NSArray *viewControllers = [self.tabBarController viewControllers];
+	MainViewController *mainViewController = [viewControllers objectAtIndex:0];
+	parentPreviewImageView.image = mainViewController.pickedCover;
+
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	
 	[self moveNavViewOffscreen];
 	
 	// clip sub-layer contents
-	parentPreviewImageView.layer.masksToBounds = YES;
+	parentPreviewView.layer.masksToBounds = YES;
 	
 	// do one time set-up of gesture recognizers
 	UIGestureRecognizer *recognizer;
 	
 	recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapFrom:)];
 	recognizer.delegate = self;
-	[parentPreviewImageView addGestureRecognizer:recognizer];
+	[parentPreviewView addGestureRecognizer:recognizer];
 	[recognizer release];
 	
 	recognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchFrom:)];
 	recognizer.delegate = self;
-	[parentPreviewImageView addGestureRecognizer:recognizer];
-	[recognizer release];
-	
-	recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDragFrom:)];
-	recognizer.delegate = self;
-	((UIPanGestureRecognizer *)recognizer).maximumNumberOfTouches = 1;
-	[parentPreviewImageView addGestureRecognizer:recognizer];
+	[parentPreviewView addGestureRecognizer:recognizer];
 	[recognizer release];
 	
 	recognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotationFrom:)];
 	recognizer.delegate = self;
-	[parentPreviewImageView addGestureRecognizer:recognizer];
+	[parentPreviewView addGestureRecognizer:recognizer];
 	[recognizer release];
-    
 	
+	
+	recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDragFrom:)];
+	recognizer.delegate = self;
+	((UIPanGestureRecognizer *)recognizer).maximumNumberOfTouches = 1;
+	[parentPreviewView addGestureRecognizer:recognizer];
+	[recognizer release];
 	
     [super viewDidLoad];
 }
@@ -72,6 +80,7 @@
 {
 	//NSLog(@"Pinch");
 	[self moveNavViewOffscreen];
+
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureScale = 1;
@@ -131,7 +140,8 @@
 	
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose your photo source." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Photo Library", nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
-	[actionSheet showInView:self.view];	
+	
+	[actionSheet showInView:self.parentPreviewView];	
 	
 	[actionSheet release];
 
@@ -231,10 +241,11 @@
 
 
 - (void)dealloc {
+
 	[tapRecognizer release];
 	[swipeLeftRecognizer release];
+	[parentPreviewView release];
 	[parentPreviewImageView release];
-
 	[saveNavBar release];
     [super dealloc];
 }
