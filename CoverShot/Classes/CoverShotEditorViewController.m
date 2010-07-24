@@ -137,7 +137,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 -(void)doSave{
 	
-	static int kMaxResolution = 640;
+	/*static int kMaxResolution = 640;
 	
 	CGImageRef imgRef = previewImageView.image.CGImage;
 	
@@ -146,6 +146,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	CGFloat height = CGImageGetHeight(imgRef);
 	
 	CGRect bounds = CGRectMake(0, 0, width, height);
+   /* NSLog(@"SIZE W:%f H:%f Res:%i",width,height,kMaxResolution);
 	if (width > kMaxResolution || height > kMaxResolution) {
 		CGFloat ratio = width/height;
 		if (ratio > 1) {
@@ -155,10 +156,10 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 			bounds.size.height = kMaxResolution;
 			bounds.size.width = bounds.size.height * ratio;
 		}
-	}
+	}*/
 	
 	
-	UIGraphicsBeginImageContext(bounds.size);
+	UIGraphicsBeginImageContext(previewImageView.frame.size);
 	
 	[self.parentPreviewView.layer renderInContext:UIGraphicsGetCurrentContext()];
 	
