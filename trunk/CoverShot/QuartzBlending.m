@@ -8,7 +8,7 @@
 
 @implementation QuartzBlendingView
 
-@synthesize sourceColor, destinationColor, blendMode;
+@synthesize sourceColor, blendMode;
 
 -(id)initWithFrame:(CGRect)frame
 {
@@ -16,8 +16,7 @@
 	if(self != nil)
 	{
 		sourceColor = [UIColor whiteColor];
-		destinationColor = [UIColor blackColor];
-		blendMode = kCGBlendModeNormal;
+		blendMode = kCGBlendModeClear;
 	}
 	return self;
 }
@@ -25,7 +24,6 @@
 -(void)dealloc
 {
 	[sourceColor release];
-	[destinationColor release];
 	[super dealloc];
 }
 
@@ -39,15 +37,6 @@
 	}
 }
 
--(void)setDestinationColor:(UIColor*)dest
-{
-	if(dest != destinationColor)
-	{
-		[destinationColor release];
-		destinationColor = [dest retain];
-		[self setNeedsDisplay];
-	}
-}
 
 -(void)setBlendMode:(CGBlendMode)mode
 {
@@ -65,7 +54,7 @@
 	CGContextSetBlendMode(context, blendMode);
 	// And draw a rect with the "foreground" color - this is the "Source" for the blending formulas
 	CGContextSetFillColorWithColor(context, sourceColor.CGColor);
-	CGContextFillRect(context, CGRectMake(0.0, 0.0, 320.0, 236.0));
+	CGContextFillRect(context, CGRectMake(0.0, 0.0, 320.0, 480.0));
 }
 
 @end
