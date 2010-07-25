@@ -7,12 +7,13 @@
 //
 
 #import "CoverShotEditorViewController.h"
+#import "QuartzBlending.h"
 
 
 @implementation CoverShotEditorViewController
 
 static NSString *blendModes[] = {
-	@"NONE",
+	@"Clear",
 	@"Multiply",
 	@"Screen",
 	@"Overlay",
@@ -41,6 +42,13 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
     return self;
 }
 */
+
+// called before this controller's view has appeared
+-(void)viewWillAppear:(BOOL)animated
+{
+
+	self.quartzView.frame = parentPreviewView.bounds;
+}
 
 -(IBAction)showPictureControls:(id)sender  {
 	isSaving=NO;
@@ -159,7 +167,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	}*/
 	
 	
-	UIGraphicsBeginImageContext(previewImageView.frame.size);
+	UIGraphicsBeginImageContext(parentPreviewImageView.frame.size);
 	
 	[self.parentPreviewView.layer renderInContext:UIGraphicsGetCurrentContext()];
 	
@@ -171,8 +179,41 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 }
 
+-(id)init
+{
+	return [super initWithNibName:@"BlendView" viewClass:[QuartzBlendingView class]];
+}
+-(id)initWithNibName:(NSString*)nib viewClass:(Class)vc;
+{
+	self = [super initWithNibName:nib bundle:nil];
+	if (self != nil)
+	{
+		// Stash the class to use for drawing for later when the view hierarchy is created
+		viewClass = vc;
+	}
+	return self;
+}
+
+-(QuartzView*)quartzView
+{
+	if(quartzView == nil)
+	{
+		quartzView = [[viewClass alloc] initWithFrame:CGRectZero];
+	}
+	return quartzView;
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	
+	
+	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+	[gradientPicker selectRow:[self.colors indexOfObject:qbv.sourceColor] inComponent:0 animated:NO];
+	[gradientPicker selectRow:qbv.blendMode inComponent:1 animated:NO];
+	
+//	[parentPreviewView addSubview:self.quartzView];
+	[parentPreviewView insertSubview:self.quartzView belowSubview:parentPreviewImageView];
+
 	
 	[self moveNavViewOnscreen];
 	pickerView.hidden = YES;//hide so we dont see it going off screen
@@ -221,6 +262,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 {
 	//NSLog(@"Pinch");
 	[self moveNavViewOffscreen];
+	[self movePickerOffScreen];//hide picker
 	
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
@@ -236,6 +278,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 {
 	//NSLog(@"Pan");
 	[self moveNavViewOffscreen];
+	[self movePickerOffScreen];//hide picker
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		CGPoint startPoint = [recognizer locationOfTouch:0 inView:previewImageView];
@@ -261,6 +304,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 {
 	//NSLog(@"Rotate");
 	[self moveNavViewOffscreen];
+	[self movePickerOffScreen];//hide picker
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureRotationRadians	= 0;
@@ -387,6 +431,21 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	return view;
 }
 
+-(CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+	CGFloat width = 0.0;
+	switch (component)
+	{
+		case 0:
+			width = 48.0;
+			break;
+		case 1:
+			width = 250.0;
+			break;
+	}
+	return width;
+}
+
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
 	NSInteger numComps = 0;
@@ -401,6 +460,14 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 			break;
 	}
 	return numComps;
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+	//NSLog(@"label Picker called");
+	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+	qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
+	qbv.blendMode = [gradientPicker selectedRowInComponent:1];
 }
 
 // Calculate the luminance for an arbitrary UIColor instance
@@ -502,6 +569,8 @@ NSInteger colorSortByLuminance(id color1, id color2, void *context)
 
 
 - (void)dealloc {
+	[quartzView release]; 
+	quartzView = nil;
 	[pickerView release];
 	[gradientPicker release];
 	[blendButton release];

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "QuartzView.h"
 
 @protocol CoverShotEditorViewControllerDelegate;
 
@@ -24,6 +25,8 @@
 	UIImagePickerController *imagePicker;
 	IBOutlet UIPickerView *gradientPicker;
 	IBOutlet UIView *pickerView;
+	QuartzView *quartzView;
+	Class viewClass;
 
 	BOOL isSaving;
 	
@@ -41,6 +44,8 @@
 	
 }
 
+
+@property(nonatomic, readonly) QuartzView *quartzView;
 @property(nonatomic,retain) UIView *pickerView;
 @property(nonatomic, readonly) NSArray *colors;
 @property(nonatomic,retain) UIPickerView *gradientPicker;
@@ -53,6 +58,7 @@
 @property(nonatomic,retain) UIImageView *parentPreviewImageView;
 
 
+-(id)initWithNibName:(NSString*)nib viewClass:(Class)vc;
 -(IBAction)showColorPicker:(id)sender;
 -(IBAction)saveMagCover:(id)sender;
 -(IBAction)showPictureControls:(id)sender;
@@ -63,6 +69,7 @@
 -(BOOL)point:(CGPoint)p inView:(UIView *)view;
 -(void)movePickerOnScreen;
 -(void)movePickerOffScreen;
+-(id)init;
 
 
 @property (nonatomic, assign) id <CoverShotEditorViewControllerDelegate> delegate;
