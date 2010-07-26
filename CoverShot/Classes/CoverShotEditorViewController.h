@@ -25,7 +25,7 @@
 	UIImagePickerController *imagePicker;
 	IBOutlet UIPickerView *gradientPicker;
 	IBOutlet UIView *pickerView;
-	QuartzView *quartzView;
+	IBOutlet QuartzView *quartzView;
 	Class viewClass;
 
 	BOOL isSaving;

@@ -13,7 +13,7 @@
 @implementation CoverShotEditorViewController
 
 static NSString *blendModes[] = {
-	@"Clear",
+	@"None",
 	@"Multiply",
 	@"Screen",
 	@"Overlay",
@@ -28,25 +28,18 @@ static NSString *blendModes[] = {
 	@"Hue",
 	@"Saturation",
 	@"Color",
-	@"Luminosity"
+	@"Luminosity",
+	@"PlusDarker",
+	@"PlusLighter"
 };
 static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 @synthesize previewImageView,parentPreviewView,parentPreviewImageView,delegate,mainToolBar,photoButton,saveButton,blendButton,gradientPicker,pickerView;
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
+
 
 // called before this controller's view has appeared
 -(void)viewWillAppear:(BOOL)animated
 {
-
 	self.quartzView.frame = parentPreviewView.bounds;
 }
 
@@ -179,20 +172,6 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 }
 
--(id)init
-{
-	return [super initWithNibName:@"BlendView" viewClass:[QuartzBlendingView class]];
-}
--(id)initWithNibName:(NSString*)nib viewClass:(Class)vc;
-{
-	self = [super initWithNibName:nib bundle:nil];
-	if (self != nil)
-	{
-		// Stash the class to use for drawing for later when the view hierarchy is created
-		viewClass = vc;
-	}
-	return self;
-}
 
 -(QuartzView*)quartzView
 {
@@ -202,6 +181,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	}
 	return quartzView;
 }
+ 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -211,8 +191,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[gradientPicker selectRow:[self.colors indexOfObject:qbv.sourceColor] inComponent:0 animated:NO];
 	[gradientPicker selectRow:qbv.blendMode inComponent:1 animated:NO];
 	
-//	[parentPreviewView addSubview:self.quartzView];
-	[parentPreviewView insertSubview:self.quartzView belowSubview:parentPreviewImageView];
+	//[parentPreviewView insertSubview:self.quartzView belowSubview:parentPreviewImageView];
 
 	
 	[self moveNavViewOnscreen];
@@ -318,6 +297,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissModalViewControllerAnimated:YES];
 	previewImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+	qbv.choosenImage = previewImageView.image;
 }
 
 /*
@@ -475,7 +456,9 @@ CGFloat luminanceForColor(UIColor *color)
 {
 	CGColorRef cgColor = color.CGColor;
 	const CGFloat *components = CGColorGetComponents(cgColor);
+	
 	CGFloat luminance = 0.0;
+	
 	switch(CGColorSpaceGetModel(CGColorGetColorSpace(cgColor)))
 	{
 		case kCGColorSpaceModelMonochrome:
