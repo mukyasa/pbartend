@@ -57,8 +57,6 @@
 @property(nonatomic,retain) UIView *parentPreviewView;
 @property(nonatomic,retain) UIImageView *parentPreviewImageView;
 
-
--(id)initWithNibName:(NSString*)nib viewClass:(Class)vc;
 -(IBAction)showColorPicker:(id)sender;
 -(IBAction)saveMagCover:(id)sender;
 -(IBAction)showPictureControls:(id)sender;
@@ -69,7 +67,7 @@
 -(BOOL)point:(CGPoint)p inView:(UIView *)view;
 -(void)movePickerOnScreen;
 -(void)movePickerOffScreen;
--(id)init;
+
 
 
 @property (nonatomic, assign) id <CoverShotEditorViewControllerDelegate> delegate;
