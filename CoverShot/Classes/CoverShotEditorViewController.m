@@ -187,12 +187,15 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 - (void)viewDidLoad {
 	
 	
-	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
-	[gradientPicker selectRow:[self.colors indexOfObject:qbv.sourceColor] inComponent:0 animated:NO];
-	[gradientPicker selectRow:qbv.blendMode inComponent:1 animated:NO];
-	
-	//[parentPreviewView insertSubview:self.quartzView belowSubview:parentPreviewImageView];
-
+	if([gradientPicker selectedRowInComponent:1]==0)
+		quartzView.hidden=YES;
+	else 
+	{
+		quartzView.hidden=NO;
+		QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+		qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
+		qbv.blendMode = [gradientPicker selectedRowInComponent:1];
+	}
 	
 	[self moveNavViewOnscreen];
 	pickerView.hidden = YES;//hide so we dont see it going off screen
@@ -291,14 +294,19 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
 	beginGestureRotationRadians = recognizer.rotation;
 	
+	
 }
 
 /* the image after taken or picked */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissModalViewControllerAnimated:YES];
 	previewImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+	quartzView.hidden=NO;
 	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
 	qbv.choosenImage = previewImageView.image;
+	
+	
+	
 }
 
 /*
@@ -446,9 +454,15 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
 	//NSLog(@"label Picker called");
-	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
-	qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
-	qbv.blendMode = [gradientPicker selectedRowInComponent:1];
+	if([gradientPicker selectedRowInComponent:1]==0)
+		quartzView.hidden=YES;
+	else 
+	{
+		quartzView.hidden=NO;
+		QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+		qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
+		qbv.blendMode = [gradientPicker selectedRowInComponent:1];
+	}
 }
 
 // Calculate the luminance for an arbitrary UIColor instance
@@ -519,13 +533,13 @@ NSInteger colorSortByLuminance(id color1, id color2, void *context)
 								  [UIColor purpleColor],
 								  [UIColor brownColor],
 								  [UIColor whiteColor],
-								  [UIColor lightGrayColor],
-								  [UIColor darkGrayColor],
-								  [UIColor blackColor],
-								  nil];
-		colorArray = [[unsortedArray sortedArrayUsingFunction:colorSortByLuminance context:nil] retain];
-	}
-	return colorArray;
+								  [	UIColor lightGrayColor],
+									  [UIColor darkGrayColor],
+									  [UIColor blackColor],
+									  nil];
+			colorArray = [[unsortedArray sortedArrayUsingFunction:colorSortByLuminance context:nil] retain];
+		}
+		return colorArray;
 }
 
 
