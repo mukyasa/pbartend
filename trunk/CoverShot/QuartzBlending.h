@@ -13,6 +13,6 @@
 -(void)drawInContext:(CGContextRef)context;
 @property(nonatomic, readwrite, retain) UIColor *sourceColor;
 @property(nonatomic, readwrite) CGBlendMode blendMode;
-@property(nonatomic,readwrite) UIImage *choosenImage;
+@property(nonatomic,readwrite,retain) UIImage *choosenImage;
 
 @end
