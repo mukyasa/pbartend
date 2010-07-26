@@ -7,10 +7,12 @@
 {
 	UIColor *sourceColor;
 	CGBlendMode blendMode;
+	UIImage *choosenImage;
 }
 
 -(void)drawInContext:(CGContextRef)context;
 @property(nonatomic, readwrite, retain) UIColor *sourceColor;
 @property(nonatomic, readwrite) CGBlendMode blendMode;
+@property(nonatomic,readwrite) UIImage *choosenImage;
 
 @end
