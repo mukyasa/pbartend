@@ -18,7 +18,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	if(self != nil)
 	{
 		sourceColor = [UIColor clearColor];
-		blendMode = kCGBlendModeColorBurn;
+		blendMode = kCGBlendModeScreen;
 	}
 	return self;
 }
@@ -29,6 +29,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	[sourceColor release];
 	[super dealloc];
 } 
+
 
 -(void)setSourceColor:(UIColor*)src
 {

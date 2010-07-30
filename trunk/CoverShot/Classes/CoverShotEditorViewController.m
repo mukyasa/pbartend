@@ -13,7 +13,7 @@
 @implementation CoverShotEditorViewController
 
 static NSString *blendModes[] = {
-	@"None",
+	@"Normal",
 	@"Multiply",
 	@"Screen",
 	@"Overlay",
@@ -250,7 +250,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureScale = 1;
 	}
-	previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
+	//previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
+	quartzView.transform = CGAffineTransformScale(quartzView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
 	beginGestureScale = recognizer.scale;
 	
 	
@@ -263,14 +264,15 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[self movePickerOffScreen];//hide picker
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
-		CGPoint startPoint = [recognizer locationOfTouch:0 inView:previewImageView];
-		inImage = [self point:startPoint inView:previewImageView];
+		CGPoint startPoint = [recognizer locationOfTouch:0 inView:quartzView];
+		inImage = [self point:startPoint inView:quartzView];
 		oldX = 0;
 		oldY = 0;
 	}
 	if (inImage) {
 		CGPoint translate = [recognizer translationInView: parentPreviewView];
-		previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, translate.x-oldX, translate.y-oldY);
+		//previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, translate.x-oldX, translate.y-oldY);
+		quartzView.transform = CGAffineTransformTranslate(quartzView.transform, translate.x-oldX, translate.y-oldY);
 		oldX = translate.x;
 		oldY = translate.y;
 	}
@@ -291,7 +293,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureRotationRadians	= 0;
 	}
-	previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
+	//previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
+	quartzView.transform = CGAffineTransformRotate(quartzView.transform, (recognizer.rotation - beginGestureRotationRadians));
 	beginGestureRotationRadians = recognizer.rotation;
 	
 	
@@ -304,7 +307,11 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	quartzView.hidden=NO;
 	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
 	qbv.choosenImage = previewImageView.image;
-	
+	//clear old image
+	previewImageView.image=nil;
+	//init color
+	qbv.blendMode = kCGBlendModeNormal;
+	qbv.sourceColor = [UIColor clearColor];
 	
 	
 }
@@ -383,7 +390,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 #define kColorTag 1
 #define kLabelTag 2
 -(UIView *)pickerView:(UIPickerView *)_pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-{
+{	
 	switch (component)
 	{
 		case 0:
@@ -462,6 +469,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
 		qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
 		qbv.blendMode = [gradientPicker selectedRowInComponent:1];
+		
 	}
 }
 
@@ -533,9 +541,9 @@ NSInteger colorSortByLuminance(id color1, id color2, void *context)
 								  [UIColor purpleColor],
 								  [UIColor brownColor],
 								  [UIColor whiteColor],
-								  [	UIColor lightGrayColor],
-									  [UIColor darkGrayColor],
-									  [UIColor blackColor],
+								  [UIColor lightGrayColor],
+								  [UIColor darkGrayColor],
+								  [UIColor blackColor],
 									  nil];
 			colorArray = [[unsortedArray sortedArrayUsingFunction:colorSortByLuminance context:nil] retain];
 		}
