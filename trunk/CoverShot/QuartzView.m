@@ -9,7 +9,7 @@
 	self = [super initWithFrame:frame];
 	if(self != nil)
 	{
-		//self.backgroundColor = [UIColor blackColor];
+		self.backgroundColor = [UIColor blackColor];
 		self.opaque = YES;
 		self.clearsContextBeforeDrawing = YES;
 	}

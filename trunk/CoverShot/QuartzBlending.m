@@ -17,7 +17,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	self = [super initWithFrame:frame];
 	if(self != nil)
 	{
-		sourceColor = [UIColor clearColor];
+		sourceColor = [UIColor lightGrayColor];
 		blendMode = kCGBlendModeScreen;
 	}
 	return self;
@@ -41,7 +41,6 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	}
 }
 
-
 -(void)setBlendMode:(CGBlendMode)mode
 {
 	if(mode != blendMode)
@@ -54,19 +53,20 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 //puts the color picked over the drawing
 -(void)drawInContext:(CGContextRef)context
 {
-	
+	//this rotates the image to upright
 	CGContextScaleCTM(context, 1, -1);
 	CGContextTranslateCTM(context, 0, -choosenImage.size.height);
 	CGContextConcatCTM(context, CGAffineTransformIdentity);
-	CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, choosenImage.size.width, choosenImage.size.height), choosenImage.CGImage);
-	UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
-	
-	CGContextDrawImage(context, CGRectMake(0.0, 0.0, choosenImage.size.width, choosenImage.size.height), imageCopy.CGImage);
+	NSLog(@"W:%f H:%f",choosenImage.size.width,choosenImage.size.height);
+	CGContextDrawImage(context, CGRectMake(0, 0, choosenImage.size.width, choosenImage.size.height), choosenImage.CGImage);
+
+	CGContextDrawImage(context, CGRectMake(0.0, 0.0, choosenImage.size.width, choosenImage.size.height), choosenImage.CGImage);
 	// Set up our blend mode
 	CGContextSetBlendMode(context, blendMode);
 	// And draw a rect with the "foreground" color - this is the "Source" for the blending formulas
 	CGContextSetFillColorWithColor(context, sourceColor.CGColor);
-	CGContextFillRect(context, CGRectMake(0.0, 0.0, 320.0, 480.0));
+	//CGContextFillRect(context, CGRectMake(0.0, 0.0, 320.0, 480.0));
+	CGContextFillRect(context, CGRectMake(0.0, 0.0, choosenImage.size.width,choosenImage.size.height));
 
 
 }
