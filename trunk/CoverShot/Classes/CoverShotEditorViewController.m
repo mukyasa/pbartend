@@ -28,9 +28,7 @@ static NSString *blendModes[] = {
 	@"Hue",
 	@"Saturation",
 	@"Color",
-	@"Luminosity",
-	@"PlusDarker",
-	@"PlusLighter"
+	@"Luminosity"
 };
 static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
