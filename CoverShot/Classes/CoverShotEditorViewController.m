@@ -40,7 +40,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 // called before this controller's view has appeared
 -(void)viewWillAppear:(BOOL)animated
 {
-	self.quartzView.frame = parentPreviewView.bounds;
+	//self.quartzView.frame = parentPreviewView.bounds;
 }
 
 -(IBAction)showPictureControls:(id)sender  {
@@ -90,7 +90,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		else if(buttonIndex ==1) {
 			//NSLog(@"Libaray");
 			imagePicker = [[UIImagePickerController alloc] init];
-			imagePicker.delegate = self;		
+			imagePicker.delegate = self;	
 			imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 			
 			[self presentModalViewController:imagePicker animated:YES];
@@ -100,6 +100,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 	
 }
+
 
 - (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
 	
@@ -138,27 +139,6 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 -(void)doSave{
 	
-	/*static int kMaxResolution = 640;
-	
-	CGImageRef imgRef = previewImageView.image.CGImage;
-	
-	
-	CGFloat width = CGImageGetWidth(imgRef);
-	CGFloat height = CGImageGetHeight(imgRef);
-	
-	CGRect bounds = CGRectMake(0, 0, width, height);
-   /* NSLog(@"SIZE W:%f H:%f Res:%i",width,height,kMaxResolution);
-	if (width > kMaxResolution || height > kMaxResolution) {
-		CGFloat ratio = width/height;
-		if (ratio > 1) {
-			bounds.size.width = kMaxResolution;
-			bounds.size.height = bounds.size.width / ratio;
-		} else {
-			bounds.size.height = kMaxResolution;
-			bounds.size.width = bounds.size.height * ratio;
-		}
-	}*/
-	
 	
 	UIGraphicsBeginImageContext(parentPreviewImageView.frame.size);
 	
@@ -175,27 +155,17 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 -(QuartzView*)quartzView
 {
-	if(quartzView == nil)
+	/*if(quartzView == nil)
 	{
 		quartzView = [[viewClass alloc] initWithFrame:CGRectZero];
-	}
+	}*/
 	return quartzView;
 }
- 
+
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	
-	
-	if([gradientPicker selectedRowInComponent:1]==0)
-		quartzView.hidden=YES;
-	else 
-	{
-		quartzView.hidden=NO;
-		QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
-		qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
-		qbv.blendMode = [gradientPicker selectedRowInComponent:1];
-	}
+
 	
 	[self moveNavViewOnscreen];
 	pickerView.hidden = YES;//hide so we dont see it going off screen
@@ -250,8 +220,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureScale = 1;
 	}
-	//previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
-	quartzView.transform = CGAffineTransformScale(quartzView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
+	previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
+	quartzView.transform = previewImageView.transform;
 	beginGestureScale = recognizer.scale;
 	
 	
@@ -264,15 +234,15 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[self movePickerOffScreen];//hide picker
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
-		CGPoint startPoint = [recognizer locationOfTouch:0 inView:quartzView];
-		inImage = [self point:startPoint inView:quartzView];
+		CGPoint startPoint = [recognizer locationOfTouch:0 inView:previewImageView];
+		inImage = [self point:startPoint inView:previewImageView];
 		oldX = 0;
 		oldY = 0;
 	}
 	if (inImage) {
 		CGPoint translate = [recognizer translationInView: parentPreviewView];
-		//previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, translate.x-oldX, translate.y-oldY);
-		quartzView.transform = CGAffineTransformTranslate(quartzView.transform, translate.x-oldX, translate.y-oldY);
+		previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, translate.x-oldX, translate.y-oldY);
+		quartzView.transform = previewImageView.transform;
 		oldX = translate.x;
 		oldY = translate.y;
 	}
@@ -293,8 +263,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureRotationRadians	= 0;
 	}
-	//previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
-	quartzView.transform = CGAffineTransformRotate(quartzView.transform, (recognizer.rotation - beginGestureRotationRadians));
+	previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
+	quartzView.transform = previewImageView.transform;
 	beginGestureRotationRadians = recognizer.rotation;
 	
 	
@@ -304,25 +274,17 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissModalViewControllerAnimated:YES];
 	previewImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-	quartzView.hidden=NO;
-	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
-	qbv.choosenImage = previewImageView.image;
-	//clear old image
-	previewImageView.image=nil;
-	//init color
-	qbv.blendMode = kCGBlendModeNormal;
-	qbv.sourceColor = [UIColor clearColor];
-	
-	
-}
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+//	NSLog(@"Image W:%f,H:%f",previewImageView.image.size.width,previewImageView.image.size.height);
+	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+	qbv.clearsContextBeforeDrawing=YES;
+	
+	qbv.choosenImage=nil;
+	qbv.sourceColor= [UIColor clearColor];
+	qbv.blendMode = kCGBlendModeNormal;
+	quartzView.hidden=YES;
+
 }
-*/
 
 -(void) moveNavViewOnscreen{
 	
@@ -360,7 +322,34 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	self.pickerView.frame = thePicker;
 	[UIView commitAnimations];
 	
+	//get screen image
+	UIGraphicsBeginImageContext(parentPreviewView.frame.size);
+	//UIGraphicsBeginImageContext(previewImageView.image.size);
+
+	//NSLog(@"Image W:%f,H:%f",previewImageView.image.size.width,previewImageView.image.size.height);
+	//NSLog(@"preview image W%f, H:%f",previewImageView.frame.size.width,previewImageView.frame.size.height);
+	
+	[self.previewImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+	
+	UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
+	
+	UIGraphicsEndImageContext();
+	
+	quartzView.hidden=NO;
+	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+	qbv.choosenImage = imageCopy;
+	//init color
+	//if we pick normal lets clear out the quartzblendview
+	if([gradientPicker selectedRowInComponent:1]==0)
+		quartzView.hidden=YES;
+	else 
+	{
+	 qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
+	 qbv.blendMode = [gradientPicker selectedRowInComponent:1];
+	}
+	
 }
+
 -(void)movePickerOffScreen{
 	
 	CGFloat viewHeight = self.view.frame.size.height;
@@ -460,7 +449,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-	//NSLog(@"label Picker called");
+	//if we pick normal lets clear out the quartzblendview
 	if([gradientPicker selectedRowInComponent:1]==0)
 		quartzView.hidden=YES;
 	else 
@@ -543,7 +532,7 @@ NSInteger colorSortByLuminance(id color1, id color2, void *context)
 								  [UIColor whiteColor],
 								  [UIColor lightGrayColor],
 								  [UIColor darkGrayColor],
-								  [UIColor blackColor],
+								 // [UIColor blackColor],
 									  nil];
 			colorArray = [[unsortedArray sortedArrayUsingFunction:colorSortByLuminance context:nil] retain];
 		}

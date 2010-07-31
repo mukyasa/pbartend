@@ -95,7 +95,7 @@ const NSUInteger kNumImages		= 2;
 	CoverShotEditorViewController *controller = [[CoverShotEditorViewController alloc] initWithNibName:@"CoverShotEditorViewController" bundle:nil];
 	controller.delegate = self;
 	
-	controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:controller animated:YES];
 	
 	controller.parentPreviewImageView.image = pickedCover;
