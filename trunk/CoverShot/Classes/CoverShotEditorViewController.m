@@ -314,7 +314,6 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	CGRect thePicker = pickerView.frame;
 	thePicker.origin.y = self.view.frame.size.height-(thePicker.size.height + mainToolBar.frame.size.height);
 	
-	
 	[UIView beginAnimations:@"pickerViewShow" context:NULL];
 	[UIView setAnimationDuration:.5];
 	self.pickerView.frame = thePicker;
@@ -322,11 +321,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 	//get screen image
 	UIGraphicsBeginImageContext(parentPreviewView.frame.size);
-	//UIGraphicsBeginImageContext(previewImageView.image.size);
 
-	//NSLog(@"Image W:%f,H:%f",previewImageView.image.size.width,previewImageView.image.size.height);
-	//NSLog(@"preview image W%f, H:%f",previewImageView.frame.size.width,previewImageView.frame.size.height);
-	
 	[self.previewImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
 	
 	UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
@@ -342,8 +337,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		quartzView.hidden=YES;
 	else 
 	{
-	 qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
-	 qbv.blendMode = [gradientPicker selectedRowInComponent:1];
+		qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
+		qbv.blendMode = [gradientPicker selectedRowInComponent:1];
 	}
 	
 }
