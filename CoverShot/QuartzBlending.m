@@ -53,6 +53,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 //puts the color picked over the drawing
 -(void)drawInContext:(CGContextRef)context
 {
+	UIGraphicsBeginImageContext(choosenImage.size);
 	//this rotates the image to upright
 	CGContextScaleCTM(context, 1, -1);
 	CGContextTranslateCTM(context, 0, -choosenImage.size.height);
@@ -65,7 +66,6 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	CGContextSetBlendMode(context, blendMode);
 	// And draw a rect with the "foreground" color - this is the "Source" for the blending formulas
 	CGContextSetFillColorWithColor(context, sourceColor.CGColor);
-	//CGContextFillRect(context, CGRectMake(0.0, 0.0, 320.0, 480.0));
 	CGContextFillRect(context, CGRectMake(0.0, 0.0, choosenImage.size.width,choosenImage.size.height));
 
 
