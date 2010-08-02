@@ -53,6 +53,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 //puts the color picked over the drawing
 -(void)drawInContext:(CGContextRef)context
 {
+	
 	UIGraphicsBeginImageContext(choosenImage.size);
 	//this rotates the image to upright
 	CGContextScaleCTM(context, 1, -1);
