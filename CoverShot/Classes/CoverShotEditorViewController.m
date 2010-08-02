@@ -383,6 +383,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 	[self setupQuartzBlendingView:qbv];
 	
+	
 }
 
 //sets color and visiblity options of quartz
