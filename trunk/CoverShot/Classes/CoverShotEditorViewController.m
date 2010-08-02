@@ -268,6 +268,36 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 }
 
+//set up shake listener
+- (void)viewDidAppear:(BOOL)animated {
+	
+    [self becomeFirstResponder];
+	
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+	//NSLog(@"shake shake shake");
+	if ( motion == UIEventSubtypeMotionShake ) {
+        [CATransaction begin];
+        [self applyDefaults];
+        [CATransaction commit];
+	}
+}
+
+// For shake events
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)handleShake
+{
+	[CATransaction begin];
+	[self applyDefaults];
+	[CATransaction commit];
+}
+
 /* the image after taken or picked */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissModalViewControllerAnimated:YES];
@@ -281,7 +311,27 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	qbv.sourceColor= [UIColor clearColor];
 	qbv.blendMode = kCGBlendModeNormal;
 	quartzView.hidden=YES;
+	
+	[self applyDefaults];
 
+}
+
+- (void)applyDefaults
+{
+	beginGestureScale = 1.0;
+	beginGestureRotationRadians = 0.0;
+	effectiveTranslation = CGPointMake(0.0, 0.0);
+	[quartzView.layer setAffineTransform:CGAffineTransformIdentity];
+	[previewImageView.layer setAffineTransform:CGAffineTransformIdentity];
+	previewImageView.frame = parentPreviewView.layer.bounds;
+	
+	//set picker to zero
+	[gradientPicker selectRow:0 inComponent:0 animated:YES];
+	[gradientPicker selectRow:0 inComponent:1 animated:YES];
+	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+	
+	[self setupQuartzBlendingView:qbv];
+	
 }
 
 -(void) moveNavViewOnscreen{
@@ -321,7 +371,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 	//get screen image
 	UIGraphicsBeginImageContext(parentPreviewView.frame.size);
-
+	
 	[self.previewImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
 	
 	UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
@@ -331,16 +381,24 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	quartzView.hidden=NO;
 	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
 	qbv.choosenImage = imageCopy;
+	
+	[self setupQuartzBlendingView:qbv];
+	
+}
+
+//sets color and visiblity options of quartz
+-(void)setupQuartzBlendingView:(QuartzBlendingView*)qbv{
+	
 	//init color
 	//if we pick normal lets clear out the quartzblendview
 	if([gradientPicker selectedRowInComponent:1]==0)
 		quartzView.hidden=YES;
 	else 
 	{
+		quartzView.hidden=NO;
 		qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
 		qbv.blendMode = [gradientPicker selectedRowInComponent:1];
 	}
-	
 }
 
 -(void)movePickerOffScreen{
@@ -442,17 +500,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-	//if we pick normal lets clear out the quartzblendview
-	if([gradientPicker selectedRowInComponent:1]==0)
-		quartzView.hidden=YES;
-	else 
-	{
-		quartzView.hidden=NO;
-		QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
-		qbv.sourceColor = [self.colors objectAtIndex:[gradientPicker selectedRowInComponent:0]];
-		qbv.blendMode = [gradientPicker selectedRowInComponent:1];
-		
-	}
+	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+	[self setupQuartzBlendingView:qbv];
 }
 
 // Calculate the luminance for an arbitrary UIColor instance
