@@ -277,12 +277,11 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-	//NSLog(@"shake shake shake");
-	if ( motion == UIEventSubtypeMotionShake ) {
-        [CATransaction begin];
-        [self applyDefaults];
-        [CATransaction commit];
-	}
+		if ( motion == UIEventSubtypeMotionShake ) {
+			[CATransaction begin];
+			[self applyDefaults];
+			[CATransaction commit];
+		}
 }
 
 // For shake events
