@@ -32,6 +32,7 @@
 		71887C4111F80CB400F4C6D6 /* clearbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71887C4011F80CB400F4C6D6 /* clearbg.png */; };
 		71887CE211F812FA00F4C6D6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71887CE111F812FA00F4C6D6 /* AVFoundation.framework */; };
 		71A91E5F12035E5C00EB3996 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A91E5E12035E5C00EB3996 /* icon.png */; };
+		71BD191812054A4F00BF15ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71BD191712054A4F00BF15ED /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		71887C4011F80CB400F4C6D6 /* clearbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearbg.png; sourceTree = "<group>"; };
 		71887CE111F812FA00F4C6D6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		71A91E5E12035E5C00EB3996 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		71BD191712054A4F00BF15ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* CoverShot-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoverShot-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				71887AD711F7ECA700F4C6D6 /* iAd.framework in Frameworks */,
 				71887CE211F812FA00F4C6D6 /* AVFoundation.framework in Frameworks */,
+				71BD191812054A4F00BF15ED /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +162,7 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				71887AD611F7ECA700F4C6D6 /* iAd.framework */,
 				71887CE111F812FA00F4C6D6 /* AVFoundation.framework */,
+				71BD191712054A4F00BF15ED /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
