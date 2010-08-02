@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "QuartzView.h"
+#import "QuartzBlending.h"
 
 @protocol CoverShotEditorViewControllerDelegate;
 
@@ -57,11 +58,13 @@
 @property(nonatomic,retain) UIView *parentPreviewView;
 @property(nonatomic,retain) UIImageView *parentPreviewImageView;
 
+-(void)setupQuartzBlendingView:(QuartzBlendingView*)qbv;
+-(void)applyDefaults;
 -(IBAction)showColorPicker:(id)sender;
 -(IBAction)saveMagCover:(id)sender;
 -(IBAction)showPictureControls:(id)sender;
 -(void)doSave;
-- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+-(void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
 -(void) moveNavViewOnscreen;
 -(void) moveNavViewOffscreen;
 -(BOOL)point:(CGPoint)p inView:(UIView *)view;
