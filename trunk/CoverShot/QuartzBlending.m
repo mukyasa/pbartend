@@ -50,19 +50,20 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	}
 }
 
+
 //puts the color picked over the drawing
 -(void)drawInContext:(CGContextRef)context
 {
+	
 	
 	UIGraphicsBeginImageContext(choosenImage.size);
 	//this rotates the image to upright
 	CGContextScaleCTM(context, 1, -1);
 	CGContextTranslateCTM(context, 0, -choosenImage.size.height);
 	CGContextConcatCTM(context, CGAffineTransformIdentity);
-	NSLog(@"W:%f H:%f",choosenImage.size.width,choosenImage.size.height);
+	//NSLog(@"W:%f H:%f",choosenImage.size.width,choosenImage.size.height);
 	CGContextDrawImage(context, CGRectMake(0, 0, choosenImage.size.width, choosenImage.size.height), choosenImage.CGImage);
-
-	CGContextDrawImage(context, CGRectMake(0.0, 0.0, choosenImage.size.width, choosenImage.size.height), choosenImage.CGImage);
+	
 	// Set up our blend mode
 	CGContextSetBlendMode(context, blendMode);
 	// And draw a rect with the "foreground" color - this is the "Source" for the blending formulas
