@@ -35,12 +35,6 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 @synthesize previewImageView,parentPreviewView,parentPreviewImageView,delegate,mainToolBar,photoButton,saveButton,blendButton,gradientPicker,pickerView;
 
 
-// called before this controller's view has appeared
--(void)viewWillAppear:(BOOL)animated
-{
-	//self.quartzView.frame = parentPreviewView.bounds;
-}
-
 -(IBAction)showPictureControls:(id)sender  {
 	isSaving=NO;
     [self movePickerOffScreen];//hide picker
@@ -298,6 +292,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[CATransaction commit];
 }
 
+
 /* the image after taken or picked */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissModalViewControllerAnimated:YES];
@@ -333,6 +328,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[self setupQuartzBlendingView:qbv];
 	
 }
+
 
 -(void) moveNavViewOnscreen{
 	
