@@ -23,6 +23,8 @@
 
 -(void)drawRect:(CGRect)rect
 {
+	
+	//NSLog(@"RECT W:%f H:%f",rect.size.width,rect.size.height);
 	// Since we use the CGContextRef a lot, it is convienient for our demonstration classes to do the real work
 	// inside of a method that passes the context as a parameter, rather than having to query the context
 	// continuously, or setup that parameter for every subclass.
@@ -32,5 +34,6 @@
 	//NSLog(@"Quartz View W:%f H:%f",self.frame.size.width,self.frame.size.height);
 	
 }
+
 
 @end
