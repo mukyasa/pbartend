@@ -313,17 +313,17 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 - (void)applyDefaults
 {
+	//set picker to zero
+	[gradientPicker selectRow:0 inComponent:0 animated:YES];
+	[gradientPicker selectRow:0 inComponent:1 animated:YES];
+	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+	
 	beginGestureScale = 1.0;
 	beginGestureRotationRadians = 0.0;
 	effectiveTranslation = CGPointMake(0.0, 0.0);
 	[quartzView.layer setAffineTransform:CGAffineTransformIdentity];
 	[previewImageView.layer setAffineTransform:CGAffineTransformIdentity];
 	previewImageView.frame = parentPreviewView.layer.bounds;
-	
-	//set picker to zero
-	[gradientPicker selectRow:0 inComponent:0 animated:YES];
-	[gradientPicker selectRow:0 inComponent:1 animated:YES];
-	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
 	
 	[self setupQuartzBlendingView:qbv];
 	
@@ -367,13 +367,14 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 	//get screen image
 	UIGraphicsBeginImageContext(parentPreviewView.frame.size);
-	
+	//hide words for a sec
+
 	[self.previewImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
 	
 	UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
 	
 	UIGraphicsEndImageContext();
-	
+
 	quartzView.hidden=NO;
 	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
 	qbv.choosenImage = imageCopy;
