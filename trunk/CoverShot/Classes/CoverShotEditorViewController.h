@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "QuartzView.h"
-#import "QuartzBlending.h"
 
 @protocol CoverShotEditorViewControllerDelegate;
 
@@ -58,7 +57,7 @@
 @property(nonatomic,retain) UIView *parentPreviewView;
 @property(nonatomic,retain) UIImageView *parentPreviewImageView;
 
--(void)setupQuartzBlendingView:(QuartzBlendingView*)qbv;
+-(void)setupQuartzBlendingView:(QuartzView*)qbv;
 -(void)applyDefaults;
 -(IBAction)showColorPicker:(id)sender;
 -(IBAction)saveMagCover:(id)sender;
