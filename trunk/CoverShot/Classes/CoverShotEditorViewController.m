@@ -163,16 +163,15 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	// clip sub-layer contents
 	parentPreviewView.layer.masksToBounds = YES;
 	
-	
 	// do one time set-up of gesture recognizers
 	UIGestureRecognizer *recognizer;
 	
-	/*
+	
 	recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapFrom:)];
 	recognizer.delegate = self;
 	[parentPreviewView addGestureRecognizer:recognizer];
 	[recognizer release];
-	*/
+	
 	
 	recognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchFrom:)];
 	recognizer.delegate = self;
@@ -195,31 +194,12 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
     [super viewDidLoad];
 }
 
-/*
+
 - (void)handleSingleTapFrom:(UITapGestureRecognizer *)recognizer
 {
 	//NSLog(@"Single Tap");
 	[self moveNavViewOnscreen];//show main nav
 	[self movePickerOffScreen];//hide picker
-}
- */
-
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{  
-	[self moveNavViewOffscreen];
-	[self movePickerOffScreen];//hide picker
-}
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-	quartzView.hidden=YES;
-	//NSLog(@"touch begins");
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-	[self setUpImageState];
-	
-	[self moveNavViewOnscreen];//show main nav
-	[self movePickerOffScreen];//hide picker
-	//NSLog(@"touch ended");
 }
 
 - (void)handlePinchFrom:(UIPinchGestureRecognizer *)recognizer
@@ -230,6 +210,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
+		quartzView.hidden=YES;
 		beginGestureScale = 1;
 	}
 	else if(recognizer.state == UIGestureRecognizerStateEnded)
@@ -250,6 +231,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[self movePickerOffScreen];//hide picker
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
+		quartzView.hidden=YES;
 		CGPoint startPoint = [recognizer locationOfTouch:0 inView:previewImageView];
 		inImage = [self point:startPoint inView:previewImageView];
 		oldX = 0;
@@ -285,6 +267,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[self movePickerOffScreen];//hide picker
 	
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
+		quartzView.hidden=YES;
 		beginGestureRotationRadians	= 0;
 	}
 	else if(recognizer.state == UIGestureRecognizerStateEnded)
