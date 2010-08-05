@@ -32,7 +32,8 @@ static NSString *blendModes[] = {
 };
 static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
-@synthesize previewImageView,parentPreviewView,parentPreviewImageView,delegate,mainToolBar,photoButton,saveButton,blendButton,gradientPicker,pickerView;
+@synthesize previewImageView,parentPreviewView,parentPreviewImageView,delegate;
+@synthesize imageCopy,mainToolBar,photoButton,saveButton,blendButton,gradientPicker,pickerView;
 
 
 -(IBAction)showPictureControls:(id)sender  {
@@ -136,7 +137,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 	[self.parentPreviewView.layer renderInContext:UIGraphicsGetCurrentContext()];
 	
-	UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
+	imageCopy = UIGraphicsGetImageFromCurrentImageContext();
 	
 	UIGraphicsEndImageContext();
 	
@@ -147,10 +148,6 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 -(QuartzView*)quartzView
 {
-	/*if(quartzView == nil)
-	{
-		quartzView = [[viewClass alloc] initWithFrame:CGRectZero];
-	}*/
 	return quartzView;
 }
 
@@ -170,10 +167,12 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	// do one time set-up of gesture recognizers
 	UIGestureRecognizer *recognizer;
 	
+	/*
 	recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapFrom:)];
 	recognizer.delegate = self;
 	[parentPreviewView addGestureRecognizer:recognizer];
 	[recognizer release];
+	*/
 	
 	recognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchFrom:)];
 	recognizer.delegate = self;
@@ -196,21 +195,31 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
     [super viewDidLoad];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-	quartzView.hidden=YES;
-	NSLog(@"touch begins");
-}
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{	
-
-	NSLog(@"touch cancelled");
-}
-
+/*
 - (void)handleSingleTapFrom:(UITapGestureRecognizer *)recognizer
 {
 	//NSLog(@"Single Tap");
 	[self moveNavViewOnscreen];//show main nav
 	[self movePickerOffScreen];//hide picker
+}
+ */
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{  
+	[self moveNavViewOffscreen];
+	[self movePickerOffScreen];//hide picker
+}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+	quartzView.hidden=YES;
+	//NSLog(@"touch begins");
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+	[self setUpImageState];
+	
+	[self moveNavViewOnscreen];//show main nav
+	[self movePickerOffScreen];//hide picker
+	//NSLog(@"touch ended");
 }
 
 - (void)handlePinchFrom:(UIPinchGestureRecognizer *)recognizer
@@ -223,6 +232,9 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureScale = 1;
 	}
+	else if(recognizer.state == UIGestureRecognizerStateEnded)
+		[self setUpImageState];
+	
 	previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
 	//quartzView.transform = previewImageView.transform;
 	beginGestureScale = recognizer.scale;
@@ -243,6 +255,12 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		oldX = 0;
 		oldY = 0;
 	}
+	else if(recognizer.state == UIGestureRecognizerStateEnded)
+	{
+		//NSLog(@"end drag");
+		[self setUpImageState];
+	}
+	
 	if (inImage) {
 		CGPoint translate = [recognizer translationInView: parentPreviewView];
 		previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, translate.x-oldX, translate.y-oldY);
@@ -250,7 +268,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		oldX = translate.x;
 		oldY = translate.y;
 	}
-	
+	//NSLog(@"dragging now");
 
 }
 
@@ -269,6 +287,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
 		beginGestureRotationRadians	= 0;
 	}
+	else if(recognizer.state == UIGestureRecognizerStateEnded)
+		[self setUpImageState];
 	previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
 	//quartzView.transform = previewImageView.transform;
 	beginGestureRotationRadians = recognizer.rotation;
@@ -370,6 +390,27 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 }
 
+-(void)setUpImageState{
+	//hide words for a sec
+	parentPreviewImageView.hidden=YES;//hide magazine
+	quartzView.hidden=YES;//hide color
+	
+	//get screen image from screen shot
+	UIGraphicsBeginImageContext(parentPreviewView.frame.size);
+	
+	[self.parentPreviewView.layer renderInContext:UIGraphicsGetCurrentContext()];
+	
+	imageCopy = UIGraphicsGetImageFromCurrentImageContext();
+	
+	UIGraphicsEndImageContext();
+	//hide words for a sec
+	parentPreviewImageView.hidden=NO;
+	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+	qbv.choosenImage = imageCopy;
+	
+	
+	[self setupQuartzBlendingView:qbv];
+}
 -(void)movePickerOnScreen{
 	pickerView.hidden=NO;
 	CGRect thePicker = pickerView.frame;
@@ -381,24 +422,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[UIView commitAnimations];
 	
 	
-	//hide words for a sec
-	parentPreviewImageView.hidden=YES;
-	quartzView.hidden=YES;
-	
-	//get screen image
-	UIGraphicsBeginImageContext(parentPreviewView.frame.size);
-	
-	[self.parentPreviewView.layer renderInContext:UIGraphicsGetCurrentContext()];
-	
-	UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
-	
-	UIGraphicsEndImageContext();
-	//hide words for a sec
-	parentPreviewImageView.hidden=NO;
-	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
-	qbv.choosenImage = imageCopy;
-	
-	[self setupQuartzBlendingView:qbv];
+	[self setUpImageState];
 	
 	
 }
@@ -622,6 +646,7 @@ NSInteger colorSortByLuminance(id color1, id color2, void *context)
 
 
 - (void)dealloc {
+	[imageCopy release];
 	[quartzView release]; 
 	quartzView = nil;
 	[pickerView release];
