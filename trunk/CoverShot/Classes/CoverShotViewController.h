@@ -8,16 +8,21 @@
 
 
 #import "CoverShotEditorViewController.h"
+#import <iAd/iAd.h>
 
 @interface CoverShotViewController : UIViewController <UIGestureRecognizerDelegate,CoverShotEditorViewControllerDelegate>{
 
 	IBOutlet UIScrollView *magizineScrollView;
 	UIImage *pickedCover;
+	IBOutlet ADBannerView *bannerView;
 	
 }
+@property(nonatomic,retain) ADBannerView *bannerView;
 @property(nonatomic,retain)UIImage *pickedCover;
 @property(nonatomic,retain) UIScrollView *magizineScrollView;
 - (void)layoutScrollImages;
+-(void) moveBannerViewOffscreen;
+-(void) moveBannerViewOnscreen;
 
 @end
 
