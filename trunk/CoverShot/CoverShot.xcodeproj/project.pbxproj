@@ -213,9 +213,9 @@
 			isa = PBXGroup;
 			children = (
 				7103E9EB11FA35FD0088BD9E /* QuartzView.h */,
+				7103E9EC11FA35FD0088BD9E /* QuartzView.m */,
 				716D136A1207C55600430260 /* QuartzBlending.h */,
 				716D136B1207C55600430260 /* QuartzBlending.m */,
-				7103E9EC11FA35FD0088BD9E /* QuartzView.m */,
 			);
 			name = Quartz;
 			sourceTree = "<group>";
