@@ -37,9 +37,10 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	{
 		[sourceColor release];
 		sourceColor = [src retain];
-		[self setNeedsDisplay];
 
 	}
+	//always display
+	[self setNeedsDisplay];
 }
 
 -(void)setBlendMode:(CGBlendMode)mode
@@ -60,7 +61,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	CGContextScaleCTM(context, 1, -1);
 	CGContextTranslateCTM(context, 0, -choosenImage.size.height);
 	CGContextConcatCTM(context, CGAffineTransformIdentity);
-	NSLog(@"W:%f H:%f",choosenImage.size.width,choosenImage.size.height);
+	//NSLog(@"W:%f H:%f",choosenImage.size.width,choosenImage.size.height);
 	CGContextDrawImage(context, CGRectMake(0, 0, choosenImage.size.width,choosenImage.size.height), choosenImage.CGImage);
 
 	

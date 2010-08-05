@@ -27,6 +27,7 @@
 	IBOutlet UIView *pickerView;
 	IBOutlet QuartzView *quartzView;
 	Class viewClass;
+	UIImage *imageCopy;
 
 	BOOL isSaving;
 	
@@ -44,7 +45,7 @@
 	
 }
 
-
+@property(nonatomic,retain)UIImage *imageCopy;
 @property(nonatomic, readonly) QuartzView *quartzView;
 @property(nonatomic,retain) UIView *pickerView;
 @property(nonatomic, readonly) NSArray *colors;
@@ -57,6 +58,7 @@
 @property(nonatomic,retain) UIView *parentPreviewView;
 @property(nonatomic,retain) UIImageView *parentPreviewImageView;
 
+-(void)setUpImageState;
 -(void)setupQuartzBlendingView:(QuartzView*)qbv;
 -(void)applyDefaults;
 -(IBAction)showColorPicker:(id)sender;
