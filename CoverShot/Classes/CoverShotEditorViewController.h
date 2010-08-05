@@ -58,7 +58,7 @@
 @property(nonatomic,retain) UIView *parentPreviewView;
 @property(nonatomic,retain) UIImageView *parentPreviewImageView;
 
--(void)setUpImageState;
+-(void)setUpImageState:(BOOL)isMovePicker;
 -(void)setupQuartzBlendingView:(QuartzView*)qbv;
 -(void)applyDefaults;
 -(IBAction)showColorPicker:(id)sender;
