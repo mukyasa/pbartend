@@ -200,6 +200,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	//NSLog(@"Single Tap");
 	[self moveNavViewOnscreen];//show main nav
 	[self movePickerOffScreen];//hide picker
+	[self setUpImageState:NO];
 }
 
 - (void)handlePinchFrom:(UIPinchGestureRecognizer *)recognizer
@@ -215,7 +216,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	}
 	else if(recognizer.state == UIGestureRecognizerStateEnded)
 	{
-		[self setUpImageState:NO];
+		//[self setUpImageState:NO];
 	}
 	
 	previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
@@ -242,7 +243,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	else if(recognizer.state == UIGestureRecognizerStateEnded)
 	{
 		//NSLog(@"end drag");
-		[self setUpImageState:NO];
+		//[self setUpImageState:NO];
 	}
 	
 	if (inImage) {
@@ -274,7 +275,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	}
 	else if(recognizer.state == UIGestureRecognizerStateEnded)
 	{
-		[self setUpImageState:NO];
+		//[self setUpImageState:NO];
 	}
 	previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
 	//quartzView.transform = previewImageView.transform;
