@@ -214,7 +214,9 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		beginGestureScale = 1;
 	}
 	else if(recognizer.state == UIGestureRecognizerStateEnded)
-		[self setUpImageState];
+	{
+		[self setUpImageState:NO];
+	}
 	
 	previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
 	//quartzView.transform = previewImageView.transform;
@@ -240,7 +242,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	else if(recognizer.state == UIGestureRecognizerStateEnded)
 	{
 		//NSLog(@"end drag");
-		[self setUpImageState];
+		[self setUpImageState:NO];
 	}
 	
 	if (inImage) {
@@ -271,7 +273,9 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		beginGestureRotationRadians	= 0;
 	}
 	else if(recognizer.state == UIGestureRecognizerStateEnded)
-		[self setUpImageState];
+	{
+		[self setUpImageState:NO];
+	}
 	previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
 	//quartzView.transform = previewImageView.transform;
 	beginGestureRotationRadians = recognizer.rotation;
@@ -383,29 +387,32 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	self.pickerView.frame = thePicker;
 	[UIView commitAnimations];
 	
-	[self setUpImageState];
+	[self setUpImageState:YES];
 	
 }
 
--(void)setUpImageState{
+-(void)setUpImageState:(BOOL)isMovePicker{
 
-	parentPreviewImageView.hidden=YES;//hide magazine
-	quartzView.hidden=YES;//hide color
-	
-	//get screen image from screen shot
-	UIGraphicsBeginImageContext(parentPreviewView.frame.size);
-	
-	[self.parentPreviewView.layer renderInContext:UIGraphicsGetCurrentContext()];
-	
-	imageCopy = UIGraphicsGetImageFromCurrentImageContext();
-	
-	UIGraphicsEndImageContext();
-	//hide words for a sec
-	parentPreviewImageView.hidden=NO;//show magazine 
-	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
-	qbv.choosenImage = imageCopy;
-	
-	[self setupQuartzBlendingView:qbv];//this will show quartz
+	if([gradientPicker selectedRowInComponent:1]>0 || isMovePicker)
+	{
+		parentPreviewImageView.hidden=YES;//hide magazine
+		quartzView.hidden=YES;//hide color
+		
+		//get screen image from screen shot
+		UIGraphicsBeginImageContext(parentPreviewView.frame.size);
+		
+		[self.parentPreviewView.layer renderInContext:UIGraphicsGetCurrentContext()];
+		
+		imageCopy = UIGraphicsGetImageFromCurrentImageContext();
+		
+		UIGraphicsEndImageContext();
+		//hide words for a sec
+		parentPreviewImageView.hidden=NO;//show magazine 
+		QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+		qbv.choosenImage = imageCopy;
+		
+		[self setupQuartzBlendingView:qbv];//this will show quartz
+	}
 }
 
 
