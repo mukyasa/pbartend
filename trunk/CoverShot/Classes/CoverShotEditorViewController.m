@@ -373,8 +373,22 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 }
 
+-(void)movePickerOnScreen{
+	pickerView.hidden=NO;
+	CGRect thePicker = pickerView.frame;
+	thePicker.origin.y = self.view.frame.size.height-(thePicker.size.height + mainToolBar.frame.size.height);
+	
+	[UIView beginAnimations:@"pickerViewShow" context:NULL];
+	[UIView setAnimationDuration:.5];
+	self.pickerView.frame = thePicker;
+	[UIView commitAnimations];
+	
+	[self setUpImageState];
+	
+}
+
 -(void)setUpImageState{
-	//hide words for a sec
+
 	parentPreviewImageView.hidden=YES;//hide magazine
 	quartzView.hidden=YES;//hide color
 	
@@ -387,28 +401,13 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 	UIGraphicsEndImageContext();
 	//hide words for a sec
-	parentPreviewImageView.hidden=NO;
+	parentPreviewImageView.hidden=NO;//show magazine 
 	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
 	qbv.choosenImage = imageCopy;
 	
-	
-	[self setupQuartzBlendingView:qbv];
+	[self setupQuartzBlendingView:qbv];//this will show quartz
 }
--(void)movePickerOnScreen{
-	pickerView.hidden=NO;
-	CGRect thePicker = pickerView.frame;
-	thePicker.origin.y = self.view.frame.size.height-(thePicker.size.height + mainToolBar.frame.size.height);
-	
-	[UIView beginAnimations:@"pickerViewShow" context:NULL];
-	[UIView setAnimationDuration:.5];
-	self.pickerView.frame = thePicker;
-	[UIView commitAnimations];
-	
-	
-	[self setUpImageState];
-	
-	
-}
+
 
 //sets color and visiblity options of quartz
 -(void)setupQuartzBlendingView:(QuartzBlendingView*)qbv{
