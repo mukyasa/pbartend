@@ -10,12 +10,26 @@
 
 @implementation FlipsideViewController
 
-@synthesize delegate;
+@synthesize delegate,webView;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
+}
+
+-(IBAction) callWebsite:(id)sender{
+	NSString *urlAddress = @"http://www.mypocket-technologies.com";
+	
+	//Create a URL object.
+	NSURL *url = [NSURL URLWithString:urlAddress];
+	
+	//URL Requst Object
+	NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+	
+	//Load the request in the UIWebView.
+	[webView loadRequest:requestObj];
+	webView.hidden=NO;
 }
 
 
@@ -48,6 +62,7 @@
 
 
 - (void)dealloc {
+	[webView release];
     [super dealloc];
 }
 
