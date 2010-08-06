@@ -14,7 +14,11 @@
 
 @interface FlipsideViewController : UIViewController {
 	id <FlipsideViewControllerDelegate> delegate;
+	IBOutlet UIWebView *webView;
 }
+
+@property (nonatomic, retain) UIWebView *webView;
+-(IBAction) callWebsite:(id)sender;
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
 - (IBAction)done:(id)sender;
