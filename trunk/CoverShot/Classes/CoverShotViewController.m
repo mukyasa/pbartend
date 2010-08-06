@@ -166,6 +166,25 @@ const NSUInteger kNumImages		= 9;
 	[UIView commitAnimations];
 	
 }
+
+
+- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
+    
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+
+- (IBAction)showInfo:(id)sender {    
+	
+	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
+	controller.delegate = self;
+	
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self presentModalViewController:controller animated:YES];
+	
+	[controller release];
+}
+
 -(void) moveBannerViewOffscreen{
 	CGFloat viewHeight = self.view.frame.size.height;
 	CGRect newBannerview = self.bannerView.frame;

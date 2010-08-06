@@ -8,9 +8,10 @@
 
 
 #import "CoverShotEditorViewController.h"
+#import "FlipsideViewController.h"
 #import <iAd/iAd.h>
 
-@interface CoverShotViewController : UIViewController <UIGestureRecognizerDelegate,CoverShotEditorViewControllerDelegate>{
+@interface CoverShotViewController : UIViewController <UIGestureRecognizerDelegate,CoverShotEditorViewControllerDelegate,FlipsideViewControllerDelegate>{
 
 	IBOutlet UIScrollView *magizineScrollView;
 	UIImage *pickedCover;
@@ -20,9 +21,10 @@
 @property(nonatomic,retain) ADBannerView *bannerView;
 @property(nonatomic,retain)UIImage *pickedCover;
 @property(nonatomic,retain) UIScrollView *magizineScrollView;
-- (void)layoutScrollImages;
+-(void)layoutScrollImages;
 -(void) moveBannerViewOffscreen;
 -(void) moveBannerViewOnscreen;
+-(IBAction)showInfo:(id)sender;
 
 @end
 
