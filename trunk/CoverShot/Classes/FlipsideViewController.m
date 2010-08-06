@@ -41,6 +41,8 @@
 	newBannerview.origin.y = self.view.frame.size.height-newBannerview.size.height;
 	
 	[UIView beginAnimations:@"BannerViewIntro" context:NULL];
+	[UIView setAnimationDuration:.5];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	self.webView.frame = newBannerview;
 	[UIView commitAnimations];
 
