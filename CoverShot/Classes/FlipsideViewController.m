@@ -14,6 +14,13 @@
 
 
 - (void)viewDidLoad {
+	CGFloat viewHeight = self.view.frame.size.height;
+	CGRect newWebViewFrame = self.webView.frame;
+	newWebViewFrame.origin.y = viewHeight;
+	
+	self.webView.frame =newWebViewFrame;
+	
+	
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
 }
@@ -29,7 +36,14 @@
 	
 	//Load the request in the UIWebView.
 	[webView loadRequest:requestObj];
-	webView.hidden=NO;
+	
+	CGRect newBannerview = self.webView.frame;
+	newBannerview.origin.y = self.view.frame.size.height-newBannerview.size.height;
+	
+	[UIView beginAnimations:@"BannerViewIntro" context:NULL];
+	self.webView.frame = newBannerview;
+	[UIView commitAnimations];
+
 }
 
 

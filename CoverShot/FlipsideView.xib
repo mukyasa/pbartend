@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="44"/>
+			<integer value="40"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -45,7 +45,7 @@
 					<object class="IBUIImageView" id="303151870">
 						<reference key="NSNextResponder" ref="249263867"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 43}, {320, 417}}</string>
+						<string key="NSFrame">{{0, 43}, {320, 437}}</string>
 						<reference key="NSSuperview" ref="249263867"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -165,8 +165,8 @@
 					</object>
 					<object class="IBUIWebView" id="922827428">
 						<reference key="NSNextResponder" ref="249263867"/>
-						<int key="NSvFlags">-2147483356</int>
-						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{0, 44}, {320, 436}}</string>
 						<reference key="NSSuperview" ref="249263867"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -178,7 +178,7 @@
 						<bool key="IBUIDetectsPhoneNumbers">YES</bool>
 					</object>
 				</object>
-				<string key="NSFrameSize">{320, 460}</string>
+				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -186,9 +186,6 @@
 					<reference key="NSCustomColorSpace" ref="439038695"/>
 				</object>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
-					<int key="IBUIStatusBarStyle">2</int>
-				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</object>
@@ -733,7 +730,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">help_bg.png</string>
-			<string key="NS.object.0">{640, 834}</string>
+			<string key="NS.object.0">{640, 868}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">123</string>
 	</data>
