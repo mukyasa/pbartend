@@ -22,7 +22,6 @@
 	IBOutlet UIBarButtonItem *saveButton;
 	IBOutlet UIBarButtonItem *blendButton;
 	id <CoverShotEditorViewControllerDelegate> delegate;
-	UIImagePickerController *imagePicker;
 	IBOutlet UIPickerView *gradientPicker;
 	IBOutlet UIView *pickerView;
 	IBOutlet QuartzView *quartzView;

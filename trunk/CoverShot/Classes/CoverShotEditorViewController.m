@@ -50,6 +50,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 }
 
 
+
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 	if(isSaving)
@@ -62,36 +63,52 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		if (buttonIndex == 0) //camera
 		{
 			//NSLog(@"Camera");		
-			imagePicker = [[UIImagePickerController alloc] init];
+			UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
 			imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-			imagePicker.videoQuality = UIImagePickerControllerQualityTypeHigh;
+			//imagePicker.videoQuality = UIImagePickerControllerQualityTypeHigh;			
+			
+			//imagePicker.mediaTypes = [NSArray arrayWithObject:@"public.image"];
+			//imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
 			
 			
-			imagePicker.mediaTypes = [NSArray arrayWithObject:@"public.image"];
-			imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-			
-			
-			imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-			imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
-			
+			//imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+			//imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
+			//imagePicker.allowsEditing=YES;
 			imagePicker.delegate = self;
-			imagePicker.wantsFullScreenLayout = YES;
-			
+			//imagePicker.wantsFullScreenLayout = YES;
 			[self presentModalViewController:imagePicker animated:YES];
 			
 		}
 		else if(buttonIndex ==1) {
+			UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
 			//NSLog(@"Libaray");
 			imagePicker = [[UIImagePickerController alloc] init];
 			imagePicker.delegate = self;	
 			imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-			
 			[self presentModalViewController:imagePicker animated:YES];
-			
-		}
+		}		
 	}
 	
+}
+
+/* the image after taken or picked */
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	[picker dismissModalViewControllerAnimated:YES];
+	previewImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 	
+	[self applyDefaults];
+	
+	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
+	qbv.clearsContextBeforeDrawing=YES;
+	
+	qbv.choosenImage=nil;
+	qbv.sourceColor= [UIColor clearColor];
+	qbv.blendMode = kCGBlendModeNormal;
+	quartzView.hidden=YES;
+	
+	[picker release];
+	
+
 }
 
 
@@ -313,26 +330,6 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[CATransaction commit];
 }
 
-
-/* the image after taken or picked */
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	[picker dismissModalViewControllerAnimated:YES];
-	previewImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-	
-	[self applyDefaults];
-	
-//	NSLog(@"Image W:%f,H:%f",previewImageView.image.size.width,previewImageView.image.size.height);
-	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;
-	qbv.clearsContextBeforeDrawing=YES;
-	
-	qbv.choosenImage=nil;
-	qbv.sourceColor= [UIColor clearColor];
-	qbv.blendMode = kCGBlendModeNormal;
-	quartzView.hidden=YES;
-	
-	
-
-}
 
 - (void)applyDefaults
 {
