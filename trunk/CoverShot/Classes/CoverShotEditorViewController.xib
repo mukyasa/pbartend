@@ -79,6 +79,7 @@
 								<string key="NSFrameSize">{320, 480}</string>
 								<reference key="NSSuperview" ref="889720976"/>
 								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -942,8 +943,8 @@
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{23, 26}</string>
-				<string>{34, 26}</string>
-				<string>{24, 26}</string>
+				<string>{36, 28}</string>
+				<string>{27, 28}</string>
 				<string>{640, 960}</string>
 				<string>{27, 26}</string>
 			</object>
