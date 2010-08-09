@@ -10,7 +10,7 @@
 
 @implementation CoverShotViewController
 
-@synthesize magizineScrollView,pickedCover,bannerView;
+@synthesize magizineScrollView,pickedCover,bannerView,coverShotEditorViewController;
 
 const CGFloat kScrollObjWidth	= 240.0;
 const CGFloat kScrollObjHeight	= 360;
@@ -73,16 +73,17 @@ const NSUInteger kNumImages		= 21;
 		imageView.frame = rect;
 		imageView.tag = i;	// tag our images for later use when we place them in serial fashion
 		[magizineScrollView addSubview:imageView];
+		
 		[imageView release];
+		image=nil;
+		imageName=nil;
 	}
 	
 	[self layoutScrollImages];	// now place the photos in serial layout within the scrollview
 	
 	
 	// do one time set-up of gesture recognizers
-	UIGestureRecognizer *recognizer;
-	
-	recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapFrom:)];
+	UIGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapFrom:)];
 	recognizer.delegate = self;
 	((UITapGestureRecognizer*)recognizer).numberOfTapsRequired=2;
 	[magizineScrollView addGestureRecognizer:recognizer];
@@ -93,24 +94,19 @@ const NSUInteger kNumImages		= 21;
 
 - (void)handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer
 {
-	//NSLog(@"Single Tap");
-	CoverShotEditorViewController *controller = [[CoverShotEditorViewController alloc] initWithNibName:@"CoverShotEditorViewController" bundle:nil];
-	controller.delegate = self;
+	//NSLog(@"Tap");
+	coverShotEditorViewController = [[CoverShotEditorViewController alloc] initWithNibName:@"CoverShotEditorViewController" bundle:nil];
+	coverShotEditorViewController.delegate = self;
 	
-	controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-	[self presentModalViewController:controller animated:YES];
+	coverShotEditorViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	[self presentModalViewController:coverShotEditorViewController animated:YES];
 	
-	controller.parentPreviewImageView.image = pickedCover;
-	
-	[controller release];
+	coverShotEditorViewController.parentPreviewImageView.image = pickedCover;
+	//NSLog(@"CoverShotEditorViewController retain count: %i",[coverShotEditorViewController retainCount]);
+	//[coverShotEditorViewController release];
 
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-	
-	//pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"cover%i.png",coverId] ];
-	//NSLog(@"SELECTED COVER: %d",coverId);
-}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 	
@@ -181,7 +177,7 @@ const NSUInteger kNumImages		= 21;
 	
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:controller animated:YES];
-	
+	//NSLog(@"FlipsideViewController retain count: %i",[controller retainCount]);
 	[controller release];
 }
 
@@ -216,6 +212,7 @@ const NSUInteger kNumImages		= 21;
 
 
 - (void)dealloc {
+	[coverShotEditorViewController release];
 	bannerView.delegate = nil;
 	[bannerView release];
 	[pickedCover release];

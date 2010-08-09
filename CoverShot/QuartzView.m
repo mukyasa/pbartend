@@ -19,6 +19,7 @@
 -(void)drawInContext:(CGContextRef)context
 {
 	// Default is to do nothing!
+	
 }
 
 -(void)drawRect:(CGRect)rect

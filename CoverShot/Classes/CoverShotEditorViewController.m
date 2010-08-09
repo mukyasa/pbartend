@@ -62,32 +62,25 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		// the user clicked one of the OK/Cancel buttons
 		if (buttonIndex == 0) //camera
 		{
-			//NSLog(@"Camera");		
+	
 			UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-			imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-			//imagePicker.videoQuality = UIImagePickerControllerQualityTypeHigh;			
-			
-			//imagePicker.mediaTypes = [NSArray arrayWithObject:@"public.image"];
-			//imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-			
-			
-			//imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-			//imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
-			//imagePicker.allowsEditing=YES;
+			imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;	
 			imagePicker.delegate = self;
-			//imagePicker.wantsFullScreenLayout = YES;
 			[self presentModalViewController:imagePicker animated:YES];
 			
 		}
 		else if(buttonIndex ==1) {
 			UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-			//NSLog(@"Libaray");
 			imagePicker = [[UIImagePickerController alloc] init];
 			imagePicker.delegate = self;	
 			imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 			[self presentModalViewController:imagePicker animated:YES];
+			
+			
 		}		
 	}
+	
+	
 	
 }
 
