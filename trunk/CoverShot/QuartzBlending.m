@@ -70,8 +70,6 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 	// And draw a rect with the "foreground" color - this is the "Source" for the blending formulas
 	CGContextSetFillColorWithColor(context, sourceColor.CGColor);
 	CGContextFillRect(context, CGRectMake(0.0, 0.0, choosenImage.size.width,choosenImage.size.height));
-
-
 }
 
 @end
