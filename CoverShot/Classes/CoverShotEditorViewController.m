@@ -63,10 +63,22 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		if (buttonIndex == 0) //camera
 		{
 	
-			UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-			imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;	
-			imagePicker.delegate = self;
-			[self presentModalViewController:imagePicker animated:YES];
+			UIImage *image = [UIImage imageNamed:@"clearcover1sm.png"] ;
+			UIImageView *imgView = [[UIImageView alloc] initWithImage:image] ;
+			imgView.contentMode = UIViewContentModeScaleAspectFill;
+			imgView.alpha=.5;
+			imgView.bounds = CGRectMake(0,0,320,480);
+			
+			UIImagePickerController *camera = [[UIImagePickerController alloc] init];
+			camera.sourceType = UIImagePickerControllerSourceTypeCamera;	
+			camera.delegate = self;
+			camera.cameraOverlayView = imgView;
+			//flip
+			//CGAffineTransform transform = CGAffineTransformIdentity;
+			//transform = CGAffineTransformMakeScale(-1.0, 1.0);
+			//camera.cameraViewTransform =  transform;
+			[self presentModalViewController:camera animated:YES];
+			[imgView release];
 			
 		}
 		else if(buttonIndex ==1) {
@@ -88,6 +100,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissModalViewControllerAnimated:YES];
 	previewImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+	
 	
 	[self applyDefaults];
 	
@@ -165,7 +178,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 
-	
+	didFlip=NO;
 	[self moveNavViewOnscreen];
 	pickerView.hidden = YES;//hide so we dont see it going off screen
 	[self movePickerOffScreen];
@@ -182,6 +195,11 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[parentPreviewView addGestureRecognizer:recognizer];
 	[recognizer release];
 	
+	UITapGestureRecognizer *doubleTaprecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapFrom:)];
+	doubleTaprecognizer.numberOfTapsRequired=2;
+	doubleTaprecognizer.delegate = self;
+	[parentPreviewView addGestureRecognizer:doubleTaprecognizer];
+	[doubleTaprecognizer release];
 	
 	recognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchFrom:)];
 	recognizer.delegate = self;
@@ -212,6 +230,28 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	[self movePickerOffScreen];//hide picker
 	[self setUpImageState:NO];
 }
+
+- (void)handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer
+{
+	
+	[self moveNavViewOffscreen];
+	[self movePickerOffScreen];//hide picker
+	//flip
+	if(!didFlip){
+		NSLog(@"FLIPPED");
+		previewImageView.transform = CGAffineTransformScale(previewImageView.transform,-1.0, 1.0);
+		didFlip=YES;
+	}
+	else {	
+		NSLog(@"FLIPPED BACK");
+		previewImageView.transform = CGAffineTransformScale(previewImageView.transform,-1.0, 1.0);
+		didFlip=NO;
+	}
+	
+	
+
+}
+
 
 - (void)handlePinchFrom:(UIPinchGestureRecognizer *)recognizer
 {
@@ -250,20 +290,16 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		oldX = 0;
 		oldY = 0;
 	}
-	else if(recognizer.state == UIGestureRecognizerStateEnded)
-	{
-		//NSLog(@"end drag");
-		//[self setUpImageState:NO];
-	}
 	
 	if (inImage) {
 		CGPoint translate = [recognizer translationInView: parentPreviewView];
+		//NSLog(@"X:%f",translate.x-oldX);
 		previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, translate.x-oldX, translate.y-oldY);
 		//quartzView.transform = previewImageView.transform;
 		oldX = translate.x;
 		oldY = translate.y;
 	}
-	//NSLog(@"dragging now");
+	
 
 }
 
@@ -275,7 +311,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 - (void)handleRotationFrom:(UIRotationGestureRecognizer *)recognizer
 {
-	//NSLog(@"Rotate");
+	NSLog(@"did flip: %i",didFlip);
 	[self moveNavViewOffscreen];
 	[self movePickerOffScreen];//hide picker
 	
@@ -287,7 +323,10 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	{
 		//[self setUpImageState:NO];
 	}
-	previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
+	if(didFlip)
+		previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, -(recognizer.rotation - beginGestureRotationRadians));
+	else
+		previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, (recognizer.rotation - beginGestureRotationRadians));
 	//quartzView.transform = previewImageView.transform;
 	beginGestureRotationRadians = recognizer.rotation;
 	

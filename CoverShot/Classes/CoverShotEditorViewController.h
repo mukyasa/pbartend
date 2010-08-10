@@ -29,6 +29,7 @@
 	UIImage *imageCopy;
 
 	BOOL isSaving;
+	BOOL didFlip;
 	
 	// for dragging
     CGPoint effectiveTranslation;
