@@ -39,7 +39,17 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 -(IBAction)showPictureControls:(id)sender  {
 	isSaving=NO;
     [self movePickerOffScreen];//hide picker
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose your photo source." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Photo Library", nil];
+	//determine if there is a camera
+	
+	BOOL isCamera = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerCameraCaptureModePhoto];
+
+	UIActionSheet *actionSheet;
+	
+	if(isCamera)
+		actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose your photo source." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Camera W/Overlay", @"Photo Library", nil];
+	else
+		actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose your photo source." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Photo Library", nil];
+		
     actionSheet.actionSheetStyle = UIBarStyleBlackTranslucent;
 	
 	[actionSheet showInView:self.parentPreviewView];	
@@ -63,25 +73,32 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		if (buttonIndex == 0) //camera
 		{
 	
-			UIImage *image = [UIImage imageNamed:@"clearcover1sm.png"] ;
+			UIImagePickerController *camera = [[UIImagePickerController alloc] init];
+			camera.sourceType = UIImagePickerControllerSourceTypeCamera;	
+			camera.delegate = self;
+			
+			[self presentModalViewController:camera animated:YES];		
+			
+		}
+		if (buttonIndex == 1) //camera with over lay
+		{
+			
+			UIImage *image = parentPreviewImageView.image;//[UIImage imageNamed:@"clearcover1.png"] ;
 			UIImageView *imgView = [[UIImageView alloc] initWithImage:image] ;
 			imgView.contentMode = UIViewContentModeScaleAspectFill;
 			imgView.alpha=.5;
-			imgView.bounds = CGRectMake(0,0,320,480);
+			imgView.frame = CGRectMake(0,0,320,480);
 			
 			UIImagePickerController *camera = [[UIImagePickerController alloc] init];
 			camera.sourceType = UIImagePickerControllerSourceTypeCamera;	
 			camera.delegate = self;
 			camera.cameraOverlayView = imgView;
-			//flip
-			//CGAffineTransform transform = CGAffineTransformIdentity;
-			//transform = CGAffineTransformMakeScale(-1.0, 1.0);
-			//camera.cameraViewTransform =  transform;
+			
 			[self presentModalViewController:camera animated:YES];
-			[imgView release];
+			[imgView release];			
 			
 		}
-		else if(buttonIndex ==1) {
+		else if(buttonIndex ==2) {
 			UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
 			imagePicker = [[UIImagePickerController alloc] init];
 			imagePicker.delegate = self;	
