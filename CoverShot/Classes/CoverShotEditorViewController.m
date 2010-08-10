@@ -294,7 +294,10 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	if (inImage) {
 		CGPoint translate = [recognizer translationInView: parentPreviewView];
 		//NSLog(@"X:%f",translate.x-oldX);
-		previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, translate.x-oldX, translate.y-oldY);
+		if(didFlip)
+			previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, -(translate.x-oldX), (translate.y-oldY));
+		else
+			previewImageView.transform = CGAffineTransformTranslate(previewImageView.transform, (translate.x-oldX), (translate.y-oldY));
 		//quartzView.transform = previewImageView.transform;
 		oldX = translate.x;
 		oldY = translate.y;
