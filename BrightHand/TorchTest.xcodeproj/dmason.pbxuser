@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* TorchTestAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1342, 840}}";
+			sepNavSelRange = "{238, 21}";
+			sepNavVisRange = "{0, 477}";
+		};
+	};
+	1D3623250D0F684500981E51 /* TorchTestAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1053}}";
+			sepNavSelRange = "{206, 37}";
+			sepNavVisRange = "{0, 2273}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* TorchTest */ = {
+		activeExec = 0;
+		executables = (
+			71A9A28411E67C2E004C5116 /* TorchTest */,
+		);
+	};
+	28D7ACF60DDB3853001CB0EB /* TorchTestViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1086, 690}}";
+			sepNavSelRange = "{201, 19}";
+			sepNavVisRange = "{0, 1189}";
+		};
+	};
+	28D7ACF70DDB3853001CB0EB /* TorchTestViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1086, 2873}}";
+			sepNavSelRange = "{211, 1}";
+			sepNavVisRange = "{0, 1449}";
+			sepNavWindowFrame = "{{15, 55}, {1107, 823}}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 71A9A28411E67C2E004C5116 /* TorchTest */;
+		activeSDKPreference = iphoneos4.1;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* TorchTest */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* TorchTest */,
+		);
+		breakpoints = (
+			71111BF011F5289600D4966C /* TorchTestViewController.m:180 */,
+		);
+		codeSenseManager = 71A9A29211E67C4B004C5116 /* Code sense */;
+		executables = (
+			71A9A28411E67C2E004C5116 /* TorchTest */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					198,
+					20,
+					99,
+					99,
+					29,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					908,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					884,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					884,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 303168506;
+			PBXWorkspaceStateSaveDate = 303168506;
+		};
+		perUserProjectItems = {
+			7114ABB911E91C0500F9B763 /* PBXBookmark */ = 7114ABB911E91C0500F9B763 /* PBXBookmark */;
+			7114ABC311E9808300F9B763 /* PBXBookmark */ = 7114ABC311E9808300F9B763 /* PBXBookmark */;
+			7114ABC411E9808300F9B763 /* PBXBookmark */ = 7114ABC411E9808300F9B763 /* PBXBookmark */;
+			71485716120B2106000B7B36 /* PBXTextBookmark */ = 71485716120B2106000B7B36 /* PBXTextBookmark */;
+			717D08C811E7F6080058B360 /* PBXBookmark */ = 717D08C811E7F6080058B360 /* PBXBookmark */;
+			717D08E411E7FA3E0058B360 /* PBXBookmark */ = 717D08E411E7FA3E0058B360 /* PBXBookmark */;
+			717D091111E8E6DD0058B360 /* PBXBookmark */ = 717D091111E8E6DD0058B360 /* PBXBookmark */;
+			717D0A0D11E9150B0058B360 /* PBXBookmark */ = 717D0A0D11E9150B0058B360 /* PBXBookmark */;
+			71A19A991211FC1800324193 /* PBXTextBookmark */ = 71A19A991211FC1800324193 /* PBXTextBookmark */;
+			71AAF13511E9180F009F68F9 /* PBXBookmark */ = 71AAF13511E9180F009F68F9 /* PBXBookmark */;
+			71AAF13711E9180F009F68F9 /* PBXBookmark */ = 71AAF13711E9180F009F68F9 /* PBXBookmark */;
+			71AAF17311E91B98009F68F9 /* PBXBookmark */ = 71AAF17311E91B98009F68F9 /* PBXBookmark */;
+			71AB1FD51211F8540063B455 /* PBXTextBookmark */ = 71AB1FD51211F8540063B455 /* PBXTextBookmark */;
+			71ADF9E111EB8F6A00D8CAC0 /* PBXTextBookmark */ = 71ADF9E111EB8F6A00D8CAC0 /* PBXTextBookmark */;
+			71ADF9E211EB8F6A00D8CAC0 /* PBXTextBookmark */ = 71ADF9E211EB8F6A00D8CAC0 /* PBXTextBookmark */;
+			71ADF9E311EB8F6A00D8CAC0 /* PBXTextBookmark */ = 71ADF9E311EB8F6A00D8CAC0 /* PBXTextBookmark */;
+			71ADF9E411EB8F6A00D8CAC0 /* PBXTextBookmark */ = 71ADF9E411EB8F6A00D8CAC0 /* PBXTextBookmark */;
+			71ADF9E511EB8F6A00D8CAC0 /* PBXTextBookmark */ = 71ADF9E511EB8F6A00D8CAC0 /* PBXTextBookmark */;
+			71EEC34111EB7DB200AF1FE2 /* PlistBookmark */ = 71EEC34111EB7DB200AF1FE2 /* PlistBookmark */;
+		};
+		sourceControlManager = 71A9A29111E67C4B004C5116 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	32CA4F630368D1EE00C91783 /* TorchTest_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1342, 840}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 187}";
+		};
+	};
+	71111BF011F5289600D4966C /* TorchTestViewController.m:180 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* TorchTestViewController.m */;
+		functionName = "-moveBannerViewOnscreen";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 180;
+		location = brighthand;
+		modificationTime = 301279389.801742;
+		originalNumberOfMultipleMatches = 1;
+		state = 0;
+	};
+	7114ABB911E91C0500F9B763 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 71AAF16711E91ABF009F68F9 /* icon.png */;
+	};
+	7114ABC311E9808300F9B763 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 717D08B111E7F5280058B360 /* l_shadow.png */;
+	};
+	7114ABC411E9808300F9B763 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 713F678711E6D6430049E30C /* icon114.png */;
+	};
+	71485716120B2106000B7B36 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* TorchTestViewController.h */;
+		name = "TorchTestViewController.h: 11";
+		rLen = 19;
+		rLoc = 201;
+		rType = 0;
+		vrLen = 1189;
+		vrLoc = 0;
+	};
+	717D08C811E7F6080058B360 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 71099D7511E7E16F007939E4 /* bevel.png */;
+	};
+	717D08E411E7FA3E0058B360 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 717D08B211E7F5280058B360 /* r_shadow.png */;
+	};
+	717D091111E8E6DD0058B360 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 717D088411E7ECD70058B360 /* scroller.png */;
+	};
+	717D0A0D11E9150B0058B360 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 717D09F811E90FE80058B360 /* Default.png */;
+	};
+	71A19A991211FC1800324193 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* TorchTestViewController.m */;
+		name = "TorchTestViewController.m: 10";
+		rLen = 1;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 1449;
+		vrLoc = 0;
+	};
+	71A9A28411E67C2E004C5116 /* TorchTest */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = TorchTest;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	71A9A29111E67C4B004C5116 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = Google;
+			};
+		};
+	};
+	71A9A29211E67C4B004C5116 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	71A9A43511E68C34004C5116 /* AVCamDemoCaptureManager.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1342, 1378}}";
+			sepNavSelRange = "{652, 0}";
+			sepNavVisRange = "{515, 3031}";
+		};
+	};
+	71A9A43611E68C34004C5116 /* AVCamDemoCaptureManager.m */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1, 2604}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 25735}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1384, 7722}}";
+			sepNavSelRange = "{4977, 22}";
+			sepNavVisRange = "{0, 2381}";
+		};
+	};
+	71AAF13511E9180F009F68F9 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 717D090D11E8E57E0058B360 /* base_bg_on.png */;
+	};
+	71AAF13711E9180F009F68F9 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 717D099111E909E40058B360 /* icon512.png */;
+	};
+	71AAF17311E91B98009F68F9 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 717D08DD11E7F9E10058B360 /* base_bg_off.png */;
+	};
+	71AB1FD51211F8540063B455 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* TorchTestViewController.m */;
+		name = "TorchTestViewController.m: 10";
+		rLen = 1;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 1449;
+		vrLoc = 0;
+	};
+	71ADF9E111EB8F6A00D8CAC0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71A9A43611E68C34004C5116 /* AVCamDemoCaptureManager.m */;
+		name = "AVCamDemoCaptureManager.m: 178";
+		rLen = 22;
+		rLoc = 7580;
+		rType = 0;
+		vrLen = 4984;
+		vrLoc = 0;
+	};
+	71ADF9E211EB8F6A00D8CAC0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71A9A43511E68C34004C5116 /* AVCamDemoCaptureManager.h */;
+		name = "AVCamDemoCaptureManager.h: 13";
+		rLen = 0;
+		rLoc = 652;
+		rType = 0;
+		vrLen = 3031;
+		vrLoc = 515;
+	};
+	71ADF9E311EB8F6A00D8CAC0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* TorchTestAppDelegate.h */;
+		name = "TorchTestAppDelegate.h: 13";
+		rLen = 21;
+		rLoc = 238;
+		rType = 0;
+		vrLen = 477;
+		vrLoc = 0;
+	};
+	71ADF9E411EB8F6A00D8CAC0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* TorchTestAppDelegate.m */;
+		name = "TorchTestAppDelegate.m: 12";
+		rLen = 37;
+		rLoc = 206;
+		rType = 0;
+		vrLen = 2273;
+		vrLoc = 0;
+	};
+	71ADF9E511EB8F6A00D8CAC0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* TorchTest_Prefix.pch */;
+		name = "TorchTest_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 187;
+		vrLoc = 0;
+	};
+	71EEC34111EB7DB200AF1FE2 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* TorchTest-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = "/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+}
