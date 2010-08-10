@@ -1,0 +1,1427 @@
+TQuickTweet
+v7
+r0
+t300598905.233065
+cCheck dependencies
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C372B350000000000000132
+t1278683957
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c000000004BFDFE57000000000018BC00
+t1274936919
+s1620992
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CFNetwork.framework/Headers/CFNetwork.h
+c000000004BFDFE2F00000000000004CF
+t1274936879
+s1231
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CoreFoundation.h
+c000000004BFDFD720000000000000AB3
+t1274936690
+s2739
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/SystemConfiguration.framework/Headers/SystemConfiguration.h
+c000000004BFDFDA40000000000001AE5
+t1274936740
+s6885
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+c000000004BFDFDAA000000000005E690
+t1274936746
+s386704
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/iAd.framework/Headers/iAd.h
+c000000004C0473C80000000000000071
+t1275360200
+s113
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/iAd.framework/iAd
+c000000004C0473CB000000000004A930
+t1275360203
+s305456
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/CommonCrypto/CommonDigest.h
+c000000004A11E8210000000000002407
+t1242687521
+s9223
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/CommonCrypto/CommonHMAC.h
+c000000004A11E8210000000000000DE2
+t1242687521
+s3554
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/arpa/inet.h
+c000000004A4180D20000000000001533
+t1245806802
+s5427
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/ifaddrs.h
+c000000004A4180E20000000000000782
+t1245806818
+s1922
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/math.h
+c000000004A5C14A000000000000004F1
+t1247548576
+s1265
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/netdb.h
+c000000004A4181220000000000003057
+t1245806882
+s12375
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/netinet/in.h
+c000000004A73D64C000000000000539D
+t1249105484
+s21405
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/netinet6/in6.h
+c000000004A73D64B0000000000004F5B
+t1249105483
+s20315
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/stdio.h
+c000000004A5C14A70000000000004174
+t1247548583
+s16756
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/stdlib.h
+c000000004A5C14A70000000000002DF5
+t1247548583
+s11765
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/string.h
+c000000004A5C14A70000000000001731
+t1247548583
+s5937
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/sys/socket.h
+c000000004A73D65400000000000059BC
+t1249105492
+s22972
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/zlib.h
+c000000004A1F0FE200000000000102A5
+t1243549666
+s66213
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+c000000004A1198340000000000000644
+t1242667060
+s1604
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/lib/libz.1.2.3.dylib
+c000000004AD4F6ED0000000000005D2C
+t1255470829
+s23852
+
+N/Users/dmason/IPHONE/myQuickTweet/CustomLoginPopup.h
+c000000004C2B97E50000000000000173
+t1277925349
+s371
+i<UIKit/UIKit.h>
+i"TwitterLoginPopup.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/CustomLoginPopup.m
+c000000004C2D11CD0000000000000795
+t1278022093
+s1941
+i"CustomLoginPopup.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/Default.png
+c000000004C2CF130000000000001780C
+t1278013744
+s96268
+
+N/Users/dmason/IPHONE/myQuickTweet/EditListViewController.h
+c000000004C2BD3C800000000000005AB
+t1277940680
+s1451
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/EditListViewController.m
+c000000004C2BF31D000000000000213C
+t1277948701
+s8508
+i"EditListViewController.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/EditListViewController.xib
+c000000004C2BF4FE000000000000A1AF
+t1277949182
+s41391
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/JSON.h
+c000000004C2B97E50000000000000918
+t1277925349
+s2328
+i"SBJsonParser.h"
+i"SBJsonWriter.h"
+i"NSObject+SBJSON.h"
+i"NSString+SBJSON.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/NSObject+SBJSON.h
+c000000004C2B97E5000000000000085F
+t1277925349
+s2143
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/NSObject+SBJSON.m
+c000000004C2B97E5000000000000077D
+t1277925349
+s1917
+i"NSObject+SBJSON.h"
+i"SBJsonWriter.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/NSString+SBJSON.h
+c000000004C2B97E500000000000007F0
+t1277925349
+s2032
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/NSString+SBJSON.m
+c000000004C2B97E5000000000000075D
+t1277925349
+s1885
+i"NSString+SBJSON.h"
+i"SBJsonParser.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonBase.h
+c000000004C2B97E50000000000000B82
+t1277925349
+s2946
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonBase.m
+c000000004C2B97E50000000000000AC1
+t1277925349
+s2753
+i"SBJsonBase.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonParser.h
+c000000004C2B97E50000000000000D04
+t1277925349
+s3332
+i<Foundation/Foundation.h>
+i"SBJsonBase.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonParser.m
+c000000004C2B97E50000000000003B7A
+t1277925349
+s15226
+i"SBJsonParser.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonWriter.h
+c000000004C2B97E500000000000012A1
+t1277925349
+s4769
+i<Foundation/Foundation.h>
+i"SBJsonBase.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonWriter.m
+c000000004C2B97E50000000000001EEE
+t1277925349
+s7918
+i"SBJsonWriter.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/Nouns.plist
+c000000004C2BF98200000000000004AE
+t1277950338
+s1198
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIAuthenticationDialog.h
+c000000004C2B97E30000000000000388
+t1277925347
+s904
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIAuthenticationDialog.m
+c000000004C2B97E30000000000002124
+t1277925347
+s8484
+i"ASIAuthenticationDialog.h"
+i"ASIHTTPRequest.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIFormDataRequest.h
+c000000004C2B97E30000000000000737
+t1277925347
+s1847
+i<Foundation/Foundation.h>
+i"ASIHTTPRequest.h"
+i"ASIHTTPRequestConfig.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIFormDataRequest.m
+c000000004C2B97E30000000000002668
+t1277925347
+s9832
+i"ASIFormDataRequest.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIHTTPRequest.h
+c000000004C2B97E3000000000000782A
+t1277925347
+s30762
+i<Foundation/Foundation.h>
+i<CFNetwork/CFNetwork.h>
+i<stdio.h>
+i"ASIHTTPRequestConfig.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIHTTPRequest.m
+c000000004C2B97E3000000000002135B
+t1277925347
+s136027
+i"ASIHTTPRequest.h"
+i<zlib.h>
+i"Reachability.h"
+i"ASIAuthenticationDialog.h"
+i<SystemConfiguration/SystemConfiguration.h>
+i"ASIInputStream.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIHTTPRequestConfig.h
+c000000004C2B97E30000000000000774
+t1277925347
+s1908
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIInputStream.h
+c000000004C2B97E300000000000003C9
+t1277925347
+s969
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIInputStream.m
+c000000004C2B97E30000000000000814
+t1277925347
+s2068
+i"ASIInputStream.h"
+i"ASIHTTPRequest.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINSStringAdditions.h
+c000000004C2B97E30000000000000173
+t1277925347
+s371
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINSStringAdditions.m
+c000000004C2B97E3000000000000030B
+t1277925347
+s779
+i"ASINSStringAdditions.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINetworkQueue.h
+c000000004C2B97E30000000000001454
+t1277925347
+s5204
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINetworkQueue.m
+c000000004C2B97E30000000000002F43
+t1277925347
+s12099
+i"ASINetworkQueue.h"
+i"ASIHTTPRequest.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3BucketObject.h
+c000000004C2B97E30000000000000553
+t1277925347
+s1363
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3BucketObject.m
+c000000004C2B97E300000000000007AA
+t1277925347
+s1962
+i"ASIS3BucketObject.h"
+i"ASIS3Request.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.h
+c000000004C2B97E30000000000000486
+t1277925347
+s1158
+i<Foundation/Foundation.h>
+i"ASIS3Request.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m
+c000000004C2B97E30000000000001344
+t1277925347
+s4932
+i"ASIS3ListRequest.h"
+i"ASIS3BucketObject.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.h
+c000000004C2B97E30000000000001114
+t1277925347
+s4372
+i<Foundation/Foundation.h>
+i"ASIHTTPRequest.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m
+c000000004C2B97E30000000000002566
+t1277925347
+s9574
+i"ASIS3Request.h"
+i<CommonCrypto/CommonHMAC.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/Reachability2.0/Reachability.h
+c000000004C2B97E20000000000000F19
+t1277925346
+s3865
+i<Foundation/Foundation.h>
+i<SystemConfiguration/SystemConfiguration.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/Reachability2.0/Reachability.m
+c000000004C2B97E200000000000023A7
+t1277925346
+s9127
+i<sys/socket.h>
+i<netinet/in.h>
+i<netinet6/in6.h>
+i<arpa/inet.h>
+i<ifaddrs.h>
+i<netdb.h>
+i<CoreFoundation/CoreFoundation.h>
+i"Reachability.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/Base64Transcoder.c
+c000000004C2B97E2000000000000244A
+t1277925346
+s9290
+i"Base64Transcoder.h"
+i<math.h>
+i<string.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/Base64Transcoder.h
+c000000004C2B97E20000000000000689
+t1277925346
+s1673
+i<stdlib.h>
+i<stdbool.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/OAHMAC_SHA1SignatureProvider.h
+c000000004C2B97E20000000000000573
+t1277925346
+s1395
+i<Foundation/Foundation.h>
+i"OASignatureProviding.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/OAHMAC_SHA1SignatureProvider.m
+c000000004C2B97E200000000000008C5
+t1277925346
+s2245
+i"OAHMAC_SHA1SignatureProvider.h"
+i"hmac.h"
+i"Base64Transcoder.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/OASignatureProviding.h
+c000000004C2B97E2000000000000056F
+t1277925346
+s1391
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/hmac.c
+c000000004C2B97E20000000000000B84
+t1277925346
+s2948
+i"sha1.h"
+i<stdlib.h>
+i<string.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/hmac.h
+c000000004C2B97E20000000000000591
+t1277925346
+s1425
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/sha1.c
+c000000004C2B97E20000000000001752
+t1277925346
+s5970
+i<stdio.h>
+i<string.h>
+i"sha1.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/sha1.h
+c000000004C2B97E20000000000000188
+t1277925346
+s392
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/NSString+URLEncoding.h
+c000000004C2B97E300000000000005A1
+t1277925347
+s1441
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/NSString+URLEncoding.m
+c000000004C2B97E30000000000000C5E
+t1277925347
+s3166
+i"NSString+URLEncoding.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth+UserDefaults.h
+c000000004C2B97E30000000000000221
+t1277925347
+s545
+i<Foundation/Foundation.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth+UserDefaults.m
+c000000004C2B97E30000000000000785
+t1277925347
+s1925
+i"OAuth.h"
+i"OAuth+UserDefaults.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth.h
+c000000004C2B97E30000000000000A54
+t1277925347
+s2644
+i<Foundation/Foundation.h>
+i"ASIFormDataRequest.h"
+i"OAuthTwitterCallbacks.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth.m
+c000000004C2B97E30000000000003942
+t1277925347
+s14658
+i"OAuth.h"
+i<CommonCrypto/CommonDigest.h>
+i"OAHMAC_SHA1SignatureProvider.h"
+i"NSString+URLEncoding.h"
+i"OAuthTwitterCallbacks.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/OAuthConsumerCredentials.h
+c000000004C2B97E3000000000000014C
+t1277925347
+s332
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Protocols/OAuthTwitterCallbacks.h
+c000000004C2B97E300000000000001BA
+t1277925347
+s442
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Protocols/TwitterLoginPopupDelegate.h
+c000000004C2B97E30000000000000161
+t1277925347
+s353
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/Protocols/TwitterLoginUiFeedback.h
+c000000004C2B97E3000000000000028F
+t1277925347
+s655
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/Resources/signinSeparator.png
+c000000004C2B97E200000000000000BE
+t1277925346
+s190
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterLoginPopup.h
+c000000004C2B9C8F0000000000000545
+t1277926543
+s1349
+i<UIKit/UIKit.h>
+i"OAuthTwitterCallbacks.h"
+i"TwitterLoginPopupDelegate.h"
+i"TwitterLoginUiFeedback.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterLoginPopup.m
+c000000004C2D12BF000000000000305E
+t1278022335
+s12382
+i"TwitterLoginPopup.h"
+i"OAuth.h"
+i"TwitterWebViewController.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterWebViewController.h
+c000000004C2B97E2000000000000013F
+t1277925346
+s319
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterWebViewController.m
+c000000004C2B97E200000000000003D5
+t1277925346
+s981
+i"TwitterWebViewController.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/PlainOAuth_Prefix.pch
+c000000004C2B97E500000000000000B5
+t1277925349
+s181
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/RootViewController.h
+c000000004C2CE8A20000000000000521
+t1278011554
+s1313
+i<UIKit/UIKit.h>
+i<iAd/iAd.h>
+i"TwitterLoginPopupDelegate.h"
+i"TwitterLoginUiFeedback.h"
+i"EditListViewController.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/RootViewController.m
+c000000004C2D1B6D0000000000002FE8
+t1278024557
+s12264
+i"RootViewController.h"
+i"OAuth.h"
+i"OAuth+UserDefaults.h"
+i"OAuthConsumerCredentials.h"
+i"CustomLoginPopup.h"
+i"JSON.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/RootViewController.xib
+c000000004C2CF7450000000000008B8F
+t1278015301
+s35727
+
+N/Users/dmason/IPHONE/myQuickTweet/TwitterLoginPopup.xib
+c000000004C2B9A78000000000000A5D8
+t1277926008
+s42456
+
+N/Users/dmason/IPHONE/myQuickTweet/Verbs.plist
+c000000004C2BF98200000000000004AC
+t1277950338
+s1196
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app.dSYM
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Default.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/EditListViewController.nib
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Info.plist
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/MainWindow_Phone.nib
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Nouns.plist
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/PkgInfo
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/RootViewController.nib
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/TwitterLoginPopup.nib
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Verbs.plist
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/icon.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/icon_hd.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/quicktweet
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/quicktweet_lg.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/settings.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/signinBullet1.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/signinBullet2.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/signinSeparator.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIAuthenticationDialog.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIFormDataRequest.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIHTTPRequest.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIInputStream.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASINSStringAdditions.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASINetworkQueue.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3BucketObject.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3ListRequest.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3Request.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/AppDelegate_Phone.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/Base64Transcoder.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/CustomLoginPopup.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/EditListViewController.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSObject+SBJSON.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSString+SBJSON.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSString+URLEncoding.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAHMAC_SHA1SignatureProvider.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAuth+UserDefaults.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAuth.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/Reachability.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/RootViewController.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonBase.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonParser.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonWriter.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/TwitterLoginPopup.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/TwitterWebViewController.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/hmac.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/main.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/quicktweet.LinkFileList
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/sha1.o
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.h
+c000000004C2CD7180000000000000154
+t1278007064
+s340
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m
+c000000004C2D1ABD000000000000045B
+t1278024381
+s1115
+i"AppDelegate_Phone.h"
+i"RootViewController.h"
+
+N/Users/dmason/IPHONE/myQuickTweet/iPhone/MainWindow_Phone.xib
+c000000004C2CD9830000000000004849
+t1278007683
+s18505
+
+N/Users/dmason/IPHONE/myQuickTweet/icon.png
+c000000004C2D392A00000000000015AB
+t1278032170
+s5547
+
+N/Users/dmason/IPHONE/myQuickTweet/icon_hd.png
+c000000004C2B97E50000000000002590
+t1277925349
+s9616
+
+N/Users/dmason/IPHONE/myQuickTweet/main.m
+c000000004C2B97E5000000000000015A
+t1277925349
+s346
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/myQuickTweet/quicktweet_lg.png
+c000000004C2CF7150000000000007F1A
+t1278015253
+s32538
+
+N/Users/dmason/IPHONE/myQuickTweet/settings.png
+c000000004C2B97E50000000000003F57
+t1277925349
+s16215
+
+N/Users/dmason/IPHONE/myQuickTweet/signinBullet1.png
+c000000004C2B97E5000000000000025A
+t1277925349
+s602
+
+N/Users/dmason/IPHONE/myQuickTweet/signinBullet2.png
+c000000004C2B97E500000000000002E1
+t1277925349
+s737
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-cmqaewbmistxcxehxzzbxlpxuwki/PlainOAuth_Prefix.pch.gch
+t2
+s0
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch.gch
+t2
+s0
+
+NPlainOAuth-Info.plist
+c000000004C2CF83D00000000000005A8
+t1278015549
+s1448
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies300598904#300598905#0(0"0(0#1#0"9007697477435492#0"0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIAuthenticationDialog.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIAuthenticationDialog.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736388.436189
+e299736388.842198
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIAuthenticationDialog.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIAuthenticationDialog.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIAuthenticationDialog.m299736388#299736388#0(0"0(0#0#85"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIAuthenticationDialog.m8621778016#2021"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIAuthenticationDialog.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIAuthenticationDialog.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIFormDataRequest.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIFormDataRequest.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736388.629600
+e299736388.925251
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIFormDataRequest.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIFormDataRequest.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIFormDataRequest.m299736388#299736388#0(0"0(0#0#80"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIFormDataRequest.m8628451072#2011"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIFormDataRequest.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIFormDataRequest.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIHTTPRequest.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIHTTPRequest.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736388.842301
+e299736397.452704
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIHTTPRequest.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIHTTPRequest.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@84"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIHTTPRequest.m299736388#299736397#0(0"0(0#0#76"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIHTTPRequest.m8632801760#2003"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIHTTPRequest.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIHTTPRequest.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIInputStream.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIInputStream.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736388.925351
+e299736389.048365
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIInputStream.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIInputStream.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@84"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIInputStream.m299736388#299736389#0(0"0(0#0#76"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIInputStream.m8624285024#2003"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIInputStream.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIInputStream.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASINSStringAdditions.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINSStringAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736389.467864
+e299736389.529763
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASINSStringAdditions.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINSStringAdditions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@90"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINSStringAdditions.m299736389#299736389#0(0"0(0#0#82"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINSStringAdditions.m8621376000#2015"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINSStringAdditions.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASINSStringAdditions.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASINetworkQueue.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINetworkQueue.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736389.048492
+e299736389.467757
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASINetworkQueue.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINetworkQueue.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@85"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINetworkQueue.m299736389#299736389#0(0"0(0#0#77"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINetworkQueue.m8628595776#2005"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASINetworkQueue.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASINetworkQueue.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3BucketObject.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3BucketObject.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736389.529863
+e299736389.699969
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3BucketObject.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3BucketObject.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3BucketObject.m299736389#299736389#0(0"0(0#0#79"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3BucketObject.m8626958720#2009"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3BucketObject.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3BucketObject.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3ListRequest.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736389.700071
+e299736389.958705
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3ListRequest.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m: In function '-[ASIS3ListRequest bucketObjects]':
+o/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m:84: warning: class 'ASIS3ListRequest' does not implement the 'NSXMLParserDelegate' protocol
+lSLF07#2@86"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m299736389#299736389#0(300"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m: In function '-[ASIS3ListRequest bucketObjects]':/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m:84: warning: class 'ASIS3ListRequest' does not implement the 'NSXMLParserDelegate' protocol1(22@78"Class 'ASIS3ListRequest' does not implement the 'NSXMLParserDelegate' protocol299736389#129#171#0(6@78"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m299618147#84#0#84#0#45"class '*' does not implement the '*' protocol0(0#0#78"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m8622002080#2007"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3ListRequest.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3ListRequest.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3Request.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736389.959053
+e299736390.329447
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3Request.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m: In function '-[ASIS3Request parseError]':
+o/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m:189: warning: class 'ASIS3Request' does not implement the 'NSXMLParserDelegate' protocol
+lSLF07#2@82"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m299736389#299736390#0(282"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m: In function '-[ASIS3Request parseError]':/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m:189: warning: class 'ASIS3Request' does not implement the 'NSXMLParserDelegate' protocol1(22@74"Class 'ASIS3Request' does not implement the 'NSXMLParserDelegate' protocol299736390#118#164#0(6@74"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m299618147#189#0#189#0#45"class '*' does not implement the '*' protocol0(0#0#74"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m8628851392#1999"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/ASIS3Request.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/ASIS3Request.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/AppDelegate_Phone.o /Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736387.831541
+e299736388.329848
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/AppDelegate_Phone.o
+x/Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m: In function '-[AppDelegate_Phone application:didFinishLaunchingWithOptions:]':
+o/Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m:27: warning: implicit declaration of function 'sleep'
+lSLF07#2@68"Compile /Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m299736387#299736388#0(256"/Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m: In function '-[AppDelegate_Phone application:didFinishLaunchingWithOptions:]':/Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m:27: warning: implicit declaration of function 'sleep'1(22@40"Implicit declaration of function 'sleep'299736388#141#115#0(6@60"/Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m299717181#27#0#27#0#36"implicit declaration of function '*'0(0#0#60"/Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m8626924928#1990"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/iPhone/AppDelegate_Phone.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/AppDelegate_Phone.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/Base64Transcoder.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/Base64Transcoder.c normal i386 c com.apple.compilers.gcc.4_2
+s299736390.679544
+e299736390.900012
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/Base64Transcoder.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/Base64Transcoder.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@78"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/Base64Transcoder.c299736390#299736390#0(0"0(0#0#70"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/Base64Transcoder.c8627603040#1945"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-cmqaewbmistxcxehxzzbxlpxuwki/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/Base64Transcoder.c -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/Base64Transcoder.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/CustomLoginPopup.o /Users/dmason/IPHONE/myQuickTweet/CustomLoginPopup.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736391.688104
+e299736391.796166
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/CustomLoginPopup.o
+x/Users/dmason/IPHONE/myQuickTweet/CustomLoginPopup.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/dmason/IPHONE/myQuickTweet/CustomLoginPopup.m299736391#299736391#0(0"0(0#0#52"/Users/dmason/IPHONE/myQuickTweet/CustomLoginPopup.m8628079744#1981"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/CustomLoginPopup.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/CustomLoginPopup.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/EditListViewController.o /Users/dmason/IPHONE/myQuickTweet/EditListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736392.904672
+e299736393.184577
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/EditListViewController.o
+x/Users/dmason/IPHONE/myQuickTweet/EditListViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@66"Compile /Users/dmason/IPHONE/myQuickTweet/EditListViewController.m299736392#299736393#0(0"0(0#0#58"/Users/dmason/IPHONE/myQuickTweet/EditListViewController.m8627555808#1993"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/EditListViewController.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/EditListViewController.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSObject+SBJSON.o /Users/dmason/IPHONE/myQuickTweet/JSON/NSObject+SBJSON.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736392.147080
+e299736392.203203
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSObject+SBJSON.o
+x/Users/dmason/IPHONE/myQuickTweet/JSON/NSObject+SBJSON.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@64"Compile /Users/dmason/IPHONE/myQuickTweet/JSON/NSObject+SBJSON.m299736392#299736392#0(0"0(0#0#56"/Users/dmason/IPHONE/myQuickTweet/JSON/NSObject+SBJSON.m8623332096#1984"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/JSON/NSObject+SBJSON.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSObject+SBJSON.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSString+SBJSON.o /Users/dmason/IPHONE/myQuickTweet/JSON/NSString+SBJSON.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736392.203298
+e299736392.263500
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSString+SBJSON.o
+x/Users/dmason/IPHONE/myQuickTweet/JSON/NSString+SBJSON.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@64"Compile /Users/dmason/IPHONE/myQuickTweet/JSON/NSString+SBJSON.m299736392#299736392#0(0"0(0#0#56"/Users/dmason/IPHONE/myQuickTweet/JSON/NSString+SBJSON.m8622632224#1984"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/JSON/NSString+SBJSON.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSString+SBJSON.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSString+URLEncoding.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/NSString+URLEncoding.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736391.204414
+e299736391.270685
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSString+URLEncoding.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/NSString+URLEncoding.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/NSString+URLEncoding.m299736391#299736391#0(0"0(0#0#67"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/NSString+URLEncoding.m8626773472#2000"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/NSString+URLEncoding.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/NSString+URLEncoding.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAHMAC_SHA1SignatureProvider.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/OAHMAC_SHA1SignatureProvider.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736390.606078
+e299736390.679445
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAHMAC_SHA1SignatureProvider.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/OAHMAC_SHA1SignatureProvider.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@90"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/OAHMAC_SHA1SignatureProvider.m299736390#299736390#0(0"0(0#0#82"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/OAHMAC_SHA1SignatureProvider.m8628572480#2023"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/OAHMAC_SHA1SignatureProvider.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAHMAC_SHA1SignatureProvider.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAuth+UserDefaults.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth+UserDefaults.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736391.602163
+e299736391.687991
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAuth+UserDefaults.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth+UserDefaults.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth+UserDefaults.m299736391#299736391#0(0"0(0#0#65"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth+UserDefaults.m8633876064#1996"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth+UserDefaults.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAuth+UserDefaults.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAuth.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736391.270787
+e299736391.601798
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAuth.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth.m299736391#299736391#0(0"0(0#0#52"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth.m8624318560#1970"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/OAuth.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/OAuth.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/Reachability.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/Reachability2.0/Reachability.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736390.329577
+e299736390.605978
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/Reachability.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/Reachability2.0/Reachability.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@98"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/Reachability2.0/Reachability.m299736390#299736390#0(0"0(0#0#90"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/Reachability2.0/Reachability.m8626862496#2015"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/ASIHTTPRequest/Reachability2.0/Reachability.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/Reachability.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/RootViewController.o /Users/dmason/IPHONE/myQuickTweet/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736391.796338
+e299736392.146980
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/RootViewController.o
+x/Users/dmason/IPHONE/myQuickTweet/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /Users/dmason/IPHONE/myQuickTweet/RootViewController.m299736391#299736392#0(0"0(0#0#54"/Users/dmason/IPHONE/myQuickTweet/RootViewController.m8626113376#1985"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/RootViewController.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/RootViewController.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonBase.o /Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonBase.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736392.263601
+e299736392.359374
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonBase.o
+x/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonBase.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@59"Compile /Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonBase.m299736392#299736392#0(0"0(0#0#51"/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonBase.m8622206048#1974"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonBase.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonBase.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonParser.o /Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonParser.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736392.359485
+e299736392.635796
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonParser.o
+x/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonParser.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonParser.m299736392#299736392#0(0"0(0#0#53"/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonParser.m8628936192#1978"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonParser.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonParser.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonWriter.o /Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonWriter.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736392.635912
+e299736392.838859
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonWriter.o
+x/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonWriter.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonWriter.m299736392#299736392#0(0"0(0#0#53"/Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonWriter.m8628723104#1978"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/JSON/SBJsonWriter.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/SBJsonWriter.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/TwitterLoginPopup.o "/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterLoginPopup.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736387.832604
+e299736388.629508
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/TwitterLoginPopup.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterLoginPopup.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterLoginPopup.m299736387#299736388#0(0"0(0#0#74"/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterLoginPopup.m8625342912#2006"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c "/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterLoginPopup.m" -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/TwitterLoginPopup.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/TwitterWebViewController.o "/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterWebViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736388.330127
+e299736388.436089
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/TwitterWebViewController.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterWebViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@89"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterWebViewController.m299736388#299736388#0(0"0(0#0#81"/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterWebViewController.m8622839264#2020"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c "/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/TwitterWebViewController.m" -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/TwitterWebViewController.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/hmac.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/hmac.c normal i386 c com.apple.compilers.gcc.4_2
+s299736390.900127
+e299736390.956123
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/hmac.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/hmac.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@66"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/hmac.c299736390#299736390#0(0"0(0#0#58"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/hmac.c8633483520#1921"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-cmqaewbmistxcxehxzzbxlpxuwki/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/hmac.c -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/hmac.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/main.o /Users/dmason/IPHONE/myQuickTweet/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s299736392.838958
+e299736392.904555
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/main.o
+x/Users/dmason/IPHONE/myQuickTweet/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@48"Compile /Users/dmason/IPHONE/myQuickTweet/main.m299736392#299736392#0(0"0(0#0#40"/Users/dmason/IPHONE/myQuickTweet/main.m8621726880#1957"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/main.m -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/main.o0#
+
+CCompileC build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/sha1.o /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/sha1.c normal i386 c com.apple.compilers.gcc.4_2
+s299736390.956217
+e299736391.204314
+r1
+xCompileC
+xbuild/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/sha1.o
+x/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/sha1.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@66"Compile /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/sha1.c299736390#299736391#0(0"0(0#0#58"/Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/sha1.c8628653696#1921"    cd /Users/dmason/IPHONE/myQuickTweet    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-generated-files.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-own-target-headers.hmap -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-all-target-headers.hmap -iquote /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/quicktweet-project-headers.hmap -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -I/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/include -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources/i386 -I/Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-cmqaewbmistxcxehxzzbxlpxuwki/PlainOAuth_Prefix.pch -c /Users/dmason/IPHONE/myQuickTweet/OAuth/Guts/Crypto/sha1.c -o /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/sha1.o0#
+
+CCompileXIB /Users/dmason/IPHONE/myQuickTweet/EditListViewController.xib
+s299736386.871822
+e299736387.601640
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/myQuickTweet/EditListViewController.xib
+lSLF07#2@37"CompileXIB EditListViewController.xib299736386#299736387#0(0"0(0#0#60"/Users/dmason/IPHONE/myQuickTweet/EditListViewController.xib8622690112#585"    cd /Users/dmason/IPHONE/myQuickTweet    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/EditListViewController.nib /Users/dmason/IPHONE/myQuickTweet/EditListViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/myQuickTweet/RootViewController.xib
+s299736386.468953
+e299736387.046378
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/myQuickTweet/RootViewController.xib
+lSLF07#2@33"CompileXIB RootViewController.xib299736386#299736387#0(0"0(0#0#56"/Users/dmason/IPHONE/myQuickTweet/RootViewController.xib8621382208#577"    cd /Users/dmason/IPHONE/myQuickTweet    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/RootViewController.nib /Users/dmason/IPHONE/myQuickTweet/RootViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/myQuickTweet/TwitterLoginPopup.xib
+s299736387.046464
+e299736387.831285
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/myQuickTweet/TwitterLoginPopup.xib
+lSLF07#2@32"CompileXIB TwitterLoginPopup.xib299736387#299736387#0(0"0(0#0#55"/Users/dmason/IPHONE/myQuickTweet/TwitterLoginPopup.xib8622059264#575"    cd /Users/dmason/IPHONE/myQuickTweet    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/TwitterLoginPopup.nib /Users/dmason/IPHONE/myQuickTweet/TwitterLoginPopup.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/myQuickTweet/iPhone/MainWindow_Phone.xib
+s299736386.467076
+e299736386.871738
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/myQuickTweet/iPhone/MainWindow_Phone.xib
+lSLF07#2@38"CompileXIB iPhone/MainWindow_Phone.xib299736386#299736386#0(0"0(0#0#61"/Users/dmason/IPHONE/myQuickTweet/iPhone/MainWindow_Phone.xib8621977792#580"    cd /Users/dmason/IPHONE/myQuickTweet    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/MainWindow_Phone.nib /Users/dmason/IPHONE/myQuickTweet/iPhone/MainWindow_Phone.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCopyPlistFile /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Nouns.plist Nouns.plist
+s299736387.605315
+e299736387.727915
+r1
+xCopyPlistFile
+x/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Nouns.plist
+xNouns.plist
+lSLF07#2@16"Copy Nouns.plist299736387#299736387#0(0"0(0#0#45"/Users/dmason/IPHONE/myQuickTweet/Nouns.plist8631740800#382"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copyplist --convert binary1 Nouns.plist --outdir /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
+CCopyPlistFile /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Verbs.plist Verbs.plist
+s299736387.728016
+e299736387.755374
+r1
+xCopyPlistFile
+x/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Verbs.plist
+xVerbs.plist
+lSLF07#2@16"Copy Verbs.plist299736387#299736387#0(0"0(0#0#45"/Users/dmason/IPHONE/myQuickTweet/Verbs.plist8628572832#382"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copyplist --convert binary1 Verbs.plist --outdir /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
+CCpResource build/Archived-iphonesimulator/quicktweet.app/Default.png Default.png
+s299736387.755462
+e299736387.761582
+r1
+xCpResource
+xbuild/Archived-iphonesimulator/quicktweet.app/Default.png
+xDefault.png
+lSLF07#2@16"Copy Default.png299736387#299736387#0(0"0(0#0#45"/Users/dmason/IPHONE/myQuickTweet/Default.png8627965152#467"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/dmason/IPHONE/myQuickTweet/Default.png /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
+CCpResource build/Archived-iphonesimulator/quicktweet.app/icon.png icon.png
+s299736387.756863
+e299736387.761374
+r1
+xCpResource
+xbuild/Archived-iphonesimulator/quicktweet.app/icon.png
+xicon.png
+lSLF07#2@13"Copy icon.png299736387#299736387#0(0"0(0#0#42"/Users/dmason/IPHONE/myQuickTweet/icon.png8627799008#464"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/dmason/IPHONE/myQuickTweet/icon.png /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
+CCpResource build/Archived-iphonesimulator/quicktweet.app/icon_hd.png icon_hd.png
+s299736387.601738
+e299736387.608509
+r1
+xCpResource
+xbuild/Archived-iphonesimulator/quicktweet.app/icon_hd.png
+xicon_hd.png
+lSLF07#2@16"Copy icon_hd.png299736387#299736387#0(0"0(0#0#45"/Users/dmason/IPHONE/myQuickTweet/icon_hd.png8634134688#467"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/dmason/IPHONE/myQuickTweet/icon_hd.png /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
+CCpResource build/Archived-iphonesimulator/quicktweet.app/quicktweet_lg.png quicktweet_lg.png
+s299736387.602810
+e299736387.610050
+r1
+xCpResource
+xbuild/Archived-iphonesimulator/quicktweet.app/quicktweet_lg.png
+xquicktweet_lg.png
+lSLF07#2@22"Copy quicktweet_lg.png299736387#299736387#0(0"0(0#0#51"/Users/dmason/IPHONE/myQuickTweet/quicktweet_lg.png8634923072#473"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/dmason/IPHONE/myQuickTweet/quicktweet_lg.png /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
+CCpResource build/Archived-iphonesimulator/quicktweet.app/settings.png settings.png
+s299736387.603452
+e299736387.613877
+r1
+xCpResource
+xbuild/Archived-iphonesimulator/quicktweet.app/settings.png
+xsettings.png
+lSLF07#2@17"Copy settings.png299736387#299736387#0(0"0(0#0#46"/Users/dmason/IPHONE/myQuickTweet/settings.png8622792512#468"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/dmason/IPHONE/myQuickTweet/settings.png /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
+CCpResource build/Archived-iphonesimulator/quicktweet.app/signinBullet1.png signinBullet1.png
+s299736387.604086
+e299736387.620099
+r1
+xCpResource
+xbuild/Archived-iphonesimulator/quicktweet.app/signinBullet1.png
+xsigninBullet1.png
+lSLF07#2@22"Copy signinBullet1.png299736387#299736387#0(0"0(0#0#51"/Users/dmason/IPHONE/myQuickTweet/signinBullet1.png8621746784#473"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/dmason/IPHONE/myQuickTweet/signinBullet1.png /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
+CCpResource build/Archived-iphonesimulator/quicktweet.app/signinBullet2.png signinBullet2.png
+s299736387.604664
+e299736387.622972
+r1
+xCpResource
+xbuild/Archived-iphonesimulator/quicktweet.app/signinBullet2.png
+xsigninBullet2.png
+lSLF07#2@22"Copy signinBullet2.png299736387#299736387#0(0"0(0#0#51"/Users/dmason/IPHONE/myQuickTweet/signinBullet2.png8633353536#473"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/dmason/IPHONE/myQuickTweet/signinBullet2.png /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
+CCpResource build/Archived-iphonesimulator/quicktweet.app/signinSeparator.png "OAuth/User Interface/Resources/signinSeparator.png"
+s299736386.468155
+e299736386.522907
+r1
+xCpResource
+xbuild/Archived-iphonesimulator/quicktweet.app/signinSeparator.png
+xOAuth/User Interface/Resources/signinSeparator.png
+lSLF07#2@55"Copy OAuth/User Interface/Resources/signinSeparator.png299736386#299736386#0(0"0(0#0#84"/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/Resources/signinSeparator.png8621731584#508"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks "/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/Resources/signinSeparator.png" /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
+CGenerateDSYMFile /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app.dSYM /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/quicktweet
+s299736397.532377
+e299736397.584167
+r1
+xGenerateDSYMFile
+x/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app.dSYM
+x/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/quicktweet
+lSLF07#2@124"GenerateDSYMFile build/Archived-iphonesimulator/quicktweet.app.dSYM build/Archived-iphonesimulator/quicktweet.app/quicktweet299736397#299736397#0(0"0(0#0#90"/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/quicktweet8622010208#383"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/quicktweet -o /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app.dSYM0#
+
+CLd /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/quicktweet normal i386
+s299736397.452950
+e299736397.532263
+r1
+xLd
+x/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/quicktweet
+xnormal
+xi386
+lSLF07#2@95"Link /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/quicktweet299736397#299736397#0(0"0(0#0#0"8628327616#994"    cd /Users/dmason/IPHONE/myQuickTweet    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -F/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator -filelist /Users/dmason/IPHONE/myQuickTweet/build/PlainOAuth.build/Archived-iphonesimulator/QuickTweet.build/Objects-normal/i386/quicktweet.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework CFNetwork -lz.1.2.3 -framework SystemConfiguration -framework iAd -framework iAd -o /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/quicktweet0#
+
+CProcessInfoPlistFile /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Info.plist PlainOAuth-Info.plist
+s299736386.459964
+e299736386.466995
+r1
+xProcessInfoPlistFile
+x/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Info.plist
+xPlainOAuth-Info.plist
+lSLF07#2@29"Process PlainOAuth-Info.plist299736386#299736386#0(0"0(0#0#55"/Users/dmason/IPHONE/myQuickTweet/PlainOAuth-Info.plist8633521728#479"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility PlainOAuth-Info.plist -genpkginfo /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app/Info.plist0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-cmqaewbmistxcxehxzzbxlpxuwki/PlainOAuth_Prefix.pch.gch PlainOAuth_Prefix.pch normal i386 c com.apple.compilers.gcc.4_2
+r0
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/PlainOAuth_Prefix-heysejkjiwrzeoatahqmkuwphqzc/PlainOAuth_Prefix.pch.gch PlainOAuth_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CTouch /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app
+s299736397.584258
+e299736397.590076
+r1
+xTouch
+x/Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app
+lSLF07#2@85"Touch /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app299736397#299736397#0(0"0(0#0#0"8621340320#274"    cd /Users/dmason/IPHONE/myQuickTweet    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dmason/IPHONE/myQuickTweet/build/Archived-iphonesimulator/quicktweet.app0#
+
