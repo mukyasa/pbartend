@@ -346,7 +346,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
     scrollView.frame = scrollFrame;
-    [UIView commitAnimations];
+    [UIView commitAnimations]; 
 
 }
 
