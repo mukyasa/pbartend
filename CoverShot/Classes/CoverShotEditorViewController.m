@@ -46,7 +46,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	UIActionSheet *actionSheet;
 	
 	if(isCamera)
-		actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose your photo source." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Camera W/Overlay", @"Photo Library", nil];
+		actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose your photo source." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Camera w/Overlay", @"Photo Library", nil];
 	else
 		actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose your photo source." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Photo Library", nil];
 		
@@ -242,31 +242,47 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 - (void)handleSingleTapFrom:(UITapGestureRecognizer *)recognizer
 {
-	//NSLog(@"Single Tap");
-	[self moveNavViewOnscreen];//show main nav
-	[self movePickerOffScreen];//hide picker
-	[self setUpImageState:NO];
+	
+		//NSLog(@"single FLIPPED: %i",didFlip);
+		//[self moveNavViewOnscreen];//show main nav
+		[self movePickerOffScreen];//hide picker
+		//[self setUpImageState:NO];
+	
 }
 
 - (void)handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer
 {
 	
-	[self moveNavViewOffscreen];
 	[self movePickerOffScreen];//hide picker
-	//flip
-	if(!didFlip){
-		NSLog(@"FLIPPED");
-		previewImageView.transform = CGAffineTransformScale(previewImageView.transform,-1.0, 1.0);
-		didFlip=YES;
+	
+	if (recognizer.state == UIGestureRecognizerStateBegan) 
+	{
+		quartzView.hidden=YES;
+		
 	}
-	else {	
-		NSLog(@"FLIPPED BACK");
-		previewImageView.transform = CGAffineTransformScale(previewImageView.transform,-1.0, 1.0);
-		didFlip=NO;
+	else if(recognizer.state == UIGestureRecognizerStateEnded)
+	{
+		//flip
+		if(!didFlip){
+			//NSLog(@"FLIPPED: %i",didFlip);
+			previewImageView.transform = CGAffineTransformScale(previewImageView.transform,-1.0, 1.0);
+			didFlip=YES;
+		}
+		else {	
+			//NSLog(@"FLIPPED BACK: %i",didFlip);
+			previewImageView.transform = CGAffineTransformScale(previewImageView.transform,-1.0, 1.0);
+			didFlip=NO;
+		}
+		
+		[self moveNavViewOnscreen];//show main nav
+		[self movePickerOffScreen];//hide picker
+		[self setUpImageState:NO];
 	}
 	
 	
-
+	
+			
+	
 }
 
 
@@ -283,7 +299,9 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	}
 	else if(recognizer.state == UIGestureRecognizerStateEnded)
 	{
-		//[self setUpImageState:NO];
+		[self moveNavViewOnscreen];//show main nav
+		[self movePickerOffScreen];//hide picker
+		[self setUpImageState:NO];
 	}
 	
 	previewImageView.transform = CGAffineTransformScale(previewImageView.transform, (recognizer.scale / beginGestureScale), (recognizer.scale / beginGestureScale));
@@ -306,6 +324,12 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		inImage = [self point:startPoint inView:previewImageView];
 		oldX = 0;
 		oldY = 0;
+	}
+	else if(recognizer.state == UIGestureRecognizerStateEnded)
+	{
+		[self moveNavViewOnscreen];//show main nav
+		[self movePickerOffScreen];//hide picker
+		[self setUpImageState:NO];
 	}
 	
 	if (inImage) {
@@ -341,7 +365,9 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	}
 	else if(recognizer.state == UIGestureRecognizerStateEnded)
 	{
-		//[self setUpImageState:NO];
+		[self moveNavViewOnscreen];//show main nav
+		[self movePickerOffScreen];//hide picker
+		[self setUpImageState:NO];
 	}
 	if(didFlip)
 		previewImageView.transform = CGAffineTransformRotate(previewImageView.transform, -(recognizer.rotation - beginGestureRotationRadians));
