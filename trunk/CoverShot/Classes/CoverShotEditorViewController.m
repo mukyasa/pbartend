@@ -279,10 +279,6 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		[self setUpImageState:NO];
 	}
 	
-	
-	
-			
-	
 }
 
 
