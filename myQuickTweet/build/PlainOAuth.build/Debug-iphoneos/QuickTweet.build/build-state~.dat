@@ -1,0 +1,200 @@
+TQuickTweet
+v7
+r1
+cCheck dependencies
+
+N/Users/dmason/IPHONE/myQuickTweet/Default.png
+c000000004C2CF130000000000001780C
+t1278013744
+s96268
+
+N/Users/dmason/IPHONE/myQuickTweet/EditListViewController.xib
+c000000004C2BF4FE000000000000A1AF
+t1277949182
+s41391
+
+N/Users/dmason/IPHONE/myQuickTweet/Nouns.plist
+c000000004C2BF98200000000000004AE
+t1277950338
+s1198
+
+N/Users/dmason/IPHONE/myQuickTweet/OAuth/User Interface/Resources/signinSeparator.png
+c000000004C2B97E200000000000000BE
+t1277925346
+s190
+
+N/Users/dmason/IPHONE/myQuickTweet/RootViewController.xib
+c000000004C2CF7450000000000008B8F
+t1278015301
+s35727
+
+N/Users/dmason/IPHONE/myQuickTweet/TwitterLoginPopup.xib
+c000000004C2B9A78000000000000A5D8
+t1277926008
+s42456
+
+N/Users/dmason/IPHONE/myQuickTweet/Verbs.plist
+c000000004C2BF98200000000000004AC
+t1277950338
+s1196
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/Default.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/EditListViewController.nib
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/Info.plist
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/MainWindow_Phone.nib
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/Nouns.plist
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/PkgInfo
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/RootViewController.nib
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/TwitterLoginPopup.nib
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/Verbs.plist
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/icon.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/icon_hd.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/quicktweet_lg.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/settings.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/signinBullet1.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/signinBullet2.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/signinSeparator.png
+t2
+s0
+
+N/Users/dmason/IPHONE/myQuickTweet/iPhone/MainWindow_Phone.xib
+c000000004C2CD9830000000000004849
+t1278007683
+s18505
+
+N/Users/dmason/IPHONE/myQuickTweet/icon.png
+c000000004C2D392A00000000000015AB
+t1278032170
+s5547
+
+N/Users/dmason/IPHONE/myQuickTweet/icon_hd.png
+c000000004C2B97E50000000000002590
+t1277925349
+s9616
+
+N/Users/dmason/IPHONE/myQuickTweet/quicktweet_lg.png
+c000000004C2CF7150000000000007F1A
+t1278015253
+s32538
+
+N/Users/dmason/IPHONE/myQuickTweet/settings.png
+c000000004C2B97E50000000000003F57
+t1277925349
+s16215
+
+N/Users/dmason/IPHONE/myQuickTweet/signinBullet1.png
+c000000004C2B97E5000000000000025A
+t1277925349
+s602
+
+N/Users/dmason/IPHONE/myQuickTweet/signinBullet2.png
+c000000004C2B97E500000000000002E1
+t1277925349
+s737
+
+NPlainOAuth-Info.plist
+c000000004C3A8F6900000000000005A8
+t1278906217
+s1448
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies301003357#301003357#0(66"[BEROR]error: There is no SDK with the name or path 'iphoneos4.0'1(4@58"error: There is no SDK with the name or path 'iphoneos4.0'301003357#18446744073709551615#0#0(1@0"0(0#1#0"3343187568374212096#0"0#
+
+CCompileXIB /Users/dmason/IPHONE/myQuickTweet/EditListViewController.xib
+r0
+
+CCompileXIB /Users/dmason/IPHONE/myQuickTweet/RootViewController.xib
+r0
+
+CCompileXIB /Users/dmason/IPHONE/myQuickTweet/TwitterLoginPopup.xib
+r0
+
+CCompileXIB /Users/dmason/IPHONE/myQuickTweet/iPhone/MainWindow_Phone.xib
+r0
+
+CCopyPNGFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/Default.png" Default.png
+r0
+
+CCopyPNGFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/icon.png" icon.png
+r0
+
+CCopyPNGFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/icon_hd.png" icon_hd.png
+r0
+
+CCopyPNGFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/quicktweet_lg.png" quicktweet_lg.png
+r0
+
+CCopyPNGFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/settings.png" settings.png
+r0
+
+CCopyPNGFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/signinBullet1.png" signinBullet1.png
+r0
+
+CCopyPNGFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/signinBullet2.png" signinBullet2.png
+r0
+
+CCopyPNGFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/signinSeparator.png" "OAuth/User Interface/Resources/signinSeparator.png"
+r0
+
+CCopyPlistFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/Nouns.plist" Nouns.plist
+r0
+
+CCopyPlistFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/Verbs.plist" Verbs.plist
+r0
+
+CProcessInfoPlistFile "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app/Info.plist" PlainOAuth-Info.plist
+r0
+
+CTouch "/Users/dmason/IPHONE/myQuickTweet/build/Debug-iphoneos/Quick Tweet.app"
+r0
+
