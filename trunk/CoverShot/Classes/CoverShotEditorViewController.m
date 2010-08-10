@@ -83,7 +83,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 		if (buttonIndex == 1) //camera with over lay
 		{
 			
-			UIImage *image = parentPreviewImageView.image;//[UIImage imageNamed:@"clearcover1.png"] ;
+			UIImage *image = parentPreviewImageView.image;
 			UIImageView *imgView = [[UIImageView alloc] initWithImage:image] ;
 			imgView.contentMode = UIViewContentModeScaleAspectFill;
 			imgView.alpha=.5;
