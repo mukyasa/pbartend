@@ -1,0 +1,1308 @@
+TTheScream
+v7
+r0
+t303167659.726044
+cCheck dependencies
+cCpResource build/Debug-iphoneos/TheScream.app/ResourceRules.plist /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+cProcessInfoPlistFile "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/Info.plist" TheScream-Info.plist
+cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/FlipsideView.xib"
+cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/MainView.xib"
+cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/MainWindow.xib"
+cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutView.xib"
+cCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/Icon.png" Icon.png
+cCpResource build/Debug-iphoneos/TheScream.app/scream.jpg scream.jpg
+cCpResource build/Debug-iphoneos/TheScream.app/screamshutup.wav screamshutup.wav
+cCpResource build/Debug-iphoneos/TheScream.app/screamwhat.wav screamwhat.wav
+cCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/Default.png" Default.png
+cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-hhpgofdahboeewavobrozszfskyv/TheScream_Prefix.pch.gch TheScream_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-dprqvkrsnusbblamlssqizbcshpd/TheScream_Prefix.pch.gch TheScream_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/main.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScreamAppDelegate.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/FlipsideViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/AboutViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/main.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScreamAppDelegate.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream" normal armv6
+cCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/FlipsideViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/AboutViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream" normal armv7
+cCreateUniversalBinary "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/TheScream" normal "armv6 armv7"
+cGenerateDSYMFile "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app.dSYM" "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/TheScream"
+cProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision" "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision"
+cTouch "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app"
+cProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent"
+cCodeSign "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app"
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk
+c000000004C5557950000000000000110
+t1280661397
+s272
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist
+c000000004C4FD4F300000000000001A7
+t1280300275
+s423
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+c000000004C4FD4F300000000000001E5
+t1280300275
+s485
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c000000004C50F84F00000000003E3000
+t1280374863
+s4075520
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioServices.h
+c000000004C50F8240000000000010AAD
+t1280374820
+s68269
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C4FECE20000000000345EC0
+t1280306402
+s3432128
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C4FED7D00000000003E1EF0
+t1280306557
+s4071152
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C4FED690000000000001466
+t1280306537
+s5222
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C52589E00000000000009CD
+t1280465054
+s2509
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C5259730000000002EBC010
+t1280465267
+s49004560
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/iAd.framework/iAd
+c000000004C525D35000000000009BAD0
+t1280466229
+s637648
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/usr/include/Availability.h
+c000000004C4FEE3F0000000000001A5C
+t1280306751
+s6748
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk
+c000000004C05C1B10000000000000110
+t1275445681
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
+c000000004BF4B7F900000000000001A7
+t1274329081
+s423
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+c000000004BF4B7F900000000000001E5
+t1274329081
+s485
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c000000004BFF3B9E000000000037E540
+t1275018142
+s3663168
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioServices.h
+c000000004BFF3B700000000000010A78
+t1275018096
+s68216
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFE06FA000000000034A850
+t1274939130
+s3450960
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFE07D200000000003E1EB0
+t1274939346
+s4071088
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFE07B10000000000001466
+t1274939313
+s5222
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C04711400000000000009CD
+t1275359508
+s2509
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471FC0000000002D563E0
+t1275359740
+s47539168
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/iAd.framework/iAd
+c000000004C04821B0000000000080FB0
+t1275363867
+s528304
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/Availability.h
+c000000004BF4D50E0000000000001A3B
+t1274336526
+s6715
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutView.xib
+c000000004C16FBEF00000000000061B9
+t1276574703
+s25017
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.h
+c000000004C16F96F00000000000002C6
+t1276574063
+s710
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m
+c000000004C16FC150000000000000BD4
+t1276574741
+s3028
+i"AboutViewController.h"
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.h
+c000000004C225FD100000000000002E9
+t1277321169
+s745
+i<UIKit/UIKit.h>
+i"AboutViewController.h"
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m
+c000000004C16FCC300000000000007A0
+t1276574915
+s1952
+i"FlipsideViewController.h"
+i<AudioToolbox/AudioServices.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.h
+c000000004C16FF6A0000000000000230
+t1276575594
+s560
+i"FlipsideViewController.h"
+i"AboutViewController.h"
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m
+c000000004C16FF9B000000000000093A
+t1276575643
+s2362
+i"MainViewController.h"
+i<AudioToolbox/AudioServices.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.h
+c000000004C16B3E300000000000001D7
+t1276556259
+s471
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m
+c000000004C16B3E30000000000000A97
+t1276556259
+s2711
+i"TheScreamAppDelegate.h"
+i"MainViewController.h"
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Default.png
+c000000004C171EE8000000000003714D
+t1276583656
+s225613
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/FlipsideView.xib
+c000000004C1717C300000000000076EA
+t1276581827
+s30442
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Icon.png
+c000000004C2909D70000000000005A02
+t1277757911
+s23042
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/MainView.xib
+c000000004C1717C800000000000082DC
+t1276581832
+s33500
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/MainWindow.xib
+c000000004C1658D800000000000050A0
+t1276532952
+s20640
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/TheScream_Prefix.pch
+c000000004C1714980000000000000144
+t1276581016
+s324
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app
+t1281474859
+s612
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app.dSYM
+t1281474859
+s102
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/AboutView.nib
+t1276584628
+s1464
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/Default.png
+t1276584628
+s205809
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/FlipsideView.nib
+t1276584626
+s2558
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/Icon.png
+t1277757932
+s27801
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/Info.plist
+t1276584625
+s746
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/MainView.nib
+t1276584626
+s3000
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/MainWindow.nib
+t1276584627
+s1151
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/PkgInfo
+t1276584625
+s8
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/ResourceRules.plist
+t1281474856
+s485
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/TheScream
+t1281474859
+s69180
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision
+t1281474859
+s7238
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/scream.jpg
+t1276584627
+s54658
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/screamshutup.wav
+t1276584627
+s36468
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/screamwhat.wav
+t1276584627
+s37708
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/AboutViewController.o
+t1281474858
+s53844
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/FlipsideViewController.o
+t1281474858
+s42300
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController.o
+t1281474858
+s42080
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream
+t1281474858
+s32316
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream.LinkFileList
+c000000004C61C12800000000000002BA
+t1281474856
+s698
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScreamAppDelegate.o
+t1281474858
+s47776
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/main.o
+t1281474858
+s6536
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/AboutViewController.o
+t1281474858
+s53548
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/FlipsideViewController.o
+t1281474858
+s42172
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController.o
+t1281474858
+s41956
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream
+t1281474858
+s32316
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream.LinkFileList
+c000000004C61C12800000000000002BA
+t1281474856
+s698
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScreamAppDelegate.o
+t1281474858
+s47696
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/main.o
+t1281474858
+s6520
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent
+t1281474859
+s442
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m
+c000000004C171498000000000000015E
+t1276581016
+s350
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/scream.jpg
+c000000004C1658D8000000000000D582
+t1276532952
+s54658
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/screamshutup.wav
+c000000004C1658D80000000000008E74
+t1276532952
+s36468
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/screamwhat.wav
+c000000004C1658D8000000000000934C
+t1276532952
+s37708
+
+N/Users/dmason/IPHONE/TheScream/AboutView.xib
+c000000004C16FBEF00000000000061B9
+t1276574703
+s25017
+
+N/Users/dmason/IPHONE/TheScream/AboutViewController.h
+c000000004C16F96F00000000000002C6
+t1276574063
+s710
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/TheScream/AboutViewController.m
+c000000004C16FC150000000000000BD4
+t1276574741
+s3028
+i"AboutViewController.h"
+
+N/Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.h
+c000000004C225FD100000000000002E9
+t1277321169
+s745
+i<UIKit/UIKit.h>
+i"AboutViewController.h"
+
+N/Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m
+c000000004C16FCC300000000000007A0
+t1276574915
+s1952
+i"FlipsideViewController.h"
+i<AudioToolbox/AudioServices.h>
+
+N/Users/dmason/IPHONE/TheScream/Classes/MainViewController.h
+c000000004C16FF6A0000000000000230
+t1276575594
+s560
+i"FlipsideViewController.h"
+i"AboutViewController.h"
+
+N/Users/dmason/IPHONE/TheScream/Classes/MainViewController.m
+c000000004C16FF9B000000000000093A
+t1276575643
+s2362
+i"MainViewController.h"
+i<AudioToolbox/AudioServices.h>
+
+N/Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.h
+c000000004C16B3E300000000000001D7
+t1276556259
+s471
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m
+c000000004C16B3E30000000000000A97
+t1276556259
+s2711
+i"TheScreamAppDelegate.h"
+i"MainViewController.h"
+
+N/Users/dmason/IPHONE/TheScream/Default.png
+c000000004C171EE8000000000003714D
+t1276583656
+s225613
+
+N/Users/dmason/IPHONE/TheScream/FlipsideView.xib
+c000000004C1717C300000000000076EA
+t1276581827
+s30442
+
+N/Users/dmason/IPHONE/TheScream/Icon.png
+c000000004C2909D70000000000005A02
+t1277757911
+s23042
+
+N/Users/dmason/IPHONE/TheScream/MainView.xib
+c000000004C1717C800000000000082DC
+t1276581832
+s33500
+
+N/Users/dmason/IPHONE/TheScream/MainViewController.h
+c000000004C16FF6A0000000000000230
+t1276575594
+s560
+i"FlipsideViewController.h"
+i"AboutViewController.h"
+
+N/Users/dmason/IPHONE/TheScream/MainViewController.m
+c000000004C16FF9B000000000000093A
+t1276575643
+s2362
+i"MainViewController.h"
+i<AudioToolbox/AudioServices.h>
+
+N/Users/dmason/IPHONE/TheScream/MainWindow.xib
+c000000004C1658D800000000000050A0
+t1276532952
+s20640
+
+N/Users/dmason/IPHONE/TheScream/TheScream_Prefix.pch
+c000000004C1714980000000000000144
+t1276581016
+s324
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app
+t1277757932
+s612
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app.dSYM
+t1277348908
+s102
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/AboutView.nib
+t1276584628
+s1464
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Default.png
+t1276584628
+s205809
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/FlipsideView.nib
+t1276584626
+s2558
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Icon.png
+t1277757932
+s27801
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Info.plist
+t1276584625
+s746
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/MainView.nib
+t1276584626
+s3000
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/MainWindow.nib
+t1276584627
+s1151
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/PkgInfo
+t1276584625
+s8
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/ResourceRules.plist
+t1276584625
+s485
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/TheScream
+t1277348908
+s83216
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision
+t1277757932
+s7166
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/scream.jpg
+t1276584627
+s54658
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/screamshutup.wav
+t1276584627
+s36468
+
+N/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/screamwhat.wav
+t1276584627
+s37708
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/AboutViewController.o
+t1276584629
+s53416
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/FlipsideViewController.o
+t1277348907
+s41836
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController-146CEC3A19161352.o
+t2
+s0
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController-6F99E0C2E294BD77.o
+t2
+s0
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController.o
+t1277348907
+s41612
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream
+t1277348907
+s32172
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream.LinkFileList
+c000000004C1722B1000000000000026F
+t1276584625
+s623
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScreamAppDelegate.o
+t1277348907
+s47344
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/main.o
+t1276584629
+s6424
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/AboutViewController.o
+t1276584630
+s53120
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/FlipsideViewController.o
+t1277348908
+s41708
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController-146CEC3A19161352.o
+t2
+s0
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController-6F99E0C2E294BD77.o
+t2
+s0
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController.o
+t1277348908
+s41488
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream
+t1277348908
+s32172
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream.LinkFileList
+c000000004C1722B1000000000000026F
+t1276584625
+s623
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScreamAppDelegate.o
+t1277348908
+s47264
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/main.o
+t1276584629
+s6408
+
+N/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent
+t1276584630
+s442
+
+N/Users/dmason/IPHONE/TheScream/main.m
+c000000004C171498000000000000015E
+t1276581016
+s350
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/TheScream/scream.jpg
+c000000004C1658D8000000000000D582
+t1276532952
+s54658
+
+N/Users/dmason/IPHONE/TheScream/screamshutup.wav
+c000000004C1658D80000000000008E74
+t1276532952
+s36468
+
+N/Users/dmason/IPHONE/TheScream/screamwhat.wav
+c000000004C1658D8000000000000934C
+t1276532952
+s37708
+
+N/Users/dmason/Library/MobileDevice/Provisioning Profiles/07B577AE-5FF2-40C9-B178-B2B470859F6F.mobileprovision
+c000000004C22CDDF0000000000001BFE
+t1277349343
+s7166
+
+N/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision
+c000000004C3E7FAF0000000000001C46
+t1279164335
+s7238
+
+N/Users/dmason/Library/MobileDevice/Provisioning Profiles/D6ED93EA-9501-4361-A9C5-88E790A2D0C0.mobileprovision
+c000000004C17229F0000000000001BF8
+t1276584607
+s7160
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-bqkdmralhdkylchfjnouuhogwhik/TheScream_Prefix.pch.gch
+t1276584629
+s10290736
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-dprqvkrsnusbblamlssqizbcshpd/TheScream_Prefix.pch.gch
+t1281474858
+s10298928
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-gylcrkkosblbuugfwwluozsflexq/TheScream_Prefix.pch.gch
+t1276584629
+s9831984
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-hhpgofdahboeewavobrozszfskyv/TheScream_Prefix.pch.gch
+t1281474857
+s9831984
+
+NTheScream-Info.plist
+c000000004C171BF60000000000000393
+t1276582902
+s915
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies303167656#303167656#0(0"0(0#1#0"8316866959939824640#0"0#
+
+CCodeSign "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app"
+s303167659.365315
+e303167659.725991
+r1
+xCodeSign
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app
+lSLF07#2@43"CodeSign build/Debug-iphoneos/TheScream.app303167659#303167659#0(0"0(0#0#80"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app8606054080#751"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Darren Mason (J4HX2LYKXS)" "--resource-rules=/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/ResourceRules.plist" --entitlements "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent" "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app"0#
+
+CCodeSign /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app
+s299450732.113465
+e299450732.657296
+r1
+xCodeSign
+x/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app
+o/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app: replacing existing signature
+lSLF07#2@43"CodeSign build/Debug-iphoneos/TheScream.app299450732#299450732#0(96"/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app: replacing existing signature0(0#0#65"/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app8625626368#626"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Darren Mason (J4HX2LYKXS)" --resource-rules=/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/ResourceRules.plist --entitlements /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/AboutViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303167658.332500
+e303167658.439807
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/AboutViewController.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m303167658#303167658#0(0"0(0#0#67"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m8606341888#1976"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-hhpgofdahboeewavobrozszfskyv/TheScream_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/AboutViewController.o"0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/AboutViewController.o /Users/dmason/IPHONE/TheScream/AboutViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s298277429.790671
+e298277429.973348
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/AboutViewController.o
+x/Users/dmason/IPHONE/TheScream/AboutViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/dmason/IPHONE/TheScream/AboutViewController.m298277429#298277429#0(0"0(0#0#52"/Users/dmason/IPHONE/TheScream/AboutViewController.m8619610496#1713"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-gylcrkkosblbuugfwwluozsflexq/TheScream_Prefix.pch -c /Users/dmason/IPHONE/TheScream/AboutViewController.m -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/AboutViewController.o0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/FlipsideViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303167658.234243
+e303167658.333553
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/FlipsideViewController.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@86"Compile /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m303167658#303167658#0(0"0(0#0#78"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m8606852640#1990"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-hhpgofdahboeewavobrozszfskyv/TheScream_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/FlipsideViewController.o"0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/FlipsideViewController.o /Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s299041707.755959
+e299041707.857788
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/FlipsideViewController.o
+x/Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m299041707#299041707#0(0"0(0#0#63"/Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m8622826624#1727"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-gylcrkkosblbuugfwwluozsflexq/TheScream_Prefix.pch -c /Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/FlipsideViewController.o0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController-146CEC3A19161352.o /Users/dmason/IPHONE/TheScream/MainViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController-6F99E0C2E294BD77.o /Users/dmason/IPHONE/TheScream/Classes/MainViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303167658.233093
+e303167658.332395
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m303167658#303167658#0(0"0(0#0#74"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m8606234720#1982"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-hhpgofdahboeewavobrozszfskyv/TheScream_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController.o"0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController.o /Users/dmason/IPHONE/TheScream/Classes/MainViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s299041707.341873
+e299041707.776523
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController.o
+x/Users/dmason/IPHONE/TheScream/Classes/MainViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/dmason/IPHONE/TheScream/Classes/MainViewController.m299041707#299041707#0(0"0(0#0#59"/Users/dmason/IPHONE/TheScream/Classes/MainViewController.m8606960608#1719"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-gylcrkkosblbuugfwwluozsflexq/TheScream_Prefix.pch -c /Users/dmason/IPHONE/TheScream/Classes/MainViewController.m -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/MainViewController.o0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScreamAppDelegate.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303167658.127777
+e303167658.234160
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScreamAppDelegate.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@84"Compile /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m303167658#303167658#0(0"0(0#0#76"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m8599555360#1986"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-hhpgofdahboeewavobrozszfskyv/TheScream_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScreamAppDelegate.o"0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScreamAppDelegate.o /Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s299041707.339812
+e299041707.755841
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScreamAppDelegate.o
+x/Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m299041707#299041707#0(0"0(0#0#61"/Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m8614799392#1723"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-gylcrkkosblbuugfwwluozsflexq/TheScream_Prefix.pch -c /Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScreamAppDelegate.o0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/main.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m" normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303167658.126503
+e303167658.232988
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/main.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m303167658#303167658#0(0"0(0#0#52"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m8604056224#1946"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-hhpgofdahboeewavobrozszfskyv/TheScream_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/main.o"0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/main.o /Users/dmason/IPHONE/TheScream/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s298277429.545946
+e298277429.611976
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/main.o
+x/Users/dmason/IPHONE/TheScream/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Compile /Users/dmason/IPHONE/TheScream/main.m298277429#298277429#0(0"0(0#0#37"/Users/dmason/IPHONE/TheScream/main.m8617729376#1683"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-gylcrkkosblbuugfwwluozsflexq/TheScream_Prefix.pch -c /Users/dmason/IPHONE/TheScream/main.m -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/main.o0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/AboutViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303167658.632708
+e303167658.713778
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/AboutViewController.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m303167658#303167658#0(0"0(0#0#67"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m8606234912#1976"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-dprqvkrsnusbblamlssqizbcshpd/TheScream_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/AboutViewController.o"0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/AboutViewController.o /Users/dmason/IPHONE/TheScream/AboutViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s298277430.179149
+e298277430.289257
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/AboutViewController.o
+x/Users/dmason/IPHONE/TheScream/AboutViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/dmason/IPHONE/TheScream/AboutViewController.m298277430#298277430#0(0"0(0#0#52"/Users/dmason/IPHONE/TheScream/AboutViewController.m8592981216#1713"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-bqkdmralhdkylchfjnouuhogwhik/TheScream_Prefix.pch -c /Users/dmason/IPHONE/TheScream/AboutViewController.m -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/AboutViewController.o0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/FlipsideViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303167658.555979
+e303167658.632598
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/FlipsideViewController.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@86"Compile /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m303167658#303167658#0(0"0(0#0#78"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m8607251424#1990"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-dprqvkrsnusbblamlssqizbcshpd/TheScream_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/FlipsideViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/FlipsideViewController.o"0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/FlipsideViewController.o /Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s299041708.224258
+e299041708.357729
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/FlipsideViewController.o
+x/Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m299041708#299041708#0(0"0(0#0#63"/Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m8622657504#1727"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-bqkdmralhdkylchfjnouuhogwhik/TheScream_Prefix.pch -c /Users/dmason/IPHONE/TheScream/Classes/FlipsideViewController.m -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/FlipsideViewController.o0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController-146CEC3A19161352.o /Users/dmason/IPHONE/TheScream/MainViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController-6F99E0C2E294BD77.o /Users/dmason/IPHONE/TheScream/Classes/MainViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303167658.489041
+e303167658.555876
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m303167658#303167658#0(0"0(0#0#74"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m8607574336#1982"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-dprqvkrsnusbblamlssqizbcshpd/TheScream_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/MainViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController.o"0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController.o /Users/dmason/IPHONE/TheScream/Classes/MainViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s299041707.902124
+e299041708.239043
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController.o
+x/Users/dmason/IPHONE/TheScream/Classes/MainViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/dmason/IPHONE/TheScream/Classes/MainViewController.m299041707#299041708#0(0"0(0#0#59"/Users/dmason/IPHONE/TheScream/Classes/MainViewController.m8621612032#1719"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-bqkdmralhdkylchfjnouuhogwhik/TheScream_Prefix.pch -c /Users/dmason/IPHONE/TheScream/Classes/MainViewController.m -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/MainViewController.o0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScreamAppDelegate.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303167658.392116
+e303167658.488939
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScreamAppDelegate.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@84"Compile /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m303167658#303167658#0(0"0(0#0#76"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m8607573824#1986"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-dprqvkrsnusbblamlssqizbcshpd/TheScream_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/Classes/TheScreamAppDelegate.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScreamAppDelegate.o"0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScreamAppDelegate.o /Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s299041707.776843
+e299041708.224161
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScreamAppDelegate.o
+x/Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m299041707#299041708#0(0"0(0#0#61"/Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m8622390208#1723"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-bqkdmralhdkylchfjnouuhogwhik/TheScream_Prefix.pch -c /Users/dmason/IPHONE/TheScream/Classes/TheScreamAppDelegate.m -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScreamAppDelegate.o0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/main.o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303167658.333639
+e303167658.390504
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/main.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m303167658#303167658#0(0"0(0#0#52"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m8600321088#1946"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-dprqvkrsnusbblamlssqizbcshpd/TheScream_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/main.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/main.o"0#
+
+CCompileC build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/main.o /Users/dmason/IPHONE/TheScream/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s298277429.834769
+e298277429.915954
+r1
+xCompileC
+xbuild/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/main.o
+x/Users/dmason/IPHONE/TheScream/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Compile /Users/dmason/IPHONE/TheScream/main.m298277429#298277429#0(0"0(0#0#37"/Users/dmason/IPHONE/TheScream/main.m8619110208#1683"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-bqkdmralhdkylchfjnouuhogwhik/TheScream_Prefix.pch -c /Users/dmason/IPHONE/TheScream/main.m -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/main.o0#
+
+CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/AboutView.xib"
+r0
+
+CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/FlipsideView.xib"
+r0
+
+CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/MainView.xib"
+r0
+
+CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/MainWindow.xib"
+r0
+
+CCompileXIB /Users/dmason/IPHONE/TheScream/AboutView.xib
+s298277427.309221
+e298277428.101444
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/TheScream/AboutView.xib
+lSLF07#2@24"CompileXIB AboutView.xib298277427#298277428#0(0"0(0#0#44"/Users/dmason/IPHONE/TheScream/AboutView.xib8616788832#518"    cd /Users/dmason/IPHONE/TheScream    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/AboutView.nib /Users/dmason/IPHONE/TheScream/AboutView.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/TheScream/FlipsideView.xib
+s298277425.908961
+e298277426.945872
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/TheScream/FlipsideView.xib
+lSLF07#2@27"CompileXIB FlipsideView.xib298277425#298277426#0(0"0(0#0#47"/Users/dmason/IPHONE/TheScream/FlipsideView.xib8618731296#524"    cd /Users/dmason/IPHONE/TheScream    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/FlipsideView.nib /Users/dmason/IPHONE/TheScream/FlipsideView.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/TheScream/MainView.xib
+s298277425.910206
+e298277427.309125
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/TheScream/MainView.xib
+lSLF07#2@23"CompileXIB MainView.xib298277425#298277427#0(0"0(0#0#43"/Users/dmason/IPHONE/TheScream/MainView.xib8618574048#516"    cd /Users/dmason/IPHONE/TheScream    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/MainView.nib /Users/dmason/IPHONE/TheScream/MainView.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/TheScream/MainWindow.xib
+s298277426.945964
+e298277427.657174
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/TheScream/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib298277426#298277427#0(0"0(0#0#45"/Users/dmason/IPHONE/TheScream/MainWindow.xib8617458880#520"    cd /Users/dmason/IPHONE/TheScream    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/MainWindow.nib /Users/dmason/IPHONE/TheScream/MainWindow.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
+
+CCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/Default.png" Default.png
+r0
+
+CCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/Icon.png" Icon.png
+r0
+
+CCopyPNGFile /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Default.png Default.png
+s298277427.701407
+e298277428.473774
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Default.png
+xDefault.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/TheScream.app/Default.png Default.png298277427#298277428#0(0"0(0#0#42"/Users/dmason/IPHONE/TheScream/Default.png8618973376#540"    cd /Users/dmason/IPHONE/TheScream    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/TheScream/Default.png /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Default.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Icon.png Icon.png
+s299450731.885629
+e299450732.081726
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Icon.png
+xIcon.png
+lSLF07#2@64"CopyPNGFile build/Debug-iphoneos/TheScream.app/Icon.png Icon.png299450731#299450732#0(0"0(0#0#39"/Users/dmason/IPHONE/TheScream/Icon.png8619183648#534"    cd /Users/dmason/IPHONE/TheScream    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/TheScream/Icon.png /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Icon.png0#
+
+CCpResource build/Debug-iphoneos/TheScream.app/ResourceRules.plist /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+s303167656.907014
+e303167656.954325
+r1
+xCpResource
+xbuild/Debug-iphoneos/TheScream.app/ResourceRules.plist
+x/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+lSLF07#2@113"Copy /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist303167656#303167656#0(0"0(0#0#108"/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist8386103210209923072#576"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app"0#
+
+CCpResource build/Debug-iphoneos/TheScream.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+s298277425.830828
+e298277425.908871
+r1
+xCpResource
+xbuild/Debug-iphoneos/TheScream.app/ResourceRules.plist
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist298277425#298277425#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist8612167520#466"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app0#
+
+CCpResource build/Debug-iphoneos/TheScream.app/scream.jpg scream.jpg
+s298277427.695937
+e298277427.705222
+r1
+xCpResource
+xbuild/Debug-iphoneos/TheScream.app/scream.jpg
+xscream.jpg
+lSLF07#2@15"Copy scream.jpg298277427#298277427#0(0"0(0#0#41"/Users/dmason/IPHONE/TheScream/scream.jpg8619683328#418"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/TheScream/scream.jpg /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app0#
+
+CCpResource build/Debug-iphoneos/TheScream.app/screamshutup.wav screamshutup.wav
+s298277427.697791
+e298277427.704156
+r1
+xCpResource
+xbuild/Debug-iphoneos/TheScream.app/screamshutup.wav
+xscreamshutup.wav
+lSLF07#2@21"Copy screamshutup.wav298277427#298277427#0(0"0(0#0#47"/Users/dmason/IPHONE/TheScream/screamshutup.wav8619461760#424"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/TheScream/screamshutup.wav /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app0#
+
+CCpResource build/Debug-iphoneos/TheScream.app/screamwhat.wav screamwhat.wav
+s298277427.699646
+e298277427.709990
+r1
+xCpResource
+xbuild/Debug-iphoneos/TheScream.app/screamwhat.wav
+xscreamwhat.wav
+lSLF07#2@19"Copy screamwhat.wav298277427#298277427#0(0"0(0#0#45"/Users/dmason/IPHONE/TheScream/screamwhat.wav8619128064#422"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dmason/IPHONE/TheScream/screamwhat.wav /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app0#
+
+CCreateUniversalBinary "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/TheScream" normal "armv6 armv7"
+s303167659.183946
+e303167659.245203
+r1
+xCreateUniversalBinary
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/TheScream
+xnormal
+xarmv6 armv7
+lSLF07#2@87"CreateUniversalBinary build/Debug-iphoneos/TheScream.app/TheScream normal "armv6 armv7"303167659#303167659#0(0"0(0#0#57"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/armv6 armv78606059648#608"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream" "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream" -output "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/TheScream"0#
+
+CCreateUniversalBinary /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/TheScream normal "armv6 armv7"
+s299041708.407646
+e299041708.414923
+r1
+xCreateUniversalBinary
+x/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/TheScream
+xnormal
+xarmv6 armv7
+lSLF07#2@87"CreateUniversalBinary build/Debug-iphoneos/TheScream.app/TheScream normal "armv6 armv7"299041708#299041708#0(0"0(0#0#42"/Users/dmason/IPHONE/TheScream/armv6 armv78623811328#502"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream -output /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/TheScream0#
+
+CGenerateDSYMFile "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app.dSYM" "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/TheScream"
+s303167659.245343
+e303167659.294839
+r1
+xGenerateDSYMFile
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app.dSYM
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/TheScream
+lSLF07#2@101"GenerateDSYMFile build/Debug-iphoneos/TheScream.app.dSYM build/Debug-iphoneos/TheScream.app/TheScream303167659#303167659#0(0"0(0#0#90"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/TheScream8607594016#452"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/dsymutil "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/TheScream" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app.dSYM"0#
+
+CGenerateDSYMFile /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app.dSYM /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/TheScream
+s299041708.415024
+e299041708.496713
+r1
+xGenerateDSYMFile
+x/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app.dSYM
+x/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/TheScream
+lSLF07#2@101"GenerateDSYMFile build/Debug-iphoneos/TheScream.app.dSYM build/Debug-iphoneos/TheScream.app/TheScream299041708#299041708#0(0"0(0#0#75"/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/TheScream8623439520#344"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/TheScream -o /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app.dSYM0#
+
+CLd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream" normal armv6
+s303167658.440018
+e303167658.775129
+r1
+xLd
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream
+xnormal
+xarmv6
+lSLF07#2@134"Link /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream303167658#303167658#0(0"0(0#0#0"8606979136#1031"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv IPHONEOS_DEPLOYMENT_TARGET 4.1    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk "-L/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" -filelist "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream.LinkFileList" -dead_strip -miphoneos-version-min=4.1 -framework Foundation -framework UIKit -framework CoreGraphics -framework iAd -framework AudioToolbox -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream"0#
+
+CLd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream" normal armv7
+s303167658.713866
+e303167659.183842
+r1
+xLd
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream
+xnormal
+xarmv7
+lSLF07#2@134"Link /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream303167658#303167659#0(0"0(0#0#0"8603829632#1031"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv IPHONEOS_DEPLOYMENT_TARGET 4.1    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk "-L/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" -filelist "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream.LinkFileList" -dead_strip -miphoneos-version-min=4.1 -framework Foundation -framework UIKit -framework CoreGraphics -framework iAd -framework AudioToolbox -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream"0#
+
+CLd /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream normal armv6
+s299041707.858056
+e299041707.901942
+r1
+xLd
+x/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream
+xnormal
+xarmv6
+lSLF07#2@119"Link /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream299041707#299041707#0(0"0(0#0#0"8622188608#870"    cd /Users/dmason/IPHONE/TheScream    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -L/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -filelist /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream.LinkFileList -dead_strip -miphoneos-version-min=4.0 -framework Foundation -framework UIKit -framework CoreGraphics -framework iAd -framework AudioToolbox -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv6/TheScream0#
+
+CLd /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream normal armv7
+s299041708.357825
+e299041708.407536
+r1
+xLd
+x/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream
+xnormal
+xarmv7
+lSLF07#2@119"Link /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream299041708#299041708#0(0"0(0#0#0"8624256352#870"    cd /Users/dmason/IPHONE/TheScream    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -L/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -filelist /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream.LinkFileList -dead_strip -miphoneos-version-min=4.0 -framework Foundation -framework UIKit -framework CoreGraphics -framework iAd -framework AudioToolbox -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/Objects-normal/armv7/TheScream0#
+
+CProcessInfoPlistFile "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/Info.plist" TheScream-Info.plist
+r0
+
+CProcessInfoPlistFile /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Info.plist TheScream-Info.plist
+s298277425.831748
+e298277425.871098
+r1
+xProcessInfoPlistFile
+x/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Info.plist
+xTheScream-Info.plist
+lSLF07#2@28"Process TheScream-Info.plist298277425#298277425#0(0"0(0#0#51"/Users/dmason/IPHONE/TheScream/TheScream-Info.plist8618669312#538"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility TheScream-Info.plist -genpkginfo /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/ResourceRules.plist -o /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/Info.plist0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-bqkdmralhdkylchfjnouuhogwhik/TheScream_Prefix.pch.gch TheScream_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s298277428.475143
+e298277429.545847
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-bqkdmralhdkylchfjnouuhogwhik/TheScream_Prefix.pch.gch
+xTheScream_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile TheScream_Prefix.pch298277428#298277429#0(0"0(0#0#51"/Users/dmason/IPHONE/TheScream/TheScream_Prefix.pch8618550304#1587"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -c /Users/dmason/IPHONE/TheScream/TheScream_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-bqkdmralhdkylchfjnouuhogwhik/TheScream_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-dprqvkrsnusbblamlssqizbcshpd/TheScream_Prefix.pch.gch TheScream_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303167656.956100
+e303167658.126352
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-dprqvkrsnusbblamlssqizbcshpd/TheScream_Prefix.pch.gch
+xTheScream_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile TheScream_Prefix.pch303167656#303167658#0(0"0(0#0#66"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/TheScream_Prefix.pch8604362560#1833"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/TheScream_Prefix.pch" -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-dprqvkrsnusbblamlssqizbcshpd/TheScream_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-gylcrkkosblbuugfwwluozsflexq/TheScream_Prefix.pch.gch TheScream_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s298277428.473888
+e298277429.445332
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-gylcrkkosblbuugfwwluozsflexq/TheScream_Prefix.pch.gch
+xTheScream_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile TheScream_Prefix.pch298277428#298277429#0(0"0(0#0#51"/Users/dmason/IPHONE/TheScream/TheScream_Prefix.pch8618785728#1587"    cd /Users/dmason/IPHONE/TheScream    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap -iquote /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap -F/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos -I/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources -c /Users/dmason/IPHONE/TheScream/TheScream_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-gylcrkkosblbuugfwwluozsflexq/TheScream_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-hhpgofdahboeewavobrozszfskyv/TheScream_Prefix.pch.gch TheScream_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303167656.954882
+e303167657.998169
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-hhpgofdahboeewavobrozszfskyv/TheScream_Prefix.pch.gch
+xTheScream_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile TheScream_Prefix.pch303167656#303167657#0(0"0(0#0#66"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/TheScream_Prefix.pch8606967520#1833"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources/armv6" "-I/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/DerivedSources" -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/TheScream_Prefix.pch" -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TheScream_Prefix-hhpgofdahboeewavobrozszfskyv/TheScream_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/07B577AE-5FF2-40C9-B178-B2B470859F6F.mobileprovision" /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision
+s299450732.089362
+e299450732.110390
+r1
+xProcessProductPackaging
+x/Users/dmason/Library/MobileDevice/Provisioning Profiles/07B577AE-5FF2-40C9-B178-B2B470859F6F.mobileprovision
+x/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision
+lSLF07#2@195"ProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/07B577AE-5FF2-40C9-B178-B2B470859F6F.mobileprovision" build/Debug-iphoneos/TheScream.app/embedded.mobileprovision299450732#299450732#0(0"0(0#0#90"/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision8620902336#410"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/dmason/Library/MobileDevice/Provisioning Profiles/07B577AE-5FF2-40C9-B178-B2B470859F6F.mobileprovision" -o /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision0#
+
+CProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision" "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision"
+s303167659.294944
+e303167659.309210
+r1
+xProcessProductPackaging
+x/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision
+lSLF07#2@195"ProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision" build/Debug-iphoneos/TheScream.app/embedded.mobileprovision303167659#303167659#0(0"0(0#0#105"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision8606763520#482"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision" -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision"0#
+
+CProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/D6ED93EA-9501-4361-A9C5-88E790A2D0C0.mobileprovision" /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision
+s298277430.370529
+e298277430.394926
+r1
+xProcessProductPackaging
+x/Users/dmason/Library/MobileDevice/Provisioning Profiles/D6ED93EA-9501-4361-A9C5-88E790A2D0C0.mobileprovision
+x/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision
+lSLF07#2@195"ProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/D6ED93EA-9501-4361-A9C5-88E790A2D0C0.mobileprovision" build/Debug-iphoneos/TheScream.app/embedded.mobileprovision298277430#298277430#0(0"0(0#0#90"/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision8618529984#410"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/dmason/Library/MobileDevice/Provisioning Profiles/D6ED93EA-9501-4361-A9C5-88E790A2D0C0.mobileprovision" -o /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app/embedded.mobileprovision0#
+
+CProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent"
+s303167659.343295
+e303167659.365185
+r1
+xProcessProductPackaging
+x/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent
+lSLF07#2@200"ProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent303167659#303167659#0(0"0(0#0#114"/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent8606615488#513"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist -entitlements -format xml -o "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent"0#
+
+CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent
+s298277430.398468
+e298277430.409694
+r1
+xProcessProductPackaging
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
+x/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent
+lSLF07#2@181"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent298277430#298277430#0(0"0(0#0#99"/Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent8617306112#422"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist -entitlements -format xml -o /Users/dmason/IPHONE/TheScream/build/TheScream.build/Debug-iphoneos/TheScream.build/TheScream.xcent0#
+
+CTouch "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app"
+s303167659.309294
+e303167659.343202
+r1
+xTouch
+x/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app
+lSLF07#2@86"Touch /Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app303167659#303167659#0(0"0(0#0#0"8607495584#322"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/dmason/IPHONE/MY IPHONE APPS/TheScream/build/Debug-iphoneos/TheScream.app"0#
+
+CTouch /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app
+s299450732.110638
+e299450732.113309
+r1
+xTouch
+x/Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app
+lSLF07#2@71"Touch /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app299450732#299450732#0(0"0(0#0#0"8622935488#250"    cd /Users/dmason/IPHONE/TheScream    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dmason/IPHONE/TheScream/build/Debug-iphoneos/TheScream.app0#
+
