@@ -1,0 +1,2030 @@
+TCoverShot
+v7
+r0
+t303165825.207327
+cCheck dependencies
+cCpResource build/Debug-iphoneos/CoverShot.app/ResourceRules.plist /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+cProcessInfoPlistFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/Info.plist CoverShot-Info.plist
+cCompileXIB /Users/dmason/IPHONE/CoverShot/MainWindow.xib
+cCompileXIB /Users/dmason/IPHONE/CoverShot/CoverShotViewController.xib
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/maghome.png maghome.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover1.png cover1.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover2.png cover2.png
+cCompileXIB /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.xib
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/book.png book.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/camera.png camera.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/save.png save.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover1.png clearcover1.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover2.png clearcover2.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearbg.png clearbg.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/blending.png blending.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/icon.png icon.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover3.png clearcover3.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover4.png clearcover4.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover5.png clearcover5.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover6.png clearcover6.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover7.png clearcover7.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover3.png cover3.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover4.png cover4.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover5.png cover5.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover6.png cover6.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover7.png cover7.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover8.png clearcover8.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover8.png cover8.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover9.png clearcover9.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover9.png cover9.png
+cCompileXIB /Users/dmason/IPHONE/CoverShot/FlipsideView.xib
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/help_bg.png help_bg.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover10.png clearcover10.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover11.png clearcover11.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover12.png clearcover12.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover13.png clearcover13.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover14.png clearcover14.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover15.png clearcover15.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover16.png clearcover16.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover17.png clearcover17.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover10.png cover10.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover11.png cover11.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover12.png cover12.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover13.png cover13.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover14.png cover14.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover15.png cover15.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover16.png cover16.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover17.png cover17.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover18.png cover18.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover19.png cover19.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover20.png cover20.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover21.png cover21.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover18.png clearcover18.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover19.png clearcover19.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover20.png clearcover20.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover21.png clearcover21.png
+cCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/Default.png Default.png
+cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch.gch CoverShot_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch.gch CoverShot_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/main.o /Users/dmason/IPHONE/CoverShot/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotAppDelegate.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotViewController.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotEditorViewController.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/QuartzView.o /Users/dmason/IPHONE/CoverShot/QuartzView.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/QuartzBlending.o /Users/dmason/IPHONE/CoverShot/QuartzBlending.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/FlipsideViewController.o /Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShot normal armv6
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/main.o /Users/dmason/IPHONE/CoverShot/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotAppDelegate.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotViewController.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotEditorViewController.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/QuartzView.o /Users/dmason/IPHONE/CoverShot/QuartzView.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/QuartzBlending.o /Users/dmason/IPHONE/CoverShot/QuartzBlending.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/FlipsideViewController.o /Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShot normal armv7
+cCreateUniversalBinary /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShot normal "armv6 armv7"
+cGenerateDSYMFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app.dSYM /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShot
+cProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision" /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/embedded.mobileprovision
+cTouch /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app
+cProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent
+cCodeSign /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk
+c000000004C1BB8220000000000000110
+t1276885026
+s272
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist
+c000000004C06E99F00000000000001A7
+t1275521439
+s423
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+c000000004C06E99F00000000000001E5
+t1275521439
+s485
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c000000004C005A70000000000001AD60
+t1275091568
+s109920
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.h
+c000000004C005A6B00000000000000EB
+t1275091563
+s235
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C005A1C00000000003B4B70
+t1275091484
+s3885936
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C005A45000000000036A650
+t1275091525
+s3581520
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C005A310000000000001355
+t1275091505
+s4949
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000004C005D9100000000002215A0
+t1275092369
+s2233760
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C00642C000000000000098F
+t1275094060
+s2447
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0064A60000000002703230
+t1275094182
+s40907312
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/iAd.framework/iAd
+c00000000000000000000000000000000
+t2
+s0
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk
+c000000004C5557950000000000000110
+t1280661397
+s272
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist
+c000000004C4FD4F300000000000001A7
+t1280300275
+s423
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+c000000004C4FD4F300000000000001E5
+t1280300275
+s485
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c000000004C525A2500000000001CEF70
+t1280465445
+s1896304
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.h
+c000000004C525A190000000000000703
+t1280465433
+s1795
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C4FECE20000000000345EC0
+t1280306402
+s3432128
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.h
+c000000004C467A7E00000000000004FE
+t1279687294
+s1278
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C4FED7D00000000003E1EF0
+t1280306557
+s4071152
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C4FED690000000000001466
+t1280306537
+s5222
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000004C4FF13E0000000000257340
+t1280307518
+s2454336
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C52589E00000000000009CD
+t1280465054
+s2509
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C5259730000000002EBC010
+t1280465267
+s49004560
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/iAd.framework/Headers/iAd.h
+c000000004C525D2F0000000000000071
+t1280466223
+s113
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/iAd.framework/iAd
+c000000004C525D35000000000009BAD0
+t1280466229
+s637648
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk
+c000000004C3671890000000000000110
+t1278636425
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
+c000000004C2A7DA700000000000001A7
+t1277853095
+s423
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+c000000004C2A7DA700000000000001E5
+t1277853095
+s485
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c000000004C0473C400000000001AA470
+t1275360196
+s1746032
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.h
+c000000004C0473B9000000000000065C
+t1275360185
+s1628
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFE06FA000000000034A850
+t1274939130
+s3450960
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFE07D200000000003E1EB0
+t1274939346
+s4071088
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFE07B10000000000001466
+t1274939313
+s5222
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C296E2A00000000000009CD
+t1277783594
+s2509
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C296F120000000002D563E0
+t1277783826
+s47539168
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/iAd.framework/iAd
+c000000004C04821B0000000000080FB0
+t1275363867
+s528304
+
+N/Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.h
+c000000004C4ADF7700000000000001DE
+t1279975287
+s478
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m
+c000000004C4ADF770000000000000A88
+t1279975287
+s2696
+i"CoverShotAppDelegate.h"
+i"CoverShotViewController.h"
+
+N/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.h
+c000000004C60B2130000000000000A76
+t1281405459
+s2678
+i<UIKit/UIKit.h>
+i<AVFoundation/AVFoundation.h>
+i"QuartzView.h"
+
+N/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m
+c000000004C60E0E50000000000004CA6
+t1281417445
+s19622
+i"CoverShotEditorViewController.h"
+i"QuartzBlending.h"
+
+N/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.xib
+c000000004C60CC3D000000000000A364
+t1281412157
+s41828
+
+N/Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.h
+c000000004C603F5B00000000000003B6
+t1281376091
+s950
+i"CoverShotEditorViewController.h"
+i"FlipsideViewController.h"
+i<iAd/iAd.h>
+
+N/Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m
+c000000004C6041320000000000001ADE
+t1281376562
+s6878
+i"CoverShotViewController.h"
+
+N/Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.h
+c000000004C5B87AD0000000000000296
+t1281066925
+s662
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m
+c000000004C5B8D6400000000000007C6
+t1281068388
+s1990
+i"FlipsideViewController.h"
+
+N/Users/dmason/IPHONE/CoverShot/CoverShotViewController.xib
+c000000004C61B9BB0000000000006E35
+t1281472955
+s28213
+
+N/Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch
+c000000004C4ADFAA00000000000000BB
+t1279975338
+s187
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/CoverShot/Default.png
+c000000004C61B9F4000000000008F606
+t1281473012
+s587270
+
+N/Users/dmason/IPHONE/CoverShot/FlipsideView.xib
+c000000004C60D60700000000000082CA
+t1281414663
+s33482
+
+N/Users/dmason/IPHONE/CoverShot/MainWindow.xib
+c000000004C4ADFAA000000000000525E
+t1279975338
+s21086
+
+N/Users/dmason/IPHONE/CoverShot/QuartzBlending.h
+c000000004C57603D000000000000018D
+t1280794685
+s397
+i<UIKit/UIKit.h>
+i"QuartzView.h"
+
+N/Users/dmason/IPHONE/CoverShot/QuartzBlending.m
+c000000004C60E08A000000000000067C
+t1281417354
+s1660
+i"QuartzBlending.h"
+
+N/Users/dmason/IPHONE/CoverShot/QuartzView.h
+c000000004C578D7E00000000000000CC
+t1280806270
+s204
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/CoverShot/QuartzView.m
+c000000004C5F62900000000000000366
+t1281319568
+s870
+i"QuartzView.h"
+
+N/Users/dmason/IPHONE/CoverShot/blending.png
+c000000004C6087570000000000000B89
+t1281394519
+s2953
+
+N/Users/dmason/IPHONE/CoverShot/book.png
+c000000004C6064510000000000000C03
+t1281385553
+s3075
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent
+t1281304314
+s424
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShot
+t1281417446
+s76228
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShot.LinkFileList
+c000000004C5B94BF000000000000036E
+t1281070271
+s878
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotAppDelegate.o
+t1281405460
+s50832
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotEditorViewController.o
+t1281417446
+s118476
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotViewController.o
+t1281405460
+s61912
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/FlipsideViewController.o
+t1281304313
+s42084
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/QuartzBlending.o
+t1281417382
+s42744
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/QuartzView.o
+t1281319570
+s35700
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/main.o
+t1281304312
+s6508
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShot
+t1281417446
+s75408
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShot.LinkFileList
+c000000004C5B94BF000000000000036E
+t1281070271
+s878
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotAppDelegate.o
+t1281405460
+s50752
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotEditorViewController.o
+t1281417446
+s115544
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotViewController.o
+t1281405460
+s61008
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/FlipsideViewController.o
+t1281304313
+s41840
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/QuartzBlending.o
+t1281417382
+s42528
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/QuartzView.o
+t1281319570
+s35680
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/main.o
+t1281304313
+s6492
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv6/CoverShotAppDelegate.plist
+t1280640281
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv6/CoverShotEditorViewController.plist
+t1280640281
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv6/CoverShotViewController.plist
+t1280640281
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv6/QuartzBlending.plist
+t1280640281
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv6/QuartzView.plist
+t1280640281
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv6/main.plist
+t1280640281
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/CoverShotAppDelegate.plist
+t1280640282
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/CoverShotEditorViewController.plist
+t1280640282
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/CoverShotViewController.plist
+t1280640282
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/QuartzBlending.plist
+t1280640282
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/QuartzView.plist
+t1280640282
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/main.plist
+t1280640282
+s276
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app
+t1281473025
+s2210
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app.dSYM
+t1281417446
+s102
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShot
+t1281417446
+s171696
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShotEditorViewController.nib
+t1281412220
+s4968
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShotViewController.nib
+t1281472979
+s4596
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/Default.png
+t1281473024
+s547228
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/FlipsideView.nib
+t1281414676
+s5609
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/Info.plist
+t1281304311
+s792
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/MainWindow.nib
+t1281304311
+s1685
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/PkgInfo
+t1281304311
+s8
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/ResourceRules.plist
+t1281304311
+s485
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/blending.png
+t1281395122
+s3181
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/book.png
+t1281393735
+s3210
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/camera.png
+t1281395122
+s3347
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearbg.png
+t1280806392
+s296555
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover1.png
+t1281303476
+s259571
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover10.png
+t1281303481
+s171019
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover11.png
+t1281303481
+s179380
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover12.png
+t1281303482
+s117640
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover13.png
+t1281303482
+s138626
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover14.png
+t1281303482
+s148035
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover15.png
+t1281303483
+s117901
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover16.png
+t1281303483
+s159120
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover17.png
+t1281303483
+s148338
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover18.png
+t1281303488
+s149444
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover19.png
+t1281303487
+s64903
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover1sm.png
+t1281403775
+s117015
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover2.png
+t1281303477
+s260714
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover20.png
+t1281303488
+s126961
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover21.png
+t1281303488
+s159222
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover3.png
+t1281303477
+s324614
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover4.png
+t1281303477
+s106519
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover5.png
+t1281303478
+s124761
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover6.png
+t1281303478
+s314185
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover7.png
+t1281303478
+s169884
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover8.png
+t1281303480
+s121519
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover9.png
+t1281303481
+s353741
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover1.png
+t1281303476
+s92759
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover10.png
+t1281303483
+s81035
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover11.png
+t1281303484
+s94619
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover12.png
+t1281303484
+s83749
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover13.png
+t1281303484
+s85146
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover14.png
+t1281303485
+s97631
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover15.png
+t1281303485
+s83585
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover16.png
+t1281303486
+s106417
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover17.png
+t1281303486
+s100256
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover18.png
+t1281303486
+s83541
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover19.png
+t1281303486
+s72178
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover2.png
+t1281303476
+s85081
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover20.png
+t1281303487
+s73635
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover21.png
+t1281303487
+s92474
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover3.png
+t1281303478
+s106712
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover4.png
+t1281303479
+s93542
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover5.png
+t1281303479
+s88905
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover6.png
+t1281303480
+s102308
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover7.png
+t1281303480
+s95884
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover8.png
+t1281303480
+s83557
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover9.png
+t1281303481
+s102171
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/embedded.mobileprovision
+t1280806394
+s7238
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/help_bg.png
+t1281070275
+s869580
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/icon.png
+t1280806385
+s21487
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/maghome.png
+t1281070274
+s1206668
+
+N/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/save.png
+t1281395122
+s3425
+
+N/Users/dmason/IPHONE/CoverShot/camera.png
+c000000004C6087780000000000000C3D
+t1281394552
+s3133
+
+N/Users/dmason/IPHONE/CoverShot/clearbg.png
+c000000004C4ADFAA000000000004CEFD
+t1279975338
+s315133
+
+N/Users/dmason/IPHONE/CoverShot/clearcover1.png
+c000000004C5F14670000000000029E10
+t1281299559
+s171536
+
+N/Users/dmason/IPHONE/CoverShot/clearcover10.png
+c000000004C5F15D300000000000262B4
+t1281299923
+s156340
+
+N/Users/dmason/IPHONE/CoverShot/clearcover11.png
+c000000004C5F15E50000000000023A0C
+t1281299941
+s145932
+
+N/Users/dmason/IPHONE/CoverShot/clearcover12.png
+c000000004C5F15F900000000000187FA
+t1281299961
+s100346
+
+N/Users/dmason/IPHONE/CoverShot/clearcover13.png
+c000000004C5F21AF000000000001C55B
+t1281302959
+s116059
+
+N/Users/dmason/IPHONE/CoverShot/clearcover14.png
+c000000004C5F21BD000000000001D6A3
+t1281302973
+s120483
+
+N/Users/dmason/IPHONE/CoverShot/clearcover15.png
+c000000004C5F21D10000000000016ED0
+t1281302993
+s93904
+
+N/Users/dmason/IPHONE/CoverShot/clearcover16.png
+c000000004C5F21E10000000000022057
+t1281303009
+s139351
+
+N/Users/dmason/IPHONE/CoverShot/clearcover17.png
+c000000004C5F21F1000000000001F9C4
+t1281303025
+s129476
+
+N/Users/dmason/IPHONE/CoverShot/clearcover18.png
+c000000004C5F2209000000000001CEB5
+t1281303049
+s118453
+
+N/Users/dmason/IPHONE/CoverShot/clearcover19.png
+c000000004C5F221A000000000000B65A
+t1281303066
+s46682
+
+N/Users/dmason/IPHONE/CoverShot/clearcover1sm.png
+c000000004C60AB610000000000016F88
+t1281403745
+s94088
+
+N/Users/dmason/IPHONE/CoverShot/clearcover2.png
+c000000004C5F1478000000000002A3AF
+t1281299576
+s172975
+
+N/Users/dmason/IPHONE/CoverShot/clearcover20.png
+c000000004C5F22310000000000019F54
+t1281303089
+s106324
+
+N/Users/dmason/IPHONE/CoverShot/clearcover21.png
+c000000004C5F22430000000000021D98
+t1281303107
+s138648
+
+N/Users/dmason/IPHONE/CoverShot/clearcover3.png
+c000000004C5F14AF0000000000048B2D
+t1281299631
+s297773
+
+N/Users/dmason/IPHONE/CoverShot/clearcover4.png
+c000000004C5F14D70000000000017E31
+t1281299671
+s97841
+
+N/Users/dmason/IPHONE/CoverShot/clearcover5.png
+c000000004C5F14EB000000000001B1A2
+t1281299691
+s111010
+
+N/Users/dmason/IPHONE/CoverShot/clearcover6.png
+c000000004C5F1505000000000004781B
+t1281299717
+s292891
+
+N/Users/dmason/IPHONE/CoverShot/clearcover7.png
+c000000004C5F15720000000000025870
+t1281299826
+s153712
+
+N/Users/dmason/IPHONE/CoverShot/clearcover8.png
+c000000004C5F15A8000000000001941D
+t1281299880
+s103453
+
+N/Users/dmason/IPHONE/CoverShot/clearcover9.png
+c000000004C5F15C1000000000004EF62
+t1281299905
+s323426
+
+N/Users/dmason/IPHONE/CoverShot/cover1.png
+c000000004C5F12E60000000000014031
+t1281299174
+s81969
+
+N/Users/dmason/IPHONE/CoverShot/cover10.png
+c000000004C5F13530000000000011BAB
+t1281299283
+s72619
+
+N/Users/dmason/IPHONE/CoverShot/cover11.png
+c000000004C5F22CD0000000000013EBB
+t1281303245
+s81595
+
+N/Users/dmason/IPHONE/CoverShot/cover12.png
+c000000004C5F22E100000000000121ED
+t1281303265
+s74221
+
+N/Users/dmason/IPHONE/CoverShot/cover13.png
+c000000004C5F13740000000000010FBB
+t1281299316
+s69563
+
+N/Users/dmason/IPHONE/CoverShot/cover14.png
+c000000004C5F13930000000000014F47
+t1281299347
+s85831
+
+N/Users/dmason/IPHONE/CoverShot/cover15.png
+c000000004C5F13A0000000000001180C
+t1281299360
+s71692
+
+N/Users/dmason/IPHONE/CoverShot/cover16.png
+c000000004C5F13AC0000000000015705
+t1281299372
+s87813
+
+N/Users/dmason/IPHONE/CoverShot/cover17.png
+c000000004C5F13B6000000000001484A
+t1281299382
+s84042
+
+N/Users/dmason/IPHONE/CoverShot/cover18.png
+c000000004C5F13D40000000000011143
+t1281299412
+s69955
+
+N/Users/dmason/IPHONE/CoverShot/cover19.png
+c000000004C5F13E1000000000000E3C7
+t1281299425
+s58311
+
+N/Users/dmason/IPHONE/CoverShot/cover2.png
+c000000004C5F12F6000000000001271C
+t1281299190
+s75548
+
+N/Users/dmason/IPHONE/CoverShot/cover20.png
+c000000004C5F13F00000000000010C74
+t1281299440
+s68724
+
+N/Users/dmason/IPHONE/CoverShot/cover21.png
+c000000004C5F14000000000000014896
+t1281299456
+s84118
+
+N/Users/dmason/IPHONE/CoverShot/cover3.png
+c000000004C5F13020000000000015D91
+t1281299202
+s89489
+
+N/Users/dmason/IPHONE/CoverShot/cover4.png
+c000000004C5F130F0000000000014479
+t1281299215
+s83065
+
+N/Users/dmason/IPHONE/CoverShot/cover5.png
+c000000004C5F131C00000000000134E4
+t1281299228
+s79076
+
+N/Users/dmason/IPHONE/CoverShot/cover6.png
+c000000004C5F132800000000000173AB
+t1281299240
+s95147
+
+N/Users/dmason/IPHONE/CoverShot/cover7.png
+c000000004C5F13330000000000014994
+t1281299251
+s84372
+
+N/Users/dmason/IPHONE/CoverShot/cover8.png
+c000000004C5F133E0000000000011D4A
+t1281299262
+s73034
+
+N/Users/dmason/IPHONE/CoverShot/cover9.png
+c000000004C5F13490000000000016D8F
+t1281299273
+s93583
+
+N/Users/dmason/IPHONE/CoverShot/help_bg.png
+c000000004C5B8F4A00000000000C9C7B
+t1281068874
+s826491
+
+N/Users/dmason/IPHONE/CoverShot/icon.png
+c000000004C572A2C0000000000005098
+t1280780844
+s20632
+
+N/Users/dmason/IPHONE/CoverShot/maghome.png
+c000000004C5B8FB2000000000011883F
+t1281068978
+s1148991
+
+N/Users/dmason/IPHONE/CoverShot/main.m
+c000000004C4ADFAA000000000000015E
+t1279975338
+s350
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/CoverShot/save.png
+c000000004C60897A0000000000000C2C
+t1281395066
+s3116
+
+N/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision
+c000000004C3E7FAF0000000000001C46
+t1279164335
+s7238
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-bqryqebxigwusoexvmrhmzilvokb/CoverShot_Prefix.pch.pth
+t1280640281
+s2621896
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cqztzdomhzbrslcwwtpcyqowvrmk/CoverShot_Prefix.pch.gch
+t1280510644
+s10290736
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cxvtbwocdllwthcjawcwxcluvjvd/CoverShot_Prefix.pch.pth
+t1280640281
+s2622068
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-eorcbimnznfzungsiiicwikmjuzs/CoverShot_Prefix.pch.gch
+t1281304290
+s9425556
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch.gch
+t1280978288
+s10298928
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ftgnjzzcbsczrlfrbptimamjtkos/CoverShot_Prefix.pch.gch
+t1281304290
+s8958612
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-fxdxkrajcdidcwhktugjwefexwkx/CoverShot_Prefix.pch.gch
+t1280510643
+s9831984
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch.gch
+t1280978289
+s9831984
+
+NCoverShot-Info.plist
+c000000004C53272000000000000003DB
+t1280517920
+s987
+
+CAnalyze /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m
+s302333081.987344
+e302333082.072843
+r1
+xAnalyze
+x/Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m
+lSLF07#2@69"Analyze /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m302333081#302333082#0(0"0(0#0#61"/Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m8755414816#1828"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cxvtbwocdllwthcjawcwxcluvjvd/CoverShot_Prefix.pch --analyze /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/CoverShotAppDelegate.plist0#
+
+CAnalyze /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m
+s302333082.073073
+e302333082.261399
+r1
+xAnalyze
+x/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m
+lSLF07#2@78"Analyze /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m302333082#302333082#0(0"0(0#0#70"/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m8759364384#1846"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cxvtbwocdllwthcjawcwxcluvjvd/CoverShot_Prefix.pch --analyze /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/CoverShotEditorViewController.plist0#
+
+CAnalyze /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m
+s302333082.029628
+e302333082.109691
+r1
+xAnalyze
+x/Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m
+lSLF07#2@72"Analyze /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m302333082#302333082#0(0"0(0#0#64"/Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m8760461664#1834"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cxvtbwocdllwthcjawcwxcluvjvd/CoverShot_Prefix.pch --analyze /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/CoverShotViewController.plist0#
+
+CAnalyze /Users/dmason/IPHONE/CoverShot/QuartzBlending.m
+s302333082.109786
+e302333082.155114
+r1
+xAnalyze
+x/Users/dmason/IPHONE/CoverShot/QuartzBlending.m
+lSLF07#2@55"Analyze /Users/dmason/IPHONE/CoverShot/QuartzBlending.m302333082#302333082#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/QuartzBlending.m8758884768#1808"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cxvtbwocdllwthcjawcwxcluvjvd/CoverShot_Prefix.pch --analyze /Users/dmason/IPHONE/CoverShot/QuartzBlending.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/QuartzBlending.plist0#
+
+CAnalyze /Users/dmason/IPHONE/CoverShot/QuartzView.m
+s302333082.155203
+e302333082.198839
+r1
+xAnalyze
+x/Users/dmason/IPHONE/CoverShot/QuartzView.m
+lSLF07#2@51"Analyze /Users/dmason/IPHONE/CoverShot/QuartzView.m302333082#302333082#0(0"0(0#0#43"/Users/dmason/IPHONE/CoverShot/QuartzView.m8758596512#1800"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cxvtbwocdllwthcjawcwxcluvjvd/CoverShot_Prefix.pch --analyze /Users/dmason/IPHONE/CoverShot/QuartzView.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/QuartzView.plist0#
+
+CAnalyze /Users/dmason/IPHONE/CoverShot/main.m
+s302333081.985996
+e302333082.029545
+r1
+xAnalyze
+x/Users/dmason/IPHONE/CoverShot/main.m
+lSLF07#2@45"Analyze /Users/dmason/IPHONE/CoverShot/main.m302333081#302333082#0(0"0(0#0#37"/Users/dmason/IPHONE/CoverShot/main.m8756242144#1788"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cxvtbwocdllwthcjawcwxcluvjvd/CoverShot_Prefix.pch --analyze /Users/dmason/IPHONE/CoverShot/main.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/StaticAnalyzer/normal/armv7/main.plist0#
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies303165822#303165822#0(0"0(0#1#0"8617950464#0"0#
+
+CCodeSign /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app
+s303165824.962120
+e303165825.207283
+r1
+xCodeSign
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app
+o/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app: replacing existing signature
+lSLF07#2@43"CodeSign build/Debug-iphoneos/CoverShot.app303165824#303165825#0(96"/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app: replacing existing signature0(0#0#65"/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app8618981088#683"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Darren Mason (J4HX2LYKXS)" --resource-rules=/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/ResourceRules.plist --entitlements /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotAppDelegate.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303098259.943386
+e303098260.128866
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotAppDelegate.o
+x/Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m303098259#303098260#0(0"0(0#0#61"/Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m8638132512#1799"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotAppDelegate.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotEditorViewController.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303110246.319938
+e303110246.739034
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotEditorViewController.o
+x/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@78"Compile /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m303110246#303110246#0(0"0(0#0#70"/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m8697591552#1817"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotEditorViewController.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotViewController.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303098259.949711
+e303098260.201034
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotViewController.o
+x/Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m303098259#303098260#0(0"0(0#0#64"/Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m8632875424#1805"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShotViewController.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/FlipsideViewController.o /Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s302997113.154269
+e302997113.279460
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/FlipsideViewController.o
+x/Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m302997113#302997113#0(0"0(0#0#63"/Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m8641039616#1803"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/FlipsideViewController.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/QuartzBlending.o /Users/dmason/IPHONE/CoverShot/QuartzBlending.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303110182.248277
+e303110182.444571
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/QuartzBlending.o
+x/Users/dmason/IPHONE/CoverShot/QuartzBlending.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@55"Compile /Users/dmason/IPHONE/CoverShot/QuartzBlending.m303110182#303110182#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/QuartzBlending.m8695808928#1779"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/QuartzBlending.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/QuartzBlending.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/QuartzView.o /Users/dmason/IPHONE/CoverShot/QuartzView.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s303012370.561192
+e303012370.655473
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/QuartzView.o
+x/Users/dmason/IPHONE/CoverShot/QuartzView.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@51"Compile /Users/dmason/IPHONE/CoverShot/QuartzView.m303012370#303012370#0(0"0(0#0#43"/Users/dmason/IPHONE/CoverShot/QuartzView.m8613287072#1771"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/QuartzView.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/QuartzView.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/main.o /Users/dmason/IPHONE/CoverShot/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s302997112.671612
+e302997112.757749
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/main.o
+x/Users/dmason/IPHONE/CoverShot/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Compile /Users/dmason/IPHONE/CoverShot/main.m302997112#302997112#0(0"0(0#0#37"/Users/dmason/IPHONE/CoverShot/main.m8632828672#1759"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/main.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/main.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotAppDelegate.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303098260.201542
+e303098260.351937
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotAppDelegate.o
+x/Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m303098260#303098260#0(0"0(0#0#61"/Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m8637053792#1799"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/Classes/CoverShotAppDelegate.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotAppDelegate.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotEditorViewController.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303110246.322586
+e303110246.756415
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotEditorViewController.o
+x/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@78"Compile /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m303110246#303110246#0(0"0(0#0#70"/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m8697330752#1817"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotEditorViewController.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotViewController.o /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303098260.343976
+e303098260.586572
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotViewController.o
+x/Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m303098260#303098260#0(0"0(0#0#64"/Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m8638919104#1805"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/Classes/CoverShotViewController.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShotViewController.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/FlipsideViewController.o /Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s302997113.822976
+e302997113.906227
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/FlipsideViewController.o
+x/Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m302997113#302997113#0(0"0(0#0#63"/Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m8635162400#1803"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/Classes/FlipsideViewController.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/FlipsideViewController.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/QuartzBlending.o /Users/dmason/IPHONE/CoverShot/QuartzBlending.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303110182.801845
+e303110182.887918
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/QuartzBlending.o
+x/Users/dmason/IPHONE/CoverShot/QuartzBlending.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@55"Compile /Users/dmason/IPHONE/CoverShot/QuartzBlending.m303110182#303110182#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/QuartzBlending.m8695269152#1779"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/QuartzBlending.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/QuartzBlending.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/QuartzView.o /Users/dmason/IPHONE/CoverShot/QuartzView.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303012370.656284
+e303012370.739050
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/QuartzView.o
+x/Users/dmason/IPHONE/CoverShot/QuartzView.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@51"Compile /Users/dmason/IPHONE/CoverShot/QuartzView.m303012370#303012370#0(0"0(0#0#43"/Users/dmason/IPHONE/CoverShot/QuartzView.m8664519392#1771"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/QuartzView.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/QuartzView.o0#
+
+CCompileC build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/main.o /Users/dmason/IPHONE/CoverShot/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s302997113.193407
+e302997113.259297
+r1
+xCompileC
+xbuild/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/main.o
+x/Users/dmason/IPHONE/CoverShot/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Compile /Users/dmason/IPHONE/CoverShot/main.m302997113#302997113#0(0"0(0#0#37"/Users/dmason/IPHONE/CoverShot/main.m8640605632#1759"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch -c /Users/dmason/IPHONE/CoverShot/main.m -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/main.o0#
+
+CCompileXIB /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.xib
+s303105018.756932
+e303105020.149116
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.xib
+lSLF07#2@52"CompileXIB Classes/CoverShotEditorViewController.xib303105018#303105020#0(0"0(0#0#72"/Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.xib8670740192#642"    cd /Users/dmason/IPHONE/CoverShot    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShotEditorViewController.nib /Users/dmason/IPHONE/CoverShot/Classes/CoverShotEditorViewController.xib --sdk /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/CoverShot/CoverShotViewController.xib
+s303165778.759035
+e303165779.327810
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/CoverShot/CoverShotViewController.xib
+lSLF07#2@38"CompileXIB CoverShotViewController.xib303165778#303165779#0(0"0(0#0#58"/Users/dmason/IPHONE/CoverShot/CoverShotViewController.xib8610878176#622"    cd /Users/dmason/IPHONE/CoverShot    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShotViewController.nib /Users/dmason/IPHONE/CoverShot/CoverShotViewController.xib --sdk /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/CoverShot/FlipsideView.xib
+s303107475.592643
+e303107476.251377
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/CoverShot/FlipsideView.xib
+lSLF07#2@27"CompileXIB FlipsideView.xib303107475#303107476#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/FlipsideView.xib8674735296#600"    cd /Users/dmason/IPHONE/CoverShot    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/FlipsideView.nib /Users/dmason/IPHONE/CoverShot/FlipsideView.xib --sdk /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk0#
+
+CCompileXIB /Users/dmason/IPHONE/CoverShot/MainWindow.xib
+s302997111.417985
+e302997111.959324
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/CoverShot/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib302997111#302997111#0(0"0(0#0#45"/Users/dmason/IPHONE/CoverShot/MainWindow.xib8631846368#596"    cd /Users/dmason/IPHONE/CoverShot    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/MainWindow.nib /Users/dmason/IPHONE/CoverShot/MainWindow.xib --sdk /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/Default.png Default.png
+s303165822.816927
+e303165824.955300
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/Default.png
+xDefault.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/Default.png Default.png303165822#303165824#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/Default.png8621114336#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/Default.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/Default.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/blending.png blending.png
+s303087922.116518
+e303087922.454321
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/blending.png
+xblending.png
+lSLF07#2@72"CopyPNGFile build/Debug-iphoneos/CoverShot.app/blending.png blending.png303087922#303087922#0(0"0(0#0#43"/Users/dmason/IPHONE/CoverShot/blending.png8677750208#618"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/blending.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/blending.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/book.png book.png
+s303086535.099884
+e303086535.977384
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/book.png
+xbook.png
+lSLF07#2@64"CopyPNGFile build/Debug-iphoneos/CoverShot.app/book.png book.png303086535#303086535#0(0"0(0#0#39"/Users/dmason/IPHONE/CoverShot/book.png8671083744#610"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/book.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/book.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/camera.png camera.png
+s303087921.373041
+e303087922.300872
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/camera.png
+xcamera.png
+lSLF07#2@68"CopyPNGFile build/Debug-iphoneos/CoverShot.app/camera.png camera.png303087921#303087922#0(0"0(0#0#41"/Users/dmason/IPHONE/CoverShot/camera.png8676349280#614"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/camera.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/camera.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearbg.png clearbg.png
+s302499184.871522
+e302499192.196099
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearbg.png
+xclearbg.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearbg.png clearbg.png302499184#302499192#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/clearbg.png8647245728#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearbg.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearbg.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover1.png clearcover1.png
+s302996276.406868
+e302996277.006831
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover1.png
+xclearcover1.png
+lSLF07#2@78"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover1.png clearcover1.png302996276#302996277#0(0"0(0#0#46"/Users/dmason/IPHONE/CoverShot/clearcover1.png8634200576#624"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover1.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover1.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover10.png clearcover10.png
+s302996281.288948
+e302996281.688222
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover10.png
+xclearcover10.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover10.png clearcover10.png302996281#302996281#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover10.png8635610880#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover10.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover10.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover11.png clearcover11.png
+s302996281.367302
+e302996281.914395
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover11.png
+xclearcover11.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover11.png clearcover11.png302996281#302996281#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover11.png8633157600#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover11.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover11.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover12.png clearcover12.png
+s302996281.688313
+e302996282.206552
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover12.png
+xclearcover12.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover12.png clearcover12.png302996281#302996282#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover12.png8605296064#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover12.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover12.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover13.png clearcover13.png
+s302996281.914493
+e302996282.589297
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover13.png
+xclearcover13.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover13.png clearcover13.png302996281#302996282#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover13.png8632917696#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover13.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover13.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover14.png clearcover14.png
+s302996282.206686
+e302996282.777551
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover14.png
+xclearcover14.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover14.png clearcover14.png302996282#302996282#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover14.png8605662176#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover14.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover14.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover15.png clearcover15.png
+s302996282.589399
+e302996283.033136
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover15.png
+xclearcover15.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover15.png clearcover15.png302996282#302996283#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover15.png8602397120#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover15.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover15.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover16.png clearcover16.png
+s302996282.777640
+e302996283.311674
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover16.png
+xclearcover16.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover16.png clearcover16.png302996282#302996283#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover16.png8634436768#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover16.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover16.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover17.png clearcover17.png
+s302996283.033249
+e302996283.492798
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover17.png
+xclearcover17.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover17.png clearcover17.png302996283#302996283#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover17.png8628133984#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover17.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover17.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover18.png clearcover18.png
+s302996287.467476
+e302996288.047593
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover18.png
+xclearcover18.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover18.png clearcover18.png302996287#302996288#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover18.png8635578272#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover18.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover18.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover19.png clearcover19.png
+s302996287.525491
+e302996287.880270
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover19.png
+xclearcover19.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover19.png clearcover19.png302996287#302996287#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover19.png8634590784#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover19.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover19.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover1sm.png clearcover1sm.png
+s303096575.423721
+e303096575.738691
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover1sm.png
+xclearcover1sm.png
+lSLF07#2@82"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover1sm.png clearcover1sm.png303096575#303096575#0(0"0(0#0#48"/Users/dmason/IPHONE/CoverShot/clearcover1sm.png8625035264#628"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover1sm.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover1sm.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover2.png clearcover2.png
+s302996276.536166
+e302996277.162649
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover2.png
+xclearcover2.png
+lSLF07#2@78"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover2.png clearcover2.png302996276#302996277#0(0"0(0#0#46"/Users/dmason/IPHONE/CoverShot/clearcover2.png8636405120#624"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover2.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover2.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover20.png clearcover20.png
+s302996287.880488
+e302996288.403605
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover20.png
+xclearcover20.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover20.png clearcover20.png302996287#302996288#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover20.png8634235552#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover20.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover20.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover21.png clearcover21.png
+s302996288.047702
+e302996288.617113
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover21.png
+xclearcover21.png
+lSLF07#2@80"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover21.png clearcover21.png302996288#302996288#0(0"0(0#0#47"/Users/dmason/IPHONE/CoverShot/clearcover21.png8633213504#626"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover21.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover21.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover3.png clearcover3.png
+s302996277.007080
+e302996277.670455
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover3.png
+xclearcover3.png
+lSLF07#2@78"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover3.png clearcover3.png302996277#302996277#0(0"0(0#0#46"/Users/dmason/IPHONE/CoverShot/clearcover3.png8636851104#624"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover3.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover3.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover4.png clearcover4.png
+s302996277.162780
+e302996277.602282
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover4.png
+xclearcover4.png
+lSLF07#2@78"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover4.png clearcover4.png302996277#302996277#0(0"0(0#0#46"/Users/dmason/IPHONE/CoverShot/clearcover4.png8620461472#624"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover4.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover4.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover5.png clearcover5.png
+s302996277.602374
+e302996278.244489
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover5.png
+xclearcover5.png
+lSLF07#2@78"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover5.png clearcover5.png302996277#302996278#0(0"0(0#0#46"/Users/dmason/IPHONE/CoverShot/clearcover5.png8635728192#624"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover5.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover5.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover6.png clearcover6.png
+s302996277.670543
+e302996278.343039
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover6.png
+xclearcover6.png
+lSLF07#2@78"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover6.png clearcover6.png302996277#302996278#0(0"0(0#0#46"/Users/dmason/IPHONE/CoverShot/clearcover6.png8634941184#624"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover6.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover6.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover7.png clearcover7.png
+s302996278.244584
+e302996278.857206
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover7.png
+xclearcover7.png
+lSLF07#2@78"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover7.png clearcover7.png302996278#302996278#0(0"0(0#0#46"/Users/dmason/IPHONE/CoverShot/clearcover7.png8634154976#624"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover7.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover7.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover8.png clearcover8.png
+s302996280.087568
+e302996280.667426
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover8.png
+xclearcover8.png
+lSLF07#2@78"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover8.png clearcover8.png302996280#302996280#0(0"0(0#0#46"/Users/dmason/IPHONE/CoverShot/clearcover8.png8634579616#624"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover8.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover8.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover9.png clearcover9.png
+s302996280.667546
+e302996281.288730
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover9.png
+xclearcover9.png
+lSLF07#2@78"CopyPNGFile build/Debug-iphoneos/CoverShot.app/clearcover9.png clearcover9.png302996280#302996281#0(0"0(0#0#46"/Users/dmason/IPHONE/CoverShot/clearcover9.png8631566176#624"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/clearcover9.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/clearcover9.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover1.png cover1.png
+s302996275.578376
+e302996276.517651
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover1.png
+xcover1.png
+lSLF07#2@68"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover1.png cover1.png302996275#302996276#0(0"0(0#0#41"/Users/dmason/IPHONE/CoverShot/cover1.png8634038560#614"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover1.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover1.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover10.png cover10.png
+s302996283.311776
+e302996283.857655
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover10.png
+xcover10.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover10.png cover10.png302996283#302996283#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover10.png8602128800#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover10.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover10.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover11.png cover11.png
+s302996283.492894
+e302996284.076423
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover11.png
+xcover11.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover11.png cover11.png302996283#302996284#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover11.png8609612704#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover11.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover11.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover12.png cover12.png
+s302996283.857788
+e302996284.510837
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover12.png
+xcover12.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover12.png cover12.png302996283#302996284#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover12.png8608399680#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover12.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover12.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover13.png cover13.png
+s302996284.076512
+e302996284.713807
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover13.png
+xcover13.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover13.png cover13.png302996284#302996284#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover13.png8605149856#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover13.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover13.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover14.png cover14.png
+s302996284.510951
+e302996285.216296
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover14.png
+xcover14.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover14.png cover14.png302996284#302996285#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover14.png8593625440#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover14.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover14.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover15.png cover15.png
+s302996284.713900
+e302996285.309794
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover15.png
+xcover15.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover15.png cover15.png302996284#302996285#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover15.png8634048384#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover15.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover15.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover16.png cover16.png
+s302996285.216382
+e302996286.168248
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover16.png
+xcover16.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover16.png cover16.png302996285#302996286#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover16.png8631778976#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover16.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover16.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover17.png cover17.png
+s302996285.309880
+e302996286.276609
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover17.png
+xcover17.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover17.png cover17.png302996285#302996286#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover17.png8634678176#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover17.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover17.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover18.png cover18.png
+s302996286.168471
+e302996286.836425
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover18.png
+xcover18.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover18.png cover18.png302996286#302996286#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover18.png8627658880#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover18.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover18.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover19.png cover19.png
+s302996286.276709
+e302996286.951503
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover19.png
+xcover19.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover19.png cover19.png302996286#302996286#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover19.png8633188800#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover19.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover19.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover2.png cover2.png
+s302996275.579437
+e302996276.406541
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover2.png
+xcover2.png
+lSLF07#2@68"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover2.png cover2.png302996275#302996276#0(0"0(0#0#41"/Users/dmason/IPHONE/CoverShot/cover2.png8635843744#614"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover2.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover2.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover20.png cover20.png
+s302996286.836535
+e302996287.467375
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover20.png
+xcover20.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover20.png cover20.png302996286#302996287#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover20.png8607902656#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover20.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover20.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover21.png cover21.png
+s302996286.951601
+e302996287.525349
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover21.png
+xcover21.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover21.png cover21.png302996286#302996287#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/cover21.png8636457056#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover21.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover21.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover3.png cover3.png
+s302996278.343146
+e302996278.921985
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover3.png
+xcover3.png
+lSLF07#2@68"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover3.png cover3.png302996278#302996278#0(0"0(0#0#41"/Users/dmason/IPHONE/CoverShot/cover3.png8627497440#614"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover3.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover3.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover4.png cover4.png
+s302996278.857341
+e302996279.590154
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover4.png
+xcover4.png
+lSLF07#2@68"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover4.png cover4.png302996278#302996279#0(0"0(0#0#41"/Users/dmason/IPHONE/CoverShot/cover4.png8610296640#614"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover4.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover4.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover5.png cover5.png
+s302996278.922079
+e302996279.541825
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover5.png
+xcover5.png
+lSLF07#2@68"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover5.png cover5.png302996278#302996279#0(0"0(0#0#41"/Users/dmason/IPHONE/CoverShot/cover5.png8609413280#614"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover5.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover5.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover6.png cover6.png
+s302996279.541919
+e302996280.087476
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover6.png
+xcover6.png
+lSLF07#2@68"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover6.png cover6.png302996279#302996280#0(0"0(0#0#41"/Users/dmason/IPHONE/CoverShot/cover6.png8608337056#614"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover6.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover6.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover7.png cover7.png
+s302996279.590237
+e302996280.191349
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover7.png
+xcover7.png
+lSLF07#2@68"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover7.png cover7.png302996279#302996280#0(0"0(0#0#41"/Users/dmason/IPHONE/CoverShot/cover7.png8632669728#614"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover7.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover7.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover8.png cover8.png
+s302996280.191435
+e302996280.933808
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover8.png
+xcover8.png
+lSLF07#2@68"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover8.png cover8.png302996280#302996280#0(0"0(0#0#41"/Users/dmason/IPHONE/CoverShot/cover8.png8635665344#614"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover8.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover8.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover9.png cover9.png
+s302996280.933919
+e302996281.367204
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover9.png
+xcover9.png
+lSLF07#2@68"CopyPNGFile build/Debug-iphoneos/CoverShot.app/cover9.png cover9.png302996280#302996281#0(0"0(0#0#41"/Users/dmason/IPHONE/CoverShot/cover9.png8632462112#614"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/cover9.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/cover9.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/help_bg.png help_bg.png
+s302763072.364318
+e302763075.330572
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/help_bg.png
+xhelp_bg.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/help_bg.png help_bg.png302763072#302763075#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/help_bg.png8616023296#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/help_bg.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/help_bg.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/icon.png icon.png
+s302499185.307015
+e302499185.400899
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/icon.png
+xicon.png
+lSLF07#2@64"CopyPNGFile build/Debug-iphoneos/CoverShot.app/icon.png icon.png302499185#302499185#0(0"0(0#0#39"/Users/dmason/IPHONE/CoverShot/icon.png8645446944#610"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/icon.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/icon.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/maghome.png maghome.png
+s302763071.105492
+e302763074.592509
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/maghome.png
+xmaghome.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/CoverShot.app/maghome.png maghome.png302763071#302763074#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/maghome.png8615524032#616"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/maghome.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/maghome.png0#
+
+CCopyPNGFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/save.png save.png
+s303087921.375439
+e303087922.116260
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/save.png
+xsave.png
+lSLF07#2@64"CopyPNGFile build/Debug-iphoneos/CoverShot.app/save.png save.png303087921#303087922#0(0"0(0#0#39"/Users/dmason/IPHONE/CoverShot/save.png8675396224#610"    cd /Users/dmason/IPHONE/CoverShot    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/CoverShot/save.png /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/save.png0#
+
+CCpResource build/Debug-iphoneos/CoverShot.app/ResourceRules.plist /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+s302997088.038333
+e302997088.108061
+r1
+xCpResource
+xbuild/Debug-iphoneos/CoverShot.app/ResourceRules.plist
+x/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+lSLF07#2@113"Copy /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist302997088#302997088#0(0"0(0#0#108"/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist8635078016#542"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app0#
+
+CCpResource build/Debug-iphoneos/CoverShot.app/ResourceRules.plist /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+s302997111.353336
+e302997111.417871
+r1
+xCpResource
+xbuild/Debug-iphoneos/CoverShot.app/ResourceRules.plist
+x/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+lSLF07#2@113"Copy /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist302997111#302997111#0(0"0(0#0#108"/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist8637754976#542"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app0#
+
+CCpResource build/Debug-iphoneos/CoverShot.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+s301600181.836989
+e301600182.084629
+r1
+xCpResource
+xbuild/Debug-iphoneos/CoverShot.app/ResourceRules.plist
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist301600181#301600182#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist8634236032#466"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app0#
+
+CCreateUniversalBinary /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShot normal "armv6 armv7"
+s303110246.805545
+e303110246.808799
+r1
+xCreateUniversalBinary
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShot
+xnormal
+xarmv6 armv7
+lSLF07#2@87"CreateUniversalBinary build/Debug-iphoneos/CoverShot.app/CoverShot normal "armv6 armv7"303110246#303110246#0(0"0(0#0#42"/Users/dmason/IPHONE/CoverShot/armv6 armv78697651584#540"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShot /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShot -output /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShot0#
+
+CGenerateDSYMFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app.dSYM /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShot
+s303110246.808889
+e303110246.853013
+r1
+xGenerateDSYMFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app.dSYM
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShot
+lSLF07#2@101"GenerateDSYMFile build/Debug-iphoneos/CoverShot.app.dSYM build/Debug-iphoneos/CoverShot.app/CoverShot303110246#303110246#0(0"0(0#0#75"/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShot8697592608#401"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/dsymutil /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/CoverShot -o /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app.dSYM0#
+
+CLd /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShot normal armv6
+s303110246.739120
+e303110246.789870
+r1
+xLd
+x/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShot
+xnormal
+xarmv6
+lSLF07#2@119"Link /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShot303110246#303110246#0(0"0(0#0#0"8697870912#968"    cd /Users/dmason/IPHONE/CoverShot    setenv IPHONEOS_DEPLOYMENT_TARGET 4.1    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -L/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -filelist /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShot.LinkFileList -dead_strip -miphoneos-version-min=4.1 -framework Foundation -framework UIKit -framework CoreGraphics -framework iAd -framework AVFoundation -framework QuartzCore -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv6/CoverShot0#
+
+CLd /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShot normal armv7
+s303110246.756732
+e303110246.805443
+r1
+xLd
+x/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShot
+xnormal
+xarmv7
+lSLF07#2@119"Link /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShot303110246#303110246#0(0"0(0#0#0"8697744320#968"    cd /Users/dmason/IPHONE/CoverShot    setenv IPHONEOS_DEPLOYMENT_TARGET 4.1    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -L/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -filelist /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShot.LinkFileList -dead_strip -miphoneos-version-min=4.1 -framework Foundation -framework UIKit -framework CoreGraphics -framework iAd -framework AVFoundation -framework QuartzCore -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/Objects-normal/armv7/CoverShot0#
+
+CProcessInfoPlistFile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/Info.plist CoverShot-Info.plist
+s302997111.354924
+e302997111.399286
+r1
+xProcessInfoPlistFile
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/Info.plist
+xCoverShot-Info.plist
+lSLF07#2@28"Process CoverShot-Info.plist302997111#302997111#0(0"0(0#0#51"/Users/dmason/IPHONE/CoverShot/CoverShot-Info.plist8636116672#576"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility CoverShot-Info.plist -genpkginfo /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/ResourceRules.plist -o /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/Info.plist0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-bqryqebxigwusoexvmrhmzilvokb/CoverShot_Prefix.pch.pth CoverShot_Prefix.pch normal armv6 objective-c com.apple.compilers.llvm.clang.1_0.analyzer
+s302333080.850148
+e302333081.389368
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-bqryqebxigwusoexvmrhmzilvokb/CoverShot_Prefix.pch.pth
+xCoverShot_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.analyzer
+lSLF07#2@31"Precompile CoverShot_Prefix.pch302333080#302333081#0(0"0(0#0#51"/Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch8759881920#1674"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/clang -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -c /Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-bqryqebxigwusoexvmrhmzilvokb/CoverShot_Prefix.pch.pth0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cqztzdomhzbrslcwwtpcyqowvrmk/CoverShot_Prefix.pch.gch CoverShot_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s302203443.141440
+e302203444.123402
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cqztzdomhzbrslcwwtpcyqowvrmk/CoverShot_Prefix.pch.gch
+xCoverShot_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile CoverShot_Prefix.pch302203443#302203444#0(0"0(0#0#51"/Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch8609733088#1587"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -c /Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cqztzdomhzbrslcwwtpcyqowvrmk/CoverShot_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cxvtbwocdllwthcjawcwxcluvjvd/CoverShot_Prefix.pch.pth CoverShot_Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.analyzer
+s302333080.851492
+e302333081.253908
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cxvtbwocdllwthcjawcwxcluvjvd/CoverShot_Prefix.pch.pth
+xCoverShot_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.analyzer
+lSLF07#2@31"Precompile CoverShot_Prefix.pch302333080#302333081#0(0"0(0#0#51"/Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch8759762720#1674"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -c /Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-cxvtbwocdllwthcjawcwxcluvjvd/CoverShot_Prefix.pch.pth0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-eorcbimnznfzungsiiicwikmjuzs/CoverShot_Prefix.pch.gch CoverShot_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s302997089.790654
+e302997090.641032
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-eorcbimnznfzungsiiicwikmjuzs/CoverShot_Prefix.pch.gch
+xCoverShot_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile CoverShot_Prefix.pch302997089#302997090#0(0"0(0#0#51"/Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch8638609120#1663"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -c /Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-eorcbimnznfzungsiiicwikmjuzs/CoverShot_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch.gch CoverShot_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s302671087.538436
+e302671089.079822
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch.gch
+xCoverShot_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile CoverShot_Prefix.pch302671087#302671089#0(0"0(0#0#51"/Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch8605928320#1663"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -c /Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ewxiarbybodyvacajdfoocqcwuwx/CoverShot_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ftgnjzzcbsczrlfrbptimamjtkos/CoverShot_Prefix.pch.gch CoverShot_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s302997089.789554
+e302997090.555981
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ftgnjzzcbsczrlfrbptimamjtkos/CoverShot_Prefix.pch.gch
+xCoverShot_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile CoverShot_Prefix.pch302997089#302997090#0(0"0(0#0#51"/Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch8638963808#1663"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -c /Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-ftgnjzzcbsczrlfrbptimamjtkos/CoverShot_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-fxdxkrajcdidcwhktugjwefexwkx/CoverShot_Prefix.pch.gch CoverShot_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s302203443.140572
+e302203443.952886
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-fxdxkrajcdidcwhktugjwefexwkx/CoverShot_Prefix.pch.gch
+xCoverShot_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile CoverShot_Prefix.pch302203443#302203443#0(0"0(0#0#51"/Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch8619276032#1587"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -c /Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-fxdxkrajcdidcwhktugjwefexwkx/CoverShot_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch.gch CoverShot_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s302671087.537591
+e302671089.595590
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch.gch
+xCoverShot_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile CoverShot_Prefix.pch302671087#302671089#0(0"0(0#0#51"/Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch8606250240#1663"    cd /Users/dmason/IPHONE/CoverShot    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.1 -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-generated-files.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-own-target-headers.hmap -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-all-target-headers.hmap -iquote /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot-project-headers.hmap -F/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos -I/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/include -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/DerivedSources -c /Users/dmason/IPHONE/CoverShot/CoverShot_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/CoverShot_Prefix-gboczvxduemlcwduqfkfoasfefth/CoverShot_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision" /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/embedded.mobileprovision
+s302499194.152242
+e302499194.153444
+r1
+xProcessProductPackaging
+x/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/embedded.mobileprovision
+lSLF07#2@195"ProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision" build/Debug-iphoneos/CoverShot.app/embedded.mobileprovision302499194#302499194#0(0"0(0#0#90"/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/embedded.mobileprovision8647951936#448"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/dmason/Library/MobileDevice/Provisioning Profiles/3204147F-02F2-4288-99F9-7B4DFD3CD767.mobileprovision" -o /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app/embedded.mobileprovision0#
+
+CProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent
+s302997091.385101
+e302997091.401351
+r1
+xProcessProductPackaging
+x/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist
+x/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent
+lSLF07#2@200"ProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent302997091#302997091#0(0"0(0#0#99"/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent8634686208#479"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist -entitlements -format xml -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent0#
+
+CProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent
+s302997114.016513
+e302997114.020973
+r1
+xProcessProductPackaging
+x/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist
+x/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent
+lSLF07#2@200"ProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent302997114#302997114#0(0"0(0#0#99"/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent8638629056#479"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist -entitlements -format xml -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent0#
+
+CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent
+s302203445.452021
+e302203445.470670
+r1
+xProcessProductPackaging
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
+x/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent
+lSLF07#2@181"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent302203445#302203445#0(0"0(0#0#99"/Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent8616798464#422"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist -entitlements -format xml -o /Users/dmason/IPHONE/CoverShot/build/CoverShot.build/Debug-iphoneos/CoverShot.build/CoverShot.xcent0#
+
+CTouch /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app
+s303165824.958139
+e303165824.961929
+r1
+xTouch
+x/Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app
+lSLF07#2@71"Touch /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app303165824#303165824#0(0"0(0#0#0"8619171968#288"    cd /Users/dmason/IPHONE/CoverShot    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dmason/IPHONE/CoverShot/build/Debug-iphoneos/CoverShot.app0#
+
