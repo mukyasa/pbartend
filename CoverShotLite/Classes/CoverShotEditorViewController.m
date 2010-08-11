@@ -66,7 +66,9 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	if(isSaving)
 	{
 		if (buttonIndex == 0) //camera
-			[self doSave];		
+			[self doSave];	
+		else if(buttonIndex==1)
+			[self moveNavViewOnscreen];//show main nav
 		
 	}else{
 		// the user clicked one of the OK/Cancel buttons
