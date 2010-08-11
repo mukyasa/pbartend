@@ -165,6 +165,14 @@
 			711B106B1212525300D716F0 /* PBXTextBookmark */ = 711B106B1212525300D716F0 /* PBXTextBookmark */;
 			711B106C1212525300D716F0 /* PlistBookmark */ = 711B106C1212525300D716F0 /* PlistBookmark */;
 			711B106D1212525300D716F0 /* PlistBookmark */ = 711B106D1212525300D716F0 /* PlistBookmark */;
+			711B106E1212525B00D716F0 /* PlistBookmark */ = 711B106E1212525B00D716F0 /* PlistBookmark */;
+			711B106F1212525B00D716F0 /* PBXTextBookmark */ = 711B106F1212525B00D716F0 /* PBXTextBookmark */;
+			711B10701212530A00D716F0 /* PBXTextBookmark */ = 711B10701212530A00D716F0 /* PBXTextBookmark */;
+			711B10861212568800D716F0 /* PBXTextBookmark */ = 711B10861212568800D716F0 /* PBXTextBookmark */;
+			711B10871212568800D716F0 /* PBXBookmark */ = 711B10871212568800D716F0 /* PBXBookmark */;
+			711B10881212568800D716F0 /* PlistBookmark */ = 711B10881212568800D716F0 /* PlistBookmark */;
+			711B10891212568800D716F0 /* PBXBookmark */ = 711B10891212568800D716F0 /* PBXBookmark */;
+			711B108A1212568800D716F0 /* PBXTextBookmark */ = 711B108A1212568800D716F0 /* PBXTextBookmark */;
 			711B8EDF1210E47E007E1FE4 = 711B8EDF1210E47E007E1FE4 /* PBXTextBookmark */;
 			711B8F4E1210FAB9007E1FE4 = 711B8F4E1210FAB9007E1FE4 /* PBXTextBookmark */;
 			711B8F501210FAB9007E1FE4 = 711B8F501210FAB9007E1FE4 /* PBXTextBookmark */;
@@ -418,6 +426,91 @@
 		name = "/Users/dmason/IPHONE/MY IPHONE APPS/CoverShotLite/CoverShot-Info.plist";
 		rLen = 0;
 		rLoc = 9223372036854775807;
+	};
+	711B106E1212525B00D716F0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* CoverShot-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			UIPrerenderedIcon,
+		);
+		name = "/Users/dmason/IPHONE/MY IPHONE APPS/CoverShotLite/CoverShot-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	711B106F1212525B00D716F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71D58FE412124D0300FB994C /* dmason.pbxuser */;
+		name = "dmason.pbxuser: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1790;
+		vrLoc = 0;
+	};
+	711B10701212530A00D716F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71D58FE412124D0300FB994C /* dmason.pbxuser */;
+		name = "dmason.pbxuser: 1787";
+		rLen = 0;
+		rLoc = 61108;
+		rType = 0;
+		vrLen = 1790;
+		vrLoc = 0;
+	};
+	711B10861212568800D716F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71D58FE412124D0300FB994C /* dmason.pbxuser */;
+		name = "dmason.pbxuser: 1798";
+		rLen = 0;
+		rLoc = 61452;
+		rType = 0;
+		vrLen = 1790;
+		vrLoc = 0;
+	};
+	711B10871212568800D716F0 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7193EFCA120E01670074658A /* cover16.png */;
+	};
+	711B10881212568800D716F0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* CoverShot-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleDevelopmentRegion,
+		);
+		name = "/Users/dmason/IPHONE/MY IPHONE APPS/CoverShotLite/CoverShot-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	711B10891212568800D716F0 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 711B108C1212568800D716F0 /* project.pbxproj */;
+	};
+	711B108A1212568800D716F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 711B108B1212568800D716F0 /* project.pbxproj */;
+		name = "project.pbxproj: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 6537;
+		vrLoc = 0;
+	};
+	711B108B1212568800D716F0 /* project.pbxproj */ = {
+		isa = PBXFileReference;
+		name = project.pbxproj;
+		path = "/Users/dmason/IPHONE/MY IPHONE APPS/CoverShotLite/CoverShot.xcodeproj/project.pbxproj";
+		sourceTree = "<absolute>";
+	};
+	711B108C1212568800D716F0 /* project.pbxproj */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.pbxproject;
+		name = project.pbxproj;
+		path = "/Users/dmason/IPHONE/MY IPHONE APPS/CoverShotLite/CoverShot.xcodeproj/project.pbxproj";
+		sourceTree = "<absolute>";
 	};
 	711B8EDF1210E47E007E1FE4 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1587,8 +1680,8 @@
 		path = "/Users/dmason/IPHONE/MY IPHONE APPS/CoverShotLite/CoverShot.xcodeproj/dmason.pbxuser";
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1144, 21905}}";
-			sepNavSelRange = "{0, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1144, 23530}}";
+			sepNavSelRange = "{61452, 0}";
 			sepNavVisRange = "{0, 1790}";
 		};
 	};
