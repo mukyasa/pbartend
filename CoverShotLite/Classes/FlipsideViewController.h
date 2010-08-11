@@ -7,18 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 
 @protocol FlipsideViewControllerDelegate;
 
 
-@interface FlipsideViewController : UIViewController {
+@interface FlipsideViewController : UIViewController <MFMailComposeViewControllerDelegate>{
 	id <FlipsideViewControllerDelegate> delegate;
 	IBOutlet UIWebView *webView;
+	NSString *theURL;
 }
 
 @property (nonatomic, retain) UIWebView *webView;
+-(IBAction) tellAFriend:(id)sender;
 -(IBAction) callWebsite:(id)sender;
+-(IBAction) getFullVersion:(id)sender;
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
 - (IBAction)done:(id)sender;

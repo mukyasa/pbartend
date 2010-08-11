@@ -19,11 +19,43 @@
 	newWebViewFrame.origin.y = viewHeight;
 	
 	self.webView.frame =newWebViewFrame;
-	
+	//change the id to be this app's id
+	theURL = @"http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=381973252&mt=8";
 	
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
 }
+
+
+/*share via email*/
+-(IBAction)tellAFriend:(id)sender{
+	
+	//add link to store here via my site
+	
+	NSString* body = [NSString stringWithFormat:@"Hey I just thought you might want to try this app called Cover Shot looks pretty fun. - %@\n",theURL];
+	
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = self;
+	[picker setSubject:@"Cover Shot - iPhone app"];
+	
+	// [picker setToRecipients:[NSArray arrayWithObject:@"djmason9@yahoo.com"]];
+	[picker setMessageBody:body isHTML:NO];
+	
+	[self presentModalViewController:picker animated:NO];
+	[picker release];
+	
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+-(IBAction) getFullVersion:(id)sender{
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:theURL]];	
+}
+
+
 
 -(IBAction) callWebsite:(id)sender{
 	NSString *urlAddress = @"http://www.mypocket-technologies.com";
