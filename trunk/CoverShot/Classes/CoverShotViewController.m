@@ -10,7 +10,7 @@
 
 @implementation CoverShotViewController
 
-@synthesize magizineScrollView,pickedCover,bannerView,coverShotEditorViewController;
+@synthesize magizineScrollView,pickedCover,coverShotEditorViewController;
 
 const CGFloat kScrollObjWidth	= 240.0;
 const CGFloat kScrollObjHeight	= 360;
@@ -40,7 +40,6 @@ const NSUInteger kNumImages		= 21;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	
-	[self moveBannerViewOffscreen];//hide banner
 	
 	pickedCover = [UIImage imageNamed:@"clearcover1.png"];
 	
@@ -151,17 +150,7 @@ const NSUInteger kNumImages		= 21;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
-/****banner view *****/
--(void) moveBannerViewOnscreen{
-	
-	CGRect newBannerview = self.bannerView.frame;
-	newBannerview.origin.y = self.view.frame.size.height-newBannerview.size.height;
-	
-	[UIView beginAnimations:@"BannerViewIntro" context:NULL];
-	self.bannerView.frame = newBannerview;
-	[UIView commitAnimations];
-	
-}
+
 
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
@@ -181,21 +170,7 @@ const NSUInteger kNumImages		= 21;
 	[controller release];
 }
 
--(void) moveBannerViewOffscreen{
-	CGFloat viewHeight = self.view.frame.size.height;
-	CGRect newBannerview = self.bannerView.frame;
-	newBannerview.origin.y = viewHeight;
-	
-	self.bannerView.frame =newBannerview;
-	
-}
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error;
-{
-	[self moveBannerViewOffscreen];
-}
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
-	[self moveBannerViewOnscreen];
-}
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -213,8 +188,7 @@ const NSUInteger kNumImages		= 21;
 
 - (void)dealloc {
 	[coverShotEditorViewController release];
-	bannerView.delegate = nil;
-	[bannerView release];
+
 	[pickedCover release];
 	[magizineScrollView release];
     [super dealloc];

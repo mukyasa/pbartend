@@ -67,6 +67,7 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
 						<bool key="IBUIEditable">NO</bool>
 						<string key="IBUIText">1. Select a magazine cover by sliding your finger left or right on the magazine.                      2. Double tap the magazine cover to choose.                       3. Pick a photo (camera or library) and use your fingers to size, rotate, flip (double tap), or move the image into the desired position.                      4. You can choose to add a blended color if you want.          5. Save your photo to your library.                                 </string>
 						<object class="NSColor" key="IBUITextColor">
