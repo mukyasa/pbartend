@@ -66,7 +66,9 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	if(isSaving)
 	{
 		if (buttonIndex == 0) //camera
-			[self doSave];		
+			[self doSave];	
+		else if(buttonIndex==1)
+			[self moveNavViewOnscreen];//show main nav
 		
 	}else{
 		// the user clicked one of the OK/Cancel buttons
@@ -98,7 +100,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 			[imgView release];			
 			
 		}
-		else if(buttonIndex ==2) {
+		else if(buttonIndex ==2) //library 
+		{
 			UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
 			imagePicker = [[UIImagePickerController alloc] init];
 			imagePicker.delegate = self;	
@@ -106,7 +109,9 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 			[self presentModalViewController:imagePicker animated:YES];
 			
 			
-		}		
+		}	
+		
+			
 	}
 	
 	
