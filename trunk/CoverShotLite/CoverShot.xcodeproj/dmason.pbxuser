@@ -109,7 +109,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					20,
-					907,
+					942,
 					20,
 					48,
 					43,
@@ -127,6 +127,28 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					926,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
 			PBXPerProjectTemplateStateSaveDate = 303190003;
 			PBXWorkspaceStateSaveDate = 303190003;
 		};
@@ -136,6 +158,13 @@
 			7103E98111FA1E570088BD9E = 7103E98111FA1E570088BD9E /* PBXBookmark */;
 			7103EA8C11FA43120088BD9E = 7103EA8C11FA43120088BD9E /* PBXTextBookmark */;
 			7103EAA411FA44500088BD9E = 7103EAA411FA44500088BD9E /* PBXTextBookmark */;
+			711B105E1212511700D716F0 /* PBXBookmark */ = 711B105E1212511700D716F0 /* PBXBookmark */;
+			711B105F1212511700D716F0 /* PBXBookmark */ = 711B105F1212511700D716F0 /* PBXBookmark */;
+			711B10601212511700D716F0 /* PBXTextBookmark */ = 711B10601212511700D716F0 /* PBXTextBookmark */;
+			711B10611212511700D716F0 /* PBXTextBookmark */ = 711B10611212511700D716F0 /* PBXTextBookmark */;
+			711B106B1212525300D716F0 /* PBXTextBookmark */ = 711B106B1212525300D716F0 /* PBXTextBookmark */;
+			711B106C1212525300D716F0 /* PlistBookmark */ = 711B106C1212525300D716F0 /* PlistBookmark */;
+			711B106D1212525300D716F0 /* PlistBookmark */ = 711B106D1212525300D716F0 /* PlistBookmark */;
 			711B8EDF1210E47E007E1FE4 = 711B8EDF1210E47E007E1FE4 /* PBXTextBookmark */;
 			711B8F4E1210FAB9007E1FE4 = 711B8F4E1210FAB9007E1FE4 /* PBXTextBookmark */;
 			711B8F501210FAB9007E1FE4 = 711B8F501210FAB9007E1FE4 /* PBXTextBookmark */;
@@ -275,7 +304,7 @@
 	};
 	7103E9EB11FA35FD0088BD9E /* QuartzView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1345, 840}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1144, 687}}";
 			sepNavSelRange = "{204, 0}";
 			sepNavVisRange = "{0, 204}";
 		};
@@ -327,6 +356,68 @@
 		name = objc.h;
 		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/objc/objc.h;
 		sourceTree = "<absolute>";
+	};
+	711B105E1212511700D716F0 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 710210B71207ABD900F36BA0 /* clearcover3.png */;
+	};
+	711B105F1212511700D716F0 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 71AB1F821211F1740063B455 /* Default.png */;
+	};
+	711B10601212511700D716F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71D58FE412124D0300FB994C /* dmason.pbxuser */;
+		name = "dmason.pbxuser: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1790;
+		vrLoc = 0;
+	};
+	711B10611212511700D716F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7103E9EB11FA35FD0088BD9E /* QuartzView.h */;
+		name = "QuartzView.h: 12";
+		rLen = 0;
+		rLoc = 204;
+		rType = 0;
+		vrLen = 204;
+		vrLoc = 0;
+	};
+	711B106B1212525300D716F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7103E9EB11FA35FD0088BD9E /* QuartzView.h */;
+		name = "QuartzView.h: 12";
+		rLen = 0;
+		rLoc = 204;
+		rType = 0;
+		vrLen = 204;
+		vrLoc = 0;
+	};
+	711B106C1212525300D716F0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* CoverShot-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			UIPrerenderedIcon,
+		);
+		name = "/Users/dmason/IPHONE/MY IPHONE APPS/CoverShotLite/CoverShot-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	711B106D1212525300D716F0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* CoverShot-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			UIPrerenderedIcon,
+		);
+		name = "/Users/dmason/IPHONE/MY IPHONE APPS/CoverShotLite/CoverShot-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
 	};
 	711B8EDF1210E47E007E1FE4 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1495,6 +1586,11 @@
 		name = dmason.pbxuser;
 		path = "/Users/dmason/IPHONE/MY IPHONE APPS/CoverShotLite/CoverShot.xcodeproj/dmason.pbxuser";
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1144, 21905}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1790}";
+		};
 	};
 	71D58FE512124D0300FB994C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
