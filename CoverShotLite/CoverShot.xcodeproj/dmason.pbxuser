@@ -45,9 +45,9 @@
 			1D6058900D05DD3D006BFB54 /* CoverShot */,
 		);
 		breakpoints = (
-			71BD1902120549C000BF15ED /* CoverShotEditorViewController.m:401 */,
-			714854DF120A69CC000B7B36 /* CoverShotEditorViewController.m:505 */,
-			714854E1120A6A05000B7B36 /* CoverShotEditorViewController.m:504 */,
+			71BD1902120549C000BF15ED /* CoverShotEditorViewController.m:403 */,
+			714854DF120A69CC000B7B36 /* CoverShotEditorViewController.m:507 */,
+			714854E1120A6A05000B7B36 /* CoverShotEditorViewController.m:506 */,
 			71FCD1F2120BB8C100139C51 /* FlipsideViewController.m:61 */,
 			71FCD236120BBF6300139C51 /* FlipsideViewController.m:85 */,
 			71FCD23A120BBF6A00139C51 /* CoverShotViewController.m:168 */,
@@ -700,7 +700,7 @@
 		vrLen = 1855;
 		vrLoc = 14256;
 	};
-	714854DF120A69CC000B7B36 /* CoverShotEditorViewController.m:505 */ = {
+	714854DF120A69CC000B7B36 /* CoverShotEditorViewController.m:507 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -712,13 +712,13 @@
 		functionName = "-setupQuartzBlendingView:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 505;
+		lineNumber = 507;
 		location = CoverShot;
 		modificationTime = 302759795.295513;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	714854E1120A6A05000B7B36 /* CoverShotEditorViewController.m:504 */ = {
+	714854E1120A6A05000B7B36 /* CoverShotEditorViewController.m:506 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -730,7 +730,7 @@
 		functionName = "-setupQuartzBlendingView:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 504;
+		lineNumber = 506;
 		location = CoverShot;
 		modificationTime = 302759795.2955331;
 		originalNumberOfMultipleMatches = 1;
@@ -1524,7 +1524,7 @@
 		path = /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIGraphics.h;
 		sourceTree = "<absolute>";
 	};
-	71BD1902120549C000BF15ED /* CoverShotEditorViewController.m:401 */ = {
+	71BD1902120549C000BF15ED /* CoverShotEditorViewController.m:403 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1536,7 +1536,7 @@
 		functionName = "-motionEnded:withEvent:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 401;
+		lineNumber = 403;
 		location = CoverShot;
 		modificationTime = 302759795.295472;
 		originalNumberOfMultipleMatches = 1;
@@ -1651,15 +1651,15 @@
 	71DCB54A120B914600C6B951 /* FlipsideViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1384, 837}}";
-			sepNavSelRange = "{423, 0}";
+			sepNavSelRange = "{0, 825}";
 			sepNavVisRange = "{0, 825}";
 		};
 	};
 	71DCB54B120B914600C6B951 /* FlipsideViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1384, 1508}}";
-			sepNavSelRange = "{1648, 0}";
-			sepNavVisRange = "{84, 2012}";
+			sepNavIntBoundsRect = "{{0, 0}, {1384, 1456}}";
+			sepNavSelRange = "{0, 3056}";
+			sepNavVisRange = "{84, 1868}";
 		};
 	};
 	71E921DF120F67620051D9F3 /* PBXBookmark */ = {
@@ -1716,6 +1716,11 @@
 		name = dmason.pbxuser;
 		path = "/Users/dmason/IPHONE/MY IPHONE APPS/CoverShotLite/CoverShot.xcodeproj/dmason.pbxuser";
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1384, 23660}}";
+			sepNavSelRange = "{57997, 0}";
+			sepNavVisRange = "{0, 2232}";
+		};
 	};
 	71FCD1F2120BB8C100139C51 /* FlipsideViewController.m:61 */ = {
 		isa = PBXFileBreakpoint;
