@@ -27,6 +27,7 @@
 		710210CA1207ABD900F36BA0 /* cover7.png in Resources */ = {isa = PBXBuildFile; fileRef = 710210C01207ABD900F36BA0 /* cover7.png */; };
 		7103E97211FA1D250088BD9E /* blending.png in Resources */ = {isa = PBXBuildFile; fileRef = 7103E97111FA1D250088BD9E /* blending.png */; };
 		7103E9ED11FA35FD0088BD9E /* QuartzView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7103E9EC11FA35FD0088BD9E /* QuartzView.m */; };
+		7148D7091213037200B13094 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7148D7081213037200B13094 /* MessageUI.framework */; };
 		716D136C1207C55600430260 /* QuartzBlending.m in Sources */ = {isa = PBXBuildFile; fileRef = 716D136B1207C55600430260 /* QuartzBlending.m */; };
 		716D137B1207CDAA00430260 /* clearcover8.png in Resources */ = {isa = PBXBuildFile; fileRef = 716D13791207CDAA00430260 /* clearcover8.png */; };
 		716D137C1207CDAA00430260 /* cover8.png in Resources */ = {isa = PBXBuildFile; fileRef = 716D137A1207CDAA00430260 /* cover8.png */; };
@@ -102,6 +103,7 @@
 		7103E97111FA1D250088BD9E /* blending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blending.png; sourceTree = "<group>"; };
 		7103E9EB11FA35FD0088BD9E /* QuartzView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzView.h; sourceTree = "<group>"; };
 		7103E9EC11FA35FD0088BD9E /* QuartzView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzView.m; sourceTree = "<group>"; };
+		7148D7081213037200B13094 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		716D136A1207C55600430260 /* QuartzBlending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzBlending.h; sourceTree = "<group>"; };
 		716D136B1207C55600430260 /* QuartzBlending.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzBlending.m; sourceTree = "<group>"; };
 		716D13791207CDAA00430260 /* clearcover8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover8.png; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				71887CE211F812FA00F4C6D6 /* AVFoundation.framework in Frameworks */,
 				71BD191812054A4F00BF15ED /* QuartzCore.framework in Frameworks */,
+				7148D7091213037200B13094 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +290,7 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				71887CE111F812FA00F4C6D6 /* AVFoundation.framework */,
 				71BD191712054A4F00BF15ED /* QuartzCore.framework */,
+				7148D7081213037200B13094 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
