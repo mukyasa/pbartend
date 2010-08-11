@@ -24,6 +24,7 @@
 
     // Add the view controller's view to the window and display.
     [window addSubview:viewController.view];
+	sleep(2);//show splash screen default.png longer
     [window makeKeyAndVisible];
 
     return YES;
