@@ -33,7 +33,6 @@
 		716D13851207D5CD00430260 /* clearcover9.png in Resources */ = {isa = PBXBuildFile; fileRef = 716D13831207D5CD00430260 /* clearcover9.png */; };
 		716D13861207D5CD00430260 /* cover9.png in Resources */ = {isa = PBXBuildFile; fileRef = 716D13841207D5CD00430260 /* cover9.png */; };
 		71887A9311F7E6D700F4C6D6 /* maghome.png in Resources */ = {isa = PBXBuildFile; fileRef = 71887A9211F7E6D700F4C6D6 /* maghome.png */; };
-		71887AD711F7ECA700F4C6D6 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71887AD611F7ECA700F4C6D6 /* iAd.framework */; };
 		71887AEF11F7EFF900F4C6D6 /* cover1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71887AED11F7EFF900F4C6D6 /* cover1.png */; };
 		71887AF011F7EFF900F4C6D6 /* cover2.png in Resources */ = {isa = PBXBuildFile; fileRef = 71887AEE11F7EFF900F4C6D6 /* cover2.png */; };
 		71887B1611F7F15F00F4C6D6 /* CoverShotEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71887B1411F7F15F00F4C6D6 /* CoverShotEditorViewController.m */; };
@@ -110,7 +109,6 @@
 		716D13831207D5CD00430260 /* clearcover9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover9.png; sourceTree = "<group>"; };
 		716D13841207D5CD00430260 /* cover9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover9.png; sourceTree = "<group>"; };
 		71887A9211F7E6D700F4C6D6 /* maghome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maghome.png; sourceTree = "<group>"; };
-		71887AD611F7ECA700F4C6D6 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		71887AED11F7EFF900F4C6D6 /* cover1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover1.png; sourceTree = "<group>"; };
 		71887AEE11F7EFF900F4C6D6 /* cover2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover2.png; sourceTree = "<group>"; };
 		71887B1311F7F15F00F4C6D6 /* CoverShotEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverShotEditorViewController.h; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				71887AD711F7ECA700F4C6D6 /* iAd.framework in Frameworks */,
 				71887CE211F812FA00F4C6D6 /* AVFoundation.framework in Frameworks */,
 				71BD191812054A4F00BF15ED /* QuartzCore.framework in Frameworks */,
 			);
@@ -288,7 +285,6 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
-				71887AD611F7ECA700F4C6D6 /* iAd.framework */,
 				71887CE111F812FA00F4C6D6 /* AVFoundation.framework */,
 				71BD191712054A4F00BF15ED /* QuartzCore.framework */,
 			);
