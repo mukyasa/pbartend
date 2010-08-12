@@ -24,7 +24,7 @@
 	
 	
     // Override point for customization after application launch
-	sleep(2);//show splash screen default.png longer
+	[NSThread sleepForTimeInterval:2];//show splash screen default.png longer
     [window makeKeyAndVisible];
 	
 	RootViewController *root = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
