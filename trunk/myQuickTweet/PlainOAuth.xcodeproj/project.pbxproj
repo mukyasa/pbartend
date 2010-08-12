@@ -14,7 +14,6 @@
 		712C2ABF11DBADE00091BE38 /* EditListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712C2ABC11DBADE00091BE38 /* EditListViewController.xib */; };
 		712C2AC111DBADE00091BE38 /* TwitterLoginPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712C2ABE11DBADE00091BE38 /* TwitterLoginPopup.xib */; };
 		712C2AC411DBAE0E0091BE38 /* EditListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 712C2AC311DBAE0E0091BE38 /* EditListViewController.m */; };
-		712C2ACC11DBAE660091BE38 /* icon_hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 712C2AC711DBAE660091BE38 /* icon_hd.png */; };
 		712C2ACD11DBAE660091BE38 /* quicktweet_lg.png in Resources */ = {isa = PBXBuildFile; fileRef = 712C2AC811DBAE660091BE38 /* quicktweet_lg.png */; };
 		712C2ACE11DBAE660091BE38 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 712C2AC911DBAE660091BE38 /* settings.png */; };
 		712C2ACF11DBAE660091BE38 /* signinBullet1.png in Resources */ = {isa = PBXBuildFile; fileRef = 712C2ACA11DBAE660091BE38 /* signinBullet1.png */; };
@@ -22,7 +21,8 @@
 		712C2AD311DBAE770091BE38 /* Nouns.plist in Resources */ = {isa = PBXBuildFile; fileRef = 712C2AD111DBAE770091BE38 /* Nouns.plist */; };
 		712C2AD411DBAE770091BE38 /* Verbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 712C2AD211DBAE770091BE38 /* Verbs.plist */; };
 		712C2B0311DBBA490091BE38 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712C2B0211DBBA490091BE38 /* iAd.framework */; };
-		718CE96711DD70CE009D9DF8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 718CE96611DD70CE009D9DF8 /* icon.png */; };
+		713EF7BB1213841300AE68C5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 713EF7B91213841300AE68C5 /* Icon.png */; };
+		713EF7BC1213841300AE68C5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 713EF7BA1213841300AE68C5 /* Icon@2x.png */; };
 		719D758112137B3C001D4B51 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719D758012137B3C001D4B51 /* MessageUI.framework */; };
 		EA0EB08711D472A8006E5BEE /* AppDelegate_Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0EB03311D472A8006E5BEE /* AppDelegate_Phone.m */; };
 		EA0EB08811D472A8006E5BEE /* MainWindow_Phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0EB03411D472A8006E5BEE /* MainWindow_Phone.xib */; };
@@ -70,7 +70,6 @@
 		712C2ABE11DBADE00091BE38 /* TwitterLoginPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitterLoginPopup.xib; sourceTree = "<group>"; };
 		712C2AC211DBAE0E0091BE38 /* EditListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditListViewController.h; sourceTree = "<group>"; };
 		712C2AC311DBAE0E0091BE38 /* EditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditListViewController.m; sourceTree = "<group>"; };
-		712C2AC711DBAE660091BE38 /* icon_hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_hd.png; sourceTree = "<group>"; };
 		712C2AC811DBAE660091BE38 /* quicktweet_lg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quicktweet_lg.png; sourceTree = "<group>"; };
 		712C2AC911DBAE660091BE38 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		712C2ACA11DBAE660091BE38 /* signinBullet1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signinBullet1.png; sourceTree = "<group>"; };
@@ -78,7 +77,8 @@
 		712C2AD111DBAE770091BE38 /* Nouns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Nouns.plist; sourceTree = "<group>"; };
 		712C2AD211DBAE770091BE38 /* Verbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Verbs.plist; sourceTree = "<group>"; };
 		712C2B0211DBBA490091BE38 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		718CE96611DD70CE009D9DF8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		713EF7B91213841300AE68C5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		713EF7BA1213841300AE68C5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		719D758012137B3C001D4B51 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		EA0EB03211D472A8006E5BEE /* AppDelegate_Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate_Phone.h; sourceTree = "<group>"; };
 		EA0EB03311D472A8006E5BEE /* AppDelegate_Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate_Phone.m; sourceTree = "<group>"; };
@@ -214,12 +214,12 @@
 			isa = PBXGroup;
 			children = (
 				712C2AD111DBAE770091BE38 /* Nouns.plist */,
+				713EF7B91213841300AE68C5 /* Icon.png */,
+				713EF7BA1213841300AE68C5 /* Icon@2x.png */,
 				712C2AD211DBAE770091BE38 /* Verbs.plist */,
-				712C2AC711DBAE660091BE38 /* icon_hd.png */,
 				EA0EB07411D472A8006E5BEE /* RootViewController.xib */,
 				EA0EB03B11D472A8006E5BEE /* signinSeparator.png */,
 				712C2AC811DBAE660091BE38 /* quicktweet_lg.png */,
-				718CE96611DD70CE009D9DF8 /* icon.png */,
 				712C2AC911DBAE660091BE38 /* settings.png */,
 				EA0EB03411D472A8006E5BEE /* MainWindow_Phone.xib */,
 				712C2ACA11DBAE660091BE38 /* signinBullet1.png */,
@@ -434,7 +434,6 @@
 				EA0EB0A411D472A8006E5BEE /* RootViewController.xib in Resources */,
 				712C2ABF11DBADE00091BE38 /* EditListViewController.xib in Resources */,
 				712C2AC111DBADE00091BE38 /* TwitterLoginPopup.xib in Resources */,
-				712C2ACC11DBAE660091BE38 /* icon_hd.png in Resources */,
 				712C2ACD11DBAE660091BE38 /* quicktweet_lg.png in Resources */,
 				712C2ACE11DBAE660091BE38 /* settings.png in Resources */,
 				712C2ACF11DBAE660091BE38 /* signinBullet1.png in Resources */,
@@ -442,7 +441,8 @@
 				712C2AD311DBAE770091BE38 /* Nouns.plist in Resources */,
 				712C2AD411DBAE770091BE38 /* Verbs.plist in Resources */,
 				711F126F11DD272600100F1F /* Default.png in Resources */,
-				718CE96711DD70CE009D9DF8 /* icon.png in Resources */,
+				713EF7BB1213841300AE68C5 /* Icon.png in Resources */,
+				713EF7BC1213841300AE68C5 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
