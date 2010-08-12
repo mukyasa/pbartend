@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 extern NSString * const nothingIndicator;
 
 
 @protocol EditListViewControllerDelegate;
 
-@interface EditListViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate,UIActionSheetDelegate> {
+@interface EditListViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate,UIActionSheetDelegate,MFMailComposeViewControllerDelegate> {
 	id <EditListViewControllerDelegate> delegate;
 	IBOutlet UIButton *verbButton;
 	IBOutlet UIButton *nounButton;
@@ -30,6 +31,7 @@ extern NSString * const nothingIndicator;
 -(IBAction)writeToNounPlist:(id)sender;
 -(IBAction)textFieldDoneEditing:(id)sender;
 -(NSString *)applicationDocumentsDirectory;
+-(IBAction) tellAFriend:(id)sender;
 
 @property(nonatomic,retain) UITextField *newIm;
 @property(nonatomic,retain) UITextField *newFeeling;
