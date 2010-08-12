@@ -186,7 +186,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	
 	UIGraphicsEndImageContext();
 	
-	UIImageWriteToSavedPhotosAlbum(imageCopy, self, nil, nil);
+	//UIImageWriteToSavedPhotosAlbum(imageCopy, self, nil, nil);
+	UIImageWriteToSavedPhotosAlbum(imageCopy, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
 	
 	[self moveNavViewOnscreen];//show main nav
 	
