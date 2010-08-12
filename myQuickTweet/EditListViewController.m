@@ -215,15 +215,29 @@ NSString * const nothingIndicator = @"-----------";
 	
 }
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
+/*share via email*/
+-(IBAction)tellAFriend:(id)sender{
+	
+	//add link to store here via my site
+	NSString* theURL = @"http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=380583155&mt=8";
+	NSString* body = [NSString stringWithFormat:@"Hey I just thought you might want to try this app called My Quick Tweet looks pretty fun. - %@\n",theURL];
+	
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = self;
+	[picker setSubject:@"My Quick Tweet - iPhone app"];
+	
+	// [picker setToRecipients:[NSArray arrayWithObject:@"djmason9@yahoo.com"]];
+	[picker setMessageBody:body isHTML:NO];
+	
+	[self presentModalViewController:picker animated:NO];
+	[picker release];
+	
 }
-*/
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
