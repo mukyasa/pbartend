@@ -428,6 +428,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 	previewImageView.frame = parentPreviewView.layer.bounds;
 	
 	[self setupQuartzBlendingView:qbv];
+	[self setUpImageState:NO];
 	
 }
 
