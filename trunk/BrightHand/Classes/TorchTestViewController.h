@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <iAd/iAd.h>
+#import "FlipsideViewController.h"
 
 @class AVCamDemoCaptureManager;
 
-@interface TorchTestViewController : UIViewController {
+@interface TorchTestViewController : UIViewController<FlipsideViewControllerDelegate> {
 	
 	IBOutlet UISegmentedControl *torchSwitch;
 	IBOutlet UILabel *timeLabel;
@@ -40,6 +41,7 @@
 - (void)updateCounter:(NSTimer *)theTimer;
 -(void) moveBannerViewOffscreen;
 -(void) moveBannerViewOnscreen;
+-(IBAction)showInfo:(id)sender;
 
 @end
 

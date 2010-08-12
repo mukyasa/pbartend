@@ -206,10 +206,10 @@
         [session addInput:videoInput];
     }
     if ([session canAddInput:audioInput]) {
-        [session addInput:audioInput];
+        //[session addInput:audioInput];
     }
     if ([session canAddOutput:movieFileOutput]) {
-        [session addOutput:movieFileOutput];
+        //[session addOutput:movieFileOutput];
     }
     if ([session canAddOutput:stillImageOutput]) {
         [session addOutput:stillImageOutput];
