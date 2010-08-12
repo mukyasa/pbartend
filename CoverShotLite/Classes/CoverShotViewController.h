@@ -18,8 +18,10 @@
 	IBOutlet ADBannerView *bannerView;
 	CoverShotEditorViewController *coverShotEditorViewController;
 	int demoCover;
+	IBOutlet UIImageView *fullversion;
 	
 }
+@property(nonatomic,retain)UIImageView *fullversion;
 @property(nonatomic,retain) CoverShotEditorViewController *coverShotEditorViewController;
 @property(nonatomic,retain) ADBannerView *bannerView;
 @property(nonatomic,retain)UIImage *pickedCover;
