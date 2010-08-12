@@ -10,7 +10,7 @@
 
 @implementation CoverShotViewController
 
-@synthesize magizineScrollView,pickedCover,bannerView,coverShotEditorViewController;
+@synthesize magizineScrollView,pickedCover,bannerView,coverShotEditorViewController,fullversion;
 
 const CGFloat kScrollObjWidth	= 240.0;
 const CGFloat kScrollObjHeight	= 360;
@@ -108,10 +108,10 @@ const NSUInteger kNumImages		= 21;
 			coverShotEditorViewController.parentPreviewImageView.image = pickedCover;
 			//NSLog(@"CoverShotEditorViewController retain count: %i",[coverShotEditorViewController retainCount]);
 			//[coverShotEditorViewController release];
-		}else if(demoCover>5){
+		}else{
 			
 			NSString *title = NSLocalizedString(@"Full Version Only", @"");
-			NSString *message = NSLocalizedString(@"Sorry you can only use this if you purchase the full version. Please buy it.. I spend all my money one an iphone.", @"");
+			NSString *message = NSLocalizedString(@"Sorry you can only use this if you purchase the full version. Please buy it, I spend all my money on my iphone. It's only $.99", @"");
 		
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
 															message:message
@@ -132,6 +132,12 @@ const NSUInteger kNumImages		= 21;
 	int page = ((scrollView.contentOffset.x / pageWidth) + 1);
 	pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"clearcover%i.png",page] ];
 	demoCover =page;
+	if(demoCover>5)
+		fullversion.hidden=NO;
+	else 
+		fullversion.hidden=YES;
+	
+
 	
 	//NSLog(@"SCROLL OFFSET: %d",page);
 	
@@ -232,6 +238,7 @@ const NSUInteger kNumImages		= 21;
 - (void)dealloc {
 	[coverShotEditorViewController release];
 	bannerView.delegate = nil;
+	[fullversion release];
 	[bannerView release];
 	[pickedCover release];
 	[magizineScrollView release];
