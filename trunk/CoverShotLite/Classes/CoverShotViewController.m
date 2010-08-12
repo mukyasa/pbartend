@@ -14,7 +14,7 @@
 
 const CGFloat kScrollObjWidth	= 240.0;
 const CGFloat kScrollObjHeight	= 360;
-const NSUInteger kNumImages		= 5;
+const NSUInteger kNumImages		= 21;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -94,16 +94,34 @@ const NSUInteger kNumImages		= 5;
 
 - (void)handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer
 {
-	//NSLog(@"Tap");
-	coverShotEditorViewController = [[CoverShotEditorViewController alloc] initWithNibName:@"CoverShotEditorViewController" bundle:nil];
-	coverShotEditorViewController.delegate = self;
-	
-	coverShotEditorViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-	[self presentModalViewController:coverShotEditorViewController animated:YES];
-	
-	coverShotEditorViewController.parentPreviewImageView.image = pickedCover;
-	//NSLog(@"CoverShotEditorViewController retain count: %i",[coverShotEditorViewController retainCount]);
-	//[coverShotEditorViewController release];
+	if (recognizer.state == UIGestureRecognizerStateEnded) {
+		//NSLog(@"Tap");
+		if(demoCover<=5)
+		{
+			//NSLog(@"Tap");
+			coverShotEditorViewController = [[CoverShotEditorViewController alloc] initWithNibName:@"CoverShotEditorViewController" bundle:nil];
+			coverShotEditorViewController.delegate = self;
+			
+			coverShotEditorViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+			[self presentModalViewController:coverShotEditorViewController animated:YES];
+			
+			coverShotEditorViewController.parentPreviewImageView.image = pickedCover;
+			//NSLog(@"CoverShotEditorViewController retain count: %i",[coverShotEditorViewController retainCount]);
+			//[coverShotEditorViewController release];
+		}else if(demoCover>5){
+			
+			NSString *title = NSLocalizedString(@"Full Version Only", @"");
+			NSString *message = NSLocalizedString(@"Sorry you can only use this if you purchase the full version. Please buy it.. I spend all my money one an iphone.", @"");
+		
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+															message:message
+														   delegate:nil
+												  cancelButtonTitle:NSLocalizedString(@"Ok", @"")
+												  otherButtonTitles:nil];
+			[alert show];
+			[alert release];
+		}
+	}
 
 }
 
@@ -113,7 +131,7 @@ const NSUInteger kNumImages		= 5;
 	CGFloat pageWidth = magizineScrollView.frame.size.width-10; 
 	int page = ((scrollView.contentOffset.x / pageWidth) + 1);
 	pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"clearcover%i.png",page] ];
-	
+	demoCover =page;
 	
 	//NSLog(@"SCROLL OFFSET: %d",page);
 	
