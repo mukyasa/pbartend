@@ -93,16 +93,18 @@ const NSUInteger kNumImages		= 21;
 
 - (void)handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer
 {
-	//NSLog(@"Tap");
-	coverShotEditorViewController = [[CoverShotEditorViewController alloc] initWithNibName:@"CoverShotEditorViewController" bundle:nil];
-	coverShotEditorViewController.delegate = self;
-	
-	coverShotEditorViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-	[self presentModalViewController:coverShotEditorViewController animated:YES];
-	
-	coverShotEditorViewController.parentPreviewImageView.image = pickedCover;
-	//NSLog(@"CoverShotEditorViewController retain count: %i",[coverShotEditorViewController retainCount]);
-	//[coverShotEditorViewController release];
+	if (recognizer.state == UIGestureRecognizerStateEnded) {
+		//NSLog(@"Tap");
+		coverShotEditorViewController = [[CoverShotEditorViewController alloc] initWithNibName:@"CoverShotEditorViewController" bundle:nil];
+		coverShotEditorViewController.delegate = self;
+		
+		coverShotEditorViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+		[self presentModalViewController:coverShotEditorViewController animated:YES];
+		
+		coverShotEditorViewController.parentPreviewImageView.image = pickedCover;
+		//NSLog(@"CoverShotEditorViewController retain count: %i",[coverShotEditorViewController retainCount]);
+		//[coverShotEditorViewController release];
+	}
 
 }
 
