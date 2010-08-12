@@ -23,6 +23,7 @@
 		712C2AD411DBAE770091BE38 /* Verbs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 712C2AD211DBAE770091BE38 /* Verbs.plist */; };
 		712C2B0311DBBA490091BE38 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712C2B0211DBBA490091BE38 /* iAd.framework */; };
 		718CE96711DD70CE009D9DF8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 718CE96611DD70CE009D9DF8 /* icon.png */; };
+		719D758112137B3C001D4B51 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719D758012137B3C001D4B51 /* MessageUI.framework */; };
 		EA0EB08711D472A8006E5BEE /* AppDelegate_Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0EB03311D472A8006E5BEE /* AppDelegate_Phone.m */; };
 		EA0EB08811D472A8006E5BEE /* MainWindow_Phone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0EB03411D472A8006E5BEE /* MainWindow_Phone.xib */; };
 		EA0EB08B11D472A8006E5BEE /* signinSeparator.png in Resources */ = {isa = PBXBuildFile; fileRef = EA0EB03B11D472A8006E5BEE /* signinSeparator.png */; };
@@ -61,7 +62,7 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* Quick Tweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick Tweet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* quicktweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quicktweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		711F126E11DD272600100F1F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		712C2AD211DBAE770091BE38 /* Verbs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Verbs.plist; sourceTree = "<group>"; };
 		712C2B0211DBBA490091BE38 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		718CE96611DD70CE009D9DF8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		719D758012137B3C001D4B51 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		EA0EB03211D472A8006E5BEE /* AppDelegate_Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate_Phone.h; sourceTree = "<group>"; };
 		EA0EB03311D472A8006E5BEE /* AppDelegate_Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate_Phone.m; sourceTree = "<group>"; };
 		EA0EB03411D472A8006E5BEE /* MainWindow_Phone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow_Phone.xib; path = iPhone/MainWindow_Phone.xib; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				EA39520E1103DB2B00D867AC /* libz.1.2.3.dylib in Frameworks */,
 				EA3952101103DB3200D867AC /* SystemConfiguration.framework in Frameworks */,
 				712C2B0311DBBA490091BE38 /* iAd.framework in Frameworks */,
+				719D758112137B3C001D4B51 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +175,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Quick Tweet.app */,
+				1D6058910D05DD3D006BFB54 /* quicktweet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				719D758012137B3C001D4B51 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -394,7 +398,7 @@
 			);
 			name = QuickTweet;
 			productName = PlainOAuth;
-			productReference = 1D6058910D05DD3D006BFB54 /* Quick Tweet.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* quicktweet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -404,7 +408,6 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PlainOAuth" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -556,7 +559,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
