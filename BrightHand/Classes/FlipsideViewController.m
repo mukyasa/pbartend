@@ -32,11 +32,11 @@
 	
 	//add link to store here via my site
 	
-	NSString* body = [NSString stringWithFormat:@"Hey I just thought you might want to try this app called Cover Shot looks pretty fun. - %@\n",theURL];
+	NSString* body = [NSString stringWithFormat:@"Hey I just thought you might want to try this app called Bright Hand looks pretty fun. - %@\n",theURL];
 	
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
-	[picker setSubject:@"Cover Shot - iPhone app"];
+	[picker setSubject:@"Bright Hand - iPhone app"];
 	
 	// [picker setToRecipients:[NSArray arrayWithObject:@"djmason9@yahoo.com"]];
 	[picker setMessageBody:body isHTML:NO];
