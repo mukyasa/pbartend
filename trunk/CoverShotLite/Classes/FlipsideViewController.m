@@ -20,7 +20,7 @@
 	
 	self.webView.frame =newWebViewFrame;
 	//change the id to be this app's id
-	theURL = @"http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=381973252&mt=8";
+	theURL = @"http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=387310371&mt=8";
 	
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
