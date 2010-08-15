@@ -12,9 +12,9 @@
 
 @synthesize magizineScrollView,pickedCover,coverShotEditorViewController;
 
-const CGFloat kScrollObjWidth	= 240.0;
+const CGFloat kScrollObjWidth	= 240;
 const CGFloat kScrollObjHeight	= 360;
-const NSUInteger kNumImages		= 24;
+const NSUInteger kNumImages		= 24;//due to a bug in the last image duplicate the last mag and call it one more than is shown
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -116,7 +116,7 @@ const NSUInteger kNumImages		= 24;
 	pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"clearcover%i.png",page] ];
 	
 	
-	//NSLog(@"SCROLL OFFSET: %d",page);
+	NSLog(@"SCROLL OFFSET: %d",page);
 	
 	
 }
