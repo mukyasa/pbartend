@@ -34,6 +34,8 @@
 		710210CA1207ABD900F36BA0 /* cover7.png in Resources */ = {isa = PBXBuildFile; fileRef = 710210C01207ABD900F36BA0 /* cover7.png */; };
 		7103E97211FA1D250088BD9E /* blending.png in Resources */ = {isa = PBXBuildFile; fileRef = 7103E97111FA1D250088BD9E /* blending.png */; };
 		7103E9ED11FA35FD0088BD9E /* QuartzView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7103E9EC11FA35FD0088BD9E /* QuartzView.m */; };
+		712CB9E912178560008A4143 /* clearcover24.png in Resources */ = {isa = PBXBuildFile; fileRef = 712CB9E812178560008A4143 /* clearcover24.png */; };
+		712CB9FF1217872F008A4143 /* clearcover25.png in Resources */ = {isa = PBXBuildFile; fileRef = 712CB9FE1217872F008A4143 /* clearcover25.png */; };
 		7148D7091213037200B13094 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7148D7081213037200B13094 /* MessageUI.framework */; };
 		716D136C1207C55600430260 /* QuartzBlending.m in Sources */ = {isa = PBXBuildFile; fileRef = 716D136B1207C55600430260 /* QuartzBlending.m */; };
 		716D137B1207CDAA00430260 /* clearcover8.png in Resources */ = {isa = PBXBuildFile; fileRef = 716D13791207CDAA00430260 /* clearcover8.png */; };
@@ -45,7 +47,6 @@
 		71846C3312177D9400634B20 /* cover24.png in Resources */ = {isa = PBXBuildFile; fileRef = 71846C3012177D9400634B20 /* cover24.png */; };
 		71846C3712177D9F00634B20 /* clearcover22.png in Resources */ = {isa = PBXBuildFile; fileRef = 71846C3412177D9F00634B20 /* clearcover22.png */; };
 		71846C3812177D9F00634B20 /* clearcover23.png in Resources */ = {isa = PBXBuildFile; fileRef = 71846C3512177D9F00634B20 /* clearcover23.png */; };
-		71846C3912177D9F00634B20 /* clearcover24.png in Resources */ = {isa = PBXBuildFile; fileRef = 71846C3612177D9F00634B20 /* clearcover24.png */; };
 		71887A9311F7E6D700F4C6D6 /* maghome.png in Resources */ = {isa = PBXBuildFile; fileRef = 71887A9211F7E6D700F4C6D6 /* maghome.png */; };
 		71887AEF11F7EFF900F4C6D6 /* cover1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71887AED11F7EFF900F4C6D6 /* cover1.png */; };
 		71887AF011F7EFF900F4C6D6 /* cover2.png in Resources */ = {isa = PBXBuildFile; fileRef = 71887AEE11F7EFF900F4C6D6 /* cover2.png */; };
@@ -122,6 +123,8 @@
 		7103E97111FA1D250088BD9E /* blending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blending.png; sourceTree = "<group>"; };
 		7103E9EB11FA35FD0088BD9E /* QuartzView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzView.h; sourceTree = "<group>"; };
 		7103E9EC11FA35FD0088BD9E /* QuartzView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzView.m; sourceTree = "<group>"; };
+		712CB9E812178560008A4143 /* clearcover24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover24.png; sourceTree = "<group>"; };
+		712CB9FE1217872F008A4143 /* clearcover25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover25.png; sourceTree = "<group>"; };
 		7148D7081213037200B13094 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		716D136A1207C55600430260 /* QuartzBlending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzBlending.h; sourceTree = "<group>"; };
 		716D136B1207C55600430260 /* QuartzBlending.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzBlending.m; sourceTree = "<group>"; };
@@ -134,7 +137,6 @@
 		71846C3012177D9400634B20 /* cover24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover24.png; sourceTree = "<group>"; };
 		71846C3412177D9F00634B20 /* clearcover22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover22.png; sourceTree = "<group>"; };
 		71846C3512177D9F00634B20 /* clearcover23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover23.png; sourceTree = "<group>"; };
-		71846C3612177D9F00634B20 /* clearcover24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover24.png; sourceTree = "<group>"; };
 		71887A9211F7E6D700F4C6D6 /* maghome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maghome.png; sourceTree = "<group>"; };
 		71887AED11F7EFF900F4C6D6 /* cover1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover1.png; sourceTree = "<group>"; };
 		71887AEE11F7EFF900F4C6D6 /* cover2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover2.png; sourceTree = "<group>"; };
@@ -276,7 +278,8 @@
 				7193F08C120F5AD90074658A /* clearcover21.png */,
 				71846C3412177D9F00634B20 /* clearcover22.png */,
 				71846C3512177D9F00634B20 /* clearcover23.png */,
-				71846C3612177D9F00634B20 /* clearcover24.png */,
+				712CB9E812178560008A4143 /* clearcover24.png */,
+				712CB9FE1217872F008A4143 /* clearcover25.png */,
 				71887AED11F7EFF900F4C6D6 /* cover1.png */,
 				71887AEE11F7EFF900F4C6D6 /* cover2.png */,
 				710210BC1207ABD900F36BA0 /* cover3.png */,
@@ -369,7 +372,6 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CoverShot" */;
 			compatibilityVersion = "Xcode 3.1";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -457,7 +459,8 @@
 				71846C3312177D9400634B20 /* cover24.png in Resources */,
 				71846C3712177D9F00634B20 /* clearcover22.png in Resources */,
 				71846C3812177D9F00634B20 /* clearcover23.png in Resources */,
-				71846C3912177D9F00634B20 /* clearcover24.png in Resources */,
+				712CB9E912178560008A4143 /* clearcover24.png in Resources */,
+				712CB9FF1217872F008A4143 /* clearcover25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = CoverShot_Prefix.pch;
@@ -528,14 +531,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};
