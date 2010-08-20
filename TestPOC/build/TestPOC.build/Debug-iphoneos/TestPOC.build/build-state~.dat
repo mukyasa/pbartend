@@ -1,0 +1,515 @@
+TTestPOC
+v7
+r0
+t303973647.507737
+cCheck dependencies
+cCpResource build/Debug-iphoneos/TestPOC.app/ResourceRules.plist /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+cProcessInfoPlistFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/Info.plist" TestPOC-Info.plist
+cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/MainWindow.xib"
+cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/DetailView.xib"
+cCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/paper.png" paper.png
+cCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/detailbackground.png" detailbackground.png
+cCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/polaroid.png" polaroid.png
+cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.xib"
+cCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/post.png" post.png
+cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch.gch TestPOC_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/main.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/main.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/TestPOCAppDelegate.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/TestPOCAppDelegate.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/RootViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/RootViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/DetailViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/DetailViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/VertLabel.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/VertLabel.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/FilterViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC" normal armv7
+cGenerateDSYMFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app.dSYM" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC"
+cProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/embedded.mobileprovision"
+cTouch "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app"
+cProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC.xcent"
+cCodeSign "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app"
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk
+c000000004C1BB8220000000000000110
+t1276885026
+s272
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist
+c000000004C06E99F00000000000001A7
+t1275521439
+s423
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+c000000004C06E99F00000000000001E5
+t1275521439
+s485
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C005A1C00000000003B4B70
+t1275091484
+s3885936
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C005A45000000000036A650
+t1275091525
+s3581520
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C005A310000000000001355
+t1275091505
+s4949
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C00642C000000000000098F
+t1275094060
+s2447
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0064A60000000002703230
+t1275094182
+s40907312
+
+N/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/usr/include/Availability.h
+c000000004B9F27C60000000000001A1A
+t1268721606
+s6682
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/DetailViewController.h
+c000000004C6DFBD900000000000002CC
+t1282276313
+s716
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/DetailViewController.m
+c000000004C6DFBE00000000000000EE9
+t1282276320
+s3817
+i"DetailViewController.h"
+i"RootViewController.h"
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.h
+c000000004C6E05AD00000000000000DF
+t1282278829
+s223
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.m
+c000000004C6E05AD0000000000000516
+t1282278829
+s1302
+i"FilterViewController.h"
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.xib
+c000000004C6E08C70000000000003E87
+t1282279623
+s16007
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/RootViewController.h
+c000000004C6DD47F0000000000000180
+t1282266239
+s384
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/RootViewController.m
+c000000004C6E0D0D00000000000012AF
+t1282280717
+s4783
+i"RootViewController.h"
+i"DetailViewController.h"
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/TestPOCAppDelegate.h
+c000000004C6DD47F0000000000000304
+t1282266239
+s772
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/TestPOCAppDelegate.m
+c000000004C6DD47F00000000000007B4
+t1282266239
+s1972
+i"TestPOCAppDelegate.h"
+i"RootViewController.h"
+i"DetailViewController.h"
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/VertLabel.h
+c000000004C6DFA1B00000000000001AD
+t1282275867
+s429
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/VertLabel.m
+c000000004C6DFB910000000000000619
+t1282276241
+s1561
+i"VertLabel.h"
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/DetailView.xib
+c000000004C6E0D4F0000000000007210
+t1282280783
+s29200
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/MainWindow.xib
+c000000004C6DDA450000000000007422
+t1282267717
+s29730
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/TestPOC_Prefix.pch
+c000000004C6DD47F0000000000000140
+t1282266239
+s320
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app
+t1282280847
+s544
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app.dSYM
+t1282280847
+s102
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/DetailView.nib
+t1282280843
+s2076
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/FilterViewController.nib
+t1282280845
+s795
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/Info.plist
+t1282280842
+s937
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/MainWindow.nib
+t1282280843
+s1894
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/PkgInfo
+t1282280842
+s8
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/ResourceRules.plist
+t1282280842
+s485
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC
+t1282280847
+s34820
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/detailbackground.png
+t1282280845
+s1809670
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/embedded.mobileprovision
+t1282280847
+s7298
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/paper.png
+t1282280845
+s273273
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/polaroid.png
+t1282280845
+s14882
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/post.png
+t1282280846
+s216042
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/DetailViewController.o
+t1282280846
+s48016
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/FilterViewController.o
+t1282280847
+s34488
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/RootViewController.o
+t1282280846
+s43384
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/TestPOC.LinkFileList
+c000000004C6E0D8A000000000000035F
+t1282280842
+s863
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/TestPOCAppDelegate.o
+t1282280846
+s48556
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/VertLabel.o
+t1282280846
+s13948
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/main.o
+t1282280846
+s6540
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC.xcent
+t1282280847
+s420
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/detailbackground.png
+c000000004C6DEDDB00000000001845CC
+t1282272731
+s1590732
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/main.m
+c000000004C6DD47F000000000000015C
+t1282266239
+s348
+i<UIKit/UIKit.h>
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/paper.png
+c000000004C6DFE510000000000049B94
+t1282276945
+s301972
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/polaroid.png
+c000000004C6DF0180000000000003B34
+t1282273304
+s15156
+
+N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/post.png
+c000000004C6E08890000000000028BB6
+t1282279561
+s166838
+
+N/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision
+c000000004C68B4CD0000000000001C82
+t1281930445
+s7298
+
+N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch.gch
+t1282280846
+s9425556
+
+NTestPOC-Info.plist
+c000000004C6DD47F00000000000004D6
+t1282266239
+s1238
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies303973642#303973642#0(0"0(0#1#0"8614906592#0"0#
+
+CCodeSign "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app"
+s303973647.374431
+e303973647.507698
+r1
+xCodeSign
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app
+lSLF07#2@41"CodeSign build/Debug-iphoneos/TestPOC.app303973647#303973647#0(0"0(0#0#88"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app8606210240#781"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Darren Mason (J4HX2LYKXS)" "--resource-rules=/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/ResourceRules.plist" --entitlements "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC.xcent" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app"0#
+
+CCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/DetailViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/DetailViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303973646.872562
+e303973646.973703
+r1
+xCompileC
+xbuild/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/DetailViewController.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/DetailViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@94"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/DetailViewController.m303973646#303973646#0(0"0(0#0#86"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/DetailViewController.m8599984480#2056"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/DetailViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/DetailViewController.o"0#
+
+CCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/FilterViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303973646.973819
+e303973647.052736
+r1
+xCompileC
+xbuild/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/FilterViewController.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@94"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.m303973646#303973647#0(0"0(0#0#86"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.m8608338432#2056"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/FilterViewController.o"0#
+
+CCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/RootViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/RootViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303973646.838224
+e303973646.915728
+r1
+xCompileC
+xbuild/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/RootViewController.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/RootViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@92"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/RootViewController.m303973646#303973646#0(0"0(0#0#84"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/RootViewController.m8604495072#2052"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/RootViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/RootViewController.o"0#
+
+CCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/TestPOCAppDelegate.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/TestPOCAppDelegate.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303973646.787497
+e303973646.872460
+r1
+xCompileC
+xbuild/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/TestPOCAppDelegate.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/TestPOCAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@92"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/TestPOCAppDelegate.m303973646#303973646#0(0"0(0#0#84"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/TestPOCAppDelegate.m8612062912#2052"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/TestPOCAppDelegate.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/TestPOCAppDelegate.o"0#
+
+CCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/VertLabel.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/VertLabel.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303973646.915831
+e303973646.991974
+r1
+xCompileC
+xbuild/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/VertLabel.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/VertLabel.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@83"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/VertLabel.m303973646#303973646#0(0"0(0#0#75"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/VertLabel.m8612771456#2034"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/VertLabel.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/VertLabel.o"0#
+
+CCompileC build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/main.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/main.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303973646.786486
+e303973646.838113
+r1
+xCompileC
+xbuild/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/main.o
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@70"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/main.m303973646#303973646#0(0"0(0#0#62"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/main.m8614395456#2016"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/main.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/main.o"0#
+
+CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.xib"
+s303973645.249892
+e303973645.611760
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.xib
+lSLF07#2@43"CompileXIB Classes/FilterViewController.xib303973645#303973645#0(0"0(0#0#88"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.xib8611301248#703"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/FilterViewController.nib" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/Classes/FilterViewController.xib" --sdk /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk0#
+
+CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/DetailView.xib"
+s303973642.711064
+e303973643.193963
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/DetailView.xib
+lSLF07#2@25"CompileXIB DetailView.xib303973642#303973643#0(0"0(0#0#70"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/DetailView.xib8610835968#675"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/DetailView.nib" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/DetailView.xib" --sdk /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk0#
+
+CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/MainWindow.xib"
+s303973642.710398
+e303973643.193820
+r1
+xCompileXIB
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib303973642#303973643#0(0"0(0#0#70"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/MainWindow.xib8611208736#675"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/MainWindow.nib" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/MainWindow.xib" --sdk /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk0#
+
+CCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/detailbackground.png" detailbackground.png
+s303973643.194765
+e303973645.127006
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/detailbackground.png
+xdetailbackground.png
+lSLF07#2@86"CopyPNGFile build/Debug-iphoneos/TestPOC.app/detailbackground.png detailbackground.png303973643#303973645#0(0"0(0#0#76"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/detailbackground.png8615154144#713"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/detailbackground.png" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/detailbackground.png"0#
+
+CCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/paper.png" paper.png
+s303973643.194038
+e303973645.994370
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/paper.png
+xpaper.png
+lSLF07#2@64"CopyPNGFile build/Debug-iphoneos/TestPOC.app/paper.png paper.png303973643#303973645#0(0"0(0#0#65"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/paper.png8624965664#691"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/paper.png" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/paper.png"0#
+
+CCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/polaroid.png" polaroid.png
+s303973645.127174
+e303973645.249805
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/polaroid.png
+xpolaroid.png
+lSLF07#2@70"CopyPNGFile build/Debug-iphoneos/TestPOC.app/polaroid.png polaroid.png303973645#303973645#0(0"0(0#0#68"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/polaroid.png8627239008#697"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/polaroid.png" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/polaroid.png"0#
+
+CCopyPNGFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/post.png" post.png
+s303973645.611853
+e303973646.120731
+r1
+xCopyPNGFile
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/post.png
+xpost.png
+lSLF07#2@62"CopyPNGFile build/Debug-iphoneos/TestPOC.app/post.png post.png303973645#303973646#0(0"0(0#0#64"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/post.png8631343232#689"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv COPY_COMMAND /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/post.png" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/post.png"0#
+
+CCpResource build/Debug-iphoneos/TestPOC.app/ResourceRules.plist /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+s303973642.690181
+e303973642.708499
+r1
+xCpResource
+xbuild/Debug-iphoneos/TestPOC.app/ResourceRules.plist
+x/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+lSLF07#2@113"Copy /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist303973642#303973642#0(0"0(0#0#108"/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist8606547456#594"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app"0#
+
+CGenerateDSYMFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app.dSYM" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC"
+s303973647.316572
+e303973647.338068
+r1
+xGenerateDSYMFile
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app.dSYM
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC
+lSLF07#2@95"GenerateDSYMFile build/Debug-iphoneos/TestPOC.app.dSYM build/Debug-iphoneos/TestPOC.app/TestPOC303973647#303973647#0(0"0(0#0#96"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC8611472352#476"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/dsymutil "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app.dSYM"0#
+
+CLd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC" normal armv7
+s303973647.052827
+e303973647.316468
+r1
+xLd
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC
+xnormal
+xarmv7
+lSLF07#2@101"Link /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC303973647#303973647#0(0"0(0#0#0"8618143008#993"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv IPHONEOS_DEPLOYMENT_TARGET 3.2    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk "-L/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos" -filelist "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/Objects-normal/armv7/TestPOC.LinkFileList" -dead_strip -miphoneos-version-min=3.2 -framework Foundation -framework UIKit -framework CoreGraphics -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/TestPOC"0#
+
+CProcessInfoPlistFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/Info.plist" TestPOC-Info.plist
+s303973642.691176
+e303973642.710326
+r1
+xProcessInfoPlistFile
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/Info.plist
+xTestPOC-Info.plist
+lSLF07#2@26"Process TestPOC-Info.plist303973642#303973642#0(0"0(0#0#74"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/TestPOC-Info.plist8603211008#676"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility TestPOC-Info.plist -genpkginfo "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/PkgInfo" -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/ResourceRules.plist" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/Info.plist"0#
+
+CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch.gch TestPOC_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s303973646.120854
+e303973646.786338
+r1
+xProcessPCH
+x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch.gch
+xTestPOC_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@29"Precompile TestPOC_Prefix.pch303973646#303973646#0(0"0(0#0#74"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/TestPOC_Prefix.pch8625462304#1895"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/DerivedSources" -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/TestPOC_Prefix.pch" -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TestPOC_Prefix-dedgrrzagsvkdnbxygrzffjdtjoe/TestPOC_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/embedded.mobileprovision"
+s303973647.338165
+e303973647.354130
+r1
+xProcessProductPackaging
+x/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/embedded.mobileprovision
+lSLF07#2@193"ProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision" build/Debug-iphoneos/TestPOC.app/embedded.mobileprovision303973647#303973647#0(0"0(0#0#113"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/embedded.mobileprovision8610534432#500"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app/embedded.mobileprovision"0#
+
+CProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC.xcent"
+s303973647.358117
+e303973647.374340
+r1
+xProcessProductPackaging
+x/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC.xcent
+lSLF07#2@194"ProcessProductPackaging /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC.xcent303973647#303973647#0(0"0(0#0#118"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC.xcent8601234112#527"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist -entitlements -format xml -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/TestPOC.build/Debug-iphoneos/TestPOC.build/TestPOC.xcent"0#
+
+CTouch "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app"
+s303973647.354237
+e303973647.358012
+r1
+xTouch
+x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app
+lSLF07#2@94"Touch /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app303973647#303973647#0(0"0(0#0#0"8607706432#340"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/TestPOC/build/Debug-iphoneos/TestPOC.app"0#
+
