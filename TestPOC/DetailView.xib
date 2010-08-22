@@ -193,6 +193,23 @@
 					</object>
 					<int key="connectionID">86</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">listFilterPopOver</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="920210096"/>
+					</object>
+					<int key="connectionID">87</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">popoverFilter:</string>
+						<reference key="source" ref="920210096"/>
+						<reference key="destination" ref="841351856"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">88</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -330,7 +347,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">86</int>
+			<int key="maxID">88</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -339,14 +356,35 @@
 					<string key="className">DetailViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">popoverList:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>popoverFilter:</string>
+							<string>popoverList:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">popoverList:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">popoverList:</string>
-							<string key="candidateClassName">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>popoverFilter:</string>
+							<string>popoverList:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">popoverFilter:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">popoverList:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
@@ -355,6 +393,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>detailDescriptionLabel</string>
 							<string>detailItem</string>
+							<string>listFilterPopOver</string>
 							<string>listPopOver</string>
 							<string>pageView</string>
 							<string>toolbar</string>
@@ -363,6 +402,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UILabel</string>
 							<string>id</string>
+							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>UIView</string>
 							<string>UIToolbar</string>
@@ -374,6 +414,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>detailDescriptionLabel</string>
 							<string>detailItem</string>
+							<string>listFilterPopOver</string>
 							<string>listPopOver</string>
 							<string>pageView</string>
 							<string>toolbar</string>
@@ -387,6 +428,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">detailItem</string>
 								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">listFilterPopOver</string>
+								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">listPopOver</string>
