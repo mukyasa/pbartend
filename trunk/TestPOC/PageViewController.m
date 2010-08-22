@@ -1,17 +1,16 @@
     //
-//  EditDrinkViewController.m
+//  PageViewController.m
 //  TestPOC
 //
 //  Created by Darren Mason on 8/22/10.
 //  Copyright 2010 TGen. All rights reserved.
 //
 
-#import "EditDrinkViewController.h"
+#import "PageViewController.h"
 
 
-@implementation EditDrinkViewController
-
-@synthesize saveDrink, delegate;
+@implementation PageViewController
+@synthesize edit;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -30,10 +29,24 @@
 }
 */
 
-- (IBAction)saveDrink:(id)sender{
+- (void)flipsideViewControllerDidFinish:(EditDrinkViewController *)controller {
+    
+	[self dismissModalViewControllerAnimated:YES];
+}
 
-	[self.delegate flipsideViewControllerDidFinish:self];
+-(IBAction)editDrink:(id)sender{
 	
+	
+	EditDrinkViewController *controller = [[EditDrinkViewController alloc] initWithNibName:@"EditDrinkViewController" bundle:nil];
+	controller.view.bounds = CGRectMake(112, 20, 579, 700);
+	controller.delegate = self;
+	
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self presentModalViewController:controller animated:YES];
+	
+	[controller release];
+
+	 
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -58,7 +71,7 @@
 
 
 - (void)dealloc {
-	[saveDrink release];
+	[edit release];
     [super dealloc];
 }
 

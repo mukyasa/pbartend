@@ -9,12 +9,22 @@
 #import <UIKit/UIKit.h>
 
 
-@interface EditDrinkViewController : UIViewController {
+@protocol EditDrinkViewControllerDelegate;
 
+
+@interface EditDrinkViewController : UIViewController {
+	id <EditDrinkViewControllerDelegate> delegate;
 	IBOutlet UIButton *saveDrink;
 	
 }
 
 @property(nonatomic,retain) UIButton *saveDrink;
+@property (nonatomic, assign) id <EditDrinkViewControllerDelegate> delegate;
+- (IBAction)saveDrink:(id)sender;
 
+@end
+
+
+@protocol EditDrinkViewControllerDelegate
+- (void)flipsideViewControllerDidFinish:(EditDrinkViewController *)controller;
 @end
