@@ -16,6 +16,7 @@
 	IBOutlet UIButton *listPopOver;
 	IBOutlet UIButton *listFilterPopOver;
 	IBOutlet UIView *pageView;
+	IBOutlet UIButton *edit;
     
     id detailItem;
     UILabel *detailDescriptionLabel;
@@ -23,7 +24,8 @@
 	
 }
 
-@property (retain, nonatomic) UIPopoverController *currentPopover;
+@property(nonatomic,retain) UIButton *edit;
+@property(nonatomic,retain) UIPopoverController *currentPopover;
 @property(nonatomic,retain)UIView *pageView;
 @property(nonatomic,retain)UIButton *listPopOver;
 @property(nonatomic,retain)UIButton *listFilterPopOver;
@@ -32,9 +34,11 @@
 @property (nonatomic, retain) id detailItem;
 @property (nonatomic, retain) IBOutlet UILabel *detailDescriptionLabel;
 
+
 - (void)setupNewPopoverControllerForViewController:(UIViewController *)vc;
 - (void)handleDismissedPopoverController:(UIPopoverController*)popoverController;
 -(IBAction)popoverList:(id)sender;
 -(IBAction)popoverFilter:(id)sender;
+-(IBAction)editDrink:(id)sender;
 
 @end
