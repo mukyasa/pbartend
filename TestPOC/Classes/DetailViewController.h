@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PageViewController.h"
 
 @interface DetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate> {
     
@@ -15,8 +15,8 @@
     UIToolbar *toolbar;
 	IBOutlet UIButton *listPopOver;
 	IBOutlet UIButton *listFilterPopOver;
-	IBOutlet UIView *pageView;
-	IBOutlet UIButton *edit;
+	PageViewController *pageView; 
+
     
     id detailItem;
     UILabel *detailDescriptionLabel;
@@ -24,9 +24,9 @@
 	
 }
 
-@property(nonatomic,retain) UIButton *edit;
+
 @property(nonatomic,retain) UIPopoverController *currentPopover;
-@property(nonatomic,retain)UIView *pageView;
+@property(nonatomic,retain) PageViewController *pageView;
 @property(nonatomic,retain)UIButton *listPopOver;
 @property(nonatomic,retain)UIButton *listFilterPopOver;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
@@ -39,6 +39,6 @@
 - (void)handleDismissedPopoverController:(UIPopoverController*)popoverController;
 -(IBAction)popoverList:(id)sender;
 -(IBAction)popoverFilter:(id)sender;
--(IBAction)editDrink:(id)sender;
+
 
 @end
