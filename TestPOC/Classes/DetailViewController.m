@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "RootViewController.h"
 #import "FilterViewController.h"
+#import "EditDrinkViewController.h"
 
 
 @interface DetailViewController ()
@@ -20,7 +21,8 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar, popoverController, detailItem, detailDescriptionLabel,listPopOver,pageView,listFilterPopOver,currentPopover;
+@synthesize toolbar, popoverController, detailItem, detailDescriptionLabel;
+@synthesize listPopOver,pageView,listFilterPopOver,currentPopover,edit;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -121,6 +123,34 @@
 	self.currentPopover = nil;
 }
 
+-(IBAction)editDrink:(id)sender{
+
+	for (UIView *view in pageView.subviews) {
+		[view removeFromSuperview];
+	}
+	
+	EditDrinkViewController *editDetailView = [[EditDrinkViewController alloc] initWithNibName:@"EditDrinkViewController" bundle:nil]; 
+	//editDetailView.view.backgroundColor = [UIColor clearColor];
+
+	
+//	[pageView removeFromSuperview];
+	UIViewAnimationTransition transition;
+	[UIView beginAnimations:@"view flip" context:nil];
+	[UIView setAnimationDuration:.5];
+	
+	transition = UIViewAnimationTransitionFlipFromLeft;
+	
+	[UIView setAnimationTransition:transition forView:editDetailView.view cache:YES];
+	
+	[pageView addSubview:editDetailView.view];
+	
+	[UIView setAnimationTransition:transition forView:pageView cache:YES];
+	
+	[editDetailView release];
+	[UIView commitAnimations];
+	
+	
+}
 
 #pragma mark -
 #pragma mark Rotation support
@@ -229,6 +259,7 @@
 */
 
 - (void)dealloc {
+	[edit release];
 	[currentPopover release];
 	[listFilterPopOver release];
 	[pageView release];
