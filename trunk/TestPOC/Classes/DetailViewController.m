@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "RootViewController.h"
+#import "FilterViewController.h"
 
 
 @interface DetailViewController ()
@@ -19,7 +20,7 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar, popoverController, detailItem, detailDescriptionLabel,listPopOver,pageView;
+@synthesize toolbar, popoverController, detailItem, detailDescriptionLabel,listPopOver,pageView,listFilterPopOver,currentPopover;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -58,6 +59,7 @@
     [items insertObject:barButtonItem atIndex:0];
     [toolbar setItems:items animated:YES];
     [items release];
+	self.popoverController.popoverContentSize=CGSizeMake(420, 600);
     self.popoverController = pc;
 	//show button
 	listPopOver.hidden=NO;
@@ -68,6 +70,8 @@
 
 // Called when the view is shown again in the split view, invalidating the button and popover controller.
 - (void)splitViewController: (UISplitViewController*)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+	
+	
 	
     NSMutableArray *items = [[toolbar items] mutableCopy];
     [items removeObjectAtIndex:0];
@@ -80,10 +84,41 @@
 }
 
 -(IBAction)popoverList:(id)sender{
+	
+	
 	[self.popoverController presentPopoverFromRect:listPopOver.frame
 											inView:self.view
 						  permittedArrowDirections:UIPopoverArrowDirectionAny
 										  animated:YES];
+
+}
+
+-(IBAction)popoverFilter:(id)sender{
+	
+	FilterViewController *filter = [[[FilterViewController alloc] initWithNibName:@"FilterViewController" bundle:nil] autorelease];
+	[self setupNewPopoverControllerForViewController:filter];
+	
+	currentPopover.popoverContentSize = CGSizeMake(300.0, 400.0);
+	
+	[self.currentPopover presentPopoverFromRect:listFilterPopOver.frame
+											inView:self.view
+						  permittedArrowDirections:UIPopoverArrowDirectionAny
+										  animated:YES];
+	
+}
+
+- (void)setupNewPopoverControllerForViewController:(UIViewController *)vc {
+	if (self.currentPopover) {
+		[self.currentPopover dismissPopoverAnimated:YES];
+		[self handleDismissedPopoverController:self.currentPopover];
+	}
+	self.currentPopover = [[[UIPopoverController alloc] initWithContentViewController:vc] autorelease];
+	self.currentPopover.delegate = self;
+}
+
+- (void)handleDismissedPopoverController:(UIPopoverController*)popoverController {
+
+	self.currentPopover = nil;
 }
 
 
@@ -112,7 +147,7 @@
 	UIImageView *pageImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 576, 700)];
 	pageImage.image = [UIImage imageNamed:@"paper.png"];
 	[pageView addSubview:pageImage];
-	[pageImage release];
+	[pageImage release]; 
 	
 	//start adding labels
 	UIFont *myCustomFont = [UIFont fontWithName:@"Diego" size:24];
@@ -194,6 +229,8 @@
 */
 
 - (void)dealloc {
+	[currentPopover release];
+	[listFilterPopOver release];
 	[pageView release];
 	[listPopOver release];
     [popoverController release];
