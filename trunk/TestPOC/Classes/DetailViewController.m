@@ -189,7 +189,8 @@
 - (void)viewDidLoad {
 		
 	pageView = [[PageViewController alloc] initWithNibName:@"PageViewController" bundle:nil];
-	pageView.view.frame = CGRectMake(112, 20, 579, 700);
+	pageView.view.bounds = CGRectMake(112, 20, 579, 700);
+	pageView.view.center = CGPointMake(512, 400);
 	
 	[self.view addSubview:pageView.view];
 
