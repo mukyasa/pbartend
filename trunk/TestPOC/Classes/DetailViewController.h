@@ -34,7 +34,7 @@
 @property (nonatomic, retain) id detailItem;
 @property (nonatomic, retain) IBOutlet UILabel *detailDescriptionLabel;
 
-
+-(void)addLabels;
 - (void)setupNewPopoverControllerForViewController:(UIViewController *)vc;
 - (void)handleDismissedPopoverController:(UIPopoverController*)popoverController;
 -(IBAction)popoverList:(id)sender;
