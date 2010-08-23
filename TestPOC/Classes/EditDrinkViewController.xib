@@ -45,14 +45,13 @@
 					<object class="IBUIImageView" id="897693434">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{20, 20}, {576, 700}}</string>
+						<string key="NSFrameSize">{600, 830}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<object class="NSColor" key="IBUIBackgroundColor" id="410466915">
+						<object class="NSColor" key="IBUIBackgroundColor" id="41892738">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MCAwAA</bytes>
 						</object>
 						<bool key="IBUIOpaque">NO</bool>
-						<int key="IBUIContentMode">1</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
@@ -63,7 +62,7 @@
 					<object class="IBUIButton" id="753656397">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{419, 56}, {72, 37}}</string>
+						<string key="NSFrame">{{85, 37}, {72, 37}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -90,11 +89,12 @@
 						</object>
 					</object>
 				</object>
-				<string key="NSFrameSize">{559, 720}</string>
+				<string key="NSFrameSize">{600, 830}</string>
 				<reference key="NSSuperview"/>
-				<reference key="IBUIBackgroundColor" ref="410466915"/>
+				<reference key="IBUIBackgroundColor" ref="41892738"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+				<int key="IBUIContentMode">1</int>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 		</object>
@@ -185,12 +185,12 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>EditDrinkViewController</string>
 					<string>UIResponder</string>
-					<string>{{407, 97}, {559, 720}}</string>
+					<string>{{321, 55}, {615, 801}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABD0QAAwnAAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABD7QAAwsgAAA</bytes>
 					</object>
 				</object>
 			</object>

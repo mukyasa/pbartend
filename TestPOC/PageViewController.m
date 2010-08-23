@@ -32,7 +32,7 @@
 - (void)flipsideViewControllerDidFinish:(EditDrinkViewController *)controller {
     
 	[self dismissModalViewControllerAnimated:YES];
-	
+	self.view.frame= CGRectMake(130, 90, 600,830);	
 }
 
 -(IBAction)editDrink:(id)sender{
@@ -44,23 +44,32 @@
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:controller animated:YES];
 	
-	controller.view.bounds = CGRectMake(112, 20, 579, 700);
-	controller.view.center = CGPointMake(512, 400);
+
 	//rotate -90 degrees if turned	
 	if(controller.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || controller.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
 	{
+		controller.view.bounds = CGRectMake(112, 20, 579, 700);
+		controller.view.center = CGPointMake(512, 400);
 		
 		controller.view.transform=CGAffineTransformMakeRotation(M_PI);
 		controller.view.transform = CGAffineTransformScale(controller.view.transform,1.0, -1.0);
 		controller.view.transform = CGAffineTransformScale(controller.view.transform,-1.0, 1.0);
 	}	
-		
+	else {
+		controller.view.frame= CGRectMake(130, 90, 600,830);
+		controller.view.transform=CGAffineTransformMakeRotation(M_PI);
+		controller.view.transform = CGAffineTransformScale(controller.view.transform,1.0, -1.0);
+		controller.view.transform = CGAffineTransformScale(controller.view.transform,-1.0, 1.0);
+	}
 	
 	[controller release];
-
 	 
 }
+- (void)viewWillAppear:(BOOL)animated{
 
+	//self.view.frame= CGRectMake(0, 0, 600,830);
+	
+}
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
