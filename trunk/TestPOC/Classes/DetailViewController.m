@@ -138,7 +138,31 @@
 #pragma mark -
 #pragma mark View lifecycle
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+	
+	//[pageView.view removeFromSuperview];
+	
+	//pageView = [[PageViewController alloc] initWithNibName:@"PageViewController" bundle:nil];
+	
+	//landscape
+	if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
+	{
+		NSLog(@"did rotate land");
+		
+		//pageView.view.frame= CGRectMake(130, 90,500, 860);
+		pageView.view.frame= CGRectMake(130, 45, 494, 682);
+		
+	}
+	else //portrait
+	{
+		NSLog(@"did rotate port");
 
+		pageView.view.frame= CGRectMake(130, 90, 600, 830);
+		
+	}
+	
+	
+	//[self.view addSubview:pageView.view];
+	 
 
 }
 
@@ -187,44 +211,24 @@
 	[title release];
 	*/
 	
-	[pageView.view removeFromSuperview];
-	
-	pageView = [[PageViewController alloc] initWithNibName:@"PageViewController" bundle:nil];
-
-	//landscape
-	if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
-	{
-		NSLog(@"rotate land");
-		pageView.view.frame= CGRectMake(130, 90, 600, 830);
-		
-	}
-	else //portrait
-	{
-		NSLog(@"rotate port");
-		pageView.view.frame= CGRectMake(200, 90,500, 860);
-	}
-	
-	
-	[self.view addSubview:pageView.view];
-	
-	
 }
 
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 		
+	//init pageview
 	pageView = [[PageViewController alloc] initWithNibName:@"PageViewController" bundle:nil];
 	
 	//landscape
 	if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
 	{
-		NSLog(@"landscape");
-		pageView.view.frame= CGRectMake(200, 90,500, 860);
+		NSLog(@"load landscape");
+		pageView.view.frame= CGRectMake(130, 45, 494, 682);
 		
 	}
 	else //portrait
 	{
-		NSLog(@"port");
+		NSLog(@"load port");
 		pageView.view.frame= CGRectMake(130, 90, 600, 830);
 	}
 	[self.view addSubview:pageView.view];
