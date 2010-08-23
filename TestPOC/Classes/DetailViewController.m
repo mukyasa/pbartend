@@ -139,29 +139,20 @@
 #pragma mark View lifecycle
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
 	
-	//[pageView.view removeFromSuperview];
-	
-	//pageView = [[PageViewController alloc] initWithNibName:@"PageViewController" bundle:nil];
-	
 	//landscape
 	if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
 	{
-		NSLog(@"did rotate land");
-		
-		//pageView.view.frame= CGRectMake(130, 90,500, 860);
+		//NSLog(@"did rotate land");
 		pageView.view.frame= CGRectMake(130, 45, 494, 682);
 		
 	}
 	else //portrait
 	{
-		NSLog(@"did rotate port");
-
+		//NSLog(@"did rotate port");
 		pageView.view.frame= CGRectMake(130, 90, 600, 830);
 		
 	}
-	
-	
-	//[self.view addSubview:pageView.view];
+
 	 
 
 }
@@ -169,6 +160,14 @@
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
 
+	//readd labels
+	[self addLabels];
+	
+	
+}
+
+-(void)addLabels{
+	
 	//remove all labels from page
 	for (UIView *view in pageView.view.subviews) {
 		if ([view isKindOfClass:[UILabel class]]==YES) {
@@ -180,12 +179,6 @@
 	//Y Starting point
 	int posY=65;
 	
-	//add paper
-	/*UIImageView *pageImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 576, 700)];
-	pageImage.image = [UIImage imageNamed:@"paper.png"];
-	[pageView.view addSubview:pageImage];
-	[pageImage release]; 
-	*/
 	//start adding labels
 	UIFont *myCustomFont = [UIFont fontWithName:@"Diego" size:24];
 	
@@ -211,10 +204,9 @@
 		[ing release];
 		posYMov+=50;
 	}
-		
+	
 	[title release];
-	
-	
+
 }
 
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -236,6 +228,10 @@
 		pageView.view.frame= CGRectMake(130, 90, 600, 830);
 	}
 	[self.view addSubview:pageView.view];
+	
+	
+	//add labels
+	[self addLabels];
 	
     [super viewDidLoad];
 }
