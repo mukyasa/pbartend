@@ -137,6 +137,10 @@
 
 #pragma mark -
 #pragma mark View lifecycle
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+
+
+}
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
@@ -183,15 +187,46 @@
 	[title release];
 	*/
 	
+	[pageView.view removeFromSuperview];
+	
+	pageView = [[PageViewController alloc] initWithNibName:@"PageViewController" bundle:nil];
+
+	//landscape
+	if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
+	{
+		NSLog(@"rotate land");
+		pageView.view.frame= CGRectMake(130, 90, 600, 830);
+		
+	}
+	else //portrait
+	{
+		NSLog(@"rotate port");
+		pageView.view.frame= CGRectMake(200, 90,500, 860);
+	}
+	
+	
+	[self.view addSubview:pageView.view];
+	
+	
 }
 
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 		
 	pageView = [[PageViewController alloc] initWithNibName:@"PageViewController" bundle:nil];
-	//portrait
-	pageView.view.frame= CGRectMake(130, 90, 600, 830);
 	
+	//landscape
+	if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
+	{
+		NSLog(@"landscape");
+		pageView.view.frame= CGRectMake(200, 90,500, 860);
+		
+	}
+	else //portrait
+	{
+		NSLog(@"port");
+		pageView.view.frame= CGRectMake(130, 90, 600, 830);
+	}
 	[self.view addSubview:pageView.view];
 	
     [super viewDidLoad];
