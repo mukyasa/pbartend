@@ -168,19 +168,24 @@
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-	/*
-	for (UIView *view in pageView.subviews) {
-		[view removeFromSuperview];
+
+	//remove all labels from page
+	for (UIView *view in pageView.view.subviews) {
+		if ([view isKindOfClass:[UILabel class]]==YES) {
+			[view removeFromSuperview];
+		}
+		
 	}
+	
 	//Y Starting point
 	int posY=65;
 	
 	//add paper
-	UIImageView *pageImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 576, 700)];
+	/*UIImageView *pageImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 576, 700)];
 	pageImage.image = [UIImage imageNamed:@"paper.png"];
-	[pageView addSubview:pageImage];
+	[pageView.view addSubview:pageImage];
 	[pageImage release]; 
-	
+	*/
 	//start adding labels
 	UIFont *myCustomFont = [UIFont fontWithName:@"Diego" size:24];
 	
@@ -190,26 +195,25 @@
 	[title setFont:myCustomFont];
 	title.autoresizingMask=UIViewAutoresizingNone;
 	[title setText:@"This is a drink name"];
-	[pageView addSubview:title];
+	[pageView.view addSubview:title];
 	
 	//add ingredients
 	posY+=50;
 	UILabel *ing;
 	int posYMov=20;
 	for(int i=1;i<5;i++)
-	{
-		
+	{		
 		ing= [[UILabel alloc]initWithFrame:CGRectMake(100, (posY+posYMov), 200, 20)];
 		ing.backgroundColor = [UIColor clearColor];
 		NSString *ingString = [NSString stringWithFormat:@"%i 1/2 oz 7-up",i];
 		[ing setText:ingString];
-		[pageView addSubview:ing];
+		[pageView.view addSubview:ing];
 		[ing release];
 		posYMov+=50;
 	}
 		
 	[title release];
-	*/
+	
 	
 }
 
