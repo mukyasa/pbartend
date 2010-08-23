@@ -189,11 +189,10 @@
 - (void)viewDidLoad {
 		
 	pageView = [[PageViewController alloc] initWithNibName:@"PageViewController" bundle:nil];
-	pageView.view.bounds = CGRectMake(112, 20, 579, 700);
-	pageView.view.center = CGPointMake(512, 400);
+	//portrait
+	pageView.view.frame= CGRectMake(130, 90, 600, 830);
 	
 	[self.view addSubview:pageView.view];
-
 	
     [super viewDidLoad];
 }
@@ -201,6 +200,7 @@
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
+
     [super viewWillAppear:animated];
 }
 */
