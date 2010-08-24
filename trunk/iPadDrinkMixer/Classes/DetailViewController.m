@@ -151,13 +151,13 @@
 	//landscape
 	if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
 	{
-		[pageView.view setFrame:CGRectMake(180, 90, 600, 800)];
+		[pageView.view setFrame:CGRectMake(130, 90, 600, 800)];
 	}
 	else //portrait
 	{
-		[pageView.view setFrame:CGRectMake(130, 90, 750, 1000)];
+		[pageView.view setFrame:CGRectMake(130, 90, 600, 830)];
 	}
-	*/	
+	*/
 		
 }
 /*

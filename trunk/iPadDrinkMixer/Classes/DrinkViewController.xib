@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="4"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -44,8 +44,8 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUIImageView" id="8389277">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrameSize">{600, 830}</string>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrame">{{20, 20}, {600, 830}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="631225810">
 							<int key="NSColorSpace">3</int>
@@ -63,7 +63,7 @@
 					<object class="IBUITextView" id="709691608">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{160, 176}, {240, 128}}</string>
+						<string key="NSFrame">{{180, 196}, {240, 128}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -79,7 +79,7 @@
 						</object>
 					</object>
 				</object>
-				<string key="NSFrameSize">{600, 830}</string>
+				<string key="NSFrame">{{-20, 20}, {600, 830}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="IBUIBackgroundColor" ref="631225810"/>
 				<bool key="IBUIOpaque">NO</bool>
