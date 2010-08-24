@@ -98,6 +98,7 @@
 	myCustomFont = [UIFont fontWithName:@"Diego" size:24];
 	
 	PageViewController *page = [[PageViewController alloc] initWithNibName:@"PageViewController" bundle:nil];
+	
 	[page.view setFrame:CGRectMake(130, 90, 600, 830)];
 	self.pageView = page;
 	[self.view insertSubview:page.view atIndex:1];
@@ -144,6 +145,21 @@
 	
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+	
+	/*
+	//landscape
+	if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
+	{
+		[pageView.view setFrame:CGRectMake(180, 90, 600, 800)];
+	}
+	else //portrait
+	{
+		[pageView.view setFrame:CGRectMake(130, 90, 750, 1000)];
+	}
+	*/	
+		
+}
 /*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
