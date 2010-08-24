@@ -47,15 +47,19 @@
     
     if (self.editDrinkViewController.view.superview == nil)
     {
+		
         if (self.editDrinkViewController == nil)
         {
             EditDrinkViewController *editController = 
             [[EditDrinkViewController alloc] initWithNibName:@"EditDrinkViewController" 
                                                    bundle:nil];
+			
             self.editDrinkViewController = editController;
             [editController release];
 			
         }
+		
+		
 		[editSaveButton	setTitle:@"Save" forState:UIControlStateNormal];
         [UIView setAnimationTransition:
          UIViewAnimationTransitionFlipFromRight
