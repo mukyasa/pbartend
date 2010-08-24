@@ -17,7 +17,7 @@
 	UIImage *pickedCover;
 	IBOutlet ADBannerView *bannerView;
 	CoverShotEditorViewController *coverShotEditorViewController;
-	int demoCover;
+	int liteCover;
 	IBOutlet UIImageView *fullversion;
 	
 }
