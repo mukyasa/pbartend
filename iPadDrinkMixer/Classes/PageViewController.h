@@ -12,6 +12,8 @@
 
 @interface PageViewController : UIViewController {
 	DrinkViewController *drinkViewController;
+	EditDrinkViewController *editDrinkViewController;
+	
 	IBOutlet UIButton *editSaveButton;
 }
 

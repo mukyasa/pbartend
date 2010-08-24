@@ -51,8 +51,7 @@
         if (self.editDrinkViewController == nil)
         {
             EditDrinkViewController *editController = 
-            [[EditDrinkViewController alloc] initWithNibName:@"EditDrinkViewController" 
-                                                   bundle:nil];
+            [[EditDrinkViewController alloc] initWithNibName:@"EditDrinkViewController" bundle:nil];
 			
             self.editDrinkViewController = editController;
             [editController release];
