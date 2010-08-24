@@ -14,7 +14,7 @@
 
 const CGFloat kScrollObjWidth	= 240.0;
 const CGFloat kScrollObjHeight	= 360;
-const NSUInteger kNumImages		= 24;
+const NSUInteger kNumImages		= 6;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -96,7 +96,7 @@ const NSUInteger kNumImages		= 24;
 {
 	if (recognizer.state == UIGestureRecognizerStateEnded) {
 		//NSLog(@"Tap");
-		if(demoCover<=5)
+		if(liteCover<=5)
 		{
 			//NSLog(@"Tap");
 			coverShotEditorViewController = [[CoverShotEditorViewController alloc] initWithNibName:@"CoverShotEditorViewController" bundle:nil];
@@ -131,8 +131,8 @@ const NSUInteger kNumImages		= 24;
 	CGFloat pageWidth = magizineScrollView.frame.size.width-10; 
 	int page = ((scrollView.contentOffset.x / pageWidth) + 1);
 	pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"clearcover%i.png",page] ];
-	demoCover =page;
-	if(demoCover>5)
+	liteCover =page;
+	if(liteCover>6)
 		fullversion.hidden=NO;
 	else 
 		fullversion.hidden=YES;
