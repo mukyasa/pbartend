@@ -1,0 +1,207 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* iPadDrinkMixer */ = {
+		activeExec = 0;
+		executables = (
+			7129311E12237A97008B2652 /* iPadDrinkMixer */,
+		);
+	};
+	28042009108E984D000629CD /* DetailViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 690}}";
+			sepNavSelRange = "{562, 8}";
+			sepNavVisRange = "{0, 804}";
+		};
+	};
+	2804200A108E984D000629CD /* DetailViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1510, 1976}}";
+			sepNavSelRange = "{2840, 0}";
+			sepNavVisRange = "{2035, 1285}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 7129311E12237A97008B2652 /* iPadDrinkMixer */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* iPadDrinkMixer */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* iPadDrinkMixer */,
+		);
+		codeSenseManager = 7129312E12237A9D008B2652 /* Code sense */;
+		executables = (
+			7129311E12237A97008B2652 /* iPadDrinkMixer */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					993,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 304315375;
+			PBXWorkspaceStateSaveDate = 304315375;
+		};
+		perUserProjectItems = {
+			7129316412237BE3008B2652 = 7129316412237BE3008B2652 /* PlistBookmark */;
+			7129316512237BE3008B2652 = 7129316512237BE3008B2652 /* PBXTextBookmark */;
+			7129316612237BE3008B2652 = 7129316612237BE3008B2652 /* PBXTextBookmark */;
+			7129316712237BE3008B2652 = 7129316712237BE3008B2652 /* PBXTextBookmark */;
+			7159AAA712237BF1002816FD /* PBXTextBookmark */ = 7159AAA712237BF1002816FD /* PBXTextBookmark */;
+		};
+		sourceControlManager = 7129312D12237A9D008B2652 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	7129311E12237A97008B2652 /* iPadDrinkMixer */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = iPadDrinkMixer;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	7129312D12237A9D008B2652 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	7129312E12237A9D008B2652 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	7129316412237BE3008B2652 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* iPadDrinkMixer-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleExecutable,
+		);
+		name = "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/iPadDrinkMixer-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	7129316512237BE3008B2652 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
+		name = "DetailViewController.m: 138";
+		rLen = 0;
+		rLoc = 3788;
+		rType = 0;
+		vrLen = 1380;
+		vrLoc = 0;
+	};
+	7129316612237BE3008B2652 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28042009108E984D000629CD /* DetailViewController.h */;
+		name = "DetailViewController.h: 21";
+		rLen = 12;
+		rLoc = 607;
+		rType = 0;
+		vrLen = 673;
+		vrLoc = 0;
+	};
+	7129316712237BE3008B2652 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28042009108E984D000629CD /* DetailViewController.h */;
+		name = "DetailViewController.h: 19";
+		rLen = 0;
+		rLoc = 510;
+		rType = 0;
+		vrLen = 675;
+		vrLoc = 0;
+	};
+	7159AAA712237BF1002816FD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28042009108E984D000629CD /* DetailViewController.h */;
+		name = "DetailViewController.h: 19";
+		rLen = 0;
+		rLoc = 510;
+		rType = 0;
+		vrLen = 675;
+		vrLoc = 0;
+	};
+	7159AAC712237C43002816FD /* PageViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 667}}";
+			sepNavSelRange = "{331, 8}";
+			sepNavVisRange = "{0, 610}";
+		};
+	};
+	7159AAC812237C43002816FD /* PageViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 1612}}";
+			sepNavSelRange = "{1177, 0}";
+			sepNavVisRange = "{205, 1992}";
+		};
+	};
+	7159AADF12237D80002816FD /* EditDrinkViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 690}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 236}";
+		};
+	};
+	7159AAE012237D80002816FD /* EditDrinkViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 767}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1442}";
+		};
+	};
+	7159AAE412237D9D002816FD /* DrinkViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 690}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 228}";
+		};
+	};
+	7159AAE512237D9D002816FD /* DrinkViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 767}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1430}";
+		};
+	};
+}
