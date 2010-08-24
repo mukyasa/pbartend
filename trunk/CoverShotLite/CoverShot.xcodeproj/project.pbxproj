@@ -254,10 +254,10 @@
 			isa = PBXGroup;
 			children = (
 				71DCB5E2120B969C00C6B951 /* FlipsideView.xib */,
-				71887A9211F7E6D700F4C6D6 /* maghome.png */,
 				71887B1511F7F15F00F4C6D6 /* CoverShotEditorViewController.xib */,
 				2899E5210DE3E06400AC0155 /* CoverShotViewController.xib */,
 				7103E97111FA1D250088BD9E /* blending.png */,
+				71887A9211F7E6D700F4C6D6 /* maghome.png */,
 				71FCD1B5120B996700139C51 /* help_bg.png */,
 				71887B2311F7F42E00F4C6D6 /* book.png */,
 				7148D6C01212FECD00B13094 /* appstoresm.gif */,
@@ -379,7 +379,6 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CoverShot" */;
 			compatibilityVersion = "Xcode 3.1";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -513,11 +512,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = CoverShot_Prefix.pch;
 				INFOPLIST_FILE = "CoverShot-Info.plist";
 				PRODUCT_NAME = covershotlite;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -547,7 +548,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};
