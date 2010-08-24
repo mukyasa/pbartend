@@ -84,6 +84,10 @@
 		71887B2811F7F42E00F4C6D6 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 71887B2511F7F42E00F4C6D6 /* save.png */; };
 		71887C4111F80CB400F4C6D6 /* clearbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71887C4011F80CB400F4C6D6 /* clearbg.png */; };
 		71887CE211F812FA00F4C6D6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71887CE111F812FA00F4C6D6 /* AVFoundation.framework */; };
+		71A25BE012247A3D00F01762 /* book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A25BDC12247A3D00F01762 /* book@2x.png */; };
+		71A25BE112247A3D00F01762 /* blending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A25BDD12247A3D00F01762 /* blending@2x.png */; };
+		71A25BE212247A3D00F01762 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A25BDE12247A3D00F01762 /* camera@2x.png */; };
+		71A25BE312247A3D00F01762 /* save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A25BDF12247A3D00F01762 /* save@2x.png */; };
 		71A665C01214A99700038AD8 /* fullversion.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A665BF1214A99700038AD8 /* fullversion.png */; };
 		71AB1F831211F1740063B455 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 71AB1F821211F1740063B455 /* Default.png */; };
 		71BD191812054A4F00BF15ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71BD191712054A4F00BF15ED /* QuartzCore.framework */; };
@@ -177,6 +181,10 @@
 		71887B2511F7F42E00F4C6D6 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		71887C4011F80CB400F4C6D6 /* clearbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearbg.png; sourceTree = "<group>"; };
 		71887CE111F812FA00F4C6D6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		71A25BDC12247A3D00F01762 /* book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book@2x.png"; sourceTree = "<group>"; };
+		71A25BDD12247A3D00F01762 /* blending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blending@2x.png"; sourceTree = "<group>"; };
+		71A25BDE12247A3D00F01762 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		71A25BDF12247A3D00F01762 /* save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save@2x.png"; sourceTree = "<group>"; };
 		71A665BF1214A99700038AD8 /* fullversion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fullversion.png; sourceTree = "<group>"; };
 		71AB1F821211F1740063B455 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		71BD191712054A4F00BF15ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -253,6 +261,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				71A25BDC12247A3D00F01762 /* book@2x.png */,
+				71A25BDD12247A3D00F01762 /* blending@2x.png */,
+				71A25BDE12247A3D00F01762 /* camera@2x.png */,
+				71A25BDF12247A3D00F01762 /* save@2x.png */,
 				71DCB5E2120B969C00C6B951 /* FlipsideView.xib */,
 				71887B1511F7F15F00F4C6D6 /* CoverShotEditorViewController.xib */,
 				2899E5210DE3E06400AC0155 /* CoverShotViewController.xib */,
@@ -379,6 +391,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CoverShot" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -469,6 +482,10 @@
 				711F84CA1214F7D1000526FF /* cover22.png in Resources */,
 				711F84CB1214F7D1000526FF /* cover23.png in Resources */,
 				711F84CC1214F7D1000526FF /* cover24.png in Resources */,
+				71A25BE012247A3D00F01762 /* book@2x.png in Resources */,
+				71A25BE112247A3D00F01762 /* blending@2x.png in Resources */,
+				71A25BE212247A3D00F01762 /* camera@2x.png in Resources */,
+				71A25BE312247A3D00F01762 /* save@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +565,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Release;
 		};
