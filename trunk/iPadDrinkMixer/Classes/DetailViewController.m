@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "RootViewController.h"
 #import "PageViewController.h"
+#import "FilterViewController.h"
 
 
 @interface DetailViewController ()
@@ -22,6 +23,7 @@
 
 @synthesize toolbar, popoverController, detailItem, detailDescriptionLabel,myCustomFont;
 @synthesize pageView;
+@synthesize listPopOver,listFilterPopOver,currentPopover;
 
 #pragma mark -
 #pragma mark Managing the detail item
@@ -61,6 +63,7 @@
     [toolbar setItems:items animated:YES];
     [items release];
     self.popoverController = pc;
+	listPopOver.hidden=NO;
 }
 
 
@@ -72,6 +75,7 @@
     [toolbar setItems:items animated:YES];
     [items release];
     self.popoverController = nil;
+	listPopOver.hidden=YES;
 }
 
 
@@ -102,6 +106,43 @@
     [super viewDidLoad];
 }
  
+- (void)setupNewPopoverControllerForViewController:(UIViewController *)vc {
+	if (self.currentPopover) {
+		[self.currentPopover dismissPopoverAnimated:YES];
+		[self handleDismissedPopoverController:self.currentPopover];
+	}
+	self.currentPopover = [[[UIPopoverController alloc] initWithContentViewController:vc] autorelease];
+	self.currentPopover.delegate = self;
+}
+
+- (void)handleDismissedPopoverController:(UIPopoverController*)popoverController {
+	
+	self.currentPopover = nil;
+}
+
+-(IBAction)popoverList:(id)sender{
+	
+	
+	[self.popoverController presentPopoverFromRect:listPopOver.frame
+											inView:self.view
+						  permittedArrowDirections:UIPopoverArrowDirectionAny
+										  animated:YES];
+	
+}
+
+-(IBAction)popoverFilter:(id)sender{
+	
+	FilterViewController *filter = [[[FilterViewController alloc] initWithNibName:@"FilterViewController" bundle:nil] autorelease];
+	[self setupNewPopoverControllerForViewController:filter];
+	
+	currentPopover.popoverContentSize = CGSizeMake(300.0, 400.0);
+	
+	[self.currentPopover presentPopoverFromRect:listFilterPopOver.frame
+										 inView:self.view
+					   permittedArrowDirections:UIPopoverArrowDirectionAny
+									   animated:YES];
+	
+}
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -144,6 +185,9 @@
 */
 
 - (void)dealloc {
+	[currentPopover release];
+	[listPopOver release];
+	[listFilterPopOver release];
 	[pageView release];
 	[myCustomFont release];
     [popoverController release];
