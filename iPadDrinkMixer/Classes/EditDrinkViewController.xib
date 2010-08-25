@@ -45,7 +45,7 @@
 					<object class="IBUIImageView" id="20098749">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrameSize">{600, 801}</string>
+						<string key="NSFrameSize">{550, 800}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="428683728">
 							<int key="NSColorSpace">3</int>
@@ -90,7 +90,7 @@
 						</object>
 					</object>
 				</object>
-				<string key="NSFrameSize">{600, 801}</string>
+				<string key="NSFrameSize">{550, 800}</string>
 				<reference key="NSSuperview"/>
 				<reference key="IBUIBackgroundColor" ref="428683728"/>
 				<bool key="IBUIOpaque">NO</bool>
@@ -177,6 +177,7 @@
 					<string>1.IBEditorWindowLastContentRect</string>
 					<string>1.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
+					<string>6.IBViewBoundsToFrameTransform</string>
 					<string>7.IBPluginDependency</string>
 					<string>7.IBViewBoundsToFrameTransform</string>
 				</object>
@@ -184,9 +185,12 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>EditDrinkViewController</string>
 					<string>UIResponder</string>
-					<string>{{312, 55}, {600, 801}}</string>
+					<string>{{428, 51}, {550, 800}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAxEfAAA</bytes>
+					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABDhAAAw9CAAA</bytes>
