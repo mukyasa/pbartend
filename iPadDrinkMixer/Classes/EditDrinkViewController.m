@@ -14,7 +14,6 @@
 @synthesize save;
 
 -(IBAction)save:(id)sender{
-	NSLog(@"save");
 	id mainViewController = [self.view.superview nextResponder];
 	[mainViewController flipview];
 

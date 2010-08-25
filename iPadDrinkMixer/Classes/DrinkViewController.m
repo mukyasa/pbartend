@@ -13,7 +13,7 @@
 @synthesize edit;
 
 -(IBAction)edit:(id)sender{
-	NSLog(@"edit");
+
 	id mainViewController = [self.view.superview nextResponder];
 	[mainViewController flipview];
 	

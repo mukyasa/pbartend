@@ -30,8 +30,7 @@
 	
 	
 	DrinkViewController *drinkController = [[DrinkViewController alloc] initWithNibName:@"DrinkViewController" bundle:nil];
-	viewFrame = CGRectMake(0, 0, 550, 800);
-	//[drinkController.view setFrame:CGRectMake(0, 0, 550, 800)];
+	viewFrame = CGRectMake(0, 0, 550, 800);//set up viewframe size by default
 	self.drinkViewController = drinkController;
 	[self.view insertSubview:drinkController.view atIndex:0];
 	
@@ -42,7 +41,6 @@
 
 -(void)flipview{
 		
-	NSLog(@"flip called");
 	[UIView beginAnimations:@"View Flip" context:nil];
     [UIView setAnimationDuration:.5];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
