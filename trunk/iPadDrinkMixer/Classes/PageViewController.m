@@ -33,8 +33,13 @@
 	viewFrame = CGRectMake(0, 0, 550, 800);//set up viewframe size by default
 	self.drinkViewController = drinkController;
 	[self.view insertSubview:drinkController.view atIndex:0];
-	
 	[drinkController release];
+	
+	EditDrinkViewController *editController = 
+	[[EditDrinkViewController alloc] initWithNibName:@"EditDrinkViewController" bundle:nil];
+	[editController.view setFrame:viewFrame];
+	self.editDrinkViewController = editController;
+	[editController release];
 	
 	[editSaveButton	setTitle:@"Edit" forState:UIControlStateNormal];
 }
@@ -42,7 +47,7 @@
 -(void)flipview{
 		
 	[UIView beginAnimations:@"View Flip" context:nil];
-    [UIView setAnimationDuration:.5];
+    [UIView setAnimationDuration:.8];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     
     if (self.editDrinkViewController.view.superview == nil)
@@ -58,8 +63,7 @@
 			
         }
 		
-        [UIView setAnimationTransition:
-		UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
+        [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
         
         [drinkViewController viewWillAppear:YES];
         [editDrinkViewController viewWillDisappear:YES];
@@ -80,8 +84,7 @@
 			
         }
 
-        [UIView setAnimationTransition:
-		UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
+        [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
         
         [editDrinkViewController viewWillAppear:YES];
         [drinkViewController viewWillDisappear:YES];
