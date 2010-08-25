@@ -1,5 +1,12 @@
 // !$*UTF8*$!
 {
+	1D3623250D0F684500981E51 /* iPadDrinkMixerAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 949}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1626}";
+		};
+	};
 	1D6058900D05DD3D006BFB54 /* iPadDrinkMixer */ = {
 		activeExec = 0;
 		executables = (
@@ -45,6 +52,30 @@
 					20,
 				);
 				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					845,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
 					PBXFileDataSource_FiletypeID,
 					PBXFileDataSource_Filename_ColumnID,
 					PBXFileDataSource_Built_ColumnID,
@@ -212,6 +243,12 @@
 			712EC3461224D153004E016A /* PBXTextBookmark */ = 712EC3461224D153004E016A /* PBXTextBookmark */;
 			712EC3471224D153004E016A /* PBXTextBookmark */ = 712EC3471224D153004E016A /* PBXTextBookmark */;
 			712EC3481224D153004E016A /* PBXTextBookmark */ = 712EC3481224D153004E016A /* PBXTextBookmark */;
+			712EC34D1224D1AE004E016A /* PBXTextBookmark */ = 712EC34D1224D1AE004E016A /* PBXTextBookmark */;
+			712EC34E1224D1AE004E016A /* PBXTextBookmark */ = 712EC34E1224D1AE004E016A /* PBXTextBookmark */;
+			712EC34F1224D1AE004E016A /* PBXTextBookmark */ = 712EC34F1224D1AE004E016A /* PBXTextBookmark */;
+			712EC3501224D1AE004E016A /* PBXTextBookmark */ = 712EC3501224D1AE004E016A /* PBXTextBookmark */;
+			712EC3521224D1AE004E016A /* PBXBookmark */ = 712EC3521224D1AE004E016A /* PBXBookmark */;
+			712EC3531224D1AE004E016A /* PBXTextBookmark */ = 712EC3531224D1AE004E016A /* PBXTextBookmark */;
 			71A25C2C12247BF200F01762 = 71A25C2C12247BF200F01762 /* PBXTextBookmark */;
 			71A25C2D12247BF200F01762 = 71A25C2D12247BF200F01762 /* PBXTextBookmark */;
 			71A25C2E12247BF200F01762 = 71A25C2E12247BF200F01762 /* PBXTextBookmark */;
@@ -1810,6 +1847,66 @@
 		vrLen = 2036;
 		vrLoc = 1472;
 	};
+	712EC34D1224D1AE004E016A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7159AAC812237C43002816FD /* PageViewController.m */;
+		name = "PageViewController.m: 64";
+		rLen = 8;
+		rLoc = 2035;
+		rType = 0;
+		vrLen = 2036;
+		vrLoc = 1472;
+	};
+	712EC34E1224D1AE004E016A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7159AAE012237D80002816FD /* EditDrinkViewController.m */;
+		name = "EditDrinkViewController.m: 10";
+		rLen = 0;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 1452;
+		vrLoc = 33;
+	};
+	712EC34F1224D1AE004E016A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7159AAE512237D9D002816FD /* DrinkViewController.m */;
+		name = "DrinkViewController.m: 10";
+		rLen = 30;
+		rLoc = 173;
+		rType = 0;
+		vrLen = 1053;
+		vrLoc = 51;
+	};
+	712EC3501224D1AE004E016A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712EC3511224D1AE004E016A /* project.pbxproj */;
+		name = "project.pbxproj: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 4033;
+		vrLoc = 0;
+	};
+	712EC3511224D1AE004E016A /* project.pbxproj */ = {
+		isa = PBXFileReference;
+		name = project.pbxproj;
+		path = "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/iPadDrinkMixer.xcodeproj/project.pbxproj";
+		sourceTree = "<absolute>";
+	};
+	712EC3521224D1AE004E016A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 1D3623250D0F684500981E51 /* iPadDrinkMixerAppDelegate.m */;
+	};
+	712EC3531224D1AE004E016A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* iPadDrinkMixerAppDelegate.m */;
+		name = "iPadDrinkMixerAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1626;
+		vrLoc = 0;
+	};
 	7159AAC712237C43002816FD /* PageViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1047, 667}}";
@@ -1833,9 +1930,9 @@
 	};
 	7159AAE012237D80002816FD /* EditDrinkViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 858}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 845}}";
 			sepNavSelRange = "{211, 0}";
-			sepNavVisRange = "{181, 1452}";
+			sepNavVisRange = "{33, 1452}";
 		};
 	};
 	7159AAE412237D9D002816FD /* DrinkViewController.h */ = {
@@ -1849,7 +1946,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1146, 884}}";
 			sepNavSelRange = "{173, 30}";
-			sepNavVisRange = "{261, 1371}";
+			sepNavVisRange = "{51, 1053}";
 		};
 	};
 	71A25C2C12247BF200F01762 /* PBXTextBookmark */ = {
