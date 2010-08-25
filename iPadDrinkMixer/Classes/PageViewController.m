@@ -96,7 +96,7 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
 
-	NSLog(@"rotated");
+	//NSLog(@"rotated");
 	if(fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
 	{
 		viewFrame = CGRectMake(0, 0, 450, 630);
