@@ -99,7 +99,7 @@
 	
 	PageViewController *page = [[PageViewController alloc] initWithNibName:@"PageViewController" bundle:nil];
 	
-	[page.view setFrame:CGRectMake(150, 90, 550, 800)];
+	[page.view setFrame:CGRectMake(150, 90, 550, 830)];
 	
 	self.pageView = page;
 	[self.view insertSubview:page.view atIndex:1];
