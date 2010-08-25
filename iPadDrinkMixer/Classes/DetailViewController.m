@@ -144,22 +144,10 @@
 									   animated:YES];
 	
 }
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
-	
-	/*
-	//landscape
-	if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
-	{
-		[pageView.view setFrame:CGRectMake(130, 90, 600, 800)];
-	}
-	else //portrait
-	{
-		[pageView.view setFrame:CGRectMake(130, 90, 600, 830)];
-	}
-	*/
-		
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+	[pageView didRotateFromInterfaceOrientation:toInterfaceOrientation];
 }
+
 /*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
