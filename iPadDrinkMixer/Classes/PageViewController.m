@@ -30,7 +30,7 @@
 	
 	
 	DrinkViewController *drinkController = [[DrinkViewController alloc] initWithNibName:@"DrinkViewController" bundle:nil];
-	[drinkController.view setFrame:CGRectMake(0, 0, 600, 830)];
+	[drinkController.view setFrame:CGRectMake(0, 0, 550, 800)];
 	self.drinkViewController = drinkController;
 	[self.view insertSubview:drinkController.view atIndex:0];
 	
@@ -52,7 +52,7 @@
         {
             EditDrinkViewController *editController = 
             [[EditDrinkViewController alloc] initWithNibName:@"EditDrinkViewController" bundle:nil];
-			
+			[editController.view setFrame:viewFrame];
             self.editDrinkViewController = editController;
             [editController release];
 			
@@ -77,6 +77,7 @@
         {
             DrinkViewController *drinkController = 
             [[DrinkViewController alloc] initWithNibName:@"DrinkViewController" bundle:nil];
+			[drinkController.view setFrame:viewFrame];
             self.drinkViewController = drinkController;
             [drinkController release];
 			
@@ -100,15 +101,17 @@
 	if(fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
 	{
 		NSLog(@"land");
-		[drinkViewController.view setFrame:CGRectMake(20, 0, 450, 630)];
-		[editDrinkViewController.view setFrame:CGRectMake(20, 0, 450, 630)];
+		viewFrame = CGRectMake(0, 0, 450, 630);
+		[drinkViewController.view setFrame:viewFrame];
+		[editDrinkViewController.view setFrame:viewFrame];
 		
 	}
 	else //portrait
 	{
 		NSLog(@"port");
-		[drinkViewController.view setFrame:CGRectMake(0, 0, 600, 830)];
-		[editDrinkViewController.view setFrame:CGRectMake(0, 0, 600, 830)];
+		viewFrame = CGRectMake(0, 0, 550, 800);
+		[drinkViewController.view setFrame:viewFrame];
+		[editDrinkViewController.view setFrame:viewFrame];
 	}
 }
 

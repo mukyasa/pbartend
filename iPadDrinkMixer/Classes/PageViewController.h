@@ -13,9 +13,11 @@
 @interface PageViewController : UIViewController {
 	DrinkViewController *drinkViewController;
 	EditDrinkViewController *editDrinkViewController;
+	CGRect viewFrame;
 	
 	IBOutlet UIButton *editSaveButton;
 }
+
 
 @property (retain, nonatomic) UIButton *editSaveButton;
 @property (retain, nonatomic) DrinkViewController *drinkViewController;
