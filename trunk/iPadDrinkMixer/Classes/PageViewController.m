@@ -76,8 +76,7 @@
         if (self.drinkViewController == nil)
         {
             DrinkViewController *drinkController = 
-            [[DrinkViewController alloc] initWithNibName:@"DrinkViewController" 
-                                                 bundle:nil];
+            [[DrinkViewController alloc] initWithNibName:@"DrinkViewController" bundle:nil];
             self.drinkViewController = drinkController;
             [drinkController release];
 			
@@ -96,7 +95,22 @@
     }
     [UIView commitAnimations];
 }
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
 
+	if(fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+	{
+		NSLog(@"land");
+		[drinkViewController.view setFrame:CGRectMake(20, 0, 450, 630)];
+		[editDrinkViewController.view setFrame:CGRectMake(20, 0, 450, 630)];
+		
+	}
+	else //portrait
+	{
+		NSLog(@"port");
+		[drinkViewController.view setFrame:CGRectMake(0, 0, 600, 830)];
+		[editDrinkViewController.view setFrame:CGRectMake(0, 0, 600, 830)];
+	}
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Overriden to allow any orientation.
