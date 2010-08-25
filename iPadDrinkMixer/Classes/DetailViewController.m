@@ -124,11 +124,7 @@
 
 -(IBAction)popoverList:(id)sender{
 	
-	
-	[self.popoverController presentPopoverFromRect:listPopOver.frame
-											inView:self.view
-						  permittedArrowDirections:UIPopoverArrowDirectionAny
-										  animated:YES];
+	[self.popoverController presentPopoverFromRect:listPopOver.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 	
 }
 
@@ -139,8 +135,7 @@
 	
 	currentPopover.popoverContentSize = CGSizeMake(300.0, 400.0);
 	
-	[self.currentPopover presentPopoverFromRect:listFilterPopOver.frame
-										 inView:self.view
+	[self.currentPopover presentPopoverFromRect:listFilterPopOver.frame inView:self.view
 					   permittedArrowDirections:UIPopoverArrowDirectionAny
 									   animated:YES];
 	
