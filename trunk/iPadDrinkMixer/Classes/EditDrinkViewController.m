@@ -11,6 +11,14 @@
 
 @implementation EditDrinkViewController
 
+@synthesize save;
+
+-(IBAction)save:(id)sender{
+	NSLog(@"save");
+	id mainViewController = [self.view.superview nextResponder];
+	[mainViewController flipview];
+
+}
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -51,6 +59,7 @@
 
 
 - (void)dealloc {
+	[save release];
     [super dealloc];
 }
 

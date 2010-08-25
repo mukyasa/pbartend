@@ -11,6 +11,9 @@
 
 @interface DrinkViewController : UIViewController {
 
+	IBOutlet UIButton *edit;
 }
+@property(nonatomic,retain)UIButton *edit;
+-(IBAction)edit:(id)sender;
 
 @end

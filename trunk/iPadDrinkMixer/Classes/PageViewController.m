@@ -30,7 +30,8 @@
 	
 	
 	DrinkViewController *drinkController = [[DrinkViewController alloc] initWithNibName:@"DrinkViewController" bundle:nil];
-	[drinkController.view setFrame:CGRectMake(0, 0, 550, 800)];
+	viewFrame = CGRectMake(0, 0, 550, 800);
+	//[drinkController.view setFrame:CGRectMake(0, 0, 550, 800)];
 	self.drinkViewController = drinkController;
 	[self.view insertSubview:drinkController.view atIndex:0];
 	
@@ -39,9 +40,10 @@
 	[editSaveButton	setTitle:@"Edit" forState:UIControlStateNormal];
 }
 
-- (IBAction)switchViews:(id)sender
-{
-    [UIView beginAnimations:@"View Flip" context:nil];
+-(void)flipview{
+		
+	NSLog(@"flip called");
+	[UIView beginAnimations:@"View Flip" context:nil];
     [UIView setAnimationDuration:.5];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     
@@ -58,11 +60,8 @@
 			
         }
 		
-		
-		[editSaveButton	setTitle:@"Save" forState:UIControlStateNormal];
         [UIView setAnimationTransition:
-         UIViewAnimationTransitionFlipFromRight
-                               forView:self.view cache:YES];
+		UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
         
         [drinkViewController viewWillAppear:YES];
         [editDrinkViewController viewWillDisappear:YES];
@@ -82,10 +81,9 @@
             [drinkController release];
 			
         }
-		[editSaveButton	setTitle:@"Edit" forState:UIControlStateNormal];
+
         [UIView setAnimationTransition:
-         UIViewAnimationTransitionFlipFromLeft
-                               forView:self.view cache:YES];
+		UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
         
         [editDrinkViewController viewWillAppear:YES];
         [drinkViewController viewWillDisappear:YES];
@@ -95,12 +93,14 @@
         [editDrinkViewController viewDidAppear:YES];
     }
     [UIView commitAnimations];
+
 }
+
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
 
+	NSLog(@"rotated");
 	if(fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
 	{
-		NSLog(@"land");
 		viewFrame = CGRectMake(0, 0, 450, 630);
 		[drinkViewController.view setFrame:viewFrame];
 		[editDrinkViewController.view setFrame:viewFrame];
@@ -108,7 +108,6 @@
 	}
 	else //portrait
 	{
-		NSLog(@"port");
 		viewFrame = CGRectMake(0, 0, 550, 800);
 		[drinkViewController.view setFrame:viewFrame];
 		[editDrinkViewController.view setFrame:viewFrame];

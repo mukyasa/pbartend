@@ -10,7 +10,11 @@
 
 
 @interface EditDrinkViewController : UIViewController {
-
+	IBOutlet UIButton *save;
 }
+
+@property(nonatomic,retain) UIButton *save;
+
+-(IBAction)save:(id)sender;
 
 @end
