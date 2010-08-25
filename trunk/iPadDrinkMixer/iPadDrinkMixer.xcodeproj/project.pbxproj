@@ -29,6 +29,8 @@
 		7159AAE812237D9D002816FD /* DrinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7159AAE612237D9D002816FD /* DrinkViewController.xib */; };
 		7159ABBC12238894002816FD /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = 7159ABBA12238894002816FD /* post.png */; };
 		7159ABBD12238894002816FD /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 7159ABBB12238894002816FD /* search.png */; };
+		71F916A312238BB80090AEE4 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F916A112238BB80090AEE4 /* FilterViewController.m */; };
+		71F916A412238BB80090AEE4 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F916A212238BB80090AEE4 /* FilterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,9 @@
 		7159AAE612237D9D002816FD /* DrinkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DrinkViewController.xib; path = Classes/DrinkViewController.xib; sourceTree = "<group>"; };
 		7159ABBA12238894002816FD /* post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = post.png; sourceTree = "<group>"; };
 		7159ABBB12238894002816FD /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		71F916A012238BB80090AEE4 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		71F916A112238BB80090AEE4 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		71F916A212238BB80090AEE4 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterViewController.xib; path = Classes/FilterViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iPadDrinkMixer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPadDrinkMixer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +99,8 @@
 				7159AAE012237D80002816FD /* EditDrinkViewController.m */,
 				7159AAE412237D9D002816FD /* DrinkViewController.h */,
 				7159AAE512237D9D002816FD /* DrinkViewController.m */,
+				71F916A012238BB80090AEE4 /* FilterViewController.h */,
+				71F916A112238BB80090AEE4 /* FilterViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				71F916A212238BB80090AEE4 /* FilterViewController.xib */,
 				7159AAE612237D9D002816FD /* DrinkViewController.xib */,
 				7159AAE112237D80002816FD /* EditDrinkViewController.xib */,
 				7159AAC912237C43002816FD /* PageViewController.xib */,
@@ -219,6 +227,7 @@
 				7159AAE812237D9D002816FD /* DrinkViewController.xib in Resources */,
 				7159ABBC12238894002816FD /* post.png in Resources */,
 				7159ABBD12238894002816FD /* search.png in Resources */,
+				71F916A412238BB80090AEE4 /* FilterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +245,7 @@
 				7159AACA12237C43002816FD /* PageViewController.m in Sources */,
 				7159AAE212237D80002816FD /* EditDrinkViewController.m in Sources */,
 				7159AAE712237D9D002816FD /* DrinkViewController.m in Sources */,
+				71F916A312238BB80090AEE4 /* FilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
