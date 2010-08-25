@@ -22,6 +22,7 @@
 @property (retain, nonatomic) UIButton *editSaveButton;
 @property (retain, nonatomic) DrinkViewController *drinkViewController;
 @property (retain, nonatomic) EditDrinkViewController *editDrinkViewController;
-- (IBAction)switchViews:(id)sender;
+
+-(void)flipview;
 
 @end
