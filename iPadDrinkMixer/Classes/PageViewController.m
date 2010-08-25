@@ -104,8 +104,7 @@
 	{
 		viewFrame = CGRectMake(0, 0, 450, 630);
 		[drinkViewController.view setFrame:viewFrame];
-		[editDrinkViewController.view setFrame:viewFrame];
-		
+		[editDrinkViewController.view setFrame:viewFrame];		
 	}
 	else //portrait
 	{
