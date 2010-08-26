@@ -8,15 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@class TorchTestViewController;
+@class BrightHandViewController;
+
 
 @interface TorchTestAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-    TorchTestViewController *viewController;
+    BrightHandViewController *viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet TorchTestViewController *viewController;
+@property (nonatomic, retain) IBOutlet BrightHandViewController *viewController;
 
 @end
 

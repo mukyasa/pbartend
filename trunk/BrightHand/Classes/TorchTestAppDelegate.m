@@ -7,7 +7,8 @@
 //
 
 #import "TorchTestAppDelegate.h"
-#import "TorchTestViewController.h"
+
+#import "BrightHandViewController.h"
 
 @implementation TorchTestAppDelegate
 
