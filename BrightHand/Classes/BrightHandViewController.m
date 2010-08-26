@@ -179,7 +179,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)viewDidLoad {
     
 	myCustomFont = [UIFont fontWithName:@"digital-7" size:22];
-	timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(22,146,52,27)];
+	timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(22,118,52,27)];
 	[timeLabel setFont:myCustomFont];
 	[timeLabel setText:@"0.00"];
 	timeLabel.backgroundColor = [UIColor clearColor];
