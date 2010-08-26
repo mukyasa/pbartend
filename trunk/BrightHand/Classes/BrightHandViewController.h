@@ -11,12 +11,14 @@
 #import <iAd/iAd.h>
 #import "FlipsideViewController.h"
 
+
 @class AVCamDemoCaptureManager;
 
 @interface BrightHandViewController : UIViewController<FlipsideViewControllerDelegate> {
 	
 	IBOutlet UIImageView *sliderview;
 	IBOutlet UIButton *mainbutton;
+
 
 	IBOutlet UILabel *timeLabel;
 	AVCamDemoCaptureManager *captureManager;
@@ -32,6 +34,7 @@
 	
 	
 }
+
 
 @property(nonatomic,retain)	UIButton *mainbutton;
 @property(nonatomic,retain)	UIImageView *sliderview;

@@ -7,6 +7,7 @@
 //
 
 #import "BrightHandViewController.h"
+
 #import "AVCamDemoCaptureManager.h" 
 
 @implementation BrightHandViewController
@@ -71,6 +72,15 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 	[self dismissModalViewControllerAnimated:YES];
 }
 - (IBAction)showInfo:(id)sender {    
+	
+	[mainbutton setImage:[UIImage imageNamed:@"button_off.png"] forState:UIControlStateNormal];
+	[self stopTimer];
+	isLightOn =NO;
+	isStrobing=NO;
+	mainbutton.tag = SEGMENT_BUTTON_ON;
+	[background setImage:[UIImage imageNamed:@"brighthandbg_off.png"]];			
+	[[self captureManager] setTorchMode:AVCaptureTorchModeOff];
+	
 	
 	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
 	controller.delegate = self;
@@ -250,6 +260,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 	[self moveBannerViewOnscreen];
 }
 - (void)dealloc {
+
 	[mainbutton release];
 	[sliderview release];
 	bannerView.delegate = nil;

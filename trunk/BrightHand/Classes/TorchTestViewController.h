@@ -11,10 +11,12 @@
 #import <iAd/iAd.h>
 #import "FlipsideViewController.h"
 
+
 @class AVCamDemoCaptureManager;
 
 @interface TorchTestViewController : UIViewController<FlipsideViewControllerDelegate> {
 	
+
 	IBOutlet UISegmentedControl *torchSwitch;
 	IBOutlet UILabel *timeLabel;
 	AVCamDemoCaptureManager *captureManager;
@@ -28,6 +30,8 @@
 	IBOutlet ADBannerView *bannerView;
 	
 }
+
+
 @property(nonatomic,retain) ADBannerView *bannerView;
 @property(nonatomic,retain) UIImageView *background;
 @property(nonatomic,retain) NSTimer *myTimer;
