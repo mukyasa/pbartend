@@ -178,6 +178,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     
+	[self moveBannerViewOffscreen];//hide banner
+	
 	myCustomFont = [UIFont fontWithName:@"digital-7" size:22];
 	timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(22,118,52,27)];
 	[timeLabel setFont:myCustomFont];
@@ -186,7 +188,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 	[timeLabel setTextColor:UIColorFromRGB(0xfff6d665)];//this is you hex color last 6 chars];
 	[sliderview addSubview:timeLabel];
 	
-	[self moveBannerViewOffscreen];//hide banner
+	
 	
 	//set up scroller view
 	strobeScroller.contentSize = CGSizeMake(80.0f, 320.0f);
