@@ -80,6 +80,11 @@
 	
 }
 
+-(IBAction) pickScreen{
+
+	
+
+}
 
 - (IBAction)done:(id)sender {
 	[self.delegate flipsideViewControllerDidFinish:self];	
@@ -110,6 +115,7 @@
 
 
 - (void)dealloc {
+
 	[webView release];
     [super dealloc];
 }

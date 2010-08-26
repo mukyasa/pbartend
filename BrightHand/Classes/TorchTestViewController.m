@@ -8,6 +8,7 @@
 
 #import "TorchTestViewController.h"
 #import "AVCamDemoCaptureManager.h" 
+#import "BrightHandViewController.h"
 
 @implementation TorchTestViewController
 #define SEGMENT_BUTTON_OFF 0
@@ -50,8 +51,15 @@
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
     
 	[self dismissModalViewControllerAnimated:YES];
+	
 }
 - (IBAction)showInfo:(id)sender {    
+	
+	[self stopTimer];
+	isLightOn =NO;
+	isStrobing=NO;
+	[background setImage:[UIImage imageNamed:@"base_bg_off.png"]];			
+	[[self captureManager] setTorchMode:AVCaptureTorchModeOff];
 	
 	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
 	controller.delegate = self;
