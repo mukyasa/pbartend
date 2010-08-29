@@ -83,18 +83,20 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                 AdManager.TEST_EMULATOR ,         // Android emulator
                "ffffffff-9eaf-9658-ffff-ffff99d603a9",
         } );*/
- 		AdManager.setAllowUseOfLocation(true);
- 		
-		mAd = (AdView) findViewById(R.id.ad);
-		mAd.setAdListener(new AdMobListener());
-		mAd.setVisibility( View.VISIBLE  );
-        // The ad will fade in over 0.4 seconds.
- 		AlphaAnimation animation = new AlphaAnimation( 0.0f, 1.0f );
- 		animation.setDuration( 400 );
- 		animation.setFillAfter( true );
- 		animation.setInterpolator( new AccelerateInterpolator() );
- 		mAd.startAnimation( animation );
- 		
+        if(Constants.showAds)
+        {
+	 		AdManager.setAllowUseOfLocation(true);
+	 		
+			mAd = (AdView) findViewById(R.id.ad);
+			mAd.setAdListener(new AdMobListener());
+			mAd.setVisibility( View.VISIBLE  );
+	        // The ad will fade in over 0.4 seconds.
+	 		AlphaAnimation animation = new AlphaAnimation( 0.0f, 1.0f );
+	 		animation.setDuration( 400 );
+	 		animation.setFillAfter( true );
+	 		animation.setInterpolator( new AccelerateInterpolator() );
+	 		mAd.startAnimation( animation );
+        }
  		
  		/*final TelephonyManager tm = (TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
 

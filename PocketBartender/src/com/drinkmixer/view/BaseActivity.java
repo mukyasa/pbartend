@@ -26,6 +26,7 @@ import com.admob.android.ads.AdManager;
 import com.admob.android.ads.AdView;
 import com.admob.android.ads.SimpleAdListener;
 import com.drinkmixer.R;
+import com.drinkmixer.utils.Constants;
 
 /**
  * @author dmason
@@ -68,6 +69,8 @@ public class BaseActivity extends Activity implements OnTouchListener {
 
 	protected void initialize(){
 		
+		if(Constants.showAds)
+		{
 	 		AdManager.setAllowUseOfLocation(true);
 	 		
 			mAd = (AdView) findViewById(R.id.ad);
@@ -79,6 +82,7 @@ public class BaseActivity extends Activity implements OnTouchListener {
 	 		animation.setFillAfter( true );
 	 		animation.setInterpolator( new AccelerateInterpolator() );
 	 		mAd.startAnimation( animation );
+		}
 
 	}
 	protected class AdMobListener extends SimpleAdListener
