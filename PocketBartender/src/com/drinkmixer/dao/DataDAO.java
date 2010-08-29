@@ -102,7 +102,7 @@ public class DataDAO{
 	
 	
 	// get new drinkid
-	public static final String sqlGetNewDrinkIdByName ="SELECT _id from tblDrinks where name ='Darren Test 2';";
+	//public static final String sqlGetNewDrinkIdByName ="SELECT _id from tblDrinks where name ='Darren Test 2';";
 	
 	
 	// get ingredients ids could be many

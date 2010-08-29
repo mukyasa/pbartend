@@ -16,6 +16,6 @@ public class Constants {
 	 * 1.2.4 -4/25/2010 Added new look.
 	 * 1.2.5 -6/29/2010 Added new booze Wild Turkey American Honey.
 	 * 1.3.0 -7/6/2010 Added ability to add new Liquor, Mixer, and Garnish.
-	 * 1.3.1 -7/13/2010 Needed to add Ad Framework.
+	 * 1.3.1 -7/13/2010 Needed to add Ad Framework (turned off). Fixed bug when creating a new drink after adding a custom ingredient
 	 */
 }

@@ -73,7 +73,7 @@ public class AddNewGarnish extends BaseActivity  implements OnClickListener {
 		{
     		if(!"".equals(garnishName.getText().toString()) && !getString(R.string.newGarnishName).equals(garnishName.getText().toString()))
     		{
-	    		dataDAO.insertNewGarnish(garnishName.getText().toString());
+	    		dataDAO.insertNewGarnish(garnishName.getText().toString().trim());
 	    		
 	    		garnishName.setText(getString(R.string.newGarnishName));
 	    		garnishName.setTextColor(Color.LTGRAY);
