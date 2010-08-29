@@ -12,6 +12,7 @@ import com.drinkmixer.R;
 import com.drinkmixer.dao.DetailDAO;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.DetailsDomain;
+import com.drinkmixer.utils.Constants;
 
 public class DetailsView extends ActivityView {
 
@@ -24,17 +25,20 @@ public class DetailsView extends ActivityView {
 		myDatabaseAdapter = MixerDbHelper.getInstance(this);
 		initComponents();
 		
-		AdManager.setAllowUseOfLocation(true);
+		if(Constants.showAds)
+		{
+			AdManager.setAllowUseOfLocation(true);
  		
-		mAd = (AdView) findViewById(R.id.ad);
-		mAd.setAdListener(new AdMobListener());
-		mAd.setVisibility( View.VISIBLE  );
-        // The ad will fade in over 0.4 seconds.
- 		AlphaAnimation animation = new AlphaAnimation( 0.0f, 1.0f );
- 		animation.setDuration( 400 );
- 		animation.setFillAfter( true );
- 		animation.setInterpolator( new AccelerateInterpolator() );
- 		mAd.startAnimation( animation );
+			mAd = (AdView) findViewById(R.id.ad);
+			mAd.setAdListener(new AdMobListener());
+			mAd.setVisibility( View.VISIBLE  );
+	        // The ad will fade in over 0.4 seconds.
+	 		AlphaAnimation animation = new AlphaAnimation( 0.0f, 1.0f );
+	 		animation.setDuration( 400 );
+	 		animation.setFillAfter( true );
+	 		animation.setInterpolator( new AccelerateInterpolator() );
+	 		mAd.startAnimation( animation );
+		}
 	}
 	
 	 private class AdMobListener extends SimpleAdListener

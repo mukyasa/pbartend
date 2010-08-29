@@ -5,7 +5,8 @@ public class Constants {
 	public static String COMPANY_NAME = "mypocket-technologies";
 	
 	public static long selectedCat=-1;
-	public static String WHOA_ERROR = "Whoa! Looks like something happened when you first created your database. Go back to the home screen, open the menu, and move the database. If you get this message again contact support.";
+	public static String WHOA_ERROR = "Whoa! Looks like so mething happened when you first created your database. Go back to the home screen, open the menu, and move the database. If you get this message again contact support.";
+	public static boolean showAds = true;
 	
 	/**
 	 * 1.1.1 - added new measurement types, added feed back for deleting ingredient,fixed but when adding new ingredient and updated UI buttons
@@ -16,6 +17,6 @@ public class Constants {
 	 * 1.2.4 -4/25/2010 Added new look.
 	 * 1.2.5 -6/29/2010 Added new booze Wild Turkey American Honey.
 	 * 1.3.0 -7/6/2010 Added ability to add new Liquor, Mixer, and Garnish.
-	 * 1.3.1 -7/13/2010 Needed to add Ad Framework (turned off). Fixed bug when creating a new drink after adding a custom ingredient (NOTE: if you added ingredients before this build and there is an error you may need to re-add them.)
+	 * 1.3.1 -7/13/2010 Added AdMob Ad Framework (turned off). Fixed bug when creating a new drink after adding a custom ingredient (NOTE: if you added ingredients before this build and there is an error you may need to re-add them.)
 	 */
 }
