@@ -6,7 +6,8 @@ public class Constants {
 	
 	public static long selectedCat=-1;
 	public static String WHOA_ERROR = "Whoa! Looks like so mething happened when you first created your database. Go back to the home screen, open the menu, and move the database. If you get this message again contact support.";
-	public static boolean showAds = true;
+	//turns on and off ads
+	public static boolean showAds = false;
 	
 	/**
 	 * 1.1.1 - added new measurement types, added feed back for deleting ingredient,fixed but when adding new ingredient and updated UI buttons
