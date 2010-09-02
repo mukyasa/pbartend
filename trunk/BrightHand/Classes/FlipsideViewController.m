@@ -32,7 +32,7 @@
 	
 	//add link to store here via my site
 	
-	NSString* body = [NSString stringWithFormat:@"Hey I just thought you might want to try this app called Bright Hand looks pretty fun. - %@\n",theURL];
+	NSString* body = [NSString stringWithFormat:@"Hey I just thought you might want to try this app called Bright Hand looks pretty cool. - %@\n",theURL];
 	
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
