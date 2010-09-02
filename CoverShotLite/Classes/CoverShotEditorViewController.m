@@ -41,7 +41,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
     [self movePickerOffScreen];//hide picker
 	//determine if there is a camera
 	
-	BOOL isCamera = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerCameraCaptureModePhoto];
+	BOOL isCamera = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
 
 	UIActionSheet *actionSheet;
 	
