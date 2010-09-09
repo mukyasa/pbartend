@@ -189,7 +189,7 @@
 	[listPopOver release];
 	[listFilterPopOver release];
 	[pageView release];
-	[myCustomFont release];
+	//[myCustomFont release];
     [popoverController release];
     [toolbar release];
     
