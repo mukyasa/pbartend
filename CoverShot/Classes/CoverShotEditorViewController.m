@@ -61,7 +61,7 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 	if(isSaving)
 	{
@@ -71,47 +71,54 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 			[self moveNavViewOnscreen];//show main nav
 		
 	}else{
-		// the user clicked one of the OK/Cancel buttons
-		if (buttonIndex == 0) //camera
-		{
-	
-			UIImagePickerController *camera = [[UIImagePickerController alloc] init];
-			camera.sourceType = UIImagePickerControllerSourceTypeCamera;	
-			camera.delegate = self;
-			
-			[self presentModalViewController:camera animated:YES];		
-			
-		}
-		if (buttonIndex == 1) //camera with over lay
-		{
-			
-			UIImage *image = parentPreviewImageView.image;
-			UIImageView *imgView = [[UIImageView alloc] initWithImage:image] ;
-			imgView.contentMode = UIViewContentModeScaleAspectFill;
-			imgView.alpha=.5;
-			imgView.frame = CGRectMake(0,0,320,480);
-			
-			UIImagePickerController *camera = [[UIImagePickerController alloc] init];
-			camera.sourceType = UIImagePickerControllerSourceTypeCamera;	
-			camera.delegate = self;
-			camera.cameraOverlayView = imgView;
-			
-			[self presentModalViewController:camera animated:YES];
-			[imgView release];			
-			
-		}
-		else if(buttonIndex ==2) //library 
-		{
+		if (actionSheet.numberOfButtons == 2) {
 			UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
 			imagePicker = [[UIImagePickerController alloc] init];
 			imagePicker.delegate = self;	
 			imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 			[self presentModalViewController:imagePicker animated:YES];
-			
-			
-		}	
-		
-			
+		}
+		else 
+		{
+			// the user	 clicked one of the OK/Cancel buttons
+			if (buttonIndex == 0) //camera
+			{
+				
+				UIImagePickerController *camera = [[UIImagePickerController alloc] init];
+				camera.sourceType = UIImagePickerControllerSourceTypeCamera;	
+				camera.delegate = self;
+				
+				[self presentModalViewController:camera animated:YES];		
+				
+			}
+			if (buttonIndex == 1) //camera with over lay
+			{
+				
+				UIImage *image = parentPreviewImageView.image;
+				UIImageView *imgView = [[UIImageView alloc] initWithImage:image] ;
+				imgView.contentMode = UIViewContentModeScaleAspectFill;
+				imgView.alpha=.5;
+				imgView.frame = CGRectMake(0,0,320,480);
+				
+				UIImagePickerController *camera = [[UIImagePickerController alloc] init];
+				camera.sourceType = UIImagePickerControllerSourceTypeCamera;	
+				camera.delegate = self;
+				camera.cameraOverlayView = imgView;
+				
+				[self presentModalViewController:camera animated:YES];
+				[imgView release];			
+				
+			}
+			else if(buttonIndex ==2) {
+				UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+				imagePicker = [[UIImagePickerController alloc] init];
+				imagePicker.delegate = self;	
+				imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+				[self presentModalViewController:imagePicker animated:YES];
+				
+				
+			}
+		}
 	}
 	
 	
