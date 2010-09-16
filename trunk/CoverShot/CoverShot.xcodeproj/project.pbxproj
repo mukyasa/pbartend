@@ -83,6 +83,10 @@
 		7193F08E120F5AD90074658A /* clearcover19.png in Resources */ = {isa = PBXBuildFile; fileRef = 7193F08A120F5AD90074658A /* clearcover19.png */; };
 		7193F08F120F5AD90074658A /* clearcover20.png in Resources */ = {isa = PBXBuildFile; fileRef = 7193F08B120F5AD90074658A /* clearcover20.png */; };
 		7193F090120F5AD90074658A /* clearcover21.png in Resources */ = {isa = PBXBuildFile; fileRef = 7193F08C120F5AD90074658A /* clearcover21.png */; };
+		71A25BA9122471DC00F01762 /* save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A25BA8122471DC00F01762 /* save@2x.png */; };
+		71A25BB6122477BD00F01762 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A25BB5122477BD00F01762 /* camera@2x.png */; };
+		71A25BC01224784B00F01762 /* blending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A25BBF1224784B00F01762 /* blending@2x.png */; };
+		71A25BC7122479F100F01762 /* book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A25BC6122479F100F01762 /* book@2x.png */; };
 		71AB1F831211F1740063B455 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 71AB1F821211F1740063B455 /* Default.png */; };
 		71BD191812054A4F00BF15ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71BD191712054A4F00BF15ED /* QuartzCore.framework */; };
 		71DCB54D120B914600C6B951 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DCB54B120B914600C6B951 /* FlipsideViewController.m */; };
@@ -174,6 +178,10 @@
 		7193F08A120F5AD90074658A /* clearcover19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover19.png; sourceTree = "<group>"; };
 		7193F08B120F5AD90074658A /* clearcover20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover20.png; sourceTree = "<group>"; };
 		7193F08C120F5AD90074658A /* clearcover21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover21.png; sourceTree = "<group>"; };
+		71A25BA8122471DC00F01762 /* save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save@2x.png"; sourceTree = "<group>"; };
+		71A25BB5122477BD00F01762 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		71A25BBF1224784B00F01762 /* blending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blending@2x.png"; sourceTree = "<group>"; };
+		71A25BC6122479F100F01762 /* book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book@2x.png"; sourceTree = "<group>"; };
 		71AB1F821211F1740063B455 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		71BD191712054A4F00BF15ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		71DCB54A120B914600C6B951 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
@@ -253,8 +261,10 @@
 				71887B1511F7F15F00F4C6D6 /* CoverShotEditorViewController.xib */,
 				2899E5210DE3E06400AC0155 /* CoverShotViewController.xib */,
 				7103E97111FA1D250088BD9E /* blending.png */,
+				71A25BBF1224784B00F01762 /* blending@2x.png */,
 				71FCD1B5120B996700139C51 /* help_bg.png */,
 				71887B2311F7F42E00F4C6D6 /* book.png */,
+				71A25BC6122479F100F01762 /* book@2x.png */,
 				71887BFF11F804A600F4C6D6 /* clearcover1.png */,
 				71887C0011F804A600F4C6D6 /* clearcover2.png */,
 				710210B71207ABD900F36BA0 /* clearcover3.png */,
@@ -305,6 +315,7 @@
 				71846C2F12177D9400634B20 /* cover23.png */,
 				71846C3012177D9400634B20 /* cover24.png */,
 				71887B2411F7F42E00F4C6D6 /* camera.png */,
+				71A25BB5122477BD00F01762 /* camera@2x.png */,
 				71887C4011F80CB400F4C6D6 /* clearbg.png */,
 				710058CC12138B5A002DD799 /* Icon-72.png */,
 				710058CD12138B5A002DD799 /* Icon-Small.png */,
@@ -314,6 +325,7 @@
 				710058D112138B5A002DD799 /* Icon@2x.png */,
 				710058D212138B5A002DD799 /* iTunesArtwork */,
 				71887B2511F7F42E00F4C6D6 /* save.png */,
+				71A25BA8122471DC00F01762 /* save@2x.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* CoverShot-Info.plist */,
 				71AB1F821211F1740063B455 /* Default.png */,
@@ -461,6 +473,10 @@
 				71846C3812177D9F00634B20 /* clearcover23.png in Resources */,
 				712CB9E912178560008A4143 /* clearcover24.png in Resources */,
 				712CB9FF1217872F008A4143 /* clearcover25.png in Resources */,
+				71A25BA9122471DC00F01762 /* save@2x.png in Resources */,
+				71A25BB6122477BD00F01762 /* camera@2x.png in Resources */,
+				71A25BC01224784B00F01762 /* blending@2x.png in Resources */,
+				71A25BC7122479F100F01762 /* book@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +539,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -531,13 +547,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Darren Mason";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C286B2BD-CE49-4CB7-A4FA-B98C0574AEA2";
 				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
