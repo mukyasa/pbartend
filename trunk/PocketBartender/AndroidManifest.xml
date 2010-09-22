@@ -31,11 +31,13 @@
 <activity android:name=".view.GarnishListView"></activity>
 <activity android:name=".view.AmountPicker"></activity>
 <activity android:name=".view.CategoryAndGlassPicker"></activity>
+<activity android:name=".view.MapView"></activity>
 
 
 <!-- The application's publisher ID assigned by AdMob -->
 <meta-data android:value="a14c3c82c23e161"  android:name="ADMOB_PUBLISHER_ID" />
 <meta-data android:value="true" android:name="ADMOB_ALLOW_LOCATION_FOR_ADS" />
+<uses-library android:name="com.google.android.maps" />
 </application>
     <uses-sdk android:minSdkVersion="3" />
 

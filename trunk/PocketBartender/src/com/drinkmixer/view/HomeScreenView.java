@@ -56,6 +56,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 	private final int MENU_MOVE=1;
 	private final int DIALOG_CHANGE_LOC=2;
 	private final int MENU_LESSONS =3;
+	private final int MENU_MAP=4;
 	private Thread thread;
 	private File dbfile;
 	private File dbfilesd;
@@ -150,6 +151,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 		menu.add(0, MENU_CREATE, 0, "Create New").setIcon(android.R.drawable.ic_menu_add);
 		menu.add(0, MENU_MOVE, 0, "Move Database").setIcon(android.R.drawable.ic_menu_share);
 		menu.add(0, MENU_LESSONS, 0, "Learn Bartending").setIcon(android.R.drawable.ic_menu_info_details);
+		menu.add(0, MENU_MAP, 0, "Locate Alcohol").setIcon(R.drawable.map);
 	    return true;
 	}
 
@@ -166,9 +168,12 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 					startActivity(new Intent(this, BartenderKnowledgeActivity.class));
 			    	return true;
 			 case MENU_MOVE:
-				 thread = new Thread(this);
-				 showDialog(DIALOG_CHANGE_LOC);
-			    	return true;
+				thread = new Thread(this);
+				showDialog(DIALOG_CHANGE_LOC);
+			    return true;
+			 case MENU_MAP:
+				startActivity(new Intent(this, MapView.class));
+			    return true;
 		 }
 		 return false;
 
