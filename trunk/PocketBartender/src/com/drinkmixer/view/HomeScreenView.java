@@ -149,9 +149,9 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, MENU_CREATE, 0, "Create New").setIcon(android.R.drawable.ic_menu_add);
-		menu.add(0, MENU_MOVE, 0, "Move Database").setIcon(android.R.drawable.ic_menu_share);
 		menu.add(0, MENU_LESSONS, 0, "Learn Bartending").setIcon(android.R.drawable.ic_menu_info_details);
-		menu.add(0, MENU_MAP, 0, "Locate Alcohol").setIcon(R.drawable.map);
+		menu.add(0, MENU_MAP, 0, "Find Bars & Booze").setIcon(R.drawable.map);
+		menu.add(0, MENU_MOVE, 0, "Move Database").setIcon(android.R.drawable.ic_menu_share);
 	    return true;
 	}
 
