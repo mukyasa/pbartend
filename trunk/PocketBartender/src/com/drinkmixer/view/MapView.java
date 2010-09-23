@@ -44,31 +44,35 @@ public class MapView extends BaseActivity implements OnClickListener {
 	  
     public void onClick(View view) {
     	
-    	LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		
-		Criteria criteria = new Criteria();
-		criteria.setAccuracy(Criteria.ACCURACY_FINE);
-		criteria.setAltitudeRequired(false);
-		criteria.setBearingRequired(false);
-		criteria.setCostAllowed(true);
-		criteria.setPowerRequirement(Criteria.POWER_LOW);
-		String provider = locationManager.getBestProvider(criteria, false);
-		Location location = locationManager.getLastKnownLocation(provider);
-		
-		Double latitude = location.getLatitude();
-		Double longitude = location.getLongitude();
-		
-		if(view==btnLiquor)
-		{
-			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+latitude+","+longitude+"?q=liquor")));
-		}
-		else if(view==btnBar)
-		{	
-			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+latitude+","+longitude+"?q=bar")));
-		}
-		else if(view==btnGrocery)
-		{	
-			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+latitude+","+longitude+"?q=grocery")));
+    	try {
+			LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+			
+			Criteria criteria = new Criteria();
+			criteria.setAccuracy(Criteria.ACCURACY_FINE);
+			criteria.setAltitudeRequired(false);
+			criteria.setBearingRequired(false);
+			criteria.setCostAllowed(true);
+			criteria.setPowerRequirement(Criteria.POWER_LOW);
+			String provider = locationManager.getBestProvider(criteria, false);
+			Location location = locationManager.getLastKnownLocation(provider);
+			
+			Double latitude = location.getLatitude();
+			Double longitude = location.getLongitude();
+			
+			if(view==btnLiquor)
+			{
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+latitude+","+longitude+"?q=liquor")));
+			}
+			else if(view==btnBar)
+			{	
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+latitude+","+longitude+"?q=bar")));
+			}
+			else if(view==btnGrocery)
+			{	
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+latitude+","+longitude+"?q=grocery")));
+			}
+		} catch (Exception e) {
+			showDialog(DIALOG_LOC_NOT_FOUND);
 		}
 			
 	}

@@ -36,6 +36,7 @@ public class BaseActivity extends Activity implements OnTouchListener {
 
 	protected int DIALOG_TYPE_ERROR = 0;
 	protected int DIALOG_TYPE_SUCCESS = 1;
+	protected int DIALOG_LOC_NOT_FOUND =2;
 	private AdView mAd; 
 
 	protected Dialog onCreateDialog(int id) {
@@ -52,7 +53,19 @@ public class BaseActivity extends Activity implements OnTouchListener {
 							dismissDialog(DIALOG_TYPE_ERROR);
 						}
 					}).create();
-		} else {
+		} else if(id == DIALOG_LOC_NOT_FOUND) {
+			return new AlertDialog.Builder(BaseActivity.this).setIcon(
+					R.drawable.info).setMessage(
+					"Sorry your loction can not be determined now. Try again later.").setTitle(
+					"Location Error").setNegativeButton("Close",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+
+							dismissDialog(DIALOG_LOC_NOT_FOUND);
+						}
+					}).create();
+		}else {
 			return new AlertDialog.Builder(BaseActivity.this).setIcon(
 					R.drawable.info).setMessage(
 					"You have succesfully added a new item.").setTitle(
