@@ -9,14 +9,11 @@
 	top:45px;
 	left:450px;
 }
-
-.land #list_wrapper{
+.land #wrapper{
 	display:block;
-	float:left;
-	width:100%;
-	background:#fff;
-	padding:0;
-	margin:0;
+}
+.land #nav_post {
+	display:none;
 }
 .land #postcards{
 	background: url(../images/postcards.png) no-repeat 250px 50px;
@@ -28,10 +25,7 @@
 	width:320px;
 	height:410px;
 }
-.list_item{
-	border-top:1px solid #000;
-	padding:15px 10px 15px 10px;
-}
+
 .land #button_block ul{
 	padding: 10px 0 0 30px;
 	margin:0;
@@ -43,3 +37,13 @@
 	padding-top:20px;
 	
 }
+
+.land #list_wrapper{
+	display:block;
+	float:left;
+	width:100%;
+	background-color:#fff;
+	padding:0;
+	margin:0;
+}
+

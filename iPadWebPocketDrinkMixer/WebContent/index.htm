@@ -28,12 +28,15 @@
 
 	$(document).ready(function() {
 		
+		
 		document.addEventListener('touchmove', function(e) {
-			//e.preventDefault();
+			e.preventDefault();
 		});
 		
-		myScroll = new iScroll('scroller');
+		scroller = new iScroll('scroller');
 
+		$(".button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
+		
 		var orientation;
 		if (window.innerWidth > window.innerHeight)
 			orientation = ORIENTATION_LAND;
@@ -46,12 +49,13 @@
 			$("body").addClass("land").removeClass("port");
 	});
 	
-	function touchStart(e){
+	
+	function handleTouchStart(e){
 		var obj = e.currentTarget;
 		$(obj).addClass("touched");
 	}
 	
-	function touchEnd(e){
+	function handleTouchEnd(e){
 		var obj = e.currentTarget;
 		$(obj).removeClass("touched");
 	}
@@ -64,11 +68,11 @@
 <div id="postcards">
 	<div id="button_block">
 		<ul>
-			<li id="show_all" class="button" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">Show All Drinks</li>
-			<li id="filter_cat" class="button" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">Filter By Category</li>
-			<li id="filter_ing" class="button" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">Filter By Ingredients</li>
-			<li id="fav" class="button" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">Favorites</li>
-			<li id="create" class="button" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">Create New Drinks</li>
+			<li id="show_all" class="button">Show All Drinks</li>
+			<li id="filter_cat" class="button">Filter By Category</li>
+			<li id="filter_ing" class="button">Filter By Ingredients</li>
+			<li id="fav" class="button">Favorites</li>
+			<li id="create" class="button">Create New Drinks</li>
 		</ul>
 	</div>
 <div id="wrapper">
@@ -119,7 +123,7 @@
 </ul>
 </div>
 </div>
-<div id=""></div>
+<div id="nav_post"></div>
 <div id="paper"></div>
 </div>
 </body>
