@@ -1,0 +1,35 @@
+body{
+	background: url("../images/detailbackground.png") no-repeat 0 0;
+	padding:0;
+	margin:0;
+   	background-size: 100% auto;
+    background-origin: content
+}
+
+#wrapper {
+    position:relative;
+    z-index:1;
+    width:320px;
+    height:415px;
+    overflow:auto;
+}
+.touched{
+	background:url("../images/button_touch.png") no-repeat 0 0 !important;
+}
+.button{
+	background:url("../images/button.png") no-repeat 0 0;
+	padding:10px 0 10px 0;
+	font-size:18px;
+	margin:0;
+	list-style: none;
+	text-align: center;
+	color:#134926;
+	font-family: button;
+	width:222px;
+	margin-bottom:5px;
+}
+
+@font-face{
+	font-family: button;
+	src:url('TektonPro-Bold.otf');
+}
