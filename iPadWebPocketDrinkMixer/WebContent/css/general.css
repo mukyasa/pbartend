@@ -39,3 +39,39 @@ body{
 	font-family: button;
 	src:url('TektonPro-Bold.otf');
 }
+
+/****FLIP STYLE****/
+
+#paper_wrapper{
+	-webkit-perspective:1000;
+	position: absolute;
+}
+#paper_wrapper .face.front{
+	-webkit-transform:rotateY(0deg);
+}
+
+#paper_wrapper .face.back{
+	-webkit-transform:rotateY(180deg);
+	-webkit-box-sizing:border-box;
+}
+
+#paper_wrapper .face.front.flip{
+	-webkit-transform:rotateY(-180deg);
+}
+
+#paper_wrapper .face.back.flip{
+	-webkit-transform:rotateY(0deg);
+}
+
+.paper{
+	position: absolute;
+}
+
+.face{
+	position:absolute;
+	-webkit-backface-visibilty:hidden;
+	-webkit-transform-style:perserve-3d;
+	-webkit-transition:all .5s ease-in-out;
+}
+
+

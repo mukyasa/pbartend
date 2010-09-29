@@ -40,6 +40,7 @@
 			e.preventDefault();
 		});
 		
+		//hide popout on window touch
 		document.addEventListener('touchstart', function(e) {
 			//hide all pop ups
 			$(".port #wrapper").fadeOut();
@@ -49,6 +50,21 @@
 
 		$(".button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
 		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
+		
+		$(".frontbutton").bind("touchend",function(e){
+			e.preventDefault();//prevent copy and mag from showing
+			//flip paper
+			$("#paper_wrapper .front").addClass("flip");
+			$("#paper_wrapper .back").addClass("flip");
+			
+		});
+		
+		$(".backbutton").bind("touchend",function(e){
+			e.preventDefault();//prevent copy and mag from showing
+			//flip paper back
+			$("#paper_wrapper .front").removeClass("flip");
+			$("#paper_wrapper .back").removeClass("flip");
+		});
 		
 		var orientation;
 		if (window.innerWidth > window.innerHeight)
@@ -63,7 +79,7 @@
 	});
 	
 	function handlePostButtonTouchStart(e){
-		
+		e.preventDefault();//prevent copy and mag from showing
 		var obj = e.currentTarget;
 		
 		if($(obj).attr("id") == "search")
@@ -91,8 +107,10 @@
 	}
 	
 	function handleTouchStart(e){
+		e.preventDefault();//prevent copy and mag from showing
 		var obj = e.currentTarget;
 		$(obj).addClass("touched");
+		
 	}
 	
 	function handleTouchEnd(e){
@@ -150,7 +168,13 @@
 	<div id="list" class="postbutton"></div>
 	<div id="search" class="postbutton"></div>
 </div>
-<div id="paper"></div>
+<article id="paper_wrapper">
+	<section class="paper">
+		<div class="face front"><div class="frontbutton flipbutton" style="padding:50px 10px 10px 100px;">flip</div></div>
+		<div class="face back"><div class="backbutton flipbutton" style="padding:50px  100px 10px 10px;float:right;">flip back</div></div>
+	</section>
+</article>
+
 </div>
 </body>
 </html>
