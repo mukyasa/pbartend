@@ -4,7 +4,7 @@
 .port .paper .back{
 	background: url(../images/editpaper.png) no-repeat 0 0;
 }
-#paper_wrapper{
+.port #paper_wrapper{
 	top:100px;
 	left:120px;
 }
