@@ -33,7 +33,6 @@
 	padding:0;
 	margin:0;
 }
-
 .port #wrapper {
     position:relative;
     z-index:1;
@@ -41,9 +40,10 @@
     height:415px;
     overflow:auto;
     display:block;
-    top:20px;
-    left:150px;
-    border:3px solid black;
+    top:160px;
+    left:200px;
+    border:6px solid #4f6900;
     background-color: #fff;
-    
+    -webkit-box-shadow:#999 4px 4px 24px;
 }
+.port .ui-cornor-all{-webkit-border-radius:6px;}
