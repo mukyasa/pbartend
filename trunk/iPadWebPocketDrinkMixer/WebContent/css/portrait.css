@@ -9,10 +9,41 @@
 	top:100px;
 	left:120px;
 }
-.port #list_wrapper, .port #button_block{
+.port #button_block{
 	display:none;
 }
 
 .port #postcards{
 	background: none;
+}
+
+.port #nav_post{
+	background:url(../images/post.png) no-repeat 0 0;
+	width:120px;
+	height:1024px;
+	position: absolute;
+	top:0;
+	left:10px;
+	
+}
+.port #list_wrapper{
+	display:block;
+	width:100%;
+	background-color:#fff;
+	padding:0;
+	margin:0;
+}
+
+.port #wrapper {
+    position:relative;
+    z-index:1;
+    width:320px;
+    height:415px;
+    overflow:auto;
+    display:block;
+    top:20px;
+    left:150px;
+    border:3px solid black;
+    background-color: #fff;
+    
 }
