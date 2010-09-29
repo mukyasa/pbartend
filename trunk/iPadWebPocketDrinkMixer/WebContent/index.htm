@@ -27,12 +27,6 @@
 	}
 
 	$(document).ready(function() {
-
-		$(".button").mousedown(function(){
-			$(this).addClass("touched");
-		}).mouseup(function(){
-			$(this).removeClass("touched");			
-		});
 		
 		document.addEventListener('touchmove', function(e) {
 			//e.preventDefault();
@@ -51,6 +45,18 @@
 		else
 			$("body").addClass("land").removeClass("port");
 	});
+	
+	function touchStart(e){
+		var obj = e.currentTarget;
+		$(obj).addClass("touched");
+	}
+	
+	function touchEnd(e){
+		var obj = e.currentTarget;
+		$(obj).removeClass("touched");
+	}
+	
+	
 </script>
 
 </head>
@@ -58,11 +64,11 @@
 <div id="postcards">
 	<div id="button_block">
 		<ul>
-			<li id="show_all" class="button">Show All Drinks</li>
-			<li id="filter_cat" class="button">Filter By Category</li>
-			<li id="filter_ing" class="button">Filter By Ingredients</li>
-			<li id="fav" class="button">Favorites</li>
-			<li id="create" class="button">Create New Drinks</li>
+			<li id="show_all" class="button" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">Show All Drinks</li>
+			<li id="filter_cat" class="button" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">Filter By Category</li>
+			<li id="filter_ing" class="button" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">Filter By Ingredients</li>
+			<li id="fav" class="button" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">Favorites</li>
+			<li id="create" class="button" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">Create New Drinks</li>
 		</ul>
 	</div>
 <div id="wrapper">
