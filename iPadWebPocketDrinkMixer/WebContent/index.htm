@@ -33,9 +33,15 @@
 			e.preventDefault();
 		});
 		
+		document.addEventListener('touchstart', function(e) {
+			//hide all pop ups
+			$("#wrapper").fadeOut();
+		});
+		
 		scroller = new iScroll('scroller');
 
 		$(".button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
+		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
 		
 		var orientation;
 		if (window.innerWidth > window.innerHeight)
@@ -49,6 +55,33 @@
 			$("body").addClass("land").removeClass("port");
 	});
 	
+	function handlePostButtonTouchStart(e){
+		
+		var obj = e.currentTarget;
+		
+		if($(obj).attr("id") == "search")
+		{
+			$(obj).addClass("search_touch");
+			
+		}
+		else if($(obj).attr("id") == "list")
+		{
+			$(obj).addClass("list_touch");
+		}
+	}
+	
+	function handlePostButtonTouchEnd(e){
+		var obj = e.currentTarget;
+		$(obj).removeClass("search_touch");
+		$(obj).removeClass("list_touch");
+		
+		if($(obj).attr("id") == "search")
+			$("#wrapper").fadeIn();
+		else if($(obj).attr("id") == "list")
+			$("#wrapper").fadeIn();
+		
+		
+	}
 	
 	function handleTouchStart(e){
 		var obj = e.currentTarget;
@@ -75,56 +108,41 @@
 			<li id="create" class="button">Create New Drinks</li>
 		</ul>
 	</div>
-<div id="arrow_nub"></div>
 <div id="wrapper" class="ui-cornor-all">
-<div id="scroller">
-<ul id="list_wrapper">
-	<li class="list_item">just one</li>
-	<li class="list_item">two</li>
-	<li class="list_item">three</li>
-	<li class="list_item">four</li>
-	<li class="list_item">five</li>
-	<li class="list_item">six</li>
-	<li class="list_item">seven</li>
-	<li class="list_item">one</li>
-	<li class="list_item">two</li>
-	<li class="list_item">three</li>
-	<li class="list_item">four</li>
-	<li class="list_item">five</li>
-	<li class="list_item">six</li>
-	<li class="list_item">seven</li>
-	<li class="list_item">one</li>
-	<li class="list_item">two</li>
-	<li class="list_item">three</li>
-	<li class="list_item">four</li>
-	<li class="list_item">five</li>
-	<li class="list_item">six</li>
-	<li class="list_item">seven</li>
-	<li class="list_item">one</li>
-	<li class="list_item">two</li>
-	<li class="list_item">three</li>
-	<li class="list_item">four</li>
-	<li class="list_item">five</li>
-	<li class="list_item">six</li>
-	<li class="list_item">seven</li>
-	<li class="list_item">one</li>
-	<li class="list_item">two</li>
-	<li class="list_item">three</li>
-	<li class="list_item">four</li>
-	<li class="list_item">five</li>
-	<li class="list_item">six</li>
-	<li class="list_item">seven</li>
-	<li class="list_item">one</li>
-	<li class="list_item">two</li>
-	<li class="list_item">three</li>
-	<li class="list_item">four</li>
-	<li class="list_item">five</li>
-	<li class="list_item">six</li>
-	<li class="list_item">seven</li>
-</ul>
+	<div id="scroller">
+		<ul id="list_wrapper">
+			<li class="list_item">just one</li>
+			<li class="list_item">two</li>
+			<li class="list_item">three</li>
+			<li class="list_item">four</li>
+			<li class="list_item">five</li>
+			<li class="list_item">six</li>
+			<li class="list_item">seven</li>
+			<li class="list_item">one</li>
+			<li class="list_item">two</li>
+			<li class="list_item">three</li>
+			<li class="list_item">four</li>
+			<li class="list_item">five</li>
+			<li class="list_item">six</li>
+			<li class="list_item">seven</li>
+			<li class="list_item">one</li>
+			<li class="list_item">two</li>
+			<li class="list_item">three</li>
+			<li class="list_item">four</li>
+			<li class="list_item">five</li>
+			<li class="list_item">six</li>
+			<li class="list_item">seven</li>
+			<li class="list_item">one</li>
+			<li class="list_item">two</li>
+			<li class="list_item">three</li>
+			<li class="list_item">four</li>
+		</ul>
+	</div>
 </div>
+<div id="nav_post">
+	<div id="list" class="postbutton"></div>
+	<div id="search" class="postbutton"></div>
 </div>
-<div id="nav_post"></div>
 <div id="paper"></div>
 </div>
 </body>
