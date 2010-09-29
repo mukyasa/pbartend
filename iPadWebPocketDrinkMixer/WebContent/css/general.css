@@ -7,7 +7,7 @@ body{
 }
 #wrapper {
     position:relative;
-    z-index:1;
+    z-index:2;
     width:320px;
     height:415px;
     overflow:auto;
@@ -40,11 +40,22 @@ body{
 	src:url('TektonPro-Bold.otf');
 }
 
+#button_block ul{
+	padding: 10px 0 0 30px;
+	margin:0;
+}
+#button_block{
+	background: url("../images/napkins.png") no-repeat 0 0;
+	width:319px;
+	height:313px;
+	padding-top:20px;
+}
 /****FLIP STYLE****/
 
 #paper_wrapper{
 	-webkit-perspective:1000;
 	position: absolute;
+	z-index:1;
 }
 #paper_wrapper .face.front{
 	-webkit-transform:rotateY(0deg);

@@ -14,7 +14,6 @@
 	width:450px;
 	height:630px;
 }
-
 .land #wrapper{
 	display:block;
 }
@@ -25,24 +24,13 @@
 	background: url(../images/postcards.png) no-repeat 250px 50px;
 	width:1024px;
 	height:768px;
-	z-index: 0;
+	z-index: 2;
 }
 .land #list_frame{
 	width:320px;
 	height:410px;
 }
 
-.land #button_block ul{
-	padding: 10px 0 0 30px;
-	margin:0;
-}
-.land #button_block{
-	background: url("../images/napkins.png") no-repeat 0 0;
-	width:319px;
-	height:313px;
-	padding-top:20px;
-	
-}
 .land #wrapper {
 	display:block;
 	background-color:#fff;

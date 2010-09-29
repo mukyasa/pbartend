@@ -22,6 +22,7 @@
 		if (orientation == 0) //portrait
 		{
 			$("body").addClass("port").removeClass("land");
+			//hide any popouts
 			$(".popout").hide();
 		}
 		else//landscape
@@ -43,7 +44,7 @@
 		//hide popout on window touch
 		document.addEventListener('touchstart', function(e) {
 			//hide all pop ups
-			$(".port #wrapper").fadeOut();
+			$(".port .popout").fadeOut();
 		});
 		
 		scroller = new iScroll('scroller');
@@ -51,6 +52,7 @@
 		$(".button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
 		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
 		
+		//flip page
 		$(".frontbutton").bind("touchend",function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			//flip paper
@@ -98,8 +100,11 @@
 		$(obj).removeClass("search_touch");
 		$(obj).removeClass("list_touch");
 		
+		//show popoaver here
+		//hid any open popouts
+		$(".popout").hide();
 		if($(obj).attr("id") == "search")
-			$(".port #wrapper").fadeIn();
+			$(".port #button_block").fadeIn();
 		else if($(obj).attr("id") == "list")
 			$(".port #wrapper").fadeIn();
 		
@@ -124,7 +129,7 @@
 </head>
 <body>
 <div id="postcards">
-	<div id="button_block">
+	<div id="button_block" class="popout ui-cornor-all">
 		<ul>
 			<li id="show_all" class="button">Show All Drinks</li>
 			<li id="filter_cat" class="button">Filter By Category</li>
@@ -168,12 +173,12 @@
 	<div id="list" class="postbutton"></div>
 	<div id="search" class="postbutton"></div>
 </div>
-<article id="paper_wrapper">
-	<section class="paper">
+<div id="paper_wrapper">
+	<div class="paper">
 		<div class="face front"><div class="frontbutton flipbutton" style="padding:50px 10px 10px 100px;">flip</div></div>
 		<div class="face back"><div class="backbutton flipbutton" style="padding:50px  100px 10px 10px;float:right;">flip back</div></div>
-	</section>
-</article>
+	</div>
+</div>
 
 </div>
 </body>

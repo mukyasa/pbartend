@@ -27,6 +27,7 @@
 	position: absolute;
 	top:0;
 	left:10px;
+	z-index: -1;
 	
 }
 .port #list_wrapper{
@@ -54,17 +55,28 @@
 	height:83px;
 	margin:30px 0 20px 12px;
 }
+.port #button_block{
+	position:relative;;
+	top:90px;
+    left:100px;
+    background-color: transparent;
+    border:0;
+    -webkit-box-shadow:none;
+}
+.port .popout{
+	z-index:3;
+	border:6px solid #4f6900;
+	background-color: #fff;
+	-webkit-box-shadow:#999 4px 4px 24px;
+}
 .port #wrapper {
 	display:none;
     position:relative;
-    z-index:1;
     width:320px;
     height:600px;
     overflow:auto;
     top:40px;
     left:100px;
-    border:6px solid #4f6900;
-    background-color: #fff;
-    -webkit-box-shadow:#999 4px 4px 24px;
+   
 }
 .port .ui-cornor-all{-webkit-border-radius:6px;}
