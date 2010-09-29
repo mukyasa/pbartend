@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/general.css" />
+<link rel="stylesheet" type="text/css" href="css/portrait.css" />
+<link rel="stylesheet" type="text/css" href="css/landscape.css" />
+
+<script type="text/javascript">
+	var ORIENTATION_PORT = 0;
+	var ORIENTATION_LAND = 1;
+
+	function changeOrientation(orientation) {
+		if (orientation == 0)
+			$("body").addClass("port").removeClass("land");
+		else
+			$("body").addClass("land").removeClass("port");
+
+	}
+
+	$(document).ready(function() {
+
+		$(".button").mousedown(function(){
+			$(this).addClass("touched");
+		}).mouseup(function(){
+			$(this).removeClass("touched");			
+		});
+		
+		document.addEventListener('touchmove', function(e) {
+			//e.preventDefault();
+		});
+		
+		myScroll = new iScroll('scroller');
+
+		var orientation;
+		if (window.innerWidth > window.innerHeight)
+			orientation = ORIENTATION_LAND;
+		else
+			orientation = ORIENTATION_PORT;
+
+		if (orientation == 0)
+			$("body").addClass("port").removeClass("land");
+		else
+			$("body").addClass("land").removeClass("port");
+	});
+</script>
+
+</head>
+<body>
+<div id="postcards">
+	<div id="button_block">
+		<ul>
+			<li id="show_all" class="button">Show All Drinks</li>
+			<li id="filter_cat" class="button">Filter By Category</li>
+			<li id="filter_ing" class="button">Filter By Ingredients</li>
+			<li id="fav" class="button">Favorites</li>
+			<li id="create" class="button">Create New Drinks</li>
+		</ul>
+	</div>
+<div id="wrapper">
+<div id="scroller">
+<ul id="list_wrapper">
+	<li class="list_item">just one</li>
+	<li class="list_item">two</li>
+	<li class="list_item">three</li>
+	<li class="list_item">four</li>
+	<li class="list_item">five</li>
+	<li class="list_item">six</li>
+	<li class="list_item">seven</li>
+	<li class="list_item">one</li>
+	<li class="list_item">two</li>
+	<li class="list_item">three</li>
+	<li class="list_item">four</li>
+	<li class="list_item">five</li>
+	<li class="list_item">six</li>
+	<li class="list_item">seven</li>
+	<li class="list_item">one</li>
+	<li class="list_item">two</li>
+	<li class="list_item">three</li>
+	<li class="list_item">four</li>
+	<li class="list_item">five</li>
+	<li class="list_item">six</li>
+	<li class="list_item">seven</li>
+	<li class="list_item">one</li>
+	<li class="list_item">two</li>
+	<li class="list_item">three</li>
+	<li class="list_item">four</li>
+	<li class="list_item">five</li>
+	<li class="list_item">six</li>
+	<li class="list_item">seven</li>
+	<li class="list_item">one</li>
+	<li class="list_item">two</li>
+	<li class="list_item">three</li>
+	<li class="list_item">four</li>
+	<li class="list_item">five</li>
+	<li class="list_item">six</li>
+	<li class="list_item">seven</li>
+	<li class="list_item">one</li>
+	<li class="list_item">two</li>
+	<li class="list_item">three</li>
+	<li class="list_item">four</li>
+	<li class="list_item">five</li>
+	<li class="list_item">six</li>
+	<li class="list_item">seven</li>
+</ul>
+</div>
+</div>
+<div id=""></div>
+<div id="paper"></div>
+</div>
+</body>
+</html>

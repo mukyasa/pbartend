@@ -1,0 +1,18 @@
+.port #paper{
+	background: url(../images/paper.png) no-repeat 0 0;
+}
+
+.port #paper{
+	width:600px;
+	height:830px;
+	position: absolute;
+	top:100px;
+	left:120px;
+}
+.port #list_wrapper, .port #button_block{
+	display:none;
+}
+
+.port #postcards{
+	background: none;
+}

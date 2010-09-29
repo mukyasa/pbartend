@@ -1,0 +1,45 @@
+.land #paper{
+	background: url(../images/paper.png) no-repeat 0 0;
+	background-size: 100% auto;
+}
+.land #paper{
+	width:450px;
+	height:630px;
+	position: absolute;
+	top:45px;
+	left:450px;
+}
+
+.land #list_wrapper{
+	display:block;
+	float:left;
+	width:100%;
+	background:#fff;
+	padding:0;
+	margin:0;
+}
+.land #postcards{
+	background: url(../images/postcards.png) no-repeat 250px 50px;
+	width:1024px;
+	height:768px;
+	z-index: 0;
+}
+.land #list_frame{
+	width:320px;
+	height:410px;
+}
+.list_item{
+	border-top:1px solid #000;
+	padding:15px 10px 15px 10px;
+}
+.land #button_block ul{
+	padding: 10px 0 0 30px;
+	margin:0;
+}
+.land #button_block{
+	background: url("../images/napkins.png") no-repeat 0 0;
+	width:319px;
+	height:313px;
+	padding-top:20px;
+	
+}
