@@ -14,8 +14,8 @@
 	width:450px;
 	height:630px;
 }
-.land #wrapper{
-	display:block;
+.land #wrapper,.land #button_block{
+	display:block !important;
 }
 .land #nav_post {
 	display:none;

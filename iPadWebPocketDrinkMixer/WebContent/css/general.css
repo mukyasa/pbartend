@@ -45,6 +45,7 @@ body{
 	margin:0;
 }
 #button_block{
+	position:relative;
 	background: url("../images/napkins.png") no-repeat 0 0;
 	width:319px;
 	height:313px;
