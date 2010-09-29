@@ -43,6 +43,7 @@
 		
 		//hide popout on window touch
 		document.addEventListener('touchstart', function(e) {
+			e.preventDefault();
 			//hide all pop ups
 			$(".port .popout").fadeOut();
 		});
