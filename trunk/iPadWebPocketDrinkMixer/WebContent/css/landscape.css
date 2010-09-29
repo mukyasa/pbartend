@@ -6,7 +6,7 @@
 	background: url(../images/editpaper.png) no-repeat 0 0;
 	background-size: 100% auto;
 }
-#paper_wrapper{
+.land #paper_wrapper{
 	top:45px;
 	left:450px;
 }
