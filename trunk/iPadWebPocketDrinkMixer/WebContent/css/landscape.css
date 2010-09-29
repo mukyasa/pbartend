@@ -37,7 +37,10 @@
 	padding-top:20px;
 	
 }
-
+.land #wrapper {
+	display:block;
+	background-color:#fff;
+}
 .land #list_wrapper{
 	display:block;
 	float:left;

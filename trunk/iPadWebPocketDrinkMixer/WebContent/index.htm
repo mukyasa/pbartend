@@ -19,10 +19,17 @@
 	var ORIENTATION_LAND = 1;
 
 	function changeOrientation(orientation) {
-		if (orientation == 0)
+		if (orientation == 0) //portrait
+		{
 			$("body").addClass("port").removeClass("land");
-		else
+			$(".popout").hide();
+		}
+		else//landscape
+		{
 			$("body").addClass("land").removeClass("port");
+			$("#wrapper").show();
+		}
+		
 
 	}
 
@@ -76,9 +83,9 @@
 		$(obj).removeClass("list_touch");
 		
 		if($(obj).attr("id") == "search")
-			$("#wrapper").fadeIn();
+			$(".port #wrapper").fadeIn();
 		else if($(obj).attr("id") == "list")
-			$("#wrapper").fadeIn();
+			$(".port #wrapper").fadeIn();
 		
 		
 	}
@@ -108,7 +115,7 @@
 			<li id="create" class="button">Create New Drinks</li>
 		</ul>
 	</div>
-<div id="wrapper" class="ui-cornor-all">
+<div id="wrapper" class="popout ui-cornor-all">
 	<div id="scroller">
 		<ul id="list_wrapper">
 			<li class="list_item">just one</li>
