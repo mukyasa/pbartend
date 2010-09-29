@@ -36,13 +36,13 @@
 
 	$(document).ready(function() {
 		
-		
+		//prevent screen from scrolling
 		document.addEventListener('touchmove', function(e) {
 			e.preventDefault();
 		});
 		
 		//hide popout on window touch
-		document.addEventListener('touchstart', function(e) {
+		$(".content_wrapper").bind('touchstart', function(e) {
 			e.preventDefault();
 			//hide all pop ups
 			$(".port .popout").fadeOut();
@@ -130,6 +130,7 @@
 </head>
 <body>
 <div id="postcards">
+<!-- BUTTONS -->
 	<div id="button_block" class="popout ui-cornor-all">
 		<ul>
 			<li id="show_all" class="button">Show All Drinks</li>
@@ -139,6 +140,7 @@
 			<li id="create" class="button">Create New Drinks</li>
 		</ul>
 	</div>
+<!-- LIST -->
 <div id="wrapper" class="popout ui-cornor-all">
 	<div id="scroller">
 		<ul id="list_wrapper">
@@ -170,17 +172,20 @@
 		</ul>
 	</div>
 </div>
+<span class="content_wrapper">
+<!-- NAV POST -->
 <div id="nav_post">
 	<div id="list" class="postbutton"></div>
 	<div id="search" class="postbutton"></div>
 </div>
+<!-- PAPER -->
 <div id="paper_wrapper">
 	<div class="paper">
 		<div class="face front"><div class="frontbutton flipbutton" style="padding:50px 10px 10px 100px;">flip</div></div>
 		<div class="face back"><div class="backbutton flipbutton" style="padding:50px  100px 10px 10px;float:right;">flip back</div></div>
 	</div>
 </div>
-
+</span>
 </div>
 </body>
 </html>
