@@ -53,6 +53,7 @@
 	margin:30px 0 20px 12px;
 }
 .port #button_block{
+	position:absolute;
 	display:none;
 	top:90px;
     left:100px;
@@ -68,7 +69,7 @@
 }
 .port #wrapper {
 	display:none;
-    position:relative;
+    position:absolute;
     width:320px;
     height:600px;
     overflow:auto;
@@ -77,3 +78,9 @@
    
 }
 .port .ui-cornor-all{-webkit-border-radius:6px;}
+
+.port .content_wrapper{
+	width:100%;
+	height:100%;
+	display:block;
+}
