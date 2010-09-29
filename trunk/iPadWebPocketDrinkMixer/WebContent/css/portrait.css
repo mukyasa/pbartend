@@ -1,13 +1,16 @@
-.port #paper{
+.port .paper .front{
 	background: url(../images/paper.png) no-repeat 0 0;
 }
-
-.port #paper{
-	width:600px;
-	height:830px;
-	position: absolute;
+.port .paper .back{
+	background: url(../images/editpaper.png) no-repeat 0 0;
+}
+#paper_wrapper{
 	top:100px;
 	left:120px;
+}
+.port .paper .front,.port .paper .back{
+	width:600px;
+	height:830px;
 }
 .port #button_block{
 	display:none;

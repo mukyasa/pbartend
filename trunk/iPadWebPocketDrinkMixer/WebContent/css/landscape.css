@@ -1,14 +1,20 @@
-.land #paper{
+.land .paper .front{
 	background: url(../images/paper.png) no-repeat 0 0;
 	background-size: 100% auto;
 }
-.land #paper{
-	width:450px;
-	height:630px;
-	position: absolute;
+.land .paper .back{
+	background: url(../images/editpaper.png) no-repeat 0 0;
+	background-size: 100% auto;
+}
+#paper_wrapper{
 	top:45px;
 	left:450px;
 }
+.land .paper .front,.land .paper .back{
+	width:450px;
+	height:630px;
+}
+
 .land #wrapper{
 	display:block;
 }
