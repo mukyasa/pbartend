@@ -59,8 +59,13 @@ body {
 	padding:18px 10px 11px 0px;
 	display: block;
 }
+.list_fav_selected{
+	background:url(../images/list_fav_selected.png) no-repeat 0 14px;
+}
 .list_fav{
 	background:url(../images/list_fav.png) no-repeat 0 14px;
+}
+.list_fav,.list_fav_selected{
 	width:21px;
 	height:20px;
 	float:right;

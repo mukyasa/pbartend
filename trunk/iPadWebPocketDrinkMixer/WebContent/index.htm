@@ -6,8 +6,8 @@
 <meta name="viewport"
 	content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
 <title>Insert title here</title>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/EmailComposer.js"></script>
 <script type="text/javascript" src="js/iscroll.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/general.css" />
@@ -64,7 +64,9 @@
 		$(".list_email").bind("touchstart",function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			if(!list_scroll)//if not scrolling 
+			{
 				$("#response").text("Email Called");
+			}
 			else
 				list_scroll=false;
 		});
@@ -258,9 +260,9 @@
 		<ul id="list_wrapper">
 			<li class="list_item"><span class="list_glass sour">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
 			<li class="list_item"><span class="list_glass cocktail">Drink Two Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass cordial">Drink Three Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass cordial">Drink Three Name</span><span class="list_email"></span><span class="list_fav_selected"></span></li>
 			<li class="list_item"><span class="list_glass highball">Drink Four Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass mug">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass mug">Drink One Name</span><span class="list_email"></span><span class="list_fav_selected"></span></li>
 			<li class="list_item"><span class="list_glass pint">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
 			<li class="list_item"><span class="list_glass rocks">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
 			<li class="list_item"><span class="list_glass snifter">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
@@ -282,7 +284,7 @@
 <!-- PAPER -->
 <div id="paper_wrapper">
 	<div class="paper">
-		<div class="face front"><div class="frontbutton flipbutton" style="padding:50px 10px 10px 100px;">flip</div><span id="response"></span></div>
+		<div class="face front"><div class="frontbutton flipbutton" style="padding:50px 10px 10px 100px;">flip</div><span id="response" style="margin:100px;"></span></div>
 		<div class="face back"><div class="backbutton flipbutton" style="padding:50px  100px 10px 10px;float:right;">flip back</div></div>
 	</div>
 </div>
