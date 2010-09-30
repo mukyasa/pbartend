@@ -7,11 +7,14 @@ body {
 }
 
 #wrapper {
-	position: relative;
+	position: absolute;
 	z-index: 2;
 	width: 320px;
-	height: 415px;
+	height: 440px;
 	overflow: auto;
+	top:308px;
+	left:0px;
+	border:1px solid #000;
 }
 
 /***** LIST ICONS ********/
