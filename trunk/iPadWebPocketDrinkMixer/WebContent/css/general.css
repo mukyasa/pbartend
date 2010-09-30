@@ -45,6 +45,9 @@ body {
 .touched {
 	background: url("../images/button_touch.png") no-repeat 0 0 !important;
 }
+.fav_touched {
+	background: url("../images/fav_button_touch.png") no-repeat 0 0 !important;
+}
 .sm_touched {
 	background: url("../images/sm_button_touch.png") no-repeat 0 0 !important;
 }
@@ -60,9 +63,14 @@ body {
 	width: 110px;
 	margin-bottom: 5px;
 }
-.button {
-	clear:both;
+.fav_button{
+	background: url("../images/fav_button.png") no-repeat 0 0;
+}
+.button{
 	background: url("../images/button.png") no-repeat 0 0;
+}
+.button,.fav_button {
+	clear:both;
 	padding: 10px 0 10px 0;
 	font-size: 18px;
 	margin: 0;
