@@ -16,6 +16,7 @@
 
 <script type="text/javascript">
 	var css_orientation="port";
+	var list_scroll=false;
 
 	function changeOrientation(orientation) {
 		if (orientation == 0) //portrait
@@ -40,28 +41,6 @@
 		$("#reload_page").bind("touchend",function(){
 			window.location.reload();			
 		});
-		//navigataion
-		$(".menuList li").click(function() {
-			$(navigation[navigation.length-1]).removeClass("current");
-			$(navigation[navigation.length-1]).addClass("reverse");
-			
-			$($(this).parent().attr("id")).addClass("reverse");
-			if (!$("#Home").hasClass("reverse")) {
-				$("#Home").addClass("reverse");
-			}
-			$($(this).attr("rel")).addClass("current");
-			navigation.push($(this).attr("rel"));
-			hideURLbar();
-		});
-		$(".menuList li").bind('touchstart', 
-			function(evt) {
-				$(this).addClass("hover");
-		});
-		
-		$(".menuList li").bind('touchend', 
-			function(evt) {
-				$(this).removeClass("hover");
-		});
 			
 		//prevent screen from scrolling
 		document.addEventListener('touchmove', function(e) {
@@ -79,6 +58,34 @@
 
 		$(".button,.sm_button,.fav_button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
 		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
+		
+		
+		/**************** list list buttons **************/
+		$(".list_email").bind("touchstart",function(e){
+			e.preventDefault();//prevent copy and mag from showing
+			if(!list_scroll)//if not scrolling 
+				$("#response").text("Email Called");
+			else
+				list_scroll=false;
+		});
+		$(".list_fav").bind("touchstart",function(e){
+			e.preventDefault();//prevent copy and mag from showing
+			if(!list_scroll)//if not scrolling 
+				$("#response").text("Favorites Called");
+			else
+				list_scroll=false;
+		});
+		$(".list_glass").bind("touchstart",function(e){
+			e.preventDefault();//prevent copy and mag from showing
+			if(!list_scroll)//if not scrolling 
+				$("#response").text("Drink Called");
+			else
+				list_scroll=false;
+		});
+		$(".list_item").bind("touchmove",function(e){
+			list_scroll=true;//used if your scrolling
+		});
+		/***********************************************/
 		
 		//flip page
 		$(".frontbutton").bind("touchend",function(e){
@@ -156,6 +163,7 @@
 	}
 	//standard button events
 	function handleTouchEnd(e){
+		e.preventDefault();//prevent copy and mag from showing
 		var obj = e.currentTarget;
 		$(obj).removeClass("touched").removeClass("sm_touched").removeClass("fav_touched");
 		
@@ -248,20 +256,20 @@
 <div id="wrapper" class="popout ui-cornor-all">
 	<div id="scroller">
 		<ul id="list_wrapper">
-			<li class="list_item"><span class="list_glass sour"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass cocktail"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass cordial"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass highball"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass mug"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass pint"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass rocks"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass snifter"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass margarita"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass punch"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass whitewine"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass collins"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass champ"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
-			<li class="list_item"><span class="list_glass redwine"></span><span class="list_name">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass sour">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass cocktail">Drink Two Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass cordial">Drink Three Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass highball">Drink Four Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass mug">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass pint">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass rocks">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass snifter">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass margarita">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass punch">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass whitewine">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass collins">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass champ">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
+			<li class="list_item"><span class="list_glass redwine">Drink One Name</span><span class="list_email"></span><span class="list_fav"></span></li>
 		</ul>
 	</div>
 </div>
@@ -274,7 +282,7 @@
 <!-- PAPER -->
 <div id="paper_wrapper">
 	<div class="paper">
-		<div class="face front"><div class="frontbutton flipbutton" style="padding:50px 10px 10px 100px;">flip</div></div>
+		<div class="face front"><div class="frontbutton flipbutton" style="padding:50px 10px 10px 100px;">flip</div><span id="response"></span></div>
 		<div class="face back"><div class="backbutton flipbutton" style="padding:50px  100px 10px 10px;float:right;">flip back</div></div>
 	</div>
 </div>
