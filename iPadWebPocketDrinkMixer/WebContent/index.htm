@@ -15,18 +15,19 @@
 <link rel="stylesheet" type="text/css" href="css/landscape.css" />
 
 <script type="text/javascript">
-	var ORIENTATION_PORT = 0;
-	var ORIENTATION_LAND = 1;
+	var css_orientation="port";
 
 	function changeOrientation(orientation) {
 		if (orientation == 0) //portrait
 		{
+			css_orientation="port";
 			$("body").addClass("port").removeClass("land");
 			//hide any popouts
 			$(".popout").hide();
 		}
 		else//landscape
 		{
+			css_orientation="land"
 			$("body").addClass("land").removeClass("port");
 			$("#wrapper").show();
 		}
@@ -35,6 +36,19 @@
 	}
 
 	$(document).ready(function() {
+		
+		var orientation;
+		if (window.innerWidth > window.innerHeight)
+		{
+			css_orientation="land";
+			$("body").addClass("land").removeClass("port");
+		}
+		else
+		{
+			css_orientation="port";
+			$("body").addClass("port").removeClass("land");
+		}
+		
 		//navigataion
 		$(".menuList li").click(function() {
 			$(navigation[navigation.length-1]).removeClass("current");
@@ -91,16 +105,6 @@
 			$("#paper_wrapper .back").removeClass("flip");
 		});
 		
-		var orientation;
-		if (window.innerWidth > window.innerHeight)
-			orientation = ORIENTATION_LAND;
-		else
-			orientation = ORIENTATION_PORT;
-
-		if (orientation == 0)
-			$("body").addClass("port").removeClass("land");
-		else
-			$("body").addClass("land").removeClass("port");
 	});
 	
 	function handlePostButtonTouchStart(e){
@@ -147,7 +151,7 @@
 			$(obj).addClass("sm_touched");
 		
 	}
-	
+	//standard button events
 	function handleTouchEnd(e){
 		var obj = e.currentTarget;
 		$(obj).removeClass("touched").removeClass("sm_touched").removeClass("fav_touched");
@@ -176,7 +180,11 @@
 				$("#main_buttons").slideDown();
 			});
 			
+		}else if($(obj).attr("id")=="create")
+		{
+			$("body").append("<div class='x-mask "+css_orientation+"_pos'><div class='loading'>Loading...</div></div>");
 		}
+		
 	}
 	
 	
@@ -184,7 +192,7 @@
 
 </head>
 <body>
-<div id="postcards">
+<div id="postcards" class="x-masked">
 <!-- BUTTONS -->
 <div id="Home">
 	<div id="button_block" class="popout ui-cornor-all">
