@@ -158,6 +158,15 @@ public class CategoryAndGlassPicker extends BaseActivity implements OnClickListe
         map = new HashMap<Integer, Drawable>();
         map.put(20, getResources().getDrawable(R.drawable.snifter));
         imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(21, getResources().getDrawable(R.drawable.collins));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(22, getResources().getDrawable(R.drawable.cordial));
+        imageList.add(map);
+        map = new HashMap<Integer, Drawable>();
+        map.put(23, getResources().getDrawable(R.drawable.old_fashion));
+        imageList.add(map);
         
         
        

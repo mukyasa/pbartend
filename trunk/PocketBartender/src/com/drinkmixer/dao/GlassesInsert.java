@@ -21,7 +21,10 @@ public class GlassesInsert {
 ,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(17,'irish coffee');"
 ,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(18,'pilsner');"
 ,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(19,'punch');"
-,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(20,'snifter');"};
+,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(20,'snifter');"
+,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(21,'collins');"
+,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(22,'cordial');"
+,"INSERT INTO "+DataDAO.TABLE_GLASSES+" VALUES(23,'oldfashion');"};
 	
 
 	public static String[] sqlInsertFractions= {"INSERT INTO "+DataDAO.TABLE_FRACTIONAL_AMOUNTS+" VALUES(0,'---');"
