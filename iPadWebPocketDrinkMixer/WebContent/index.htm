@@ -72,7 +72,7 @@
 		
 		scroller = new iScroll('scroller');
 
-		$(".button,.sm_button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
+		$(".button,.sm_button,.fav_button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
 		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
 		
 		//flip page
@@ -138,8 +138,11 @@
 	function handleTouchStart(e){
 		e.preventDefault();//prevent copy and mag from showing
 		var obj = e.currentTarget;
+		
 		if($(obj).hasClass("button"))
 			$(obj).addClass("touched");
+		else if($(obj).hasClass("fav_button"))
+			$(obj).addClass("fav_touched");
 		else
 			$(obj).addClass("sm_touched");
 		
@@ -147,7 +150,7 @@
 	
 	function handleTouchEnd(e){
 		var obj = e.currentTarget;
-		$(obj).removeClass("touched").removeClass("sm_touched");
+		$(obj).removeClass("touched").removeClass("sm_touched").removeClass("fav_touched");
 		
 		if($(obj).attr("id")=="filter_ing")
 		{	
@@ -190,7 +193,7 @@
 				<li id="show_all" class="button">Show All Drinks</li>
 				<li id="filter_cat" class="button">Filter By Category</li>
 				<li id="filter_ing" class="button">Filter By Ingredients</li>
-				<li id="fav" class="button">Favorites</li>
+				<li id="fav" class="fav_button">Favorites</li>
 				<li id="create" class="button">Create New Drinks</li>
 			</ul>
 		</div>
