@@ -103,6 +103,18 @@ public class ImageAndTextAdapter extends SimpleCursorAdapter {
 		{
 			d = context.getResources().getDrawable(R.drawable.snifter);
 		}
+		else if("collins".equals(cursor.getString(cursor.getColumnIndex(DataDAO.COL_GLASS_NAME))))
+		{
+			d = context.getResources().getDrawable(R.drawable.collins);
+		}
+		else if("cordial".equals(cursor.getString(cursor.getColumnIndex(DataDAO.COL_GLASS_NAME))))
+		{
+			d = context.getResources().getDrawable(R.drawable.cordial);
+		}
+		else if("oldfashion".equals(cursor.getString(cursor.getColumnIndex(DataDAO.COL_GLASS_NAME))))
+		{
+			d = context.getResources().getDrawable(R.drawable.old_fashion);
+		}
 		
 		((TextView)view).setCompoundDrawablesWithIntrinsicBounds(d, null, null, null);
 	    super.bindView(view, context, cursor);
