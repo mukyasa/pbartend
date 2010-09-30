@@ -35,7 +35,29 @@
 	}
 
 	$(document).ready(function() {
+		//navigataion
+		$(".menuList li").click(function() {
+			$(navigation[navigation.length-1]).removeClass("current");
+			$(navigation[navigation.length-1]).addClass("reverse");
+			
+			$($(this).parent().attr("id")).addClass("reverse");
+			if (!$("#Home").hasClass("reverse")) {
+				$("#Home").addClass("reverse");
+			}
+			$($(this).attr("rel")).addClass("current");
+			navigation.push($(this).attr("rel"));
+			hideURLbar();
+		});
+		$(".menuList li").bind('touchstart', 
+			function(evt) {
+				$(this).addClass("hover");
+		});
 		
+		$(".menuList li").bind('touchend', 
+			function(evt) {
+				$(this).removeClass("hover");
+		});
+			
 		//prevent screen from scrolling
 		document.addEventListener('touchmove', function(e) {
 			e.preventDefault();
@@ -50,7 +72,7 @@
 		
 		scroller = new iScroll('scroller');
 
-		$(".button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
+		$(".button,.sm_button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
 		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
 		
 		//flip page
@@ -112,16 +134,46 @@
 		
 	}
 	
+	//normal buttons
 	function handleTouchStart(e){
 		e.preventDefault();//prevent copy and mag from showing
 		var obj = e.currentTarget;
-		$(obj).addClass("touched");
+		if($(obj).hasClass("button"))
+			$(obj).addClass("touched");
+		else
+			$(obj).addClass("sm_touched");
 		
 	}
 	
 	function handleTouchEnd(e){
 		var obj = e.currentTarget;
-		$(obj).removeClass("touched");
+		$(obj).removeClass("touched").removeClass("sm_touched");
+		
+		if($(obj).attr("id")=="filter_ing")
+		{	
+			$("#main_buttons").slideUp(function(){
+				$("#ingredients").slideDown();
+			});
+			
+		}
+		else if($(obj).attr("id")=="filter_cat")
+		{
+			$("#main_buttons").slideUp(function(){
+				$("#category").slideDown();
+			});
+		}
+		else if($(obj).attr("id")=="ing_back") //back from ing
+		{
+			$("#ingredients").slideUp(function(){
+				$("#main_buttons").slideDown();
+			});
+		}else if($(obj).attr("id")=="cat_back")//back from cat
+		{
+			$("#category").slideUp(function(){
+				$("#main_buttons").slideDown();
+			});
+			
+		}
 	}
 	
 	
@@ -131,15 +183,41 @@
 <body>
 <div id="postcards">
 <!-- BUTTONS -->
+<div id="Home">
 	<div id="button_block" class="popout ui-cornor-all">
-		<ul>
-			<li id="show_all" class="button">Show All Drinks</li>
-			<li id="filter_cat" class="button">Filter By Category</li>
-			<li id="filter_ing" class="button">Filter By Ingredients</li>
-			<li id="fav" class="button">Favorites</li>
-			<li id="create" class="button">Create New Drinks</li>
-		</ul>
+		<div id="main_buttons" class="fullbuttons">
+			<ul>
+				<li id="show_all" class="button">Show All Drinks</li>
+				<li id="filter_cat" class="button">Filter By Category</li>
+				<li id="filter_ing" class="button">Filter By Ingredients</li>
+				<li id="fav" class="button"><div class="favorites_icon"></div>Favorites</li>
+				<li id="create" class="button">Create New Drinks</li>
+			</ul>
+		</div>
+		<div id="ingredients" class="subbuttons fullbuttons">
+			<ul>
+				<li id="ing_back" class="button"><< Back</li>
+				<li id="liquor" class="button">Liquor</li>
+				<li id="mixer" class="button">Mixers</li>
+				<li id="garnish" class="button">Garnish</li>
+			</ul>
+		</div>
+		<div id="category" class="subbuttons halfbuttons">
+			<ul style="float:left;margin-left:20px">
+				<li id="cat_back" class="sm_button"><< Back</li>
+				<li id="garnish" class="sm_button">Cocktails</li>
+				<li id="liquor" class="sm_button">Hot Drinks</li>
+				<li id="mixer" class="sm_button">Jello Shots</li>
+			</ul>
+			<ul style="float:left">
+				<li id="martinis" class="sm_button">Martinis</li>
+				<li id="nonAlcohlic" class="sm_button">Non-Alcoholic</li>
+				<li id="punch" class="sm_button">Punches</li>
+				<li id="shooter" class="sm_button">Shooters</li>
+			</ul>
+		</div>
 	</div>
+</div>
 <!-- LIST -->
 <div id="wrapper" class="popout ui-cornor-all">
 	<div id="scroller">
