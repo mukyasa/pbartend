@@ -5,7 +5,17 @@ body {
 	background-size: 100% auto;
 	background-origin: content
 }
-
+.x-masked {
+    overflow: hidden !important;
+}
+#reload_page{
+	background: url(../images/refresh.png) no-repeat 0 0;
+	background-size: 100% auto;
+	width:30px;
+	height:30px;
+	float:right;
+	margin:5px;
+}
 #wrapper {
 	position: absolute;
 	z-index: 2;
@@ -14,7 +24,7 @@ body {
 	overflow: auto;
 	top:308px;
 	left:0px;
-	border:1px solid #000;
+	border:2px solid #000;
 }
 
 /***** LIST ICONS ********/

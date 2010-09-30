@@ -36,19 +36,10 @@
 	}
 
 	$(document).ready(function() {
-		
-		var orientation;
-		if (window.innerWidth > window.innerHeight)
-		{
-			css_orientation="land";
-			$("body").addClass("land").removeClass("port");
-		}
-		else
-		{
-			css_orientation="port";
-			$("body").addClass("port").removeClass("land");
-		}
-		
+		//reload page
+		$("#reload_page").bind("touchend",function(){
+			window.location.reload();			
+		});
 		//navigataion
 		$(".menuList li").click(function() {
 			$(navigation[navigation.length-1]).removeClass("current");
@@ -104,6 +95,18 @@
 			$("#paper_wrapper .front").removeClass("flip");
 			$("#paper_wrapper .back").removeClass("flip");
 		});
+		
+		var orientation; //leave after scroll
+		if (window.innerWidth > window.innerHeight)
+		{
+			css_orientation="land";
+			$("body").addClass("land").removeClass("port");
+		}
+		else
+		{
+			css_orientation="port";
+			$("body").addClass("port").removeClass("land");
+		}
 		
 	});
 	
@@ -182,14 +185,18 @@
 			
 		}else if($(obj).attr("id")=="create")
 		{
-			$("body").append("<div class='x-mask "+css_orientation+"_pos'><div class='loading'>Loading...</div></div>");
-			window.setTimeout("removeMask()",2000);
+			showLoadingMask();
+			window.setTimeout("removeLoadingMask()",2000);
 		}
 		
 	}
 	
+	//adds loading spinner
+	function showLoadingMask(){
+		$("body").append("<div class='x-mask "+css_orientation+"_pos'><div class='loading'>Loading...</div></div>");
+	}
 	//removes loading mask
-	function removeMask(){
+	function removeLoadingMask(){
 		
 		$(".x-mask").remove();
 	}
@@ -200,6 +207,7 @@
 </head>
 <body>
 <div id="postcards" class="x-masked">
+<div id="reload_page"></div>
 <!-- BUTTONS -->
 <div id="Home">
 	<div id="button_block" class="popout ui-cornor-all">
