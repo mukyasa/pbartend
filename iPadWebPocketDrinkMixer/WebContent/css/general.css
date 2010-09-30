@@ -112,6 +112,9 @@ body {
 }
 
 /**** BUTTONS ******/
+#preload{
+	display:none;
+}
 #button_block .fullbuttons ul {
 	padding: 10px 0 0 30px;
 	margin: 0;
