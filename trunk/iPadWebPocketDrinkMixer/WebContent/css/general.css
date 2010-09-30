@@ -21,7 +21,14 @@ body {
 }
 .favorites_icon{
 	float:left;
-	background url("../images/star.png") no-repeat 0 0;
+	background: url("../images/star.png") no-repeat 0 0;
+	width:36px;
+	height:36px;
+	margin:-10px 0 0 10px;
+}
+.favorities_text{
+	float:left;
+	margin-left:30px;
 }
 #button_block .halfbuttons ul {
 	padding: 10px 0 0 10px;
@@ -54,6 +61,7 @@ body {
 	margin-bottom: 5px;
 }
 .button {
+	clear:both;
 	background: url("../images/button.png") no-repeat 0 0;
 	padding: 10px 0 10px 0;
 	font-size: 18px;
