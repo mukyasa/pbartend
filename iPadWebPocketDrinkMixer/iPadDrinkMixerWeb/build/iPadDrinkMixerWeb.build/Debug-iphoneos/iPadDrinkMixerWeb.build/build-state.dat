@@ -1,322 +1,0 @@
-TiPadDrinkMixerWeb
-v7
-r0
-t307506267.826026
-cCheck dependencies
-cCpResource build/Debug-iphoneos/iPadDrinkMixerWeb.app/ResourceRules.plist /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
-cProcessInfoPlistFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/Info.plist" iPadDrinkMixerWeb-Info.plist
-cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/MainWindow.xib"
-cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/iPadDrinkMixerWebViewController.xib"
-cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixerWeb_Prefix-arzpynuyarfzrufrvmsmkrpnpoyt/iPadDrinkMixerWeb_Prefix.pch.gch iPadDrinkMixerWeb_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/main.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/main.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWebAppDelegate.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebAppDelegate.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWebViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
-cLd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb" normal armv7
-cGenerateDSYMFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app.dSYM" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb"
-cProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/embedded.mobileprovision"
-cTouch "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app"
-cProcessProductPackaging /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb.xcent"
-cCodeSign "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app"
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk
-c000000004C9D688D0000000000000110
-t1285384333
-s272
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist
-c000000004C997C6500000000000001A7
-t1285127269
-s423
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
-c000000004C997C6400000000000001E5
-t1285127268
-s485
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004C999AC200000000003532C0
-t1285135042
-s3486400
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004C999BC600000000003E1F20
-t1285135302
-s4071200
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004C999BAA0000000000001466
-t1285135274
-s5222
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004C99AA0A0000000000000AA1
-t1285138954
-s2721
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004C99AA8F0000000000C675F0
-t1285139087
-s13006320
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebAppDelegate.h
-c000000004C9F847C000000000000020E
-t1285522556
-s526
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebAppDelegate.m
-c000000004C9F847C00000000000007CF
-t1285522556
-s1999
-i"iPadDrinkMixerWebAppDelegate.h"
-i"iPadDrinkMixerWebViewController.h"
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebViewController.h
-c000000004C9F85030000000000000152
-t1285522691
-s338
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebViewController.m
-c000000004CA3F19200000000000008E6
-t1285812626
-s2278
-i"iPadDrinkMixerWebViewController.h"
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/MainWindow.xib
-c000000004C9F847C0000000000004D6D
-t1285522556
-s19821
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app
-t1285813467
-s374
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app.dSYM
-t1285813467
-s102
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/Info.plist
-t1285523002
-s977
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/MainWindow.nib
-t1285523003
-s1143
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/PkgInfo
-t1285523002
-s8
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/ResourceRules.plist
-t1285733932
-s485
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/embedded.mobileprovision
-t1285523004
-s7298
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb
-t1285813467
-s18568
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWebViewController.nib
-t1285734836
-s953
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWeb.LinkFileList
-c000000004C9F863A000000000000021C
-t1285523002
-s540
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWebAppDelegate.o
-t1285733933
-s50388
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWebViewController.o
-t1285813467
-s42812
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/main.o
-t1285733933
-s6560
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb.xcent
-t1285523004
-s440
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/iPadDrinkMixerWebViewController.xib
-c000000004CA2C19900000000000043C6
-t1285734809
-s17350
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/iPadDrinkMixerWeb_Prefix.pch
-c000000004C9F847C00000000000000CB
-t1285522556
-s203
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/main.m
-c000000004C9F847C0000000000000166
-t1285522556
-s358
-i<UIKit/UIKit.h>
-
-N/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision
-c000000004C68B4CD0000000000001C82
-t1281930445
-s7298
-
-N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixerWeb_Prefix-arzpynuyarfzrufrvmsmkrpnpoyt/iPadDrinkMixerWeb_Prefix.pch.gch
-t1285733933
-s10438360
-
-NiPadDrinkMixerWeb-Info.plist
-c000000004C9F847C00000000000004D6
-t1285522556
-s1238
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies307506267#307506267#0(0"0(0#1#0"8599428096#0"0#
-
-CCodeSign "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app"
-s307506267.474917
-e307506267.825986
-r1
-xCodeSign
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app
-lSLF07#2@51"CodeSign build/Debug-iphoneos/iPadDrinkMixerWeb.app307506267#307506267#0(0"0(0#0#108"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app8608645120#871"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Darren Mason (J4HX2LYKXS)" "--resource-rules=/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/ResourceRules.plist" --entitlements "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb.xcent" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app"0#
-
-CCompileC build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWebAppDelegate.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebAppDelegate.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
-s307426733.128203
-e307426733.284829
-r1
-xCompileC
-xbuild/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWebAppDelegate.o
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebAppDelegate.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@112"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebAppDelegate.m307426733#307426733#0(0"0(0#0#104"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebAppDelegate.m8603538752#2382"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixerWeb_Prefix-arzpynuyarfzrufrvmsmkrpnpoyt/iPadDrinkMixerWeb_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebAppDelegate.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWebAppDelegate.o"0#
-
-CCompileC build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWebViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebViewController.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
-s307506267.057358
-e307506267.168921
-r1
-xCompileC
-xbuild/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWebViewController.o
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebViewController.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@115"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebViewController.m307506267#307506267#0(0"0(0#0#107"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebViewController.m8609064928#2388"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixerWeb_Prefix-arzpynuyarfzrufrvmsmkrpnpoyt/iPadDrinkMixerWeb_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/Classes/iPadDrinkMixerWebViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWebViewController.o"0#
-
-CCompileC build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/main.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/main.m" normal armv7 objective-c com.apple.compilers.gcc.4_2
-s307426733.126714
-e307426733.282152
-r1
-xCompileC
-xbuild/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/main.o
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/main.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@80"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/main.m307426733#307426733#0(0"0(0#0#72"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/main.m8599780608#2326"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixerWeb_Prefix-arzpynuyarfzrufrvmsmkrpnpoyt/iPadDrinkMixerWeb_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/main.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/main.o"0#
-
-CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/MainWindow.xib"
-s307215802.810270
-e307215803.470654
-r1
-xCompileXIB
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib307215802#307215803#0(0"0(0#0#80"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/MainWindow.xib8616104608#715"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/MainWindow.nib" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/MainWindow.xib" --sdk /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk0#
-
-CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/iPadDrinkMixerWebViewController.xib"
-s307427636.076057
-e307427636.502797
-r1
-xCompileXIB
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/iPadDrinkMixerWebViewController.xib
-lSLF07#2@46"CompileXIB iPadDrinkMixerWebViewController.xib307427636#307427636#0(0"0(0#0#101"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/iPadDrinkMixerWebViewController.xib8600329600#757"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWebViewController.nib" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/iPadDrinkMixerWebViewController.xib" --sdk /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk0#
-
-CCpResource build/Debug-iphoneos/iPadDrinkMixerWeb.app/ResourceRules.plist /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
-s307426732.088161
-e307426732.164226
-r1
-xCpResource
-xbuild/Debug-iphoneos/iPadDrinkMixerWeb.app/ResourceRules.plist
-x/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
-lSLF07#2@113"Copy /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist307426732#307426732#0(0"0(0#0#108"/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist7957693761158345728#638"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app"0#
-
-CGenerateDSYMFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app.dSYM" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb"
-s307506267.395430
-e307506267.471796
-r1
-xGenerateDSYMFile
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app.dSYM
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb
-lSLF07#2@125"GenerateDSYMFile build/Debug-iphoneos/iPadDrinkMixerWeb.app.dSYM build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb307506267#307506267#0(0"0(0#0#126"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb8609439488#536"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/usr/bin/dsymutil "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app.dSYM"0#
-
-CLd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb" normal armv7
-s307506267.169009
-e307506267.395295
-r1
-xLd
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb
-xnormal
-xarmv7
-lSLF07#2@131"Link /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb307506267#307506267#0(0"0(0#0#0"8613650752#1093"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk "-L/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos" -filelist "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/Objects-normal/armv7/iPadDrinkMixerWeb.LinkFileList" -dead_strip -miphoneos-version-min=4.2 -framework Foundation -framework UIKit -framework CoreGraphics -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/iPadDrinkMixerWeb"0#
-
-CProcessInfoPlistFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/Info.plist" iPadDrinkMixerWeb-Info.plist
-s307215802.762772
-e307215802.791131
-r1
-xProcessInfoPlistFile
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/Info.plist
-xiPadDrinkMixerWeb-Info.plist
-lSLF07#2@36"Process iPadDrinkMixerWeb-Info.plist307215802#307215802#0(0"0(0#0#94"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/iPadDrinkMixerWeb-Info.plist8602996096#756"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility iPadDrinkMixerWeb-Info.plist -genpkginfo "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/PkgInfo" -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/ResourceRules.plist" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/Info.plist"0#
-
-CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixerWeb_Prefix-arzpynuyarfzrufrvmsmkrpnpoyt/iPadDrinkMixerWeb_Prefix.pch.gch iPadDrinkMixerWeb_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
-s307426732.164557
-e307426733.126612
-r1
-xProcessPCH
-x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixerWeb_Prefix-arzpynuyarfzrufrvmsmkrpnpoyt/iPadDrinkMixerWeb_Prefix.pch.gch
-xiPadDrinkMixerWeb_Prefix.pch
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@39"Precompile iPadDrinkMixerWeb_Prefix.pch307426732#307426733#0(0"0(0#0#94"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/iPadDrinkMixerWeb_Prefix.pch8603040352#2185"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/DerivedSources/armv7" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/DerivedSources" -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/iPadDrinkMixerWeb_Prefix.pch" -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixerWeb_Prefix-arzpynuyarfzrufrvmsmkrpnpoyt/iPadDrinkMixerWeb_Prefix.pch.gch0#
-
-CProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/embedded.mobileprovision"
-s307215804.856461
-e307215804.871546
-r1
-xProcessProductPackaging
-x/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/embedded.mobileprovision
-lSLF07#2@203"ProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision" build/Debug-iphoneos/iPadDrinkMixerWeb.app/embedded.mobileprovision307215804#307215804#0(0"0(0#0#133"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/embedded.mobileprovision8616198272#530"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FDCBE704-DA94-4C02-980E-42B93C1046B3.mobileprovision" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app/embedded.mobileprovision"0#
-
-CProcessProductPackaging /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb.xcent"
-s307215804.875244
-e307215804.891001
-r1
-xProcessProductPackaging
-x/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb.xcent
-lSLF07#2@224"ProcessProductPackaging /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb.xcent307215804#307215804#0(0"0(0#0#158"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb.xcent8603691104#577"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist -entitlements -format xml -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/iPadDrinkMixerWeb.build/Debug-iphoneos/iPadDrinkMixerWeb.build/iPadDrinkMixerWeb.xcent"0#
-
-CTouch "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app"
-s307506267.471985
-e307506267.474748
-r1
-xTouch
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app
-lSLF07#2@114"Touch /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app307506267#307506267#0(0"0(0#0#0"8602744576#370"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb"    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixerWeb/build/Debug-iphoneos/iPadDrinkMixerWeb.app"0#
-
