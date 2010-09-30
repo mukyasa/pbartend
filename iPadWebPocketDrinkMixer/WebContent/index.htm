@@ -183,8 +183,15 @@
 		}else if($(obj).attr("id")=="create")
 		{
 			$("body").append("<div class='x-mask "+css_orientation+"_pos'><div class='loading'>Loading...</div></div>");
+			window.setTimeout("removeMask()",2000);
 		}
 		
+	}
+	
+	//removes loading mask
+	function removeMask(){
+		
+		$(".x-mask").remove();
 	}
 	
 	
