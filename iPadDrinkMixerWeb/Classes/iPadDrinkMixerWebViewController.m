@@ -8,6 +8,7 @@
 
 #import "iPadDrinkMixerWebViewController.h"
 
+
 @implementation iPadDrinkMixerWebViewController
 @synthesize webView;
 
@@ -27,7 +28,6 @@
 - (void)loadView { 
 }
 */
-
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
