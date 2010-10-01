@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h> 
 
+
 @class iPadDrinkMixerWebViewController;
 
 @interface iPadDrinkMixerWebAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     iPadDrinkMixerWebViewController *viewController;
 }
+
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet iPadDrinkMixerWebViewController *viewController;
