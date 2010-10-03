@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x
-PHONEGAP_LIB=$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/www/phonegap.js
+PHONEGAP_LIB=$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/www/js/phonegap.js
 
 cd $PROJECT_DIR/..
 [ -f Makefile ] || ./configure
