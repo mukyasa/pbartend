@@ -286,6 +286,23 @@ body {
 	-webkit-transition: all .5s ease-in-out;
 }
 
+.frontbutton{
+	background: url("../images/edit_button.png") no-repeat 0 0;
+	width:81px;
+	height:45px;
+	padding:100px;
+	margin:50px;
+}
+
+.backbutton{
+	background: url("../images/save_button.png") no-repeat 0 0;
+	width:81px;
+	height:45px;
+	padding:50px  100px 10px 10px;
+	float:right;
+	margin:50px;
+}
+
 /*** NAV ***/
 .subbuttons{
 	display:none;
