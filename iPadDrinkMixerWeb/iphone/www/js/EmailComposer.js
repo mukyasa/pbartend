@@ -20,7 +20,6 @@ EmailComposer.ComposeResultType =
 
 EmailComposer.prototype.showEmailComposer = function(subject,body,toRecipients,ccRecipients,bccRecipients,bIsHTML)
 {
-	$("#response").text("JS showEmailComposer Called - ");
 	var args = {};
 	if(toRecipients)
 		args.toRecipients = toRecipients;
