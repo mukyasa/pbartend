@@ -1,0 +1,46 @@
+.land .paper .front{
+	background: url(../images/paper.png) no-repeat 0 0;
+	background-size: 100% auto;
+}
+.land .paper .back{
+	background: url(../images/editpaper.png) no-repeat 0 0;
+	background-size: 100% auto;
+}
+.land #paper_wrapper{
+	top:45px;
+	left:450px;
+}
+.land .paper .front,.land .paper .back{
+	width:450px;
+	height:630px;
+}
+.land #wrapper,.land #button_block{
+	display:block !important;
+}
+.land #nav_post {
+	display:none;
+}
+.land #postcards{
+	background: url(../images/postcards.png) no-repeat 250px 50px;
+	width:1024px;
+	height:768px;
+	z-index: 2;
+}
+.land #list_frame{
+	width:320px;
+	height:410px;
+}
+
+.land #wrapper {
+	display:block;
+	background-color:#fff;
+}
+.land #list_wrapper{
+	display:block;
+	float:left;
+	width:100%;
+	background-color:#fff;
+	padding:0;
+	margin:0;
+}
+
