@@ -244,38 +244,38 @@ body {
 
 
 /****FLIP STYLE****/
+.flip-front{/*-webkit-transform: translateZ(0px) rotateY(-180deg);*/}
+.flip-back{-webkit-transform: translateZ(-1px) rotateY(180deg);}
+
 #paper_wrapper {
-	-webkit-perspective: 1000;
+	-webkit-perspective: 1500;
 	position: absolute;
-	z-index: 1;
+
+}
+ .paper .back {
+  -webkit-transform: translateZ(-1px) rotateY(180deg);
 }
 
-#paper_wrapper .face.front {
-	-webkit-transform: rotateY(0deg);
+.paper .front{
+    -webkit-transform: translateZ(0px) rotateX(0deg);
 }
 
-#paper_wrapper .face.back {
-	-webkit-transform: rotateY(180deg);
+.paper{
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: all .7s ease-in-out;
+}
+.paper .face{
+	position: absolute;
 	-webkit-box-sizing: border-box;
-}
 
-#paper_wrapper .face.front.flip {
-	-webkit-transform: rotateY(-180deg);
 }
-
-#paper_wrapper .face.back.flip {
-	-webkit-transform: rotateY(0deg);
-}
-
 .paper {
 	position: absolute;
-}
 
-.face {
-	position: absolute;
-	-webkit-backface-visibilty: hidden;
-	-webkit-transform-style: perserve-3d;
-	-webkit-transition: all .5s ease-in-out;
+}
+.page_content_wrapper{
+	padding:50px 50px 50px 100px;
+	
 }
 
 .frontbutton{
@@ -289,7 +289,6 @@ body {
 	background: url("../images/save_button.png") no-repeat 0 0;
 	width:81px;
 	height:45px;
-	margin:50px;
 	float:right;
 }
 
@@ -298,6 +297,15 @@ body {
 	width:71px;
 	height:43px;
 }
+
+#drink_photo{
+	background: url("../images/photo.png") no-repeat 0 0;
+	width:227px;
+	height:226px;
+	margin:-20px 0 0 -35px;
+}
+
+.hidden{display:none;}
 /*** NAV ***/
 .subbuttons{
 	display:none;
