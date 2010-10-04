@@ -50,7 +50,6 @@
 @property (nonatomic, retain) NSURL *invokedURL;
 
 - (id) getCommandInstance:(NSString*)className;
-- (void) javascriptAlert:(NSString*)text;
 - (BOOL) execute:(InvokedUrlCommand*)command;
 
 + (NSDictionary*)getBundlePlist:(NSString *)plistName;

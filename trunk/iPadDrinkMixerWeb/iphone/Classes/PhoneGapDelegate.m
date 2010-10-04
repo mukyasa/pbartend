@@ -212,7 +212,7 @@
 	}
 	else {
 		// There's no method to call, so throw an error.
-		NSLog(@"Class method '%@' not defined in class '%@'", fullMethodName, command.className);
+		//NSLog(@"Class method '%@' not defined in class '%@'", fullMethodName, command.className);
 		[NSException raise:NSInternalInconsistencyException format:@"Class method '%@' not defined against class '%@'.", fullMethodName, command.className];
 	}
 	[fullMethodName release];
@@ -223,23 +223,13 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-	NSLog(@"In handleOpenURL");
+	//NSLog(@"In handleOpenURL");
 	if (!url) { return NO; }
 	
-	NSLog(@"URL = %@", [url absoluteURL]);
+	//NSLog(@"URL = %@", [url absoluteURL]);
 	invokedURL = url;
 	
 	return YES;
-}
-
-/**
- * Sends Accel Data back to the Device.
- */
-- (void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-	NSString * jsCallBack = nil;
-	jsCallBack = [[NSString alloc] initWithFormat:@"var _accel={x:%f,y:%f,z:%f};", acceleration.x, acceleration.y, acceleration.z];
-	[webView stringByEvaluatingJavaScriptFromString:jsCallBack];
-    [jsCallBack release];
 }
 
 - (void)dealloc
