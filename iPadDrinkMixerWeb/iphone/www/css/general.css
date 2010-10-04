@@ -12,7 +12,7 @@ body {
     overflow: hidden !important;
 }
 #reload_page{
-	background: rgba(0,0,0,.3) url(../images/refresh.png) no-repeat 2px 3px;
+	background: rgba(0,0,0,.3) url("../images/refresh.png") no-repeat 2px 3px;
 	background-size: 90% auto;
 	width:30px;
 	height:30px;
@@ -52,10 +52,10 @@ body {
 }
 
 .list_fav_selected{
-	background:url(../images/list_fav_selected.png) no-repeat 0 14px;
+	background:url("../images/list_fav_selected.png") no-repeat 0 14px;
 }
 .list_fav{
-	background:url(../images/list_fav.png) no-repeat 0 14px;
+	background:url("../images/list_fav.png") no-repeat 0 14px;
 }
 .list_fav,.list_fav_selected{
 	width:21px;
@@ -148,7 +148,7 @@ body {
 	height:768px;
 }
 .loading {
-  background: rgba(0,0,0,.3) url(../images/loading.gif) center center no-repeat;
+  background: rgba(0,0,0,.3) url("../images/loading.gif") center center no-repeat;
   display: block;
   width: 200px;
   height: 50px;
@@ -236,7 +236,11 @@ body {
 	width: 222px;
 	margin-bottom: 5px;
 }
-
+.face{
+	font-family:button;
+	font-size:16px;
+	color:#773b20;
+}
 @font-face {
 	font-family: button;
 	src: url('TektonPro-Bold.otf');
@@ -273,42 +277,27 @@ body {
 	position: absolute;
 
 }
-.page_content_wrapper{
-	padding:50px 50px 50px 100px;
-	
-}
-
-.frontbutton{
-	background: url("../images/edit_button.png") no-repeat 0 0;
-	width:81px;
-	height:45px;
-	float:left;
-	
-}
-
-.backbutton{
-	background: url("../images/save_button.png") no-repeat 0 0;
-	width:81px;
-	height:45px;
-	float:right;
-}
-
-.list_email{
-	background:url(../images/email.png) no-repeat 0 0px;
-	width:71px;
-	height:43px;
-	float:right;
-}
-
-#drink_photo{
-	background: url("../images/photo.png") no-repeat 0 0;
-	width:227px;
-	height:226px;
-	margin:-20px 0 0 -35px;
-}
 
 .hidden{display:none;}
 /*** NAV ***/
 .subbuttons{
 	display:none;
 }
+
+/** DRINK TEXT **/
+
+#drink-photo{
+	float:left;
+}
+
+.drink-desc{
+	clear:both;
+}
+
+
+
+
+
+
+
+
