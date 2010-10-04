@@ -9,21 +9,22 @@
 #import <UIKit/UIKit.h>
 #import <CommonCrypto/CommonDigest.h>  
 #import <CommonCrypto/CommonCryptor.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface MD5_keycodeViewController : UIViewController {
+@interface MD5_keycodeViewController : UIViewController <MFMailComposeViewControllerDelegate> {
 
 	IBOutlet UIButton *keybutton;
 	IBOutlet UITextField *email;
-	IBOutlet UILabel *resultlbl;
+	IBOutlet UITextView *resultlbl;
 	
 }
 
-@property(nonatomic,retain) UILabel *resultlbl;
+@property(nonatomic,retain) UITextView *resultlbl;
 @property(nonatomic,retain) UIButton *keybutton;
 @property(nonatomic,retain) UITextField *email;
 -(IBAction)makekey;
 
 - (NSString *)uniqueIDFromString:(NSString *)source;
-
+- (void) showEmailComposer:(NSString *)body toRecipient:(NSString*)toRecipientsString;
 @end
 
