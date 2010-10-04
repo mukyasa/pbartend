@@ -85,4 +85,57 @@
 	width:100%;
 	height:100%;
 	display:block;
+	margin-top:-55px;
 }
+
+/* drink info text*/
+.port .frontbutton{
+	background: url("../images/edit_button.png") no-repeat 0 0;
+	width:81px;
+	height:45px;
+	float:left;
+	
+}
+
+.port .backbutton{
+	background: url("../images/save_button.png") no-repeat 0 0;
+	width:81px;
+	height:45px;
+	float:right;
+}
+
+.port .list_email{
+	background:url(../images/email.png) no-repeat 0 0px;
+	width:71px;
+	height:43px;
+	float:right;
+}
+.port .page_content_wrapper{
+	padding:50px 40px 50px 70px;
+	
+}
+.port .text-float-right{
+	height:266px;
+	margin:-20px 0;
+	margin-bottom:5px;
+	float:right;
+
+}
+.port #drink-photo{
+	background: url("../images/photo.png") no-repeat 0 0;
+	width:227px;
+	height:226px;
+	margin:-20px 20px 20px 0px;
+	float:left;
+}
+.port .drink-title{
+	font-size:28px;
+	width:100%;
+}
+
+.port .paper-button-block{
+	position:absolute;
+	top:630px;
+	width:500px;
+}
+
