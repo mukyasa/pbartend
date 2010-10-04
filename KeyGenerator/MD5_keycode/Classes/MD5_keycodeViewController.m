@@ -82,6 +82,7 @@
     [self presentModalViewController:picker animated:YES];
     [picker release];
 }
+
 - (NSString *)uniqueIDFromString:(NSString *)source
 {
 	CC_MD5_CTX md5;
