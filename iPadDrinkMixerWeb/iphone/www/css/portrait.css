@@ -21,7 +21,7 @@
 }
 
 .port #nav_post{
-	background:url(../images/post.png) no-repeat 0 0;
+	background:url("../images/post.png") no-repeat 0 0;
 	width:120px;
 	height:1024px;
 	position: absolute;
