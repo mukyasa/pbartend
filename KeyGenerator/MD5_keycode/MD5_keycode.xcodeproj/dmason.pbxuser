@@ -1,5 +1,12 @@
 // !$*UTF8*$!
 {
+	1D3623250D0F684500981E51 /* MD5_keycodeAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1040}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 2221}";
+		};
+	};
 	1D6058900D05DD3D006BFB54 /* MD5_keycode */ = {
 		activeExec = 0;
 		executables = (
@@ -9,21 +16,25 @@
 	28D7ACF60DDB3853001CB0EB /* MD5_keycodeViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1411, 840}}";
-			sepNavSelRange = "{449, 0}";
-			sepNavVisRange = "{0, 629}";
+			sepNavSelRange = "{743, 0}";
+			sepNavVisRange = "{0, 809}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* MD5_keycodeViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1411, 1989}}";
-			sepNavSelRange = "{2156, 0}";
-			sepNavVisRange = "{1256, 2042}";
+			sepNavIntBoundsRect = "{{0, 0}, {3449, 2067}}";
+			sepNavSelRange = "{3677, 0}";
+			sepNavVisRange = "{1054, 1720}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 7132D17C125A305D00A3CA9A /* MD5_keycode */;
+		activeSDKPreference = iphoneos4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* MD5_keycode */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* MD5_keycode */,
+		);
 		breakpoints = (
 		);
 		codeSenseManager = 7132D187125A307C00A3CA9A /* Code sense */;
@@ -62,7 +73,7 @@
 					20,
 					1233,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -77,18 +88,57 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 307900509;
-			PBXWorkspaceStateSaveDate = 307900509;
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					1209,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 307904551;
+			PBXWorkspaceStateSaveDate = 307904551;
 		};
 		perUserProjectItems = {
-			7132D1BD125A354D00A3CA9A /* PBXTextBookmark */ = 7132D1BD125A354D00A3CA9A /* PBXTextBookmark */;
-			7132D1DE125A388700A3CA9A /* PBXTextBookmark */ = 7132D1DE125A388700A3CA9A /* PBXTextBookmark */;
-			7132D1DF125A388700A3CA9A /* PBXTextBookmark */ = 7132D1DF125A388700A3CA9A /* PBXTextBookmark */;
-			7132D1E9125A391000A3CA9A /* PBXTextBookmark */ = 7132D1E9125A391000A3CA9A /* PBXTextBookmark */;
+			7115BA8D125A3F8C0022FDF9 = 7115BA8D125A3F8C0022FDF9 /* PBXTextBookmark */;
+			7132D1DE125A388700A3CA9A = 7132D1DE125A388700A3CA9A /* PBXTextBookmark */;
+			71ACEF08125A43D200E46C9B /* PBXTextBookmark */ = 71ACEF08125A43D200E46C9B /* PBXTextBookmark */;
+			71ACEF09125A43D200E46C9B /* PBXBookmark */ = 71ACEF09125A43D200E46C9B /* PBXBookmark */;
+			71ACEF0A125A43D200E46C9B /* PBXBookmark */ = 71ACEF0A125A43D200E46C9B /* PBXBookmark */;
+			71ACEF0B125A43D200E46C9B /* PBXTextBookmark */ = 71ACEF0B125A43D200E46C9B /* PBXTextBookmark */;
+			71D5C21D125A3BD100F57EB2 = 71D5C21D125A3BD100F57EB2 /* PBXTextBookmark */;
+			71D5C2B2125A3EBA00F57EB2 = 71D5C2B2125A3EBA00F57EB2 /* PBXTextBookmark */;
+			71D5C2C4125A3F4A00F57EB2 = 71D5C2C4125A3F4A00F57EB2 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 7132D186125A307C00A3CA9A /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	7115BA8D125A3F8C0022FDF9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MD5_keycodeViewController.m */;
+		name = "MD5_keycodeViewController.m: 24";
+		rLen = 0;
+		rLoc = 667;
+		rType = 0;
+		vrLen = 2040;
+		vrLoc = 2148;
 	};
 	7132D17C125A305D00A3CA9A /* MD5_keycode */ = {
 		isa = PBXExecutable;
@@ -128,7 +178,7 @@
 		isSCMEnabled = 0;
 		scmConfiguration = {
 			repositoryNamesForRoots = {
-				"" = "";
+				"" = Google;
 			};
 		};
 	};
@@ -142,21 +192,6 @@
 		name = CommonDigest.h;
 		path = /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/CommonCrypto/CommonDigest.h;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1411, 3536}}";
-			sepNavSelRange = "{3659, 249}";
-			sepNavVisRange = "{2659, 2093}";
-		};
-	};
-	7132D1BD125A354D00A3CA9A /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF60DDB3853001CB0EB /* MD5_keycodeViewController.h */;
-		name = "MD5_keycodeViewController.h: 21";
-		rLen = 0;
-		rLoc = 449;
-		rType = 0;
-		vrLen = 629;
-		vrLoc = 0;
 	};
 	7132D1DE125A388700A3CA9A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -168,24 +203,75 @@
 		vrLen = 2093;
 		vrLoc = 2659;
 	};
-	7132D1DF125A388700A3CA9A /* PBXTextBookmark */ = {
+	71ACEF08125A43D200E46C9B /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* MD5_keycodeViewController.m */;
-		name = "MD5_keycodeViewController.m: 86";
-		rLen = 13;
-		rLoc = 2119;
-		rType = 0;
-		vrLen = 1796;
-		vrLoc = 940;
-	};
-	7132D1E9125A391000A3CA9A /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* MD5_keycodeViewController.m */;
-		name = "MD5_keycodeViewController.m: 86";
+		name = "MD5_keycodeViewController.m: 129";
 		rLen = 0;
-		rLoc = 2156;
+		rLoc = 3677;
 		rType = 0;
-		vrLen = 2042;
-		vrLoc = 1256;
+		vrLen = 1720;
+		vrLoc = 1054;
+	};
+	71ACEF09125A43D200E46C9B /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 71ACEF02125A408100E46C9B /* icon.png */;
+	};
+	71ACEF0A125A43D200E46C9B /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 71ACEF19125A43D200E46C9B /* project.pbxproj */;
+	};
+	71ACEF0B125A43D200E46C9B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71ACEF0C125A43D200E46C9B /* project.pbxproj */;
+		name = "project.pbxproj: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 5053;
+		vrLoc = 0;
+	};
+	71ACEF0C125A43D200E46C9B /* project.pbxproj */ = {
+		isa = PBXFileReference;
+		name = project.pbxproj;
+		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/MD5_keycode/MD5_keycode.xcodeproj/project.pbxproj;
+		sourceTree = "<absolute>";
+	};
+	71ACEF19125A43D200E46C9B /* project.pbxproj */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.pbxproject;
+		name = project.pbxproj;
+		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/MD5_keycode/MD5_keycode.xcodeproj/project.pbxproj;
+		sourceTree = "<absolute>";
+	};
+	71D5C21D125A3BD100F57EB2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MD5_keycodeAppDelegate.m */;
+		name = "MD5_keycodeAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2221;
+		vrLoc = 0;
+	};
+	71D5C2B2125A3EBA00F57EB2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* MD5_keycodeViewController.h */;
+		name = "MD5_keycodeViewController.h: 28";
+		rLen = 0;
+		rLoc = 743;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 0;
+	};
+	71D5C2C4125A3F4A00F57EB2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MD5_keycodeViewController.m */;
+		name = "MD5_keycodeViewController.m: 24";
+		rLen = 0;
+		rLoc = 667;
+		rType = 0;
+		vrLen = 1704;
+		vrLoc = 349;
 	};
 }
