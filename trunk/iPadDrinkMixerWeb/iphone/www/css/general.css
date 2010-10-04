@@ -3,7 +3,7 @@ body {
 	padding: 0;
 	margin: 0;
 	background-size: 100% auto;
-	background-origin: content
+	background-origin: content;
 }
 #Home{
 	float:left;
@@ -50,15 +50,7 @@ body {
 	display: block; 
 	vertical-align: middle;
 }
-.list_email{
-	background:url(../images/list_email.png) no-repeat 0 18px;
-	width:24px;
-	height:13px;
-	float:right;
-	margin-left:10px;
-	padding:18px 10px 11px 0px;
-	display: block;
-}
+
 .list_fav_selected{
 	background:url(../images/list_fav_selected.png) no-repeat 0 14px;
 }
@@ -290,19 +282,22 @@ body {
 	background: url("../images/edit_button.png") no-repeat 0 0;
 	width:81px;
 	height:45px;
-	padding:100px;
-	margin:50px;
+	
 }
 
 .backbutton{
 	background: url("../images/save_button.png") no-repeat 0 0;
 	width:81px;
 	height:45px;
-	padding:50px  100px 10px 10px;
-	float:right;
 	margin:50px;
+	float:right;
 }
 
+.list_email{
+	background:url(../images/email.png) no-repeat 0 0px;
+	width:71px;
+	height:43px;
+}
 /*** NAV ***/
 .subbuttons{
 	display:none;
