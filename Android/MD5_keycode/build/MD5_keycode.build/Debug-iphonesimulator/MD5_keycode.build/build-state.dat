@@ -1,270 +1,0 @@
-TMD5_keycode
-v7
-r0
-t307902653.546983
-cCheck dependencies
-cProcessInfoPlistFile /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/Info.plist MD5_keycode-Info.plist
-cCompileXIB /Users/dmason/Desktop/MD5_keycode/MainWindow.xib
-cCompileXIB /Users/dmason/Desktop/MD5_keycode/MD5_keycodeViewController.xib
-cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MD5_keycode_Prefix-fapxlqthvhelnwfonkqcizzecezl/MD5_keycode_Prefix.pch.gch MD5_keycode_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/main.o /Users/dmason/Desktop/MD5_keycode/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycodeAppDelegate.o /Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycodeViewController.o /Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode normal i386
-cGenerateDSYMFile /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app.dSYM /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode
-cTouch /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
-c000000004CA2B3940000000000000110
-t1285731220
-s272
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004C99BDBC000000000029B310
-t1285143996
-s2732816
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004C99BE55000000000029D5D0
-t1285144149
-s2741712
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004C99BE3E0000000000001466
-t1285144126
-s5222
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004C99C5250000000000000AA1
-t1285145893
-s2721
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004C99C5B40000000000744330
-t1285146036
-s7619376
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/CommonCrypto/CommonCryptor.h
-c000000004A11E8210000000000005AF2
-t1242687521
-s23282
-
-N/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/CommonCrypto/CommonDigest.h
-c000000004A11E8210000000000002407
-t1242687521
-s9223
-
-N/Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeAppDelegate.h
-c000000004CA9F8DD00000000000001EA
-t1286207709
-s490
-i<UIKit/UIKit.h>
-
-N/Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeAppDelegate.m
-c000000004CA9F8DD0000000000000A92
-t1286207709
-s2706
-i"MD5_keycodeAppDelegate.h"
-i"MD5_keycodeViewController.h"
-
-N/Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeViewController.h
-c000000004CA9FDC40000000000000275
-t1286208964
-s629
-i<UIKit/UIKit.h>
-i<CommonCrypto/CommonDigest.h>
-i<CommonCrypto/CommonCryptor.h>
-
-N/Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeViewController.m
-c000000004CAA01380000000000000FBD
-t1286209848
-s4029
-i"MD5_keycodeViewController.h"
-i<CommonCrypto/CommonDigest.h>
-i<CommonCrypto/CommonCryptor.h>
-
-N/Users/dmason/Desktop/MD5_keycode/MD5_keycodeViewController.xib
-c000000004CA9FDD70000000000006102
-t1286208983
-s24834
-
-N/Users/dmason/Desktop/MD5_keycode/MD5_keycode_Prefix.pch
-c000000004CA9F8DD00000000000000BF
-t1286207709
-s191
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/dmason/Desktop/MD5_keycode/MainWindow.xib
-c000000004CA9F8DD0000000000004E59
-t1286207709
-s20057
-
-N/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app
-t1286209849
-s238
-
-N/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app.dSYM
-t1286209849
-s102
-
-N/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/Info.plist
-t1286207736
-s607
-
-N/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode
-t1286209849
-s19204
-
-N/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycodeViewController.nib
-t1286208988
-s2246
-
-N/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MainWindow.nib
-t1286207737
-s1131
-
-N/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/PkgInfo
-t1286207736
-s8
-
-N/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycode.LinkFileList
-c000000004CA9F8F8000000000000019E
-t1286207736
-s414
-
-N/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycodeAppDelegate.o
-t1286208988
-s51240
-
-N/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycodeViewController.o
-t1286209849
-s45732
-
-N/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/main.o
-t1286207738
-s6368
-
-N/Users/dmason/Desktop/MD5_keycode/main.m
-c000000004CA9F8DD0000000000000160
-t1286207709
-s352
-i<UIKit/UIKit.h>
-
-N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MD5_keycode_Prefix-fapxlqthvhelnwfonkqcizzecezl/MD5_keycode_Prefix.pch.gch
-t1286207738
-s15445200
-
-NMD5_keycode-Info.plist
-c000000004CA9F8DD000000000000038D
-t1286207709
-s909
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies307902653#307902653#0(0"0(0#1#0"8599990400#0"0#
-
-CCompileC build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycodeAppDelegate.o /Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s307901788.186142
-e307901788.278662
-r1
-xCompileC
-xbuild/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycodeAppDelegate.o
-x/Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@74"Compile /Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeAppDelegate.m307901788#307901788#0(0"0(0#0#66"/Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeAppDelegate.m8600412736#2066"    cd /Users/dmason/Desktop/MD5_keycode    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-generated-files.hmap -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-own-target-headers.hmap -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-all-target-headers.hmap -iquote /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-project-headers.hmap -F/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator -I/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/include -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/DerivedSources/i386 -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MD5_keycode_Prefix-fapxlqthvhelnwfonkqcizzecezl/MD5_keycode_Prefix.pch -c /Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeAppDelegate.m -o /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycodeAppDelegate.o0#
-
-CCompileC build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycodeViewController.o /Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s307902648.873977
-e307902649.020316
-r1
-xCompileC
-xbuild/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycodeViewController.o
-x/Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@77"Compile /Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeViewController.m307902648#307902649#0(0"0(0#0#69"/Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeViewController.m8604092384#2072"    cd /Users/dmason/Desktop/MD5_keycode    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-generated-files.hmap -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-own-target-headers.hmap -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-all-target-headers.hmap -iquote /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-project-headers.hmap -F/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator -I/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/include -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/DerivedSources/i386 -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MD5_keycode_Prefix-fapxlqthvhelnwfonkqcizzecezl/MD5_keycode_Prefix.pch -c /Users/dmason/Desktop/MD5_keycode/Classes/MD5_keycodeViewController.m -o /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycodeViewController.o0#
-
-CCompileC build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/main.o /Users/dmason/Desktop/MD5_keycode/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s307900538.229387
-e307900538.318160
-r1
-xCompileC
-xbuild/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/main.o
-x/Users/dmason/Desktop/MD5_keycode/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@48"Compile /Users/dmason/Desktop/MD5_keycode/main.m307900538#307900538#0(0"0(0#0#40"/Users/dmason/Desktop/MD5_keycode/main.m8616698816#2022"    cd /Users/dmason/Desktop/MD5_keycode    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-generated-files.hmap -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-own-target-headers.hmap -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-all-target-headers.hmap -iquote /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-project-headers.hmap -F/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator -I/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/include -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/DerivedSources/i386 -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/DerivedSources -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MD5_keycode_Prefix-fapxlqthvhelnwfonkqcizzecezl/MD5_keycode_Prefix.pch -c /Users/dmason/Desktop/MD5_keycode/main.m -o /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/main.o0#
-
-CCompileXIB /Users/dmason/Desktop/MD5_keycode/MD5_keycodeViewController.xib
-s307901787.762558
-e307901788.185862
-r1
-xCompileXIB
-x/Users/dmason/Desktop/MD5_keycode/MD5_keycodeViewController.xib
-lSLF07#2@40"CompileXIB MD5_keycodeViewController.xib307901787#307901788#0(0"0(0#0#63"/Users/dmason/Desktop/MD5_keycode/MD5_keycodeViewController.xib8603069984#665"    cd /Users/dmason/Desktop/MD5_keycode    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycodeViewController.nib /Users/dmason/Desktop/MD5_keycode/MD5_keycodeViewController.xib --sdk /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCompileXIB /Users/dmason/Desktop/MD5_keycode/MainWindow.xib
-s307900536.946302
-e307900537.375822
-r1
-xCompileXIB
-x/Users/dmason/Desktop/MD5_keycode/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib307900536#307900537#0(0"0(0#0#48"/Users/dmason/Desktop/MD5_keycode/MainWindow.xib8615628320#635"    cd /Users/dmason/Desktop/MD5_keycode    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MainWindow.nib /Users/dmason/Desktop/MD5_keycode/MainWindow.xib --sdk /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CGenerateDSYMFile /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app.dSYM /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode
-s307902649.046099
-e307902649.060382
-r1
-xGenerateDSYMFile
-x/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app.dSYM
-x/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode
-lSLF07#2@121"GenerateDSYMFile build/Debug-iphonesimulator/MD5_keycode.app.dSYM build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode307902649#307902649#0(0"0(0#0#89"/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode8619000928#437"    cd /Users/dmason/Desktop/MD5_keycode    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/usr/bin/dsymutil /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode -o /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app.dSYM0#
-
-CLd /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode normal i386
-s307902649.020403
-e307902649.045999
-r1
-xLd
-x/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode
-xnormal
-xi386
-lSLF07#2@94"Link /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode307902649#307902649#0(0"0(0#0#0"8615869184#971"    cd /Users/dmason/Desktop/MD5_keycode    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator -F/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator -filelist /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/Objects-normal/i386/MD5_keycode.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/MD5_keycode0#
-
-CProcessInfoPlistFile /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/Info.plist MD5_keycode-Info.plist
-s307900536.942100
-e307900536.946236
-r1
-xProcessInfoPlistFile
-x/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/Info.plist
-xMD5_keycode-Info.plist
-lSLF07#2@30"Process MD5_keycode-Info.plist307900536#307900536#0(0"0(0#0#56"/Users/dmason/Desktop/MD5_keycode/MD5_keycode-Info.plist8616300992#514"    cd /Users/dmason/Desktop/MD5_keycode    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility MD5_keycode-Info.plist -genpkginfo /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app/Info.plist0#
-
-CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MD5_keycode_Prefix-fapxlqthvhelnwfonkqcizzecezl/MD5_keycode_Prefix.pch.gch MD5_keycode_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s307900537.389696
-e307900538.229249
-r1
-xProcessPCH
-x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MD5_keycode_Prefix-fapxlqthvhelnwfonkqcizzecezl/MD5_keycode_Prefix.pch.gch
-xMD5_keycode_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@33"Precompile MD5_keycode_Prefix.pch307900537#307900538#0(0"0(0#0#56"/Users/dmason/Desktop/MD5_keycode/MD5_keycode_Prefix.pch8616198080#1915"    cd /Users/dmason/Desktop/MD5_keycode    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-generated-files.hmap -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-own-target-headers.hmap -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-all-target-headers.hmap -iquote /Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/MD5_keycode-project-headers.hmap -F/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator -I/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/include -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/DerivedSources/i386 -I/Users/dmason/Desktop/MD5_keycode/build/MD5_keycode.build/Debug-iphonesimulator/MD5_keycode.build/DerivedSources -c /Users/dmason/Desktop/MD5_keycode/MD5_keycode_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/MD5_keycode_Prefix-fapxlqthvhelnwfonkqcizzecezl/MD5_keycode_Prefix.pch.gch0#
-
-CTouch /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app
-s307902649.060468
-e307902649.062796
-r1
-xTouch
-x/Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app
-lSLF07#2@83"Touch /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app307902649#307902649#0(0"0(0#0#0"8604187712#310"    cd /Users/dmason/Desktop/MD5_keycode    setenv PATH "/Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dmason/Desktop/MD5_keycode/build/Debug-iphonesimulator/MD5_keycode.app0#
-
