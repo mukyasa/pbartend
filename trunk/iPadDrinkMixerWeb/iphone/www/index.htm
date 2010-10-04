@@ -116,16 +116,14 @@
 		$(".frontbutton").bind("touchend",function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			//flip paper
-			$("#paper_wrapper .front").addClass("flip");
-			$("#paper_wrapper .back").addClass("flip");
+			$("#paper_wrapper .paper").addClass("flip-back").removeClass("flip-front");
 			
 		});
 		
 		$(".backbutton").bind("touchend",function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			//flip paper back
-			$("#paper_wrapper .front").removeClass("flip");
-			$("#paper_wrapper .back").removeClass("flip");
+			$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 		});
 		
 		var orientation; //leave after scroll
@@ -310,19 +308,26 @@
 <!-- PAPER -->
 <div id="paper_wrapper">
 	<div class="paper">
-		<div class="face front">
-			<div class="page_content_wrapper">
-			<div class="frontbutton flipbutton"></div>
-			<div class="list_email"></div>
-			</div>
-		</div>
-		
 		<div class="face back">
 			<div class="page_content_wrapper">
-				<div class="backbutton flipbutton">
+				<div class="backbutton flipbutton"></div>
 			</div>
 		</div>
+		<div class="face front">
+			<div class="page_content_wrapper">
+			<div id="drink_photo"></div>
+			<div class="drink_title"></div>
+			<div class="drink_ings"></div>
+			<div class="drink_desc"></div>
+			<table cellspacing="0" cellpadding="0" border="0" class="paper_table">
+			<tr>
+			<td><div class="frontbutton flipbutton"></div></td>
+			<td align="right"><div class="list_email"></div></td>
+			</tr>
+			</table>
+			</div>
 		</div>
+
 	</div>
 </div>
 </span>
