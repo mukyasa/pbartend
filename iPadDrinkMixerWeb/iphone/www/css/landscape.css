@@ -102,7 +102,6 @@
 
 .land .drink-ings,.land .drink-desc{
 	font-size:13px !important;
-	overflow:auto;
 }
 .land .drink-title{
 	font-size:20px;
@@ -117,9 +116,15 @@
 	top:470px;
 	width:370px;
 }
+.land .ing-wrapper {
+	width:183px !important;
+}
 /** EDIT TEXT **/
-.land #ing-wrapper {
-	height: 110px;
+.land .edit-ing-wrapper{
+	height:110px !important;
+}
+.land .ing-wrapper {
+	height: 140px;
 
 }
 .land .edit-drink-title{
