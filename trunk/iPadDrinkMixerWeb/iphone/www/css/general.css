@@ -11,6 +11,7 @@ body {
 .x-masked {
     overflow: hidden !important;
 }
+
 #reload_page{
 	background: rgba(0,0,0,.3) url("../images/refresh.png") no-repeat 2px 3px;
 	background-size: 90% auto;
@@ -26,7 +27,7 @@ body {
 	position: absolute;
 	z-index: 3;
 	width: 320px;
-	height: 440px;
+	height: 460px;
 	overflow: auto;
 	top:308px;
 	left:0px;
@@ -37,7 +38,7 @@ body {
 /***** LIST ********/
 
 .list_item {
-	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 	padding: 5px 10px 15px 10px;
 	height:35px;
 	list-style: none;
