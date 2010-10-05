@@ -75,6 +75,7 @@
 
 		$(".button,.sm_button,.fav_button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
 		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
+	
 		
 		
 		/**************** list list buttons **************/
@@ -132,6 +133,7 @@
 			$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 		});
 		
+		/********* SET ORIENTATION ******************/
 		var orientation; //leave after scroll
 		if (window.innerWidth > window.innerHeight)
 		{

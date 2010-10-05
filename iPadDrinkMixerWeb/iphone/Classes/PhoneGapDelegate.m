@@ -54,7 +54,7 @@
 
 	[window addSubview:viewController.view];
 
-    NSURL *appURL        = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"htm" inDirectory:@"www"]];
+    NSURL *appURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"htm" inDirectory:@"www"]];
     NSURLRequest *appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
 	[webView loadRequest:appReq];
 
@@ -63,6 +63,7 @@
 	[image release];
 	
     imageView.tag = 1;
+	
 	[window addSubview:imageView];
 	[imageView release];
 	
@@ -91,7 +92,7 @@
     }
 
 	
-    NSLog(@"Device initialization: %@", result);
+    //NSLog(@"Device initialization: %@", result);
     [theWebView stringByEvaluatingJavaScriptFromString:result];
 	[result release];
 
@@ -121,12 +122,17 @@
 	/*
 	 * Hide the Top Activity THROBER in the Battery Bar
 	 */
-	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-	activityView.hidden = YES;	
+	//[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	//activityView.hidden = YES;	
 
-	imageView.hidden = YES;
+	//imageView.hidden = YES;
+	
+	viewController.view.bounds = CGRectMake(0,0,768,1044);
+	[UIApplication sharedApplication].statusBarHidden = YES;
+	
 	
 	[window bringSubviewToFront:viewController.view];
+	
 	webView = theWebView; 	
 }
 
