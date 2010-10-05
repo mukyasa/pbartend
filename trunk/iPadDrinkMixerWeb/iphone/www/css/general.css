@@ -24,7 +24,7 @@ body {
 }
 #wrapper {
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	width: 320px;
 	height: 440px;
 	overflow: auto;
@@ -32,6 +32,7 @@ body {
 	left:0px;
 	border:2px solid #000;
 }
+
 
 /***** LIST ********/
 
@@ -252,7 +253,7 @@ body {
 .flip-back{-webkit-transform: translateZ(-1px) rotateY(180deg);}
 
 #paper_wrapper {
-	-webkit-perspective: 100;
+	-webkit-perspective: 1000;
 	position: absolute;
 
 }
@@ -305,8 +306,18 @@ body {
 	 -webkit-border-radius: 4px;
 	padding:7px 5px  4px  8px;
 	 margin-bottom:3px;
+	list-style:none;
 
 }
+#ing-wrapper {
+	position: relative;
+	width:100%;
+	height: 176px;
+	overflow: auto;
+	padding:0;
+
+}
+#ing-items-wrapper{padding:0;margin:0}
 
 
 
