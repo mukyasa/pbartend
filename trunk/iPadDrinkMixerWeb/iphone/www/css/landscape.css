@@ -73,14 +73,14 @@
 }
 
 .land .page_content_wrapper{
-	padding:50px 40px 40px 50px;
+	padding:50px 25px 40px 50px;
 	
 }
 .land .text-float-right{
 	height:176px;
-	margin:-25px 0;
+	margin:-25px 0 0 10px;
 	font-size:14px;
-	float:right;
+	float:left;
 	margin-bottom:15px;
 	
 }
@@ -108,15 +108,22 @@
 	width:370px;
 }
 /** EDIT TEXT **/
+.land .edit-drink-title{
+	font-size:16px;
+	width:165px;
+}
 .land #edit-drink-photo{
-	margin-left:-20px;
+	margin-left:0px;
 }
 
-.land .edit-paper-button-block .backbutton{
-	margin-right:40px;
-}
 .land .edit-paper-button-block{
-	top:550px;
-	
+	top:550px;	
+}
+.land .edit-drink-desc{
+	width:365px;
+	height:300px;
+}
+.land .edit-page_content_wrapper{
+	padding:50px 40px 50px 30px; !important;
 }
 

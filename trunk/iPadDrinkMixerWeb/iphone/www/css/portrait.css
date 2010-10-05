@@ -115,7 +115,7 @@
 	height:266px;
 	margin:-20px 0;
 	margin-bottom:5px;
-	float:right;
+	float:left;
 }
 .port #drink-photo,.port #edit-drink-photo{
 	background: url("../images/photo.png") no-repeat 0 0;
@@ -137,19 +137,23 @@
 
 /** EDIT VIEW **/
 .port #edit-drink-photo{
-	margin-left:-35px;
+	margin-left:-5px;
 }
 .port .edit-drink-title{
 	font-size:16px;
+	width:225px;
 }
 .port .edit-drink-desc{
-	width:450px;
+	width:480px;
 	height:400px;
 }
 .port .edit-paper-button-block div{
-	padding-right:40px;
+	padding-right:35px;
 }
 .port .edit-paper-button-block{
 	top:720px;
 	
+}
+.port .edit-page_content_wrapper{
+	padding:50px 40px 50px 40px; !important;
 }
