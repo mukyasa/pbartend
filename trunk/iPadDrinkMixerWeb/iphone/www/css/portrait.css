@@ -7,8 +7,6 @@
 .port #paper_wrapper{
 	top:100px;
 	left:440px;
-	width:600px;
-	height:830px;
 }
 .port .paper .front,.port .paper .back{
 	width:600px;
@@ -111,17 +109,15 @@
 	float:right;
 }
 .port .page_content_wrapper{
-	padding:50px 40px 50px 70px;
-	
+	padding:50px 40px 50px 70px;	
 }
 .port .text-float-right{
 	height:266px;
 	margin:-20px 0;
 	margin-bottom:5px;
 	float:right;
-
 }
-.port #drink-photo{
+.port #drink-photo,.port #edit-drink-photo{
 	background: url("../images/photo.png") no-repeat 0 0;
 	width:227px;
 	height:226px;
@@ -139,3 +135,21 @@
 	width:500px;
 }
 
+/** EDIT VIEW **/
+.port #edit-drink-photo{
+	margin-left:-35px;
+}
+.port .edit-drink-title{
+	font-size:16px;
+}
+.port .edit-drink-desc{
+	width:450px;
+	height:400px;
+}
+.port .edit-paper-button-block div{
+	padding-right:40px;
+}
+.port .edit-paper-button-block{
+	top:720px;
+	
+}
