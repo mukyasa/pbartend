@@ -142,7 +142,9 @@
 }
 
 /** EDIT VIEW **/
-
+.port .edit-ing-wrapper{
+	height: 176px !important;
+}
 .port #edit-drink-photo{
 	margin-left:-5px;
 }
