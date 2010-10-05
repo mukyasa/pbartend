@@ -210,7 +210,7 @@ body {
 }
 .sm_button{
 	background: url("../images/sm_button.png") no-repeat 0 0;
-	padding: 12px 0 12px 0;
+	padding: 13px 0 0px 0;
 	font-size: 16px;
 	margin: 0;
 	list-style: none;
@@ -218,7 +218,7 @@ body {
 	color: #134926;
 	font-family: button;
 	width: 110px;
-	margin-bottom: 5px; 
+	height:36px;
 }
 .fav_button{
 	background: url("../images/fav_button.png") no-repeat 0 0;
@@ -228,7 +228,7 @@ body {
 }
 .button,.fav_button {
 	clear:both;
-	padding: 10px 0 10px 0;
+	padding: 10px 0 0px 0;
 	font-size: 18px;
 	margin: 0;
 	list-style: none;
@@ -236,7 +236,34 @@ body {
 	color: #134926;
 	font-family: button;
 	width: 222px;
-	margin-bottom: 5px;
+	height:36px;
+}
+.button-chevron{
+	background: url("../images/chevron.png") no-repeat center right !important;
+	float:right;
+	height:20px;
+	width:25px;
+}
+.button-chevron-back{
+	background: url("../images/chevron_l.png") no-repeat 0 -2px;
+	float:left;
+	height:20px;
+	width:25px;
+	margin-left:15px;
+}
+.sm-button-chevron-back{
+	background-position:0 -3px  !important;
+}
+.button-cheveron-back-text,.button-cheveron-back-text{
+	float:right;
+	margin-right:90px;
+}
+.sm-button-cheveron-back-text{
+	margin-right:35px;
+}
+.button-cheveron-text{
+	float:left;
+	margin-left:40px;
 }
 .face{
 	font-family:button;
@@ -298,6 +325,7 @@ body {
 .add-new-ing{
 	background:#efefef url("../images/chevron.png") no-repeat center right !important;
 }
+
 .edit-ing{
 	background:#fff url("../images/delete.png") no-repeat center right;
 	border:1px solid #ccc;
