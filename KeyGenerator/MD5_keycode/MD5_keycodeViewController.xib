@@ -95,6 +95,7 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
+						<int key="IBUIClearButtonMode">3</int>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
@@ -204,7 +205,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>MD5_keycodeViewController</string>
 					<string>UIResponder</string>
-					<string>{{916, 419}, {320, 480}}</string>
+					<string>{{656, 314}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
