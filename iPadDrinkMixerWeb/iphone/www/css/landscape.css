@@ -118,6 +118,10 @@
 	width:370px;
 }
 /** EDIT TEXT **/
+.land #ing-wrapper {
+	height: 110px;
+
+}
 .land .edit-drink-title{
 	font-size:16px;
 	width:165px;
