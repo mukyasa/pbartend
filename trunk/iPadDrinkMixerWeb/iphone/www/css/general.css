@@ -254,7 +254,7 @@ body {
 .flip-back{-webkit-transform: translateZ(-1px) rotateY(180deg);}
 
 #paper_wrapper {
-	-webkit-perspective: 1000;
+	-webkit-perspective: 2000;
 	position: absolute;
 
 }
@@ -268,7 +268,7 @@ body {
 
 .paper{
 	-webkit-transform-style: preserve-3d;
-	-webkit-transition: all .7s ease-in-out;
+	-webkit-transition: all .8s ease-in-out;
 }
 .paper .face{
 	position: absolute;
