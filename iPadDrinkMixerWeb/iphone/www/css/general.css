@@ -66,7 +66,7 @@ body {
 }
 /****** GLASSES *******/
 .champ{
-	background:url(../images/glasses/champ.png) no-repeat 0 0;
+	background:url("../images/glasses/champ.png") no-repeat 0 0;
 }
 .cocktail{
 	background:url(../images/glasses/cocktail.png) no-repeat 0 0;
@@ -295,8 +295,17 @@ body {
 }
 
 /** EDIT ***/
+.add-new-ing{
+
+	background:#efefef url("../images/chevron.png") no-repeat center right !important;
+}
 .edit-ing{
-	background:url("../images/") no-repeat 0 0;
+	background:#fff url("../images/delete.png") no-repeat center right;
+	border:1px solid #ccc;
+	 -webkit-border-radius: 4px;
+	padding:7px 5px  4px  8px;
+	 margin-bottom:3px;
+
 }
 
 
