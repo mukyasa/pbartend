@@ -125,6 +125,12 @@
 			$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 		});
 		
+		$(".cancelbutton").bind("touchend",function(e){
+			e.preventDefault();//prevent copy and mag from showing
+			//flip paper back
+			$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+		});
+		
 		var orientation; //leave after scroll
 		if (window.innerWidth > window.innerHeight)
 		{
@@ -328,6 +334,7 @@
 			</textarea>
 			<div class="paper-button-block edit-paper-button-block">
 				<div class="backbutton flipbutton"></div>
+				<div class="cancelbutton flipbutton"></div>
 			</div>				
 			</div>
 		</div>

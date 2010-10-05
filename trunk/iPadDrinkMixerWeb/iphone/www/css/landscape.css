@@ -55,7 +55,14 @@
 	background-size: 100% auto;
 	
 }
-
+.land .cancelbutton{
+	background: url("../images/cancel_button.png") no-repeat 0 0;
+	width:63px;
+	height:35px;
+	float:right;
+	margin-right:10px;
+	background-size: 100% auto;
+}
 .land .backbutton{
 	background: url("../images/save_button.png") no-repeat 0 0;
 	width:63px;
