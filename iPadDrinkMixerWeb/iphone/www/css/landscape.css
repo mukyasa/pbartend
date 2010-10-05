@@ -93,15 +93,18 @@
 	float:left;
 }
 
-.land .drink-ings,.land .drink_desc{
-	font-size:13px;
+.land .drink-ings,.land .drink-desc{
+	font-size:13px !important;
+	overflow:auto;
 }
 .land .drink-title{
 	font-size:20px;
 	width:100%;
 
 }
-
+.land .drink-desc{
+	height:250px;
+}
 .land .paper-button-block{
 	position:absolute;
 	top:470px;
