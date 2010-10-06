@@ -119,23 +119,11 @@
  Called when the webview finishes loading.  This stops the activity view and closes the imageview
  */
 - (void)webViewDidFinishLoad:(UIWebView *)theWebView {
-	/*
-	 * Hide the Top Activity THROBER in the Battery Bar
-	 */
-	//[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-	//activityView.hidden = YES;	
 
-	//imageView.hidden = YES;
-	
-	viewController.view.bounds = CGRectMake(0,0,768,1044);
-	[UIApplication sharedApplication].statusBarHidden = YES;
-	
-	
 	[window bringSubviewToFront:viewController.view];
 	
 	webView = theWebView; 	
 }
-
 
 /**
  * Fail Loading With Error
