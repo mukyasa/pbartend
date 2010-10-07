@@ -1,0 +1,57 @@
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"> </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+    
+        $('#refreshButton').click(function() {
+            var requestUrl = "rest/sum/?firstNumber=" + $('#firstNumber').val() + "&secondNumber=" + $('#secondNumber').val();
+           // console.log(requestUrl); //firebug console output
+            $.getJSON(requestUrl,
+            function(data) {
+              //  console.log(this.data); //firebug console output
+                $("#firstNumberData").text(data.firstNumber);
+                $("#secondNumberData").text(data.secondNumber);
+                $("#totalData").text(data.total);
+            });
+        });
+        
+    });
+</script>
+
+
+<div style="width:400px;font-family:Arial; font-size:9pt;">
+    <table>
+        <tbody><tr>
+            <td colspan="2" style="padding-bottom:10px">
+                Ajax based sum calculation:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                FirstNumber:
+            </td>
+            <td>
+                <input id="firstNumber" type="text" size="10"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                SecondNumber:
+            </td>
+            <td>
+                <input id="secondNumber" type="text" size="10">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="refreshButton" style="width:80px;border:1px solid gray;margin-top: 10px;padding:2px">Click here</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-top: 10px">
+                Sum of <span id="firstNumberData"></span> and <span id="secondNumberData"></span> is:<span id="totalData"></span></td>
+        </tr>
+    </tbody></table>
+</div>
+
+
