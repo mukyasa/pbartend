@@ -20,7 +20,8 @@
 
 
 <script type="text/javascript">
-	var ROOT_URL="http://192.168.1.105:8080/iPad/rest/";
+	var ROOT_IP ="http://localhost:8080";
+	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
 	var list_scroll=false;
 	
@@ -45,8 +46,11 @@
 			css_orientation="land"
 			$("body").addClass("land").removeClass("port");
 			$("#wrapper").show();
+
 		}
 		
+		//resize the scroll area
+		mainscroller.reload();
 
 	}
 	
@@ -71,9 +75,9 @@
 		});
 		
 		mainscroller = new iScroll('scroller');
-		scroller2 = new iScroll('editchosenIngs');
-		scroller3 = new iScroll('chosenIngs');
-		scroller4 = new iScroll('scroll-desc');
+		//scroller2 = new iScroll('editchosenIngs');
+		//scroller3 = new iScroll('chosenIngs');
+		//scroller4 = new iScroll('scroll-desc');
 
 		$(".button,.sm_button,.fav_button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
 		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
@@ -141,11 +145,15 @@
 		{
 			css_orientation="land";
 			$("body").addClass("land").removeClass("port");
+			//resize the scroll area
+			mainscroller.reload();
 		}
 		else
 		{
 			css_orientation="port";
 			$("body").addClass("port").removeClass("land");
+			//resize the scroll area
+			mainscroller.reload();
 		}
 		
 	});
@@ -232,25 +240,36 @@
 		}
 		else if($(obj).attr("id")=="show_all")
 		{
-			showLoadingMask();
-			$("#list_wrapper").empty();
-			 var requestUrl = ROOT_URL+"drinks";
-
-            $.getJSON(requestUrl,
-            function(data) {
-
-              for(i=0;i<data.drink.length;i++)
-			  {
-                $("#list_wrapper").append("<li class=\"list_item\" id=\""+data.drink[i].id+"\"><span class=\"list_glass sour\">" +data.drink[i].name+"</span><span class=\"list_fav\"></span></li>");
-			  }
-	
-				//mainscroller = new iScroll('scroller');
-				removeLoadingMask();
-            });
+			//if portrait show pop up
+			if(css_orientation=="port")
+			{
+				$(".port #wrapper").fadeIn(function(){showDrinkList();});
+				
+			}
+			else
+				showDrinkList();
+			
 			
 			
 		}
 		
+	}
+	
+	function showDrinkList()
+	{
+		showLoadingMask();
+		$("#list_wrapper").empty();
+		 var requestUrl = ROOT_URL+"drinks";
+
+		$.getJSON(requestUrl,
+		function(data) {
+
+		  for(i=0;i<data.drinkDetails.length;i++)
+			$("#list_wrapper").append("<li class=\"list_item\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass " +data.drinkDetails[i].glass+"\">" +data.drinkDetails[i].glass +" "  +data.drinkDetails[i].drinkName+"</span><span class=\"list_fav\"></span></li>");
+		  
+			//mainscroller.reload();
+			removeLoadingMask();
+		});
 	}
 	
 	//adds loading spinner

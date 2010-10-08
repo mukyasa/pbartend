@@ -67,7 +67,7 @@ body {
 	display: block;
 }
 /****** GLASSES *******/
-.champ{
+.champagne{
 	background:url("../images/glasses/champ.png") no-repeat 0 0;
 }
 .cocktail{
@@ -88,7 +88,7 @@ body {
 .hurricane{
 	background:url(../images/glasses/hurricane.png) no-repeat 0 0;
 }
-.irish{
+.irish-coffee{
 	background:url(../images/glasses/irish.png) no-repeat 0 0;
 }
 .margarita{
@@ -97,7 +97,7 @@ body {
 .mug{
 	background:url(../images/glasses/mug.png) no-repeat 0 0;
 }
-.old-fashion{
+.oldfashion{
 	background:url(../images/glasses/old_fashion.png) no-repeat 0 0;
 }
 .parfait{
@@ -115,7 +115,7 @@ body {
 .punch{
 	background:url(../images/glasses/punch.png) no-repeat 0 0;
 }
-.redwine{
+.red-wine{
 	background:url(../images/glasses/redwine.png) no-repeat 0 0;
 }
 .rocks{
@@ -130,7 +130,7 @@ body {
 .sour{
 	background:url(../images/glasses/sour.png) no-repeat 0 0;
 }
-.whitewine{
+.white-wine{
 	background:url(../images/glasses/whitewine.png) no-repeat 0 0;
 }
 /**** LOADING ****/
