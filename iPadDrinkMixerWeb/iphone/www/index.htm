@@ -20,7 +20,7 @@
 
 
 <script type="text/javascript">
-
+	var ROOT_URL="http://192.168.1.105:8080/iPad/rest/";
 	var css_orientation="port";
 	var list_scroll=false;
 	
@@ -70,10 +70,10 @@
 			$(".port .popout").fadeOut();
 		});
 		
-		scroller = new iScroll('scroller');
-		scroller2 = new iScroll('editchosenIngs');
-		scroller3 = new iScroll('chosenIngs');
-		scroller4 = new iScroll('scroll-desc');
+		//mainscroller = new iScroll('scroller');
+		//scroller2 = new iScroll('editchosenIngs');
+		//scroller3 = new iScroll('chosenIngs');
+		//scroller4 = new iScroll('scroll-desc');
 
 		$(".button,.sm_button,.fav_button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
 		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
@@ -229,6 +229,27 @@
 		{
 			showLoadingMask();
 			window.setTimeout("removeLoadingMask()",2000);
+		}
+		else if($(obj).attr("id")=="show_all")
+		{
+
+			showLoadingMask();
+			$("#list_wrapper").empty();
+			 var requestUrl = ROOT_URL+"drinks";
+
+            $.getJSON(requestUrl,
+            function(data) {
+
+              for(i=0;i<data.drink.length;i++)
+			  {
+                $("#list_wrapper").append("<li class=\"list_item\" id=\""+data.drink[i].id+"\"><span class=\"list_glass sour\">" +data.drink[i].name+"</span><span class=\"list_fav\"></span></li>");
+			  }
+	
+				mainscroller = new iScroll('scroller');
+				removeLoadingMask();
+            });
+			
+			
 		}
 		
 	}
