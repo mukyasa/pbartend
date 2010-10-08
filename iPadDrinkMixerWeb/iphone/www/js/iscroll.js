@@ -125,7 +125,7 @@ iScroll.prototype = {
 		that.directionX = 0;
 		that.directionY = 0;
  
- //$("#scroll-desc").empty().append("scrollHeight: "+that.scrollHeight+" scrollerHeight: "+that.scrollerHeight+" that: "+$(that.element).attr("id"));
+ //$("#scroll-desc").empty().append("starting height: " + $("#list_wrapper").height() +"scrollHeight: "+that.scrollHeight+" scrollerHeight: "+that.scrollerHeight+" that: "+$(that.element).attr("id"));
 
 		if (that.scrollX) {
 			if (that.maxScrollX >= 0) {
