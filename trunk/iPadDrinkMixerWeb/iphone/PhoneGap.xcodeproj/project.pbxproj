@@ -347,8 +347,8 @@
 			buildSettings = {
 				ADDITIONAL_SDKS = "";
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "Don't Code Sign";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -364,8 +364,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = PhoneGap;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "F7825984-0FB6-41B9-AFA4-650E28CB5C1D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F7825984-0FB6-41B9-AFA4-650E28CB5C1D";
 			};
 			name = Debug;
 		};
@@ -374,6 +374,8 @@
 			buildSettings = {
 				ADDITIONAL_SDKS = "";
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,6 +389,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = PhoneGap;
+				PROVISIONING_PROFILE = "F7825984-0FB6-41B9-AFA4-650E28CB5C1D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F7825984-0FB6-41B9-AFA4-650E28CB5C1D";
 			};
 			name = Release;
 		};
@@ -410,7 +414,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.2;
 			};
 			name = Distribution;
 		};
@@ -419,6 +423,8 @@
 			buildSettings = {
 				ADDITIONAL_SDKS = "";
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -434,6 +440,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = PhoneGap;
+				PROVISIONING_PROFILE = "F7825984-0FB6-41B9-AFA4-650E28CB5C1D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F7825984-0FB6-41B9-AFA4-650E28CB5C1D";
 			};
 			name = Distribution;
 		};
@@ -457,7 +465,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos4.2;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -478,7 +486,8 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos4.2;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
