@@ -10,26 +10,32 @@ import java.sql.Statement;
 
  public class DbConnectionTest {
  
+	 public static Connection getConnection() throws Exception{
+		 String driverName = "com.mysql.jdbc.Driver";
+		Class.forName(driverName);
+		
+		String serverName = "localhost";
+		String myDb = "drinkmixer";
+		String url="jdbc:mysql://"+serverName + "/" + myDb;
+		
+		String user = "root";
+		String pwd = "door78";
+		
+		return DriverManager.getConnection(url,user,pwd);
+		 
+	 }
+	 
+	 
 	 public static void main(String[] args)
 	 {
+		 
 		Statement stmt=null;
 		ResultSet rs=null;
 		Connection conn=null;
 			
 		try {
-			String driverName = "com.mysql.jdbc.Driver";
-			Class.forName(driverName);
 			
-			String serverName = "localhost";
-			String myDb = "drinkmixer";
-			String url="jdbc:mysql://"+serverName + "/" + myDb;
-			
-			String user = "root";
-			String pwd = "door78";
-			
-			conn = DriverManager.getConnection(url,user,pwd);
-			
-			
+			conn = DbConnectionTest.getConnection();
 			
 			System.out.println("conn=" + conn);
 			String sql = "SELECT * FROM tblGlasses";
