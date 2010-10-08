@@ -115,15 +115,17 @@ iScroll.prototype = {
 		var that = this,
 			resetX = this.x, resetY = this.y,
 			snap;
-		
+
 		that.scrollWidth = that.wrapper.clientWidth;
 		that.scrollHeight = that.wrapper.clientHeight;
 		that.scrollerWidth = that.element.offsetWidth;
-		that.scrollerHeight = that.element.offsetHeight;
+		that.scrollerHeight = $(that.element).find(".scroll-child").height();//that.element.offsetHeight;
 		that.maxScrollX = that.scrollWidth - that.scrollerWidth;
 		that.maxScrollY = that.scrollHeight - that.scrollerHeight;
 		that.directionX = 0;
 		that.directionY = 0;
+ 
+ //$("#scroll-desc").empty().append("scrollHeight: "+that.scrollHeight+" scrollerHeight: "+that.scrollerHeight+" that: "+$(that.element).attr("id"));
 
 		if (that.scrollX) {
 			if (that.maxScrollX >= 0) {
