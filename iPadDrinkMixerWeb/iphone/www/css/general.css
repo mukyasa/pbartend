@@ -39,32 +39,31 @@ body {
 
 .list_item {
 	border-bottom: 1px solid #ccc;
-	padding: 5px 10px 15px 10px;
-	height:35px;
+	height:52px;
 	list-style: none;
 	margin: 0;
 	font-family: button;
+	background-position:5px 0 !important;
 }
 .list_glass{
-	width:158px;
-	padding:18px 0 11px 50px;
+	width:210px;
+	left:55px;
+	display:block; 
 	float:left;
-	display: block; 
-	vertical-align: middle;
+	margin:20px 10px 10px 55px;
 }
 
 .list_fav_selected{
-	background:url("../images/list_fav_selected.png") no-repeat 0 14px;
+	background:url("../images/list_fav_selected.png") no-repeat 0 0px;
 }
 .list_fav{
-	background:url("../images/list_fav.png") no-repeat 0 14px;
+	background:url("../images/list_fav.png") no-repeat 0 0px;
 }
 .list_fav,.list_fav_selected{
 	width:21px;
 	height:20px;
 	float:right;
-	padding:15px 10px 11px 0px;
-	display: block;
+	margin:15px 10px 10px 10px;
 }
 /****** GLASSES *******/
 .champagne{
