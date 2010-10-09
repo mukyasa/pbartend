@@ -20,7 +20,7 @@
 
 
 <script type="text/javascript">
-	var ROOT_IP ="http://localhost:8080";
+	var ROOT_IP ="http://192.168.1.105:8080";
 	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
 	var list_scroll=false;
@@ -50,7 +50,7 @@
 		}
 		
 		//resize the scroll area
-		mainscroller.reload();
+		mainscroller.refresh();
 
 	}
 	
@@ -192,7 +192,11 @@
 		if($(obj).attr("id") == "search")
 			$(".port #button_block").fadeIn();
 		else if($(obj).attr("id") == "list")
+		{
 			$(".port #wrapper").fadeIn();
+			//resize the scroll area
+			mainscroller.refresh();
+		}
 		
 		
 	}
