@@ -31,6 +31,17 @@
 	var ccRecipients = '';
 	var bccRecipients = '';
 	var bIsHTML = 'false';
+	const TYPE_LIQUOR = 1;//"Liquor";
+	const TYPE_MIXERS = 2;//"Mixers";
+	const TYPE_GARNISH = 3;//"Garnish";
+	
+	const CAT_COCKTAIL = 1;
+	const CAT_HOT_DRINK = 2;
+	const CAT_JELLO_SHOT = 3;
+	const CAT_MARTINIS = 4;
+	const CAT_NON_ALC = 5;
+	const CAT_PUNCH = 6;
+	const CAT_SHOOTER = 7;
 
 	function changeOrientation(orientation) {
 
@@ -57,10 +68,6 @@
 	
 	$(document).ready(function() {		
 
-		//reload page
-		$("#reload_page").bind("touchend",function(){
-			window.location.reload();			
-		});
 			
 		//prevent screen from scrolling
 		document.addEventListener('touchmove', function(e) {
@@ -246,27 +253,111 @@
 			
 		}else if($(obj).attr("id")=="create")
 		{
-			showLoadingMask();
-			window.setTimeout("removeLoadingMask()",2000);
+			//showLoadingMask();
+			
 		}
 		else if($(obj).attr("id")=="show_all")
 		{
 			showDrinkList();			
 		}
+		else if($(obj).attr("id")=="liquor")
+		{
+			showIngList(TYPE_LIQUOR);
+		}
+		else if($(obj).attr("id")=="mixer")
+		{
+			showIngList(TYPE_MIXERS);
+		}
+		else if($(obj).attr("id")=="garnish")
+		{
+			showIngList(TYPE_GARNISH);
+		}
+		else if($(obj).attr("id")=="cocktail")
+		{
+			showDrinksByCatList(CAT_COCKTAIL);
+		}
+		else if($(obj).attr("id")=="hotDrinks")
+		{
+			showDrinksByCatList(CAT_HOT_DRINK);
+		}
+		else if($(obj).attr("id")=="jelloShots")
+		{
+			showDrinksByCatList(CAT_JELLO_SHOT);
+		}
+		else if($(obj).attr("id")=="martinis")
+		{
+			showDrinksByCatList(CAT_MARTINIS);
+		}
+		else if($(obj).attr("id")=="nonAlcohlic")
+		{
+			showDrinksByCatList(CAT_NON_ALC);
+		}
+		else if($(obj).attr("id")=="punch")
+		{
+			showDrinksByCatList(CAT_PUNCH);
+		}
+		else if($(obj).attr("id")=="shooter")
+		{
+			showDrinksByCatList(CAT_SHOOTER);
+		}
+		 
 		
 	}
+
+	/*********** DRINK LISTS *************/
+	//gets all drinks by category
+	function showDrinksByCatList(catId){
 	
+		showLoadingMask();
+		$("#list_wrapper").empty();
+		 var requestUrl = ROOT_URL+"drinks/cats"+catId;
+
+		processDrinks(requestUrl);
+	}
+	
+	//shows all the drinks limit 200
 	function showDrinkList()
 	{
 		showLoadingMask();
 		$("#list_wrapper").empty();
 		 var requestUrl = ROOT_URL+"drinks";
 
+		processDrinks(requestUrl);
+	}
+	/*********** DRINK LISTS *************/
+	
+	
+	//gets all the liquors
+	function showIngList(intType)
+	{
+		showLoadingMask();
+		$("#list_wrapper").empty();
+		 var requestUrl = ROOT_URL+"drinks/ings"+intType;
+
+		$.getJSON(requestUrl,
+		function(data) {
+
+		  for(i=0;i<data.ingredient.length;i++)
+			$("#list_wrapper").append("<li class=\"list_item\" id=\""+data.ingredient[i].id+"\"><span class=\"ingredient\">" + data.ingredient[i].name+"</span></li>");
+		  
+			//mainscroller.reload();
+			removeLoadingMask();
+			//add events
+			list_item_events();
+			//if portrait show pop up
+			if(css_orientation=="port")
+				$(".port #wrapper").fadeIn();
+		});
+	}
+	
+	//process the ajax and returns the results
+	function processDrinks(requestUrl){
+	
 		$.getJSON(requestUrl,
 		function(data) {
 
 		  for(i=0;i<data.drinkDetails.length;i++)
-			$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">" +data.drinkDetails[i].glass +" "  +data.drinkDetails[i].drinkName+"</span><span class=\"list_fav\"></span></li>");
+			$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\"list_fav\"></span></li>");
 		  
 			//mainscroller.reload();
 			removeLoadingMask();
@@ -281,11 +372,19 @@
 	//adds loading spinner
 	function showLoadingMask(){
 		$("body").append("<div class='x-mask "+css_orientation+"_pos'><div class='loading'>Loading...</div></div>");
+		//if the ajax never returns close window
+		window.setTimeout("addCloseButton()",5000);
 	}
 	//removes loading mask
-	function removeLoadingMask(){
-		
+	function removeLoadingMask(){		
 		$(".x-mask").remove();
+	}
+	
+	function addCloseButton(){
+		$(".x-mask").empty().append("<div class=\"force-close\">Oops!! Looks like something bad happened. <br/>Click here to close this window and try again.</div>");
+		$(".force-close").bind("touchend",function(){
+			removeLoadingMask();			
+		});
 	}
 	
 	
@@ -321,9 +420,9 @@
 		<div id="category" class="subbuttons halfbuttons">
 			<ul style="float:left;margin-left:20px">
 				<li id="cat_back" class="sm_button"><div class="sm-button-chevron-back button-chevron-back"></div><div class="sm-button-cheveron-back-text">Back</div></li>
-				<li id="garnish" class="sm_button">Cocktails</li>
-				<li id="liquor" class="sm_button">Hot Drinks</li>
-				<li id="mixer" class="sm_button">Jello Shots</li>
+				<li id="cocktail" class="sm_button">Cocktails</li>
+				<li id="hotDrinks" class="sm_button">Hot Drinks</li>
+				<li id="jelloShots" class="sm_button">Jello Shots</li>
 			</ul>
 			<ul style="float:left">
 				<li id="martinis" class="sm_button">Martinis</li>
