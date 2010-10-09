@@ -26,7 +26,7 @@ public class GetDrinksEndpoint {
 	private final String TYPE_GARNISH = "Garnish";
 
 	@GET
-	@Path("ingredients/liquor")
+	@Path("ing/liquor")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Liquor>getAllLiquors(){
 		
