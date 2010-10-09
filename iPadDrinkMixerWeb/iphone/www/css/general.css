@@ -36,6 +36,7 @@ body {
 
 
 /***** LIST ********/
+.list_item_down{background-color:#ffe5b4 !important;}
 
 .list_item {
 	border-bottom: 1px solid #ccc;
