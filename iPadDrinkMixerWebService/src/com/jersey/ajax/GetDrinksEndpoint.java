@@ -10,31 +10,34 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.jersey.dao.DbConnectionTest;
 import com.jersey.dao.SQL;
 import com.jersey.model.DrinkDetails;
-import com.jersey.model.Liquor;
+import com.jersey.model.Ingredient;
 
 @Path("/drinks")
 public class GetDrinksEndpoint {
 	
-	private final String TYPE_LIQUOR = "Liquor";
-	private final String TYPE_MIXERS = "Mixers";
-	private final String TYPE_GARNISH = "Garnish";
+	private final int TYPE_LIQUOR = 1;//"Liquor";
+	private final int TYPE_MIXERS = 2;//"Mixers";
+	private final int TYPE_GARNISH = 3;//"Garnish";
 
 	@GET
-	@Path("ing/liquor")
+	@Path("{ing}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Liquor>getAllLiquors(){
+	public List<Ingredient>getAllLiquors(
+			@PathParam("ing") String id){
 		
+		int int_id = Integer.valueOf(id).intValue();
 		PreparedStatement stmt=null;
 		ResultSet rs=null;
 		Connection conn=null;
-		List<Liquor> result = new ArrayList<Liquor>();
-		Liquor liquor = null;
+		List<Ingredient> result = new ArrayList<Ingredient>();
+		Ingredient liquor = null;
 		
     	try{
     		conn = DbConnectionTest.getConnection();
@@ -42,12 +45,18 @@ public class GetDrinksEndpoint {
 			String sql = SQL.sqlGetAllIngredients;
 			
 			stmt = conn.prepareStatement(sql);
-			stmt.setString(1, TYPE_LIQUOR);
+			switch(int_id)
+			{
+				case TYPE_LIQUOR: stmt.setString(1, "Liquor");break;
+				case TYPE_MIXERS: stmt.setString(1, "Mixers");break;
+				case TYPE_GARNISH: stmt.setString(1, "Garnish");break;
+			}
+			
 			rs = stmt.executeQuery();
 			
 			while(rs.next())
 			{
-				liquor = new Liquor();
+				liquor = new Ingredient();
 				liquor.setId(rs.getInt(SQL.COL_ROW_ID));
 				
 				//only show the first 30 chars
