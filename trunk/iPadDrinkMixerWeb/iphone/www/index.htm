@@ -251,16 +251,7 @@
 		}
 		else if($(obj).attr("id")=="show_all")
 		{
-			//if portrait show pop up
-			if(css_orientation=="port")
-			{
-				$(".port #wrapper").fadeIn(function(){showDrinkList();});
-			}
-			else
-				showDrinkList();
-			
-			
-			
+			showDrinkList();			
 		}
 		
 	}
@@ -281,6 +272,9 @@
 			removeLoadingMask();
 			//add events
 			list_item_events();
+			//if portrait show pop up
+			if(css_orientation=="port")
+				$(".port #wrapper").fadeIn();
 		});
 	}
 	
