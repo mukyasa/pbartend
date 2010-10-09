@@ -74,10 +74,23 @@
 			$(".port .popout").fadeOut();
 		});
 		
+		/********* SET ORIENTATION ******************/
+		var orientation; //leave after scroll
+		if (window.innerWidth > window.innerHeight)
+		{
+			css_orientation="land";
+			$("body").addClass("land").removeClass("port");
+		}
+		else
+		{
+			css_orientation="port";
+			$("body").addClass("port").removeClass("land");
+		}
+		
 		mainscroller = new iScroll('scroller');
-		//scroller2 = new iScroll('editchosenIngs');
-		//scroller3 = new iScroll('chosenIngs');
-		//scroller4 = new iScroll('scroll-desc');
+		scroller2 = new iScroll('editchosenIngs');
+		scroller3 = new iScroll('chosenIngs');
+		scroller4 = new iScroll('scroll-desc');
 
 		$(".button,.sm_button,.fav_button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
 		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
@@ -139,22 +152,7 @@
 			$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 		});
 		
-		/********* SET ORIENTATION ******************/
-		var orientation; //leave after scroll
-		if (window.innerWidth > window.innerHeight)
-		{
-			css_orientation="land";
-			$("body").addClass("land").removeClass("port");
-			//resize the scroll area
-			mainscroller.reload();
-		}
-		else
-		{
-			css_orientation="port";
-			$("body").addClass("port").removeClass("land");
-			//resize the scroll area
-			mainscroller.reload();
-		}
+		
 		
 	});
 	
@@ -434,17 +432,19 @@
 			</div>
 		
 			<div class="drink-desc">
-				<div id="scroll-desc" class="scroll-child">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-			laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
-			nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-			laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
-			nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-			laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
-			nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-			laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
-			nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-			laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
-			nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor 
+				<div id="scroll-desc">
+				<div class="scroll-child">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
+				laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
+				nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
+				laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
+				nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
+				laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
+				nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
+				laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
+				nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
+				laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
+				nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor 
+				</div>
 			</div>
 			</div>
 			<div class="paper-button-block">
