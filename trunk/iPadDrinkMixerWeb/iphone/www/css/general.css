@@ -37,7 +37,16 @@ body {
 
 /***** LIST ********/
 .list_item_down{background-color:#ffe5b4 !important;}
-
+.start_list{
+	border:1px solid #ccc;
+	margin:150px 10px;
+	list-style: none;
+	padding:15px 5px;
+	font-size:30px;
+	color:#ccc;
+	text-align:center;
+	font-family: button;
+}
 .list_item {
 	border-bottom: 1px solid #ccc;
 	height:52px;
