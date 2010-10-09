@@ -152,9 +152,18 @@
 			$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 		});
 		
-		
+		list_item_events();
 		
 	});
+	
+	function list_item_events(){
+	
+		$(".list_item").bind("touchstart",function(){
+			$(this).addClass("list_item_down");
+		}).bind("touchend",function(){
+			$(this).removeClass("list_item_down");
+		});
+	}
 	
 	function handlePostButtonTouchStart(e){
 		e.preventDefault();//prevent copy and mag from showing
@@ -242,7 +251,6 @@
 			if(css_orientation=="port")
 			{
 				$(".port #wrapper").fadeIn(function(){showDrinkList();});
-				
 			}
 			else
 				showDrinkList();
@@ -267,6 +275,8 @@
 		  
 			//mainscroller.reload();
 			removeLoadingMask();
+			//add events
+			list_item_events();
 		});
 	}
 	
