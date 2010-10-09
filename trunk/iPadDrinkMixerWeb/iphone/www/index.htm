@@ -170,6 +170,13 @@
 		}).bind("touchend",function(){
 			$(this).removeClass("list_item_down");
 		});
+		
+		$(".list_fav").bind("touchend",function(){
+			if(confirm("Are you sure you want to set this as your favorite?"))
+			{
+				
+			}
+		});
 	}
 	
 	function handlePostButtonTouchStart(e){
@@ -371,6 +378,7 @@
 	
 	//adds loading spinner
 	function showLoadingMask(){
+		$(".x-mask").empty();
 		$("body").append("<div class='x-mask "+css_orientation+"_pos'><div class='loading'>Loading...</div></div>");
 		//if the ajax never returns close window
 		window.setTimeout("addCloseButton()",5000);
