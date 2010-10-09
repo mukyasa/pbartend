@@ -37,6 +37,9 @@ body {
 
 /***** LIST ********/
 .list_item_down{background-color:#ffe5b4 !important;}
+.ingredient{
+	
+}
 .start_list{
 	border:1px solid #ccc;
 	margin:150px 10px;
@@ -55,14 +58,17 @@ body {
 	font-family: button;
 	background-position:5px 0 !important;
 }
-.list_glass{
+.list_glass,.ingredient{
 	width:210px;
 	left:55px;
 	display:block; 
 	float:left;
 	margin:20px 10px 10px 55px;
 }
-
+.ingredient{
+	margin:20px 10px 10px 25px !important;
+	width:260px  !important;
+}
 .list_fav_selected{
 	background:url("../images/list_fav_selected.png") no-repeat 0 0px;
 }
@@ -158,7 +164,13 @@ body {
 	width:1024px;
 	height:768px;
 }
-.loading {
+.force-close{
+	background: rgba(0,0,0,.3) !important;
+	padding: 20px 20px 130px 20px !important;
+	height: 170px;
+	z-index:99;
+}
+.loading,.force-close {
   background: rgba(0,0,0,.3) url("../images/loading.gif") center center no-repeat;
   display: block;
   width: 200px;
