@@ -36,21 +36,16 @@ body {
 
 /********* SEARCH **********/
 .search-input{
-	height:20px;
-	width:285px;
-	margin:10px;
+	height:25px;
+	width:287px;
+	margin:10px 10px 14px 10px;
 	padding:5px;
 	font-size:18px;
 	font-family: button;
-	background:#fff url("../images/search_icon.png") no-repeat top right;
+	background:#fff url("../images/search_icon.png") no-repeat 99% 50%;
 }
 .search{
-	background-image: url("../images/picker_bg.png");
-	xxxbackground-attachment: fixed;
-	background-position: 0 0;
-	background-repeat: no-repeat;
-	background-size: 320px 54px ;
-	background-origin: content;
+	background: url("../images/picker_bg.png") repeat-x 0 0;
 	height:54px;
 	width:320px;
 	border-bottom:2px solid #000;
