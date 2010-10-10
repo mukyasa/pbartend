@@ -24,6 +24,8 @@
 	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
 	var list_scroll=false;
+	var PAGING_COUNT=0;
+	var PAGING_TYPE;
 	
 	var subject = 'Check out this drink!';
 	var anything = 'Check out this drink';
@@ -42,6 +44,10 @@
 	const CAT_NON_ALC = 5;
 	const CAT_PUNCH = 6;
 	const CAT_SHOOTER = 7;
+	
+	const PAGING_TYPE_ALL=1;
+	const PAGING_TYPE_CATEGORY=2;
+	const PAGING_TYPE_ING=3;
 
 	function changeOrientation(orientation) {
 
@@ -171,11 +177,27 @@
 			$(this).removeClass("list_item_down");
 		});
 		
+		//favorites button
 		$(".list_fav").bind("touchend",function(){
 			if(confirm("Are you sure you want to set this as your favorite?"))
 			{
 				
 			}
+		});
+		
+		$("#loadMore").bind("touchend",function(){
+			PAGING_COUNT+=200;
+			showLoadingMask();
+			
+			if(PAGING_TYPE==PAGING_TYPE_CATEGORY)
+				var requestUrl = ROOT_URL+"drinks/cats"+catId+"?startIndex="+PAGING_COUNT;
+			else if(PAGING_TYPE=PAGING_TYPE_ALL)
+				var requestUrl = ROOT_URL+"drinks?startIndex="+PAGING_COUNT;
+			else if(PAGING_TYPE=PAGING_TYPE_ING)
+				var requestUrl = ROOT_URL+"drinks/ings"+intType+"?startIndex="+PAGING_COUNT;
+			
+			$(this).remove();
+			processDrinks(requestUrl);
 		});
 	}
 	
@@ -314,10 +336,11 @@
 	/*********** DRINK LISTS *************/
 	//gets all drinks by category
 	function showDrinksByCatList(catId){
-	
+		PAGING_COUNT=0;//first time called
+		PAGING_TYPE=PAGING_TYPE_CATEGORY;
 		showLoadingMask();
 		$("#list_wrapper").empty();
-		 var requestUrl = ROOT_URL+"drinks/cats"+catId;
+		var requestUrl = ROOT_URL+"drinks/cats"+catId+"?startIndex=0";
 
 		processDrinks(requestUrl);
 	}
@@ -325,9 +348,11 @@
 	//shows all the drinks limit 200
 	function showDrinkList()
 	{
+		PAGING_COUNT=0;//first time called
+		PAGING_TYPE=PAGING_TYPE_ALL;
 		showLoadingMask();
 		$("#list_wrapper").empty();
-		 var requestUrl = ROOT_URL+"drinks";
+		 var requestUrl = ROOT_URL+"drinks?startIndex=0";
 
 		processDrinks(requestUrl);
 	}
@@ -337,6 +362,8 @@
 	//gets all the liquors
 	function showIngList(intType)
 	{
+		PAGING_COUNT=0;//first time called
+		PAGING_TYPE=PAGING_TYPE_ING;
 		showLoadingMask();
 		$("#list_wrapper").empty();
 		 var requestUrl = ROOT_URL+"drinks/ings"+intType;
@@ -366,6 +393,8 @@
 		  for(i=0;i<data.drinkDetails.length;i++)
 			$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\"list_fav\"></span></li>");
 		  
+		  //add the add more link
+		  $("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
 			//mainscroller.reload();
 			removeLoadingMask();
 			//add events
@@ -375,6 +404,7 @@
 				$(".port #wrapper").fadeIn();
 		});
 	}
+
 	
 	//adds loading spinner
 	function showLoadingMask(){
