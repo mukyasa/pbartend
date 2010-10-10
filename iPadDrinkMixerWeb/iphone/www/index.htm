@@ -167,6 +167,7 @@
 			$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 		});
 		
+		
 		list_item_events();
 		
 	});
@@ -334,6 +335,28 @@
 		 
 		
 	}
+
+
+	/********** FILTER DRINK INN LIST *************/
+	
+	function filterDrinkList(){
+	
+		if(PAGING_TYPE==PAGING_TYPE_CATEGORY)
+			var requestUrl = ROOT_URL+"drinks/cats"+CAT_TYPE_ID+"?startIndex=0";
+		else if(PAGING_TYPE==PAGING_TYPE_ALL)
+			var requestUrl = ROOT_URL+"drinks?startIndex=0";
+		else if(PAGING_TYPE==PAGING_TYPE_ING)
+			var requestUrl = ROOT_URL+"drinks/ings"+ING_TYPE_ID+"?startIndex=0";
+				
+				
+		$("#list_wrapper").empty();
+
+		processDrinks(requestUrl);
+	
+	}
+	
+	/********** FILTER DRINK INN LIST *************/
+	
 
 	/*********** DRINK LISTS *************/
 	//gets all drinks by category
