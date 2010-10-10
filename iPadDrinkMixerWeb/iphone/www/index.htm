@@ -25,7 +25,9 @@
 	var css_orientation="port";
 	var list_scroll=false;
 	var PAGING_COUNT=0;
-	var PAGING_TYPE;
+	var PAGING_TYPE;//keep track of the current page count for load more.
+	var CAT_TYPE_ID;//keep track of the current category selected for load more.
+	var ING_TYPE_ID;//keep track of the current ingredient type for load more.
 	
 	var subject = 'Check out this drink!';
 	var anything = 'Check out this drink';
@@ -190,11 +192,11 @@
 			showLoadingMask();
 			
 			if(PAGING_TYPE==PAGING_TYPE_CATEGORY)
-				var requestUrl = ROOT_URL+"drinks/cats"+catId+"?startIndex="+PAGING_COUNT;
+				var requestUrl = ROOT_URL+"drinks/cats"+CAT_TYPE_ID+"?startIndex="+PAGING_COUNT;
 			else if(PAGING_TYPE==PAGING_TYPE_ALL)
 				var requestUrl = ROOT_URL+"drinks?startIndex="+PAGING_COUNT;
 			else if(PAGING_TYPE==PAGING_TYPE_ING)
-				var requestUrl = ROOT_URL+"drinks/ings"+intType+"?startIndex="+PAGING_COUNT;
+				var requestUrl = ROOT_URL+"drinks/ings"+ING_TYPE_ID+"?startIndex="+PAGING_COUNT;
 			
 			$(this).remove();
 			processDrinks(requestUrl);
@@ -338,9 +340,11 @@
 	function showDrinksByCatList(catId){
 		PAGING_COUNT=0;//first time called
 		PAGING_TYPE=PAGING_TYPE_CATEGORY;
-		showLoadingMask();
+		CAT_TYPE_ID=catId;
+		
+		showLoadingMask();//pop modal
 		$("#list_wrapper").empty();
-		var requestUrl = ROOT_URL+"drinks/cats"+catId+"?startIndex=0";
+		var requestUrl = ROOT_URL+"drinks/cats"+CAT_TYPE_ID+"?startIndex=0";
 
 		processDrinks(requestUrl);
 	}
@@ -360,30 +364,41 @@
 	
 	
 	//gets all the liquors
-	function showIngList(intType)
+	function showIngList(ingType)
 	{
+
 		PAGING_COUNT=0;//first time called
 		PAGING_TYPE=PAGING_TYPE_ING;
-		showLoadingMask();
+		ING_TYPE_ID=ingType;
+		
+		showLoadingMask();//pop modal
 		$("#list_wrapper").empty();
-		 var requestUrl = ROOT_URL+"drinks/ings"+intType+"?startIndex=0";
+		 var requestUrl = ROOT_URL+"drinks/ings"+ING_TYPE_ID+"?startIndex=0";
 
 		$.getJSON(requestUrl,
 		function(data) {
-
-		  for(i=0;i<data.ingredient.length;i++)
-			$("#list_wrapper").append("<li class=\"list_item\" id=\""+data.ingredient[i].id+"\"><span class=\"ingredient\">" + data.ingredient[i].name+"</span></li>");
-		  
-		  //add the add more link
-		  $("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
-			//mainscroller.reload();
-			removeLoadingMask();
-			//add events
-			list_item_events();
-			//if portrait show pop up
-			if(css_orientation=="port")
-				$(".port #wrapper").fadeIn();
+			
+			if(data!=null)
+			{
+			  for(i=0;i<data.ingredient.length;i++)
+				$("#list_wrapper").append("<li class=\"list_item\" id=\""+data.ingredient[i].id+"\"><span class=\"ingredient\">" + data.ingredient[i].name+"</span></li>");
+			  
+			  if($("#list_wrapper li").length >=200)//add the add more link
+				$("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
+				
+				//mainscroller.reload();
+				removeLoadingMask();
+				//add events
+				list_item_events();
+				//if portrait show pop up
+				if(css_orientation=="port")
+					$(".port #wrapper").fadeIn();
+			}
+			else
+				removeLoadingMask();	
+			
 		});
+
 	}
 	
 	//process the ajax and returns the results
@@ -391,20 +406,28 @@
 	
 		$.getJSON(requestUrl,
 		function(data) {
-
-		  for(i=0;i<data.drinkDetails.length;i++)
-			$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\"list_fav\"></span></li>");
-		  
-		  //add the add more link
-		  $("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
-			//mainscroller.reload();
-			removeLoadingMask();
-			//add events
-			list_item_events();
-			//if portrait show pop up
-			if(css_orientation=="port")
-				$(".port #wrapper").fadeIn();
+		
+			if(data!=null)
+			{
+			  for(i=0;i<data.drinkDetails.length;i++)
+				$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\"list_fav\"></span></li>");
+			  
+			  if($("#list_wrapper li").length >=200)//add the add more link
+				$("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
+				
+				//mainscroller.reload();
+				removeLoadingMask();
+				//add events
+				list_item_events();
+				//if portrait show pop up
+				if(css_orientation=="port")
+					$(".port #wrapper").fadeIn();
+			}
+			else
+				removeLoadingMask();
+				
 		});
+
 	}
 
 	
