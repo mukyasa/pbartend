@@ -35,11 +35,25 @@ body {
 }
 
 /********* SEARCH **********/
+.search-input{
+	height:20px;
+	width:285px;
+	margin:10px;
+	padding:5px;
+	font-size:18px;
+	font-family: button;
+	background:#fff url("../images/search_icon.png") no-repeat top right;
+}
 .search{
-	background: url("../images/picker_bg.png") no-repeat 0 0;
-	background-size: 100%;
+	background-image: url("../images/picker_bg.png");
+	xxxbackground-attachment: fixed;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 320px 54px ;
+	background-origin: content;
 	height:54px;
 	width:320px;
+	border-bottom:2px solid #000;
 }
 
 /***** LIST ********/
