@@ -33,6 +33,15 @@ body {
 	left:0px;
 	border:2px solid #000;
 }
+#inner-wrapper {
+	position: absolute;
+	z-index: 3;
+	width: 320px;
+	height: 406px;
+	overflow: auto;
+	top:54px;
+	left:0px;
+}
 
 /********* SEARCH **********/
 .search-input{
