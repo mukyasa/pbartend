@@ -34,6 +34,13 @@ body {
 	border:2px solid #000;
 }
 
+/********* SEARCH **********/
+.search{
+	background: url("../images/picker_bg.png") no-repeat 0 0;
+	background-size: 100%;
+	height:54px;
+	width:320px;
+}
 
 /***** LIST ********/
 .list_item_down{background-color:#ffe5b4 !important;}
