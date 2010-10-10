@@ -77,6 +77,15 @@
     left:100px;
    
 }
+.port #inner-wrapper {
+    position:absolute;
+    width:320px;
+    height:546px;
+    overflow:auto;
+    top:54px;
+    left:0px;
+   
+}
 .port .ui-cornor-all{-webkit-border-radius:6px;}
 
 .port .content_wrapper{
