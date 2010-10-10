@@ -191,9 +191,9 @@
 			
 			if(PAGING_TYPE==PAGING_TYPE_CATEGORY)
 				var requestUrl = ROOT_URL+"drinks/cats"+catId+"?startIndex="+PAGING_COUNT;
-			else if(PAGING_TYPE=PAGING_TYPE_ALL)
+			else if(PAGING_TYPE==PAGING_TYPE_ALL)
 				var requestUrl = ROOT_URL+"drinks?startIndex="+PAGING_COUNT;
-			else if(PAGING_TYPE=PAGING_TYPE_ING)
+			else if(PAGING_TYPE==PAGING_TYPE_ING)
 				var requestUrl = ROOT_URL+"drinks/ings"+intType+"?startIndex="+PAGING_COUNT;
 			
 			$(this).remove();
@@ -366,7 +366,7 @@
 		PAGING_TYPE=PAGING_TYPE_ING;
 		showLoadingMask();
 		$("#list_wrapper").empty();
-		 var requestUrl = ROOT_URL+"drinks/ings"+intType;
+		 var requestUrl = ROOT_URL+"drinks/ings"+intType+"?startIndex=0";
 
 		$.getJSON(requestUrl,
 		function(data) {
@@ -374,6 +374,8 @@
 		  for(i=0;i<data.ingredient.length;i++)
 			$("#list_wrapper").append("<li class=\"list_item\" id=\""+data.ingredient[i].id+"\"><span class=\"ingredient\">" + data.ingredient[i].name+"</span></li>");
 		  
+		  //add the add more link
+		  $("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
 			//mainscroller.reload();
 			removeLoadingMask();
 			//add events
