@@ -81,6 +81,14 @@ body {
 	float:right;
 	margin:15px 10px 10px 10px;
 }
+#loadMore{
+	border-bottom: 1px solid #ccc;
+	padding:15px;
+	background-color:#ffe5b4;
+	text-align:center;
+	font-family: button;
+	font-size:16px;
+}
 /****** GLASSES *******/
 .champagne{
 	background:url("../images/glasses/champ.png") no-repeat 0 0;
@@ -189,13 +197,7 @@ body {
   padding-top: 150px;
   font-weight: bold;
 }
-#loadMore{
-	padding:10px;
-	background-color:#ffe5b4;
-	text-align:center;
-	font-family: button;
-	font-size:16px;
-}
+
 /**** BUTTONS ******/
 #preload{
 	display:none;
