@@ -109,6 +109,10 @@ public class DrinkDetails {
 		this.ings = ings;
 	}
 	
+	public void addIng(String ings){
+		this.ings.add(ings);		
+	}
+	
 	
 
 
