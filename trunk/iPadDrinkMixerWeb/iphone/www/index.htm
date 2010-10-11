@@ -195,12 +195,16 @@
 			$(this).addClass("list_item_down");
 		}).bind(END_EVENT,function(){
 			$(this).removeClass("list_item_down");
-			var drinkId = $(this).attr("id");
 			
-			var requestUrl = ROOT_URL+"drinks/details"+drinkId;
-			//call to get details
-			$.getJSON(requestUrl,
-				function(data) {
+			if(PAGING_TYPE==PAGING_TYPE_ALL)
+			{
+				//if this is a drink not an ing or cat
+				var drinkId = $(this).attr("id");
+				
+				var requestUrl = ROOT_URL+"drinks/details"+drinkId;
+				//call to get details
+				$.getJSON(requestUrl,
+					function(data) {
 					//data in this case is drinkdetail
 					if(data!=null)
 					{
@@ -224,6 +228,14 @@
 						removeLoadingMask();	
 					
 				});//end ajax
+				
+			}
+			else if(PAGING_TYPE==PAGING_TYPE_CATEGORY){
+			
+			}
+			else if(PAGING_TYPE==PAGING_TYPE_ING){
+			
+			}
 			
 		});
 		
@@ -681,7 +693,7 @@
 			<div class="page_content_wrapper edit-page_content_wrapper">
 			<div id="edit-drink-photo"></div>
 			<div class="text-float-right">
-				<input type="text" class="edit-drink-title" value="This is the Drink Title">
+				<input type="text" class="edit-drink-title" value="">
 				<div class="drink-ings">
 					<div class="edit-ing add-new-ing">Add New Ingredients</div>
 					<div class="edit-ing-wrapper">
@@ -693,7 +705,7 @@
 					</div>
 				</div>
 			</div>
-			<textarea class="edit-drink-desc"><!--//ajax driven --></textarea>
+			<textarea class="edit-drink-desc"></textarea><!--//ajax driven -->
 			<div class="paper-button-block edit-paper-button-block">
 				<div class="backbutton flipbutton"></div>
 				<div class="cancelbutton flipbutton"></div>
@@ -705,7 +717,7 @@
 			<div class="page_content_wrapper">
 			<div id="drink-photo"></div>
 			<div class="text-float-right">
-				<div class="drink-title">This is the Drink Title</div>
+				<div class="drink-title"><!--//title ajax driven --></div>
 				<div class="ing-wrapper">
 						<div id="chosenIngs">
 							<ul class="ing-items-wrapper scroll-child">
@@ -717,7 +729,7 @@
 		
 			<div class="drink-desc">
 				<div id="scroll-desc">
-				<div class="scroll-child"><!--//ajax driven --></div>
+				<div class="scroll-child"><!--//description ajax driven --></div>
 			</div>
 			</div>
 			<div class="paper-button-block">
