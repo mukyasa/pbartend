@@ -35,11 +35,57 @@ public class GetDrinksEndpoint {
 	private final int CAT_PUNCH = 6;
 	private final int CAT_SHOOTER = 7;
 	
+	@GET
+	@Path("fav{drinkId}")
+	@Produces(MediaType.TEXT_HTML)
+	public String setFavorite(
+			@PathParam("drinkId") String drinkId,
+			@QueryParam("isOn") boolean isOn) {
 
+		int int_drinkId = Integer.valueOf(drinkId).intValue();
+		Statement stmt = null;
+		Connection conn = null;
+		String success="success";
+		int setFav=1;
+		
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			if(isOn)setFav=0;
+			
+			String sql = "UPDATE tblDrinks SET "+SQL.COL_FAVORITE+"="+setFav+" WHERE "+SQL.COL_ROW_ID+"="+int_drinkId;
+
+			stmt = conn.createStatement();
+			int wasSucccessful = stmt.executeUpdate(sql);
+			
+			if(wasSucccessful==0)
+				success="fail";
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			success="fail";
+		} finally {
+			try {
+				conn.close();
+				stmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return success;
+
+	}
+	
+	
 	@GET
 	@Path("cats{catid}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<DrinkDetails> getDrinksByCategory(@PathParam("catid") String id) {
+	public List<DrinkDetails> getDrinksByCategory(
+			@PathParam("catid") String id,
+			@QueryParam("startIndex") String startIndex) {
 
 		int int_id = Integer.valueOf(id).intValue();
 		PreparedStatement stmt = null;
@@ -51,7 +97,7 @@ public class GetDrinksEndpoint {
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			String sql = SQL.sqlGetDrinksByDrinkCatId + " LIMIT 200";
+			String sql = SQL.sqlGetDrinksByDrinkCatId + " LIMIT " + startIndex+",200";
 
 			stmt = conn.prepareStatement(sql);
 			switch (int_id) {
@@ -87,6 +133,8 @@ public class GetDrinksEndpoint {
 		} finally {
 			try {
 				conn.close();
+				rs.close();
+				stmt.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -97,9 +145,11 @@ public class GetDrinksEndpoint {
 	}
 
 	@GET
-	@Path("ings{ing}")
+	@Path("ings{ingId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Ingredient> getAllLiquors(@PathParam("ing") String id) {
+	public List<Ingredient> getAllLiquors(
+			@PathParam("ingId") String id,
+			@QueryParam("startIndex") String startIndex) {
 
 		int int_id = Integer.valueOf(id).intValue();
 		PreparedStatement stmt = null;
@@ -111,7 +161,7 @@ public class GetDrinksEndpoint {
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			String sql = SQL.sqlGetAllIngredients;
+			String sql = SQL.sqlGetAllIngredients+ " LIMIT " + startIndex+",200";
 
 			stmt = conn.prepareStatement(sql);
 			switch (int_id) {
@@ -132,10 +182,10 @@ public class GetDrinksEndpoint {
 				liquor = new Ingredient();
 				liquor.setId(rs.getInt(SQL.COL_ROW_ID));
 
-				// only show the first 30 chars
+				// only show the first 32 chars
 				String sub_name = rs.getString(SQL.COL_CAT_NAME);
-				if (sub_name.length() >= 35)
-					sub_name = sub_name.substring(0, 35) + "...";
+				if (sub_name.length() >= 32)
+					sub_name = sub_name.substring(0, 32) + "...";
 
 				liquor.setName(sub_name);
 
@@ -147,6 +197,8 @@ public class GetDrinksEndpoint {
 		} finally {
 			try {
 				conn.close();
+				rs.close();
+				stmt.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -183,6 +235,8 @@ public class GetDrinksEndpoint {
 		} finally {
 			try {
 				conn.close();
+				rs.close();
+				stmt.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
