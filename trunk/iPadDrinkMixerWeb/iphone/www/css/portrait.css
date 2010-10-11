@@ -141,7 +141,8 @@
 }
 .port .drink-title{
 	font-size:28px;
-	width:100%;
+	width:225px;
+	word-wrap: break-word;
 }
 
 .port .paper-button-block{
