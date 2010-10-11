@@ -35,6 +35,7 @@ public class GetDrinksEndpoint {
 	private final int CAT_PUNCH = 6;
 	private final int CAT_SHOOTER = 7;
 	
+	/*
 	@GET
 	@Path("fav{drinkId}")
 	@Produces(MediaType.TEXT_HTML)
@@ -78,7 +79,7 @@ public class GetDrinksEndpoint {
 		return success;
 
 	}
-	
+	*/
 	
 	@GET
 	@Path("cats{catid}")
