@@ -52,6 +52,14 @@
 	const PAGING_TYPE_ALL=1;
 	const PAGING_TYPE_CATEGORY=2;
 	const PAGING_TYPE_ING=3;
+	
+	var isTouch = (/ipad/gi).test(navigator.appVersion),
+
+	// Event sniffing
+	var START_EVENT = isTouch ? 'touchstart' : 'mousedown';
+	var MOVE_EVENT = isTouch ? 'touchmove' : 'mousemove';
+	var END_EVENT = isTouch ? 'touchend' : 'mouseup';
+	
 
 	function changeOrientation(orientation) {
 
@@ -91,12 +99,12 @@
 
 			
 		//prevent screen from scrolling
-		document.addEventListener('touchmove', function(e) {
+		document.addEventListener(MOVE_EVENT, function(e) {
 			e.preventDefault();
 		});
 		
 		//hide popout on window touch
-		$(".content_wrapper").bind('touchstart', function(e) {
+		$(".content_wrapper").bind(START_EVENT, function(e) {
 			e.preventDefault();
 			//hide all pop ups
 			$(".port .popout").fadeOut();
@@ -120,13 +128,13 @@
 		scroller3 = new iScroll('chosenIngs');
 		scroller4 = new iScroll('scroll-desc');
 
-		$(".button,.sm_button,.fav_button").bind("touchstart",handleTouchStart).bind("touchend",handleTouchEnd);
-		$(".postbutton").bind("touchstart",handlePostButtonTouchStart).bind("touchend",handlePostButtonTouchEnd);
+		$(".button,.sm_button,.fav_button").bind(START_EVENT,handleTouchStart).bind(END_EVENT,handleTouchEnd);
+		$(".postbutton").bind(START_EVENT,handlePostButtonTouchStart).bind(END_EVENT,handlePostButtonTouchEnd);
 	
 		
 		
 		/**************** list list buttons **************/
-		$(".list_email").bind("touchend",function(e){
+		$(".list_email").bind(END_EVENT,function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			
 			try{
@@ -138,7 +146,7 @@
 
 		});
 		
-		$(".list_glass").bind("touchstart",function(e){
+		$(".list_glass").bind(START_EVENT,function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			if(!list_scroll)//if not scrolling 
 			{
@@ -147,26 +155,26 @@
 			else
 				list_scroll=false;
 		});
-		$(".list_item").bind("touchmove",function(e){
+		$(".list_item").bind(MOVE_EVENT,function(e){
 			list_scroll=true;//used if your scrolling
 		});
 		/***********************************************/
 		
 		//flip page
-		$(".frontbutton").bind("touchend",function(e){
+		$(".frontbutton").bind(END_EVENT,function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			//flip paper
 			$("#paper_wrapper .paper").addClass("flip-back").removeClass("flip-front");
 			
 		});
 		
-		$(".backbutton").bind("touchend",function(e){
+		$(".backbutton").bind(END_EVENT,function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			//flip paper back
 			$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 		});
 		
-		$(".cancelbutton").bind("touchend",function(e){
+		$(".cancelbutton").bind(END_EVENT,function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			//flip paper back
 			$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
@@ -174,18 +182,20 @@
 		
 		
 		list_item_events();
+		//load up the favorites in memory
+		setUpFavorites();
 		
 	});
 	
 	function list_item_events(){
 	
-		$(".list_item").bind("touchstart",function(){
+		$(".list_item").bind(START_EVENT,function(){
 			$(this).addClass("list_item_down");
-		}).bind("touchend",function(){
+		}).bind(END_EVENT,function(){
 			$(this).removeClass("list_item_down");
 		});
 		
-		$(".list_fav,.list_fav_selected").bind("touchstart",function(e){
+		$(".list_fav,.list_fav_selected").bind(START_EVENT,function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			if(!list_scroll)//if not scrolling 
 			{
@@ -199,29 +209,14 @@
 					function(transaction){
 						transaction.executeSql("INSERT INTO tblFavorites (drink_id) VALUES (?);",[drinkId],function(){
 							//SUCCESSFUL
-							if(data=="success" && isOn)
+							if(isOn)
 								$(that).addClass("list_fav").removeClass("list_fav_selected");
-							else if(data=="success" && !isOn)
+							else if(!isOn)
 								$(that).addClass("list_fav_selected").removeClass("list_fav");
 								
 							$(".list_item").removeClass("list_item_down");
 						})
 					});
-					
-					/* favorites are saved local
-					var requestUrl = ROOT_URL+"drinks/fav"+drinkId+"?isOn=" +isOn;
-					
-					$.get(requestUrl,					
-					function(data) {
-					
-						if(data=="success" && isOn)
-							$(that).addClass("list_fav").removeClass("list_fav_selected");
-						else if(data=="success" && !isOn)
-							$(that).addClass("list_fav_selected").removeClass("list_fav");
-							
-						$(".list_item").removeClass("list_item_down");
-													
-					});*/
 
 				}
 			}
@@ -229,7 +224,7 @@
 				list_scroll=false;
 		});
 		
-		$("#loadMore").bind("touchend",function(){
+		$("#loadMore").bind(END_EVENT,function(){
 			PAGING_COUNT+=200;
 			showLoadingMask();
 			
@@ -482,6 +477,8 @@
 
 					
 				$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\""+favoritesStar+"\"></span></li>");
+				
+				
 			  }
 			  
 			  if($("#list_wrapper li").length >=200)//add the add more link
@@ -501,6 +498,23 @@
 		});
 
 	}
+	
+	function setUpFavorites(){
+	
+		db.transaction(
+			function(transaction){
+				transaction.executeSql("SELECT * FROM tblFavorites;",[],function(transaction,results){
+					for(i=0;i<results.rows.length;i++)
+					{
+						var row = results.rows.item(i);
+						console.log(row.drink_id);
+					
+					}
+					
+				})
+			});
+		
+	}
 
 	
 	//adds loading spinner
@@ -517,7 +531,7 @@
 	
 	function addCloseButton(){
 		$(".x-mask").empty().append("<div class=\"force-close\">Oops!! Looks like something bad happened. <br/>Click here to close this window and try again.</div>");
-		$(".force-close").bind("touchend",function(){
+		$(".force-close").bind(END_EVENT,function(){
 			removeLoadingMask();			
 		});
 	}
