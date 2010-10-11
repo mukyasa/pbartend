@@ -105,7 +105,8 @@
 }
 .land .drink-title{
 	font-size:20px;
-	width:100%;
+	width:183px;
+	word-wrap: break-word;
 
 }
 .land .drink-desc{
