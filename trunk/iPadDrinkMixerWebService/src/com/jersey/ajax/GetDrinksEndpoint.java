@@ -74,7 +74,7 @@ public class GetDrinksEndpoint extends SQL {
 					String drink_css = rs.getString(COL_GLASS_NAME).replace(" ", "-");
 					drink.setGlass(drink_css);
 		
-					ingredients.append("<li class=\"ing\">-"+rs.getString(COL_AMOUNT) + " " +  rs.getString(COL_ING_NAME) +  "</li>");
+					ingredients.append("<li>-"+rs.getString(COL_AMOUNT) + " " +  rs.getString(COL_ING_NAME) +  "</li>");
 					drink.addIng(rs.getString(COL_AMOUNT) + ", " +  rs.getString(COL_ING_NAME));
 					drink.setId(rs.getInt(COL_ROW_ID));
 					drink.setDrinkName(rs.getString(COL_NAME));
