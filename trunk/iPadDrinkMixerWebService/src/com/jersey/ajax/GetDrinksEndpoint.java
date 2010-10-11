@@ -247,6 +247,59 @@ public class GetDrinksEndpoint {
 		return result;
 	}
 	
+	
+	@GET
+	@Path("favs")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<DrinkDetails> getAllFavoriteDrinks(
+			@QueryParam("startIndex") String startIndex,
+			@QueryParam("ids") String ids) {
+
+		Statement stmt = null;
+		ResultSet rs = null;
+		Connection conn = null;
+		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
+		DrinkDetails drink = null;
+		
+		String[] idlist = ids.split(",");
+		
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			String isSQL="";
+			//build sql
+			for(int i=0;i<idlist.length;i++)
+			{
+				if(i < (idlist.length-1))
+					isSQL += " d._id="+ idlist[i] +" OR ";
+				else
+					isSQL += " d._id="+ idlist[i];
+					
+			}
+			
+			String sql = SQL.sqlGetAllDrinksAndGlassById + isSQL + " LIMIT " + startIndex+",200";
+
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+
+			result = loopDrinks(rs,drink,result);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				rs.close();
+				stmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+	
 	/**
 	 * Builds a list of Drinks
 	 * @param rs
