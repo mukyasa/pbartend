@@ -196,46 +196,7 @@
 		}).bind(END_EVENT,function(){
 			$(this).removeClass("list_item_down");
 			
-			if(PAGING_TYPE==PAGING_TYPE_ALL)
-			{
-				//if this is a drink not an ing or cat
-				var drinkId = $(this).attr("id");
-				
-				var requestUrl = ROOT_URL+"drinks/details"+drinkId;
-				//call to get details
-				$.getJSON(requestUrl,
-					function(data) {
-					//data in this case is drinkdetail
-					if(data!=null)
-					{
-						selectedDrinkDetails=data;//set current drinkdetail
-						
-						$(".drink-title").empty().append(data.drinkName);
-						$(".edit-drink-title").val(data.drinkName);
-						
-						$(".drink-desc .scroll-child").empty().append(data.instructions);
-						$(".edit-drink-desc").val(data.instructions);
-						
-						$(".ing-wrapper .scroll-child").empty().append(data.ingredients);
-						$(".ing-wrapper .scroll-child li").attr("class","ing");
-						$(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
-						$(".edit-ing-wrapper .scroll-child li").attr("class","edit-ing");
-						
-						editchosenIngs.refresh();
-						chosenIngs.refresh();
-					}
-					else
-						removeLoadingMask();	
-					
-				});//end ajax
-				
-			}
-			else if(PAGING_TYPE==PAGING_TYPE_CATEGORY){
-			
-			}
-			else if(PAGING_TYPE==PAGING_TYPE_ING){
-			
-			}
+			showDetail(this);			
 			
 		});
 		
@@ -561,6 +522,7 @@
 					
 				$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\""+favoritesStar+"\"></span></li>");
 				
+				showDetail($(".list_item").get(0));
 				
 			  }
 			  
@@ -581,8 +543,8 @@
 		});
 
 	}
-	//TODO:FINISH FAVORITES NEED TO SEARCH ARRAY LIST WHEN BUILDING DRINK LIST.
-	
+
+	//adds favorites to the array on start up
 	function setUpFavorites(){
 	
 		db.transaction(
@@ -597,6 +559,48 @@
 					
 				})
 			});
+		
+	}
+	
+	function showDetail(that){
+	
+		if(PAGING_TYPE==PAGING_TYPE_ALL || PAGING_TYPE==PAGING_TYPE_CATEGORY)
+		{
+			//if this is a drink not an ing or cat
+			var drinkId = $(that).attr("id");
+			
+			var requestUrl = ROOT_URL+"drinks/details"+drinkId;
+			//call to get details
+			$.getJSON(requestUrl,
+				function(data) {
+				//data in this case is drinkdetail
+				if(data!=null)
+				{
+					selectedDrinkDetails=data;//set current drinkdetail
+					
+					$(".drink-title").empty().append(data.drinkName);
+					$(".edit-drink-title").val(data.drinkName);
+					
+					$(".drink-desc .scroll-child").empty().append(data.instructions);
+					$(".edit-drink-desc").val(data.instructions);
+					
+					$(".ing-wrapper .scroll-child").empty().append(data.ingredients);
+					$(".ing-wrapper .scroll-child li").attr("class","ing");
+					$(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
+					$(".edit-ing-wrapper .scroll-child li").attr("class","edit-ing");
+					
+					editchosenIngs.refresh();
+					chosenIngs.refresh();
+				}
+				else
+					removeLoadingMask();	
+				
+			});//end ajax
+			
+		}
+		else if(PAGING_TYPE==PAGING_TYPE_ING){
+		
+		}
 		
 	}
 
