@@ -15,11 +15,13 @@
 <script type="text/javascript" src="js/phonegap.js"></script>
 <script type="text/javascript" src="js/EmailComposer.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/file.js"></script>
 <script type="text/javascript" src="js/iscroll.js"></script>
 
 
 
 <script type="text/javascript">
+	var db;
 	var ROOT_IP ="http://192.168.1.106:8080";
 	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
@@ -75,6 +77,17 @@
 	
 	
 	$(document).ready(function() {		
+
+		/*********** CHECK AND CREATE LOCAL DB ***************/
+		var dbName="favoritesDB";
+		var version = "1.0";
+		var displayName = "favoritesDB";
+		var maxSize = 65536;
+		db=openDatabase(dbName,version,displayName,maxSize);
+		db.transaction(
+			function(transaction){
+				transaction.executeSql("CREATE TABLE IF NOT EXISTS tblFavorites (_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,drink_id INTEGER NOT NULL);");
+			});
 
 			
 		//prevent screen from scrolling
@@ -181,6 +194,20 @@
 					var drinkId = $(this).parent().attr("id");
 					var isOn = $(this).hasClass("list_fav_selected");
 					var that=this;
+					
+					db.transaction(
+					function(transaction){
+						transaction.executeSql("INSERT INTO tblFavorites (drink_id) VALUES (?);",[drinkId],function(){
+							//SUCCESSFUL
+							if(data=="success" && isOn)
+								$(that).addClass("list_fav").removeClass("list_fav_selected");
+							else if(data=="success" && !isOn)
+								$(that).addClass("list_fav_selected").removeClass("list_fav");
+								
+							$(".list_item").removeClass("list_item_down");
+						})
+					});
+					
 					/* favorites are saved local
 					var requestUrl = ROOT_URL+"drinks/fav"+drinkId+"?isOn=" +isOn;
 					
