@@ -116,15 +116,15 @@
 	top:470px;
 	width:370px;
 }
-.land .ing-wrapper {
-	width:183px !important;
-}
+
 /** EDIT TEXT **/
 .land .edit-ing-wrapper{
 	height:110px !important;
+	width:183px !important;
 }
 .land .ing-wrapper {
 	height: 140px;
+	width:183px !important;
 
 }
 .land .edit-drink-title{
