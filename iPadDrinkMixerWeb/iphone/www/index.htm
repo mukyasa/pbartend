@@ -176,12 +176,12 @@
 			e.preventDefault();//prevent copy and mag from showing
 			if(!list_scroll)//if not scrolling 
 			{
-				if(confirm("Are you sure you want to set this as your favorite?"))
+				if(confirm("Are you sure you want change your favorite status?"))
 				{
 					var drinkId = $(this).parent().attr("id");
 					var isOn = $(this).hasClass("list_fav_selected");
 					var that=this;
-					
+					/* favorites are saved local
 					var requestUrl = ROOT_URL+"drinks/fav"+drinkId+"?isOn=" +isOn;
 					
 					$.get(requestUrl,					
@@ -191,8 +191,10 @@
 							$(that).addClass("list_fav").removeClass("list_fav_selected");
 						else if(data=="success" && !isOn)
 							$(that).addClass("list_fav_selected").removeClass("list_fav");
+							
+						$(".list_item").removeClass("list_item_down");
 													
-					});
+					});*/
 
 				}
 			}
