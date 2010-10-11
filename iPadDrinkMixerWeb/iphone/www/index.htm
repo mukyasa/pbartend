@@ -22,7 +22,8 @@
 
 <script type="text/javascript">
 	var db;
-	var ROOT_IP ="http://192.168.1.106:8080";
+	var favoritesArray=new Array();
+	var ROOT_IP ="http://localhost:8080";
 	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
 	var list_scroll=false;
@@ -32,7 +33,7 @@
 	var ING_TYPE_ID;//keep track of the current ingredient type for load more.
 	
 	var subject = 'Check out this drink!';
-	var anything = 'Check out this drink';
+	var anything = 'Check out this drink!';
 	var toRecipients = '';
 	var ccRecipients = '';
 	var bccRecipients = '';
@@ -204,15 +205,42 @@
 					var drinkId = $(this).parent().attr("id");
 					var isOn = $(this).hasClass("list_fav_selected");
 					var that=this;
-					
+					var tmpfav = new Array();
+
+				
 					db.transaction(
 					function(transaction){
 						transaction.executeSql("INSERT INTO tblFavorites (drink_id) VALUES (?);",[drinkId],function(){
 							//SUCCESSFUL
-							if(isOn)
-								$(that).addClass("list_fav").removeClass("list_fav_selected");
-							else if(!isOn)
+							if(!isOn)
+							{
 								$(that).addClass("list_fav_selected").removeClass("list_fav");
+								//add id
+								favoritesArray.push(drinkId);
+								
+
+							}
+							else if(isOn)
+							{
+								$(that).addClass("list_fav").removeClass("list_fav_selected");
+								//remove id
+								
+								console.log("drinkId:"+drinkId +" fav len:"+favoritesArray.length);
+								
+								for(i=0;i<favoritesArray.length;i++)
+								{
+									console.log("favoritesArray[i]:"+favoritesArray[i])
+									if(favoritesArray[i] != drinkId)
+										tmpfav.push(favoritesArray[i]);
+								}
+								//reset favoritesArray
+								favoritesArray = tmpfav;
+								
+							}
+							
+							
+							
+							console.log(favoritesArray);
 								
 							$(".list_item").removeClass("list_item_down");
 						})
@@ -470,10 +498,18 @@
 			{
 			  for(i=0;i<data.drinkDetails.length;i++)
 			  {
-				if(data.drinkDetails[i].favorites > 0)
-					favoritesStar="list_fav_selected";
-				else
-					favoritesStar="list_fav";
+				favoritesStar="list_fav";
+				
+				for(x=0;x<favoritesArray.length;x++)
+				{
+					
+					if(data.drinkDetails[i].id == favoritesArray[x])
+					{
+						favoritesStar="list_fav_selected";
+						break;
+					}
+						
+				}
 
 					
 				$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\""+favoritesStar+"\"></span></li>");
@@ -499,7 +535,7 @@
 
 	}
 	//TODO:FINISH FAVORITES NEED TO SEARCH ARRAY LIST WHEN BUILDING DRINK LIST.
-	var favoritesArray=new Array();
+	
 	function setUpFavorites(){
 	
 		db.transaction(
@@ -511,7 +547,6 @@
 						favoritesArray.push(row.drink_id);
 					
 					}
-					console.log(favoritesArray);
 					
 				})
 			});
