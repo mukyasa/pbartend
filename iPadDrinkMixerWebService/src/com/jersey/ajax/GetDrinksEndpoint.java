@@ -21,12 +21,12 @@ import com.jersey.model.DrinkDetails;
 import com.jersey.model.Ingredient;
 
 @Path("/drinks")
-public class GetDrinksEndpoint {
+public class GetDrinksEndpoint extends SQL {
 
 	private final int TYPE_LIQUOR = 1;// "Liquor";
 	private final int TYPE_MIXERS = 2;// "Mixers";
 	private final int TYPE_GARNISH = 3;// "Garnish";
-	
+
 	private final int CAT_COCKTAIL = 1;
 	private final int CAT_HOT_DRINK = 2;
 	private final int CAT_JELLO_SHOT = 3;
@@ -34,41 +34,69 @@ public class GetDrinksEndpoint {
 	private final int CAT_NON_ALC = 5;
 	private final int CAT_PUNCH = 6;
 	private final int CAT_SHOOTER = 7;
-	
-	/*
+
 	@GET
-	@Path("fav{drinkId}")
-	@Produces(MediaType.TEXT_HTML)
-	public String setFavorite(
-			@PathParam("drinkId") String drinkId,
-			@QueryParam("isOn") boolean isOn) {
+	@Path("details{drinkId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public DrinkDetails getDrinkDetails(@PathParam("drinkId") String drinkId) {
 
 		int int_drinkId = Integer.valueOf(drinkId).intValue();
-		Statement stmt = null;
+		PreparedStatement stmt = null;
 		Connection conn = null;
-		String success="success";
-		int setFav=1;
+		ResultSet rs = null;
+		DrinkDetails drink=null;
+		StringBuffer ingredients= new StringBuffer();
 		
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			if(isOn)setFav=0;
-			
-			String sql = "UPDATE tblDrinks SET "+SQL.COL_FAVORITE+"="+setFav+" WHERE "+SQL.COL_ROW_ID+"="+int_drinkId;
+			String sql = sqlGetDrinkDetailById;
 
-			stmt = conn.createStatement();
-			int wasSucccessful = stmt.executeUpdate(sql);
-			
-			if(wasSucccessful==0)
-				success="fail";
+			stmt = conn.prepareStatement(sql);
 
+			stmt.setInt(1, int_drinkId);
+
+			rs = stmt.executeQuery();
+
+			if (rs != null) {
+				
+				while (rs.next()) {
+					drink = new DrinkDetails();
+					drink.setId(rs.getInt(COL_ROW_ID));
+
+					// only show the first 26 chars
+					String sub_name = rs.getString(COL_NAME);
+					if (sub_name.length() >= 26)
+						sub_name = sub_name.substring(0, 26) + "...";
+
+					drink.setDrinkName(sub_name);
+					drink.setFavorites(rs.getInt(COL_FAVORITE));
+					String drink_css = rs.getString(COL_GLASS_NAME).replace(" ", "-");
+					drink.setGlass(drink_css);
+		
+					ingredients.append("<li class=\"ing\">-"+rs.getString(COL_AMOUNT) + " " +  rs.getString(COL_ING_NAME) +  "</li>");
+					drink.addIng(rs.getString(COL_AMOUNT) + ", " +  rs.getString(COL_ING_NAME));
+					drink.setId(rs.getInt(COL_ROW_ID));
+					drink.setDrinkName(rs.getString(COL_NAME));
+					drink.setGlass(rs.getString(COL_GLASS_NAME));
+					drink.setDrinkType(rs.getString(COL_CAT_NAME));
+					drink.setInstructions(rs.getString(COL_INSTUCTIONS));
+					drink.setFavorites(rs.getInt(COL_FAVORITE));
+					
+					drink.setGlassId(rs.getInt(COL_GLASS_ID));
+					drink.setCatId(rs.getInt(COL_CAT_ID));
+
+				}
+				
+				drink.setIngredients(ingredients.toString());
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			success="fail";
 		} finally {
 			try {
 				conn.close();
+				rs.close();
 				stmt.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -76,11 +104,10 @@ public class GetDrinksEndpoint {
 			}
 		}
 
-		return success;
+		return drink;
 
 	}
-	*/
-	
+
 	@GET
 	@Path("cats{catid}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -98,7 +125,8 @@ public class GetDrinksEndpoint {
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			String sql = SQL.sqlGetDrinksByDrinkCatId + " LIMIT " + startIndex+",200";
+			String sql = sqlGetDrinksByDrinkCatId + " LIMIT " + startIndex
+					+ ",200";
 
 			stmt = conn.prepareStatement(sql);
 			switch (int_id) {
@@ -127,7 +155,7 @@ public class GetDrinksEndpoint {
 
 			rs = stmt.executeQuery();
 
-			result = loopDrinks(rs,drink,result);
+			result = loopDrinks(rs, drink, result);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -148,8 +176,7 @@ public class GetDrinksEndpoint {
 	@GET
 	@Path("ings{ingId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Ingredient> getAllLiquors(
-			@PathParam("ingId") String id,
+	public List<Ingredient> getAllLiquors(@PathParam("ingId") String id,
 			@QueryParam("startIndex") String startIndex) {
 
 		int int_id = Integer.valueOf(id).intValue();
@@ -162,7 +189,8 @@ public class GetDrinksEndpoint {
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			String sql = SQL.sqlGetAllIngredients+ " LIMIT " + startIndex+",200";
+			String sql = sqlGetAllIngredients + " LIMIT " + startIndex
+					+ ",200";
 
 			stmt = conn.prepareStatement(sql);
 			switch (int_id) {
@@ -181,10 +209,10 @@ public class GetDrinksEndpoint {
 
 			while (rs.next()) {
 				liquor = new Ingredient();
-				liquor.setId(rs.getInt(SQL.COL_ROW_ID));
+				liquor.setId(rs.getInt(COL_ROW_ID));
 
 				// only show the first 32 chars
-				String sub_name = rs.getString(SQL.COL_CAT_NAME);
+				String sub_name = rs.getString(COL_CAT_NAME);
 				if (sub_name.length() >= 32)
 					sub_name = sub_name.substring(0, 32) + "...";
 
@@ -224,12 +252,13 @@ public class GetDrinksEndpoint {
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			String sql = SQL.sqlGetAllDrinksAndGlass + " LIMIT " + startIndex+",200";
+			String sql = sqlGetAllDrinksAndGlass + " LIMIT " + startIndex
+					+ ",200";
 
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
-			result = loopDrinks(rs,drink,result);
+			result = loopDrinks(rs, drink, result);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -246,8 +275,7 @@ public class GetDrinksEndpoint {
 
 		return result;
 	}
-	
-	
+
 	@GET
 	@Path("favs")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -260,29 +288,29 @@ public class GetDrinksEndpoint {
 		Connection conn = null;
 		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
 		DrinkDetails drink = null;
-		
+
 		String[] idlist = ids.split(",");
-		
+
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			String isSQL="";
-			//build sql
-			for(int i=0;i<idlist.length;i++)
-			{
-				if(i < (idlist.length-1))
-					isSQL += " d._id="+ idlist[i] +" OR ";
+			String isSQL = "";
+			// build sql
+			for (int i = 0; i < idlist.length; i++) {
+				if (i < (idlist.length - 1))
+					isSQL += " d._id=" + idlist[i] + " OR ";
 				else
-					isSQL += " d._id="+ idlist[i];
-					
+					isSQL += " d._id=" + idlist[i];
+
 			}
-			
-			String sql = SQL.sqlGetAllDrinksAndGlassById + isSQL + " LIMIT " + startIndex+",200";
+
+			String sql = sqlGetAllDrinksAndGlassById + isSQL + " LIMIT "
+					+ startIndex + ",200";
 
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
-			result = loopDrinks(rs,drink,result);
+			result = loopDrinks(rs, drink, result);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -299,36 +327,37 @@ public class GetDrinksEndpoint {
 
 		return result;
 	}
-	
+
 	/**
 	 * Builds a list of Drinks
+	 * 
 	 * @param rs
 	 * @param drink
 	 * @param result
 	 * @return
 	 * @throws Exception
 	 */
-	private List<DrinkDetails> loopDrinks(ResultSet rs,DrinkDetails drink,List<DrinkDetails> result) throws Exception{
-		
+	private List<DrinkDetails> loopDrinks(ResultSet rs, DrinkDetails drink,
+			List<DrinkDetails> result) throws Exception {
+
 		while (rs.next()) {
 			drink = new DrinkDetails();
-			drink.setId(rs.getInt(SQL.COL_ROW_ID));
+			drink.setId(rs.getInt(COL_ROW_ID));
 
 			// only show the first 26 chars
-			String sub_name = rs.getString(SQL.COL_NAME);
+			String sub_name = rs.getString(COL_NAME);
 			if (sub_name.length() >= 26)
 				sub_name = sub_name.substring(0, 26) + "...";
 
 			drink.setDrinkName(sub_name);
-			drink.setFavorites(rs.getInt(SQL.COL_FAVORITE));
-			String drink_css = rs.getString(SQL.COL_GLASS_NAME).replace(
-					" ", "-");
+			drink.setFavorites(rs.getInt(COL_FAVORITE));
+			String drink_css = rs.getString(COL_GLASS_NAME).replace(" ","-");
 			drink.setGlass(drink_css);
 
 			result.add(drink);
 		}
-		
+
 		return result;
-		
+
 	}
 }

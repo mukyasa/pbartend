@@ -47,6 +47,7 @@ public class SQL{
 	
 	
 	public static final String sqlGetAllDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
+	public static final String sqlGetAllDrinksAndGlassById ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE ";
 	
 	public static final String sqlGetMaxId ="SELECT MAX(_ID) AS "+COL_ROW_ID+"  FROM "+TABLE_DRINK;
 	public static final String sqlGetGlassNameById = "SELECT name AS "+COL_GLASS_NAME+" from "+TABLE_GLASSES+" WHERE _id=?";
