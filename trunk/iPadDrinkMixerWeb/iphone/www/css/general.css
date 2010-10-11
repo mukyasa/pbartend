@@ -395,7 +395,7 @@ body {
 	 margin-bottom:3px;
 	list-style:none;
 }
-.ing-wrapper {
+.ing-wrapper ,.edit-ing-wrapper {
 	position: relative;
 	width:243px;
 	height: 190px;
