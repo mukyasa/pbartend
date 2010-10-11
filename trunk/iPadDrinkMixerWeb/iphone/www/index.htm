@@ -353,9 +353,13 @@
 			//showLoadingMask();
 			
 		}
+		else if($(obj).attr("id")=="fav")
+		{
+			showDrinkList(ROOT_URL+"drinks/favs?ids="+favoritesArray.toString()+"&startIndex=0");
+		}
 		else if($(obj).attr("id")=="show_all")
 		{
-			showDrinkList();			
+			showDrinkList(ROOT_URL+"drinks?startIndex=0");			
 		}
 		else if($(obj).attr("id")=="liquor")
 		{
@@ -438,13 +442,12 @@
 	}
 	
 	//shows all the drinks limit 200
-	function showDrinkList()
+	function showDrinkList(requestUrl)
 	{
 		PAGING_COUNT=0;//first time called
 		PAGING_TYPE=PAGING_TYPE_ALL;
 		showLoadingMask();
 		$("#list_wrapper").empty();
-		 var requestUrl = ROOT_URL+"drinks?startIndex=0";
 
 		processDrinks(requestUrl);
 	}
