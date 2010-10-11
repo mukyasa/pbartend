@@ -207,44 +207,44 @@
 					var that=this;
 					var tmpfav = new Array();
 
-				
-					db.transaction(
-					function(transaction){
-						transaction.executeSql("INSERT INTO tblFavorites (drink_id) VALUES (?);",[drinkId],function(){
-							//SUCCESSFUL
-							if(!isOn)
-							{
+					if(!isOn)//add favorite
+					{
+						db.transaction(
+						function(transaction){
+							transaction.executeSql("INSERT INTO tblFavorites (drink_id) VALUES (?);",[drinkId],function(){
+								
 								$(that).addClass("list_fav_selected").removeClass("list_fav");
 								//add id
-								favoritesArray.push(drinkId);
+								favoritesArray.push(drinkId);			
 								
-
-							}
-							else if(isOn)
-							{
+							})
+						});
+					}
+					else //remove favorite
+					{				
+						db.transaction(
+						function(transaction){
+							transaction.executeSql("DELETE FROM tblFavorites WHERE drink_id = (?);",[drinkId],function(){
+								
 								$(that).addClass("list_fav").removeClass("list_fav_selected");
 								//remove id
-								
-								console.log("drinkId:"+drinkId +" fav len:"+favoritesArray.length);
-								
+							
 								for(i=0;i<favoritesArray.length;i++)
-								{
-									console.log("favoritesArray[i]:"+favoritesArray[i])
+								{ 
 									if(favoritesArray[i] != drinkId)
 										tmpfav.push(favoritesArray[i]);
 								}
 								//reset favoritesArray
 								favoritesArray = tmpfav;
+									
 								
-							}
-							
-							
-							
-							console.log(favoritesArray);
+									
 								
-							$(".list_item").removeClass("list_item_down");
-						})
-					});
+							})
+						});
+					}
+					
+					$(".list_item").removeClass("list_item_down");
 
 				}
 			}
