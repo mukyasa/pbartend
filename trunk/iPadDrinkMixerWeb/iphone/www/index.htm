@@ -499,6 +499,7 @@
 
 	}
 	
+	var favoritesArray=new Array();
 	function setUpFavorites(){
 	
 		db.transaction(
@@ -507,9 +508,10 @@
 					for(i=0;i<results.rows.length;i++)
 					{
 						var row = results.rows.item(i);
-						console.log(row.drink_id);
+						favoritesArray.push(row.drink_id);
 					
 					}
+					console.log(favoritesArray);
 					
 				})
 			});
