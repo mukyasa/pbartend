@@ -23,6 +23,7 @@
 <script type="text/javascript">
 	var db;
 	var favoritesArray=new Array();
+	var selectedDrinkDetails;
 	var ROOT_IP ="http://localhost:8080";
 	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
@@ -125,8 +126,8 @@
 		}
 		
 		mainscroller = new iScroll('scroller');
-		scroller2 = new iScroll('editchosenIngs');
-		scroller3 = new iScroll('chosenIngs');
+		editchosenIngs = new iScroll('editchosenIngs');
+		chosenIngs = new iScroll('chosenIngs');
 		scroller4 = new iScroll('scroll-desc');
 
 		$(".button,.sm_button,.fav_button").bind(START_EVENT,handleTouchStart).bind(END_EVENT,handleTouchEnd);
@@ -194,6 +195,36 @@
 			$(this).addClass("list_item_down");
 		}).bind(END_EVENT,function(){
 			$(this).removeClass("list_item_down");
+			var drinkId = $(this).attr("id");
+			
+			var requestUrl = ROOT_URL+"drinks/details"+drinkId;
+			//call to get details
+			$.getJSON(requestUrl,
+				function(data) {
+					//data in this case is drinkdetail
+					if(data!=null)
+					{
+						selectedDrinkDetails=data;//set current drinkdetail
+						
+						$(".drink-title").empty().append(data.drinkName);
+						$(".edit-drink-title").val(data.drinkName);
+						
+						$(".drink-desc .scroll-child").empty().append(data.instructions);
+						$(".edit-drink-desc").val(data.instructions);
+						
+						$(".ing-wrapper .scroll-child").empty().append(data.ingredients);
+						$(".ing-wrapper .scroll-child li").attr("class","ing");
+						$(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
+						$(".edit-ing-wrapper .scroll-child li").attr("class","edit-ing");
+						
+						editchosenIngs.refresh();
+						chosenIngs.refresh();
+					}
+					else
+						removeLoadingMask();	
+					
+				});//end ajax
+			
 		});
 		
 		$(".list_fav,.list_fav_selected").bind(START_EVENT,function(e){
@@ -653,28 +684,16 @@
 				<input type="text" class="edit-drink-title" value="This is the Drink Title">
 				<div class="drink-ings">
 					<div class="edit-ing add-new-ing">Add New Ingredients</div>
-					<div class="ing-wrapper edit-ing-wrapper">
+					<div class="edit-ing-wrapper">
 						<div id="editchosenIngs">
 							<ul class="ing-items-wrapper scroll-child">
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
-								<li class="edit-ing">-1/2 cup stuff</li>
+								<!--li class="edit-ing">-1/2 cup stuff</li-->
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-			<textarea class="edit-drink-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-			</textarea>
+			<textarea class="edit-drink-desc"><!--//ajax driven --></textarea>
 			<div class="paper-button-block edit-paper-button-block">
 				<div class="backbutton flipbutton"></div>
 				<div class="cancelbutton flipbutton"></div>
@@ -690,17 +709,7 @@
 				<div class="ing-wrapper">
 						<div id="chosenIngs">
 							<ul class="ing-items-wrapper scroll-child">
-								<li class="ing">-1/2 cup stuff</li>
-								<li class="ing">-1/2 cup stuff</li>
-								<li class="ing">-1/2 cup stuff</li>
-								<li class="ing">-1/2 cup stuff</li>
-								<li class="ing">-1/2 cup stuff</li>
-								<li class="ing">-1/2 cup stuff</li>
-								<li class="ing">-1/2 cup stuff</li>
-								<li class="ing">-1/2 cup stuff</li>
-								<li class="ing">-1/2 cup stuff</li>
-								<li class="ing">-1/2 cup stuff</li>
-								<li class="ing">-1/2 cup stuff</li>
+								<!--li class="ing">-1/2 cup stuff</li-->
 							</ul>
 						</div>
 					</div>
@@ -708,18 +717,7 @@
 		
 			<div class="drink-desc">
 				<div id="scroll-desc">
-				<div class="scroll-child">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-				laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
-				nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-				laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
-				nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-				laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
-				nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-				laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
-				nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
-				laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis 
-				nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor 
-				</div>
+				<div class="scroll-child"><!--//ajax driven --></div>
 			</div>
 			</div>
 			<div class="paper-button-block">
