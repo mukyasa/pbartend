@@ -72,7 +72,7 @@ public class SQL{
 	//search filter sql
 	public static final String sqlGetAllFavoritesFilter = "SELECT d.name,d._id,d.favorite, g.name AS "+COL_GLASS_NAME+" FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE favorite ="+FAV_YES+" and d."+COL_NAME+" like ?";
 	
-	public static final String sqlGetAllDrinksFilter = "SELECT g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE d."+COL_NAME+" like ?";
+	public static final String sqlGetAllDrinksFilter = "SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE d."+COL_NAME+" like ?";
 	public static final String sqlGetAllCategoriesFilter = "SELECT d.name,d._id FROM "+ TABLE_DRINK_CAT + " d  WHERE  "+COL_NAME+" like ?";
 	public static final String sqlGetAllDringksFilterCategories = "SELECT g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE d."+COL_NAME+" like ? AND category_id=?";
 	
