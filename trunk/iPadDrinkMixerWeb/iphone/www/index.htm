@@ -55,6 +55,7 @@
 	const PAGING_TYPE_ALL=1;
 	const PAGING_TYPE_CATEGORY=2;
 	const PAGING_TYPE_ING=3;
+	const PAGING_TYPE_SEARCH=4;
 	
 	var isTouch = (/ipad/gi).test(navigator.appVersion),
 
@@ -137,12 +138,14 @@
 		/****************  SEARCH FILTER ********************/
 		$(".search-input").bind("keyup",function(e){
 			
+			
+			
 			//console.log(e.keyCode);
 			if((e.keyCode >=48 && e.keyCode <=57) || (e.keyCode >=65 && e.keyCode <=90))
 			{
 			
 				PAGING_COUNT=0;//first time called
-				PAGING_TYPE=PAGING_TYPE_ALL;
+				PAGING_TYPE = PAGING_TYPE_SEARCH;
 				showLoadingMask();
 				$("#list_wrapper").empty();
 			
@@ -288,9 +291,15 @@
 				var requestUrl = ROOT_URL+"drinks?startIndex="+PAGING_COUNT;
 			else if(PAGING_TYPE==PAGING_TYPE_ING)
 				var requestUrl = ROOT_URL+"drinks/ings"+ING_TYPE_ID+"?startIndex="+PAGING_COUNT;
+			else if(PAGING_TYPE == PAGING_TYPE_SEARCH)
+				var requestUrl = ROOT_URL+"drinks/search?searchParam="+$(".search-input").val()+"&startIndex="+PAGING_COUNT;
+				
 			
 			$(this).remove();
-			processDrinks(requestUrl,true);
+			if(PAGING_TYPE == PAGING_TYPE_SEARCH)
+				processDrinks(requestUrl,false);
+			else
+				processDrinks(requestUrl,true);
 		});
 	}
 	
