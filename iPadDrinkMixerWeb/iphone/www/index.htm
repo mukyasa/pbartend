@@ -594,6 +594,20 @@
 		
 	}
 	
+	function getAQuote(){
+	
+		var requestUrl = ROOT_URL+"quotes";
+			//call to get details
+			$.get(requestUrl,
+				function(data) {
+				//data in this case is drinkdetail
+				if(data!=null)
+					$("#quote").empty().append(data);	
+				
+			});//end ajax
+	
+	}
+	
 	//get the drink details sets it to the screen
 	function showDetail(that){
 	
@@ -638,6 +652,8 @@
 		else if(PAGING_TYPE==PAGING_TYPE_ING){
 			//removeLoadingMask();
 		}
+		
+		getAQuote();
 		
 	}
 
@@ -777,6 +793,7 @@
 				<div class="frontbutton flipbutton"></div>
 				<div class="list_email"></div>
 			</div>
+			<div id="quote"></div>
 			</div>
 		</div>
 
