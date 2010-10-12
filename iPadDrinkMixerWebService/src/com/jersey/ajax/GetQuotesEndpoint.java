@@ -26,7 +26,7 @@ public class GetQuotesEndpoint extends SQL {
 		String quote="";
 		
 		//randomize quote
-		int id = (int)(61.0 * Math.random()) + 1;
+		int id = (int)(73.0 * Math.random()) + 1;
 		
     	try{
     		conn = DbConnectionTest.getConnection();
