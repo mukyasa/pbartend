@@ -11,6 +11,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 
 import com.jersey.dao.DbConnectionTest;
 import com.jersey.model.Glass;
@@ -19,7 +20,7 @@ import com.jersey.model.Glass;
 public class GetGlassesEndpoint {
 
     @GET
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Glass> allGlasses(
     		@QueryParam("drinkName") String drinkName,
             @QueryParam("id") String id
@@ -55,6 +56,8 @@ public class GetGlassesEndpoint {
     	finally{
     		try {
 				conn.close();
+				rs.close();
+				stmt.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
