@@ -96,6 +96,12 @@
 }
 
 /* drink info text*/
+.port #quote{
+	margin-top:125px;
+	margin-left:80px;
+	width:320px;
+	font-size:14px;
+}
 .port .frontbutton{
 	background: url("../images/edit_button.png") no-repeat 0 0;
 	width:81px;
