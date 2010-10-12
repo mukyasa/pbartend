@@ -134,6 +134,11 @@
 		$(".button,.sm_button,.fav_button").bind(START_EVENT,handleTouchStart).bind(END_EVENT,handleTouchEnd);
 		$(".postbutton").bind(START_EVENT,handlePostButtonTouchStart).bind(END_EVENT,handlePostButtonTouchEnd);
 	
+		/****************  SEARCH FILTER ********************/
+		$(".search-input").bind("keyup",function(){
+			$(".drink-desc .scroll-child").append($(this).val());
+		
+		});
 		
 		
 		/**************** list list buttons **************/
@@ -532,13 +537,13 @@
 			  if($("#list_wrapper li").length >=LIMIT)//add the add more link
 				$("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
 				
-				//mainscroller.reload();
-				removeLoadingMask();
 				//add events
 				list_item_events();
 				//if portrait show pop up
 				if(css_orientation=="port")
 					$(".port #wrapper").fadeIn();
+					
+			
 			}
 			else
 				removeLoadingMask();
@@ -596,16 +601,18 @@
 					
 					editchosenIngs.refresh();
 					chosenIngs.refresh();
+					
+					removeLoadingMask();
 				}
 			
-				//removeLoadingMask();
+				
 						
 				
 			});//end ajax
 			
 		}
 		else if(PAGING_TYPE==PAGING_TYPE_ING){
-		
+			//removeLoadingMask();
 		}
 		
 	}
