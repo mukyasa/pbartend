@@ -136,11 +136,10 @@
 	
 		/****************  SEARCH FILTER ********************/
 		$(".search-input").bind("keyup",function(e){
-			
-			
+
 			
 			//console.log(e.keyCode);
-			if((e.keyCode >=48 && e.keyCode <=57) || (e.keyCode >=65 && e.keyCode <=90))
+			if((e.keyCode >=48 && e.keyCode <=57) || (e.keyCode >=65 && e.keyCode <=90) || e.keyCode ==0)
 			{
 			
 				PAGING_COUNT=0;//first time called
@@ -551,13 +550,15 @@
 					
 				$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\""+favoritesStar+"\"></span></li>");
 				
-				if(showDetails)
-					showDetail($(".list_item").get(0));
-				else
-					removeLoadingMask();
+				
 				
 			  }
 			  
+			  if(showDetails)
+				showDetail($(".list_item").get(0));
+			  else
+				removeLoadingMask();
+					
 			  if($("#list_wrapper li").length >=LIMIT)//add the add more link
 				$("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
 				
@@ -610,7 +611,7 @@
 	
 	//get the drink details sets it to the screen
 	function showDetail(that){
-	
+
 		if(PAGING_TYPE==PAGING_TYPE_ALL || PAGING_TYPE==PAGING_TYPE_CATEGORY)
 		{
 			//showLoadingMask();//pop modal
