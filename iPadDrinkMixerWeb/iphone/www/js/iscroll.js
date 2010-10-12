@@ -174,6 +174,7 @@ iScroll.prototype = {
 		} else if (that.scrollBarY) {
 			that.scrollBarY = that.scrollBarY.remove();
 		}
+
 	},
 
 	setPosition: function (x, y, hideScrollBars) {
