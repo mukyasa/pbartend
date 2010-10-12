@@ -26,12 +26,12 @@ public class GetQuotesEndpoint extends SQL {
 		String quote="";
 		
 		//randomize quote
-		int id = (int)(10.0 * Math.random()) + 1;
+		int id = (int)(61.0 * Math.random()) + 1;
 		
     	try{
     		conn = DbConnectionTest.getConnection();
     		
-			String sql = "SELECT quote FROM tblQuotes WHERE _id="+id;
+			String sql = "SELECT quote FROM tblQuote WHERE _id="+id;
 			
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
