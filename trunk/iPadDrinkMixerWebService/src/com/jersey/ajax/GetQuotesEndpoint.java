@@ -44,6 +44,8 @@ public class GetQuotesEndpoint extends SQL {
     	finally{
     		try {
 				conn.close();
+				rs.close();
+				stmt.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
