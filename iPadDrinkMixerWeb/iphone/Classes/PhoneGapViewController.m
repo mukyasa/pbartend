@@ -44,10 +44,21 @@
     return YES;
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+	//PORTRAIT
+	if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+	{
+		[webView stringByEvaluatingJavaScriptFromString:@"changeOrientation(1)"];	
+	}
+	else {//LANDSCAPE
+		[webView stringByEvaluatingJavaScriptFromString:@"changeOrientation(0)"];
+	}
+
+}
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
 	
-	
+	/*
 	//PORTRAIT
 	if(fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
 	{
@@ -56,7 +67,7 @@
 	else {//LANDSCAPE
 		[webView stringByEvaluatingJavaScriptFromString:@"changeOrientation(1)"];
 	}
-	
+	*/
 	
 }
 
