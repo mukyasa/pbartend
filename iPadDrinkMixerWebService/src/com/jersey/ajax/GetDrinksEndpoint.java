@@ -34,6 +34,7 @@ public class GetDrinksEndpoint extends SQL {
 	private final int CAT_NON_ALC = 5;
 	private final int CAT_PUNCH = 6;
 	private final int CAT_SHOOTER = 7;
+	private final String LIMIT = "150";
 
 	@GET
 	@Path("details{drinkId}")
@@ -126,7 +127,7 @@ public class GetDrinksEndpoint extends SQL {
 			conn = DbConnectionTest.getConnection();
 
 			String sql = sqlGetDrinksByDrinkCatId + " LIMIT " + startIndex
-					+ ",200";
+					+ ","+LIMIT;
 
 			stmt = conn.prepareStatement(sql);
 			switch (int_id) {
@@ -190,7 +191,7 @@ public class GetDrinksEndpoint extends SQL {
 			conn = DbConnectionTest.getConnection();
 
 			String sql = sqlGetAllIngredients + " LIMIT " + startIndex
-					+ ",200";
+					+ ","+LIMIT;
 
 			stmt = conn.prepareStatement(sql);
 			switch (int_id) {
@@ -253,7 +254,7 @@ public class GetDrinksEndpoint extends SQL {
 			conn = DbConnectionTest.getConnection();
 
 			String sql = sqlGetAllDrinksAndGlass + " LIMIT " + startIndex
-					+ ",200";
+					+ ","+LIMIT;
 
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -305,7 +306,7 @@ public class GetDrinksEndpoint extends SQL {
 			}
 
 			String sql = sqlGetAllDrinksAndGlassById + isSQL + " LIMIT "
-					+ startIndex + ",200";
+					+ startIndex + ","+LIMIT;
 
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -328,6 +329,48 @@ public class GetDrinksEndpoint extends SQL {
 		return result;
 	}
 
+	
+	@GET
+	@Path("search")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<DrinkDetails> filterDrinksList(
+			@QueryParam("startIndex") String startIndex,
+			@QueryParam("searchParam") String searchParam) {
+
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		Connection conn = null;
+		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
+		DrinkDetails drink = null;
+
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			String sql = sqlGetAllDrinksFilter + " LIMIT "+ startIndex + ","+LIMIT;
+
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, searchParam+"%");
+			
+			rs = stmt.executeQuery();
+
+			result = loopDrinks(rs, drink, result);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				rs.close();
+				stmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+	
 	/**
 	 * Builds a list of Drinks
 	 * 
