@@ -412,7 +412,9 @@ body {
 }
 #scroll-desc{height:150% !important;}
 .ing-items-wrapper{padding:0;margin:0;}
-
+.edit-drink-desc{
+	font-size:18px;
+}
 
 
 
