@@ -135,9 +135,22 @@
 		$(".postbutton").bind(START_EVENT,handlePostButtonTouchStart).bind(END_EVENT,handlePostButtonTouchEnd);
 	
 		/****************  SEARCH FILTER ********************/
-		$(".search-input").bind("keyup",function(){
-			$(".drink-desc .scroll-child").append($(this).val());
-		
+		$(".search-input").bind("keyup",function(e){
+			
+			//console.log(e.keyCode);
+			if((e.keyCode >=48 && e.keyCode <=57) || (e.keyCode >=65 && e.keyCode <=90))
+			{
+			
+				PAGING_COUNT=0;//first time called
+				PAGING_TYPE=PAGING_TYPE_ALL;
+				showLoadingMask();
+				$("#list_wrapper").empty();
+			
+				var requestUrl = ROOT_URL+"drinks/search?searchParam="+$(this).val()+"&startIndex=0";
+			
+				processDrinks(requestUrl,false);
+			}
+			
 		});
 		
 		
@@ -277,7 +290,7 @@
 				var requestUrl = ROOT_URL+"drinks/ings"+ING_TYPE_ID+"?startIndex="+PAGING_COUNT;
 			
 			$(this).remove();
-			processDrinks(requestUrl);
+			processDrinks(requestUrl,true);
 		});
 	}
 	
@@ -432,7 +445,7 @@
 				
 		$("#list_wrapper").empty();
 
-		processDrinks(requestUrl);
+		processDrinks(requestUrl,true);
 	
 	}
 	
@@ -450,7 +463,7 @@
 		$("#list_wrapper").empty();
 		var requestUrl = ROOT_URL+"drinks/cats"+CAT_TYPE_ID+"?startIndex=0";
 
-		processDrinks(requestUrl);
+		processDrinks(requestUrl,true);
 	}
 	
 	//shows all the drinks limit 200
@@ -461,7 +474,7 @@
 		showLoadingMask();
 		$("#list_wrapper").empty();
 
-		processDrinks(requestUrl);
+		processDrinks(requestUrl,true);
 	}
 	/*********** DRINK LISTS *************/
 	
@@ -505,7 +518,7 @@
 	}
 	
 	//process the ajax and returns the results
-	function processDrinks(requestUrl){
+	function processDrinks(requestUrl,showDetails){
 		var favoritesStar;
 		$.getJSON(requestUrl,
 		function(data) {
@@ -530,7 +543,10 @@
 					
 				$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\""+favoritesStar+"\"></span></li>");
 				
-				showDetail($(".list_item").get(0));
+				if(showDetails)
+					showDetail($(".list_item").get(0));
+				else
+					removeLoadingMask();
 				
 			  }
 			  
