@@ -24,7 +24,7 @@
 	var db;
 	var favoritesArray=new Array();
 	var selectedDrinkDetails;
-	var ROOT_IP ="http://localhost:8080";
+	var ROOT_IP ="http://192.168.1.105:8080";
 	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
 	var list_scroll=false;
@@ -32,6 +32,7 @@
 	var PAGING_TYPE;//keep track of the current page count for load more.
 	var CAT_TYPE_ID;//keep track of the current category selected for load more.
 	var ING_TYPE_ID;//keep track of the current ingredient type for load more.
+	var LIMIT=150;
 	
 	var subject = 'Check out this drink!';
 	var anything = 'Check out this drink!';
@@ -157,9 +158,7 @@
 			else
 				list_scroll=false;
 		});
-		$(".list_item").bind(MOVE_EVENT,function(e){
-			list_scroll=true;//used if your scrolling
-		});
+		
 		/***********************************************/
 		
 		//flip page
@@ -191,14 +190,18 @@
 	
 	function list_item_events(){
 	
-		$(".list_item").bind(START_EVENT,function(){
+		$(".list_item").bind(START_EVENT,function(e){
 			$(this).addClass("list_item_down");
-		}).bind(END_EVENT,function(){
+		}).bind(END_EVENT,function(e){
 			$(this).removeClass("list_item_down");
+			if(!list_scroll)//if not scrolling 
+				showDetail(this);
 			
-			showDetail(this);			
+			list_scroll=false;			
 			
-		});
+		}).bind(MOVE_EVENT,function(e){
+			list_scroll=true;//used if your scrolling
+		});;
 		
 		$(".list_fav,.list_fav_selected").bind(START_EVENT,function(e){
 			e.preventDefault();//prevent copy and mag from showing
@@ -526,7 +529,7 @@
 				
 			  }
 			  
-			  if($("#list_wrapper li").length >=200)//add the add more link
+			  if($("#list_wrapper li").length >=LIMIT)//add the add more link
 				$("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
 				
 				//mainscroller.reload();
@@ -567,6 +570,7 @@
 	
 		if(PAGING_TYPE==PAGING_TYPE_ALL || PAGING_TYPE==PAGING_TYPE_CATEGORY)
 		{
+			//showLoadingMask();//pop modal
 			//if this is a drink not an ing or cat
 			var drinkId = $(that).attr("id");
 			
@@ -593,8 +597,9 @@
 					editchosenIngs.refresh();
 					chosenIngs.refresh();
 				}
-				else
-					removeLoadingMask();	
+			
+				//removeLoadingMask();
+						
 				
 			});//end ajax
 			
@@ -752,6 +757,31 @@
    <img src="images/button_touch.png" width="1" height="1"/>
    <img src="images/fav_button_touch.png" width="1" height="1"/>
    <img src="images/sm_button_touch.png" width="1" height="1"/>
+   <!--glasses-->
+   <img src="images/glasses/champ.png" width="1" height="1"/>
+   <img src="images/glasses/cocktail.png" width="1" height="1"/>
+   <img src="images/glasses/collins.png" width="1" height="1"/>
+   <img src="images/glasses/cordial.png" width="1" height="1"/>
+   <img src="images/glasses/highball.png" width="1" height="1"/>
+   <img src="images/glasses/hurricane.png" width="1" height="1"/>
+   <img src="images/glasses/irish.png" width="1" height="1"/>
+   <img src="images/glasses/margarita.png" width="1" height="1"/>
+   <img src="images/glasses/mug.png" width="1" height="1"/>
+   <img src="images/glasses/old_fashion.png" width="1" height="1"/>
+   <img src="images/glasses/parfait.png" width="1" height="1"/>
+   <img src="images/glasses/sm_button_touch.png" width="1" height="1"/>
+   <img src="images/glasses/pilsner.png" width="1" height="1"/>
+   <img src="images/glasses/pint.png" width="1" height="1"/>
+   <img src="images/glasses/pousse_cafe.png" width="1" height="1"/>
+   <img src="images/glasses/punch.png" width="1" height="1"/>
+   <img src="images/glasses/redwine.png" width="1" height="1"/>
+   <img src="images/glasses/rocks.png" width="1" height="1"/>
+   <img src="images/glasses/shot.png" width="1" height="1"/>
+   <img src="images/glasses/snifter.png" width="1" height="1"/>
+   <img src="images/glasses/sour.png" width="1" height="1"/>
+   <img src="images/glasses/whitewine.png" width="1" height="1"/>
+   <img src="images/list_fav.png" width="1" height="1"/>
+   <img src="images/list_fav_selected.png" width="1" height="1"/>
 </div>
 
 </body>
