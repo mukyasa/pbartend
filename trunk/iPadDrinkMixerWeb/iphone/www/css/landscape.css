@@ -46,6 +46,12 @@
 }
 
 /* drink info text*/
+.land #quote{
+	margin-top:85px;
+	margin-left:60px;
+	width:260px;
+	font-size:12px;
+}
 
 .land .frontbutton{
 	background: url("../images/edit_button.png") no-repeat 0 0;
