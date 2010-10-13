@@ -58,16 +58,10 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
 	
-	/*
-	//PORTRAIT
-	if(fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
-	{
-		[webView stringByEvaluatingJavaScriptFromString:@"changeOrientation(0)"];	
-	}
-	else {//LANDSCAPE
-		[webView stringByEvaluatingJavaScriptFromString:@"changeOrientation(1)"];
-	}
-	*/
+	
+	//[webView stringByEvaluatingJavaScriptFromString:@"refreshMainScroller()"];
+	
+	
 	
 }
 
