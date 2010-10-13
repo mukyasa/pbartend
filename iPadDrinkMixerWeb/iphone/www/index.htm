@@ -23,7 +23,7 @@
 	var db;
 	var favoritesArray=new Array();
 	var selectedDrinkDetails;
-	var ROOT_IP ="http://192.168.1.105:8080";
+	var ROOT_IP ="http://10.55.128.32:8080";
 	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
 	var list_scroll=false;
@@ -223,7 +223,11 @@
 			e.preventDefault();
 			$(this).removeClass("list_item_down");
 			if(!list_scroll)//if not scrolling 
+			{
+				$(this).find(".list_fav_selected").addClass("list-item-loading");
+				$(this).find(".list_fav").addClass("list-item-loading");
 				showDetail(this);
+			}
 			
 			list_scroll=false;			
 			
@@ -685,6 +689,8 @@
 					
 				}
 
+				$(".list_fav_selected").removeClass("list-item-loading");
+				$(".list_fav").removeClass("list-item-loading");
 				removeLoadingMask();	
 						
 				
