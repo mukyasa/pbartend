@@ -11,6 +11,7 @@ body {
 } 
 .x-masked {
     overflow: hidden !important;
+	z-index:9999;
 }
 
 #reload_page{
