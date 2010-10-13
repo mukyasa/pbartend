@@ -44,6 +44,11 @@
 	const TYPE_MIXERS = 2;//"Mixers";
 	const TYPE_GARNISH = 3;//"Garnish";
 	
+	const TYPE_LIQUOR_NAME = "Liquor";
+	const TYPE_MIXERS_NAME = "Mixers";
+	const TYPE_GARNISH_NAME = "Garnish";
+	var TYPE;
+	
 	const CAT_COCKTAIL = 1;
 	const CAT_HOT_DRINK = 2;
 	const CAT_JELLO_SHOT = 3;
@@ -419,14 +424,18 @@
 		}
 		else if($(obj).attr("id")=="liquor")
 		{
+			TYPE=TYPE_LIQUOR_NAME;
 			showIngList(TYPE_LIQUOR);
+			
 		}
 		else if($(obj).attr("id")=="mixer")
 		{
+			TYPE=TYPE_MIXERS_NAME;
 			showIngList(TYPE_MIXERS);
 		}
 		else if($(obj).attr("id")=="garnish")
 		{
+			TYPE=TYPE_GARNISH_NAME;
 			showIngList(TYPE_GARNISH);
 		}
 		else if($(obj).attr("id")=="cocktail")
@@ -698,7 +707,14 @@
 			
 		}
 		else if(PAGING_TYPE==PAGING_TYPE_ING){
-			//removeLoadingMask();
+			
+			//if this is a drink not an ing or cat
+			var drinkId = $(that).attr("id");
+
+			var requestUrl = ROOT_URL+"drinks/ingsId"+drinkId + "?typeName="+TYPE+"&startIndex=0";
+			showDrinkList(requestUrl);						
+	
+			
 		}
 		
 		getAQuote();
@@ -785,7 +801,7 @@
 <!-- LIST -->
 
 <div id="wrapper" class="popout ui-cornor-all">
-<div class="search"><input type="text" name="search" class="search-input"/></div>
+<div class="search"><input type="text" placeholder="Filter By Drink Name" name="search" class="search-input"/></div>
 	<div id="inner-wrapper">
 		<div id="scroller">
 			<ul id="list_wrapper" class="scroll-child">
@@ -809,7 +825,7 @@
 			<div class="page_content_wrapper edit-page_content_wrapper">
 			<div id="edit-drink-photo"></div>
 			<div class="text-float-right">
-				<input type="text" class="edit-drink-title" value="">
+				<input type="text" placeholder="Drink Title" class="edit-drink-title" value="">
 				<div class="drink-ings">
 					<div class="edit-ing add-new-ing">Add New Ingredients</div>
 					<div class="edit-ing-wrapper">
