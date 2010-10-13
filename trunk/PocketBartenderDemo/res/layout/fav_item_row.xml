@@ -1,0 +1,7 @@
+
+<TextView 
+xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/tfName"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:drawableLeft="@drawable/star" android:paddingBottom="2sp" android:paddingTop="2sp" android:gravity="fill_vertical"  android:background="@drawable/listbg" android:paddingLeft="15.0sp" android:drawablePadding="10sp" android:textColor="#000"/>

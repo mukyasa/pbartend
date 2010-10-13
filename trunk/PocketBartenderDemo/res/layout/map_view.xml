@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:id="@+id/RelativeLayout02"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res"
+	android:background="@drawable/maps_bg">
+	<ScrollView android:id="@+id/ScrollView01"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:paddingBottom="50.0sp">
+		<RelativeLayout android:id="@+id/RelativeLayout01"
+			android:layout_width="fill_parent" android:layout_height="fill_parent">
+			
+			<Button android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_marginRight="10.0sp"
+			android:layout_marginBottom="5.0sp" android:text="Find Local Bars"
+			android:id="@+id/btnBars" android:background="@drawable/button_bg"
+			android:paddingLeft="0sp" android:paddingRight="0sp"
+			android:paddingTop="0sp" android:paddingBottom="10sp"
+			android:textColor="#fff" android:textStyle="bold" android:layout_marginLeft="10.0sp" android:layout_marginTop="10.0sp"></Button>
+			
+			<Button android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_marginRight="10.0sp"
+			android:layout_marginBottom="5.0sp" android:text="Find Liquor Stores"
+			android:layout_below="@+id/btnBars"
+			android:id="@+id/btnLiquorStore" android:background="@drawable/button_bg"
+			android:paddingLeft="0sp" android:paddingRight="0sp"
+			android:paddingTop="0sp" android:paddingBottom="10sp"
+			android:textColor="#fff" android:textStyle="bold" android:layout_marginLeft="10.0sp"></Button>
+			
+			
+			<Button android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_marginRight="10.0sp"
+			android:layout_marginBottom="5.0sp" android:text="Find Grocery Stores"
+			android:layout_below="@+id/btnLiquorStore"
+			android:id="@+id/btnGrocery" android:background="@drawable/button_bg"
+			android:paddingLeft="0sp" android:paddingRight="0sp"
+			android:paddingTop="0sp" android:paddingBottom="10sp"
+			android:textColor="#fff" android:textStyle="bold" android:layout_marginLeft="10.0sp"></Button>
+			
+		</RelativeLayout>
+	</ScrollView>
+	<com.admob.android.ads.AdView android:id="@+id/ad"
+		android:visibility="gone" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" app:backgroundColor="#000000"
+		app:primaryTextColor="#FFFFFF" app:secondaryTextColor="#CCCCCC"
+		app:keywords="Android reference" android:layout_alignParentBottom="true" />
+</RelativeLayout>
+
+

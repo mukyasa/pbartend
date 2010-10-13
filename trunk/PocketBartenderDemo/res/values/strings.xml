@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="empty">No records found.</string>
+    <string name="newLiquorName">New Liquor Name</string>
+    <string name="newMixerName">New Mixer Name</string>
+    <string name="newGarnishName">New Garnish Name</string>
+    <string name="app_name">Bartender</string>
+    <string name="create_drink_title">Drink Title</string>
+    <string name="search_filter">Search Filter</string>
+    <string name="categoryText">Category</string>
+    <string name="ingredientsText">Ingredients</string>
+    <string name="instructionsText">Instructions</string>
+    <string name="liquorText">Liquor</string>
+    <string name="mixersText">Mixers</string>
+    <string name="garnishText">Garnish</string>
+<string name="tvListTitle">TITLE</string>
+<string name="save">Save</string>
+<string name="btnSave">Save</string>
+<string name="btnCancel">Cancel</string>
+<string name="tvGlassSelect">Selected Glass</string>
+<string name="tvCatSelect">Selected Category</string>
+<string name="tvWhole">Selected 1</string>
+<string name="tvHalf">Selected 2</string>
+<string name="tvMeasurement">Selected 3</string>
+<string name="btnReset">Reset</string>
+<string name="searchboxlbl">Search</string>
+<string name="locallocation"> Put database on phone</string>
+<string name="remotelocation"> Put database on SDcard</string>
+<string name="dblocation">Select your database location</string>
+<string name="setlocation">Set Location</string>
+<string name="delete">(Click and hold ingredient to delete.)</string>
+<string name="setNote">Warning, changing the database location will clear any new or favorite drinks. Do NOT rotate while building database.</string>
+<string name="buildingdb">Building the database, please be patient it only happens once. Do NOT rotate while building database.</string>
+<string name="newCat">(Add new category)</string>
+<string name="newIng">(Add new ingredients)</string>
+
+
+<string name="newLiquorTypeAdded">Liquor Type:</string>
+<string name="newMixerTypeAdded">Mixer Type:</string>
+<string name="stock">Bar Stock</string>
+<string name="tech">Basic Techniques</string>
+<string name="glasses">Glasses</string>
+<string name="term">Terminology</string>
+</resources>

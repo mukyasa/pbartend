@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content">
+	<LinearLayout android:layout_marginTop="60.0px"
+		android:layout_width="fill_parent"  
+		android:layout_height="fill_parent" android:background="@drawable/list_bg">
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:id="@+id/android:empty"
+			android:layout_gravity="center_horizontal" android:textSize="20px"
+			android:text="@string/empty" android:gravity="center_horizontal" android:textColor="#fff" android:paddingTop="25sp"></TextView>
+		<ListView android:id="@+id/android:list"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:fadingEdge="vertical" android:fadingEdgeLength="40.0sp"
+			android:cacheColorHint="#00000000" android:divider="#ccc" android:dividerHeight="1sp"/> 
+	</LinearLayout> 
+</LinearLayout>
