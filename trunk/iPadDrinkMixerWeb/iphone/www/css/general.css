@@ -61,9 +61,13 @@ body {
 	background: url("../images/picker_bg.png") repeat-x 0 0;
 	height:54px;
 	width:320px;
-	border-bottom:2px solid #000;
 }
-
+.search-loader{
+	background:#fff url("../images/ajax-loader.gif") no-repeat 99% 50% !important;
+	background-size: 28px 28px;
+	background-origin: content;
+	
+}
 /***** LIST ********/
 .list_item_down{background-color:#ffe5b4 !important;}
 .ingredient{
