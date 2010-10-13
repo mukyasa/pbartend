@@ -216,8 +216,10 @@
 	function list_item_events(){
 	
 		$(".list_item").bind(START_EVENT,function(e){
+			e.preventDefault();
 			$(this).addClass("list_item_down");
 		}).bind(END_EVENT,function(e){
+			e.preventDefault();
 			$(this).removeClass("list_item_down");
 			if(!list_scroll)//if not scrolling 
 				showDetail(this);
