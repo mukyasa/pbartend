@@ -23,7 +23,7 @@
 	var db;
 	var favoritesArray=new Array();
 	var selectedDrinkDetails;
-	var ROOT_IP ="http://localhost:8080";
+	var ROOT_IP ="http://192.168.1.105:8080";
 	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
 	var list_scroll=false;
@@ -80,15 +80,17 @@
 			$("#wrapper").show();
 
 		}
-		
+
+	}
+	
+	function refreshMainScroller(){
 		//resize the scroll area
 		mainscroller.refresh();
-
 	}
 	
 	
 	$(document).ready(function() {		
-
+		
 		/*********** CHECK AND CREATE LOCAL DB ***************/
 		var dbName="favoritesDB";
 		var version = "1.0";
@@ -98,20 +100,24 @@
 		db.transaction(
 			function(transaction){
 				transaction.executeSql("CREATE TABLE IF NOT EXISTS tblFavorites (_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,drink_id INTEGER NOT NULL);");
-			});
+		});
 
 			
 		//prevent screen from scrolling
 		document.addEventListener(MOVE_EVENT, function(e) {
 			e.preventDefault();
+
 		});
+		
 		
 		//hide popout on window touch
 		$(".content_wrapper").bind(START_EVENT, function(e) {
 			e.preventDefault();
 			//hide all pop ups
 			$(".port .popout").fadeOut();
+			
 		});
+		
 		
 		/********* SET ORIENTATION ******************/
 		var orientation; //leave after scroll
@@ -662,7 +668,7 @@
 	//adds loading spinner
 	function showLoadingMask(){
 		$(".x-mask").empty();
-		$("body").append("<div class='x-mask "+css_orientation+"_pos'><div class='loading'>Loading...</div></div>");
+		$("body").append("<div class='x-mask modal_pos'><div class='loading'>Loading...</div></div>");
 		//if the ajax never returns close window
 		window.setTimeout("addCloseButton()",5000);
 	}
