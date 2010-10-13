@@ -87,7 +87,7 @@ public class SQL{
 			"INNER JOIN "+TABLE_INGREDIENTS_SUB_CAT+" isc on i.category_id = isc._id " +
 			"WHERE ic.name=? and i.name like ? order by i.name";
 	
-	public static final String sqlGetAllDrinksByIngredients= "SELECT d.name,d._id,g.name AS "+COL_GLASS_NAME+" "
+	public static final String sqlGetAllDrinksByIngredients= "SELECT d.favorite, d.name,d._id,g.name AS "+COL_GLASS_NAME+" "
 	+"FROM "+TABLE_DRINK+" d "
 	+"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id "
 	+"INNER JOIN "+TABLE_DRINK_INGREDIENTS+" di on di.drink_id = d._id "
