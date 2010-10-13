@@ -91,7 +91,7 @@
 	
 	
 	$(document).ready(function() {		
-		showStartMask();
+		
 		/*********** CHECK AND CREATE LOCAL DB ***************/
 		var dbName="favoritesDB";
 		var version = "1.0";
@@ -210,6 +210,7 @@
 		list_item_events();
 		//load up the favorites in memory
 		setUpFavorites();
+		showStartMask();
 		
 	});
 	
@@ -681,7 +682,7 @@
 	
 	function showStartMask(){
 		$(".x-mask").empty();
-		$("body").append("<div class='x-mask modal_pos'><div class='force-close'>Rememeber, drinking and diving kills. Click to start.</div></div>");
+		$("body").append("<div class='x-mask modal_pos'><div class='force-close'>Rememeber, please drink responsibly.<br/><br/>Click to start.</div></div>");
 		$(".force-close").bind(END_EVENT,function(){
 			removeLoadingMask();			
 		});
