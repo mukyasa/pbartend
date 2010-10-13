@@ -32,6 +32,7 @@
 	var CAT_TYPE_ID;//keep track of the current category selected for load more.
 	var ING_TYPE_ID;//keep track of the current ingredient type for load more.
 	var LIMIT=100;
+	var BUTTON_CLICKED=false;//set this so when a button is clicked no others can be
 	
 	var subject = 'Check out this drink!';
 	var anything = 'Check out this drink!';
@@ -92,6 +93,11 @@
 	
 	$(document).ready(function() {		
 		
+		//prevent screen from scrolling
+		document.addEventListener(MOVE_EVENT, function(e) {
+			e.preventDefault();
+		});
+		
 		/*********** CHECK AND CREATE LOCAL DB ***************/
 		var dbName="favoritesDB";
 		var version = "1.0";
@@ -104,12 +110,6 @@
 		});
 
 			
-		//prevent screen from scrolling
-		document.addEventListener(MOVE_EVENT, function(e) {
-			e.preventDefault();
-		});
-		
-		
 		//hide popout on window touch
 		$(".content_wrapper").bind(START_EVENT, function(e) {
 			e.preventDefault();
@@ -150,11 +150,11 @@
 			
 				PAGING_COUNT=0;//first time called
 				PAGING_TYPE = PAGING_TYPE_SEARCH;
-				showLoadingMask();
+				
 				$("#list_wrapper").empty();
 			
 				var requestUrl = ROOT_URL+"drinks/search?searchParam="+$(this).val()+"&startIndex=0";
-			
+				$(this).addClass("search-loader");
 				processDrinks(requestUrl,false);
 			}
 			
@@ -223,10 +223,7 @@
 			e.preventDefault();
 			$(this).removeClass("list_item_down");
 			if(!list_scroll)//if not scrolling 
-			{
-				showLoadingMask()
 				showDetail(this);
-			}
 			
 			list_scroll=false;			
 			
@@ -293,7 +290,6 @@
 		
 		$("#loadMore").bind(END_EVENT,function(){
 			PAGING_COUNT+=200;
-			showLoadingMask();
 			
 			if(PAGING_TYPE==PAGING_TYPE_CATEGORY)
 				var requestUrl = ROOT_URL+"drinks/cats"+CAT_TYPE_ID+"?startIndex="+PAGING_COUNT;
@@ -307,7 +303,7 @@
 			
 			$(this).remove();
 			if(PAGING_TYPE == PAGING_TYPE_SEARCH)
-				processDrinks(requestUrl,false);
+				processDrinks(requestUrl,true);
 			else
 				processDrinks(requestUrl,true);
 		});
@@ -370,16 +366,28 @@
 		
 		if($(obj).attr("id")=="filter_ing")
 		{	
-			$("#main_buttons").slideUp(function(){
-				$("#ingredients").slideDown();
-			});
+			if(!BUTTON_CLICKED)
+			{
+				BUTTON_CLICKED=true;
+				$("#main_buttons").slideUp(function(){
+					$("#ingredients").slideDown(function(){
+						BUTTON_CLICKED=false;
+					});
+				});
+			}
 			
 		}
 		else if($(obj).attr("id")=="filter_cat")
 		{
-			$("#main_buttons").slideUp(function(){
-				$("#category").slideDown();
-			});
+			if(!BUTTON_CLICKED)
+			{
+				BUTTON_CLICKED=true;
+				$("#main_buttons").slideUp(function(){
+					$("#category").slideDown(function(){
+						BUTTON_CLICKED=false;
+					});
+				});
+			}
 		}
 		else if($(obj).attr("id")=="ing_back") //back from ing
 		{
@@ -394,7 +402,7 @@
 			
 		}else if($(obj).attr("id")=="create")
 		{
-			//showLoadingMask();
+			//TBA
 			
 		}
 		else if($(obj).attr("id")=="fav")
@@ -477,8 +485,7 @@
 		PAGING_COUNT=0;//first time called
 		PAGING_TYPE=PAGING_TYPE_CATEGORY;
 		CAT_TYPE_ID=catId;
-		
-		showLoadingMask();//pop modal
+	
 		$("#list_wrapper").empty();
 		var requestUrl = ROOT_URL+"drinks/cats"+CAT_TYPE_ID+"?startIndex=0";
 
@@ -490,7 +497,7 @@
 	{
 		PAGING_COUNT=0;//first time called
 		PAGING_TYPE=PAGING_TYPE_ALL;
-		showLoadingMask();
+		
 		$("#list_wrapper").empty();
 
 		processDrinks(requestUrl,true);
@@ -521,16 +528,15 @@
 			  if($("#list_wrapper li").length >=200)//add the add more link
 				$("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
 				
-				//mainscroller.reload();
-				removeLoadingMask();
+				
 				//add events
 				list_item_events();
 				//if portrait show pop up
 				if(css_orientation=="port")
 					$(".port #wrapper").fadeIn();
 			}
-			else
-				removeLoadingMask();	
+			
+			removeLoadingMask();	
 			
 		});
 
@@ -538,33 +544,57 @@
 	
 	//process the ajax and returns the results
 	function processDrinks(requestUrl,showDetails){
+		if(showDetails)
+			showLoadingMask();
+			
 		var favoritesStar;
 		$.getJSON(requestUrl,
 		function(data) {
 		
 			if(data!=null)
 			{
-			  for(i=0;i<data.drinkDetails.length;i++)
-			  {
-				favoritesStar="list_fav";
-				
-				for(x=0;x<favoritesArray.length;x++)
+				if(data.drinkDetails.length != undefined)
 				{
-					
-					if(data.drinkDetails[i].id == favoritesArray[x])
+					//if type array meaning returns more than one
+					for(i=0;i<data.drinkDetails.length;i++)
 					{
-						favoritesStar="list_fav_selected";
-						break;
-					}
+						favoritesStar="list_fav";
 						
-				}
-
+						for(x=0;x<favoritesArray.length;x++)
+						{
+							
+							if(data.drinkDetails[i].id == favoritesArray[x])
+							{
+								favoritesStar="list_fav_selected";
+								break;
+							}
+								
+						}
+						
+						$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\""+favoritesStar+"\"></span></li>");
 					
-				$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails[i].glass+ "\" id=\""+data.drinkDetails[i].id+"\"><span class=\"list_glass\">"+data.drinkDetails[i].drinkName+"</span><span class=\""+favoritesStar+"\"></span></li>");
+					}
+				}
+				else//only returned on object
+				{
 				
-				
-				
-			  }
+					favoritesStar="list_fav";
+					
+					for(x=0;x<favoritesArray.length;x++)
+					{
+						
+						if(data.drinkDetails.id == favoritesArray[x])
+						{
+							favoritesStar="list_fav_selected";
+							break;
+						}
+							
+					}
+					
+					$("#list_wrapper").append("<li class=\"list_item " +data.drinkDetails.glass+ "\" id=\""+data.drinkDetails.id+"\"><span class=\"list_glass\">"+data.drinkDetails.drinkName+"</span><span class=\""+favoritesStar+"\"></span></li>");
+				}
+			  
+			  
 			  
 			  if(showDetails)
 				showDetail($(".list_item").get(0));
@@ -626,7 +656,6 @@
 		
 		if(PAGING_TYPE==PAGING_TYPE_ALL || PAGING_TYPE==PAGING_TYPE_CATEGORY || PAGING_TYPE == PAGING_TYPE_SEARCH)
 		{
-			//showLoadingMask();//pop modal
 			//if this is a drink not an ing or cat
 			var drinkId = $(that).attr("id");
 			
@@ -653,10 +682,10 @@
 					editchosenIngs.refresh();
 					chosenIngs.refresh();
 					
-					removeLoadingMask();
+					
 				}
-			
-				
+
+				removeLoadingMask();	
 						
 				
 			});//end ajax
@@ -689,7 +718,8 @@
 	}
 	
 	//removes loading mask
-	function removeLoadingMask(){		
+	function removeLoadingMask(){
+		$(".search-input").removeClass("search-loader");
 		$(".x-mask").remove();
 	}
 	
