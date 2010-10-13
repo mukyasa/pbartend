@@ -70,6 +70,11 @@
 	
   
 	[window makeKeyAndVisible];
+	
+	
+	for (id subview in webView.subviews)
+		if ([[subview class] isSubclassOfClass: [UIScrollView class]])
+			((UIScrollView *)subview).bounces = NO;
 	 
 }
 
