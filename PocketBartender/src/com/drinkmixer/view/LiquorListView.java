@@ -14,7 +14,7 @@ public class LiquorListView extends IngredientsListView {
 	        try {
 		        initComponents();
 	        } catch (Exception e) {
-	        	showDialog(0);//Log.e("", "Whoa! some error trying to open your db.", e);
+	        	showDialog(DIALOG_WHOA_ERROR);//Log.e("", "Whoa! some error trying to open your db.", e);
 	        }
 	    }
 	  

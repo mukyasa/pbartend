@@ -1,13 +1,13 @@
 package com.drinkmixer.utils;
 
 public class Constants {
-	public static String VERSION = "1.3.3";
+	public static String VERSION = "1.3.4";
 	public static String COMPANY_NAME = "mypocket-technologies";
 	
 	public static long selectedCat=-1;
 	public static String WHOA_ERROR = "Whoa! Looks like so mething happened when you first created your database. Go back to the home screen, open the menu, and move the database. If you get this message again contact support.";
 	//turns on and off ads
-	public static boolean showAds = false;
+	public static boolean showAds = true;
 	
 	/**
 	 * 1.1.1 - added new measurement types, added feed back for deleting ingredient,fixed but when adding new ingredient and updated UI buttons
@@ -21,5 +21,6 @@ public class Constants {
 	 * 1.3.1 -7/13/2010 Added AdMob Ad Framework (turned off). Fixed bug when creating a new drink after adding a custom ingredient (NOTE: if you added ingredients before this build and there is an error you may need to re-add them.)
 	 * 1.3.2 -9/22/2010 Added map search.
 	 * 1.3.3 -9/30/2010 Add glasses Collins, Old Fashion, and Cordial.
+	 * 1.3.4 -10/13/2010 Code added for Demo version.
 	 */
 }

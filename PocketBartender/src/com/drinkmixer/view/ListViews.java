@@ -33,6 +33,8 @@ public abstract class ListViews extends ListActivity implements TextWatcher{
 	protected final int MENU_CREATE_MIXER=2;
 	protected final int MENU_CREATE_GARNISH=3;
 	private final int MENU_HOME=1;
+	private final int DIALOG_DEMO=9;
+	protected final int DIALOG_WHOA_ERROR=0;
 	protected MixerDbHelper myDatabaseAdapter;
 	protected EditText searchbox;
 	protected Intent intent;
@@ -50,16 +52,34 @@ public abstract class ListViews extends ListActivity implements TextWatcher{
 
 	 protected Dialog onCreateDialog(int id) {
 	    	
-	    	return new AlertDialog.Builder(ListViews.this)
-	        .setIcon(R.drawable.info)
-	        .setMessage(Constants.WHOA_ERROR)
-	        .setTitle("Database Error.")
-	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
-	            public void onClick(DialogInterface dialog, int whichButton) {
-	               dismissDialog(0);
-	            }
-	        })      
-	       .create();
+		 if(id==DIALOG_DEMO)
+	    	{
+		    	return new AlertDialog.Builder(ListViews.this)
+		        .setIcon(R.drawable.info)
+		        .setMessage("Sorry this feature is only available in the full version. You also get 4000 more drinks and no ads in the full version.")
+		        .setTitle("Demo Version")
+		        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+		            public void onClick(DialogInterface dialog, int whichButton) {
+		
+		               dismissDialog(DIALOG_DEMO);
+		            }
+		        })      
+		       .create();
+	    	}else if(id==DIALOG_WHOA_ERROR)
+	    	{
+			 
+		    	return new AlertDialog.Builder(ListViews.this)
+		        .setIcon(R.drawable.info)
+		        .setMessage(Constants.WHOA_ERROR)
+		        .setTitle("Database Error.")
+		        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+		            public void onClick(DialogInterface dialog, int whichButton) {
+		               dismissDialog(DIALOG_WHOA_ERROR);
+		            }
+		        })      
+		       .create();
+	    	}
+		 return null;
 		}
 	 
 	@Override
@@ -116,15 +136,30 @@ public abstract class ListViews extends ListActivity implements TextWatcher{
 	    	
 	    	 switch (item.getItemId()) {
 				 case MENU_CREATE_LIQUOR:
+					 	if(Constants.showAds)
+					 	{
+					 		showDialog(DIALOG_DEMO);
+					 		return true;
+					 	}
 					 	NewDrinkDomain.getInstance().clearDomain();
 						startActivity(new Intent(this, AddNewLiquor.class));
 				    	return true;
 				  
 				 case MENU_CREATE_MIXER:
+					 	if(Constants.showAds)
+					 	{
+					 		showDialog(DIALOG_DEMO);
+					 		return true;
+					 	}
 					 	NewDrinkDomain.getInstance().clearDomain();
 						startActivity(new Intent(this, AddNewMixer.class));
 				    	return true;
 				 case MENU_CREATE_GARNISH:
+					 	if(Constants.showAds)
+					 	{
+					 		showDialog(DIALOG_DEMO);
+					 		return true;
+					 	}
 					 	NewDrinkDomain.getInstance().clearDomain();
 						startActivity(new Intent(this, AddNewGarnish.class));
 				    	return true;
@@ -137,6 +172,7 @@ public abstract class ListViews extends ListActivity implements TextWatcher{
 			 }
 			 return false;
 	}
+	
 	
 	/* (non-Javadoc)
      * @see android.text.TextWatcher#afterTextChanged(android.text.Editable)
@@ -197,7 +233,7 @@ public abstract class ListViews extends ListActivity implements TextWatcher{
 	    	setListAdapter(records);
 	    	
     	} catch (Exception e) {
-        	showDialog(0);
+        	showDialog(DIALOG_WHOA_ERROR);
         };
     }
 	

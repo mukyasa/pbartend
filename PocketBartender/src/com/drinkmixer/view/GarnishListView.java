@@ -12,7 +12,7 @@ public class GarnishListView extends IngredientsListView {
         try {
 	        initComponents();
         } catch (Exception e) {
-        	showDialog(0);
+        	showDialog(DIALOG_WHOA_ERROR);
         };
 	}
 	

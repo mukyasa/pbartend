@@ -50,6 +50,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 	private ProgressDialog pd;
 	private DataDAO dataDAO = new DetailDAO();
 	private final int DIALOG_ABOUT = 0;
+	private final int DIALOG_DEMO=9;
 	private final int DIALOG_LOC=1;
 	private Context context=null;
 	private final int MENU_CREATE=0;
@@ -160,6 +161,13 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 
 		 switch (item.getItemId()) {
 			 case MENU_CREATE:
+				 
+				 	if(Constants.showAds)
+				 	{
+				 		showDialog(DIALOG_DEMO);
+				 		return true;
+				 	}
+				 
 				 	NewDrinkDomain.getInstance().clearDomain();
 					ScreenType.getInstance().screenType= -1;
 					startActivity(new Intent(this, CreateUpdateView.class));
@@ -240,9 +248,14 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     	
     	if(id==DIALOG_ABOUT)
     	{
+    		String demo = "";
+    		if(Constants.showAds)
+    			demo=" DEMO";
+    			
+    		
 	    	return new AlertDialog.Builder(HomeScreenView.this)
 	        .setIcon(R.drawable.info)
-	        .setMessage("Ver:"+Constants.VERSION+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright "+ c.get(Calendar.YEAR))
+	        .setMessage("Ver:"+Constants.VERSION+ demo+"\nsupport@"+Constants.COMPANY_NAME+".com \n\n"+Constants.COMPANY_NAME+".com\ncopyright "+ c.get(Calendar.YEAR))
 	        .setTitle("Application Information")
 	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int whichButton) {
@@ -251,7 +264,21 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 	            }
 	        })      
 	       .create();
-    	}else if(id==DIALOG_LOC){
+    	}else if(id==DIALOG_DEMO)
+    	{
+	    	return new AlertDialog.Builder(HomeScreenView.this)
+	        .setIcon(R.drawable.info)
+	        .setMessage("Sorry this feature is only available in the full version. You also get 4000 more drinks and no ads in the full version.")
+	        .setTitle("Demo Version")
+	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int whichButton) {
+	
+	               dismissDialog(DIALOG_DEMO);
+	            }
+	        })      
+	       .create();
+    	}    	
+    	else if(id==DIALOG_LOC){
         	
         	LayoutInflater factory = LayoutInflater.from(this); 
             final View textEntryView = factory.inflate(R.layout.dblocation, null);
