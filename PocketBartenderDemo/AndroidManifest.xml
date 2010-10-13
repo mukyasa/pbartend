@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.drinkmixerdemo" android:versionCode="31" android:versionName="1.3.4">
+    <application android:label="@string/app_name" 
+    android:debuggable="false" android:icon="@drawable/icon">
+        <activity android:label="@string/app_name" android:name=".view.HomeScreenView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    <activity android:name=".view.DrinkListView"></activity>
+<activity android:name=".view.CategoryListView"></activity>
+<activity android:name=".view.DetailsView"></activity>
+
+<activity android:name=".view.FavoriteListView"></activity>
+<activity android:name=".view.CreateUpdateView"></activity>
+
+
+<activity android:name=".view.KnowledgeListActivity"></activity>
+<activity android:name=".view.AddNewLiquor"></activity>
+<activity android:name=".view.AddNewGarnish"></activity>
+<activity android:name=".view.AddNewMixer"></activity>
+<activity android:name=".view.BartenderKnowledgeActivity"></activity>
+<activity android:name=".view.KnowledgeDetailActivity"></activity>
+<activity android:name=".view.IngredientsListView"></activity>
+<activity android:name=".view.IngredientsHomeView"></activity>
+<activity android:name=".view.LiquorListView"></activity>
+<activity android:name=".view.MixersListView"></activity>
+<activity android:name=".view.GarnishListView"></activity>
+<activity android:name=".view.AmountPicker"></activity>
+<activity android:name=".view.CategoryAndGlassPicker"></activity>
+<activity android:name=".view.MapView"></activity>
+
+
+<!-- The application's publisher ID assigned by AdMob -->
+<meta-data android:value="a14c3c82c23e161"  android:name="ADMOB_PUBLISHER_ID" />
+<meta-data android:value="true" android:name="ADMOB_ALLOW_LOCATION_FOR_ADS" />
+</application>
+    <uses-sdk android:minSdkVersion="3" />
+
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>  
+</manifest> 
