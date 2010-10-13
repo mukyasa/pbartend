@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.StringTokenizer;
 
+import com.drinkmixer.utils.Constants;
+
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -23,12 +25,24 @@ public class DrinkInserts {
 			Reader inr = new InputStreamReader(in);
 			String sCurrentLine;
 			BufferedReader bin = new BufferedReader(inr);
+			int i=0;
+
 			while ((sCurrentLine = bin.readLine()) != null) {
 				StringTokenizer toker = new StringTokenizer(sCurrentLine,"|");
+				
+				if(Constants.showAds && i%2==0)//demo version only
+				{
+					i++;
+					continue;
+				}
+				
 				String sql = "INSERT INTO " + DataDAO.TABLE_DRINK + " VALUES(" + toker.nextToken() + "," + toker.nextToken() + ",'" + toker.nextToken()
 				                + "','" + toker.nextToken() + "'," + toker.nextToken() + "," + toker.nextToken() +  "," + toker.nextToken() + "," + toker.nextToken() + ");";
 				db.execSQL(sql); 
+				i++;
+				
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -36,3 +50,4 @@ public class DrinkInserts {
 		}
 	}
 }
+

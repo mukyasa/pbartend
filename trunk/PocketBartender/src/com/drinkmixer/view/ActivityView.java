@@ -1,6 +1,11 @@
 package com.drinkmixer.view;
 
+import java.util.Calendar;
+
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +19,7 @@ import com.drinkmixer.dao.DetailDAO;
 import com.drinkmixer.dao.MixerDbHelper;
 import com.drinkmixer.domain.DetailsDomain;
 import com.drinkmixer.domain.NewDrinkDomain;
+import com.drinkmixer.utils.Constants;
 import com.drinkmixer.utils.FileParser;
 
 public class ActivityView extends Activity {
@@ -32,6 +38,7 @@ public class ActivityView extends Activity {
 	private static final int MENU_REMOVE_FAV=1;
 	private static final int MENU_HOME=2;
 	private static final int MENU_MODIFY=3;
+	private final int DIALOG_DEMO=9;
 	
 	
 	/**
@@ -106,11 +113,37 @@ public class ActivityView extends Activity {
 	    	setViewItems();
 	    	return true;
 	    case MENU_MODIFY:
+	    	
+	    	if(Constants.showAds)
+		 	{
+		 		showDialog(DIALOG_DEMO);
+		 		return true;
+		 	}
 			startActivity(new Intent(this, CreateUpdateView.class));
 	    	return true;
 	    }
 	    return false;
 	}
+	
+	protected Dialog onCreateDialog(int id) {
+    	
+    	if(id==DIALOG_DEMO)
+    	{
+	    	return new AlertDialog.Builder(ActivityView.this)
+	        .setIcon(R.drawable.info)
+	        .setMessage("Sorry this feature is only available in the full version. You also get 4000 more drinks and no ads in the full version.")
+	        .setTitle("Demo Version")
+	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int whichButton) {
+	
+	               dismissDialog(DIALOG_DEMO);
+	            }
+	        })      
+	       .create();
+    	} 
+    	return null;
+
+    }
 
 
 
