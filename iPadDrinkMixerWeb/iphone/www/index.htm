@@ -62,6 +62,7 @@
 	var START_EVENT = isTouch ? 'touchstart' : 'mousedown';
 	var MOVE_EVENT = isTouch ? 'touchmove' : 'mousemove';
 	var END_EVENT = isTouch ? 'touchend' : 'mouseup';
+	var screenTimeout;
 	
 
 	function changeOrientation(orientation) {
@@ -90,7 +91,7 @@
 	
 	
 	$(document).ready(function() {		
-		
+		showStartMask();
 		/*********** CHECK AND CREATE LOCAL DB ***************/
 		var dbName="favoritesDB";
 		var version = "1.0";
@@ -221,7 +222,10 @@
 			e.preventDefault();
 			$(this).removeClass("list_item_down");
 			if(!list_scroll)//if not scrolling 
+			{
+				showLoadingMask()
 				showDetail(this);
+			}
 			
 			list_scroll=false;			
 			
@@ -671,8 +675,18 @@
 		$(".x-mask").empty();
 		$("body").append("<div class='x-mask modal_pos'><div class='loading'>Loading...</div></div>");
 		//if the ajax never returns close window
-		window.setTimeout("addCloseButton()",5000);
+		window.clearTimeout(screenTimeout);
+		screenTimeout=window.setTimeout("addCloseButton()",5000);
 	}
+	
+	function showStartMask(){
+		$(".x-mask").empty();
+		$("body").append("<div class='x-mask modal_pos'><div class='force-close'>Rememeber, drinking and diving kills. Click to start.</div></div>");
+		$(".force-close").bind(END_EVENT,function(){
+			removeLoadingMask();			
+		});
+	}
+	
 	//removes loading mask
 	function removeLoadingMask(){		
 		$(".x-mask").remove();
