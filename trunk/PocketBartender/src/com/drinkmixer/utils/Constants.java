@@ -22,6 +22,6 @@ public class Constants {
 	 * 1.3.1 -7/13/2010 Added AdMob Ad Framework (turned off). Fixed bug when creating a new drink after adding a custom ingredient (NOTE: if you added ingredients before this build and there is an error you may need to re-add them.)
 	 * 1.3.2 -9/22/2010 Added map search.
 	 * 1.3.3 -9/30/2010 Add glasses Collins, Old Fashion, and Cordial.
-	 * 1.3.4 -10/13/2010 Code added for Demo version.
+	 * 1.3.4 -10/13/2010 Bug fix on database build
 	 */
 }
