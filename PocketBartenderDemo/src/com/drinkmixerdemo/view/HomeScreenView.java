@@ -319,7 +319,11 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 
                     	pd = ProgressDialog.show(context, null,getString(R.string.buildingdb));
                     	
-                    	thread.start();
+                    	try {
+							thread.start();
+						} catch (Exception e) {
+							
+						}
                         	
                     }
                 }).create();
@@ -354,7 +358,11 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
                             mp.start();
 
                         	pd = ProgressDialog.show(context, null,"Building the database, please be patient.");
-                        	thread.start();
+                        	try {
+    							thread.start();
+    						} catch (Exception e) {
+    							
+    						}
                             	
                         }
                     }).setNegativeButton(R.string.btnCancel, new DialogInterface.OnClickListener() {
