@@ -30,15 +30,12 @@ public class DrinkInserts {
 			while ((sCurrentLine = bin.readLine()) != null) {
 				StringTokenizer toker = new StringTokenizer(sCurrentLine,"|");
 				
-				if(Constants.showAds && i%10==0)//demo version only 800 drinks
-				{
-					i++;
-					continue;
-				}
-				
 				String sql = "INSERT INTO " + DataDAO.TABLE_DRINK + " VALUES(" + toker.nextToken() + "," + toker.nextToken() + ",'" + toker.nextToken()
 				                + "','" + toker.nextToken() + "'," + toker.nextToken() + "," + toker.nextToken() +  "," + toker.nextToken() + "," + toker.nextToken() + ");";
-				db.execSQL(sql); 
+
+				if(Constants.showAds && i%10==0)//demo version only 800 drinks
+					db.execSQL(sql); 
+				
 				i++;
 				
 			}
