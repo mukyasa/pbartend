@@ -349,6 +349,8 @@
 	function handleTouchEnd(e){
 		e.preventDefault();//prevent copy and mag from showing
 		var obj = e.currentTarget;
+		//reset back to default
+		IS_SHARED_DRINK=false;
 		$(obj).removeClass("touched").removeClass("sm_touched").removeClass("fav_touched");
 		
 		if($(obj).attr("id")=="filter_ing")
@@ -387,9 +389,11 @@
 				$("#main_buttons").slideDown();
 			});
 			
-		}else if($(obj).attr("id")=="create")
+		}else if($(obj).attr("id")=="shared")
 		{
-			//TBA
+			//reset back to default
+			IS_SHARED_DRINK=true;
+			showDrinkList(ROOT_URL+"drinks/shared?startIndex=0");
 			
 		}
 		else if($(obj).attr("id")=="fav")
@@ -650,7 +654,13 @@
 			//if this is a drink not an ing or cat
 			var drinkId = $(that).attr("id");
 			
-			var requestUrl = ROOT_URL+"drinks/details"+drinkId;
+			var sharedString ="";
+			if(IS_SHARED_DRINK)
+				sharedString="?detailTypeShared=true"
+			
+			var requestUrl = ROOT_URL+"drinks/details"+drinkId +sharedString;
+			
+			
 			//call to get details
 			$.getJSON(requestUrl,
 				function(data) {
