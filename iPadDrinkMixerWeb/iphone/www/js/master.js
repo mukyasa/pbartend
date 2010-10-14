@@ -123,6 +123,32 @@
 		$(".button,.sm_button,.fav_button").bind(START_EVENT,handleTouchStart).bind(END_EVENT,handleTouchEnd);
 		$(".postbutton").bind(START_EVENT,handlePostButtonTouchStart).bind(END_EVENT,handlePostButtonTouchEnd);
 	
+					  
+		  $(".star_delete").bind(END_EVENT,function(){
+			  $(".star").removeClass("star_on");
+			  $("#rating").val("");
+		  });
+		  
+		  $(".star").bind(END_EVENT,function(){
+						   
+			   $(".star").removeClass("star_on");
+			   var id =$(this).attr("id");
+			   var s = id.split("_");
+			   
+			   var index = s[1];
+			   $("#rating").val(index);
+			   
+			   for(i=0;i<$(".star").length;i++)
+			   {
+			   
+			   if(i<index)
+			   $($(".star").get(i)).addClass("star_on");
+			   }
+		   
+		   });
+					  
+					  
+					  
 		/****************  SEARCH FILTER ********************/
 		$(".search-input").bind("keyup",function(e){
 
@@ -680,7 +706,7 @@
 					$(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
 					$(".edit-ing-wrapper .scroll-child li").attr("class","edit-ing");
 					  
-					$(".star-rating").empty().append(data.rating);
+					$("#ratings").val(data.rating);
 					
 					editchosenIngs.refresh();
 					chosenIngs.refresh();
