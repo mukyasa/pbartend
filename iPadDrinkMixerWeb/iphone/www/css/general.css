@@ -426,6 +426,45 @@ body {
 	font-size:18px;
 }
 
+/************ RATINGS *************/
+.star_delete{
+	width:34px;
+	height:31px;
+	float:left;
+	list-style:none;
+	margin-left:3px;
+	background: url(images/star_delete.png) no-repeat 0 0;
+}
+.star{
+	width:34px;
+	height:31px;
+	float:left;
+	list-style:none;
+	margin-left:3px;
+}
+.ratings{
+	margin:0;
+	padding:0;
+}
+#rate_1{
+	background: url(images/star_off.png) no-repeat 0 0;
+}
+#rate_2{
+	background: url(images/star_off.png) no-repeat 0 0;
+}
+#rate_3{
+	background: url(images/star_off.png) no-repeat 0 0;
+}
+#rate_4{
+	background: url(images/star_off.png) no-repeat 0 0;
+}
+#rate_5{
+	background: url(images/star_off.png) no-repeat 0 0;
+}
+
+.star_on{
+	background: url(images/star_on.png) no-repeat 0 0 !important;
+}
 
 
 
