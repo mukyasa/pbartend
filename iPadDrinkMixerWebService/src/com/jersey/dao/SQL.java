@@ -48,7 +48,7 @@ public class SQL{
 	public static final String TABLE_INGREDIENTS_SUB_CAT ="tblIngredient_subcategories";
 	
 	/****** SHARED *******/
-	public static final String sqlGetAllSharedDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
+	public static final String sqlGetAllSharedDrinksAndGlass ="SELECT g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
 	
 	/*********************/
 	public static final String sqlGetAllDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
