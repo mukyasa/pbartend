@@ -41,12 +41,14 @@ public class GetDrinksEndpoint extends SQL {
 	@GET
 	@Path("details{drinkId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public DrinkDetails getDrinkDetails(@PathParam("drinkId") String drinkId) {
+	public DrinkDetails getDrinkDetails(
+			@PathParam("drinkId") String drinkId,
+			@QueryParam("detailTypeShared") boolean detailTypeShared) {
 
 		int int_drinkId = Integer.valueOf(drinkId).intValue();
 		DOService dos = new DOService();
 		
-		return dos.getDrinkDetails(int_drinkId);
+		return dos.getDrinkDetails(int_drinkId,detailTypeShared);
 		
 	}
 

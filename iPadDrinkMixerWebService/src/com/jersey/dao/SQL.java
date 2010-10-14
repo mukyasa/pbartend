@@ -31,6 +31,7 @@ public class SQL{
 	public static final String COL_CABINET ="cabinet";
 	public static final String COL_INGREDIENT_ID ="ingredient_id";
 	public static final String COL_AMOUNT="amount";
+	public static final String COL_RATING="rating";
 	
 
 	//table names
@@ -49,14 +50,24 @@ public class SQL{
 	
 	/****** SHARED *******/
 	public static final String sqlGetAllSharedDrinksAndGlass ="SELECT g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
-	
+	public static final String sqlGetSharedDrinkDetailById ="SELECT d._id, d.name,d.instructions,dc.name  AS "+
+	COL_CAT_NAME+",di.amount,i.name AS "+COL_ING_NAME+",g.name AS "+
+	COL_GLASS_NAME+" ,g._id AS "+COL_GLASS_ID+",dc._id AS "+COL_CAT_ID+" " +
+	"FROM "+TABLE_SHARED_DRINK+" d " +
+	"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id " +
+	"INNER JOIN "+TABLE_SHARED_DRINK_INGREDIENTS+" di on di.drink_id = d._id " +
+	"INNER JOIN "+TABLE_INGREDIENTS+" i on di.ingredient_id = i._id " + 
+	"INNER JOIN "+TABLE_GLASSES+" g on d.glass_id = g._id " +
+	"WHERE d._id =?;";
 	/*********************/
 	public static final String sqlGetAllDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
 	public static final String sqlGetAllDrinksAndGlassById ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE ";
 	
 	public static final String sqlGetMaxId ="SELECT MAX(_ID) AS "+COL_ROW_ID+"  FROM "+TABLE_DRINK;
 	public static final String sqlGetGlassNameById = "SELECT name AS "+COL_GLASS_NAME+" from "+TABLE_GLASSES+" WHERE _id=?";
-	public static final String sqlGetDrinkDetailById ="SELECT d.favorite, d._id, d.name,d.instructions,dc.name  AS "+COL_CAT_NAME+",di.amount,i.name AS "+COL_ING_NAME+",g.name AS "+COL_GLASS_NAME+" ,g._id AS "+COL_GLASS_ID+",dc._id AS "+COL_CAT_ID+" " +
+	public static final String sqlGetDrinkDetailById ="SELECT d.favorite,d._id, d.name,d.instructions,dc.name  AS "+
+			COL_CAT_NAME+",di.amount,i.name AS "+COL_ING_NAME+",g.name AS "+
+			COL_GLASS_NAME+" ,g._id AS "+COL_GLASS_ID+",dc._id AS "+COL_CAT_ID+" " +
 			"FROM "+TABLE_DRINK+" d " +
 			"INNER JOIN "+TABLE_DRINK_CAT+" dc on dc._id = d.category_id " +
 			"INNER JOIN "+TABLE_DRINK_INGREDIENTS+" di on di.drink_id = d._id " +

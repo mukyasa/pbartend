@@ -16,9 +16,19 @@ public class DrinkDetails {
 	private String instructions;
 	private int id;
 	private int favorites;
+	private float rating;
 	private ArrayList<String> drinkNames = new ArrayList<String>();
 	private ArrayList<String> ings = new ArrayList<String>();
 
+
+	
+	public float getRating() {
+		return rating;
+	}
+
+	public void setRating(float rating) {
+		this.rating = rating;
+	}
 
 	public String getDrinkName() {
 		return drinkName;
