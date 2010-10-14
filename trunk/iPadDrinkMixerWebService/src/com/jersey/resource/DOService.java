@@ -341,7 +341,7 @@ public class DOService extends SQL {
 		return result;
 	}
 
-	public DrinkDetails getDrinkDetails(int int_drinkId) {
+	public DrinkDetails getDrinkDetails(int int_drinkId,boolean detailTypeShared) {
 
 		PreparedStatement stmt = null;
 		Connection conn = null;
@@ -352,7 +352,29 @@ public class DOService extends SQL {
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			String sql = sqlGetDrinkDetailById;
+			//get rating first
+			String sql = "SELECT rating FROM tblRating WHERE drink_id=?";
+			stmt = conn.prepareStatement(sql);
+
+			stmt.setInt(1, int_drinkId);
+
+			rs = stmt.executeQuery();
+			float totalRating=0;
+			if (rs != null) {
+				
+				int tmpRating=0;
+				float i=0;
+				for(;rs.next();i++) {
+					
+					float rating = rs.getFloat(COL_RATING);
+					tmpRating += rating;
+					
+				}
+				totalRating=tmpRating/i;
+			}
+			
+			
+			sql = detailTypeShared? sqlGetSharedDrinkDetailById : sqlGetDrinkDetailById;
 
 			stmt = conn.prepareStatement(sql);
 
@@ -372,7 +394,7 @@ public class DOService extends SQL {
 						sub_name = sub_name.substring(0, 26) + "...";
 
 					drink.setDrinkName(sub_name);
-					drink.setFavorites(rs.getInt(COL_FAVORITE));
+					//drink.setFavorites(rs.getInt(COL_FAVORITE));
 					String drink_css = rs.getString(COL_GLASS_NAME).replace(
 							" ", "-");
 					drink.setGlass(drink_css);
@@ -386,7 +408,8 @@ public class DOService extends SQL {
 					drink.setGlass(rs.getString(COL_GLASS_NAME));
 					drink.setDrinkType(rs.getString(COL_CAT_NAME));
 					drink.setInstructions(rs.getString(COL_INSTUCTIONS));
-					drink.setFavorites(rs.getInt(COL_FAVORITE));
+					
+					drink.setRating(totalRating);
 
 					drink.setGlassId(rs.getInt(COL_GLASS_ID));
 					drink.setCatId(rs.getInt(COL_CAT_ID));
