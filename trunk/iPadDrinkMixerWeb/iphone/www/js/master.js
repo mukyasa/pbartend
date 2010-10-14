@@ -679,6 +679,8 @@
 					$(".ing-wrapper .scroll-child li").attr("class","ing");
 					$(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
 					$(".edit-ing-wrapper .scroll-child li").attr("class","edit-ing");
+					  
+					$(".star-rating").empty().append(data.rating);
 					
 					editchosenIngs.refresh();
 					chosenIngs.refresh();
