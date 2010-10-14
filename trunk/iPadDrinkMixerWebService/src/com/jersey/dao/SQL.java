@@ -37,6 +37,8 @@ public class SQL{
 	//public static final String SQL_TYPE_TABLE_NAME = "tblDrinkType";
 	public static final String TABLE_DRINK_CAT = "tblDrink_categories";
 	public static final String TABLE_DRINK = "tblDrinks";
+	public static final String TABLE_SHARED_DRINK = "tblShared";
+	public static final String TABLE_SHARED_DRINK_INGREDIENTS = "tblShared_ingredients";
 	public static final String TABLE_INGREDIENTS = "tblIngredients";
 	public static final String TABLE_DRINK_INGREDIENTS = "tblDrinks_ingredients";
 	public static final String TABLE_DRINK_SUB_CAT = "tblDrinks_subcategories";
@@ -45,7 +47,10 @@ public class SQL{
 	public static final String TABLE_INGREDIENTS_CAT ="tblIngredient_categories";
 	public static final String TABLE_INGREDIENTS_SUB_CAT ="tblIngredient_subcategories";
 	
+	/****** SHARED *******/
+	public static final String sqlGetAllSharedDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
 	
+	/*********************/
 	public static final String sqlGetAllDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
 	public static final String sqlGetAllDrinksAndGlassById ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE ";
 	
