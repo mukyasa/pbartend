@@ -30,6 +30,42 @@ public class DOService extends SQL {
 	private final String LIMIT = "150";
 	
 	
+	public float insertRating(int drink_id, int rating){
+		
+		PreparedStatement stmt = null;
+		Connection conn = null;
+		ResultSet rs = null;
+		float totalRating=0;
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			String sql = "INSERT INTO tblRating (drink_id, rating) VALUES (?,?)";
+
+			stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, drink_id);
+			stmt.setInt(2, rating);
+			
+			stmt.executeUpdate();
+
+			totalRating = getRating(stmt, conn, rs, drink_id);
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				stmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return totalRating;
+		
+	}
+	
 	public List<DrinkDetails> filterDrinksList(String startIndex,String searchParam) {
 
 		PreparedStatement stmt = null;
@@ -352,29 +388,9 @@ public class DOService extends SQL {
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			//get rating first
-			String sql = "SELECT rating FROM tblRating WHERE drink_id=?";
-			stmt = conn.prepareStatement(sql);
-
-			stmt.setInt(1, int_drinkId);
-
-			rs = stmt.executeQuery();
-			float totalRating=0;
-			if (rs != null) {
-				
-				int tmpRating=0;
-				float i=0;
-				for(;rs.next();i++) {
-					
-					float rating = rs.getFloat(COL_RATING);
-					tmpRating += rating;
-					
-				}
-				totalRating=tmpRating/i;
-			}
+			float totalRating = getRating(stmt, conn, rs, int_drinkId);
 			
-			
-			sql = detailTypeShared? sqlGetSharedDrinkDetailById : sqlGetDrinkDetailById;
+			String sql = detailTypeShared? sqlGetSharedDrinkDetailById : sqlGetDrinkDetailById;
 
 			stmt = conn.prepareStatement(sql);
 
@@ -433,6 +449,39 @@ public class DOService extends SQL {
 		}
 
 		return drink;
+	}
+	
+	/**
+	 * Gets the rating of the drink
+	 * @param stmt
+	 * @param conn
+	 * @param rs
+	 * @param int_drinkId
+	 * @return
+	 */
+	private float getRating(PreparedStatement stmt,Connection conn,ResultSet rs,int int_drinkId) throws Exception{
+		
+		String sql = "SELECT rating FROM tblRating WHERE drink_id=?";
+		stmt = conn.prepareStatement(sql);
+
+		stmt.setInt(1, int_drinkId);
+
+		rs = stmt.executeQuery();
+		float totalRating=0;
+		if (rs != null) {
+			
+			int tmpRating=0;
+			float i=0;
+			for(;rs.next();i++) {
+				
+				float rating = rs.getFloat(COL_RATING);
+				tmpRating += rating;
+				
+			}
+			totalRating=tmpRating/i;
+		}
+		
+		return totalRating;
 	}
 	
 	/**
