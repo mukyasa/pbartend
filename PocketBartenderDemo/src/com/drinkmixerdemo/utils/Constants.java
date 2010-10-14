@@ -1,7 +1,7 @@
 package com.drinkmixerdemo.utils;
 
 public class Constants {
-	public static String VERSION = "1.3.4";
+	public static String VERSION = "1.3.5";
 	public static String COMPANY_NAME = "mypocket-technologies";
 	
 	public static long selectedCat=-1;
@@ -23,5 +23,6 @@ public class Constants {
 	 * 1.3.2 -9/22/2010 Added map search.
 	 * 1.3.3 -9/30/2010 Add glasses Collins, Old Fashion, and Cordial.
 	 * 1.3.4 -10/13/2010 Code added for Demo version.
+	 * 1.3.5 -10/14/2010 Bug fix database load.
 	 */
 }
