@@ -10,7 +10,6 @@
 package com.flashcard.view;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Iterator;
 
 import org.json.JSONException;
@@ -21,12 +20,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources.NotFoundException;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -35,7 +32,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.animation.AnimationUtils;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -45,7 +41,6 @@ import com.flashcard.domain.CardSet;
 import com.flashcard.domain.FlashCard;
 import com.flashcard.handler.ApplicationHandler;
 import com.flashcard.util.AppUtil;
-import com.flashcard.util.Authenication;
 import com.flashcard.util.Constants;
 
 /**
