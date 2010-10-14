@@ -278,7 +278,7 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
     	{
 	    	return new AlertDialog.Builder(HomeScreenView.this)
 	        .setIcon(R.drawable.info)
-	        .setMessage("Sorry this feature is only available in the full version. You also get 4000 more drinks and no ads in the full version.")
+	        .setMessage(Constants.DEMO_MESSAGE)
 	        .setTitle("Demo Version")
 	        .setNegativeButton("Close", new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int whichButton) {
