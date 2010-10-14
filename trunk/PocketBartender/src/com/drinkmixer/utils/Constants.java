@@ -6,6 +6,7 @@ public class Constants {
 	
 	public static long selectedCat=-1;
 	public static String WHOA_ERROR = "Whoa! Looks like so mething happened when you first created your database. Go back to the home screen, open the menu, and move the database. If you get this message again contact support.";
+	public static String DEMO_MESSAGE ="Sorry this feature is only available in the full version. You also get 5000 more drinks and no ads in the full version.";
 	//turns on and off ads
 	public static boolean showAds = false; //demo version is true
 	
