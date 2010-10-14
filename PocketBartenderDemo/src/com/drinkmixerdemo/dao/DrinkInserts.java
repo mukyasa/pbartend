@@ -30,7 +30,7 @@ public class DrinkInserts {
 			while ((sCurrentLine = bin.readLine()) != null) {
 				StringTokenizer toker = new StringTokenizer(sCurrentLine,"|");
 				
-				if(Constants.showAds && i%2==0)//demo version only
+				if(Constants.showAds && i%3==0)//demo version only
 				{
 					i++;
 					continue;
