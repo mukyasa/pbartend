@@ -8,9 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.PathParam;
-import javax.ws.rs.QueryParam;
-
 import com.jersey.dao.DbConnectionTest;
 import com.jersey.dao.SQL;
 import com.jersey.model.DrinkDetails;
@@ -94,6 +91,41 @@ public class DOService extends SQL {
 
 			String sql = sqlGetAllDrinksAndGlassById + isSQL + " LIMIT "
 					+ startIndex + ","+LIMIT;
+
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+
+			result = loopDrinks(rs, drink, result);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				rs.close();
+				stmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+	
+	public List<DrinkDetails> getAllSharedDrinks(String startIndex) {
+
+		Statement stmt = null;
+		ResultSet rs = null;
+		Connection conn = null;
+		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
+		DrinkDetails drink = null;
+
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			String sql = sqlGetAllSharedDrinksAndGlass + " LIMIT " + startIndex
+					+ ","+LIMIT;
 
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -402,7 +434,7 @@ public class DOService extends SQL {
 				sub_name = sub_name.substring(0, 26) + "...";
 
 			drink.setDrinkName(sub_name);
-			drink.setFavorites(rs.getInt(COL_FAVORITE));
+			//drink.setFavorites(rs.getInt(COL_FAVORITE));
 			String drink_css = rs.getString(COL_GLASS_NAME).replace(" ","-");
 			drink.setGlass(drink_css);
 

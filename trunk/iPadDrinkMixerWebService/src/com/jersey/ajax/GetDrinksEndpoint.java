@@ -28,6 +28,17 @@ public class GetDrinksEndpoint extends SQL {
 	}
 	
 	@GET
+	@Path("shared")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<DrinkDetails> getAllSharedDrinks(
+			@QueryParam("startIndex") String startIndex) {
+
+		DOService dos = new DOService();
+		
+		return dos.getAllSharedDrinks(startIndex);
+	}
+	
+	@GET
 	@Path("details{drinkId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public DrinkDetails getDrinkDetails(@PathParam("drinkId") String drinkId) {
