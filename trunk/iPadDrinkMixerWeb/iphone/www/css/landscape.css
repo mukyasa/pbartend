@@ -51,6 +51,9 @@
 	margin-left:55px;
 	width:270px;
 	font-size:12px;
+	position:absolute;
+	top:270px;
+	left:0px;
 }
 
 .land .frontbutton{
@@ -113,14 +116,16 @@
 	font-size:20px;
 	width:183px;
 	word-wrap: break-word;
-
 }
 .land .drink-desc{
-	height:250px;
+	height:225px;
+	top:45px;
+	left:0;
 }
 .land .paper-button-block{
 	position:absolute;
-	top:470px;
+	top:270px;
+	left:0;
 	width:370px;
 }
 
@@ -154,3 +159,6 @@
 	padding:50px 40px 50px 25px; !important;
 }
 
+.land .ratings{
+	top:195px;
+}

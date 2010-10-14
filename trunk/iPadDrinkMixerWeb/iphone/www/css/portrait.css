@@ -102,6 +102,9 @@
 	margin-left:80px;
 	width:340px;
 	font-size:14px;
+	position:absolute;
+	top:350px;
+	left:0px;
 }
 .port .frontbutton{
 	background: url("../images/edit_button.png") no-repeat 0 0;
@@ -154,10 +157,15 @@
 
 .port .paper-button-block{
 	position:absolute;
-	top:630px;
+	top:380px;
+	left:0px;
 	width:500px;
 }
-
+.port .drink-desc{
+	top:45px;
+	width:500px;
+	left:0;
+}
 /** EDIT VIEW **/
 .port .edit-ing-wrapper{
 	height: 176px !important;
@@ -182,4 +190,8 @@
 }
 .port .edit-page_content_wrapper{
 	padding:50px 40px 50px 40px; !important;
+}
+
+.port .ratings{
+	top:260px;
 }
