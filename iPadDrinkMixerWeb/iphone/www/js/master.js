@@ -126,12 +126,34 @@
 					  
 		  $(".star_delete").bind(END_EVENT,function(){
 			  $(".star").removeClass("star_on");
+			  $(".star").removeClass("star_half_on");
 			  $("#rating").val("");
 		  });
 		  
+				$(".submit_rate").bind(START_EVENT,function(){
+									   
+					$(this).addClass("submit_rate_on");	
+									   
+				}).bind(END_EVENT,function(){
+						
+				    $(this).removeClass("submit_rate_on");
+						
+					var requestUrl = ROOT_URL+"drinks/rate?id="+$("#drink_id_input").val()+"&rating="+$("#rating").val();
+							
+							
+					$.getJSON(requestUrl,
+					function(data) {									  
+						  setRating(data);  									  
+					});
+							
+				$(".submit_rate").hide();
+							
+		  });
+					  
 		  $(".star").bind(END_EVENT,function(){
 						   
-			   $(".star").removeClass("star_on");
+			  $(".star").removeClass("star_on");
+			  $(".star").removeClass("star_half_on");
 			   var id =$(this).attr("id");
 			   var s = id.split("_");
 			   
@@ -141,9 +163,12 @@
 			   for(i=0;i<$(".star").length;i++)
 			   {
 			   
-			   if(i<index)
-			   $($(".star").get(i)).addClass("star_on");
+					if(i<index)
+						$($(".star").get(i)).addClass("star_on");
 			   }
+				
+			  
+						  
 		   
 		   });
 					  
@@ -693,6 +718,8 @@
 				//data in this case is drinkdetail
 				if(data!=null)
 				{
+					$(".submit_rate").show();
+					$(".ratings").removeClass("hidden");
 					selectedDrinkDetails=data;//set current drinkdetail
 					
 					$(".drink-title").empty().append(data.drinkName);
@@ -705,8 +732,10 @@
 					$(".ing-wrapper .scroll-child li").attr("class","ing");
 					$(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
 					$(".edit-ing-wrapper .scroll-child li").attr("class","edit-ing");
+					 
+					$("#drink_id_input").val(data.id);
 					  
-					$("#ratings").val(data.rating);
+					setRating(data.rating);
 					
 					editchosenIngs.refresh();
 					chosenIngs.refresh();
@@ -737,7 +766,40 @@
 		
 	}
 
-	
+	function setRating(data)
+	{
+
+		//reset stars first
+		$(".star").removeClass("star_on");
+		$(".star").removeClass("star_half_on");
+		/************** set rating ************/
+		
+		for(i=0;i<$(".star").length;i++)
+		{
+			
+			if(i<data-1)
+			{
+				
+				$($(".star").get(i)).addClass("star_on");
+				
+			}
+		}
+		
+		var tmp = data%2 +"";
+		var fraction = tmp.split(".")
+		
+		
+		if(fraction[1] != undefined && eval("." + fraction[1])>=.5)
+			$($(".star").get(Math.floor(data++))).addClass("star_half_on");
+		
+		if(data==1)
+			$("#rate_1").addClass("star_on");
+		if(data==5)
+			$("#rate_5").addClass("star_on");
+		
+		/***************************************/
+	}
+
 	//adds loading spinner
 	function showLoadingMask(){
 		$(".x-mask").empty();
