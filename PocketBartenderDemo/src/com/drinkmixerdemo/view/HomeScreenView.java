@@ -173,6 +173,11 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 					startActivity(new Intent(this, CreateUpdateView.class));
 			    	return true;
 			 case MENU_LESSONS:
+				 	if(Constants.showAds)
+				 	{
+				 		showDialog(DIALOG_DEMO);
+				 		return true;
+				 	}
 					startActivity(new Intent(this, BartenderKnowledgeActivity.class));
 			    	return true;
 			 case MENU_MOVE:
@@ -180,6 +185,11 @@ public class HomeScreenView extends Activity implements OnClickListener,OnTouchL
 				showDialog(DIALOG_CHANGE_LOC);
 			    return true;
 			 case MENU_MAP:
+				 if(Constants.showAds)
+				 {
+				 	showDialog(DIALOG_DEMO);
+				 	return true;
+				 }
 				startActivity(new Intent(this, MapView.class));
 			    return true;
 		 }
