@@ -27,7 +27,7 @@ public class MixerDbHelper extends SQLiteOpenHelper {
 	public static boolean isRelocating = false;
 
 	public static final String DATABASE_NAME = "pBartender7";
-	public static final String DATABASE_EXTERNAL_FOLDER="dmdb";
+	public static final String DATABASE_EXTERNAL_FOLDER="dmdbdemo";
 	public static final String DATABASE_PATH_EXTERNAL = "/sdcard/"+DATABASE_EXTERNAL_FOLDER+"/"+DATABASE_NAME;
 	private static final String DATABASE_PATH_LOCAL = DATABASE_NAME;
 
