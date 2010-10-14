@@ -17,14 +17,25 @@ import com.jersey.resource.DOService;
 @Path("/drinks")
 public class GetDrinksEndpoint extends SQL {
 
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<DrinkDetails> getAllDrinks(
 			@QueryParam("startIndex") String startIndex) {
 
 		DOService dos = new DOService();
-		
+
 		return dos.getAllDrinks(startIndex);
+	}
+
+	@GET
+	@Path("rate")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String setRating(@QueryParam("rating") int rating,
+			@QueryParam("id") int drink_id) {
+
+		DOService dos = new DOService();
+		return dos.insertRating(drink_id, rating)+"";
 	}
 	
 	@GET
@@ -34,22 +45,21 @@ public class GetDrinksEndpoint extends SQL {
 			@QueryParam("startIndex") String startIndex) {
 
 		DOService dos = new DOService();
-		
+
 		return dos.getAllSharedDrinks(startIndex);
 	}
-	
+
 	@GET
 	@Path("details{drinkId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public DrinkDetails getDrinkDetails(
-			@PathParam("drinkId") String drinkId,
+	public DrinkDetails getDrinkDetails(@PathParam("drinkId") String drinkId,
 			@QueryParam("detailTypeShared") boolean detailTypeShared) {
 
 		int int_drinkId = Integer.valueOf(drinkId).intValue();
 		DOService dos = new DOService();
-		
-		return dos.getDrinkDetails(int_drinkId,detailTypeShared);
-		
+
+		return dos.getDrinkDetails(int_drinkId, detailTypeShared);
+
 	}
 
 	@GET
@@ -61,22 +71,21 @@ public class GetDrinksEndpoint extends SQL {
 
 		int int_id = Integer.valueOf(id).intValue();
 		DOService dos = new DOService();
-		
-		return dos.getDrinksByCategory(int_id,startIndex);
+
+		return dos.getDrinksByCategory(int_id, startIndex);
 	}
-	
+
 	@GET
 	@Path("ingsId{ingid}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<DrinkDetails> getDrinksByIngId(
-			@PathParam("ingid") String id,
+	public List<DrinkDetails> getDrinksByIngId(@PathParam("ingid") String id,
 			@QueryParam("startIndex") String startIndex,
 			@QueryParam("typeName") String typeName) {
 
 		int int_id = Integer.valueOf(id).intValue();
 		DOService dos = new DOService();
-		
-		return dos.getDrinksByIngId(int_id,typeName,startIndex);
+
+		return dos.getDrinksByIngId(int_id, typeName, startIndex);
 	}
 
 	@GET
@@ -87,7 +96,7 @@ public class GetDrinksEndpoint extends SQL {
 
 		int int_id = Integer.valueOf(id).intValue();
 		DOService dos = new DOService();
-		
+
 		return dos.getAllLiquors(int_id, startIndex);
 
 	}
@@ -100,11 +109,10 @@ public class GetDrinksEndpoint extends SQL {
 			@QueryParam("ids") String ids) {
 
 		DOService dos = new DOService();
-		
+
 		return dos.getAllFavoriteDrinks(startIndex, ids);
 	}
 
-	
 	@GET
 	@Path("search")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -112,9 +120,8 @@ public class GetDrinksEndpoint extends SQL {
 			@QueryParam("startIndex") String startIndex,
 			@QueryParam("searchParam") String searchParam) {
 		DOService dos = new DOService();
-		
+
 		return dos.filterDrinksList(startIndex, searchParam);
 	}
-	
-	
+
 }
