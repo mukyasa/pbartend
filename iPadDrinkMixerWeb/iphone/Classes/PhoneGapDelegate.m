@@ -102,6 +102,9 @@
     //NSLog(@"Device initialization: %@", result);
     [theWebView stringByEvaluatingJavaScriptFromString:result];
 	[result release];
+	
+//	NSLog(@"ip address: %@", [self getIPAddress]);
+	
 
 }
 
@@ -138,13 +141,12 @@
  *
  */
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"Failed to load webpage with error: %@", [error localizedDescription]);
+    //NSLog(@"Failed to load webpage with error: %@", [error localizedDescription]);
 	/*
     if ([error code] != NSURLErrorCancelled)
 		alert([error localizedDescription]);
      */
 }
-
 
 /**
  * Start Loading Request
@@ -155,7 +157,7 @@
 - (BOOL)webView:(UIWebView *)theWebView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
 	NSURL *url = [request URL];
-
+	
     /*
      * Get Command and Options From URL
      * We are looking for URLS that match gap://<Class>.<command>/[<arguments>][?<dictionary>]
