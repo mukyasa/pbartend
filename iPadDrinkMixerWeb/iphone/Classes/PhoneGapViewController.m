@@ -9,6 +9,7 @@
 #import "PhoneGapViewController.h"
 #import "PhoneGapDelegate.h" 
 
+
 @implementation PhoneGapViewController
 
 
@@ -30,21 +31,15 @@
  */
 
 
-
-/*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
- - (void)viewDidLoad {
- [super viewDidLoad];
- 
- }
- */
-
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
 }
 
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+
+	
 	//PORTRAIT
 	if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
 	{
@@ -56,14 +51,10 @@
 
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
-	
-	
-	//[webView stringByEvaluatingJavaScriptFromString:@"refreshMainScroller()"];
-	
-	
-	
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{	
+	//[webView stringByEvaluatingJavaScriptFromString:@"refreshMainScroller()"];	
 }
+
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -78,9 +69,7 @@
 }
 
 
-- (void)dealloc {
-	
-	
+- (void)dealloc {	
     [super dealloc];
 }
 

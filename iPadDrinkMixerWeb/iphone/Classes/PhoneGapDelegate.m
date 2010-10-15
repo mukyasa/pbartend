@@ -3,6 +3,8 @@
 #import <UIKit/UIKit.h>
 #import "Movie.h"
 #import "InvokedUrlCommand.h"
+#include <ifaddrs.h>
+#include <arpa/inet.h>
 
 @implementation PhoneGapDelegate
 
@@ -148,6 +150,42 @@
      */
 }
 
+-(NSString *)getIPAddress
+{
+	NSString *address = @"error";
+	struct ifaddrs *interfaces = NULL;
+	struct ifaddrs *temp_addr = NULL;
+	int success = 0;
+	
+	// retrieve the current interfaces - returns 0 on success
+	success = getifaddrs(&interfaces);
+	if (success == 0)
+	{
+		// Loop through linked list of interfaces
+		temp_addr = interfaces;
+		while(temp_addr != NULL)
+		{
+			if(temp_addr->ifa_addr->sa_family == AF_INET)
+			{
+				//NSLog(@"hmmm:%@",[NSString stringWithUTF8String:temp_addr->ifa_name]);
+				// Check if interface is en0 which is the wifi connection on the iPhone
+				if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]||[[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en1"])
+				{
+					// Get NSString from C String
+					address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+				}
+			}
+			
+			temp_addr = temp_addr->ifa_next;
+		}
+	}
+	
+	// Free memory
+	freeifaddrs(interfaces);
+	
+	return address;
+}
+
 /**
  * Start Loading Request
  * This is where most of the magic happens... We take the request(s) and process the response.
@@ -169,7 +207,10 @@
         
 		// Tell the JS code that we've gotten this command, and we're ready for another
         [theWebView stringByEvaluatingJavaScriptFromString:@"PhoneGap.queue.ready = true;"];
-		
+		 
+		 NSString *ipaddress =[NSString stringWithFormat:@"setClientIp('%@')",[self getIPAddress]];
+		 [webView stringByEvaluatingJavaScriptFromString:ipaddress];
+		 
 		// Check to see if we are provided a class:method style command.
 		[self execute:iuc];
 
