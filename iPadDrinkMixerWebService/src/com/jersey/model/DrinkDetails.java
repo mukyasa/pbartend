@@ -17,11 +17,21 @@ public class DrinkDetails {
 	private int id;
 	private int favorites;
 	private float rating;
+	private String uid;
 	private ArrayList<String> drinkNames = new ArrayList<String>();
 	private ArrayList<String> ings = new ArrayList<String>();
 
 
 	
+	
+	public String getUid() {
+		return uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+
 	public float getRating() {
 		return rating;
 	}
