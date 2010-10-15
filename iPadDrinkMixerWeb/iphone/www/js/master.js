@@ -1,7 +1,7 @@
 	var db;
 	var favoritesArray=new Array();
 	var selectedDrinkDetails;
-	var ROOT_IP ="http://10.55.128.35:8080";
+	var ROOT_IP ="http://192.168.1.105:8080";
 	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
 	var list_scroll=false;
@@ -11,7 +11,11 @@
 	var ING_TYPE_ID;//keep track of the current ingredient type for load more.
 	var LIMIT=100;
 	var BUTTON_CLICKED=false;//set this so when a button is clicked no others can be
-	
+	var clientIp="0.0.0.0";
+	var deviceName="";
+	var deviceUID="";
+	var deviceVersion="";
+
 	var subject = 'Check out this drink!';
 	var anything = 'Check out this drink!';
 	var toRecipients = '';
@@ -74,8 +78,8 @@
 	}
 	
 	
-	$(document).ready(function() {		
-		
+	$(document).ready(function() {	
+
 		//prevent screen from scrolling
 		document.addEventListener(MOVE_EVENT, function(e) {
 			e.preventDefault();
@@ -130,28 +134,28 @@
 			  $("#rating").val("");
 		  });
 		  
-				$(".submit_rate").bind(START_EVENT,function(){
-									   
-					$(this).addClass("submit_rate_on");	
-									   
-				}).bind(END_EVENT,function(){
+			$(".submit_rate").bind(START_EVENT,function(){
+									  
+				$(this).addClass("submit_rate_on");	
+								   
+			}).bind(END_EVENT,function(){
+					
+				$(this).removeClass("submit_rate_on");
+					
+				var requestUrl = ROOT_URL+"drinks/rate?id="+$("#drink_id_input").val()+"&rating="+$("#rating").val()+"&ip="+clientIp +"&version="+deviceVersion+"&uid="+deviceUID+"&name="+deviceName;
 						
-				    $(this).removeClass("submit_rate_on");
 						
-					var requestUrl = ROOT_URL+"drinks/rate?id="+$("#drink_id_input").val()+"&rating="+$("#rating").val();
-							
-							
-					$.getJSON(requestUrl,
-					function(data) {									  
-						  setRating(data);  									  
-					});
-							
-				$(".submit_rate").hide();
+				$.getJSON(requestUrl,
+				function(data) {									  
+					  setRating(data);  									  
+				});
+						
+			$(".submit_rate").hide();
 							
 		  });
 					  
 		  $(".star").bind(END_EVENT,function(){
-						   
+						   	
 			  $(".star").removeClass("star_on");
 			  $(".star").removeClass("star_half_on");
 			   var id =$(this).attr("id");
@@ -828,6 +832,22 @@
 		$(".force-close").bind(END_EVENT,function(){
 			removeLoadingMask();			
 		});
+	}
+
+	PhoneGap.addConstructor(function(){
+		deviceInfo();
+	});
+
+	function deviceInfo(){
+		debug.log("deviceInfo");
+		
+		deviceName=device.name;
+		deviceUID=device.uuid;
+		deviceVersion=device.version;
+	}
+
+	function setClientIp(ip){
+		clientIp =ip;
 	}
 	
 	
