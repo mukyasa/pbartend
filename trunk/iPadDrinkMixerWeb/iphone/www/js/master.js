@@ -1,7 +1,7 @@
 	var db;
 	var favoritesArray=new Array();
 	var selectedDrinkDetails;
-	var ROOT_IP ="http://10.55.128.35:8080";
+	var ROOT_IP ="http://192.168.1.105:8080";
 	var ROOT_URL= ROOT_IP+"/iPad/rest/";
 	var css_orientation="port";
 	var list_scroll=false;
@@ -14,6 +14,7 @@
 	var clientIp="0.0.0.0";
 	var deviceName="";
 	var deviceUID="";
+	var drinkUID="";
 	var deviceVersion="";
 
 	var subject = 'Check out this drink!';
@@ -147,15 +148,23 @@
 						
 				$.getJSON(requestUrl,
 				function(data) {									  
-					  setRating(data);  									  
+					setRating(data); 
+					$(".submit_rate").text("RATED!");  
+					window.setTimeout(function(){
+								$(".submit_rate").hide();
+							},1500);
+						  
 				});
 						
-			$(".submit_rate").hide();
+			
 							
 		  });
 					  
 		  $(".star").bind(END_EVENT,function(){
-						   	
+						  
+				  if($(".submit_rate").text()!= "RATED!")
+					$(".submit_rate").show();
+						  
 			  $(".star").removeClass("star_on");
 			  $(".star").removeClass("star_half_on");
 			   var id =$(this).attr("id");
@@ -225,10 +234,18 @@
 		/***********************************************/
 		
 		//flip page
-		$(".frontbutton").bind(END_EVENT,function(e){
+		$(".frontbutton,.createbutton").bind(END_EVENT,function(e){
 			e.preventDefault();//prevent copy and mag from showing
 			//flip paper
 			$("#paper_wrapper .paper").addClass("flip-back").removeClass("flip-front");
+											 
+			if($(this).hasClass(".createbutton"))//we are creating a new drink so lets clear out the fields
+			{
+			
+                 $(".edit-drink-title").val("");
+											 
+											 
+			}								 
 			
 		});
 		
@@ -701,6 +718,10 @@
 	
 	}
 	
+/************************************************/
+/************  DRINK DETAIL BUILDING   **********/
+/************************************************/
+
 	//get the drink details sets it to the screen
 	function showDetail(that){
 		
@@ -722,7 +743,8 @@
 				//data in this case is drinkdetail
 				if(data!=null)
 				{
-					$(".submit_rate").show();
+					drinkUID= data.uid;
+					$(".submit_rate").text("Rate");
 					$(".ratings").removeClass("hidden");
 					selectedDrinkDetails=data;//set current drinkdetail
 					
@@ -744,6 +766,12 @@
 					editchosenIngs.refresh();
 					chosenIngs.refresh();
 					
+					  
+					//set edit button state only show if this user can edit it
+					  if(data.uid != null && data.uid == deviceUID)
+						$(".frontbutton").show();	
+					  else
+						$(".frontbutton").hide();
 					
 				}
 
