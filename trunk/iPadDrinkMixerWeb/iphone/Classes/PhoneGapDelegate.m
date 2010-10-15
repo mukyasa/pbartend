@@ -89,7 +89,7 @@
 	
 	NSDictionary *deviceProperties = [[self getCommandInstance:@"Device"] deviceProperties];
     NSMutableString *result = [[NSMutableString alloc] initWithFormat:@"DeviceInfo = %@;", [deviceProperties JSONFragment]];
-    
+    //NSLog(@"%@",[deviceProperties JSONFragment]);
     /* Settings.plist
 	 * Read the optional Settings.plist file and push these user-defined settings down into the web application.
 	 * This can be useful for supplying build-time configuration variables down to the app to change its behaviour,
