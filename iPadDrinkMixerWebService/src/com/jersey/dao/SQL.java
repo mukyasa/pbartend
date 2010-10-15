@@ -49,6 +49,7 @@ public class SQL{
 	public static final String TABLE_INGREDIENTS_SUB_CAT ="tblIngredient_subcategories";
 	
 	/****** SHARED *******/
+	public static final String sqlSetRating = "INSERT INTO tblRating (drink_id, rating,ip_address,uid,version,name) VALUES (?,?,?,?,?,?)";
 	public static final String sqlGetAllSharedDrinksAndGlass ="SELECT g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
 	public static final String sqlGetSharedDrinkDetailById ="SELECT d._id, d.name,d.instructions,dc.name  AS "+
 	COL_CAT_NAME+",di.amount,i.name AS "+COL_ING_NAME+",g.name AS "+
