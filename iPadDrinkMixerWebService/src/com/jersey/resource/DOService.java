@@ -30,7 +30,7 @@ public class DOService extends SQL {
 	private final String LIMIT = "150";
 	
 	
-	public float insertRating(int drink_id, int rating){
+	public float insertRating(int drink_id, int rating,String ip){
 		
 		PreparedStatement stmt = null;
 		Connection conn = null;
@@ -39,11 +39,12 @@ public class DOService extends SQL {
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			String sql = "INSERT INTO tblRating (drink_id, rating) VALUES (?,?)";
+			String sql = "INSERT INTO tblRating (drink_id, rating,ip_address) VALUES (?,?,?)";
 
 			stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, drink_id);
 			stmt.setInt(2, rating);
+			stmt.setString(3, ip);
 			
 			stmt.executeUpdate();
 
