@@ -159,7 +159,16 @@
 .land .edit-page_content_wrapper{
 	padding:50px 40px 50px 25px; !important;
 }
-
+.land .submit_rate{
+	top:162px;
+	padding:5px 10px 0px 10px;
+}
+.land .star,.land .star_delete{
+	background-size: 80% auto;
+	margin-left:0px;
+	width:30px;
+	height:27px;
+}
 .land .ratings{
 	top:195px;
 }

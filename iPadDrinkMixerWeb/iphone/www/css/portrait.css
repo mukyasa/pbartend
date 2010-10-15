@@ -191,6 +191,9 @@
 .port .edit-page_content_wrapper{
 	padding:50px 40px 50px 40px; !important;
 }
+.port .submit_rate{
+	top:218px;
+}
 
 .port .ratings{
 	top:260px;
