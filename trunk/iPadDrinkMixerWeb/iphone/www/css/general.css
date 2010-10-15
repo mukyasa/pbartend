@@ -439,7 +439,7 @@ body {
 	background:#ccc !important;
 }
 .submit_rate{
-	float:left;
+	position:absolute;
 	color: #134926;
 	font-family: button;
 	padding:8px 10px 2px 10px;
@@ -447,6 +447,8 @@ body {
 	list-style:none;
 	margin-left:10px;
 	margin-top:2px;
+	width:40px;
+	text-align:center;
 	border:1px solid #ccc;
 	-webkit-border-radius: 4px;
 }
@@ -455,7 +457,7 @@ body {
 	height:31px;
 	float:left;
 	list-style:none;
-	margin-left:3px;
+	margin-left:4px;
 }
 .ratings{
 	margin:0;
