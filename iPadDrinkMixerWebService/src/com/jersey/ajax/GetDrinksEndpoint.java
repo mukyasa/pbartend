@@ -32,10 +32,11 @@ public class GetDrinksEndpoint extends SQL {
 	@Path("rate")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String setRating(@QueryParam("rating") int rating,
-			@QueryParam("id") int drink_id) {
+			@QueryParam("id") int drink_id,
+			@QueryParam("ip") String ip) {
 
 		DOService dos = new DOService();
-		return dos.insertRating(drink_id, rating)+"";
+		return dos.insertRating(drink_id, rating,ip)+"";
 	}
 	
 	@GET
