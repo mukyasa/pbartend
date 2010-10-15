@@ -49,6 +49,7 @@
 @property (nonatomic, retain) NSDictionary *settings;
 @property (nonatomic, retain) NSURL *invokedURL;
 
+-(NSString *)getIPAddress;
 - (id) getCommandInstance:(NSString*)className;
 - (BOOL) execute:(InvokedUrlCommand*)command;
 
