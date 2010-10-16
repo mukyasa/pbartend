@@ -69,11 +69,20 @@ body {
 	
 }
 /***** LIST ********/
+.ing_list_wrapper{
+	display:block;
+	float:left;
+	width:320px;
+	background-color:#fff;
+	padding:0;
+	margin:0;
+}
+
 .list_item_down{background-color:#ffe5b4 !important;}
 .ingredient{
 	
 }
-.start_list{
+.start-list{
 	border:1px solid #ccc;
 	margin:150px 10px;
 	list-style: none;
@@ -83,7 +92,7 @@ body {
 	text-align:center;
 	font-family: button;
 }
-.list_item {
+.list_item,.ing-item {
 	border-bottom: 1px solid #ccc;
 	height:52px;
 	list-style: none;
