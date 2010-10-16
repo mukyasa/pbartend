@@ -428,7 +428,7 @@ public class DOService extends SQL {
 					drink.setGlass(rs.getString(COL_GLASS_NAME));
 					drink.setDrinkType(rs.getString(COL_CAT_NAME));
 					drink.setInstructions(rs.getString(COL_INSTUCTIONS));
-					
+					drink.setUid(rs.getString(COL_UID));
 					drink.setRating(totalRating);
 
 					drink.setGlassId(rs.getInt(COL_GLASS_ID));
