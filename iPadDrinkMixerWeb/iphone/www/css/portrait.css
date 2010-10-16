@@ -188,11 +188,10 @@
 	width:480px;
 	height:400px;
 }
-.port .edit-paper-button-block .backbutton{
-	padding-right:35px;
-}
+
 .port .edit-paper-button-block{
 	top:720px;
+	left:23px;
 	
 }
 .port .edit-page_content_wrapper{
