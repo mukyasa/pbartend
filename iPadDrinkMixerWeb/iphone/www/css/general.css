@@ -384,10 +384,25 @@ body {
 
 
 /** EDIT ***/
+.edit-add-ingredient{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
 .add-new-ing{
 	background:#efefef url("../images/chevron.png") no-repeat center right !important;
 }
 
+.ing-back{
+	background:#efefef url("../images/chevron_l.png") no-repeat 5% 50% !important;
+	border:1px solid #ccc;
+	text-align:right;
+	 -webkit-border-radius: 4px;
+	padding:7px 15px  4px  8px;
+	 margin-bottom:3px;
+	list-style:none;
+}
 .edit-ing{
 	background:#fff url("../images/delete.png") no-repeat center right;
 	border:1px solid #ccc;
@@ -396,6 +411,9 @@ body {
 	 margin-bottom:3px;
 	list-style:none;
 
+}
+.ingTouch{
+	background-color:#ffd854 !important;
 }
 .ing{
 	padding:2px 0px  2px  0px;

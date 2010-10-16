@@ -227,6 +227,11 @@ $(document).ready(function () {
 																		//flip page
 																		$(".frontbutton,.createbutton").bind(END_EVENT, function (e) {
 																																																							e.preventDefault(); //prevent copy and mag from showing
+																																																							
+																																																							//reset ing
+																																																							$(".stage-2").hide();
+																																																							$(".stage-1").show();
+																																																							
 																																																							//flip paper
 																																																							$("#paper_wrapper .paper").addClass("flip-back").removeClass("flip-front");
 																																																							
@@ -352,8 +357,10 @@ function list_item_events() {
 																					$(this).remove();
 																					if (PAGING_TYPE == PAGING_TYPE_SEARCH) processDrinks(requestUrl, true);
 																					else processDrinks(requestUrl, true);
-																					});
+																					});	
 }
+
+
 
 function handlePostButtonTouchStart(e) {
 	e.preventDefault(); //prevent copy and mag from showing
@@ -678,7 +685,35 @@ function getAQuote() {
 
 //get the drink details sets it to the screen
 
+function addEditButtonEvents(){
 
+	$("#addNewIng").unbind().bind(START_EVENT,function(e){
+																																e.preventDefault(); //prevent copy and mag from showing
+																															$(this).addClass("ingTouch");
+																															}).bind(END_EVENT,function(e){
+																																							e.preventDefault(); //prevent copy and mag from showing
+																																							$(this).removeClass("ingTouch");
+																																							$(".stage-1").slideUp(function(){
+																																												$(".stage-2").slideDown();								
+																																												
+																																												});
+																						
+																						});
+	
+	$(".ing-back").unbind().bind(START_EVENT,function(e){
+																															e.preventDefault(); //prevent copy and mag from showing
+																														$(this).addClass("ingTouch");
+																														}).bind(END_EVENT,function(e){
+																																							e.preventDefault(); //prevent copy and mag from showing
+																																						$(this).removeClass("ingTouch");
+																																						$(".stage-2").slideUp(function(){
+																																																												$(".stage-1").slideDown();								
+																																																												
+																																																												});
+																				
+																				});
+
+}
 function showDetail(that) {
 	
 	if (PAGING_TYPE == PAGING_TYPE_ALL || PAGING_TYPE == PAGING_TYPE_CATEGORY || PAGING_TYPE == PAGING_TYPE_SEARCH) {
@@ -728,7 +763,7 @@ function showDetail(that) {
             $(".list_fav_selected").removeClass("list-item-loading");
             $(".list_fav").removeClass("list-item-loading");
             removeLoadingMask();
-												
+												addEditButtonEvents();
 												
 												}); //end ajax
 	}
