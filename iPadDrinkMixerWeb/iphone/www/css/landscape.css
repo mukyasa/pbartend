@@ -55,14 +55,21 @@
 	top:270px;
 	left:0px;
 }
-
+.land .createbutton{
+	background: url("../images/create_button.png") no-repeat 0 0;
+	width:63px;
+	height:35px;
+	float:left;
+	background-size: 100% auto;
+	
+}
 .land .frontbutton{
 	background: url("../images/edit_button.png") no-repeat 0 0;
 	width:63px;
 	height:35px;
 	float:left;
 	background-size: 100% auto;
-	
+	margin-right:10px;
 }
 .land .cancelbutton{
 	background: url("../images/cancel_button.png") no-repeat 0 0;
@@ -119,7 +126,7 @@
 }
 .land .drink-desc{
 	height:225px;
-	width:390px;
+	width:380px;
 	top:45px;
 	left:0;
 }
