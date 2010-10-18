@@ -371,15 +371,31 @@ function handleIngPop(){
 	if(id=="ing-liquor"){
 		$("#ing-inner-wrapper").css("top",230);
 		$("#ing-inner-wrapper").css("left",416);
+		//ajax
+		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_LIQUOR + "?startIndex=0";
+		$("#ing_list_wrapper").empty();
+		
+		processIngredients(requestUrl);
 		
 	}
 	else if(id=="ing-mixer"){
 		$("#ing-inner-wrapper").css("top",265);
 		$("#ing-inner-wrapper").css("left",416);
+		//ajax
+		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_MIXERS + "?startIndex=0";
+		$("#ing_list_wrapper").empty();
+		
+		processIngredients(requestUrl);
+		
 	}
 	else if(id=="ing-garnish"){
 		$("#ing-inner-wrapper").css("top",300);
 		$("#ing-inner-wrapper").css("left",416);
+		//ajax
+		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_GARNISH + "?startIndex=0";
+		$("#ing_list_wrapper").empty();
+		
+		processIngredients(requestUrl);
 	}
 	
 	$("#ing-inner-wrapper").addClass(id);
@@ -660,6 +676,23 @@ function processDrinks(requestUrl, showDetails) {
 			  
 			  }
 			  else removeLoadingMask();
+			  
+			  });
+	
+}
+
+function processIngredients(requestUrl) {
+
+	console.log(requestUrl);
+    $.getJSON(requestUrl, function (data) {
+
+			  if (data != null) {
+				for (i = 0; i < data.ingredient.length; i++)
+					$("#ing_list_wrapper").append("<li id=\"" + data.ingredient[i].id + "\" class=\"ing-item\">" + data.ingredient[i].name + "</li>");			  
+			  
+					//add events
+					list_item_events();
+				}
 			  
 			  });
 	
