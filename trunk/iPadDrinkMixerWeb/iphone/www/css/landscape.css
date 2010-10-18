@@ -48,7 +48,10 @@
 	padding:0;
 	margin:0;
 }
-
+.land #ing-inner-wrapper{
+	top:98px;
+	left:405px;
+}
 /* drink info text*/
 .land #quote{
 	margin-top:80px;
