@@ -303,7 +303,7 @@
 							<real>189</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>2 123 1662 905 0 0 1680 1028 </string>
+						<string>2 122 1662 905 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -333,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7137775D126CECA400F5AEDF</string>
+										<string>71377864126D0F9300F5AEDF</string>
 										<key>history</key>
 										<array>
 											<string>7184A3A312569518009A3E31</string>
@@ -395,11 +395,11 @@
 											<string>712C9C75126BD05800AA1F7C</string>
 											<string>712C9D94126BF2A400AA1F7C</string>
 											<string>713776C5126CDBF800F5AEDF</string>
-											<string>71377724126CE7B900F5AEDF</string>
-											<string>71377734126CEA2A00F5AEDF</string>
-											<string>7137773B126CEAA300F5AEDF</string>
-											<string>71377740126CEAC800F5AEDF</string>
-											<string>71377741126CEAC800F5AEDF</string>
+											<string>7137778C126CFE0100F5AEDF</string>
+											<string>7137785A126D0F5800F5AEDF</string>
+											<string>7137785C126D0F5800F5AEDF</string>
+											<string>7137785F126D0F8100F5AEDF</string>
+											<string>71377860126D0F8100F5AEDF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -413,7 +413,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1429, 859}}</string>
 								<key>RubberWindowFrame</key>
-								<string>2 123 1662 905 0 0 1680 1028 </string>
+								<string>2 122 1662 905 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -433,7 +433,7 @@
 								<key>Frame</key>
 								<string>{{0, 864}, {1429, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>2 123 1662 905 0 0 1680 1028 </string>
+								<string>2 122 1662 905 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -597,13 +597,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>71377773126CFD2700F5AEDF</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>71AD1EF61256499800FB1054</string>
 		<string>/Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/PhoneGap.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>2 123 1662 905 0 0 1680 1028 </string>
+	<string>2 122 1662 905 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -1280,22 +1281,40 @@
 			<string>100 100 700 500 0 0 1280 1002 </string>
 		</dict>
 		<dict>
+			<key>FirstTimeWindowDisplayed</key>
+			<false/>
 			<key>Identifier</key>
 			<string>windowTool.bookmarks</string>
+			<key>IsVertical</key>
+			<true/>
 			<key>Layout</key>
 			<array>
 				<dict>
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>ContentConfiguration</key>
+							<dict>
+								<key>PBXProjectModuleGUID</key>
+								<string>71377772126CFD2700F5AEDF</string>
+								<key>PBXProjectModuleLabel</key>
+								<string>Bookmarks</string>
+							</dict>
+							<key>GeometryConfiguration</key>
+							<dict>
+								<key>Frame</key>
+								<string>{{0, 0}, {401, 202}}</string>
+								<key>RubberWindowFrame</key>
+								<string>23 783 401 222 0 0 1680 1028 </string>
+							</dict>
 							<key>Module</key>
 							<string>PBXBookmarksModule</string>
 							<key>Proportion</key>
-							<string>100%</string>
+							<string>202pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>100%</string>
+					<string>202pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -1305,9 +1324,19 @@
 				<string>PBXBookmarksModule</string>
 			</array>
 			<key>StatusbarIsVisible</key>
-			<integer>0</integer>
+			<false/>
+			<key>TableOfContents</key>
+			<array>
+				<string>71377773126CFD2700F5AEDF</string>
+				<string>71377774126CFD2700F5AEDF</string>
+				<string>71377772126CFD2700F5AEDF</string>
+			</array>
 			<key>WindowString</key>
-			<string>538 42 401 187 0 0 1280 1002 </string>
+			<string>23 783 401 222 0 0 1680 1028 </string>
+			<key>WindowToolGUID</key>
+			<string>71377773126CFD2700F5AEDF</string>
+			<key>WindowToolIsVisible</key>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

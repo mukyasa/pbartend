@@ -75,20 +75,19 @@ body {
 #ing_list_wrapper{
 	padding:0px;
 	margin:0px;
-	width:250px;
-	height:450px;
 }
 .ing-item{
 	border-bottom: 1px solid #ccc;
-	width:250px;
+	width:100%;
 	list-style: none;
 	margin: 0px;
-	padding:12px 0px 12px 20px;
+	padding:12px 0px 12px 0px;
 	font-family: button;
+	text-align:center;
 }
-#ing-scroller{margin:0;padding:0;}
+#ing-scroller-whole ul,#ing-scroller-half ul,#ing-scroller-units ul{margin:0;padding:0;}
 #ing-inner-wrapper{
-	display:none;
+	xxxdisplay:none;
 	overflow: auto;
 	position:absolute;
 	padding:0;
@@ -96,6 +95,10 @@ body {
 	z-index:800;
 	background: url("../images/editpaper.png") no-repeat 0 0;
 	background-size: 100% auto;
+}
+#ing-scroller-half, #ing-scroller-units,#ing-scroller-whole{
+	border-left:1px solid #666;
+	border-right:1px solid #666;
 }
 
 /***** LIST ********/
