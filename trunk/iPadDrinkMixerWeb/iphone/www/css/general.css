@@ -348,7 +348,6 @@ body {
 	src: url('TektonPro-Bold.otf');
 }
 
-
 /****FLIP STYLE****/
 .flip-front{/*-webkit-transform: translateZ(0px) rotateY(-180deg);*/}
 .flip-back{-webkit-transform: translateZ(-1px) rotateY(180deg);}

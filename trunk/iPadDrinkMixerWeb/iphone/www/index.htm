@@ -118,25 +118,29 @@
 			<div class="text-float-right">
 				<input type="text" placeholder="Drink Title" class="edit-drink-title" value="">
 				<div class="drink-ings">
-				<div class="stage-1">
-					<div id="addNewIng" class="edit-ing add-new-ing">Add New Ingredients</div>
-					<div class="edit-ing-wrapper">
-						<div id="editchosenIngs">
-							<ul class="ing-items-wrapper scroll-child">
-								<!--li class="edit-ing">-1/2 cup stuff</li-->
-							</ul>
+				
+				<div id="stage-wrapper">
+					<div class="stage-1">
+						<div id="addNewIng" class="edit-ing add-new-ing">Add New Ingredients</div>
+						<div class="edit-ing-wrapper">
+							<div id="editchosenIngs">
+								<ul class="ing-items-wrapper scroll-child">
+									<!--li class="edit-ing">-1/2 cup stuff</li-->
+								</ul>
+							</div>
 						</div>
 					</div>
+					<div class=" stage-2">
+						<ul class="edit-add-ingredient">
+							<li class="ing-back">Back</li>
+							<li class="edit-ing add-new-ing">Liquor</li>
+							<li class="edit-ing add-new-ing">Mixers</li>
+							<li class="edit-ing add-new-ing">Garnish</li>
+						</ul>
+					</div>
 				</div>
-				<div class=" stage-2 hidden">
-				<ul class="edit-add-ingredient">
-					<li class="ing-back">Back</li>
-					<li class="edit-ing add-new-ing">Liquor</li>
-					<li class="edit-ing add-new-ing">Mixers</li>
-					<li class="edit-ing add-new-ing">Garnish</li>
-				</ul>
-				</div>
-				</div>
+				
+			</div>
 			</div>
 			<textarea class="edit-drink-desc"></textarea><!--//ajax driven -->
 			<div class="paper-button-block edit-paper-button-block">
