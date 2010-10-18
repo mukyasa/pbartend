@@ -7,3 +7,5 @@
 7|PayPal|www.paypal.com
 8|Twitter|twitter.com/login
 9|Digg|digg.com/login
+10|Foursquare|foursquare.com/login
+11|Youtube|youtube.com
