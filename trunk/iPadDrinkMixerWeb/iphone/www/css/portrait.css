@@ -65,7 +65,7 @@
 .port .popout{
 	z-index:3;
 	background-color: #fff;
-	-webkit-box-shadow:#999 4px 4px 24px;
+	-webkit-box-shadow:#000 4px 4px 24px;
 }
 .port #wrapper {
 	display:none;
@@ -87,7 +87,6 @@
     left:0px;
    
 }
-.port .ui-cornor-all{-webkit-border-radius:6px;}
 
 .port .content_wrapper{
 	width:100%;
