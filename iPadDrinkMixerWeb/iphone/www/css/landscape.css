@@ -15,6 +15,9 @@
 	height:630px;
 	left: -225px;
 }
+.land #button_block{
+	left:25px;
+}
 .land #wrapper,.land #button_block{
 	display:block !important;
 }

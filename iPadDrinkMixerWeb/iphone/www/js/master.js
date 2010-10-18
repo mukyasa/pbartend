@@ -683,8 +683,8 @@ function addEditButtonEvents() {
 								  }).bind(END_EVENT, function (e) {
 										  e.preventDefault(); //prevent copy and mag from showing
 										  $(this).removeClass("ingTouch");
-										  $(".stage-1").slideUp(function () {
-																$(".stage-2").slideDown();
+										  $(".stage-1").fadeOut(function () {
+																$(".stage-2").fadeIn();
 																
 																});
 										  
@@ -696,8 +696,8 @@ function addEditButtonEvents() {
 								 }).bind(END_EVENT, function (e) {
 										 e.preventDefault(); //prevent copy and mag from showing
 										 $(this).removeClass("ingTouch");
-										 $(".stage-2").slideUp(function () {
-															   $(".stage-1").slideDown();
+										 $(".stage-2").fadeOut(function () {
+															   $(".stage-1").fadeIn();
 															   
 															   });
 										 
