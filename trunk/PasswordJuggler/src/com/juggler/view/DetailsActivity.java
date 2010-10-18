@@ -4,6 +4,10 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
@@ -41,6 +45,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	private TextView directions=null;
 	private Drawable bgHolder=null;
 	private String tag="";
+	private Context context=null;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -132,7 +137,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	}
 
 	private void initialize() {
-
+		context=this;
 		directions = (TextView)findViewById(R.id.tvDirections);
 		
 		//hide next button
@@ -267,6 +272,31 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		}
 	}
 	
+	
+    @Override
+    protected Dialog onCreateDialog(int id) {
+    	
+    	return new AlertDialog.Builder(DetailsActivity.this)
+        .setIcon(R.drawable.error)
+        .setMessage("Are you sure you want to delete this?")
+        .setTitle("Delete")
+        .setPositiveButton("Delete it!",new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				//delete db
+				passDao.deleteEntry();
+				startActivity(new Intent(context, HomeView.class));
+				dismissDialog(0);
+
+			}
+		})
+        .setNegativeButton("No!", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+               dismissDialog(0);
+            }
+        })      
+       .create();
+    }
+    
 	/* (non-Javadoc)
 	 * @see com.juggler.view.BaseActivity#onClick(android.view.View)
 	 */
@@ -296,9 +326,8 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		    }
 		    else if( v == bDelete)
 		    {
-		    	//delete this entry
-		    	passDao.deleteEntry();
-		    	startActivity(new Intent(this,HomeView.class));
+		    	//warn first
+		    	showDialog(0);
 		    }
 		    else if(v instanceof TableRow)
 		    {
