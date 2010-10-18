@@ -15,10 +15,11 @@ package com.juggler.utils;
  */
 public class Constants {
 	
-	public static String VERSION = "1.0.4";
+	public static String VERSION = "1.0.5";
 	public static String COMPANY_NAME = "mypocket-technologies";
 	
 	/**
+	 * <li>1.0.5 Added confirmation on delete.</li>
 	 * <li>1.0.4 Added new template item website for bank.</li>
 	 * <li>1.0.3 Fixed Bug disable back button. Cleaned up text fields</li>
 	 * <li>1.0.2 Fixed Bug when deleting database.</li>
