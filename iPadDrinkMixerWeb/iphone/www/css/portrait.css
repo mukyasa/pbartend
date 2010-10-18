@@ -204,3 +204,18 @@
 .port .ratings{
 	top:260px;
 }
+
+.port #ing-inner-wrapper{
+	width:600px;
+	height:830px;
+	top:100px;
+	left:142px;
+}
+
+.port #ing-inner-wrapper-select{
+	width:490px;
+	height:28px;
+	top:309px;
+	left:40px;
+	position:absolute;
+}
