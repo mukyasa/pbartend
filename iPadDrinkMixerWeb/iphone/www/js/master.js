@@ -97,12 +97,17 @@ $(document).ready(function () {
 								 transaction.executeSql("CREATE TABLE IF NOT EXISTS tblFavorites (_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,drink_id INTEGER NOT NULL);");
 								 });
 				  
+				  //create drink 
+				  $("#ing-liquor,#ing-mixer,#ing-garnish").bind(END_EVENT,handleIngPop).bind(START_EVENT,function(){$(this).addClass("ingTouch");});
+				  
+				  
 				  
 				  //hide popout on window touch
 				  $(".content_wrapper").bind(START_EVENT, function (e) {
 											 e.preventDefault();
 											 //hide all pop ups
 											 $(".port .popout").fadeOut();
+											 $("#ing-inner-wrapper").fadeOut();
 											 
 											 });
 				  
@@ -122,6 +127,7 @@ $(document).ready(function () {
 				  editchosenIngs = new iScroll('editchosenIngs');
 				  chosenIngs = new iScroll('chosenIngs');
 				  scroller4 = new iScroll('scroll-desc');
+				  ingscroller = new iScroll('ing-scroller');
 				  
 				  $(".button,.sm_button,.fav_button").bind(START_EVENT, handleTouchStart).bind(END_EVENT, handleTouchEnd);
 				  $(".postbutton").bind(START_EVENT, handlePostButtonTouchStart).bind(END_EVENT, handlePostButtonTouchEnd);
@@ -358,7 +364,27 @@ function list_item_events() {
 						});
 }
 
-
+function handleIngPop(){
+	
+	var id = $(this).attr("id");
+	$(this).removeClass("ingTouch");
+	if(id=="ing-liquor"){
+		$("#ing-inner-wrapper").css("top",230);
+		$("#ing-inner-wrapper").css("left",416);
+		
+	}
+	else if(id=="ing-mixer"){
+		$("#ing-inner-wrapper").css("top",265);
+		$("#ing-inner-wrapper").css("left",416);
+	}
+	else if(id=="ing-garnish"){
+		$("#ing-inner-wrapper").css("top",300);
+		$("#ing-inner-wrapper").css("left",416);
+	}
+	
+	$("#ing-inner-wrapper").addClass(id);
+	$("#ing-inner-wrapper").fadeIn();			
+}
 
 function handlePostButtonTouchStart(e) {
     e.preventDefault(); //prevent copy and mag from showing

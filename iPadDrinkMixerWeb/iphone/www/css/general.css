@@ -88,7 +88,7 @@ body {
 }
 #ing-scroller{margin:0;padding:0;}
 #ing-inner-wrapper{
-	xxxdisplay:none;
+	display:none;
 	overflow: auto;
 	position:absolute;
 	background-color:#e8e4e0;

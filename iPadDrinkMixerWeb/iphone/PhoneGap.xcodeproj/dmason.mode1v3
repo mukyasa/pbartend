@@ -268,6 +268,7 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>AA13D33F0F202D0400B18061</string>
 								<string>712C9C1A126BD02D00AA1F7C</string>
+								<string>712C9C1D126BD02D00AA1F7C</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
@@ -278,8 +279,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
-									<integer>2</integer>
+									<integer>13</integer>
+									<integer>9</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -324,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>landscape.css</string>
+								<string>master.js</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>landscape.css</string>
+										<string>master.js</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>712C9C88126BD13800AA1F7C</string>
+										<string>712C9DBB126BF7E700AA1F7C</string>
 										<key>history</key>
 										<array>
 											<string>7184A3A312569518009A3E31</string>
@@ -395,14 +396,14 @@
 											<string>71B2C256126915800025FD43</string>
 											<string>71B2C26D1269168D0025FD43</string>
 											<string>7171C42D126939D600410386</string>
-											<string>7171C472126B4EF700410386</string>
-											<string>7171C493126B72A900410386</string>
-											<string>7171C4D0126B7B2B00410386</string>
 											<string>7171C4E9126BD01E00410386</string>
-											<string>7171C4EA126BD01E00410386</string>
 											<string>712C9C75126BD05800AA1F7C</string>
-											<string>712C9C86126BD13800AA1F7C</string>
-											<string>712C9C87126BD13800AA1F7C</string>
+											<string>712C9D6C126BECEB00AA1F7C</string>
+											<string>712C9D93126BF2A400AA1F7C</string>
+											<string>712C9D94126BF2A400AA1F7C</string>
+											<string>712C9D95126BF2A400AA1F7C</string>
+											<string>712C9DB9126BF7E700AA1F7C</string>
+											<string>712C9DBA126BF7E700AA1F7C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -600,11 +601,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>712C9C89126BD13800AA1F7C</string>
+		<string>712C9C98126BD58500AA1F7C</string>
 		<string>712C9C8A126BD13800AA1F7C</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>71AD1EF61256499800FB1054</string>
+		<string>713FC63B12615A360056E4DB</string>
 		<string>/Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/PhoneGap.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -1042,7 +1044,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {452, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>26 691 452 308 0 0 1680 1028 </string>
+								<string>21 547 452 308 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -1087,7 +1089,7 @@
 								<key>Frame</key>
 								<string>{{0, 5}, {452, 262}}</string>
 								<key>RubberWindowFrame</key>
-								<string>26 691 452 308 0 0 1680 1028 </string>
+								<string>21 547 452 308 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXCVSModule</string>
@@ -1110,18 +1112,18 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>713FC63B12615A360056E4DB</string>
-				<string>713B456C1263CD520059C4A3</string>
+				<string>712C9D72126BECEB00AA1F7C</string>
 				<string>1C78EAB2065D492600B07095</string>
 				<string>1CD052920623707200166675</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.scm</string>
 			<key>WindowString</key>
-			<string>26 691 452 308 0 0 1680 1028 </string>
+			<string>21 547 452 308 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>713FC63B12615A360056E4DB</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
