@@ -49,8 +49,17 @@
 	margin:0;
 }
 .land #ing-inner-wrapper{
-	top:98px;
-	left:405px;
+	top:40px;
+	left:452px;
+	width:450px;
+	height:630px;
+}
+.land #ing-inner-wrapper-select{
+	width:356px;
+	height:28px;
+	top:209px;
+	left:32px;
+	position:absolute;
 }
 /* drink info text*/
 .land #quote{

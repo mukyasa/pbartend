@@ -1,7 +1,7 @@
 var db;
 var favoritesArray = new Array();
 var selectedDrinkDetails;
-var ROOT_IP = "http://192.168.1.103:8080";
+var ROOT_IP = "http://localhost:8080";
 var ROOT_URL = ROOT_IP + "/iPad/rest/";
 var css_orientation = "port";
 var list_scroll = false;
@@ -127,7 +127,7 @@ $(document).ready(function () {
 				  editchosenIngs = new iScroll('editchosenIngs');
 				  chosenIngs = new iScroll('chosenIngs');
 				  scroller4 = new iScroll('scroll-desc');
-				  ingscroller = new iScroll('ing-scroller');
+				  //ingscroller = new iScroll('ing-scroller');
 				  
 				  $(".button,.sm_button,.fav_button").bind(START_EVENT, handleTouchStart).bind(END_EVENT, handleTouchEnd);
 				  $(".postbutton").bind(START_EVENT, handlePostButtonTouchStart).bind(END_EVENT, handlePostButtonTouchEnd);
@@ -368,32 +368,31 @@ function handleIngPop(){
 	
 	var id = $(this).attr("id");
 	$(this).removeClass("ingTouch");
+	$("#ing-inner-wrapper").fadeIn();
+	
 	if(id=="ing-liquor"){
-		$("#ing-inner-wrapper").css("top",230);
-		$("#ing-inner-wrapper").css("left",416);
+				
 		//ajax
 		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_LIQUOR + "?startIndex=0";
-		$("#ing_list_wrapper").empty();
+		$("#ing-inner-wrapper-select").empty();
 		
 		processIngredients(requestUrl);
 		
 	}
 	else if(id=="ing-mixer"){
-		$("#ing-inner-wrapper").css("top",265);
-		$("#ing-inner-wrapper").css("left",416);
+
 		//ajax
 		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_MIXERS + "?startIndex=0";
-		$("#ing_list_wrapper").empty();
+		$("#ing-inner-wrapper-select").empty();
 		
 		processIngredients(requestUrl);
 		
 	}
 	else if(id=="ing-garnish"){
-		$("#ing-inner-wrapper").css("top",300);
-		$("#ing-inner-wrapper").css("left",416);
+
 		//ajax
 		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_GARNISH + "?startIndex=0";
-		$("#ing_list_wrapper").empty();
+		$("#ing-inner-wrapper-select").empty();
 		
 		processIngredients(requestUrl);
 	}
@@ -683,13 +682,12 @@ function processDrinks(requestUrl, showDetails) {
 
 function processIngredients(requestUrl) {
 
-	console.log(requestUrl);
     $.getJSON(requestUrl, function (data) {
 
 			  if (data != null) {
 				for (i = 0; i < data.ingredient.length; i++)
-					$("#ing_list_wrapper").append("<li id=\"" + data.ingredient[i].id + "\" class=\"ing-item\">" + data.ingredient[i].name + "</li>");			  
-			  
+					$("#ing-inner-wrapper-select").append("<option value=\"" + data.ingredient[i].id + "\" class=\"ing-item\">" + data.ingredient[i].name + "</option>");
+ 
 					//add events
 					list_item_events();
 				}
