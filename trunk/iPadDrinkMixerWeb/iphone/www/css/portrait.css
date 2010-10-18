@@ -31,7 +31,7 @@
 .port #list_wrapper{
 	display:block;
 	width:320px;
-	background-color:#fff;
+	background-color:#e8e4e0;
 	padding:0;
 	margin:0;
 }
@@ -44,6 +44,7 @@
 	height:88px;
 	margin:0px 0 20px 12px;
 }
+
 .list_touch{
 	background:url(../images/list_touch.png) no-repeat 0 0 !important;
 }
@@ -64,7 +65,7 @@
 }
 .port .popout{
 	z-index:3;
-	background-color: #fff;
+	background-color: #e8e4e0;
 	-webkit-box-shadow:#000 4px 4px 24px;
 }
 .port #wrapper {
