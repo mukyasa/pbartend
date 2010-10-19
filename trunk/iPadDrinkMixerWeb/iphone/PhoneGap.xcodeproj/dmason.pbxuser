@@ -95,7 +95,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					968,
+					1208,
 					20,
 					48,
 					43,
@@ -218,6 +218,24 @@
 			71C7AEC9126E40290001E4E6 /* PBXTextBookmark */ = 71C7AEC9126E40290001E4E6 /* PBXTextBookmark */;
 			71C7AECE126E41140001E4E6 /* PBXTextBookmark */ = 71C7AECE126E41140001E4E6 /* PBXTextBookmark */;
 			71C7AED1126E416C0001E4E6 /* PBXTextBookmark */ = 71C7AED1126E416C0001E4E6 /* PBXTextBookmark */;
+			71C7AED2126E4BB30001E4E6 /* PBXTextBookmark */ = 71C7AED2126E4BB30001E4E6 /* PBXTextBookmark */;
+			71C7AED3126E4E750001E4E6 /* PBXTextBookmark */ = 71C7AED3126E4E750001E4E6 /* PBXTextBookmark */;
+			71C7AED4126E4EDD0001E4E6 /* PBXTextBookmark */ = 71C7AED4126E4EDD0001E4E6 /* PBXTextBookmark */;
+			71C7AED5126E4F970001E4E6 /* PBXTextBookmark */ = 71C7AED5126E4F970001E4E6 /* PBXTextBookmark */;
+			71C7AED8126E540F0001E4E6 /* PBXTextBookmark */ = 71C7AED8126E540F0001E4E6 /* PBXTextBookmark */;
+			71C7AEDD126E567B0001E4E6 /* PBXTextBookmark */ = 71C7AEDD126E567B0001E4E6 /* PBXTextBookmark */;
+			71C7AEDE126E567B0001E4E6 /* PBXTextBookmark */ = 71C7AEDE126E567B0001E4E6 /* PBXTextBookmark */;
+			71C7AEDF126E567B0001E4E6 /* PBXTextBookmark */ = 71C7AEDF126E567B0001E4E6 /* PBXTextBookmark */;
+			71C7AEE0126E567B0001E4E6 /* PBXTextBookmark */ = 71C7AEE0126E567B0001E4E6 /* PBXTextBookmark */;
+			71C7AEE1126E56AF0001E4E6 /* PBXTextBookmark */ = 71C7AEE1126E56AF0001E4E6 /* PBXTextBookmark */;
+			71C7AEE6126E58670001E4E6 /* PBXTextBookmark */ = 71C7AEE6126E58670001E4E6 /* PBXTextBookmark */;
+			71C7AEE7126E58670001E4E6 /* PBXTextBookmark */ = 71C7AEE7126E58670001E4E6 /* PBXTextBookmark */;
+			71C7AEE8126E58670001E4E6 /* PBXTextBookmark */ = 71C7AEE8126E58670001E4E6 /* PBXTextBookmark */;
+			71C7AEE9126E59700001E4E6 /* PBXTextBookmark */ = 71C7AEE9126E59700001E4E6 /* PBXTextBookmark */;
+			71C7AEEA126E59700001E4E6 /* PBXTextBookmark */ = 71C7AEEA126E59700001E4E6 /* PBXTextBookmark */;
+			71C7AEEB126E59700001E4E6 /* PBXTextBookmark */ = 71C7AEEB126E59700001E4E6 /* PBXTextBookmark */;
+			71C7AEEC126E59D70001E4E6 /* PBXTextBookmark */ = 71C7AEEC126E59D70001E4E6 /* PBXTextBookmark */;
+			71C7AEED126E5A420001E4E6 /* PBXTextBookmark */ = 71C7AEED126E5A420001E4E6 /* PBXTextBookmark */;
 			71C7B4A41266BF8D0069B3CF = 71C7B4A41266BF8D0069B3CF /* PBXBookmark */;
 			71C7DCB812676E6100433D83 = 71C7DCB812676E6100433D83 /* PBXBookmark */;
 			71C7DE751267FE4E00433D83 = 71C7DE751267FE4E00433D83 /* PBXTextBookmark */;
@@ -429,9 +447,9 @@
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/js/master.js;
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1279, 13637}}";
-			sepNavSelRange = "{22058, 0}";
-			sepNavVisRange = "{21178, 1578}";
+			sepNavIntBoundsRect = "{{0, 0}, {1386, 13494}}";
+			sepNavSelRange = "{392, 0}";
+			sepNavVisRange = "{0, 1812}";
 		};
 	};
 	712F7E39125FB7A50033E797 /* PBXBookmark */ = {
@@ -553,6 +571,11 @@
 		name = general.css;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/css/general.css;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1386, 7033}}";
+			sepNavSelRange = "{1788, 0}";
+			sepNavVisRange = "{796, 1618}";
+		};
 	};
 	71513552126D545C0095967A /* cancel_button_on.png */ = {
 		isa = PBXFileReference;
@@ -608,7 +631,7 @@
 		fRef = 714F295B126D5CF600407642 /* general.css */;
 		name = "general.css: 96";
 		rLen = 0;
-		rLoc = 2167;
+		rLoc = 2174;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 1809;
@@ -628,7 +651,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 827";
 		rLen = 0;
-		rLoc = 27706;
+		rLoc = 27781;
 		rType = 0;
 		vrLen = 2188;
 		vrLoc = 24861;
@@ -966,7 +989,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 192";
 		rLen = 0;
-		rLoc = 5850;
+		rLoc = 5854;
 		rType = 0;
 		vrLen = 2047;
 		vrLoc = 5584;
@@ -976,7 +999,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 218";
 		rLen = 0;
-		rLoc = 7157;
+		rLoc = 7183;
 		rType = 0;
 		vrLen = 2045;
 		vrLoc = 5830;
@@ -986,7 +1009,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 208";
 		rLen = 0;
-		rLoc = 6489;
+		rLoc = 6515;
 		rType = 0;
 		vrLen = 2024;
 		vrLoc = 6157;
@@ -996,7 +1019,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 213";
 		rLen = 0;
-		rLoc = 6926;
+		rLoc = 6952;
 		rType = 0;
 		vrLen = 1909;
 		vrLoc = 5760;
@@ -1006,7 +1029,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 209";
 		rLen = 11;
-		rLoc = 6566;
+		rLoc = 6592;
 		rType = 0;
 		vrLen = 1936;
 		vrLoc = 5783;
@@ -1016,7 +1039,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 705";
 		rLen = 0;
-		rLoc = 22301;
+		rLoc = 22376;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 21653;
@@ -1026,7 +1049,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 707";
 		rLen = 12;
-		rLoc = 22362;
+		rLoc = 22437;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 21961;
@@ -1036,7 +1059,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 705";
 		rLen = 0;
-		rLoc = 22301;
+		rLoc = 22376;
 		rType = 0;
 		vrLen = 1288;
 		vrLoc = 21961;
@@ -1046,7 +1069,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 706";
 		rLen = 0;
-		rLoc = 22301;
+		rLoc = 22376;
 		rType = 0;
 		vrLen = 1506;
 		vrLoc = 20962;
@@ -1056,10 +1079,190 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 697";
 		rLen = 0;
-		rLoc = 22058;
+		rLoc = 22133;
 		rType = 0;
 		vrLen = 1578;
 		vrLoc = 21178;
+	};
+	71C7AED2126E4BB30001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 40";
+		rLen = 0;
+		rLoc = 1232;
+		rType = 0;
+		vrLen = 1765;
+		vrLoc = 0;
+	};
+	71C7AED3126E4E750001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 48";
+		rLen = 0;
+		rLoc = 1232;
+		rType = 0;
+		vrLen = 1780;
+		vrLoc = 0;
+	};
+	71C7AED4126E4EDD0001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 214";
+		rLen = 0;
+		rLoc = 6393;
+		rType = 0;
+		vrLen = 2286;
+		vrLoc = 5984;
+	};
+	71C7AED5126E4F970001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 579";
+		rLen = 0;
+		rLoc = 18409;
+		rType = 0;
+		vrLen = 1861;
+		vrLoc = 17667;
+	};
+	71C7AED8126E540F0001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 599";
+		rLen = 0;
+		rLoc = 19296;
+		rType = 0;
+		vrLen = 2293;
+		vrLoc = 5392;
+	};
+	71C7AEDD126E567B0001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71C7DF8B1268157500433D83 /* portrait.css */;
+		name = "portrait.css: 136";
+		rLen = 0;
+		rLoc = 2314;
+		rType = 0;
+		vrLen = 1173;
+		vrLoc = 1753;
+	};
+	71C7AEDE126E567B0001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 714F295B126D5CF600407642 /* general.css */;
+		name = "general.css: 75";
+		rLen = 0;
+		rLoc = 1783;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 447;
+	};
+	71C7AEDF126E567B0001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 1012";
+		rLen = 13;
+		rLoc = 31138;
+		rType = 0;
+		vrLen = 1690;
+		vrLoc = 30292;
+	};
+	71C7AEE0126E567B0001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 207";
+		rLen = 0;
+		rLoc = 6457;
+		rType = 0;
+		vrLen = 2367;
+		vrLoc = 5526;
+	};
+	71C7AEE1126E56AF0001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 41";
+		rLen = 0;
+		rLoc = 1232;
+		rType = 0;
+		vrLen = 1780;
+		vrLoc = 0;
+	};
+	71C7AEE6126E58670001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 41";
+		rLen = 0;
+		rLoc = 1232;
+		rType = 0;
+		vrLen = 1811;
+		vrLoc = 8;
+	};
+	71C7AEE7126E58670001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 714F295B126D5CF600407642 /* general.css */;
+		name = "general.css: 75";
+		rLen = 0;
+		rLoc = 1783;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 447;
+	};
+	71C7AEE8126E58670001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 714F295B126D5CF600407642 /* general.css */;
+		name = "general.css: 76";
+		rLen = 0;
+		rLoc = 1788;
+		rType = 0;
+		vrLen = 1618;
+		vrLoc = 796;
+	};
+	71C7AEE9126E59700001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 714F295B126D5CF600407642 /* general.css */;
+		name = "general.css: 76";
+		rLen = 0;
+		rLoc = 1788;
+		rType = 0;
+		vrLen = 1618;
+		vrLoc = 796;
+	};
+	71C7AEEA126E59700001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 41";
+		rLen = 0;
+		rLoc = 1232;
+		rType = 0;
+		vrLen = 1774;
+		vrLoc = 8;
+	};
+	71C7AEEB126E59700001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 600";
+		rLen = 0;
+		rLoc = 19296;
+		rType = 0;
+		vrLen = 1945;
+		vrLoc = 18609;
+	};
+	71C7AEEC126E59D70001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 547";
+		rLen = 0;
+		rLoc = 17737;
+		rType = 0;
+		vrLen = 1948;
+		vrLoc = 17260;
+	};
+	71C7AEED126E5A420001E4E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 11";
+		rLen = 0;
+		rLoc = 392;
+		rType = 0;
+		vrLen = 1812;
+		vrLoc = 0;
 	};
 	71C7B4901266BA2F0069B3CF /* ajax-loader-sm.gif */ = {
 		isa = PBXFileReference;
@@ -1204,6 +1407,11 @@
 		name = portrait.css;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/css/portrait.css;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1386, 3562}}";
+			sepNavSelRange = "{2314, 0}";
+			sepNavVisRange = "{1753, 1173}";
+		};
 	};
 	71CF777B1258F6AF006989A1 /* Device.h */ = {
 		uiCtxt = {
@@ -1341,7 +1549,7 @@
 		fRef = 716AD53E126E08C60056EAF1 /* master.js */;
 		name = "master.js: 574";
 		rLen = 11;
-		rLoc = 18889;
+		rLoc = 18964;
 		rType = 0;
 		vrLen = 1952;
 		vrLoc = 17233;
@@ -1351,7 +1559,7 @@
 		fRef = 71DF1D88126E2C1C002083AB /* master.js */;
 		name = "master.js: 192";
 		rLen = 0;
-		rLoc = 5850;
+		rLoc = 5854;
 		rType = 0;
 		vrLen = 1917;
 		vrLoc = 5619;
