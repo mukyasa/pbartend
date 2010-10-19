@@ -96,6 +96,7 @@ body {
 	background: url("../images/editpaper.png") no-repeat 0 0;
 	background-size: 100% auto;
 }
+
 #ing-scroller-half, #ing-scroller-units,#ing-scroller-whole{
 	border-left:1px solid #666;
 	border-right:1px solid #666;

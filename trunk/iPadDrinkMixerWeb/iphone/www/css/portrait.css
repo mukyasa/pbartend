@@ -120,13 +120,23 @@
 	margin-right:10px;
 }
 
-.port .backbutton{
+.port .backbutton,.port .saveIng{
 	background: url("../images/save_button.png") no-repeat 0 0;
 	width:81px;
 	height:45px;
 	float:right;
 }
-.port .cancelbutton{
+.port .saveIng{
+	position:absolute;
+	top:350px;
+	left:450px;
+}
+.port .cancelIng{
+	position:absolute;
+	top:350px;
+	left:350px;
+}
+.port .cancelbutton,.port .cancelIng{
 	background: url("../images/cancel_button.png") no-repeat 0 0;
 	width:81px;
 	height:45px;
@@ -215,7 +225,7 @@
 .port #ing-inner-wrapper-select{
 	width:490px;
 	height:28px;
-	top:309px;
+	top:280px;
 	left:40px;
 	position:absolute;
 }
@@ -247,18 +257,26 @@
 .port .scroller-shadow-a{
 	width:84px;
 	height:170px;
-	top:30px;
+	top:50px;
 	left:60px;
 }
 .port .scroller-shadow-b{
 	width:84px;
 	height:170px;
-	top:30px;
-	left:194px;
+	top:50px;
+	left:194px;	
 }
 .port .scroller-shadow-c{
 	width:170px;
 	height:170px;
-	top:30px;
+	top:50px;
 	left:320px;
+}
+.port .flower{
+	background:url("../images/flower.png") no-repeat 0 0;
+	width:223px;
+	height:212px;
+	position:absolute;
+	top:550px;
+	left:50px;
 }
