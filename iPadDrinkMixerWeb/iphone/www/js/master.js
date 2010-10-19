@@ -127,9 +127,6 @@ $(document).ready(function () {
 				  editchosenIngs = new iScroll('editchosenIngs');
 				  chosenIngs = new iScroll('chosenIngs');
 				  scroller4 = new iScroll('scroll-desc');
-				  ingscrollerwhole = new iScroll('ing-scroller-whole',{vScrollbar:false});
-				  ingscrollerhalf = new iScroll('ing-scroller-half',{vScrollbar:false});
-				  ingscrollerunit = new iScroll('ing-scroller-units',{vScrollbar:false});
 				  
 				  $(".button,.sm_button,.fav_button").bind(START_EVENT, handleTouchStart).bind(END_EVENT, handleTouchEnd);
 				  $(".postbutton").bind(START_EVENT, handlePostButtonTouchStart).bind(END_EVENT, handlePostButtonTouchEnd);
@@ -278,6 +275,17 @@ $(document).ready(function () {
 
 function list_item_events() {
 	
+	$(".ing-item").bind(END_EVENT,function(){
+						$(this).parent().find(".ing-item").removeClass("list_item_down");
+						
+						if (!list_scroll)
+							$(this).addClass("list_item_down");
+						list_scroll = false;
+						
+						}).bind(MOVE_EVENT,function(){
+								list_scroll = true;
+								});
+	
     $(".list_item").bind(START_EVENT, function (e) {
 						 e.preventDefault();
 						 $(this).addClass("list_item_down");
@@ -371,6 +379,10 @@ function handleIngPop(){
 	var id = $(this).attr("id");
 	$(this).removeClass("ingTouch");
 	$("#ing-inner-wrapper").fadeIn();
+	
+	ingscrollerwhole = new iScroll('ing-scroller-whole',{vScrollbar:false});
+	ingscrollerhalf = new iScroll('ing-scroller-half',{vScrollbar:false});
+	ingscrollerunit = new iScroll('ing-scroller-units',{vScrollbar:false});
 	
 	if(id=="ing-liquor"){
 				
@@ -687,6 +699,7 @@ function processIngredients(requestUrl) {
     $.getJSON(requestUrl, function (data) {
 
 			  if (data != null) {
+			  	$("#ing-inner-wrapper-select").append("<option value=\"null\" class=\"ing-item\">Choose One...</option>");
 				for (i = 0; i < data.ingredient.length; i++)
 					$("#ing-inner-wrapper-select").append("<option value=\"" + data.ingredient[i].id + "\" class=\"ing-item\">" + data.ingredient[i].name + "</option>");
  
