@@ -207,8 +207,12 @@ $(document).ready(function () {
 				  
 				  
 				  /**************** list list buttons **************/
-				  $(".list_email").bind(END_EVENT, function (e) {
+				  $(".list_email").bind(START_EVENT,function(){
+										$(this).addClass("emailbutton-on");
+										
+										}).bind(END_EVENT, function (e) {
 										e.preventDefault(); //prevent copy and mag from showing
+												$(this).removeClass("emailbutton-on");
 										try {
 										//$("#response").text("Email Called");
 										window.plugins.emailComposer.showEmailComposer("subject", "body", "djmason9@yahoo.com", "", "", true);
@@ -230,12 +234,18 @@ $(document).ready(function () {
 				  /***********************************************/
 				  
 				  //flip page
-				  $(".frontbutton,.createbutton").bind(START_EVENT,function(){
+				  $(".frontbutton").bind(START_EVENT,function(){
 													   
-													   $(this).addClass("createbutton-on");
 													   $(this).addClass("frontbutton-on");
 													   
-													   }).bind(END_EVENT, function (e) {
+													   });
+				  $(".createbutton").bind(START_EVENT,function(){
+													   
+													   $(this).addClass("createbutton-on");
+													   
+													   });
+				  
+				  $(".frontbutton,.createbutton").bind(END_EVENT, function (e) {
 													   e.preventDefault(); //prevent copy and mag from showing
 															   
 															   $(this).removeClass("createbutton-on");
@@ -262,20 +272,20 @@ $(document).ready(function () {
 													   });
 				  
 				  $(".backbutton").bind(START_EVENT,function(){
-											$(this).addClass("backbutton-on");
+											$(this).addClass("savebutton-on");
 										}).bind(END_EVENT, function (e) {
 												e.preventDefault(); //prevent copy and mag from showing
-												$(this).removeClass("backbutton-on");
+												$(this).removeClass("savebutton-on");
 										//flip paper back
 										$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 										});
 				  
 				  $(".cancelbutton").bind(START_EVENT,function(){
-										  $(this).addClass("cancelbutton-on");
+										  $(this).addClass("backbutton-on");
 										  
 										  }).bind(END_EVENT, function (e) {
 												  e.preventDefault(); //prevent copy and mag from showing
-												  $(this).removeClass("cancelbutton-on");
+												  $(this).removeClass("backbutton-on");
 										  //flip paper back
 										  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 										  });
