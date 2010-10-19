@@ -137,10 +137,11 @@ public class GetDrinksEndpoint extends SQL {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<DrinkDetails> filterDrinksList(
 			@QueryParam("startIndex") String startIndex,
-			@QueryParam("searchParam") String searchParam) {
+			@QueryParam("searchParam") String searchParam,
+			@QueryParam("catid") int catid) {
 		DOService dos = new DOService();
 
-		return dos.filterDrinksList(startIndex, searchParam);
+		return dos.filterDrinksList(startIndex, searchParam,catid);
 	}
 
 }

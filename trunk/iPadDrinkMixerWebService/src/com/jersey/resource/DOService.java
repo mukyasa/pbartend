@@ -70,7 +70,7 @@ public class DOService extends SQL {
 		
 	}
 	
-	public List<DrinkDetails> filterDrinksList(String startIndex,String searchParam) {
+	public List<DrinkDetails> filterDrinksList(String startIndex,String searchParam,int catid) {
 
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -80,11 +80,41 @@ public class DOService extends SQL {
 
 		try {
 			conn = DbConnectionTest.getConnection();
-
-			String sql = sqlGetAllDrinksFilter + " LIMIT "+ startIndex + ","+LIMIT;
-
+			String sql="";
+			
+			if(catid > -1)
+				sql = sqlGetAllDringksFilterCategories + " LIMIT "+ startIndex + ","+LIMIT;
+			else
+				sql = sqlGetAllDrinksFilter + " LIMIT "+ startIndex + ","+LIMIT;
+			
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, searchParam+"%");
+			
+			switch (catid) {
+			case CAT_COCKTAIL:
+				stmt.setInt(2, CAT_COCKTAIL);
+				break;
+			case CAT_HOT_DRINK:
+				stmt.setInt(2, CAT_HOT_DRINK);
+				break;
+			case CAT_JELLO_SHOT:
+				stmt.setInt(2, CAT_JELLO_SHOT);
+				break;
+			case CAT_MARTINIS:
+				stmt.setInt(2, CAT_MARTINIS);
+				break;
+			case CAT_NON_ALC:
+				stmt.setInt(2, CAT_NON_ALC);
+				break;
+			case CAT_PUNCH:
+				stmt.setInt(2, CAT_PUNCH);
+				break;
+			case CAT_SHOOTER:
+				stmt.setInt(2, CAT_SHOOTER);
+				break;
+			}
+			
+			
 			
 			rs = stmt.executeQuery();
 
