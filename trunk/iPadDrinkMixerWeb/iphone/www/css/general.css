@@ -87,7 +87,7 @@ body {
 }
 #ing-scroller-whole ul,#ing-scroller-half ul,#ing-scroller-units ul{margin:0;padding:0;}
 #ing-inner-wrapper{
-	xxxdisplay:none;
+	display:none;
 	overflow: auto;
 	position:absolute;
 	padding:0;
