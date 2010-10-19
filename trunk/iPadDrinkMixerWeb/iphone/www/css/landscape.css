@@ -93,12 +93,12 @@
 }
 .land .saveIng{
 	position:absolute;
-	top:300px;
+	top:270px;
 	left:325px;
 }
 .land .cancelIng{
 	position:absolute;
-	top:300px;
+	top:270px;
 	left:250px;
 }
 .land .list_email{
@@ -205,7 +205,7 @@
 .land #ing-inner-wrapper-select{
 	width:356px;
 	height:28px;
-	top:259px;
+	top:229px;
 	left:32px;
 	position:absolute;
 }

@@ -38,7 +38,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 71AD1ED61256496600FB1054 /* PhoneGap */;
-		activeSDKPreference = iphonesimulator4.2;
+		activeSDKPreference = iphoneos4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PhoneGap */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PhoneGap */,
@@ -420,6 +420,11 @@
 		name = master.js;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/js/master.js;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1790, 12415}}";
+			sepNavSelRange = "{7024, 10}";
+			sepNavVisRange = "{6607, 1602}";
+		};
 	};
 	712F7E39125FB7A50033E797 /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -476,6 +481,11 @@
 		name = general.css;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/css/general.css;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 7098}}";
+			sepNavSelRange = "{2170, 0}";
+			sepNavVisRange = "{1780, 954}";
+		};
 	};
 	71390F92126230A500D58E57 /* picker_bg.png */ = {
 		isa = PBXFileReference;
@@ -507,6 +517,11 @@
 		name = landscape.css;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/css/landscape.css;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 3484}}";
+			sepNavSelRange = "{3527, 0}";
+			sepNavVisRange = "{3213, 926}";
+		};
 	};
 	713D3C8E1266CB0A0035DA92 /* star_on.png */ = {
 		isa = PBXFileReference;
@@ -613,7 +628,7 @@
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 283";
 		rLen = 12;
-		rLoc = 9140;
+		rLoc = 9599;
 		rType = 0;
 		vrLen = 1663;
 		vrLoc = 8283;
@@ -655,9 +670,9 @@
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/index.htm;
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 4173}}";
-			sepNavSelRange = "{9977, 0}";
-			sepNavVisRange = "{9370, 2372}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 4264}}";
+			sepNavSelRange = "{6356, 24}";
+			sepNavVisRange = "{5442, 1617}";
 		};
 	};
 	7170C3EB1259909A006316B3 /* PBXBookmark */ = {
@@ -1134,6 +1149,11 @@
 		name = portrait.css;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/css/portrait.css;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 3549}}";
+			sepNavSelRange = "{2314, 0}";
+			sepNavVisRange = "{1882, 931}";
+		};
 	};
 	71CF777B1258F6AF006989A1 /* Device.h */ = {
 		uiCtxt = {
