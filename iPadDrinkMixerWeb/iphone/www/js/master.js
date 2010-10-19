@@ -7,8 +7,8 @@ var css_orientation = "port";
 var list_scroll = false;
 var PAGING_COUNT = 0;
 var PAGING_TYPE; //keep track of the current page count for load more.
-var CAT_TYPE_ID; //keep track of the current category selected for load more.
-var ING_TYPE_ID; //keep track of the current ingredient type for load more.
+var CAT_TYPE_ID-1; //keep track of the current category selected for load more.
+var ING_TYPE_ID-1; //keep track of the current ingredient type for load more.
 var LIMIT = 100;
 var BUTTON_CLICKED = false; //set this so when a button is clicked no others can be
 var clientIp = "0.0.0.0";
@@ -202,7 +202,7 @@ $(document).ready(function () {
 										  
 											$("#list_wrapper").empty();
 										  
-											var requestUrl = ROOT_URL + "drinks/search?searchParam=" + $(this).val() + "&startIndex=0";
+											var requestUrl = ROOT_URL + "drinks/search?catid="+CAT_TYPE_ID+"&searchParam=" + $(this).val() + "&startIndex=0";
 										  
 											//for ing searches
 											if (TYPE_NAME == TYPE_LIQUOR_NAME)
@@ -560,12 +560,14 @@ function handleTouchEnd(e) {
 								  $("#main_buttons").slideDown();
 								  });
 		TYPE_NAME = "";
+		CAT_TYPE_ID=-1
     } else if ($(obj).attr("id") == "cat_back") //back from cat
     {
         $("#category").slideUp(function () {
 							   $("#main_buttons").slideDown();
 							   });
-		
+		TYPE_NAME = "";
+		CAT_TYPE_ID=-1
     } else if ($(obj).attr("id") == "shared") {
         //reset back to default
         IS_SHARED_DRINK = true;
