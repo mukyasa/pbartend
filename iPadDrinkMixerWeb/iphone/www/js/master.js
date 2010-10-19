@@ -1,7 +1,7 @@
 var db;
 var favoritesArray = new Array();
 var selectedDrinkDetails;
-var ROOT_IP = "http://localhost:8080";
+var ROOT_IP = "http://192.168.1.103:8080";
 var ROOT_URL = ROOT_IP + "/iPad/rest/";
 var css_orientation = "port";
 var list_scroll = false;
@@ -236,7 +236,7 @@ $(document).ready(function () {
 				  //flip page
 				  $(".frontbutton").bind(START_EVENT,function(){
 													   
-													   $(this).addClass("frontbutton-on");
+													   $(this).addClass("editbutton-on");
 													   
 													   });
 				  $(".createbutton").bind(START_EVENT,function(){
@@ -249,7 +249,7 @@ $(document).ready(function () {
 													   e.preventDefault(); //prevent copy and mag from showing
 															   
 															   $(this).removeClass("createbutton-on");
-															   $(this).removeClass("frontbutton-on");
+															   $(this).removeClass("editbutton-on");
 													   //reset ing
 													   $(".stage-2").hide();
 													   $(".stage-1").show();
