@@ -1,7 +1,7 @@
 var db;
 var favoritesArray = new Array();
 var selectedDrinkDetails;
-var ROOT_IP = "http://192.168.1.103:8080";
+var ROOT_IP = "http://localhost:8080";
 var ROOT_URL = ROOT_IP + "/iPad/rest/";
 var css_orientation = "port";
 var list_scroll = false;
@@ -215,7 +215,7 @@ $(document).ready(function () {
 												$(this).removeClass("emailbutton-on");
 										try {
 										//$("#response").text("Email Called");
-										window.plugins.emailComposer.showEmailComposer("subject", "body", "djmason9@yahoo.com", "", "", true);
+										window.plugins.emailComposer.showEmailComposer("subject", "body", "", "", "", true);
 										} catch (e) {
 										alert(e);
 										}
@@ -264,6 +264,7 @@ $(document).ready(function () {
 															   
 															   $(this).removeClass("createbutton-on");
 															   $(this).removeClass("editbutton-on");
+													   
 													   //reset ing
 													   $(".stage-2").hide();
 													   $(".stage-1").show();
@@ -821,6 +822,12 @@ function showDetail(that) {
     if (PAGING_TYPE == PAGING_TYPE_ALL || PAGING_TYPE == PAGING_TYPE_CATEGORY || PAGING_TYPE == PAGING_TYPE_SEARCH) {
         //if this is a drink not an ing or cat
         var drinkId = $(that).attr("id");
+		//flip paper to front
+		$("#ing-inner-wrapper").fadeOut(function(){
+										$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+									});//hide any other popups
+		
+		
 		
         var sharedString = "";
         if (IS_SHARED_DRINK) sharedString = "?detailTypeShared=true"
