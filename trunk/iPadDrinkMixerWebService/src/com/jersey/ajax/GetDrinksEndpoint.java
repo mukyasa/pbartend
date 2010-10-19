@@ -104,6 +104,21 @@ public class GetDrinksEndpoint extends SQL {
 		return dos.getAllLiquors(int_id, startIndex);
 
 	}
+	
+	@GET
+	@Path("ingsfilter{ingId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Ingredient> filterIngredientsList(
+			@PathParam("ingId") String id,
+			@QueryParam("searchParam") String searchParam,
+			@QueryParam("startIndex") String startIndex) {
+
+		int int_id = Integer.valueOf(id).intValue();
+		DOService dos = new DOService();
+
+		return dos.filterIngredientsList(int_id, startIndex,searchParam);
+
+	}
 
 	@GET
 	@Path("favs")

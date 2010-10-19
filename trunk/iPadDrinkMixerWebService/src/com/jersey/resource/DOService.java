@@ -224,6 +224,67 @@ public class DOService extends SQL {
 	}
 	
 	
+	public List<Ingredient> filterIngredientsList(int int_id,String startIndex,String searchParam) {
+
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		Connection conn = null;
+		List<Ingredient> result = new ArrayList<Ingredient>();
+		Ingredient liquor = null;
+
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			String sql = sqlGetAllIngredientsFilter ;
+
+			stmt = conn.prepareStatement(sql);
+			switch (int_id) {
+			case TYPE_LIQUOR:
+				stmt.setString(1, "Liquor");
+				break;
+			case TYPE_MIXERS:
+				stmt.setString(1, "Mixers");
+				break;
+			case TYPE_GARNISH:
+				stmt.setString(1, "Garnish");
+				break;
+			}
+			
+			stmt.setString(2, searchParam+"%");
+
+			rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				liquor = new Ingredient();
+				liquor.setId(rs.getInt(COL_ROW_ID));
+
+				// only show the first 32 chars
+				String sub_name = rs.getString(COL_CAT_NAME);
+				if (sub_name.length() >= 32)
+					sub_name = sub_name.substring(0, 32) + "...";
+
+				liquor.setName(sub_name);
+
+				result.add(liquor);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				rs.close();
+				stmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+
+	}
+	
 	public List<Ingredient> getAllLiquors(int int_id,String startIndex) {
 
 		PreparedStatement stmt = null;
