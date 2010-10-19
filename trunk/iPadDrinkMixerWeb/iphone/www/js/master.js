@@ -230,8 +230,16 @@ $(document).ready(function () {
 				  /***********************************************/
 				  
 				  //flip page
-				  $(".frontbutton,.createbutton").bind(END_EVENT, function (e) {
+				  $(".frontbutton,.createbutton").bind(START_EVENT,function(){
+													   
+													   $(this).addClass("createbutton-on");
+													   $(this).addClass("frontbutton-on");
+													   
+													   }).bind(END_EVENT, function (e) {
 													   e.preventDefault(); //prevent copy and mag from showing
+															   
+															   $(this).removeClass("createbutton-on");
+															   $(this).removeClass("frontbutton-on");
 													   //reset ing
 													   $(".stage-2").hide();
 													   $(".stage-1").show();
@@ -253,14 +261,21 @@ $(document).ready(function () {
 													   
 													   });
 				  
-				  $(".backbutton").bind(END_EVENT, function (e) {
-										e.preventDefault(); //prevent copy and mag from showing
+				  $(".backbutton").bind(START_EVENT,function(){
+											$(this).addClass("backbutton-on");
+										}).bind(END_EVENT, function (e) {
+												e.preventDefault(); //prevent copy and mag from showing
+												$(this).removeClass("backbutton-on");
 										//flip paper back
 										$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 										});
 				  
-				  $(".cancelbutton").bind(END_EVENT, function (e) {
-										  e.preventDefault(); //prevent copy and mag from showing
+				  $(".cancelbutton").bind(START_EVENT,function(){
+										  $(this).addClass("cancelbutton-on");
+										  
+										  }).bind(END_EVENT, function (e) {
+												  e.preventDefault(); //prevent copy and mag from showing
+												  $(this).removeClass("cancelbutton-on");
 										  //flip paper back
 										  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 										  });
@@ -699,7 +714,7 @@ function processIngredients(requestUrl) {
     $.getJSON(requestUrl, function (data) {
 
 			  if (data != null) {
-			  	$("#ing-inner-wrapper-select").append("<option value=\"null\" class=\"ing-item\">Choose One...</option>");
+			  	$("#ing-inner-wrapper-select").append("<option value=\"-1\" class=\"ing-item\">Choose One...</option>");
 				for (i = 0; i < data.ingredient.length; i++)
 					$("#ing-inner-wrapper-select").append("<option value=\"" + data.ingredient[i].id + "\" class=\"ing-item\">" + data.ingredient[i].name + "</option>");
  
