@@ -232,14 +232,28 @@ $(document).ready(function () {
 										});
 				  
 				  /***********************************************/
+				  $(".saveIng").bind(START_EVENT,function(e){
+									 $(this).addClass("savebutton-on");
+									 }).bind(END_EVENT,function(){
+													$(this).removeClass("savebutton-on");				
+																	
+									});
+				  
+				  $(".cancelIng").bind(START_EVENT,function(e){
+									 $(this).addClass("backbutton-on");
+									 }).bind(END_EVENT,function(){
+											 $(this).removeClass("backbutton-on");				
+											 
+											 });
+				  
 				  
 				  //flip page
-				  $(".frontbutton").bind(START_EVENT,function(){
+				  $(".frontbutton").bind(START_EVENT,function(e){
 													   
 													   $(this).addClass("editbutton-on");
 													   
 													   });
-				  $(".createbutton").bind(START_EVENT,function(){
+				  $(".createbutton").bind(START_EVENT,function(e){
 													   
 													   $(this).addClass("createbutton-on");
 													   
