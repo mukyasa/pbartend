@@ -46,6 +46,9 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 	private Drawable bgHolder=null;
 	private String tag="";
 	private Context context=null;
+	private final int DIALOG_FULL_DELETE=0;
+	private final int DIALOG_DELETE=1;
+	private View tmpView;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -276,6 +279,9 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
     @Override
     protected Dialog onCreateDialog(int id) {
     	
+    	if(id==DIALOG_FULL_DELETE)
+    	{
+    	
     	return new AlertDialog.Builder(DetailsActivity.this)
         .setIcon(R.drawable.error)
         .setMessage("Are you sure you want to delete this?")
@@ -285,16 +291,58 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 				//delete db
 				passDao.deleteEntry();
 				startActivity(new Intent(context, HomeView.class));
-				dismissDialog(0);
+				dismissDialog(DIALOG_FULL_DELETE);
 
 			}
 		})
         .setNegativeButton("No!", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-               dismissDialog(0);
+               dismissDialog(DIALOG_FULL_DELETE);
             }
         })      
        .create();
+    	}
+    	else if(id==DIALOG_DELETE)
+    	{
+    		return new AlertDialog.Builder(DetailsActivity.this)
+            .setIcon(R.drawable.error)
+            .setMessage("Are you sure you want to delete this?")
+            .setTitle("Delete")
+            .setPositiveButton("Delete it!",new DialogInterface.OnClickListener() {
+    			public void onClick(DialogInterface dialog, int which) {
+    				
+    				String nextButtonText =bNext.getText().toString();
+    		    	
+    		    	 if(nextButtonText.equals(getString(R.string.commit)))
+    		    	 {
+    			    	((TableRow)tmpView).setVisibility(View.GONE);
+    			    	
+    			    	TextView label =(TextView)((TableRow)tmpView).getChildAt(0);
+    			    	TextView value =(TextView)((TableRow)tmpView).getChildAt(1);
+    			    	
+    			    	String theValue = label.getText().toString();
+    			    	theValue = theValue.substring(0, theValue.length()-1);
+    			    	//call delete db
+    			    	passDao.deleteRow(theValue,value.getHint().toString());
+    			    	wasDelete=true;
+    			    	//REMOVE OUT OF THE NP IF NEWLY ADDED TOO
+    			    	NewPassword np = NewPassword.getInstance();
+    			    	Hashtable<String, PasswordDetail> hashnamevalue = np.getNameValue();
+    			    	hashnamevalue.remove(theValue);
+    			    	
+    		    	 }
+
+    			}
+    		})
+            .setNegativeButton("No!", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                   dismissDialog(DIALOG_DELETE);
+                }
+            })      
+           .create();
+    		
+    	}
+    	return null;
     }
     
 	/* (non-Javadoc)
@@ -327,7 +375,7 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
 		    else if( v == bDelete)
 		    {
 		    	//warn first
-		    	showDialog(0);
+		    	showDialog(DIALOG_FULL_DELETE);
 		    }
 		    else if(v instanceof TableRow)
 		    {
@@ -526,26 +574,10 @@ public class DetailsActivity extends BaseActivity implements OnTouchListener,OnL
      */
     public boolean onLongClick(View v) {
 	    
-    	String nextButtonText =bNext.getText().toString();
+    	tmpView=v;
+    	showDialog(DIALOG_DELETE);
     	
-    	 if(nextButtonText.equals(getString(R.string.commit)))
-    	 {
-	    	((TableRow)v).setVisibility(View.GONE);
-	    	
-	    	TextView label =(TextView)((TableRow)v).getChildAt(0);
-	    	TextView value =(TextView)((TableRow)v).getChildAt(1);
-	    	
-	    	String theValue = label.getText().toString();
-	    	theValue = theValue.substring(0, theValue.length()-1);
-	    	//call delete db
-	    	passDao.deleteRow(theValue,value.getHint().toString());
-	    	wasDelete=true;
-	    	//REMOVE OUT OF THE NP IF NEWLY ADDED TOO
-	    	NewPassword np = NewPassword.getInstance();
-	    	Hashtable<String, PasswordDetail> hashnamevalue = np.getNameValue();
-	    	hashnamevalue.remove(theValue);
-	    	
-    	 }
+    	
 	    return false;
     }
 
