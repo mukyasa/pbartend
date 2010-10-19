@@ -29,7 +29,7 @@ const TYPE_GARNISH = 3; //"Garnish";
 const TYPE_LIQUOR_NAME = "Liquor";
 const TYPE_MIXERS_NAME = "Mixers";
 const TYPE_GARNISH_NAME = "Garnish";
-var TYPE;
+var TYPE_NAME;
 
 const CAT_COCKTAIL = 1;
 const CAT_HOT_DRINK = 2;
@@ -43,6 +43,10 @@ const PAGING_TYPE_ALL = 1;
 const PAGING_TYPE_CATEGORY = 2;
 const PAGING_TYPE_ING = 3;
 const PAGING_TYPE_SEARCH = 4;
+//used for filting
+const PAGING_TYPE_ING_LIQUOR = 5;
+const PAGING_TYPE_ING_MIXER = 6;
+const PAGING_TYPE_ING_GARNISH = 7;
 
 var isTouch = (/ipad/gi).test(navigator.appVersion),
 
@@ -193,14 +197,28 @@ $(document).ready(function () {
 										  //console.log(e.keyCode);
 										  if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode == 0) {
 										  
-										  PAGING_COUNT = 0; //first time called
-										  PAGING_TYPE = PAGING_TYPE_SEARCH;
+											PAGING_COUNT = 0; //first time called
+											PAGING_TYPE = PAGING_TYPE_SEARCH;
 										  
-										  $("#list_wrapper").empty();
+											$("#list_wrapper").empty();
 										  
-										  var requestUrl = ROOT_URL + "drinks/search?searchParam=" + $(this).val() + "&startIndex=0";
-										  $(this).addClass("search-loader");
-										  processDrinks(requestUrl, false);
+											var requestUrl = ROOT_URL + "drinks/search?searchParam=" + $(this).val() + "&startIndex=0";
+										  
+											//for ing searches
+											if (TYPE_NAME == TYPE_LIQUOR_NAME)
+												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_LIQUOR + "?searchParam=" + $(this).val() + "&startIndex=0";
+											else if(TYPE_NAME == TYPE_MIXERS_NAME)
+												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_MIXERS + "?searchParam=" + $(this).val() + "&startIndex=0";
+											else if(TYPE_NAME == TYPE_GARNISH_NAME) 
+												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_GARNISH + "?searchParam=" + $(this).val() + "&startIndex=0";
+				
+			
+											$(this).addClass("search-loader");
+											
+											if(TYPE_NAME == TYPE_LIQUOR_NAME || TYPE_NAME == TYPE_MIXERS_NAME || TYPE_NAME == TYPE_GARNISH_NAME)	
+												filterIngredientsList(requestUrl);
+											else
+												processDrinks(requestUrl, false);
 										  }
 										  
 										  });
@@ -315,12 +333,15 @@ $(document).ready(function () {
 
 function list_item_events() {
 	
-	$(".ing-item").bind(END_EVENT,function(){
+	$(".ing-item").bind(START_EVENT,function(){
+						list_scroll = false;
+						
+						}).bind(END_EVENT,function(){
+								
 						$(this).parent().find(".ing-item").removeClass("list_item_down");
 						
 						if (!list_scroll)
 							$(this).addClass("list_item_down");
-						list_scroll = false;
 						
 						}).bind(MOVE_EVENT,function(){
 								list_scroll = true;
@@ -328,18 +349,21 @@ function list_item_events() {
 	
     $(".list_item").bind(START_EVENT, function (e) {
 						 e.preventDefault();
-						 $(this).addClass("list_item_down");
+						 
+						 list_scroll = false;
 						 }).bind(END_EVENT, function (e) {
 								 e.preventDefault();
-								 $(this).removeClass("list_item_down");
+								  $(this).parent().find(".list_item").removeClass("list_item_down");
+								 		
 								 if (!list_scroll) //if not scrolling 
 								 {
-								 $(this).find(".list_fav_selected").addClass("list-item-loading");
-								 $(this).find(".list_fav").addClass("list-item-loading");
-								 showDetail(this);
+									$(this).addClass("list_item_down");
+									$(this).find(".list_fav_selected").addClass("list-item-loading");
+									$(this).find(".list_fav").addClass("list-item-loading");
+									showDetail(this);
 								 }
 								 
-								 list_scroll = false;
+								 
 								 
 								 }).bind(MOVE_EVENT, function (e) {
 										 list_scroll = true; //used if your scrolling
@@ -409,8 +433,9 @@ function list_item_events() {
 						
 						
 						$(this).remove();
-						if (PAGING_TYPE == PAGING_TYPE_SEARCH) processDrinks(requestUrl, true);
-						else processDrinks(requestUrl, true);
+						
+						processDrinks(requestUrl, true);
+						
 						});
 }
 
@@ -534,6 +559,7 @@ function handleTouchEnd(e) {
         $("#ingredients").slideUp(function () {
 								  $("#main_buttons").slideDown();
 								  });
+		TYPE_NAME = "";
     } else if ($(obj).attr("id") == "cat_back") //back from cat
     {
         $("#category").slideUp(function () {
@@ -553,16 +579,16 @@ function handleTouchEnd(e) {
         showDrinkList(ROOT_URL + "drinks?startIndex=0");
     }
     else if ($(obj).attr("id") == "liquor") {
-        TYPE = TYPE_LIQUOR_NAME;
+        TYPE_NAME = TYPE_LIQUOR_NAME;
         showIngList(TYPE_LIQUOR);
 		
     }
     else if ($(obj).attr("id") == "mixer") {
-        TYPE = TYPE_MIXERS_NAME;
+        TYPE_NAME = TYPE_MIXERS_NAME;
         showIngList(TYPE_MIXERS);
     }
     else if ($(obj).attr("id") == "garnish") {
-        TYPE = TYPE_GARNISH_NAME;
+        TYPE_NAME = TYPE_GARNISH_NAME;
         showIngList(TYPE_GARNISH);
     }
     else if ($(obj).attr("id") == "cocktail") {
@@ -598,7 +624,6 @@ function filterDrinkList() {
     if (PAGING_TYPE == PAGING_TYPE_CATEGORY) var requestUrl = ROOT_URL + "drinks/cats" + CAT_TYPE_ID + "?startIndex=0";
     else if (PAGING_TYPE == PAGING_TYPE_ALL) var requestUrl = ROOT_URL + "drinks?startIndex=0";
     else if (PAGING_TYPE == PAGING_TYPE_ING) var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "?startIndex=0";
-	
 	
     $("#list_wrapper").empty();
 	
@@ -669,6 +694,39 @@ function showIngList(ingType) {
 	
 }
 
+//provides a filter search based on ingredient type
+function filterIngredientsList(requestUrl){
+	
+    showLoadingMask(); //pop modal
+    $("#list_wrapper").empty();
+	
+    $.getJSON(requestUrl, function (data) {
+			  
+			  if (data != null) {
+				if (data.ingredient.length != undefined) {
+			  
+				  for (i = 0; i < data.ingredient.length; i++)
+					$("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.ingredient[i].id + "\"><span class=\"ingredient\">" + data.ingredient[i].name + "</span></li>");
+				  
+				  
+				  
+					
+				  }else
+				      $("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.ingredient.id + "\"><span class=\"ingredient\">" + data.ingredient.name + "</span></li>");
+				  
+			  
+			  //add events
+			  list_item_events();
+			  //if portrait show pop up
+			  if (css_orientation == "port") $(".port #wrapper").fadeIn();
+			  
+			  }
+			  
+			  removeLoadingMask();
+			  
+			  });
+}
+
 //process the ajax and returns the results
 
 function processDrinks(requestUrl, showDetails) {
@@ -678,39 +736,40 @@ function processDrinks(requestUrl, showDetails) {
     $.getJSON(requestUrl, function (data) {
 			  
 			  if (data != null) {
+			  
 			  if (data.drinkDetails.length != undefined) {
-			  //if type array meaning returns more than one
-			  for (i = 0; i < data.drinkDetails.length; i++) {
-			  favoritesStar = "list_fav";
-			  
-			  for (x = 0; x < favoritesArray.length; x++) {
-			  
-			  if (data.drinkDetails[i].id == favoritesArray[x]) {
-			  favoritesStar = "list_fav_selected";
-			  break;
-			  }
-			  
-			  }
-			  
-			  $("#list_wrapper").append("<li class=\"list_item " + data.drinkDetails[i].glass + "\" id=\"" + data.drinkDetails[i].id + "\"><span class=\"list_glass\">" + data.drinkDetails[i].drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
-			  
-			  }
+				  //if type array meaning returns more than one
+				  for (i = 0; i < data.drinkDetails.length; i++) {
+					favoritesStar = "list_fav";
+				  
+					for (x = 0; x < favoritesArray.length; x++) {
+				  
+						if (data.drinkDetails[i].id == favoritesArray[x]) {
+						favoritesStar = "list_fav_selected";
+						break;
+						}
+				  
+					}
+				  
+					$("#list_wrapper").append("<li class=\"list_item " + data.drinkDetails[i].glass + "\" id=\"" + data.drinkDetails[i].id + "\"><span class=\"list_glass\">" + data.drinkDetails[i].drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
+				  
+				  }
 			  }
 			  else //only returned on object
 			  {
 			  
-			  favoritesStar = "list_fav";
+				favoritesStar = "list_fav";
 			  
-			  for (x = 0; x < favoritesArray.length; x++) {
+				  for (x = 0; x < favoritesArray.length; x++) {
+				  
+					if (data.drinkDetails.id == favoritesArray[x]) {
+						favoritesStar = "list_fav_selected";
+						break;
+					  }
+				  
+				  }
 			  
-			  if (data.drinkDetails.id == favoritesArray[x]) {
-			  favoritesStar = "list_fav_selected";
-			  break;
-			  }
-			  
-			  }
-			  
-			  $("#list_wrapper").append("<li class=\"list_item " + data.drinkDetails.glass + "\" id=\"" + data.drinkDetails.id + "\"><span class=\"list_glass\">" + data.drinkDetails.drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
+				$("#list_wrapper").append("<li class=\"list_item " + data.drinkDetails.glass + "\" id=\"" + data.drinkDetails.id + "\"><span class=\"list_glass\">" + data.drinkDetails.drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
 			  }
 			  
 			  
@@ -881,7 +940,7 @@ function showDetail(that) {
         //if this is a drink not an ing or cat
         var drinkId = $(that).attr("id");
 		
-        var requestUrl = ROOT_URL + "drinks/ingsId" + drinkId + "?typeName=" + TYPE + "&startIndex=0";
+        var requestUrl = ROOT_URL + "drinks/ingsId" + drinkId + "?typeName=" + TYPE_NAME + "&startIndex=0";
         showDrinkList(requestUrl);
 		
 		
