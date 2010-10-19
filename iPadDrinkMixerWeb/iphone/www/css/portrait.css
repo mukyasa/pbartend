@@ -128,12 +128,12 @@
 }
 .port .saveIng{
 	position:absolute;
-	top:350px;
+	top:310px;
 	left:450px;
 }
 .port .cancelIng{
 	position:absolute;
-	top:350px;
+	top:310px;
 	left:350px;
 }
 .port .cancelbutton,.port .cancelIng{
@@ -225,7 +225,7 @@
 .port #ing-inner-wrapper-select{
 	width:490px;
 	height:28px;
-	top:280px;
+	top:260px;
 	left:40px;
 	position:absolute;
 }
