@@ -315,7 +315,7 @@ public class DOService extends SQL {
 
 	}
 	
-	public List<Ingredient> getAllLiquors(int int_id,String startIndex) {
+	public List<Ingredient> getAllLiquors(int int_id,String startIndex,boolean isLimited) {
 
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -326,7 +326,11 @@ public class DOService extends SQL {
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			String sql = sqlGetAllIngredients;
+			String more="";
+			if(isLimited)
+				more = " LIMIT " + startIndex + ","+LIMIT;
+			
+			String sql = sqlGetAllIngredients + more;
 
 			stmt = conn.prepareStatement(sql);
 			switch (int_id) {
