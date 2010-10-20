@@ -115,7 +115,7 @@
 }
 .land .text-float-right{
 	height:176px;
-	margin:-30px 0 0 15px;
+	margin:-30px 0 0 5px;
 	font-size:14px;
 	float:left;
 	margin-bottom:15px;
@@ -151,14 +151,24 @@
 }
 
 /** EDIT TEXT **/
+.land .add-new-ing{
+	width:107px !important;
+}
+.land .edit-ing{
+	width:204px;
+}
 .land .edit-ing-wrapper{
-	height:110px !important;
-	width:183px !important;
+	height:265px !important;
+	width:220px !important;
+	top:30px;
+
 }
 .land .ing-wrapper {
 	height: 160px;
 	width:230px !important;
-
+}
+.land .edit-add-ingredient{
+	margin-top:30px;
 }
 .land .edit-drink-title{
 	font-size:16px;
@@ -166,19 +176,23 @@
 }
 .land #edit-drink-photo{
 	position:absolute;
-	top:150px;
+	top:155px;
 	left:22px;
-	width:185px;
-	height:185px;
+	width:200px;
+	height:200px;
 }
-
+.land .ing-choices{
+	width:204px ! important;
+}
 .land .edit-paper-button-block{
-	top:550px;	
+	top:615px;	
 	left:28px;
 }
 .land .edit-drink-desc{
-	width:410px;
-	height:300px;
+	width:415px;
+	height:270px;
+	top:330px;
+	left:20px;
 }
 .land .edit-page_content_wrapper{
 	padding:20px 40px 50px 25px; !important;
@@ -208,7 +222,7 @@
 /****** ING PICKER ******/
 .land #ing-inner-wrapper{
 	top:45px;
-	left:450px;
+	left:400px;
 	width:500px;
 	height:690px;
 }
