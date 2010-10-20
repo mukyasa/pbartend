@@ -740,6 +740,7 @@ function filterIngredientsList(requestUrl){
 //process the ajax and returns the results
 
 function processDrinks(requestUrl, showDetails) {
+
     if (showDetails) showLoadingMask();
 	
     var favoritesStar;
@@ -797,7 +798,8 @@ function processDrinks(requestUrl, showDetails) {
 			  
 			  
 			  }
-			  else removeLoadingMask();
+			  else 
+				removeLoadingMask();
 			  
 			  });
 	
@@ -887,7 +889,7 @@ function addEditButtonEvents() {
 }
 
 function showDetail(that) {
-	
+
     if (PAGING_TYPE == PAGING_TYPE_ALL || PAGING_TYPE == PAGING_TYPE_CATEGORY || PAGING_TYPE == PAGING_TYPE_SEARCH) {
         //if this is a drink not an ing or cat
         var drinkId = $(that).attr("id");
@@ -907,34 +909,39 @@ function showDetail(that) {
         //call to get details
         $.getJSON(requestUrl, function (data) {
 				  //data in this case is drinkdetail
+				   
 				  if (data != null) {
+				 
+					  drinkUID = data.uid;
+					  $(".submit_rate").text("Rate");
+					  $(".ratings").removeClass("hidden");
+					  $(".list_email").removeClass("hidden");
 				  
-				  drinkUID = data.uid;
-				  $(".submit_rate").text("Rate");
-				  $(".ratings").removeClass("hidden");
-				  selectedDrinkDetails = data; //set current drinkdetail
-				  $(".drink-title").empty().append(data.drinkName);
-				  $(".edit-drink-title").val(data.drinkName);
-				  
-				  $(".drink-desc .scroll-child").empty().append(data.instructions);
-				  $(".edit-drink-desc").val(data.instructions);
-				  
-				  $(".ing-wrapper .scroll-child").empty().append(data.ingredients);
-				  $(".ing-wrapper .scroll-child li").attr("class", "ing");
-				  $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
-				  $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
-				  
-				  $("#drink_id_input").val(data.id);
-				  
-				  setRating(data.rating);
-				  
-				  editchosenIngs.refresh();
-				  chosenIngs.refresh();
-				  
-				  
-				  //set edit button state only show if this user can edit it
-				  if (data.uid != null && data.uid == deviceUID) $(".frontbutton").show();
-				  else $(".frontbutton").hide();
+					  selectedDrinkDetails = data; //set current drinkdetail
+					  $(".drink-title").empty().append(data.drinkName);
+					  $(".edit-drink-title").val(data.drinkName);
+					  
+					  $(".drink-desc .scroll-child").empty().append(data.instructions);
+					  $(".edit-drink-desc").val(data.instructions);
+					  
+					  $(".ing-wrapper .scroll-child").empty().append(data.ingredients);
+					  $(".ing-wrapper .scroll-child li").attr("class", "ing");
+					  $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
+					  $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
+					  
+					  $("#drink_id_input").val(data.id);
+					  
+					  setRating(data.rating);
+					  
+					  editchosenIngs.refresh();
+					  chosenIngs.refresh();
+					  
+					  
+					  //set edit button state only show if this user can edit it
+					  if (data.uid != null && data.uid == deviceUID) 
+							$(".frontbutton").show();
+					  else 
+							$(".frontbutton").hide();
 				  
 				  }
 				  
