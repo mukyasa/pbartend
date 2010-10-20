@@ -428,6 +428,20 @@ body {
 
 
 /** EDIT ***/
+.glass{
+	height:48px;
+	width:48px;
+	margin:10px 0 0 10px;
+}
+.edit-glass{
+	background:#efefef;
+	border:1px solid #ccc;
+	width:66px;
+	height:66px;
+	float:left;
+	margin-right:4px;
+	 -webkit-border-radius: 4px;
+}
 .edit-add-ingredient{
 	padding:0;
 	margin:0;
@@ -436,8 +450,11 @@ body {
 
 .add-new-ing{
 	background:#efefef url("../images/chevron.png") no-repeat center right !important;
+	width:122px;
 }
-
+.add-new-button-block{
+	float:left;
+}
 .ing-back{
 	background:#efefef url("../images/chevron_l.png") no-repeat 5% 50% !important;
 	border:1px solid #ccc;

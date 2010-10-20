@@ -127,7 +127,6 @@
 	height:176px;
 	background-size: 100% auto;
 	margin:-30px 0 0 0;
-	float:left;
 }
 
 .land .drink-ings,.land .drink-desc{
@@ -163,11 +162,14 @@
 }
 .land .edit-drink-title{
 	font-size:16px;
-	width:165px;
+	width:400px;
 }
 .land #edit-drink-photo{
-	margin-left:0px;
-	margin-bottom:25px;
+	position:absolute;
+	top:150px;
+	left:22px;
+	width:185px;
+	height:185px;
 }
 
 .land .edit-paper-button-block{
@@ -175,11 +177,11 @@
 	left:28px;
 }
 .land .edit-drink-desc{
-	width:368px;
+	width:410px;
 	height:300px;
 }
 .land .edit-page_content_wrapper{
-	padding:50px 40px 50px 25px; !important;
+	padding:20px 40px 50px 25px; !important;
 }
 .land .submit_rate{
 	top:218px;
