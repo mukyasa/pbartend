@@ -487,7 +487,14 @@ body {
 .drink-desc .scroll-child{
 	font-size:18px;
 }
-
+.drink-type{
+	background:#efefef;
+	border:2px solid #ccc;
+	-webkit-border-radius: 4px;
+	text-align:center;
+	padding:2px 0 0px 0;
+	margin-bottom:5px;
+}
 /************ RATINGS *************/
 .star_delete{
 	width:34px;
@@ -500,7 +507,7 @@ body {
 .submit_rate_on{
 	background:#ccc !important;
 }
-.submit_rate{
+.submit_rate,.rate_number{
 	position:absolute;
 	color: #134926;
 	font-family: button;
