@@ -931,6 +931,10 @@ function showDetail(that) {
 					  selectedDrinkDetails = data; //set current drinkdetail
 					  $(".drink-title").empty().append(data.drinkName);
 					  $(".edit-drink-title").val(data.drinkName);
+						
+						$(".drink-type").text(data.drinkType);
+				  $(".edit-drink-type").text(data.drinkType);
+						
 					  
 					  $(".drink-desc .scroll-child").empty().append(data.instructions);
 					  $(".edit-drink-desc").val(data.instructions);
@@ -948,6 +952,7 @@ function showDetail(that) {
 					  chosenIngs.refresh();
 					  
 					  
+				  
 					  //set edit button state only show if this user can edit it
 					  if (data.uid != null && data.uid == deviceUID) 
 							$(".frontbutton").show();
@@ -1002,6 +1007,15 @@ function setRating(data) {
     if (data == 1) $("#rate_1").addClass("star_on");
     if (data == 5) $("#rate_5").addClass("star_on");
 	
+	if(data>1)
+		data=data-1;
+	if(data=='NaN')
+		data=0;
+	var result=Math.round(data*10)/10;
+	
+	$(".rate_number").text(result);
+	$(".rate_number").show();
+	$(".drink-type").show();
     /***************************************/
 }
 

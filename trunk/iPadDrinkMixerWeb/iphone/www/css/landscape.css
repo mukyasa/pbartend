@@ -53,11 +53,11 @@
 .land #quote{
 	margin-top:80px;
 	margin-left:55px;
-	width:270px;
+	width:300px;
 	font-size:12px;
 	position:absolute;
-	top:465px;
-	left:55px;
+	top:530px;
+	left:65px;
 }
 .land .createbutton{
 	background: url("../images/create_button.png") no-repeat 0 0;
@@ -140,15 +140,15 @@
 }
 .land .drink-desc{
 	height:225px;
-	width:380px;
-	top:225px;
+	width:400px;
+	top:260px;
 	left:20;
 }
 .land .paper-button-block{
 	position:absolute;
-	top:475px;
+	top:530px;
 	left:40;
-	width:370px;
+	width:400px;
 }
 
 /** EDIT TEXT **/
@@ -157,8 +157,8 @@
 	width:183px !important;
 }
 .land .ing-wrapper {
-	height: 140px;
-	width:183px !important;
+	height: 160px;
+	width:230px !important;
 
 }
 .land .edit-drink-title{
@@ -182,8 +182,16 @@
 	padding:50px 40px 50px 25px; !important;
 }
 .land .submit_rate{
-	top:162px;
-	padding:5px 10px 0px 10px;
+	top:218px;
+	left:105px;
+	width:65px;
+	padding:5px 20px 0px 20px;
+}
+.land .rate_number{
+	top:218px;
+	left:40px;
+	background:#f1c981;
+	padding:5px 5px 0px 5px;	
 }
 .land .star,.land .star_delete{
 	background-size: 80% auto;
