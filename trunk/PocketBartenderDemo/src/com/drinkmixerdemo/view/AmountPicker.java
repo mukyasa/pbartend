@@ -124,10 +124,11 @@ public class AmountPicker extends BaseActivity  implements OnClickListener{
     
     final String[] AMOUNTS = new String[] {none,"cup","oz","pint","quart","gallon","tsp","tbsp","lb","bottles(s)"
     	,"can(s)"
-    	,"dashe(es)"
+    	,"dash(es)"
     	,"drop(s)"
     	,"gill"
     	,"jigger"
+    	,"ml"
     	,"part(s)"
     	,"pieces(s)"
     	,"pony"
