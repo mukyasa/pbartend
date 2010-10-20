@@ -7,8 +7,8 @@ var css_orientation = "port";
 var list_scroll = false;
 var PAGING_COUNT = 0;
 var PAGING_TYPE; //keep track of the current page count for load more.
-var CAT_TYPE_ID-1; //keep track of the current category selected for load more.
-var ING_TYPE_ID-1; //keep track of the current ingredient type for load more.
+var CAT_TYPE_ID=-1; //keep track of the current category selected for load more.
+var ING_TYPE_ID=-1; //keep track of the current ingredient type for load more.
 var LIMIT = 100;
 var BUTTON_CLICKED = false; //set this so when a button is clicked no others can be
 var clientIp = "0.0.0.0";
@@ -253,7 +253,15 @@ $(document).ready(function () {
 				  $(".saveIng").bind(START_EVENT,function(e){
 									 $(this).addClass("savebutton-on");
 									 }).bind(END_EVENT,function(){
-													$(this).removeClass("savebutton-on");				
+													$(this).removeClass("savebutton-on");	
+											 
+											 var wholenum = $("#ing_list_wrapper-whole").find("list_item_down").attr("val");
+											 var halfnum = $("#ing_list_wrapper-half").find("list_item_down").attr("val");
+											 var unit = $("#ing_list_wrapper-units").find("list_item_down").attr("val");
+											 
+											 //add item to ul
+											 $("#editchosenIngs .ing-items-wrapper").append("<li>"+wholenum + half + unit+"</li>");
+											 $("#ing-inner-wrapper").fadeOut();
 																	
 									});
 				  
