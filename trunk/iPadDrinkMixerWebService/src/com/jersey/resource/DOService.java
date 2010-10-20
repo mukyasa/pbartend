@@ -326,8 +326,7 @@ public class DOService extends SQL {
 		try {
 			conn = DbConnectionTest.getConnection();
 
-			String sql = sqlGetAllIngredients + " LIMIT " + startIndex
-					+ ","+LIMIT;
+			String sql = sqlGetAllIngredients;
 
 			stmt = conn.prepareStatement(sql);
 			switch (int_id) {
