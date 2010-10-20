@@ -206,11 +206,11 @@ $(document).ready(function () {
 										  
 											//for ing searches
 											if (TYPE_NAME == TYPE_LIQUOR_NAME)
-												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_LIQUOR + "?searchParam=" + $(this).val() + "&startIndex=0";
+												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_LIQUOR + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
 											else if(TYPE_NAME == TYPE_MIXERS_NAME)
-												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_MIXERS + "?searchParam=" + $(this).val() + "&startIndex=0";
+												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_MIXERS + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
 											else if(TYPE_NAME == TYPE_GARNISH_NAME) 
-												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_GARNISH + "?searchParam=" + $(this).val() + "&startIndex=0";
+												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_GARNISH + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
 				
 			
 											$(this).addClass("search-loader");
@@ -444,7 +444,7 @@ function list_item_events() {
 						
 						if (PAGING_TYPE == PAGING_TYPE_CATEGORY) var requestUrl = ROOT_URL + "drinks/cats" + CAT_TYPE_ID + "?startIndex=" + PAGING_COUNT;
 						else if (PAGING_TYPE == PAGING_TYPE_ALL) var requestUrl = ROOT_URL + "drinks?startIndex=" + PAGING_COUNT;
-						else if (PAGING_TYPE == PAGING_TYPE_ING) var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "?startIndex=" + PAGING_COUNT;
+						else if (PAGING_TYPE == PAGING_TYPE_ING) var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "?startIndex=" + PAGING_COUNT +"&isLimited=true";
 						else if (PAGING_TYPE == PAGING_TYPE_SEARCH) var requestUrl = ROOT_URL + "drinks/search?searchParam=" + $(".search-input").val() + "&startIndex=" + PAGING_COUNT;
 						
 						
@@ -468,7 +468,7 @@ function handleIngPop(){
 	if(id=="ing-liquor"){
 				
 		//ajax
-		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_LIQUOR + "?startIndex=0";
+		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_LIQUOR + "?startIndex=0&isLimited=false";
 		$("#ing-inner-wrapper-select").empty();
 		
 		processIngredients(requestUrl);
@@ -477,7 +477,7 @@ function handleIngPop(){
 	else if(id=="ing-mixer"){
 
 		//ajax
-		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_MIXERS + "?startIndex=0";
+		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_MIXERS + "?startIndex=0&isLimited=false";
 		$("#ing-inner-wrapper-select").empty();
 		
 		processIngredients(requestUrl);
@@ -486,7 +486,7 @@ function handleIngPop(){
 	else if(id=="ing-garnish"){
 
 		//ajax
-		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_GARNISH + "?startIndex=0";
+		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_GARNISH + "?startIndex=0&isLimited=false";
 		$("#ing-inner-wrapper-select").empty();
 		
 		processIngredients(requestUrl);
@@ -691,7 +691,7 @@ function showIngList(ingType) {
 	
     showLoadingMask(); //pop modal
     $("#list_wrapper").empty();
-    var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "?startIndex=0";
+    var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "?startIndex=0&isLimited=true";
 	
     $.getJSON(requestUrl, function (data) {
 			  
@@ -972,7 +972,7 @@ function showDetail(that) {
         //if this is a drink not an ing or cat
         var drinkId = $(that).attr("id");
 		
-        var requestUrl = ROOT_URL + "drinks/ingsId" + drinkId + "?typeName=" + TYPE_NAME + "&startIndex=0";
+        var requestUrl = ROOT_URL + "drinks/ingsId" + drinkId + "?typeName=" + TYPE_NAME + "&startIndex=0&isLimited=true";
         showDrinkList(requestUrl);
 		
 		
