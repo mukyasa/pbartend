@@ -883,6 +883,17 @@ function addEditButtonEvents() {
 																});
 										  
 										  });
+	$("#addNewCat").unbind().bind(START_EVENT,function(e){
+								$(this).addClass("ingTouch");
+								}).bind(END_EVENT,function(e){
+													$(this).removeClass("ingTouch");			
+																});
+	
+	$(".edit-glass").unbind().bind(START_EVENT,function(e){
+								   $(this).addClass("ingTouch");
+								   }).bind(END_EVENT,function(e){
+										   $(this).removeClass("ingTouch");			
+										   });
 	
     $(".ing-back").unbind().bind(START_EVENT, function (e) {
 								 e.preventDefault(); //prevent copy and mag from showing
@@ -946,6 +957,8 @@ function showDetail(that) {
 					  $(".edit-ing-wrapper .scroll-child li").addClass("ing-choices");				  
 					  
 					  $("#drink_id_input").val(data.id);
+				  
+				  $(".glass").addClass(data.glass);
 					  
 					  setRating(data.rating);
 					  
