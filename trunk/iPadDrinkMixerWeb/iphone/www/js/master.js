@@ -536,6 +536,9 @@ function handleTouchStart(e) {
 
 function handleTouchEnd(e) {
     e.preventDefault(); //prevent copy and mag from showing
+	//clear text field
+	$(".search-input").val("");
+	
     var obj = e.currentTarget;
     //reset back to default
     IS_SHARED_DRINK = false;
