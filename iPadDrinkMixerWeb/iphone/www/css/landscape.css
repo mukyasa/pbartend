@@ -11,8 +11,8 @@
 	left:675px;
 }
 .land .paper .front,.land .paper .back{
-	width:450px;
-	height:630px;
+	width:500px;
+	height:690px;
 	left: -225px;
 }
 .land #button_block{
@@ -197,8 +197,8 @@
 
 /****** ING PICKER ******/
 .land #ing-inner-wrapper{
-	top:40px;
-	left:452px;
+	top:45px;
+	left:450px;
 	width:450px;
 	height:630px;
 }
