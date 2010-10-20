@@ -276,8 +276,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
-									<integer>9</integer>
+									<integer>8</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -304,7 +303,7 @@
 							<real>189</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 110 1440 768 0 0 1440 878 </string>
+						<string>-2 110 1440 768 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -322,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>master.js</string>
+								<string>index.htm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>master.js</string>
+										<string>index.htm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7175494A126FAD40001D484B</string>
+										<string>71754971126FB87C001D484B</string>
 										<key>history</key>
 										<array>
 											<string>7184A3A312569518009A3E31</string>
@@ -398,11 +397,11 @@
 											<string>716AD4FF126E07B80056EAF1</string>
 											<string>7137F119126E9E7600906488</string>
 											<string>7175468C126EAB9B001D484B</string>
-											<string>71754930126F969B001D484B</string>
 											<string>71754931126F969B001D484B</string>
 											<string>7175493D126FAA4C001D484B</string>
-											<string>71754943126FAB12001D484B</string>
-											<string>71754944126FAB12001D484B</string>
+											<string>7175496E126FB87C001D484B</string>
+											<string>7175496F126FB87C001D484B</string>
+											<string>71754970126FB87C001D484B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -416,7 +415,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1207, 722}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 110 1440 768 0 0 1440 878 </string>
+								<string>-2 110 1440 768 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -436,7 +435,7 @@
 								<key>Frame</key>
 								<string>{{0, 727}, {1207, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 110 1440 768 0 0 1440 878 </string>
+								<string>-2 110 1440 768 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -606,7 +605,7 @@
 		<string>/Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/PhoneGap.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 110 1440 768 0 0 1440 878 </string>
+	<string>-2 110 1440 768 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
