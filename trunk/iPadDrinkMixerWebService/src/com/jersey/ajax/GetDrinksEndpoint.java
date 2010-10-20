@@ -96,12 +96,13 @@ public class GetDrinksEndpoint extends SQL {
 	@Path("ings{ingId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Ingredient> getAllLiquors(@PathParam("ingId") String id,
-			@QueryParam("startIndex") String startIndex) {
+			@QueryParam("startIndex") String startIndex,
+			@QueryParam("isLimited") boolean isLimited) {
 
 		int int_id = Integer.valueOf(id).intValue();
 		DOService dos = new DOService();
 
-		return dos.getAllLiquors(int_id, startIndex);
+		return dos.getAllLiquors(int_id, startIndex,isLimited);
 
 	}
 	
