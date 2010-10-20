@@ -72,7 +72,7 @@ body {
 }
 .search-loader{
 	background:#fff url("../images/ajax-loader-sm.gif") no-repeat 99% 50% !important;
-	xxbackground-size: 28px 28px;
+	xxbackground-size: 16px 16px;
 	xxbackground-origin: content;
 	
 }
@@ -164,7 +164,9 @@ body {
 	font-size:16px;
 }
 .list-item-loading{
-	background:#e8e4e0 url("../images/ajax-loader.gif") no-repeat 0 0 !important;
+	background: url("../images/ajax-loader.gif") no-repeat 0 0 !important;
+	background-size: 21px 20px;
+	background-origin: content;
 }
 
 /****** GLASSES *******/
