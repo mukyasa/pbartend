@@ -943,15 +943,14 @@ function showDetail(that) {
 					  $(".ing-wrapper .scroll-child li").attr("class", "ing");
 					  $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
 					  $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
+					  $(".edit-ing-wrapper .scroll-child li").addClass("ing-choices");				  
 					  
 					  $("#drink_id_input").val(data.id);
 					  
 					  setRating(data.rating);
 					  
 					  editchosenIngs.refresh();
-					  chosenIngs.refresh();
-					  
-					  
+					  chosenIngs.refresh();				  
 				  
 					  //set edit button state only show if this user can edit it
 					  if (data.uid != null && data.uid == deviceUID) 
