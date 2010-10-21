@@ -131,6 +131,7 @@ $(document).ready(function () {
 				  editchosenIngs = new iScroll('editchosenIngs');
 				  chosenIngs = new iScroll('chosenIngs');
 				  scroller4 = new iScroll('scroll-desc');
+				  categoriesId=new iScroll('categoriesId');
 				  
 				  $(".button,.sm_button,.fav_button").bind(START_EVENT, handleTouchStart).bind(END_EVENT, handleTouchEnd);
 				  $(".postbutton").bind(START_EVENT, handlePostButtonTouchStart).bind(END_EVENT, handlePostButtonTouchEnd);
