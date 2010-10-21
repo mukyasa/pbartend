@@ -877,10 +877,10 @@ function addEditButtonEvents() {
 										  $("#selected-glass-val").val(glassIdArray[1]);
 										    $("#selected-glass .edit-glass").find("div").attr("class","");
 										   $("#selected-glass .glass").addClass(glassNameArray[1]);
-										    $("#selected-glass .glass").addClass("glass");
-										  //$("#glass-popup").fadeOut();
+										    $("#selected-glass .glass").addClass("glass");	
+										   $("#glass-popup").fadeOut();
 										   
-										   });
+										});
 	
 	
 	$(".edit-cat").unbind().bind(START_EVENT,function(e){
@@ -936,7 +936,7 @@ function addEditButtonEvents() {
 								});
 
 	
-	$(".edit-glass").unbind().bind(START_EVENT,function(e){
+	$("#selected-glass").unbind().bind(START_EVENT,function(e){
 								   $(this).addClass("ingTouch");
 								   }).bind(END_EVENT,function(e){
 										   $(this).removeClass("ingTouch");	
