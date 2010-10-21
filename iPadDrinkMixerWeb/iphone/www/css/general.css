@@ -454,6 +454,9 @@ body {
 .add-new-button-block{
 	float:left;
 }
+.add-new-button-block div{
+	font-size:14px;
+}
 .ing-back{
 	background:#efefef url("../images/chevron_l.png") no-repeat 5% 50% !important;
 	border:1px solid #ccc;
