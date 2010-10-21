@@ -153,6 +153,10 @@
 }
 
 /** EDIT TEXT **/
+.land #glass-popup{
+	top:82px;
+	left:420px;
+}
 .land .add-new-ing{
 	width:107px !important;
 }
