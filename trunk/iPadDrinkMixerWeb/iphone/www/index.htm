@@ -169,8 +169,7 @@
 	<div class="cancelIng"></div>
 	<div class="saveIng"></div>
 	<div class="flower"></div>
-</div>
-	
+</div>		
 <!-- LIST -->	
 <div id="wrapper" class="popout">
 <div class="search"><input type="text" placeholder="Filter By Name" name="search" class="search-input"/></div>
@@ -195,7 +194,7 @@
 		<div class="face back">
 			<div class="page_content_wrapper edit-page_content_wrapper">
 			<input type="text" placeholder="Drink Title" class="edit-drink-title" value="">
-			<div class="edit-glass"><div class="glass glasstemplate"></div></div>
+			<div class="edit-glass" id="selected-glass"><div class="glass glasstemplate"></div></div>
 			<div class="add-new-button-block">
 				<div id="addNewIng" class="edit-ing add-new-ing">Ingredients</div>
 				<div id="addNewCat" class="edit-ing add-new-ing">Category</div>
@@ -222,15 +221,16 @@
 						</ul>
 					</div>
 					<div class="stage-3 hidden">
+					<input type="hidden" name="selected_cat" id="selected_id" value=""/>
 						<ul class="edit-add-ingredient scroll-child">
 							<li class="ing-back">Back</li>
-							<li id="cocktail" class="edit-cat ing-choices">Cocktails</li>
-							<li id="hotDrinks" class="edit-cat ing-choices">Hot Drinks</li>
-							<li id="jelloShots" class="edit-cat ing-choices">Jello Shots</li>
-							<li id="martinis" class="edit-cat ing-choices">Martinis</li>
-							<li id="nonAlcohlic" class="edit-cat ing-choices">Non-Alcoholic</li>
-							<li id="punch" class="edit-cat ing-choices">Punches</li>
-							<li id="shooter" class="edit-cat ing-choices">Shooters</li>
+							<li id="1" class="edit-cat ing-choices">Cocktails</li>
+							<li id="2" class="edit-cat ing-choices">Hot Drinks</li>
+							<li id="3" class="edit-cat ing-choices">Jello Shots</li>
+							<li id="4" class="edit-cat ing-choices">Martinis</li>
+							<li id="5" class="edit-cat ing-choices">Non-Alcoholic</li>
+							<li id="6" class="edit-cat ing-choices">Punches</li>
+							<li id="7" class="edit-cat ing-choices">Shooters</li>
 						</ul>
 					</div>
 				</div>
@@ -290,6 +290,36 @@
 </div>
 </span>
 </div>
+<!-- ***** glass pop up ***** -->
+<div id="glass-popup" class="hidden">
+	<ul class="glass-col">
+		<li class="edit-glass" id="selected-glass"><div class="glass rocks"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass highball"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass mug"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass hurricane"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass pint"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass white-wine"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass red-wine"></div></li>
+	</ul>
+	<ul class="glass-col">
+		<li class="edit-glass" id="selected-glass"><div class="glass cocktail"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass champagne"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass cordial"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass margarita"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass shot"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass sour"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass pousse-cafe"></div></li>
+	</ul>
+	<ul class="glass-col">
+		<li class="edit-glass" id="selected-glass"><div class="glass parfait"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass irish-coffee"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass pilsner"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass punch"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass snifter"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass collins"></div></li>
+		<li class="edit-glass" id="selected-glass"><div class="glass oldfashion"></div></li>
+	</ul>
+<!-- ***** glass pop up ***** -->
 <div id="preload">
    <img src="images/button_touch.png" width="1" height="1"/>
    <img src="images/sm_button.png" width="1" height="1"/>
