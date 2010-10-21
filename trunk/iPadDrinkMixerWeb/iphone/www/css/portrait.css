@@ -155,9 +155,12 @@
 }
 .port .text-float-right{
 	height:266px;
-	margin:-20px 0;
+	top:20px;
 	margin-bottom:5px;
 	float:left;
+}
+.port .stage-2,.port .stage-3,.port .stage-1{
+	margin-top:-20px;
 }
 .port #drink-photo,.port #edit-drink-photo{
 	background: url("../images/photo.png") no-repeat 0 0;
