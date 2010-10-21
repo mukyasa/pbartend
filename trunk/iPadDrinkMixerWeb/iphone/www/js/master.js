@@ -63,17 +63,15 @@ function changeOrientation(orientation) {
     {
         css_orientation = "port";
         $("body").addClass("port").removeClass("land");
-        //hide any popouts
-        $(".popout").hide();
     }
     else //landscape
     {
         css_orientation = "land"
         $("body").addClass("land").removeClass("port");
         $("#wrapper").show();
-		
     }
-	
+	//hide any popouts
+	$(".popout").hide();
 }
 
 function refreshMainScroller() {
@@ -107,10 +105,10 @@ $(document).ready(function () {
 				  
 				  
 				  //hide popout on window touch
-				  $(".content_wrapper").bind(START_EVENT, function (e) {
+				  $(".content_wrapper,#postcards").bind(START_EVENT, function (e) {
 											 e.preventDefault();
 											 //hide all pop ups
-											 $(".port .popout").fadeOut();
+											 $(".port .popout,#glass-popup").fadeOut();
 											 $("#ing-inner-wrapper").fadeOut();
 											 
 											 });
@@ -518,7 +516,7 @@ function handlePostButtonTouchEnd(e) {
 	
     //show popoaver here
     //hid any open popouts
-    $(".popout").hide();
+    $(".popout,#glass-popup").hide();
     if ($(obj).attr("id") == "search") $(".port #button_block").fadeIn();
     else if ($(obj).attr("id") == "list") {
         $(".port #wrapper").fadeIn();
@@ -718,7 +716,6 @@ function showIngList(ingType) {
 //provides a filter search based on ingredient type
 function filterIngredientsList(requestUrl){
 	
-    showLoadingMask(); //pop modal
     $("#list_wrapper").empty();
 	
     $.getJSON(requestUrl, function (data) {
@@ -871,6 +868,13 @@ function getAQuote() {
 
 function addEditButtonEvents() {
 	
+	$(".edit-cat").unbind().bind(START_EVENT,function(e){
+								 $(".edit-cat").removeClass("ingTouch");
+								 $(this).addClass("ingTouch");
+								 $("#addNewCat").text($(this).text());
+								 $("#selected_id").val($(this).attr("id"));
+								 });
+	
     $("#addNewIng").unbind().bind(START_EVENT, function (e) {
 								  e.preventDefault(); //prevent copy and mag from showing
 								  $(this).addClass("ingTouch");
@@ -915,11 +919,13 @@ function addEditButtonEvents() {
 										}
 										
 								});
+
 	
 	$(".edit-glass").unbind().bind(START_EVENT,function(e){
 								   $(this).addClass("ingTouch");
 								   }).bind(END_EVENT,function(e){
-										   $(this).removeClass("ingTouch");			
+										   $(this).removeClass("ingTouch");	
+										    $("#glass-popup").fadeIn();
 										   });
 	
     $(".ing-back").unbind().bind(START_EVENT, function (e) {
@@ -998,7 +1004,7 @@ function showDetail(that) {
 					  
 					  $("#drink_id_input").val(data.id);
 				  
-				  $(".glass").addClass(data.glass);
+					  $("#selected-glass").addClass(data.glass);
 					  
 					  setRating(data.rating);
 					  

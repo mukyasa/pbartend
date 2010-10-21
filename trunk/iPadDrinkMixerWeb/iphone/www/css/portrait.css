@@ -68,6 +68,10 @@
 	background-color: #e8e4e0;
 	-webkit-box-shadow:#000 4px 4px 24px;
 }
+.port #glass-popup{
+	top:152px;
+	left:165px;
+}
 .port #wrapper {
 	display:none;
     position:absolute;
