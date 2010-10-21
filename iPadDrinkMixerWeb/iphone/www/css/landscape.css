@@ -94,12 +94,12 @@
 .land .saveIng{
 	position:absolute;
 	top:270px;
-	left:325px;
+	left:365px;
 }
 .land .cancelIng{
 	position:absolute;
 	top:270px;
-	left:250px;
+	left:280px;
 }
 .land .list_email{
 	background:url(../images/email.png) no-repeat 0 0px;
@@ -233,7 +233,7 @@
 	height:690px;
 }
 .land #ing-inner-wrapper-select{
-	width:356px;
+	width:400px;
 	height:28px;
 	top:229px;
 	left:32px;
@@ -274,13 +274,13 @@
 	width:84px;
 	height:170px;
 	top:30px;
-	left:127px;
+	left:147px;
 }
 .land .scroller-shadow-c{
 	width:170px;
 	height:170px;
 	top:30px;
-	left:218px;
+	left:260px;
 }
 .land .flower{
 	background:url("../images/flower.png") no-repeat 0 0;

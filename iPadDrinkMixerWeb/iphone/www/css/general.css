@@ -436,7 +436,7 @@ body {
 }
 #glass-popup{
 	position:absolute;
-	z-index:900;
+	z-index:4;
 	background:#fff;
 	padding:0;
 	margin:0;

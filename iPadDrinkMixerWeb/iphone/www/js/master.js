@@ -105,7 +105,7 @@ $(document).ready(function () {
 				  
 				  
 				  //hide popout on window touch
-				  $(".content_wrapper,#postcards").bind(START_EVENT, function (e) {
+				  $(".content_wrapper").bind(START_EVENT, function (e) {
 											 e.preventDefault();
 											 //hide all pop ups
 											 $(".port .popout,#glass-popup").fadeOut();
@@ -335,6 +335,10 @@ $(document).ready(function () {
 												  $(this).removeClass("backbutton-on");
 										  //flip paper back
 										  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+												  
+										//hide other stuff
+												  $(".stage-2,.stage-3").hide();
+												  
 										  });
 				  
 				  
