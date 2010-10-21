@@ -166,7 +166,16 @@ public class DOService extends SQL {
 			rs = stmt.executeQuery(sql);
 
 			result = loopDrinks(rs, drink, result);
+			
+			//get the shared drinks too
+			sql = sqlGetAllSharedDrinksAndGlassById + isSQL + " LIMIT "
+			+ startIndex + ","+LIMIT;
 
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+
+			result = loopDrinks(rs, drink, result);
+	
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

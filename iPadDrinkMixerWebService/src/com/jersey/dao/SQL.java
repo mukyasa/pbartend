@@ -61,6 +61,9 @@ public class SQL{
 	"INNER JOIN "+TABLE_INGREDIENTS+" i on di.ingredient_id = i._id " + 
 	"INNER JOIN "+TABLE_GLASSES+" g on d.glass_id = g._id " +
 	"WHERE d._id =?;";
+	
+	public static final String sqlGetAllSharedDrinksAndGlassById ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE ";
+	
 	/*********************/
 	public static final String sqlGetAllDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
 	public static final String sqlGetAllDrinksAndGlassById ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE ";
