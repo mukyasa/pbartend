@@ -463,7 +463,7 @@ body {
 	 margin-bottom:4px;
 	list-style:none;
 }
-.edit-ing{
+.edit-ing,.edit-cat{
 	background:#fff url("../images/delete.png") no-repeat center right;
 	border:1px solid #ccc;
 	 -webkit-border-radius: 4px;
@@ -471,6 +471,10 @@ body {
 	 margin-bottom:4px;
 	list-style:none;
 
+}
+.edit-cat{
+	background-image:none;
+	background-color:#efefef;
 }
 .ingTouch{
 	background-color:#ffd854 !important;
