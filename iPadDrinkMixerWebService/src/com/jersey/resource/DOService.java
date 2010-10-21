@@ -76,7 +76,6 @@ public class DOService extends SQL {
 		ResultSet rs = null;
 		Connection conn = null;
 		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
-		DrinkDetails drink = null;
 
 		try {
 			conn = DbConnectionTest.getConnection();
@@ -118,7 +117,7 @@ public class DOService extends SQL {
 			
 			rs = stmt.executeQuery();
 
-			result = loopDrinks(rs, drink, result);
+			result = loopDrinks(rs, result);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -142,7 +141,7 @@ public class DOService extends SQL {
 		ResultSet rs = null;
 		Connection conn = null;
 		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
-		DrinkDetails drink = null;
+		
 
 		String[] idlist = ids.split(",");
 
@@ -165,7 +164,7 @@ public class DOService extends SQL {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
-			result = loopDrinks(rs, drink, result);
+			result = loopDrinks(rs, result);
 			
 			//get the shared drinks too
 			sql = sqlGetAllSharedDrinksAndGlassById + isSQL + " LIMIT "
@@ -174,7 +173,7 @@ public class DOService extends SQL {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
-			result = loopDrinks(rs, drink, result);
+			result = loopDrinks(rs, result);
 	
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -198,7 +197,6 @@ public class DOService extends SQL {
 		ResultSet rs = null;
 		Connection conn = null;
 		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
-		DrinkDetails drink = null;
 
 		try {
 			conn = DbConnectionTest.getConnection();
@@ -209,7 +207,7 @@ public class DOService extends SQL {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
-			result = loopDrinks(rs, drink, result);
+			result = loopDrinks(rs, result);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -233,7 +231,6 @@ public class DOService extends SQL {
 		ResultSet rs = null;
 		Connection conn = null;
 		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
-		DrinkDetails drink = null;
 
 		try {
 			conn = DbConnectionTest.getConnection();
@@ -244,7 +241,7 @@ public class DOService extends SQL {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
-			result = loopDrinks(rs, drink, result);
+			result = loopDrinks(rs, result);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -394,7 +391,6 @@ public class DOService extends SQL {
 		ResultSet rs = null;
 		Connection conn = null;
 		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
-		DrinkDetails drink = null;
 
 		try {
 			conn = DbConnectionTest.getConnection();
@@ -429,7 +425,7 @@ public class DOService extends SQL {
 
 			rs = stmt.executeQuery();
 
-			result = loopDrinks(rs, drink, result);
+			result = loopDrinks(rs, result);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -453,7 +449,6 @@ public class DOService extends SQL {
 		ResultSet rs = null;
 		Connection conn = null;
 		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
-		DrinkDetails drink = null;
 
 		try {
 			conn = DbConnectionTest.getConnection();
@@ -466,7 +461,7 @@ public class DOService extends SQL {
 
 			rs = stmt.executeQuery();
 
-			result = loopDrinks(rs, drink, result);
+			result = loopDrinks(rs, result);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -600,11 +595,10 @@ public class DOService extends SQL {
 	 * @return
 	 * @throws Exception
 	 */
-	private List<DrinkDetails> loopDrinks(ResultSet rs, DrinkDetails drink,
-			List<DrinkDetails> result) throws Exception {
-
+	private List<DrinkDetails> loopDrinks(ResultSet rs,List<DrinkDetails> result) throws Exception {
+		
 		while (rs.next()) {
-			drink = new DrinkDetails();
+			DrinkDetails drink = new DrinkDetails();
 			drink.setId(rs.getInt(COL_ROW_ID));
 
 			// only show the first 26 chars
