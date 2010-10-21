@@ -877,17 +877,44 @@ function addEditButtonEvents() {
 								  }).bind(END_EVENT, function (e) {
 										  e.preventDefault(); //prevent copy and mag from showing
 										  $(this).removeClass("ingTouch");
-										  $(".stage-1").fadeOut(function () {
+										  										  
+										  if($(".stage-1").css("display")=='block')
+										  {
+												$(".stage-1").fadeOut(function () {
 																$(".stage-2").fadeIn();
 																
 																});
+										  }
+										  else if($(".stage-3").css("display")=='block')
+										  {
+												$(".stage-3").fadeOut(function () {
+																$(".stage-2").fadeIn();
+																
+																});										
+										  }
 										  
 										  });
 	$("#addNewCat").unbind().bind(START_EVENT,function(e){
 								$(this).addClass("ingTouch");
 								}).bind(END_EVENT,function(e){
-													$(this).removeClass("ingTouch");			
-																});
+											$(this).removeClass("ingTouch");
+											
+										if($(".stage-1").css("display")=='block')
+										{
+											$(".stage-1").fadeOut(function () {
+															  $(".stage-3").fadeIn();
+															  
+															  });
+										}
+										else if($(".stage-2").css("display")=='block')
+										{
+											$(".stage-2").fadeOut(function () {
+															  $(".stage-3").fadeIn();
+															  
+															  });										
+										}
+										
+								});
 	
 	$(".edit-glass").unbind().bind(START_EVENT,function(e){
 								   $(this).addClass("ingTouch");
@@ -901,12 +928,25 @@ function addEditButtonEvents() {
 								 }).bind(END_EVENT, function (e) {
 										 e.preventDefault(); //prevent copy and mag from showing
 										 $(this).removeClass("ingTouch");
-										 $(".stage-2").fadeOut(function () {
+										 
+										 if($(".stage-2").css("display")=='block')
+										 {
+										 
+											$(".stage-2").fadeOut(function () {
+															   $(".stage-1").fadeIn();
+															   
+															   });								
+										 }
+										 else
+										 {
+											$(".stage-3").fadeOut(function () {
 															   $(".stage-1").fadeIn();
 															   
 															   });
 										 
-										 });
+											
+										}
+						});
 	
 }
 
