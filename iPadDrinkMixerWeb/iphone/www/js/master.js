@@ -868,6 +868,21 @@ function getAQuote() {
 
 function addEditButtonEvents() {
 	
+	$("#glass-popup .glass").unbind().bind(END_EVENT,function(e){
+										  var glassName = $(this).attr("class");
+										  var glassId = $(this).attr("id");
+										  var glassNameArray = glassName.split(" ");
+										  var glassIdArray = glassId.split("-");
+										
+										  $("#selected-glass-val").val(glassIdArray[1]);
+										    $("#selected-glass .edit-glass").find("div").attr("class","");
+										   $("#selected-glass .glass").addClass(glassNameArray[1]);
+										    $("#selected-glass .glass").addClass("glass");
+										  //$("#glass-popup").fadeOut();
+										   
+										   });
+	
+	
 	$(".edit-cat").unbind().bind(START_EVENT,function(e){
 								 $(".edit-cat").removeClass("ingTouch");
 								 $(this).addClass("ingTouch");
