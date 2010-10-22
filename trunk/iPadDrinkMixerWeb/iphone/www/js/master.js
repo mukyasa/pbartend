@@ -262,7 +262,7 @@ $(document).ready(function () {
 											 var ingredient_id = $("#ing-inner-wrapper-select").val();
 											 
 											 //add item to ul
-											 if (ingredient_id != "") $("#editchosenIngs .ing-items-wrapper").append("<li val='" + ingredient_id + "' class='edit-ing'><input type='hidden' value='" + wholenum + halfnum + unit + ingredient_text + "' name='ing-item'/>" + wholenum + halfnum + unit + ingredient_text + "<div class=\"delete-icon\"></div></li>");
+											 if (ingredient_id != "") $("#editchosenIngs .ing-items-wrapper").append("<li val='" + ingredient_id + "' class='edit-ing'><input type='hidden' value='" + wholenum + halfnum + unit + "' name='ing-item'/>" + wholenum + halfnum + unit + ingredient_text + "<div class=\"delete-icon\"></div></li>");
 											 
 											 $("#ing-inner-wrapper").fadeOut();
 											 
@@ -325,6 +325,32 @@ $(document).ready(function () {
 										$(this).addClass("savebutton-on");
 										}).bind(END_EVENT, function (e) {
 												e.preventDefault(); //prevent copy and mag from showing
+												
+												var ings ="";
+												
+												for(i=0;i<$("#editchosenIngs input").length;i++)
+												{
+												//get ing id from out div val
+													var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
+	
+													ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
+												}
+												
+												
+												var queryString ="?dt="+$(".edit-drink-title").val()
+												+"&g="+$("#selected-glass").find("div").attr("id")
+												+"&in="+$("#edit-drink-desc").val()
+												+"&cat="+$("#selected_id").val()
+												+"&ings="+ings
+												+"&uid="+deviceUID;
+											
+												console.log(ROOT_URL + "drinks/create"+queryString);
+												$.getJSON(ROOT_URL + "drinks/create"+queryString, function(data) {
+													   //$('.result').html(data);
+													   });
+												
+												
+												
 												$(this).removeClass("savebutton-on");
 												//flip paper back
 												$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
@@ -903,6 +929,7 @@ function addEditButtonEvents() {
 												   
 												   $("#selected-glass").find("div").addClass(glassNameArray[1]);
 												   $("#selected-glass").find("div").addClass("glass");
+												   $("#selected-glass").find("div").attr("id",glassIdArray[1]);
 												   $("#glass-popup").fadeOut();
 												   
 												   });
