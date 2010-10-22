@@ -64,11 +64,15 @@ public class SQL{
 	
 	public static final String sqlGetAllSharedDrinksAndGlassById ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE ";
 	
+	public static final String sqlCreateSharedDrink ="INSERT INTO tblShared (glass_id, name,instructions,category_id,uid) VALUES (?,?,?,?,?)";
+	public static final String sqlCreateSharedDrinkIngredients ="INSERT INTO tblShared_ingredients(drink_id,ingredient_id,amount) VALUES (?,?,?)";
+	
 	/*********************/
+	
 	public static final String sqlGetAllDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
 	public static final String sqlGetAllDrinksAndGlassById ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE ";
 	
-	public static final String sqlGetMaxId ="SELECT MAX(_ID) AS "+COL_ROW_ID+"  FROM "+TABLE_DRINK;
+	public static final String sqlGetMaxId ="SELECT MAX(_ID) AS "+COL_ROW_ID+"  FROM "+TABLE_SHARED_DRINK;
 	public static final String sqlGetGlassNameById = "SELECT name AS "+COL_GLASS_NAME+" from "+TABLE_GLASSES+" WHERE _id=?";
 	public static final String sqlGetDrinkDetailById ="SELECT d.uid,d.favorite,d._id, d.name,d.instructions,dc.name  AS "+
 			COL_CAT_NAME+",di.amount,i.name AS "+COL_ING_NAME+",g.name AS "+

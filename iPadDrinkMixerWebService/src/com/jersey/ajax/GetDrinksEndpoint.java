@@ -2,6 +2,7 @@ package com.jersey.ajax;
 
 import java.util.List;
 
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -17,6 +18,21 @@ import com.jersey.resource.DOService;
 @Path("/drinks")
 public class GetDrinksEndpoint extends SQL {
 
+	@GET
+	@Path("create")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String createNew(@QueryParam("dt") String drinkTitle,
+			@QueryParam("g") int glass,
+			@QueryParam("in") String ingredients,
+			@QueryParam("cat") int category,
+			@QueryParam("uid") String uid,
+			@QueryParam("ings") String instructions){
+
+		DOService dos = new DOService();
+
+		return dos.createDrink(drinkTitle,glass,ingredients,category,instructions,uid);
+	}
+	
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -95,14 +111,14 @@ public class GetDrinksEndpoint extends SQL {
 	@GET
 	@Path("ings{ingId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Ingredient> getAllLiquors(@PathParam("ingId") String id,
+	public List<Ingredient> getAllIngredients(@PathParam("ingId") String id,
 			@QueryParam("startIndex") String startIndex,
 			@QueryParam("isLimited") boolean isLimited) {
 
 		int int_id = Integer.valueOf(id).intValue();
 		DOService dos = new DOService();
 
-		return dos.getAllLiquors(int_id, startIndex,isLimited);
+		return dos.getAllIngredients(int_id, startIndex,isLimited);
 
 	}
 	

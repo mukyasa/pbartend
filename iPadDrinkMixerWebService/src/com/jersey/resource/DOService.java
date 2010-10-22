@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import com.jersey.dao.DbConnectionTest;
 import com.jersey.dao.SQL;
@@ -28,6 +29,70 @@ public class DOService extends SQL {
 	private final int CAT_PUNCH = 6;
 	private final int CAT_SHOOTER = 7;
 	private final String LIMIT = "150";
+	
+	
+	public String createDrink(String drinkTitle,int glass,String ingredients,int category,String instructions,String uid){
+		
+		PreparedStatement pstmt = null;
+		Statement stmt=null;
+		Connection conn = null;
+		ResultSet rs = null;
+		int newId=0;
+
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			String sql = sqlCreateSharedDrink;
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, glass);
+			pstmt.setString(2, drinkTitle);
+			pstmt.setString(3, instructions);
+			pstmt.setInt(4,category);
+			pstmt.setString(5, uid);
+			
+			pstmt.executeUpdate();
+			
+			sql = sqlGetMaxId;
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next())
+			{
+				newId = rs.getInt(COL_CAT_ID);
+			}
+			
+			
+			sql=sqlCreateSharedDrinkIngredients;
+
+			//parse out params from ing string
+			StringTokenizer toke = new StringTokenizer(ingredients,"|");//each ing sep by | then the ingid is after ~
+			
+			int ingId=0;
+			String amount="";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, newId);
+			pstmt.setInt(2, ingId);
+			pstmt.setString(3, amount);
+			
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				stmt.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return "";
+		
+	}
 	
 	
 	public float insertRating(int drink_id, int rating,String ip,String uid,String version,String name){
@@ -321,7 +386,7 @@ public class DOService extends SQL {
 
 	}
 	
-	public List<Ingredient> getAllLiquors(int int_id,String startIndex,boolean isLimited) {
+	public List<Ingredient> getAllIngredients(int int_id,String startIndex,boolean isLimited) {
 
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
