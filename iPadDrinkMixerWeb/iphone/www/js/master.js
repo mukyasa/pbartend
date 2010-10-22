@@ -7,8 +7,8 @@ var css_orientation = "port";
 var list_scroll = false;
 var PAGING_COUNT = 0;
 var PAGING_TYPE; //keep track of the current page count for load more.
-var CAT_TYPE_ID=-1; //keep track of the current category selected for load more.
-var ING_TYPE_ID=-1; //keep track of the current ingredient type for load more.
+var CAT_TYPE_ID = -1; //keep track of the current category selected for load more.
+var ING_TYPE_ID = -1; //keep track of the current ingredient type for load more.
 var LIMIT = 100;
 var BUTTON_CLICKED = false; //set this so when a button is clicked no others can be
 var clientIp = "0.0.0.0";
@@ -70,8 +70,8 @@ function changeOrientation(orientation) {
         $("body").addClass("land").removeClass("port");
         $("#wrapper").show();
     }
-	//hide any popouts
-	$(".popout").hide();
+    //hide any popouts
+    $(".popout").hide();
 }
 
 function refreshMainScroller() {
@@ -100,7 +100,9 @@ $(document).ready(function () {
 								 });
 				  
 				  //create drink 
-				  $("#ing-liquor,#ing-mixer,#ing-garnish").bind(END_EVENT,handleIngPop).bind(START_EVENT,function(){$(this).addClass("ingTouch");});
+				  $("#ing-liquor,#ing-mixer,#ing-garnish").bind(END_EVENT, handleIngPop).bind(START_EVENT, function () {
+																							  $(this).addClass("ingTouch");
+																							  });
 				  
 				  
 				  
@@ -195,48 +197,43 @@ $(document).ready(function () {
 										  //console.log(e.keyCode);
 										  if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode == 0) {
 										  
-											PAGING_COUNT = 0; //first time called
-											PAGING_TYPE = PAGING_TYPE_SEARCH;
+										  PAGING_COUNT = 0; //first time called
+										  PAGING_TYPE = PAGING_TYPE_SEARCH;
 										  
-											$("#list_wrapper").empty();
+										  $("#list_wrapper").empty();
 										  
-											var requestUrl = ROOT_URL + "drinks/search?catid="+CAT_TYPE_ID+"&searchParam=" + $(this).val() + "&startIndex=0";
+										  var requestUrl = ROOT_URL + "drinks/search?catid=" + CAT_TYPE_ID + "&searchParam=" + $(this).val() + "&startIndex=0";
 										  
-											//for ing searches
-											if (TYPE_NAME == TYPE_LIQUOR_NAME)
-												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_LIQUOR + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
-											else if(TYPE_NAME == TYPE_MIXERS_NAME)
-												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_MIXERS + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
-											else if(TYPE_NAME == TYPE_GARNISH_NAME) 
-												requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_GARNISH + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
-				
-			
-											$(this).addClass("search-loader");
-											
-											if(TYPE_NAME == TYPE_LIQUOR_NAME || TYPE_NAME == TYPE_MIXERS_NAME || TYPE_NAME == TYPE_GARNISH_NAME)	
-												filterIngredientsList(requestUrl);
-											else
-												processDrinks(requestUrl, false);
+										  //for ing searches
+										  if (TYPE_NAME == TYPE_LIQUOR_NAME) requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_LIQUOR + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
+										  else if (TYPE_NAME == TYPE_MIXERS_NAME) requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_MIXERS + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
+										  else if (TYPE_NAME == TYPE_GARNISH_NAME) requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_GARNISH + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
+										  
+										  
+										  $(this).addClass("search-loader");
+										  
+										  if (TYPE_NAME == TYPE_LIQUOR_NAME || TYPE_NAME == TYPE_MIXERS_NAME || TYPE_NAME == TYPE_GARNISH_NAME) filterIngredientsList(requestUrl);
+										  else processDrinks(requestUrl, false);
 										  }
 										  
 										  });
 				  
 				  
 				  /**************** list list buttons **************/
-				  $(".list_email").bind(START_EVENT,function(){
+				  $(".list_email").bind(START_EVENT, function () {
 										$(this).addClass("emailbutton-on");
 										
 										}).bind(END_EVENT, function (e) {
-										e.preventDefault(); //prevent copy and mag from showing
+												e.preventDefault(); //prevent copy and mag from showing
 												$(this).removeClass("emailbutton-on");
-										try {
-										//$("#response").text("Email Called");
-										window.plugins.emailComposer.showEmailComposer("subject", "body", "", "", "", true);
-										} catch (e) {
-										alert(e);
-										}
-										
-										});
+												try {
+												//$("#response").text("Email Called");
+												window.plugins.emailComposer.showEmailComposer("subject", "body", "", "", "", true);
+												} catch (e) {
+												alert(e);
+												}
+												
+												});
 				  
 				  $(".list_glass").bind(START_EVENT, function (e) {
 										e.preventDefault(); //prevent copy and mag from showing
@@ -248,27 +245,25 @@ $(document).ready(function () {
 										});
 				  
 				  /***********************************************/
-				  $(".saveIng").bind(START_EVENT,function(e){
+				  $(".saveIng").bind(START_EVENT, function (e) {
 									 $(this).addClass("savebutton-on");
-									 }).bind(END_EVENT,function(){
-													$(this).removeClass("savebutton-on");	
+									 }).bind(END_EVENT, function () {
+											 $(this).removeClass("savebutton-on");
 											 
-											 var wholenum = ($("#ing_list_wrapper-whole").find(".list_item_down").attr("val")=="" ? "" : $("#ing_list_wrapper-whole").find(".list_item_down").attr("val")+" ");
-											 var halfnum = ($("#ing_list_wrapper-half").find(".list_item_down").attr("val") =="" ? "" : $("#ing_list_wrapper-half").find(".list_item_down").attr("val")+ " " );
-											 var unit = ($("#ing_list_wrapper-units").find(".list_item_down").attr("val")=="" ? "":$("#ing_list_wrapper-units").find(".list_item_down").attr("val")); 
-											 var comma ="";
+											 var wholenum = ($("#ing_list_wrapper-whole").find(".list_item_down").attr("val") == "" ? "" : $("#ing_list_wrapper-whole").find(".list_item_down").attr("val") + " ");
+											 var halfnum = ($("#ing_list_wrapper-half").find(".list_item_down").attr("val") == "" ? "" : $("#ing_list_wrapper-half").find(".list_item_down").attr("val") + " ");
+											 var unit = ($("#ing_list_wrapper-units").find(".list_item_down").attr("val") == "" ? "" : $("#ing_list_wrapper-units").find(".list_item_down").attr("val"));
+											 var comma = "";
 											 
-											 if(wholenum != "" || halfnum != "" || unit != "")
-												comma=", ";
+											 if (wholenum != "" || halfnum != "" || unit != "") comma = ", ";
 											 
-											 var ingredient_text = ($("#ing-inner-wrapper-select :selected").val() == "-1" ? "":comma+$("#ing-inner-wrapper-select :selected").text());
-
+											 var ingredient_text = ($("#ing-inner-wrapper-select :selected").val() == "-1" ? "" : comma + $("#ing-inner-wrapper-select :selected").text());
+											 
 											 var ingredient_id = $("#ing-inner-wrapper-select").val();
-
+											 
 											 //add item to ul
-											 if(ingredient_id != "")
-												$("#editchosenIngs .ing-items-wrapper").append("<li val='"+ingredient_id+"' class='edit-ing'>"+wholenum + halfnum + unit + ingredient_text +"</li>");
-									
+											 if (ingredient_id != "") $("#editchosenIngs .ing-items-wrapper").append("<li val='" + ingredient_id + "' class='edit-ing'>" + wholenum + halfnum + unit + ingredient_text + "<div class=\"delete-icon\"></div></li>");
+											 
 											 $("#ing-inner-wrapper").fadeOut();
 											 
 											 //reset values
@@ -277,34 +272,33 @@ $(document).ready(function () {
 											 $("#ing_list_wrapper-units li").removeClass("list_item_down");
 											 
 											 $("#ing_list_wrapper-whole li:first,#ing_list_wrapper-half li:first,#ing_list_wrapper-units li:first").addClass("list_item_down");
-																	
-									});
-				  
-				  $(".cancelIng").bind(START_EVENT,function(e){
-									 $(this).addClass("backbutton-on");
-									 }).bind(END_EVENT,function(){
-											 $(this).removeClass("backbutton-on");				
-											 $("#ing-inner-wrapper").fadeOut();
+											 addEditButtonEvents();
 											 });
+				  
+				  $(".cancelIng").bind(START_EVENT, function (e) {
+									   $(this).addClass("backbutton-on");
+									   }).bind(END_EVENT, function () {
+											   $(this).removeClass("backbutton-on");
+											   $("#ing-inner-wrapper").fadeOut();
+											   });
 				  
 				  
 				  //flip page
-				  $(".frontbutton").bind(START_EVENT,function(e){
-													   
-													   $(this).addClass("editbutton-on");
-													   
-													   });
-				  $(".createbutton").bind(START_EVENT,function(e){
-													   
-													   $(this).addClass("createbutton-on");
-													   
-													   });
+				  $(".frontbutton").bind(START_EVENT, function (e) {
+										 
+										 $(this).addClass("editbutton-on");
+										 
+										 });
+				  $(".createbutton").bind(START_EVENT, function (e) {
+										  
+										  $(this).addClass("createbutton-on");
+										  
+										  });
 				  
 				  $(".frontbutton,.createbutton").bind(END_EVENT, function (e) {
 													   e.preventDefault(); //prevent copy and mag from showing
-															   
-															   $(this).removeClass("createbutton-on");
-															   $(this).removeClass("editbutton-on");
+													   $(this).removeClass("createbutton-on");
+													   $(this).removeClass("editbutton-on");
 													   
 													   //reset ing
 													   $(".stage-2").hide();
@@ -327,28 +321,28 @@ $(document).ready(function () {
 													   
 													   });
 				  
-				  $(".backbutton").bind(START_EVENT,function(){
-											$(this).addClass("savebutton-on");
+				  $(".backbutton").bind(START_EVENT, function () {
+										$(this).addClass("savebutton-on");
 										}).bind(END_EVENT, function (e) {
 												e.preventDefault(); //prevent copy and mag from showing
 												$(this).removeClass("savebutton-on");
-										//flip paper back
-										$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
-										});
+												//flip paper back
+												$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+												});
 				  
-				  $(".cancelbutton").bind(START_EVENT,function(){
+				  $(".cancelbutton").bind(START_EVENT, function () {
 										  $(this).addClass("backbutton-on");
 										  
 										  }).bind(END_EVENT, function (e) {
 												  e.preventDefault(); //prevent copy and mag from showing
 												  $(this).removeClass("backbutton-on");
-										  //flip paper back
-										  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+												  //flip paper back
+												  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 												  
-										//hide other stuff
+												  //hide other stuff
 												  $(".stage-2,.stage-3").hide();
 												  
-										  });
+												  });
 				  
 				  
 				  list_item_events();
@@ -360,19 +354,18 @@ $(document).ready(function () {
 
 function list_item_events() {
 	
-	$(".ing-item").bind(START_EVENT,function(){
+    $(".ing-item").bind(START_EVENT, function () {
 						list_scroll = false;
 						
-						}).bind(END_EVENT,function(){
+						}).bind(END_EVENT, function () {
 								
-						$(this).parent().find(".ing-item").removeClass("list_item_down");
-						
-						if (!list_scroll)
-							$(this).addClass("list_item_down");
-						
-						}).bind(MOVE_EVENT,function(){
-								list_scroll = true;
-								});
+								$(this).parent().find(".ing-item").removeClass("list_item_down");
+								
+								if (!list_scroll) $(this).addClass("list_item_down");
+								
+								}).bind(MOVE_EVENT, function () {
+										list_scroll = true;
+										});
 	
     $(".list_item").bind(START_EVENT, function (e) {
 						 e.preventDefault();
@@ -380,14 +373,14 @@ function list_item_events() {
 						 list_scroll = false;
 						 }).bind(END_EVENT, function (e) {
 								 e.preventDefault();
-								  $(this).parent().find(".list_item").removeClass("list_item_down");
-								 		
+								 $(this).parent().find(".list_item").removeClass("list_item_down");
+								 
 								 if (!list_scroll) //if not scrolling 
 								 {
-									$(this).addClass("list_item_down");
-									$(this).find(".list_fav_selected").addClass("list-item-loading");
-									$(this).find(".list_fav").addClass("list-item-loading");
-									showDetail(this);
+								 $(this).addClass("list_item_down");
+								 $(this).find(".list_fav_selected").addClass("list-item-loading");
+								 $(this).find(".list_fav").addClass("list-item-loading");
+								 showDetail(this);
 								 }
 								 
 								 
@@ -455,7 +448,7 @@ function list_item_events() {
 						
 						if (PAGING_TYPE == PAGING_TYPE_CATEGORY) var requestUrl = ROOT_URL + "drinks/cats" + CAT_TYPE_ID + "?startIndex=" + PAGING_COUNT;
 						else if (PAGING_TYPE == PAGING_TYPE_ALL) var requestUrl = ROOT_URL + "drinks?startIndex=" + PAGING_COUNT;
-						else if (PAGING_TYPE == PAGING_TYPE_ING) var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "?startIndex=" + PAGING_COUNT +"&isLimited=true";
+						else if (PAGING_TYPE == PAGING_TYPE_ING) var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "?startIndex=" + PAGING_COUNT + "&isLimited=true";
 						else if (PAGING_TYPE == PAGING_TYPE_SEARCH) var requestUrl = ROOT_URL + "drinks/search?searchParam=" + $(".search-input").val() + "&startIndex=" + PAGING_COUNT;
 						
 						
@@ -466,45 +459,51 @@ function list_item_events() {
 						});
 }
 
-function handleIngPop(){
+function handleIngPop() {
 	
-	var id = $(this).attr("id");
-	$(this).removeClass("ingTouch");
-	$("#ing-inner-wrapper").fadeIn();
+    var id = $(this).attr("id");
+    $(this).removeClass("ingTouch");
+    $("#ing-inner-wrapper").fadeIn();
 	
-	ingscrollerwhole = new iScroll('ing-scroller-whole',{vScrollbar:false});
-	ingscrollerhalf = new iScroll('ing-scroller-half',{vScrollbar:false});
-	ingscrollerunit = new iScroll('ing-scroller-units',{vScrollbar:false});
+    ingscrollerwhole = new iScroll('ing-scroller-whole', {
+								   vScrollbar: false
+								   });
+    ingscrollerhalf = new iScroll('ing-scroller-half', {
+								  vScrollbar: false
+								  });
+    ingscrollerunit = new iScroll('ing-scroller-units', {
+								  vScrollbar: false
+								  });
 	
-	if(id=="ing-liquor"){
-				
-		//ajax
-		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_LIQUOR + "?startIndex=0&isLimited=false";
-		$("#ing-inner-wrapper-select").empty();
+    if (id == "ing-liquor") {
 		
-		processIngredients(requestUrl);
+        //ajax
+        var requestUrl = ROOT_URL + "drinks/ings" + TYPE_LIQUOR + "?startIndex=0&isLimited=false";
+        $("#ing-inner-wrapper-select").empty();
 		
-	}
-	else if(id=="ing-mixer"){
-
-		//ajax
-		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_MIXERS + "?startIndex=0&isLimited=false";
-		$("#ing-inner-wrapper-select").empty();
+        processIngredients(requestUrl);
 		
-		processIngredients(requestUrl);
+    }
+    else if (id == "ing-mixer") {
 		
-	}
-	else if(id=="ing-garnish"){
-
-		//ajax
-		var requestUrl = ROOT_URL + "drinks/ings" + TYPE_GARNISH + "?startIndex=0&isLimited=false";
-		$("#ing-inner-wrapper-select").empty();
+        //ajax
+        var requestUrl = ROOT_URL + "drinks/ings" + TYPE_MIXERS + "?startIndex=0&isLimited=false";
+        $("#ing-inner-wrapper-select").empty();
 		
-		processIngredients(requestUrl);
-	}
+        processIngredients(requestUrl);
+		
+    }
+    else if (id == "ing-garnish") {
+		
+        //ajax
+        var requestUrl = ROOT_URL + "drinks/ings" + TYPE_GARNISH + "?startIndex=0&isLimited=false";
+        $("#ing-inner-wrapper-select").empty();
+		
+        processIngredients(requestUrl);
+    }
 	
-	$("#ing-inner-wrapper").addClass(id);
-	$("#ing-inner-wrapper").fadeIn();			
+    $("#ing-inner-wrapper").addClass(id);
+    $("#ing-inner-wrapper").fadeIn();
 }
 
 function handlePostButtonTouchStart(e) {
@@ -555,8 +554,8 @@ function handleTouchStart(e) {
 
 function handleTouchEnd(e) {
     e.preventDefault(); //prevent copy and mag from showing
-	//clear text field
-	$(".search-input").val("");
+    //clear text field
+    $(".search-input").val("");
 	
     var obj = e.currentTarget;
     //reset back to default
@@ -589,15 +588,15 @@ function handleTouchEnd(e) {
         $("#ingredients").slideUp(function () {
 								  $("#main_buttons").slideDown();
 								  });
-		TYPE_NAME = "";
-		CAT_TYPE_ID=-1
+        TYPE_NAME = "";
+        CAT_TYPE_ID = -1
     } else if ($(obj).attr("id") == "cat_back") //back from cat
     {
         $("#category").slideUp(function () {
 							   $("#main_buttons").slideDown();
 							   });
-		TYPE_NAME = "";
-		CAT_TYPE_ID=-1
+        TYPE_NAME = "";
+        CAT_TYPE_ID = -1
     } else if ($(obj).attr("id") == "shared") {
         //reset back to default
         IS_SHARED_DRINK = true;
@@ -727,24 +726,25 @@ function showIngList(ingType) {
 }
 
 //provides a filter search based on ingredient type
-function filterIngredientsList(requestUrl){
+
+
+function filterIngredientsList(requestUrl) {
 	
     $("#list_wrapper").empty();
 	
     $.getJSON(requestUrl, function (data) {
 			  
 			  if (data != null) {
-				if (data.ingredient.length != undefined) {
+			  if (data.ingredient.length != undefined) {
 			  
-				  for (i = 0; i < data.ingredient.length; i++)
-					$("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.ingredient[i].id + "\"><span class=\"ingredient\">" + data.ingredient[i].name + "</span></li>");
-				  
-				  
-				  
-					
-				  }else
-				      $("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.ingredient.id + "\"><span class=\"ingredient\">" + data.ingredient.name + "</span></li>");
-				  
+			  for (i = 0; i < data.ingredient.length; i++)
+			  $("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.ingredient[i].id + "\"><span class=\"ingredient\">" + data.ingredient[i].name + "</span></li>");
+			  
+			  
+			  
+			  
+			  } else $("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.ingredient.id + "\"><span class=\"ingredient\">" + data.ingredient.name + "</span></li>");
+			  
 			  
 			  //add events
 			  list_item_events();
@@ -761,7 +761,7 @@ function filterIngredientsList(requestUrl){
 //process the ajax and returns the results
 
 function processDrinks(requestUrl, showDetails) {
-
+	
     if (showDetails) showLoadingMask();
 	
     var favoritesStar;
@@ -770,38 +770,38 @@ function processDrinks(requestUrl, showDetails) {
 			  if (data != null) {
 			  
 			  if (data.drinkDetails.length != undefined) {
-				  //if type array meaning returns more than one
-				  for (i = 0; i < data.drinkDetails.length; i++) {
-					favoritesStar = "list_fav";
-				  
-					for (x = 0; x < favoritesArray.length; x++) {
-				  
-						if (data.drinkDetails[i].id == favoritesArray[x]) {
-						favoritesStar = "list_fav_selected";
-						break;
-						}
-				  
-					}
-				  
-					$("#list_wrapper").append("<li class=\"list_item " + data.drinkDetails[i].glass + "\" id=\"" + data.drinkDetails[i].id + "\"><span class=\"list_glass\">" + data.drinkDetails[i].drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
-				  
-				  }
+			  //if type array meaning returns more than one
+			  for (i = 0; i < data.drinkDetails.length; i++) {
+			  favoritesStar = "list_fav";
+			  
+			  for (x = 0; x < favoritesArray.length; x++) {
+			  
+			  if (data.drinkDetails[i].id == favoritesArray[x]) {
+			  favoritesStar = "list_fav_selected";
+			  break;
+			  }
+			  
+			  }
+			  
+			  $("#list_wrapper").append("<li class=\"list_item " + data.drinkDetails[i].glass + "\" id=\"" + data.drinkDetails[i].id + "\"><span class=\"list_glass\">" + data.drinkDetails[i].drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
+			  
+			  }
 			  }
 			  else //only returned on object
 			  {
 			  
-				favoritesStar = "list_fav";
+			  favoritesStar = "list_fav";
 			  
-				  for (x = 0; x < favoritesArray.length; x++) {
-				  
-					if (data.drinkDetails.id == favoritesArray[x]) {
-						favoritesStar = "list_fav_selected";
-						break;
-					  }
-				  
-				  }
+			  for (x = 0; x < favoritesArray.length; x++) {
 			  
-				$("#list_wrapper").append("<li class=\"list_item " + data.drinkDetails.glass + "\" id=\"" + data.drinkDetails.id + "\"><span class=\"list_glass\">" + data.drinkDetails.drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
+			  if (data.drinkDetails.id == favoritesArray[x]) {
+			  favoritesStar = "list_fav_selected";
+			  break;
+			  }
+			  
+			  }
+			  
+			  $("#list_wrapper").append("<li class=\"list_item " + data.drinkDetails.glass + "\" id=\"" + data.drinkDetails.id + "\"><span class=\"list_glass\">" + data.drinkDetails.drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
 			  }
 			  
 			  
@@ -819,25 +819,24 @@ function processDrinks(requestUrl, showDetails) {
 			  
 			  
 			  }
-			  else 
-				removeLoadingMask();
+			  else removeLoadingMask();
 			  
 			  });
 	
 }
 
 function processIngredients(requestUrl) {
-
+	
     $.getJSON(requestUrl, function (data) {
-
+			  
 			  if (data != null) {
-			  	$("#ing-inner-wrapper-select").append("<option value=\"-1\" class=\"ing-item\">Choose One...</option>");
-				for (i = 0; i < data.ingredient.length; i++)
-					$("#ing-inner-wrapper-select").append("<option value=\"" + data.ingredient[i].id + "\" class=\"ing-item\">" + data.ingredient[i].name + "</option>");
- 
-					//add events
-					list_item_events();
-				}
+			  $("#ing-inner-wrapper-select").append("<option value=\"-1\" class=\"ing-item\">Choose One...</option>");
+			  for (i = 0; i < data.ingredient.length; i++)
+			  $("#ing-inner-wrapper-select").append("<option value=\"" + data.ingredient[i].id + "\" class=\"ing-item\">" + data.ingredient[i].name + "</option>");
+			  
+			  //add events
+			  list_item_events();
+			  }
 			  
 			  });
 	
@@ -881,29 +880,35 @@ function getAQuote() {
 
 function addEditButtonEvents() {
 	
-	$("#glass-popup .glass").unbind().bind(START_EVENT,function(e){
-									   
-										 $(this).parent().addClass("ingTouch");
-									   
-									   }).bind(END_EVENT,function(e){
-  									  
-											   $(this).parent().removeClass("ingTouch");
-										  var glassName = $(this).attr("class");
-										  var glassId = $(this).attr("id");
-										  var glassNameArray = glassName.split(" ");
-										  var glassIdArray = glassId.split("-");
-										
-										  $("#selected-glass-val").val(glassIdArray[1]);
-										    $("#selected-glass").find("div").removeAttr("class");
-											   
-										   $("#selected-glass").find("div").addClass(glassNameArray[1]);
-										    $("#selected-glass").find("div").addClass("glass");	
-										   $("#glass-popup").fadeOut();
+	$(".delete-icon").unbind().bind(START_EVENT,function(e){
+									if(confirm("Did you want to delete this?"))
+										$(this).parent().remove();
+								 
+								 });
+	
+    $("#glass-popup .glass").unbind().bind(START_EVENT, function (e) {
 										   
-										});
+										   $(this).parent().addClass("ingTouch");
+										   
+										   }).bind(END_EVENT, function (e) {
+												   
+												   $(this).parent().removeClass("ingTouch");
+												   var glassName = $(this).attr("class");
+												   var glassId = $(this).attr("id");
+												   var glassNameArray = glassName.split(" ");
+												   var glassIdArray = glassId.split("-");
+												   
+												   $("#selected-glass-val").val(glassIdArray[1]);
+												   $("#selected-glass").find("div").removeAttr("class");
+												   
+												   $("#selected-glass").find("div").addClass(glassNameArray[1]);
+												   $("#selected-glass").find("div").addClass("glass");
+												   $("#glass-popup").fadeOut();
+												   
+												   });
 	
 	
-	$(".edit-cat").unbind().bind(START_EVENT,function(e){
+    $(".edit-cat").unbind().bind(START_EVENT, function (e) {
 								 $(".edit-cat").removeClass("ingTouch");
 								 $(this).addClass("ingTouch");
 								 $("#addNewCat").text($(this).text());
@@ -916,52 +921,48 @@ function addEditButtonEvents() {
 								  }).bind(END_EVENT, function (e) {
 										  e.preventDefault(); //prevent copy and mag from showing
 										  $(this).removeClass("ingTouch");
-										  										  
-										  if($(".stage-1").css("display")=='block')
-										  {
-												$(".stage-1").fadeOut(function () {
+										  
+										  if ($(".stage-1").css("display") == 'block') {
+										  $(".stage-1").fadeOut(function () {
 																$(".stage-2").fadeIn();
 																
 																});
 										  }
-										  else if($(".stage-3").css("display")=='block')
-										  {
-												$(".stage-3").fadeOut(function () {
+										  else if ($(".stage-3").css("display") == 'block') {
+										  $(".stage-3").fadeOut(function () {
 																$(".stage-2").fadeIn();
 																
-																});										
+																});
 										  }
 										  
 										  });
-	$("#addNewCat").unbind().bind(START_EVENT,function(e){
-								$(this).addClass("ingTouch");
-								}).bind(END_EVENT,function(e){
-											$(this).removeClass("ingTouch");
-											
-										if($(".stage-1").css("display")=='block')
-										{
-											$(".stage-1").fadeOut(function () {
-															  $(".stage-3").fadeIn();
-															  
-															  });
-										}
-										else if($(".stage-2").css("display")=='block')
-										{
-											$(".stage-2").fadeOut(function () {
-															  $(".stage-3").fadeIn();
-															  
-															  });										
-										}
-										
-								});
-
+    $("#addNewCat").unbind().bind(START_EVENT, function (e) {
+								  $(this).addClass("ingTouch");
+								  }).bind(END_EVENT, function (e) {
+										  $(this).removeClass("ingTouch");
+										  
+										  if ($(".stage-1").css("display") == 'block') {
+										  $(".stage-1").fadeOut(function () {
+																$(".stage-3").fadeIn();
+																
+																});
+										  }
+										  else if ($(".stage-2").css("display") == 'block') {
+										  $(".stage-2").fadeOut(function () {
+																$(".stage-3").fadeIn();
+																
+																});
+										  }
+										  
+										  });
 	
-	$("#selected-glass").unbind().bind(START_EVENT,function(e){
-								   $(this).addClass("ingTouch");
-								   }).bind(END_EVENT,function(e){
-										   $(this).removeClass("ingTouch");	
-										    $("#glass-popup").fadeIn();
-										   });
+	
+    $("#selected-glass").unbind().bind(START_EVENT, function (e) {
+									   $(this).addClass("ingTouch");
+									   }).bind(END_EVENT, function (e) {
+											   $(this).removeClass("ingTouch");
+											   $("#glass-popup").fadeIn();
+											   });
 	
     $(".ing-back").unbind().bind(START_EVENT, function (e) {
 								 e.preventDefault(); //prevent copy and mag from showing
@@ -970,37 +971,34 @@ function addEditButtonEvents() {
 										 e.preventDefault(); //prevent copy and mag from showing
 										 $(this).removeClass("ingTouch");
 										 
-										 if($(".stage-2").css("display")=='block')
-										 {
+										 if ($(".stage-2").css("display") == 'block') {
 										 
-											$(".stage-2").fadeOut(function () {
+										 $(".stage-2").fadeOut(function () {
 															   $(".stage-1").fadeIn();
 															   
-															   });								
+															   });
 										 }
-										 else
-										 {
-											$(".stage-3").fadeOut(function () {
+										 else {
+										 $(".stage-3").fadeOut(function () {
 															   $(".stage-1").fadeIn();
 															   
 															   });
 										 
-											
-										}
-						});
+										 
+										 }
+										 });
 	
 }
 
 function showDetail(that) {
-
+	
     if (PAGING_TYPE == PAGING_TYPE_ALL || PAGING_TYPE == PAGING_TYPE_CATEGORY || PAGING_TYPE == PAGING_TYPE_SEARCH) {
         //if this is a drink not an ing or cat
         var drinkId = $(that).attr("id");
-		//flip paper to front
-		$("#ing-inner-wrapper").fadeOut(function(){
+        //flip paper to front
+        $("#ing-inner-wrapper").fadeOut(function () {
 										$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
-									});//hide any other popups
-		
+										}); //hide any other popups
 		
 		
         var sharedString = "";
@@ -1012,45 +1010,42 @@ function showDetail(that) {
         //call to get details
         $.getJSON(requestUrl, function (data) {
 				  //data in this case is drinkdetail
-				   
 				  if (data != null) {
-				 
-					  drinkUID = data.uid;
-					  $(".submit_rate").text("Rate");
-					  $(".ratings").removeClass("hidden");
-					  $(".list_email").removeClass("hidden");
 				  
-					  selectedDrinkDetails = data; //set current drinkdetail
-					  $(".drink-title").empty().append(data.drinkName);
-					  $(".edit-drink-title").val(data.drinkName);
-						
-						$(".drink-type").text(data.drinkType);
+				  drinkUID = data.uid;
+				  $(".submit_rate").text("Rate");
+				  $(".ratings").removeClass("hidden");
+				  $(".list_email").removeClass("hidden");
+				  
+				  selectedDrinkDetails = data; //set current drinkdetail
+				  $(".drink-title").empty().append(data.drinkName);
+				  $(".edit-drink-title").val(data.drinkName);
+				  
+				  $(".drink-type").text(data.drinkType);
 				  $(".edit-drink-type").text(data.drinkType);
-						
-					  
-					  $(".drink-desc .scroll-child").empty().append(data.instructions);
-					  $(".edit-drink-desc").val(data.instructions);
-					  
-					  $(".ing-wrapper .scroll-child").empty().append(data.ingredients);
-					  $(".ing-wrapper .scroll-child li").attr("class", "ing");
-					  $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
-					  $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
-					  $(".edit-ing-wrapper .scroll-child li").addClass("ing-choices");				  
-					  
-					  $("#drink_id_input").val(data.id);
 				  
-					  $("#selected-glass").addClass(data.glass);
-					  
-					  setRating(data.rating);
-					  
-					  editchosenIngs.refresh();
-					  chosenIngs.refresh();				  
 				  
-					  //set edit button state only show if this user can edit it
-					  if (data.uid != null && data.uid == deviceUID) 
-							$(".frontbutton").show();
-					  else 
-							$(".frontbutton").hide();
+				  $(".drink-desc .scroll-child").empty().append(data.instructions);
+				  $(".edit-drink-desc").val(data.instructions);
+				  
+				  $(".ing-wrapper .scroll-child").empty().append(data.ingredients);
+				  $(".ing-wrapper .scroll-child li").attr("class", "ing");
+				  $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
+				  $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
+				  $(".edit-ing-wrapper .scroll-child li").addClass("ing-choices");
+				  
+				  $("#drink_id_input").val(data.id);
+				  
+				  $("#selected-glass").addClass(data.glass);
+				  
+				  setRating(data.rating);
+				  
+				  editchosenIngs.refresh();
+				  chosenIngs.refresh();
+				  
+				  //set edit button state only show if this user can edit it
+				  if (data.uid != null && data.uid == deviceUID) $(".frontbutton").show();
+				  else $(".frontbutton").hide();
 				  
 				  }
 				  
@@ -1100,16 +1095,13 @@ function setRating(data) {
     if (data == 1) $("#rate_1").addClass("star_on");
     if (data == 5) $("#rate_5").addClass("star_on");
 	
-	if(data>1)
-		data=data-1;
-	if(data=='NaN')
-		data=0;
-	var result=Math.round(data*10)/10;
+    if (data > 1) data = data - 1;
+    if (data == 'NaN') data = 0;
+    var result = Math.round(data * 10) / 10;
 	
-	$(".rate_number").text(result);
-	$(".rate_number").show();
-	$(".drink-type").show();
-    /***************************************/
+    $(".rate_number").text(result);
+    $(".rate_number").show();
+    $(".drink-type").show(); /***************************************/
 }
 
 //adds loading spinner
