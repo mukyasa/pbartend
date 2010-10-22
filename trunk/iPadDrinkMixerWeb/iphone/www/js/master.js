@@ -262,7 +262,7 @@ $(document).ready(function () {
 											 var ingredient_id = $("#ing-inner-wrapper-select").val();
 											 
 											 //add item to ul
-											 if (ingredient_id != "") $("#editchosenIngs .ing-items-wrapper").append("<li val='" + ingredient_id + "' class='edit-ing'>" + wholenum + halfnum + unit + ingredient_text + "<div class=\"delete-icon\"></div></li>");
+											 if (ingredient_id != "") $("#editchosenIngs .ing-items-wrapper").append("<li val='" + ingredient_id + "' class='edit-ing'><input type='hidden' value='" + wholenum + halfnum + unit + ingredient_text + "' name='ing-item'/>" + wholenum + halfnum + unit + ingredient_text + "<div class=\"delete-icon\"></div></li>");
 											 
 											 $("#ing-inner-wrapper").fadeOut();
 											 
