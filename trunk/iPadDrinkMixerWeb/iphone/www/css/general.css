@@ -428,6 +428,12 @@ body {
 
 
 /** EDIT ***/
+.delete-icon{
+	height:22px;
+	width:22px;
+	margin-top:-5px;
+	float:right;
+}
 .glass-col{
 	float:left;
 	margin:0;

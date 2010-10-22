@@ -57,7 +57,7 @@
 	[window addSubview:viewController.view];
 
 
-    NSURL *appURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"htm" inDirectory:@"www"]];
+    NSURL *appURL  = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Drink-Mixer" ofType:@"htm" inDirectory:@"www"]];
     NSURLRequest *appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
 	[webView loadRequest:appReq];
 
