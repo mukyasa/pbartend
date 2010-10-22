@@ -253,13 +253,13 @@ $(document).ready(function () {
 									 }).bind(END_EVENT,function(){
 													$(this).removeClass("savebutton-on");	
 											 
-											 var wholenum = ($("#ing_list_wrapper-whole").find(".list_item_down").attr("val")=="" ? "" : $("#ing_list_wrapper-whole").find(".list_item_down").attr("val"));
-											 var halfnum = ($("#ing_list_wrapper-half").find(".list_item_down").attr("val") =="" ? "" : $("#ing_list_wrapper-half").find(".list_item_down").attr("val"));
+											 var wholenum = ($("#ing_list_wrapper-whole").find(".list_item_down").attr("val")=="" ? "" : $("#ing_list_wrapper-whole").find(".list_item_down").attr("val")+" ");
+											 var halfnum = ($("#ing_list_wrapper-half").find(".list_item_down").attr("val") =="" ? "" : $("#ing_list_wrapper-half").find(".list_item_down").attr("val")+ " " );
 											 var unit = ($("#ing_list_wrapper-units").find(".list_item_down").attr("val")=="" ? "":$("#ing_list_wrapper-units").find(".list_item_down").attr("val")); 
 											 var comma ="";
 											 
 											 if(wholenum != "" || halfnum != "" || unit != "")
-												comma=" ,";
+												comma=", ";
 											 
 											 var ingredient_text = ($("#ing-inner-wrapper-select :selected").val() == "-1" ? "":comma+$("#ing-inner-wrapper-select :selected").text());
 
@@ -267,7 +267,7 @@ $(document).ready(function () {
 
 											 //add item to ul
 											 if(ingredient_id != "")
-												$("#editchosenIngs .ing-items-wrapper").append("<li val='"+ingredient_id+"' class='edit-ing'>"+wholenum +" "+ halfnum+ " " + unit + ingredient_text +"</li>");
+												$("#editchosenIngs .ing-items-wrapper").append("<li val='"+ingredient_id+"' class='edit-ing'>"+wholenum + halfnum + unit + ingredient_text +"</li>");
 									
 											 $("#ing-inner-wrapper").fadeOut();
 											 
@@ -881,16 +881,23 @@ function getAQuote() {
 
 function addEditButtonEvents() {
 	
-	$("#glass-popup .glass").unbind().bind(END_EVENT,function(e){
+	$("#glass-popup .glass").unbind().bind(START_EVENT,function(e){
+									   
+										 $(this).parent().addClass("ingTouch");
+									   
+									   }).bind(END_EVENT,function(e){
+  									  
+											   $(this).parent().removeClass("ingTouch");
 										  var glassName = $(this).attr("class");
 										  var glassId = $(this).attr("id");
 										  var glassNameArray = glassName.split(" ");
 										  var glassIdArray = glassId.split("-");
 										
 										  $("#selected-glass-val").val(glassIdArray[1]);
-										    $("#selected-glass .edit-glass").find("div").attr("class","");
-										   $("#selected-glass .glass").addClass(glassNameArray[1]);
-										    $("#selected-glass .glass").addClass("glass");	
+										    $("#selected-glass").find("div").removeAttr("class");
+											   
+										   $("#selected-glass").find("div").addClass(glassNameArray[1]);
+										    $("#selected-glass").find("div").addClass("glass");	
 										   $("#glass-popup").fadeOut();
 										   
 										});
