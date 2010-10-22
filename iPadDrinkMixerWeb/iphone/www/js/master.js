@@ -253,14 +253,21 @@ $(document).ready(function () {
 									 }).bind(END_EVENT,function(){
 													$(this).removeClass("savebutton-on");	
 											 
-											 var wholenum = $("#ing_list_wrapper-whole").find(".list_item_down").attr("val");
-											 var halfnum = $("#ing_list_wrapper-half").find(".list_item_down").attr("val");
-											 var unit = $("#ing_list_wrapper-units").find(".list_item_down").attr("val");
-											 var ingredient_text = $("#ing-inner-wrapper-select :selected").text();
+											 var wholenum = ($("#ing_list_wrapper-whole").find(".list_item_down").attr("val")=="" ? "" : $("#ing_list_wrapper-whole").find(".list_item_down").attr("val"));
+											 var halfnum = ($("#ing_list_wrapper-half").find(".list_item_down").attr("val") =="" ? "" : $("#ing_list_wrapper-half").find(".list_item_down").attr("val"));
+											 var unit = ($("#ing_list_wrapper-units").find(".list_item_down").attr("val")=="" ? "":$("#ing_list_wrapper-units").find(".list_item_down").attr("val")); 
+											 var comma ="";
+											 
+											 if(wholenum != "" || halfnum != "" || unit != "")
+												comma=" ,";
+											 
+											 var ingredient_text = ($("#ing-inner-wrapper-select :selected").val() == "-1" ? "":comma+$("#ing-inner-wrapper-select :selected").text());
+
 											 var ingredient_id = $("#ing-inner-wrapper-select").val();
-											// console.log(wholenum +" "+ halfnum +" "+ unit +" "+ingredient_text);
+
 											 //add item to ul
-											 $("#editchosenIngs .ing-items-wrapper").append("<li val='"+ingredient_id+"' class='edit-ing'>"+wholenum +" "+ halfnum+ " " + unit+", "+ingredient_text+"</li>");
+											 if(ingredient_id != "")
+												$("#editchosenIngs .ing-items-wrapper").append("<li val='"+ingredient_id+"' class='edit-ing'>"+wholenum +" "+ halfnum+ " " + unit + ingredient_text +"</li>");
 									
 											 $("#ing-inner-wrapper").fadeOut();
 											 
@@ -268,6 +275,8 @@ $(document).ready(function () {
 											 $("#ing_list_wrapper-whole li").removeClass("list_item_down");
 											 $("#ing_list_wrapper-half li").removeClass("list_item_down");
 											 $("#ing_list_wrapper-units li").removeClass("list_item_down");
+											 
+											 $("#ing_list_wrapper-whole li:first,#ing_list_wrapper-half li:first,#ing_list_wrapper-units li:first").addClass("list_item_down");
 																	
 									});
 				  
