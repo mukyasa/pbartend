@@ -308,12 +308,14 @@ $(document).ready(function () {
 													   $("#paper_wrapper .paper").addClass("flip-back").removeClass("flip-front");
 													   
 													   if ($(this).hasClass("createbutton")) //we are creating a new drink so lets clear out the fields
-													   {
-													   
-													   $(".edit-drink-title").val("");
-													   $(".edit-drink-desc").val("");
-													   $(".edit-ing-wrapper .scroll-child").empty();
-													   
+													   { 
+															$("#selected-glass").find("div").removeAttr("class").attr("class","glass glasstemplate").attr("id","");
+															$(".edit-drink-title").val("");
+															$(".edit-drink-desc").val("");
+															$(".edit-ing-wrapper .scroll-child").empty();
+															$("#addNewCat").text("Category");
+															$("input").val("");
+															$(".edit-add-ingredient li").removeClass("ingTouch");
 													   
 													   }
 													   else setUpEdit();

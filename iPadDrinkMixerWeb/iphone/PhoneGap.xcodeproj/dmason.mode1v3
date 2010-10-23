@@ -305,7 +305,7 @@
 							<real>219</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>4 143 1434 735 0 0 1440 878 </string>
+						<string>4 136 1434 735 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -335,7 +335,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>71E0C46F1272524E00637D43</string>
+										<string>71E0C49E1273AAA800637D43</string>
 										<key>history</key>
 										<array>
 											<string>7184A3A312569518009A3E31</string>
@@ -399,8 +399,9 @@
 											<string>71113CDD127149A10083C549</string>
 											<string>71E0C46212722D7600637D43</string>
 											<string>71E0C46312722D7600637D43</string>
-											<string>71E0C46C1272519300637D43</string>
-											<string>71E0C46D1272519300637D43</string>
+											<string>71E0C47E1273A6FF00637D43</string>
+											<string>71E0C49B1273AA8200637D43</string>
+											<string>71E0C49C1273AA8200637D43</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -414,7 +415,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1171, 689}}</string>
 								<key>RubberWindowFrame</key>
-								<string>4 143 1434 735 0 0 1440 878 </string>
+								<string>4 136 1434 735 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -434,7 +435,7 @@
 								<key>Frame</key>
 								<string>{{0, 694}, {1171, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>4 143 1434 735 0 0 1440 878 </string>
+								<string>4 136 1434 735 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -598,13 +599,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>71E0C4791273A4A800637D43</string>
+		<string>71E0C47B1273A4A800637D43</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>71AD1EF61256499800FB1054</string>
 		<string>/Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/PhoneGap.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>4 143 1434 735 0 0 1440 878 </string>
+	<string>4 136 1434 735 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
