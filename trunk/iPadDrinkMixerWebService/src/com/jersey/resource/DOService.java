@@ -221,8 +221,12 @@ public class DOService extends SQL {
 		String[] idlist = ids.split(",");
 
 		try {
-			conn = DbConnectionTest.getConnection();
+			
 
+			if(!"".equals(ids))
+			{
+			conn = DbConnectionTest.getConnection();
+			
 			String isSQL = "";
 			// build sql
 			for (int i = 0; i < idlist.length; i++) {
@@ -237,6 +241,7 @@ public class DOService extends SQL {
 					+ startIndex + ","+LIMIT;
 
 			stmt = conn.createStatement();
+			
 			rs = stmt.executeQuery(sql);
 
 			result = loopDrinks(rs, result);
@@ -249,6 +254,7 @@ public class DOService extends SQL {
 			rs = stmt.executeQuery(sql);
 
 			result = loopDrinks(rs, result);
+			}
 	
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -659,6 +665,19 @@ public class DOService extends SQL {
 		}
 		
 		return totalRating;
+	}
+	
+	private void closeStuff(Connection conn, ResultSet rs,Statement stmt,PreparedStatement pstmt) throws Exception{
+		
+		if(pstmt != null && !pstmt.isClosed())
+			pstmt.close();
+		if(conn!=null && !conn.isClosed())
+			conn.close();
+		if(rs != null && !rs.isClosed())
+			rs.close();
+		if(stmt !=null && !stmt.isClosed())
+			stmt.close();
+		
 	}
 	
 	/**
