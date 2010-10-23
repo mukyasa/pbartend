@@ -91,9 +91,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				stmt.close();
-				pstmt.close();
+				closeStuff(conn, rs, stmt, pstmt);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -133,8 +131,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				stmt.close();
+				closeStuff(conn, rs, stmt, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -198,9 +195,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				rs.close();
-				stmt.close();
+				closeStuff(conn, rs, stmt, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -260,9 +255,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				rs.close();
-				stmt.close();
+				closeStuff(conn, rs, stmt, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -294,9 +287,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				rs.close();
-				stmt.close();
+				closeStuff(conn, rs, stmt, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -328,9 +319,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				rs.close();
-				stmt.close();
+				closeStuff(conn, rs, stmt, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -389,9 +378,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				rs.close();
-				stmt.close();
+				closeStuff(conn, rs, stmt, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -452,9 +439,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				rs.close();
-				stmt.close();
+				closeStuff(conn, rs, stmt, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -512,9 +497,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				rs.close();
-				stmt.close();
+				closeStuff(conn, rs, stmt, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -548,9 +531,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				rs.close();
-				stmt.close();
+				closeStuff(conn, rs, stmt, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -622,9 +603,7 @@ public class DOService extends SQL {
 			e.printStackTrace();
 		} finally {
 			try {
-				conn.close();
-				rs.close();
-				stmt.close();
+				closeStuff(conn, rs, stmt, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -667,7 +646,7 @@ public class DOService extends SQL {
 		return totalRating;
 	}
 	
-	private void closeStuff(Connection conn, ResultSet rs,Statement stmt,PreparedStatement pstmt) throws Exception{
+	private void closeStuff(Connection conn, ResultSet rs,Statement stmt,PreparedStatement pstmt) throws SQLException{
 		
 		if(pstmt != null && !pstmt.isClosed())
 			pstmt.close();
