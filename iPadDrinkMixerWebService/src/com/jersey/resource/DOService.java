@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.regex.Pattern;
 
 import com.jersey.dao.DbConnectionTest;
 import com.jersey.dao.SQL;
@@ -31,7 +32,7 @@ public class DOService extends SQL {
 	private final String LIMIT = "150";
 	
 	
-	public String createDrink(String drinkTitle,int glass,String ingredients,int category,String instructions,String uid){
+	public String createDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,String uid){
 		
 		PreparedStatement pstmt = null;
 		Statement stmt=null;
@@ -59,7 +60,7 @@ public class DOService extends SQL {
 			
 			while(rs.next())
 			{
-				newId = rs.getInt(COL_CAT_ID);
+				newId = rs.getInt(COL_ROW_ID);
 			}
 			
 			
@@ -67,16 +68,24 @@ public class DOService extends SQL {
 
 			//parse out params from ing string
 			StringTokenizer toke = new StringTokenizer(ingredients,"|");//each ing sep by | then the ingid is after ~
+			while(toke.hasMoreElements())
+			{
+				int ingId=0;
+				String amount="";
+				
+				String tmpIng = toke.nextToken();
+				String[] ings = tmpIng.split("~");
+				amount = ings[0];
+				ingId = Integer.valueOf(ings[1]).intValue();
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, newId);
+				pstmt.setInt(2, ingId);
+				pstmt.setString(3, amount);
+				
+				pstmt.executeUpdate();
+			}
 			
-			int ingId=0;
-			String amount="";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, newId);
-			pstmt.setInt(2, ingId);
-			pstmt.setString(3, amount);
-			
-			pstmt.executeUpdate();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
