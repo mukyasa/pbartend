@@ -26,7 +26,6 @@
 
 </head>
 <body>
-<form name="drinkForm" action="">
 <div id="postcards" class="x-masked">
 <!--div id="reload_page"></div-->
 <!-- BUTTONS -->
@@ -193,8 +192,8 @@
 	<!-- BACK SIDE PAGE -->
 		<div class="face back">
 			<div class="page_content_wrapper edit-page_content_wrapper">
-			<input type="text" placeholder="Drink Title" class="edit-drink-title" value="">
-			<div class="edit-glass" id="selected-glass"><div class="glass glasstemplate"></div></div>
+			<input type="text" placeholder="Drink Title" class="edit-drink-title" name="drinkTitle" value="">
+			<div class="edit-glass" id="selected-glass"><div id="" class="glass glasstemplate"></div></div>
 			<div class="add-new-button-block">
 				<div id="addNewIng" class="edit-ing add-new-ing">Ingredients</div>
 				<div id="addNewCat" class="edit-ing add-new-ing">Category</div>
@@ -237,7 +236,7 @@
 				
 			</div>
 			</div>
-			<textarea class="edit-drink-desc"></textarea><!--//ajax driven -->
+			<textarea class="edit-drink-desc" id="edit-drink-desc"></textarea><!--//ajax driven -->
 			<div class="paper-button-block edit-paper-button-block">
 				<div class="backbutton flipbutton"></div>
 				<div class="cancelbutton flipbutton"></div>
@@ -359,6 +358,6 @@
    <img src="images/list_fav.png" width="1" height="1"/>
    <img src="images/list_fav_selected.png" width="1" height="1"/>
 </div>
-</form>
+
 </body>
 </html>
