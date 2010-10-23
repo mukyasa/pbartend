@@ -44,7 +44,7 @@ public class DOService extends SQL {
 			conn = DbConnectionTest.getConnection();
 
 			String sql = sqlCreateSharedDrink;
-			
+			//insert into tblShared
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, glass);
 			pstmt.setString(2, drinkTitle);
@@ -58,6 +58,7 @@ public class DOService extends SQL {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			
+			//get the id of the drink you just adde
 			while(rs.next())
 			{
 				newId = rs.getInt(COL_ROW_ID);
@@ -65,7 +66,7 @@ public class DOService extends SQL {
 			
 			
 			sql=sqlCreateSharedDrinkIngredients;
-
+			//insert into tblSharedDrink_Ingredients
 			//parse out params from ing string
 			StringTokenizer toke = new StringTokenizer(ingredients,"|");//each ing sep by | then the ingid is after ~
 			while(toke.hasMoreElements())
