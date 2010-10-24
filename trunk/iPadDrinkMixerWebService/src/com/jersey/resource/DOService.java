@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
-import java.util.regex.Pattern;
 
 import com.jersey.dao.DbConnectionTest;
 import com.jersey.dao.SQL;
@@ -31,7 +30,67 @@ public class DOService extends SQL {
 	private final int CAT_SHOOTER = 7;
 	private final String LIMIT = "150";
 	
-	
+	public String updateDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,String uid,int drink_id_input){
+		
+		PreparedStatement pstmt = null;
+		Statement stmt=null;
+		Connection conn = null;
+		ResultSet rs = null;
+		int newId=0;
+
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			String sql = sqlUpdateSharedDrink;
+			//insert into tblShared
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, glass);
+			pstmt.setString(2, drinkTitle);
+			pstmt.setString(3, instructions);
+			pstmt.setInt(4,category);
+			pstmt.setString(5, uid);
+			
+			pstmt.executeUpdate();
+			
+			
+			sql=sqlUpdateSharedDrinkIngredients;
+			//insert into tblSharedDrink_Ingredients
+			//parse out params from ing string
+			StringTokenizer toke = new StringTokenizer(ingredients,"|");//each ing sep by | then the ingid is after ~
+			while(toke.hasMoreElements())
+			{
+				int ingId=0;
+				String amount="";
+				
+				String tmpIng = toke.nextToken();
+				String[] ings = tmpIng.split("~");
+				amount = ings[0];
+				ingId = Integer.valueOf(ings[1]).intValue();
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, newId);
+				pstmt.setInt(2, ingId);
+				pstmt.setString(3, amount);
+				
+				pstmt.executeUpdate();
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				closeStuff(conn, rs, stmt, pstmt);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return "";
+		
+	}
+
+
 	public String createDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,String uid){
 		
 		PreparedStatement pstmt = null;
@@ -580,7 +639,7 @@ public class DOService extends SQL {
 					drink.setGlass(drink_css);
 
 					ingredients.append("<li>-" + rs.getString(COL_AMOUNT) + " "
-							+ rs.getString(COL_ING_NAME) + "</li>");
+							+ rs.getString(COL_ING_NAME) + "<input  type=\"hidden\" value=\"" + rs.getString(COL_AMOUNT)+ "~"+ rs.getString(COL_SHARED_INGREDIENT_ID)+ "\" name=\"ing-item\"/></li>");
 					drink.addIng(rs.getString(COL_AMOUNT) + ", "
 							+ rs.getString(COL_ING_NAME));
 					drink.setId(rs.getInt(COL_ROW_ID));
@@ -590,6 +649,7 @@ public class DOService extends SQL {
 					drink.setInstructions(rs.getString(COL_INSTUCTIONS));
 					drink.setUid(rs.getString(COL_UID));
 					drink.setRating(totalRating);
+					drink.setEditAmount(rs.getString(COL_AMOUNT));
 
 					drink.setGlassId(rs.getInt(COL_GLASS_ID));
 					drink.setCatId(rs.getInt(COL_CAT_ID));

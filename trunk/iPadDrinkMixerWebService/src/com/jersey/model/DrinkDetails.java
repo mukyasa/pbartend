@@ -17,6 +17,7 @@ public class DrinkDetails {
 	private int id;
 	private int favorites;
 	private float rating;
+	private String editAmount;
 	private String uid;
 	private ArrayList<String> drinkNames = new ArrayList<String>();
 	private ArrayList<String> ings = new ArrayList<String>();
@@ -24,6 +25,14 @@ public class DrinkDetails {
 
 	
 	
+	public String getEditAmount() {
+		return editAmount;
+	}
+
+	public void setEditAmount(String editAmount) {
+		this.editAmount = editAmount;
+	}
+
 	public String getUid() {
 		return uid;
 	}
