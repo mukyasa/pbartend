@@ -38,7 +38,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 71AD1ED61256496600FB1054 /* PhoneGap */;
-		activeSDKPreference = iphonesimulator4.2;
+		activeSDKPreference = iphoneos4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PhoneGap */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PhoneGap */,
@@ -292,6 +292,10 @@
 			71E0C49C1273AA8200637D43 /* PBXTextBookmark */ = 71E0C49C1273AA8200637D43 /* PBXTextBookmark */;
 			71E0C49D1273AA8200637D43 /* PBXTextBookmark */ = 71E0C49D1273AA8200637D43 /* PBXTextBookmark */;
 			71E0C49E1273AAA800637D43 /* PBXTextBookmark */ = 71E0C49E1273AAA800637D43 /* PBXTextBookmark */;
+			71E0C4A51273AC2F00637D43 /* PBXTextBookmark */ = 71E0C4A51273AC2F00637D43 /* PBXTextBookmark */;
+			71E0C4A61273AC2F00637D43 /* PBXTextBookmark */ = 71E0C4A61273AC2F00637D43 /* PBXTextBookmark */;
+			71E0C4A71273AC2F00637D43 /* PBXTextBookmark */ = 71E0C4A71273AC2F00637D43 /* PBXTextBookmark */;
+			71E0C4A81273AD1E00637D43 /* PBXTextBookmark */ = 71E0C4A81273AD1E00637D43 /* PBXTextBookmark */;
 			71ED5D20125ED77100440E6F = 71ED5D20125ED77100440E6F /* PBXTextBookmark */;
 		};
 		sourceControlManager = 71AD1F011256499800FB1054 /* Source Control */;
@@ -746,7 +750,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 196";
 		rLen = 10;
-		rLoc = 7516;
+		rLoc = 7573;
 		rType = 0;
 		vrLen = 1614;
 		vrLoc = 6658;
@@ -780,7 +784,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {2385, 14781}}";
 			sepNavSelRange = "{12051, 0}";
-			sepNavVisRange = "{10934, 1967}";
+			sepNavVisRange = "{10963, 2031}";
 		};
 	};
 	71A9A51A12598C2600AD49B2 /* dmason.pbxuser */ = {
@@ -1148,9 +1152,9 @@
 		path = "/Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/Drink-Mixer.htm";
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1110, 4927}}";
-			sepNavSelRange = "{8732, 19}";
-			sepNavVisRange = "{7824, 1879}";
+			sepNavIntBoundsRect = "{{0, 0}, {1209, 4901}}";
+			sepNavSelRange = "{6461, 0}";
+			sepNavVisRange = "{4792, 1958}";
 		};
 	};
 	71CF777B1258F6AF006989A1 /* Device.h */ = {
@@ -1329,7 +1333,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 196";
 		rLen = 14;
-		rLoc = 7569;
+		rLoc = 7626;
 		rType = 0;
 		vrLen = 1809;
 		vrLoc = 6774;
@@ -1369,7 +1373,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 239";
 		rLen = 15;
-		rLoc = 9322;
+		rLoc = 9379;
 		rType = 0;
 		vrLen = 1771;
 		vrLoc = 7814;
@@ -1379,7 +1383,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 239";
 		rLen = 15;
-		rLoc = 9322;
+		rLoc = 9379;
 		rType = 0;
 		vrLen = 1801;
 		vrLoc = 7066;
@@ -1389,7 +1393,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 239";
 		rLen = 15;
-		rLoc = 9322;
+		rLoc = 9379;
 		rType = 0;
 		vrLen = 1801;
 		vrLoc = 7066;
@@ -1419,7 +1423,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 226";
 		rLen = 8;
-		rLoc = 8830;
+		rLoc = 8887;
 		rType = 0;
 		vrLen = 1821;
 		vrLoc = 7861;
@@ -1449,7 +1453,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 207";
 		rLen = 14;
-		rLoc = 8047;
+		rLoc = 8104;
 		rType = 0;
 		vrLen = 2016;
 		vrLoc = 7276;
@@ -1529,7 +1533,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 239";
 		rLen = 0;
-		rLoc = 9341;
+		rLoc = 9398;
 		rType = 0;
 		vrLen = 1818;
 		vrLoc = 8305;
@@ -1619,7 +1623,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 239";
 		rLen = 0;
-		rLoc = 9341;
+		rLoc = 9398;
 		rType = 0;
 		vrLen = 1777;
 		vrLoc = 9752;
@@ -1685,7 +1689,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 196";
 		rLen = 14;
-		rLoc = 7569;
+		rLoc = 7626;
 		rType = 0;
 		vrLen = 1833;
 		vrLoc = 6808;
@@ -1715,7 +1719,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 196";
 		rLen = 13;
-		rLoc = 7609;
+		rLoc = 7666;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 6808;
@@ -1745,7 +1749,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 196";
 		rLen = 14;
-		rLoc = 7569;
+		rLoc = 7626;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 6808;
@@ -1795,7 +1799,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 196";
 		rLen = 14;
-		rLoc = 7569;
+		rLoc = 7626;
 		rType = 0;
 		vrLen = 1809;
 		vrLoc = 6774;
@@ -1825,7 +1829,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 199";
 		rLen = 9;
-		rLoc = 7759;
+		rLoc = 7816;
 		rType = 0;
 		vrLen = 1809;
 		vrLoc = 6774;
@@ -1855,7 +1859,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 199";
 		rLen = 9;
-		rLoc = 7759;
+		rLoc = 7816;
 		rType = 0;
 		vrLen = 1836;
 		vrLoc = 6759;
@@ -1885,7 +1889,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 199";
 		rLen = 9;
-		rLoc = 7759;
+		rLoc = 7816;
 		rType = 0;
 		vrLen = 1836;
 		vrLoc = 6759;
@@ -1915,7 +1919,7 @@
 		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
 		name = "Drink-Mixer.htm: 224";
 		rLen = 19;
-		rLoc = 8732;
+		rLoc = 8789;
 		rType = 0;
 		vrLen = 1879;
 		vrLoc = 7824;
@@ -1949,6 +1953,46 @@
 		rType = 0;
 		vrLen = 1967;
 		vrLoc = 10934;
+	};
+	71E0C4A51273AC2F00637D43 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71A058A21271FB3E00C4E991 /* master.js */;
+		name = "master.js: 318";
+		rLen = 0;
+		rLoc = 12051;
+		rType = 0;
+		vrLen = 2031;
+		vrLoc = 10963;
+	};
+	71E0C4A61273AC2F00637D43 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
+		name = "Drink-Mixer.htm: 224";
+		rLen = 19;
+		rLoc = 8789;
+		rType = 0;
+		vrLen = 1879;
+		vrLoc = 7824;
+	};
+	71E0C4A71273AC2F00637D43 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
+		name = "Drink-Mixer.htm: 162";
+		rLen = 0;
+		rLoc = 6567;
+		rType = 0;
+		vrLen = 1950;
+		vrLoc = 4792;
+	};
+	71E0C4A81273AD1E00637D43 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
+		name = "Drink-Mixer.htm: 161";
+		rLen = 0;
+		rLoc = 6461;
+		rType = 0;
+		vrLen = 1958;
+		vrLoc = 4792;
 	};
 	71ED5D20125ED77100440E6F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
