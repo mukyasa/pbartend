@@ -289,6 +289,11 @@ $(document).ready(function () {
 										 $(this).addClass("editbutton-on");
 										 
 										 });
+				  $(".updatebutton").bind(START_EVENT, function (e) {
+										 
+										 $(this).addClass("updatebutton-on");
+										 
+										 });
 				  $(".createbutton").bind(START_EVENT, function (e) {
 										  
 										  $(this).addClass("createbutton-on");
@@ -296,6 +301,9 @@ $(document).ready(function () {
 										  });
 				  
 				  $(".frontbutton,.createbutton").bind(END_EVENT, function (e) {
+													   $(".updatebutton").show();
+													   $(".backbutton").show();
+													   
 													   e.preventDefault(); //prevent copy and mag from showing
 													   $(this).removeClass("createbutton-on");
 													   $(this).removeClass("editbutton-on");
@@ -309,6 +317,7 @@ $(document).ready(function () {
 													   
 													   if ($(this).hasClass("createbutton")) //we are creating a new drink so lets clear out the fields
 													   { 
+															$(".updatebutton").hide();//hide the update button
 															$("#selected-glass").find("div").removeAttr("class").attr("class","glass glasstemplate").attr("id","");
 															$(".edit-drink-title").val("");
 															$(".edit-drink-desc").val("");
@@ -357,6 +366,40 @@ $(document).ready(function () {
 												//flip paper back
 												$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 												});
+				  $(".updatebutton").bind(START_EVENT, function () {
+										  $(this).addClass("savebutton-on");
+										  }).bind(END_EVENT, function (e) {
+												  e.preventDefault(); //prevent copy and mag from showing
+												  
+												  var ings ="";
+												  
+												  for(i=0;i<$("#editchosenIngs input").length;i++)
+												  {
+												  //get ing id from out div val
+												  var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
+												  
+												  ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
+												  }
+												  
+												  
+												  var queryString ="?dt="+$(".edit-drink-title").val()
+												  +"&g="+$("#selected-glass").find("div").attr("id")
+												  +"&in="+$("#edit-drink-desc").val()
+												  +"&cat="+$("#selected_id").val()
+												  +"&ings="+ings
+												  +"&uid="+deviceUID;
+												  
+												  console.log(ROOT_URL + "drinks/update"+queryString);
+												  $.getJSON(ROOT_URL + "drinks/update"+queryString, function(data) {
+															//$('.result').html(data);
+															});
+												  
+												  
+												  
+												  $(this).removeClass("savebutton-on");
+												  //flip paper back
+												  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+												  });
 				  
 				  $(".cancelbutton").bind(START_EVENT, function () {
 										  $(this).addClass("backbutton-on");
@@ -1188,5 +1231,12 @@ function setUpEdit() {
     $(".edit-drink-desc").val(data.instructions);
     $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
     $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
+	//set drink id
+	$("#selected-glass").find("div").removeAttr("class").attr("class","glass "+ data.glass).attr("id",data.glassId);
+	$("#selected_id").val(data.catId);
+
+	//change the button 
+	$(".updatebutton").show();
+	$(".backbutton").hide();
 	
 }
