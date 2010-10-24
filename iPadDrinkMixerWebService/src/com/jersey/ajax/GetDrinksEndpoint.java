@@ -2,7 +2,6 @@ package com.jersey.ajax;
 
 import java.util.List;
 
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -18,6 +17,24 @@ import com.jersey.resource.DOService;
 @Path("/drinks")
 public class GetDrinksEndpoint extends SQL {
 
+	
+	@GET
+	@Path("update")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String updateDrink(@QueryParam("dt") String drinkTitle,
+			@QueryParam("g") int glass,
+			@QueryParam("in") String instructions,
+			@QueryParam("cat") int category,
+			@QueryParam("uid") String uid,
+			@QueryParam("ings") String ingredients,
+			@QueryParam("did") int drink_id_input){
+
+		DOService dos = new DOService();
+
+		return dos.updateDrink(drinkTitle,glass,ingredients,category,instructions,uid, drink_id_input);
+	}
+	
+	
 	@GET
 	@Path("create")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -30,7 +47,7 @@ public class GetDrinksEndpoint extends SQL {
 
 		DOService dos = new DOService();
 
-		return dos.createDrink(drinkTitle,glass,ingredients,category,instructions,uid);
+		return dos.createDrink(drinkTitle,glass,instructions,category,ingredients,uid);
 	}
 	
 

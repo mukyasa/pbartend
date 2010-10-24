@@ -30,6 +30,7 @@ public class SQL{
 	public static final String COL_FRACTION = "fraction";
 	public static final String COL_CABINET ="cabinet";
 	public static final String COL_INGREDIENT_ID ="ingredient_id";
+	public static final String COL_SHARED_INGREDIENT_ID ="shared_ingredient_id";
 	public static final String COL_AMOUNT="amount";
 	public static final String COL_RATING="rating";
 	public static final String COL_UID="uid";
@@ -52,7 +53,7 @@ public class SQL{
 	/****** SHARED *******/
 	public static final String sqlSetRating = "INSERT INTO tblRating (drink_id, rating,ip_address,uid,version,name) VALUES (?,?,?,?,?,?)";
 	public static final String sqlGetAllSharedDrinksAndGlass ="SELECT g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
-	public static final String sqlGetSharedDrinkDetailById ="SELECT d.uid, d._id, d.name,d.instructions,dc.name  AS "+
+	public static final String sqlGetSharedDrinkDetailById ="SELECT di."+COL_INGREDIENT_ID+" AS "+COL_SHARED_INGREDIENT_ID+", d.uid, d._id, d.name,d.instructions,dc.name  AS "+
 	COL_CAT_NAME+",di.amount,i.name AS "+COL_ING_NAME+",g.name AS "+
 	COL_GLASS_NAME+" ,g._id AS "+COL_GLASS_ID+",dc._id AS "+COL_CAT_ID+" " +
 	"FROM "+TABLE_SHARED_DRINK+" d " +
@@ -66,7 +67,8 @@ public class SQL{
 	
 	public static final String sqlCreateSharedDrink ="INSERT INTO tblShared (glass_id, name,instructions,category_id,uid) VALUES (?,?,?,?,?)";
 	public static final String sqlCreateSharedDrinkIngredients ="INSERT INTO tblShared_ingredients(drink_id,ingredient_id,amount) VALUES (?,?,?)";
-	
+	public static final String sqlUpdateSharedDrink ="";
+	public static final String sqlUpdateSharedDrinkIngredients ="";
 	/*********************/
 	
 	public static final String sqlGetAllDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
