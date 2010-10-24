@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -277,8 +279,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
-									<integer>9</integer>
+									<integer>6</integer>
+									<integer>3</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -316,14 +318,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>master.js</string>
+								<string>landscape.css</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>master.js</string>
+										<string>landscape.css</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>71E0C4CC1273C7D100637D43</string>
+										<string>71E0C4FC1273D93100637D43</string>
 										<key>history</key>
 										<array>
 											<string>7184A3A312569518009A3E31</string>
@@ -391,17 +391,17 @@
 											<string>71601249126D542F004952D1</string>
 											<string>7151356E126D5B520095967A</string>
 											<string>7175468C126EAB9B001D484B</string>
-											<string>712CA2C21270F6FE003326FA</string>
 											<string>712CA34912711E30003326FA</string>
 											<string>712CA34A12711E30003326FA</string>
 											<string>712CA34B12711E30003326FA</string>
 											<string>712CA34C12711E30003326FA</string>
 											<string>71113CDD127149A10083C549</string>
-											<string>71E0C46212722D7600637D43</string>
-											<string>71E0C46312722D7600637D43</string>
 											<string>71E0C47E1273A6FF00637D43</string>
-											<string>71E0C4B11273BA7D00637D43</string>
-											<string>71E0C4B21273BA7D00637D43</string>
+											<string>71E0C4F71273D93100637D43</string>
+											<string>71E0C4F81273D93100637D43</string>
+											<string>71E0C4F91273D93100637D43</string>
+											<string>71E0C4FA1273D93100637D43</string>
+											<string>71E0C4FB1273D93100637D43</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
