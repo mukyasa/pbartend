@@ -186,6 +186,20 @@
 			7177B1D3125990AA005E0546 = 7177B1D3125990AA005E0546 /* PBXBookmark */;
 			7177B1DA125A2C38005E0546 = 7177B1DA125A2C38005E0546 /* PBXBookmark */;
 			7184A3A312569518009A3E31 = 7184A3A312569518009A3E31 /* PBXTextBookmark */;
+			7194461C1273E514002A832C /* PBXBookmark */ = 7194461C1273E514002A832C /* PBXBookmark */;
+			7194461E1273E514002A832C /* PBXTextBookmark */ = 7194461E1273E514002A832C /* PBXTextBookmark */;
+			7194461F1273E514002A832C /* PBXTextBookmark */ = 7194461F1273E514002A832C /* PBXTextBookmark */;
+			719446201273E514002A832C /* PBXTextBookmark */ = 719446201273E514002A832C /* PBXTextBookmark */;
+			719446211273E514002A832C /* PBXTextBookmark */ = 719446211273E514002A832C /* PBXTextBookmark */;
+			719446221273E514002A832C /* PBXTextBookmark */ = 719446221273E514002A832C /* PBXTextBookmark */;
+			719446231273E514002A832C /* PBXTextBookmark */ = 719446231273E514002A832C /* PBXTextBookmark */;
+			719446331273E6B4002A832C /* PBXTextBookmark */ = 719446331273E6B4002A832C /* PBXTextBookmark */;
+			719446341273E6B4002A832C /* PBXTextBookmark */ = 719446341273E6B4002A832C /* PBXTextBookmark */;
+			719446351273E6B4002A832C /* PBXTextBookmark */ = 719446351273E6B4002A832C /* PBXTextBookmark */;
+			719446391273E89A002A832C /* PBXTextBookmark */ = 719446391273E89A002A832C /* PBXTextBookmark */;
+			7194463D1273E9AB002A832C /* PBXTextBookmark */ = 7194463D1273E9AB002A832C /* PBXTextBookmark */;
+			719446411273EC1F002A832C /* PBXTextBookmark */ = 719446411273EC1F002A832C /* PBXTextBookmark */;
+			719446491273EE43002A832C /* PBXTextBookmark */ = 719446491273EE43002A832C /* PBXTextBookmark */;
 			71A9A693125AD68500E76AD7 = 71A9A693125AD68500E76AD7 /* PBXBookmark */;
 			71AA87A81266D20200AB6FDF = 71AA87A81266D20200AB6FDF /* PBXBookmark */;
 			71ACF0A2125A88A700E46C9B = 71ACF0A2125A88A700E46C9B /* PBXTextBookmark */;
@@ -402,6 +416,11 @@
 		name = master.js;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/js/master.js;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1237, 15769}}";
+			sepNavSelRange = "{14890, 0}";
+			sepNavVisRange = "{13648, 1812}";
+		};
 	};
 	712CA34912711E30003326FA /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -639,6 +658,146 @@
 		name = UIApplication.h;
 		path = /Developer/Applications/3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIApplication.h;
 		sourceTree = "<absolute>";
+	};
+	7194461C1273E514002A832C /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7194461D1273E514002A832C /* update_button.png */;
+	};
+	7194461D1273E514002A832C /* update_button.png */ = {
+		isa = PBXFileReference;
+		name = update_button.png;
+		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/images/update_button.png;
+		sourceTree = "<absolute>";
+	};
+	7194461E1273E514002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71C7DF8B1268157500433D83 /* portrait.css */;
+		name = "portrait.css: 126";
+		rLen = 12;
+		rLoc = 2122;
+		rType = 0;
+		vrLen = 945;
+		vrLoc = 1696;
+	};
+	7194461F1273E514002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71C7AF4D126E98D10001E4E6 /* general.css */;
+		name = "general.css: 54";
+		rLen = 10;
+		rLoc = 1208;
+		rType = 0;
+		vrLen = 1336;
+		vrLoc = 578;
+	};
+	719446201273E514002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71E0C4FD1273D93100637D43 /* landscape.css */;
+		name = "landscape.css: 87";
+		rLen = 12;
+		rLoc = 1565;
+		rType = 0;
+		vrLen = 935;
+		vrLoc = 1300;
+	};
+	719446211273E514002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
+		name = "Drink-Mixer.htm: 242";
+		rLen = 10;
+		rLoc = 9529;
+		rType = 0;
+		vrLen = 1748;
+		vrLoc = 8667;
+	};
+	719446221273E514002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 1234";
+		rLen = 0;
+		rLoc = 40482;
+		rType = 0;
+		vrLen = 1692;
+		vrLoc = 35341;
+	};
+	719446231273E514002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 1234";
+		rLen = 0;
+		rLoc = 40482;
+		rType = 0;
+		vrLen = 1353;
+		vrLoc = 39661;
+	};
+	719446331273E6B4002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */;
+		name = "Drink-Mixer.htm: 265";
+		rLen = 14;
+		rLoc = 10268;
+		rType = 0;
+		vrLen = 1646;
+		vrLoc = 9342;
+	};
+	719446341273E6B4002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 447";
+		rLen = 14;
+		rLoc = 16389;
+		rType = 0;
+		vrLen = 1354;
+		vrLoc = 39660;
+	};
+	719446351273E6B4002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 1239";
+		rLen = 0;
+		rLoc = 40652;
+		rType = 0;
+		vrLen = 1358;
+		vrLoc = 39692;
+	};
+	719446391273E89A002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 1106";
+		rLen = 11;
+		rLoc = 36786;
+		rType = 0;
+		vrLen = 1232;
+		vrLoc = 39737;
+	};
+	7194463D1273E9AB002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 1237";
+		rLen = 0;
+		rLoc = 40614;
+		rType = 0;
+		vrLen = 1231;
+		vrLoc = 39736;
+	};
+	719446411273EC1F002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 1239";
+		rLen = 0;
+		rLoc = 40652;
+		rType = 0;
+		vrLen = 1232;
+		vrLoc = 39737;
+	};
+	719446491273EE43002A832C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 397";
+		rLen = 0;
+		rLoc = 14890;
+		rType = 0;
+		vrLen = 1812;
+		vrLoc = 13648;
 	};
 	71A058A21271FB3E00C4E991 /* master.js */ = {
 		isa = PBXFileReference;
@@ -885,6 +1044,11 @@
 		name = general.css;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/css/general.css;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 7748}}";
+			sepNavSelRange = "{1208, 10}";
+			sepNavVisRange = "{578, 1336}";
+		};
 	};
 	71C7B4901266BA2F0069B3CF /* ajax-loader-sm.gif */ = {
 		isa = PBXFileReference;
@@ -999,6 +1163,11 @@
 		name = portrait.css;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/css/portrait.css;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 4160}}";
+			sepNavSelRange = "{2122, 12}";
+			sepNavVisRange = "{1696, 945}";
+		};
 	};
 	71CEE9CB12714EA1003CF0EA /* Drink-Mixer.htm */ = {
 		isa = PBXFileReference;
@@ -1006,6 +1175,11 @@
 		name = "Drink-Mixer.htm";
 		path = "/Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/Drink-Mixer.htm";
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 5096}}";
+			sepNavSelRange = "{10268, 14}";
+			sepNavVisRange = "{9342, 1646}";
+		};
 	};
 	71CF777B1258F6AF006989A1 /* Device.h */ = {
 		uiCtxt = {
@@ -1160,7 +1334,7 @@
 		fRef = 71A058A21271FB3E00C4E991 /* master.js */;
 		name = "master.js: 320";
 		rLen = 0;
-		rLoc = 11940;
+		rLoc = 11795;
 		rType = 0;
 		vrLen = 1951;
 		vrLoc = 11108;
@@ -1211,6 +1385,11 @@
 		name = landscape.css;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/css/landscape.css;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 3887}}";
+			sepNavSelRange = "{1565, 12}";
+			sepNavVisRange = "{1300, 935}";
+		};
 	};
 	71ED5D20125ED77100440E6F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
