@@ -88,7 +88,7 @@
 	background: url("../images/update_button.png") no-repeat 0 0;
 	width:63px;
 	height:35px;
-	float:left;
+	float:right;
 	background-size: 100% auto;
 	margin-right:10px;
 }
