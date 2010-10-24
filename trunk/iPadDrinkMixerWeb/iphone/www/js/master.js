@@ -1101,14 +1101,17 @@ function showDetail(that) {
 }
 
 function setRating(data) {
+	if (data == 'NaN') data = 0;
+    var result = Math.round(data * 10) / 10;
 	
+	//console.log("raw:"+data);
     //reset stars first
     $(".star").removeClass("star_on");
     $(".star").removeClass("star_half_on"); /************** set rating ************/
-	
-    for (i = 0; i < $(".star").length; i++) {
-		
-        if (i < data - 1) {
+    
+	for (i = 0; i < $(".star").length; i++) {
+		//console.log("i:"+ i + " target:"+(data -1));
+        if (i <= data -1) {
 			
             $($(".star").get(i)).addClass("star_on");
 			
@@ -1123,10 +1126,6 @@ function setRating(data) {
 	
     if (data == 1) $("#rate_1").addClass("star_on");
     if (data == 5) $("#rate_5").addClass("star_on");
-	
-    if (data > 1) data = data - 1;
-    if (data == 'NaN') data = 0;
-    var result = Math.round(data * 10) / 10;
 	
     $(".rate_number").text(result);
     $(".rate_number").show();
