@@ -53,7 +53,7 @@ public class DOService extends SQL {
 			pstmt.executeUpdate();
 			
 			//delete all old ings first
-			sql="DELETE FROM "+TABLE_DRINK_INGREDIENTS+" WHERE "+COL_DRINK_ID+"=?";
+			sql="DELETE FROM "+TABLE_SHARED_DRINK_INGREDIENTS+" WHERE "+COL_DRINK_ID+"=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1,drink_id);
 			
