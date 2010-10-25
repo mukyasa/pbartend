@@ -312,14 +312,14 @@ $(document).ready(function () {
 													   
 													   if ($(this).hasClass("createbutton")) //we are creating a new drink so lets clear out the fields
 													   { 
-															$(".updatebutton").hide();//hide the update button
-															$("#selected-glass").find("div").removeAttr("class").attr("class","glass glasstemplate").attr("id","");
-															$(".edit-drink-title").val("");
-															$(".edit-drink-desc").val("");
-															$(".edit-ing-wrapper .scroll-child").empty();
-															$("#addNewCat").text("Category");
-															$("input").val("");
-															$(".edit-add-ingredient li").removeClass("ingTouch");
+													   $(".updatebutton").hide();//hide the update button
+													   $("#selected-glass").find("div").removeAttr("class").attr("class","glass glasstemplate").attr("id","");
+													   $(".edit-drink-title").val("");
+													   $(".edit-drink-desc").val("");
+													   $(".edit-ing-wrapper .scroll-child").empty();
+													   $("#addNewCat").text("Category");
+													   $("input").val("");
+													   $(".edit-add-ingredient li").removeClass("ingTouch");
 													   
 													   }
 													   else setUpEdit();
@@ -337,9 +337,9 @@ $(document).ready(function () {
 												for(i=0;i<$("#editchosenIngs input").length;i++)
 												{
 												//get ing id from out div val
-													var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
-	
-													ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
+												var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
+												
+												ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
 												}
 												
 												
@@ -349,11 +349,11 @@ $(document).ready(function () {
 												+"&cat="+$("#selected_id").val()
 												+"&ings="+ings
 												+"&uid="+deviceUID;
-											
+												
 												//console.log(ROOT_URL + "drinks/create"+queryString);
 												$.getJSON(ROOT_URL + "drinks/create"+queryString, function(data) {
-													   //$('.result').html(data);
-													   });
+														  //$('.result').html(data);
+														  });
 												
 												
 												
@@ -368,14 +368,14 @@ $(document).ready(function () {
 										  
 										  }).bind(END_EVENT, function (e) {
 												  e.preventDefault(); //prevent copy and mag from showing
-												   
+												  
 												  var ings ="";
 												  
 												  for(i=0;i<$("#editchosenIngs input").length;i++)
 												  {
-													
 												  
-													ings += $($("#editchosenIngs input").get(i)).val()+"|";
+												  
+												  ings += $($("#editchosenIngs input").get(i)).val()+"|";
 												  }
 												  
 												  
@@ -387,7 +387,7 @@ $(document).ready(function () {
 												  +"&uid="+deviceUID
 												  +"&did="+$("#drink_id_input").val();//used for update only
 												  
-												 // console.log(ROOT_URL + "drinks/update"+queryString);
+												  // console.log(ROOT_URL + "drinks/update"+queryString);
 												  $.getJSON(ROOT_URL + "drinks/update"+queryString, function(data) {
 															//$('.result').html(data);
 															});
@@ -949,11 +949,11 @@ function getAQuote() {
 
 function addEditButtonEvents() {
 	
-	$(".delete-icon").unbind().bind(START_EVENT,function(e){
+	$(".delete-icon").unbind().bind(END_EVENT,function(e){
 									if(confirm("Did you want to delete this?"))
-										$(this).parent().remove();
-								 
-								 });
+									$(this).parent().remove();
+									
+									});
 	
     $("#glass-popup .glass").unbind().bind(START_EVENT, function (e) {
 										   
@@ -1124,6 +1124,7 @@ function showDetail(that) {
 				  removeLoadingMask();
 				  addEditButtonEvents();
 				  
+				  
 				  }); //end ajax
     }
     else if (PAGING_TYPE == PAGING_TYPE_ING) {
@@ -1138,6 +1139,7 @@ function showDetail(that) {
     }
 	
     getAQuote();
+	
 	
 }
 
@@ -1233,10 +1235,12 @@ function setUpEdit() {
 	//set drink id
 	$("#selected-glass").find("div").removeAttr("class").attr("class","glass "+ data.glass).attr("id",data.glassId);
 	$("#selected_id").val(data.catId);
+	$("#addNewCat").text(data.drinkType);
 	
-
+	
 	//change the button 
 	$(".updatebutton").show();
 	$(".backbutton").hide();
+	addEditButtonEvents();
 	
 }
