@@ -75,7 +75,7 @@ public class SQL{
 	
 	public static final String sqlGetMaxId ="SELECT MAX(_ID) AS "+COL_ROW_ID+"  FROM "+TABLE_SHARED_DRINK;
 	public static final String sqlGetGlassNameById = "SELECT name AS "+COL_GLASS_NAME+" from "+TABLE_GLASSES+" WHERE _id=?";
-	public static final String sqlGetDrinkDetailById ="SELECT d.uid,d.favorite,d._id, d.name,d.instructions,dc.name  AS "+
+	public static final String sqlGetDrinkDetailById ="SELECT di."+COL_INGREDIENT_ID+" AS "+COL_SHARED_INGREDIENT_ID+", d.uid,d.favorite,d._id, d.name,d.instructions,dc.name  AS "+
 			COL_CAT_NAME+",di.amount,i.name AS "+COL_ING_NAME+",g.name AS "+
 			COL_GLASS_NAME+" ,g._id AS "+COL_GLASS_ID+",dc._id AS "+COL_CAT_ID+" " +
 			"FROM "+TABLE_DRINK+" d " +
