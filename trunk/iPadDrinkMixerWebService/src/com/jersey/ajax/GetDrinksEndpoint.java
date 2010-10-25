@@ -25,13 +25,12 @@ public class GetDrinksEndpoint extends SQL {
 			@QueryParam("g") int glass,
 			@QueryParam("in") String instructions,
 			@QueryParam("cat") int category,
-			@QueryParam("uid") String uid,
 			@QueryParam("ings") String ingredients,
 			@QueryParam("did") int drink_id_input){
 
 		DOService dos = new DOService();
 
-		return dos.updateDrink(drinkTitle,glass,ingredients,category,instructions,uid, drink_id_input);
+		return dos.updateDrink(drinkTitle,glass,instructions,category,ingredients, drink_id_input);
 	}
 	
 	

@@ -67,8 +67,7 @@ public class SQL{
 	
 	public static final String sqlCreateSharedDrink ="INSERT INTO tblShared (glass_id, name,instructions,category_id,uid) VALUES (?,?,?,?,?)";
 	public static final String sqlCreateSharedDrinkIngredients ="INSERT INTO tblShared_ingredients(drink_id,ingredient_id,amount) VALUES (?,?,?)";
-	public static final String sqlUpdateSharedDrink ="";
-	public static final String sqlUpdateSharedDrinkIngredients ="";
+	public static final String sqlUpdateSharedDrink ="UPDATE tblShared SET "+COL_GLASS_ID+"=?, "+COL_NAME+"=?, "+COL_INSTUCTIONS+"=?, "+COL_CAT_ID+"=? WHERE "+COL_ROW_ID+"=?;";
 	/*********************/
 	
 	public static final String sqlGetAllDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";

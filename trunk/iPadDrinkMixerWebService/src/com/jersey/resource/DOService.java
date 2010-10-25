@@ -30,30 +30,36 @@ public class DOService extends SQL {
 	private final int CAT_SHOOTER = 7;
 	private final String LIMIT = "150";
 	
-	public String updateDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,String uid,int drink_id_input){
+	public String updateDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,int drink_id){
 		
 		PreparedStatement pstmt = null;
 		Statement stmt=null;
 		Connection conn = null;
 		ResultSet rs = null;
-		int newId=0;
 
 		try {
 			conn = DbConnectionTest.getConnection();
 
 			String sql = sqlUpdateSharedDrink;
+
 			//insert into tblShared
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, glass);
 			pstmt.setString(2, drinkTitle);
 			pstmt.setString(3, instructions);
 			pstmt.setInt(4,category);
-			pstmt.setString(5, uid);
+			pstmt.setInt(5,drink_id);
 			
 			pstmt.executeUpdate();
 			
+			//delete all old ings first
+			sql="DELETE FROM "+TABLE_DRINK_INGREDIENTS+" WHERE "+COL_DRINK_ID+"=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,drink_id);
 			
-			sql=sqlUpdateSharedDrinkIngredients;
+			pstmt.executeUpdate();
+			
+			sql=sqlCreateSharedDrinkIngredients;
 			//insert into tblSharedDrink_Ingredients
 			//parse out params from ing string
 			StringTokenizer toke = new StringTokenizer(ingredients,"|");//each ing sep by | then the ingid is after ~
@@ -68,7 +74,7 @@ public class DOService extends SQL {
 				ingId = Integer.valueOf(ings[1]).intValue();
 				
 				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, newId);
+				pstmt.setInt(1, drink_id);
 				pstmt.setInt(2, ingId);
 				pstmt.setString(3, amount);
 				
@@ -639,7 +645,7 @@ public class DOService extends SQL {
 					drink.setGlass(drink_css);
 
 					ingredients.append("<li>-" + rs.getString(COL_AMOUNT) + " "
-							+ rs.getString(COL_ING_NAME) + "<input  type=\"hidden\" value=\"" + rs.getString(COL_AMOUNT)+ "~"+ rs.getString(COL_SHARED_INGREDIENT_ID)+ "\" name=\"ing-item\"/></li>");
+							+ rs.getString(COL_ING_NAME) + "<input  type=\"hidden\" value=\"" + rs.getString(COL_AMOUNT)+ "~"+ rs.getString(COL_SHARED_INGREDIENT_ID)+ "\" name=\"ing-item\"/><div class=\"delete-icon\"></div></li>");
 					drink.addIng(rs.getString(COL_AMOUNT) + ", "
 							+ rs.getString(COL_ING_NAME));
 					drink.setId(rs.getInt(COL_ROW_ID));
