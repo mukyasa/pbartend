@@ -25,6 +25,7 @@
 		47DC7FB30EFADF9E00D0B526 /* PhoneGap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DC7FB20EFADF9E00D0B526 /* PhoneGap.plist */; };
 		47FAB6A90EF751E2005F55AB /* PhoneGapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB6A80EF751E2005F55AB /* PhoneGapViewController.m */; };
 		47FAB7500EF82576005F55AB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FAB74F0EF82576005F55AB /* AddressBook.framework */; };
+		711ECBDA12767F81001E6D8D /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 711ECBD912767F81001E6D8D /* Camera.m */; };
 		71AB815212565106002BB261 /* EmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AB815112565106002BB261 /* EmailComposer.m */; };
 		71AB817A125651E1002BB261 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AB8179125651E1002BB261 /* MessageUI.framework */; };
 		71B8C5DB1268B6B6000431DD /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B8C5D61268B6B6000431DD /* Icon-72.png */; };
@@ -75,6 +76,8 @@
 		47FAB6A70EF751E2005F55AB /* PhoneGapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneGapViewController.h; sourceTree = "<group>"; };
 		47FAB6A80EF751E2005F55AB /* PhoneGapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneGapViewController.m; sourceTree = "<group>"; };
 		47FAB74F0EF82576005F55AB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		711ECBD812767F81001E6D8D /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		711ECBD912767F81001E6D8D /* Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
 		71AB815012565106002BB261 /* EmailComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailComposer.h; sourceTree = "<group>"; };
 		71AB815112565106002BB261 /* EmailComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailComposer.m; sourceTree = "<group>"; };
 		71AB8179125651E1002BB261 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -141,6 +144,8 @@
 				71CF78AF12592138006989A1 /* JSON */,
 				71CF77A51258F80E006989A1 /* DebugConsole.h */,
 				71CF77A61258F80E006989A1 /* DebugConsole.m */,
+				711ECBD812767F81001E6D8D /* Camera.h */,
+				711ECBD912767F81001E6D8D /* Camera.m */,
 				71CF777B1258F6AF006989A1 /* Device.h */,
 				71CF777C1258F6AF006989A1 /* Device.m */,
 				71AB815012565106002BB261 /* EmailComposer.h */,
@@ -360,6 +365,7 @@
 				71CF78C012592138006989A1 /* SBJsonBase.m in Sources */,
 				71CF78C112592138006989A1 /* SBJsonParser.m in Sources */,
 				71CF78C212592138006989A1 /* SBJsonWriter.m in Sources */,
+				711ECBDA12767F81001E6D8D /* Camera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
