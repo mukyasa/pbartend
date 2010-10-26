@@ -42,13 +42,38 @@
 	
 	[[super appViewController] presentModalViewController:pickerController animated:YES];
 }
+-(void) getPictureFromLibrary:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options{
+	
+	NSUInteger argc = [arguments count];
+	NSString* successCallback = nil, *errorCallback = nil;
+	
+	if (argc > 0) successCallback = [arguments objectAtIndex:0];
+	if (argc > 1) errorCallback = [arguments objectAtIndex:1];
+	
+	if (argc < 1) {
+		NSLog(@"Camera.getPicture: Missing 1st parameter.");
+		return;
+	}
+	
+	if (pickerController == nil) {
+		pickerController = [[CameraPicker alloc] init];
+		pickerController.delegate = self;
+		pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+		pickerController.successCallback = successCallback;
+		pickerController.errorCallback = errorCallback;
+		pickerController.quality = [options integerValueForKey:@"quality" defaultValue:100 withRange:NSMakeRange(0, 100)];
+	}
+	
+	[[super appViewController] presentModalViewController:pickerController animated:YES];
+}
+
 
 - (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingImage:(UIImage*)image editingInfo:(NSDictionary*)editingInfo
 {
 	CameraPicker* cameraPicker = (CameraPicker*)picker;
 	CGFloat quality = (double)cameraPicker.quality / 100.0; 
 	NSData* data = UIImageJPEGRepresentation(image, quality);
-
+	
 	[picker dismissModalViewControllerAnimated:YES];
 	
 	if (cameraPicker.successCallback) {
@@ -66,7 +91,7 @@
 - (void) postImage:(UIImage*)anImage withFilename:(NSString*)filename toUrl:(NSURL*)url 
 {
 	NSString *boundary = @"----BOUNDARY_IS_I";
-
+	
 	NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
 	[req setHTTPMethod:@"POST"];
 	
@@ -84,20 +109,20 @@
 	[postBody appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	[postBody appendData:imageData];
 	
-//	// second parameter information
-//	[postBody appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-//	[postBody appendData:[@"Content-Disposition: form-data; name=\"some_other_name\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-//	[postBody appendData:[@"some_other_value" dataUsingEncoding:NSUTF8StringEncoding]];
-//	[postBody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r \n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	//	// second parameter information
+	//	[postBody appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	//	[postBody appendData:[@"Content-Disposition: form-data; name=\"some_other_name\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	//	[postBody appendData:[@"some_other_value" dataUsingEncoding:NSUTF8StringEncoding]];
+	//	[postBody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r \n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	[req setHTTPBody:postBody];
 	
 	NSURLResponse* response;
 	NSError* error;
 	[NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
-
-//  NSData* result = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
-//	NSString * resultStr =  [[[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding] autorelease];
+	
+	//  NSData* result = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+	//	NSString * resultStr =  [[[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding] autorelease];
 }
 
 - (void) dealloc
