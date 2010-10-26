@@ -320,7 +320,7 @@ $(document).ready(function () {
 													   $("#addNewCat").text("Category");
 													   $("input").val("");
 													   $(".edit-add-ingredient li").removeClass("ingTouch");
-													   
+													   $("#img_src").attr("src","images/pic_filler.png");
 													   }
 													   else setUpEdit();
 													   
@@ -948,6 +948,12 @@ function getAQuote() {
 //get the drink details sets it to the screen
 
 function addEditButtonEvents() {
+	
+	$("#edit-drink-photo").unbind().bind(END_EVENT,function(e){
+									   
+									   getPicture(PictureSourceType.PHOTO_LIBRARY);
+									   
+									   });
 	
 	$(".delete-icon").unbind().bind(END_EVENT,function(e){
 									if(confirm("Did you want to delete this?"))
