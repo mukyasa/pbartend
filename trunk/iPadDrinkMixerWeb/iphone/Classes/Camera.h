@@ -27,6 +27,7 @@
 @interface Camera : PhoneGapCommand<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
 	CameraPicker* pickerController;
+	UIPopoverController* popover;
 }
 
 /*

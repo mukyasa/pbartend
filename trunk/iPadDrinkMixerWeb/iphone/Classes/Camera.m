@@ -61,10 +61,13 @@
 		pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 		pickerController.successCallback = successCallback;
 		pickerController.errorCallback = errorCallback;
-		pickerController.quality = [options integerValueForKey:@"quality" defaultValue:100 withRange:NSMakeRange(0, 100)];
+		//pickerController.quality = [options integerValueForKey:@"quality" defaultValue:100 withRange:NSMakeRange(0, 100)];
 	}
 	
-	[[super appViewController] presentModalViewController:pickerController animated:YES];
+	//[[super appViewController] presentModalViewController:pickerController animated:YES];
+	
+	popover = [[UIPopoverController alloc]	initWithContentViewController:pickerController];
+	[popover presentPopoverFromRect:CGRectMake(200, 200, 150, 200) inView:webView permittedArrowDirections:UIPopoverArrowDirectionLeft	animated:true];
 }
 
 
@@ -74,7 +77,8 @@
 	CGFloat quality = (double)cameraPicker.quality / 100.0; 
 	NSData* data = UIImageJPEGRepresentation(image, quality);
 	
-	[picker dismissModalViewControllerAnimated:YES];
+	//[picker dismissModalViewControllerAnimated:YES];
+	[popover dismissPopoverAnimated:YES];
 	
 	if (cameraPicker.successCallback) {
 		NSString* jsString = [[NSString alloc] initWithFormat:@"%@(\"%@\");", cameraPicker.successCallback, [data base64EncodedString]];
