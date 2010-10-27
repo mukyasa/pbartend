@@ -39,10 +39,10 @@ public class GetDrinksEndpoint extends SQL {
 	@Produces(MediaType.APPLICATION_JSON)
 	public String createNew(@QueryParam("dt") String drinkTitle,
 			@QueryParam("g") int glass,
-			@QueryParam("in") String ingredients,
+			@QueryParam("in") String instructions,
 			@QueryParam("cat") int category,
 			@QueryParam("uid") String uid,
-			@QueryParam("ings") String instructions){
+			@QueryParam("ings") String ingredients){
 
 		DOService dos = new DOService();
 
