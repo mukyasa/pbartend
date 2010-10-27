@@ -16,6 +16,7 @@
 	{
 			// alert("getpic success");
 			$("#img_src").attr("src","data:image/jpeg;base64," + imageData);
+			$("#img_input").val(imageData);
 	}
     
 /**
@@ -31,3 +32,7 @@ Camera.prototype.getPictureFromLibrary = function(successCallback, errorCallback
 PhoneGap.addConstructor(function() {
     if (typeof navigator.camera == "undefined") navigator.camera = new Camera();
 });
+
+
+
+

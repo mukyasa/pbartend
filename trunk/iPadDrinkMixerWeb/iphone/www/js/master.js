@@ -230,7 +230,7 @@ $(document).ready(function () {
 												//$("#response").text("Email Called");
 												window.plugins.emailComposer.showEmailComposer("subject", "body", "", "", "", true);
 												} catch (e) {
-												alert(e);
+												showAlert(e);
 												}
 												
 												});
@@ -332,34 +332,40 @@ $(document).ready(function () {
 										}).bind(END_EVENT, function (e) {
 												e.preventDefault(); //prevent copy and mag from showing
 												
-												var ings ="";
 												
-												for(i=0;i<$("#editchosenIngs input").length;i++)
+												if(validate())
 												{
-												//get ing id from out div val
-												var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
-												
-												ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
-												}
-												
-												
-												var queryString ="?dt="+$(".edit-drink-title").val()
-												+"&g="+$("#selected-glass").find("div").attr("id")
-												+"&in="+$("#edit-drink-desc").val()
-												+"&cat="+$("#selected_id").val()
-												+"&ings="+ings
-												+"&uid="+deviceUID;
-												
-												//console.log(ROOT_URL + "drinks/create"+queryString);
-												$.getJSON(ROOT_URL + "drinks/create"+queryString, function(data) {
-														  //$('.result').html(data);
-														  });
-												
-												
-												
+													var ings ="";
+													
+													for(i=0;i<$("#editchosenIngs input").length;i++)
+													{
+													//get ing id from out div val
+													var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
+													
+													ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
+													}
+													
+													
+													var queryString ="?dt="+$(".edit-drink-title").val()
+													+"&g="+$("#selected-glass").find("div").attr("id")
+													+"&in="+$("#edit-drink-desc").val()
+													+"&cat="+$("#selected_id").val()
+													+"&ings="+ings
+													+"&uid="+deviceUID;
+													
+													//console.log(ROOT_URL + "drinks/create"+queryString);
+													$.getJSON(ROOT_URL + "drinks/create"+queryString, function(data) {
+															  //$('.result').html(data);
+															  });
+													
+													
+													
+													
+													//flip paper back
+													 
+													$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+												}	
 												$(this).removeClass("savebutton-on");
-												//flip paper back
-												$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 												});
 				  
 				  $(".updatebutton").bind(START_EVENT, function (e) {
@@ -369,34 +375,35 @@ $(document).ready(function () {
 										  }).bind(END_EVENT, function (e) {
 												  e.preventDefault(); //prevent copy and mag from showing
 												  
-												  var ings ="";
-												  
-												  for(i=0;i<$("#editchosenIngs input").length;i++)
+												  if(validate())
 												  {
-												  
-												  
-												  ings += $($("#editchosenIngs input").get(i)).val()+"|";
+													  var ings ="";
+													  
+													  for(i=0;i<$("#editchosenIngs input").length;i++)
+														ings += $($("#editchosenIngs input").get(i)).val()+"|";
+													  
+													  
+													  
+													  var queryString ="?dt="+$(".edit-drink-title").val()
+													  +"&g="+$("#selected-glass").find("div").attr("id")
+													  +"&in="+$("#edit-drink-desc").val()
+													  +"&cat="+$("#selected_id").val()
+													  +"&ings="+ings
+													  +"&uid="+deviceUID
+													  +"&did="+$("#drink_id_input").val();//used for update only
+													  
+													  // console.log(ROOT_URL + "drinks/update"+queryString);
+													  $.getJSON(ROOT_URL + "drinks/update"+queryString, function(data) {
+																//$('.result').html(data);
+																});
+													  
+													  
+													  
+													  
+													  //flip paper back
+													  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 												  }
-												  
-												  
-												  var queryString ="?dt="+$(".edit-drink-title").val()
-												  +"&g="+$("#selected-glass").find("div").attr("id")
-												  +"&in="+$("#edit-drink-desc").val()
-												  +"&cat="+$("#selected_id").val()
-												  +"&ings="+ings
-												  +"&uid="+deviceUID
-												  +"&did="+$("#drink_id_input").val();//used for update only
-												  
-												  // console.log(ROOT_URL + "drinks/update"+queryString);
-												  $.getJSON(ROOT_URL + "drinks/update"+queryString, function(data) {
-															//$('.result').html(data);
-															});
-												  
-												  
-												  
 												  $(this).removeClass("updatebutton-on");
-												  //flip paper back
-												  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 												  });
 				  
 				  $(".cancelbutton").bind(START_EVENT, function () {
@@ -420,6 +427,35 @@ $(document).ready(function () {
 				  showStartMask();
 				  addEditButtonEvents();
 				  });
+
+function validate(){
+	
+	if($(".edit-drink-title").val()=="")
+	{
+		showAlert("Drink title is required.");
+		$(".edit-drink-title").focus();
+		return false;
+	}
+	else if($("#editchosenIngs input").length<1)
+	{
+		showAlert("At least one ingredient needs to be selected.");
+		return false;	
+	}
+	else if($("#selected-glass").find("div").attr("id")=="")
+	{
+		showAlert("Did you plan on drink this from a glass?");
+		return false;	
+	}
+	else if($("#selected_id").val()=="")
+	{
+		showAlert("A category is required.");
+		return false;	
+	}
+	
+	return true;
+	
+
+}
 
 function list_item_events() {
 	
@@ -1145,6 +1181,8 @@ function showDetail(that) {
     }
 	
     getAQuote();
+	//hide other stuff
+	$(".stage-2,.stage-3").hide();
 	
 	
 }
@@ -1228,7 +1266,16 @@ function deviceInfo() {
 function setClientIp(ip) {
     clientIp = ip;
 }
+function showAlert(alertMessage){
 
+	$("#alertMessage").text(alertMessage);
+	$( "#dialog" ).dialog( "destroy" );
+	
+	$( "#dialog-modal" ).dialog({
+		height: 140,
+		modal: true
+		});
+}
 function setUpEdit() {
 	
     var data = selectedDrinkDetails;
