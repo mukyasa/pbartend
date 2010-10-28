@@ -30,6 +30,7 @@
 
 </head>
 <body>
+<form id="ajaxForm">
 <div id="dialog-modal" title="Warning">
 	<p id="alertMessage"></p>
 </div>
@@ -200,14 +201,20 @@
 	<!-- BACK SIDE PAGE -->
 		<div class="face back">
 			<div class="page_content_wrapper edit-page_content_wrapper">
-			<input type="text" placeholder="Drink Title" class="edit-drink-title" name="drinkTitle" value="">
+			<input type="text" placeholder="Drink Title" class="edit-drink-title" name="dt" value="">
+			<!--hidden form section-->
+			<input type="hidden" id="glass-id-input" name="g"/>
+			<input type="hidden" id="ings-id-input" name="ings"/>
+			<input type="hidden" id="uid-id-input" name="uid"/>
+			
+			
 			<div class="edit-glass" id="selected-glass"><div id="" class="glass glasstemplate"></div></div>
 			<div class="add-new-button-block">
 				<div id="addNewIng" class="edit-ing add-new-ing">Ingredients</div>
 				<div id="addNewCat" class="edit-ing add-new-ing">Category</div>
 			</div>
 			<div id="edit-drink-photo"><img src="images/pic_filler.png" id="img_src" border="0"></img></div>
-			<input type="hidden" id="img_input" value=""/>
+			<input type="hidden" id="img_input" name="img" value=""/>
 			<div class="text-float-right">				
 				<div class="drink-ings">				
 				<div id="stage-wrapper">
@@ -229,7 +236,7 @@
 						</ul>
 					</div>
 					<div class="stage-3 hidden">
-					<input type="hidden" name="selected_cat" id="selected_id" value=""/>
+					<input type="hidden" name="cat" id="selected_id" value=""/>
 						<ul class="edit-add-ingredient scroll-child">
 							<li class="ing-back">Back</li>
 							<li id="1" class="edit-cat ing-choices">Cocktails</li>
@@ -245,7 +252,7 @@
 				
 			</div>
 			</div>
-			<textarea class="edit-drink-desc" id="edit-drink-desc"></textarea><!--//ajax driven -->
+			<textarea class="edit-drink-desc" id="edit-drink-desc" name="in"></textarea><!--//ajax driven -->
 			<div class="paper-button-block edit-paper-button-block">
 				<div class="backbutton flipbutton"></div>
 				<div class="updatebutton flipbutton"></div>
@@ -368,6 +375,6 @@
    <img src="images/list_fav.png" width="1" height="1"/>
    <img src="images/list_fav_selected.png" width="1" height="1"/>
 </div>
-
+</form>
 </body>
 </html>
