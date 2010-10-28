@@ -30,7 +30,7 @@ public class DOService extends SQL {
 	private final int CAT_SHOOTER = 7;
 	private final String LIMIT = "150";
 	
-	public String updateDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,int drink_id){
+	public String updateDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,int drink_id,String img){
 		
 		PreparedStatement pstmt = null;
 		Statement stmt=null;
@@ -97,7 +97,7 @@ public class DOService extends SQL {
 	}
 
 
-	public String createDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,String uid){
+	public String createDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,String uid,String img){
 		
 		PreparedStatement pstmt = null;
 		Statement stmt=null;

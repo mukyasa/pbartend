@@ -2,11 +2,16 @@ package com.jersey.ajax;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 import com.jersey.dao.SQL;
@@ -16,24 +21,45 @@ import com.jersey.resource.DOService;
 
 @Path("/drinks")
 public class GetDrinksEndpoint extends SQL {
-
 	
-	@GET
-	@Path("update")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String updateDrink(@QueryParam("dt") String drinkTitle,
-			@QueryParam("g") int glass,
-			@QueryParam("in") String instructions,
-			@QueryParam("cat") int category,
-			@QueryParam("ings") String ingredients,
-			@QueryParam("did") int drink_id_input){
+	@POST
+	@Path("create")
+	@Produces(MediaType.TEXT_HTML)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public void postCreateDrink(
+			@FormParam("dt") String drinkTitle,
+			@FormParam("g") int glass,
+			@FormParam("in") String instructions,
+			@FormParam("cat") int category,
+			@FormParam("uid") String uid,
+			@FormParam("ings") String ingredients,
+			@FormParam("img") String img){
 
 		DOService dos = new DOService();
 
-		return dos.updateDrink(drinkTitle,glass,instructions,category,ingredients, drink_id_input);
+		dos.createDrink(drinkTitle,glass,instructions,category,ingredients,uid,img);
+		
 	}
 	
+	@POST
+	@Path("update")
+	@Produces(MediaType.TEXT_HTML)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public void updateDrink(
+			@FormParam("dt") String drinkTitle,
+			@FormParam("g") int glass,
+			@FormParam("in") String instructions,
+			@FormParam("cat") int category,
+			@FormParam("ings") String ingredients,
+			@FormParam("did") int drink_id_input,
+			@FormParam("img") String img){
+
+		DOService dos = new DOService();
+
+		dos.updateDrink(drinkTitle,glass,instructions,category,ingredients, drink_id_input,img);
+	}
 	
+	/*
 	@GET
 	@Path("create")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -49,7 +75,22 @@ public class GetDrinksEndpoint extends SQL {
 		return dos.createDrink(drinkTitle,glass,instructions,category,ingredients,uid);
 	}
 	
+	@GET
+	@Path("update")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String updateDrink(@QueryParam("dt") String drinkTitle,
+			@QueryParam("g") int glass,
+			@QueryParam("in") String instructions,
+			@QueryParam("cat") int category,
+			@QueryParam("ings") String ingredients,
+			@QueryParam("did") int drink_id_input){
 
+		DOService dos = new DOService();
+
+		return dos.updateDrink(drinkTitle,glass,instructions,category,ingredients, drink_id_input);
+	}
+	*/
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<DrinkDetails> getAllDrinks(
@@ -59,6 +100,9 @@ public class GetDrinksEndpoint extends SQL {
 
 		return dos.getAllDrinks(startIndex);
 	}
+	
+
+	
 
 	@GET
 	@Path("rate")
