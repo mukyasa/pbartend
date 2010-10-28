@@ -127,7 +127,7 @@
 	background: url("../images/update_button.png") no-repeat 0 0;
 	width:81px;
 	height:45px;
-	float:left;
+	float:right;
 	margin-right:10px;
 }
 .port .backbutton,.port .saveIng{
@@ -183,6 +183,13 @@
 	width:196px;
 	height:164px;
 	margin:14px 0 0 10px;
+	border:1px solid #999;
+}
+
+.port #view_img_src{
+	width:201px;
+	height:167px;
+	margin:15px 0 0 10px;
 	border:1px solid #999;
 }
 .port .drink-title{
