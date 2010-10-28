@@ -1,7 +1,8 @@
 var db;
 var favoritesArray = new Array();
 var selectedDrinkDetails;
-var ROOT_IP = "http://192.168.1.103:8080";
+//var ROOT_IP = "http://192.168.1.103:8080";//home
+var ROOT_IP = "http://localhost:8080";//work
 var ROOT_URL = ROOT_IP + "/iPad/rest/";
 var css_orientation = "port";
 var list_scroll = false;
@@ -339,25 +340,43 @@ $(document).ready(function () {
 													
 													for(i=0;i<$("#editchosenIngs input").length;i++)
 													{
-													//get ing id from out div val
-													var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
+														//get ing id from out div val
+														var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
 													
-													ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
+														ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
 													}
 													
 													
-													var queryString ="?dt="+$(".edit-drink-title").val()
+													/*var queryString ="?dt="+$(".edit-drink-title").val()
 													+"&g="+$("#selected-glass").find("div").attr("id")
 													+"&in="+$("#edit-drink-desc").val()
 													+"&cat="+$("#selected_id").val()
 													+"&ings="+ings
 													+"&uid="+deviceUID;
-													
+													*/
+												
+													$("#glass-id-input").val($("#selected-glass").find("div").attr("id"));
+													$("#ings-id-input").val(ings);
+													$("#uid-id-input").val(deviceUID);
+												
+													dataString = $("#ajaxForm").serialize();
+												
+													$.ajax({
+														  type: "POST",
+														  url: ROOT_URL + "drinks/create",
+														  data: dataString,
+														  dataType: "json",
+														  success: function(data) {
+														   
+														  }
+													});
+												
+													/*
 													//console.log(ROOT_URL + "drinks/create"+queryString);
 													$.getJSON(ROOT_URL + "drinks/create"+queryString, function(data) {
 															  //$('.result').html(data);
 															  });
-													
+													*/
 													
 													
 													
@@ -382,7 +401,7 @@ $(document).ready(function () {
 													  for(i=0;i<$("#editchosenIngs input").length;i++)
 														ings += $($("#editchosenIngs input").get(i)).val()+"|";
 													  
-													  
+													  /*
 													  
 													  var queryString ="?dt="+$(".edit-drink-title").val()
 													  +"&g="+$("#selected-glass").find("div").attr("id")
@@ -398,7 +417,21 @@ $(document).ready(function () {
 																});
 													  
 													  
-													  
+													  */
+												  
+														$("#glass-id-input").val($("#selected-glass").find("div").attr("id"));
+														$("#ings-id-input").val(ings);
+														$("#uid-id-input").val(deviceUID);
+												  
+														$.ajax({
+															   type: "POST",
+															   url: ROOT_URL + "drinks/update",
+															   data: dataString,
+															   dataType: "json",
+															   success: function(data) {
+														 
+															   }
+														 });
 													  
 													  //flip paper back
 													  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
