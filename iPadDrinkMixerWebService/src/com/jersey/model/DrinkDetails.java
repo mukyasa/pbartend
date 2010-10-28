@@ -21,10 +21,19 @@ public class DrinkDetails {
 	private String uid;
 	private ArrayList<String> drinkNames = new ArrayList<String>();
 	private ArrayList<String> ings = new ArrayList<String>();
+	private String img;
 
 
 	
 	
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
 	public String getEditAmount() {
 		return editAmount;
 	}

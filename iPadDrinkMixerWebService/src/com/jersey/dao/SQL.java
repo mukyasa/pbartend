@@ -34,6 +34,8 @@ public class SQL{
 	public static final String COL_AMOUNT="amount";
 	public static final String COL_RATING="rating";
 	public static final String COL_UID="uid";
+	public static final String COL_IMG="img";
+	public static final String COL_IMG_LOC="img_loc";
 	
 
 	//table names
@@ -53,7 +55,7 @@ public class SQL{
 	/****** SHARED *******/
 	public static final String sqlSetRating = "INSERT INTO tblRating (drink_id, rating,ip_address,uid,version,name) VALUES (?,?,?,?,?,?)";
 	public static final String sqlGetAllSharedDrinksAndGlass ="SELECT g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
-	public static final String sqlGetSharedDrinkDetailById ="SELECT di."+COL_INGREDIENT_ID+" AS "+COL_SHARED_INGREDIENT_ID+", d.uid, d._id, d.name,d.instructions,dc.name  AS "+
+	public static final String sqlGetSharedDrinkDetailById ="SELECT d."+COL_IMG+", di."+COL_INGREDIENT_ID+" AS "+COL_SHARED_INGREDIENT_ID+", d.uid, d._id, d.name,d.instructions,dc.name  AS "+
 	COL_CAT_NAME+",di.amount,i.name AS "+COL_ING_NAME+",g.name AS "+
 	COL_GLASS_NAME+" ,g._id AS "+COL_GLASS_ID+",dc._id AS "+COL_CAT_ID+" " +
 	"FROM "+TABLE_SHARED_DRINK+" d " +
@@ -65,9 +67,9 @@ public class SQL{
 	
 	public static final String sqlGetAllSharedDrinksAndGlassById ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id WHERE ";
 	
-	public static final String sqlCreateSharedDrink ="INSERT INTO tblShared (glass_id, name,instructions,category_id,uid) VALUES (?,?,?,?,?)";
+	public static final String sqlCreateSharedDrink ="INSERT INTO tblShared (glass_id, name,instructions,category_id,uid,img) VALUES (?,?,?,?,?,?)";
 	public static final String sqlCreateSharedDrinkIngredients ="INSERT INTO tblShared_ingredients(drink_id,ingredient_id,amount) VALUES (?,?,?)";
-	public static final String sqlUpdateSharedDrink ="UPDATE tblShared SET "+COL_GLASS_ID+"=?, "+COL_NAME+"=?, "+COL_INSTUCTIONS+"=?, "+COL_CAT_ID+"=? WHERE "+COL_ROW_ID+"=?;";
+	public static final String sqlUpdateSharedDrink ="UPDATE tblShared SET "+COL_GLASS_ID+"=?, "+COL_NAME+"=?, "+COL_INSTUCTIONS+"=?, "+COL_IMG+"=?, "+COL_CAT_ID+"=? WHERE "+COL_ROW_ID+"=?";
 	/*********************/
 	
 	public static final String sqlGetAllDrinksAndGlass ="SELECT d.favorite, g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
@@ -75,7 +77,7 @@ public class SQL{
 	
 	public static final String sqlGetMaxId ="SELECT MAX(_ID) AS "+COL_ROW_ID+"  FROM "+TABLE_SHARED_DRINK;
 	public static final String sqlGetGlassNameById = "SELECT name AS "+COL_GLASS_NAME+" from "+TABLE_GLASSES+" WHERE _id=?";
-	public static final String sqlGetDrinkDetailById ="SELECT di."+COL_INGREDIENT_ID+" AS "+COL_SHARED_INGREDIENT_ID+", d.uid,d.favorite,d._id, d.name,d.instructions,dc.name  AS "+
+	public static final String sqlGetDrinkDetailById ="SELECT d."+COL_IMG_LOC + ", di."+COL_INGREDIENT_ID+" AS "+COL_SHARED_INGREDIENT_ID+", d.uid,d.favorite,d._id, d.name,d.instructions,dc.name  AS "+
 			COL_CAT_NAME+",di.amount,i.name AS "+COL_ING_NAME+",g.name AS "+
 			COL_GLASS_NAME+" ,g._id AS "+COL_GLASS_ID+",dc._id AS "+COL_CAT_ID+" " +
 			"FROM "+TABLE_DRINK+" d " +

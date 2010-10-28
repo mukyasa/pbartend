@@ -49,6 +49,7 @@ public class DOService extends SQL {
 			pstmt.setString(3, instructions);
 			pstmt.setInt(4,category);
 			pstmt.setInt(5,drink_id);
+			pstmt.setString(6, img);
 			
 			pstmt.executeUpdate();
 			
@@ -116,6 +117,7 @@ public class DOService extends SQL {
 			pstmt.setString(3, instructions);
 			pstmt.setInt(4,category);
 			pstmt.setString(5, uid);
+			pstmt.setString(6, img);
 			
 			pstmt.executeUpdate();
 			
@@ -659,6 +661,9 @@ public class DOService extends SQL {
 
 					drink.setGlassId(rs.getInt(COL_GLASS_ID));
 					drink.setCatId(rs.getInt(COL_CAT_ID));
+					
+					drink.setImg(detailTypeShared? rs.getString(COL_IMG): rs.getString(COL_IMG_LOC)); //either blob or url
+					
 
 				}
 
