@@ -1156,7 +1156,7 @@ function showDetail(that) {
         $.getJSON(requestUrl, function (data) {
 				  //data in this case is drinkdetail
 				  if (data != null) {
-				  
+				  $("#view_img_src").attr("src","images/pic_filler.png");//blank out image
 				  drinkUID = data.uid;
 				  $(".submit_rate").text("Rate");
 				  $(".ratings").removeClass("hidden");
@@ -1164,20 +1164,25 @@ function showDetail(that) {
 				  
 				  selectedDrinkDetails = data; //set current drinkdetail
 				  $(".drink-title").empty().append(data.drinkName);
-				  $(".edit-drink-title").val(data.drinkName);
+				  //$(".edit-drink-title").val(data.drinkName);
 				  
 				  $(".drink-type").text(data.drinkType);
-				  $(".edit-drink-type").text(data.drinkType);
+				 // $(".edit-drink-type").text(data.drinkType);
 				  
 				  
 				  $(".drink-desc .scroll-child").empty().append(data.instructions);
-				  $(".edit-drink-desc").val(data.instructions);
+				 // $(".edit-drink-desc").val(data.instructions);
 				  
 				  $(".ing-wrapper .scroll-child").empty().append(data.ingredients);
 				  $(".ing-wrapper .scroll-child li").attr("class", "ing");
-				  $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
-				  $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
-				  $(".edit-ing-wrapper .scroll-child li").addClass("ing-choices");
+				 // $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
+				  //$(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
+				 // $(".edit-ing-wrapper .scroll-child li").addClass("ing-choices");
+				  
+				  if(data.img!=null && IS_SHARED_DRINK)//blob
+					$("#view_img_src").attr("src","data:image/jpeg;base64," + data.img);
+				  else// if(data.img!=null)
+					$("#view_img_src").attr("src","http://www.onlyinsanfrancisco.com/taste/foodie411/wp-content/uploads/2009/02/cocktail1.jpg");
 				  
 				  $("#drink_id_input").val(data.id);
 				  
@@ -1310,6 +1315,8 @@ function showAlert(alertMessage){
 		});
 }
 function setUpEdit() {
+	//blank out image
+	$("#img_src").attr("src","images/pic_filler.png");
 	
     var data = selectedDrinkDetails;
 	
@@ -1317,6 +1324,8 @@ function setUpEdit() {
     $(".edit-drink-desc").val(data.instructions);
     $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
     $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
+	if(data.img!=null)
+		$("#img_src").attr("src","data:image/jpeg;base64," + data.img);
 	
 	//set drink id
 	$("#selected-glass").find("div").removeAttr("class").attr("class","glass "+ data.glass).attr("id",data.glassId);
