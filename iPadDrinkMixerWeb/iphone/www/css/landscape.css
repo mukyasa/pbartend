@@ -139,10 +139,17 @@
 	background-size: 100% auto;
 	margin:-30px 0 0 0;
 }
+/* edit image */
 .land #img_src{
 	width:178px;
 	height:150px;
 	margin:11px 0 0 9px;
+	border:1px solid #999;
+}
+.land #view_img_src{
+	width:157px;
+	height:129px;
+	margin:11px 0 0 7px;
 	border:1px solid #999;
 }
 
