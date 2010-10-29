@@ -92,23 +92,7 @@
 	[picker dismissModalViewControllerAnimated:YES];
 }
 
-/*
--(void)dopostImageOnSave:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {
-	NSData *data = [NSData init];
-		
-	NSString *picString =[options objectForKey:@"imgSrc"];
-	
-	UIImage *pic = [[UIImage init]initWithData:[data dataFromBase64String:picString]];
-	
-	NSString *urlAddress = @"http://www.mypocket-technologies.com";
-	
-	//Create a URL object.
-	NSURL *url = [NSURL URLWithString:urlAddress];
-	
-	[self postImage:pic withFilename:@"photo.png" toUrl:url];
-	
-}
-*/
+
 - (void) postImage:(UIImage*)anImage withFilename:(NSString*)filename toUrl:(NSURL*)url 
 {
 	NSString *boundary = @"----BOUNDARY_IS_I";
