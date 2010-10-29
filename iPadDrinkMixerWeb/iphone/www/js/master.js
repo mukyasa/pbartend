@@ -1,8 +1,8 @@
 var db;
 var favoritesArray = new Array();
 var selectedDrinkDetails;
-var ROOT_IP = "http://192.168.1.107:8080";//home
-//var ROOT_IP = "http://localhost:8080";//work
+//var ROOT_IP = "http://192.168.1.107:8080";//home
+var ROOT_IP = "http://localhost:8080";//work
 var ROOT_URL = ROOT_IP + "/iPad/rest/";
 var css_orientation = "port";
 var list_scroll = false;
@@ -1182,10 +1182,8 @@ function showDetail(drinkId) {
 				  $(".ing-wrapper .scroll-child").empty().append(data.ingredients);
 				  $(".ing-wrapper .scroll-child li").attr("class", "ing");
 
-				  
-				  if(IS_SHARED_DRINK && data.img!=undefined)//blob
-					$("#view_img_src").attr("src","data:image/jpeg;base64," + data.img);
-				  else if(data.img!=undefined)//not shared with img
+				 
+				  if(data.img!=undefined)//not shared with img
 					$("#view_img_src").attr("src",data.img);
 				 
 				  
@@ -1337,9 +1335,8 @@ function setUpEdit() {
     $(".edit-drink-desc").val(data.instructions);
     $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
     $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
-	if(data.img!=undefined && IS_SHARED_DRINK)
-		$("#img_src").attr("src","data:image/jpeg;base64," + data.img);
-	else if(data.img!=undefined)//not shared with img
+	
+	if(data.img!=undefined)//not shared with img
 		$("#img_src").attr("src",data.img);
 	
 	//set drink id
