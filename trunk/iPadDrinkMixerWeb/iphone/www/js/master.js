@@ -1,8 +1,8 @@
 var db;
 var favoritesArray = new Array();
 var selectedDrinkDetails;
-//var ROOT_IP = "http://192.168.1.103:8080";//home
-var ROOT_IP = "http://localhost:8080";//work
+var ROOT_IP = "http://192.168.1.107:8080";//home
+//var ROOT_IP = "http://localhost:8080";//work
 var ROOT_URL = ROOT_IP + "/iPad/rest/";
 var css_orientation = "port";
 var list_scroll = false;
@@ -18,8 +18,8 @@ var deviceUID = "";
 var drinkUID = "";
 var deviceVersion = "";
 
-var subject = 'Check out this drink!';
-var anything = 'Check out this drink!';
+var subject = "";
+var body = "";
 var toRecipients = '';
 var ccRecipients = '';
 var bccRecipients = '';
@@ -229,7 +229,7 @@ $(document).ready(function () {
 												$(this).removeClass("emailbutton-on");
 												try {
 												//$("#response").text("Email Called");
-												window.plugins.emailComposer.showEmailComposer("subject", "body", "", "", "", true);
+												window.plugins.emailComposer.showEmailComposer(subject, body, "", "", "", true);
 												} catch (e) {
 												showAlert(e);
 												}
@@ -1181,8 +1181,8 @@ function showDetail(that) {
 				  
 				  if(data.img!=null && IS_SHARED_DRINK)//blob
 					$("#view_img_src").attr("src","data:image/jpeg;base64," + data.img);
-				  else// if(data.img!=null)
-					$("#view_img_src").attr("src","http://www.onlyinsanfrancisco.com/taste/foodie411/wp-content/uploads/2009/02/cocktail1.jpg");
+				  else if(data.img!=null)
+					$("#view_img_src").attr("src",data.img);
 				  
 				  $("#drink_id_input").val(data.id);
 				  
@@ -1203,6 +1203,8 @@ function showDetail(that) {
 				  $(".list_fav").removeClass("list-item-loading");
 				  removeLoadingMask();
 				  addEditButtonEvents();
+				  setUpEmail(data);
+				  
 				  
 				  
 				  }); //end ajax
@@ -1222,6 +1224,14 @@ function showDetail(that) {
 	//hide other stuff
 	$(".stage-2,.stage-3").hide();
 	
+	
+}
+
+function setUpEmail(data){
+	
+	//set up email for this item
+	subject="Hey! Check out this great drink, "+data.drinkName;
+	body="<b>"+data.drinkName+"</b><p/><ul>"+data.ingredients+"</ul><p/>"+data.instructions;
 	
 }
 
