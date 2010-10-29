@@ -1154,7 +1154,7 @@ function showDetail(drinkId) {
 										$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 										}); //hide any other popups
 		
-		console.log(IS_SHARED_DRINK);
+		//console.log(IS_SHARED_DRINK);
         var sharedString = "";
         if (IS_SHARED_DRINK) sharedString = "?detailTypeShared="+IS_SHARED_DRINK
 			
@@ -1173,25 +1173,21 @@ function showDetail(drinkId) {
 				  
 				  selectedDrinkDetails = data; //set current drinkdetail
 				  $(".drink-title").empty().append(data.drinkName);
-				  //$(".edit-drink-title").val(data.drinkName);
 				  
-				  $(".drink-type").text(data.drinkType);
-				 // $(".edit-drink-type").text(data.drinkType);
-				  
+				  $(".drink-type").text(data.drinkType);				  
 				  
 				  $(".drink-desc .scroll-child").empty().append(data.instructions);
-				 // $(".edit-drink-desc").val(data.instructions);
+
 				  
 				  $(".ing-wrapper .scroll-child").empty().append(data.ingredients);
 				  $(".ing-wrapper .scroll-child li").attr("class", "ing");
-				 // $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
-				  //$(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
-				 // $(".edit-ing-wrapper .scroll-child li").addClass("ing-choices");
+
 				  
-				  if(data.img!=null && IS_SHARED_DRINK)//blob
+				  if(IS_SHARED_DRINK && data.img!=undefined)//blob
 					$("#view_img_src").attr("src","data:image/jpeg;base64," + data.img);
-				  else if(data.img!=null)
+				  else if(data.img!=undefined)//not shared with img
 					$("#view_img_src").attr("src",data.img);
+				 
 				  
 				  $("#drink_id_input").val(data.id);
 				  
@@ -1341,8 +1337,10 @@ function setUpEdit() {
     $(".edit-drink-desc").val(data.instructions);
     $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
     $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
-	if(data.img!=null)
+	if(data.img!=undefined && IS_SHARED_DRINK)
 		$("#img_src").attr("src","data:image/jpeg;base64," + data.img);
+	else if(data.img!=undefined)//not shared with img
+		$("#img_src").attr("src",data.img);
 	
 	//set drink id
 	$("#selected-glass").find("div").removeAttr("class").attr("class","glass "+ data.glass).attr("id",data.glassId);
