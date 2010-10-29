@@ -423,18 +423,25 @@ $(document).ready(function () {
 														$("#ings-id-input").val(ings);
 														$("#uid-id-input").val(deviceUID);
 												  
+														dataString = $("#ajaxForm").serialize();
+												  
 														$.ajax({
 															   type: "POST",
 															   url: ROOT_URL + "drinks/update",
 															   data: dataString,
 															   dataType: "json",
 															   success: function(data) {
-														 
+															   //refresh data then flip
+															   showDetail($("#drink_id_input").val());
+															   //flip paper back
+															   $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 															   }
 														 });
 													  
-													  //flip paper back
-													  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+														
+												  
+												  
+													 
 												  }
 												  $(this).removeClass("updatebutton-on");
 												  });
@@ -518,7 +525,7 @@ function list_item_events() {
 								 $(this).addClass("list_item_down");
 								 $(this).find(".list_fav_selected").addClass("list-item-loading");
 								 $(this).find(".list_fav").addClass("list-item-loading");
-								 showDetail(this);
+								 showDetail($(this).attr("id"));
 								 }
 								 
 								 
@@ -944,7 +951,7 @@ function processDrinks(requestUrl, showDetails) {
 			  
 			  
 			  
-			  if (showDetails) showDetail($(".list_item").get(0));
+			  if (showDetails) showDetail($($(".list_item").get(0)).attr("id"));
 			  else removeLoadingMask();
 			  
 			  if ($("#list_wrapper li").length >= LIMIT) //add the add more link
@@ -1135,11 +1142,10 @@ function addEditButtonEvents() {
 	
 }
 
-function showDetail(that) {
+function showDetail(drinkId) {
 	
     if (PAGING_TYPE == PAGING_TYPE_ALL || PAGING_TYPE == PAGING_TYPE_CATEGORY || PAGING_TYPE == PAGING_TYPE_SEARCH) {
-        //if this is a drink not an ing or cat
-        var drinkId = $(that).attr("id");
+
         //flip paper to front
         $("#ing-inner-wrapper").fadeOut(function () {
 										$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
@@ -1211,8 +1217,6 @@ function showDetail(that) {
     }
     else if (PAGING_TYPE == PAGING_TYPE_ING) {
 		
-        //if this is a drink not an ing or cat
-        var drinkId = $(that).attr("id");
 		
         var requestUrl = ROOT_URL + "drinks/ingsId" + drinkId + "?typeName=" + TYPE_NAME + "&startIndex=0&isLimited=true";
         showDrinkList(requestUrl);
