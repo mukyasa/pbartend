@@ -525,6 +525,9 @@ function list_item_events() {
 								 $(this).addClass("list_item_down");
 								 $(this).find(".list_fav_selected").addClass("list-item-loading");
 								 $(this).find(".list_fav").addClass("list-item-loading");
+								 
+								 IS_SHARED_DRINK = $(this).attr("isShared");
+								 
 								 showDetail($(this).attr("id"));
 								 }
 								 
@@ -913,7 +916,7 @@ function processDrinks(requestUrl, showDetails) {
     $.getJSON(requestUrl, function (data) {
 			  
 			  if (data != null) {
-			  
+			 // console.log(data);
 			  if (data.drinkDetails.length != undefined) {
 			  //if type array meaning returns more than one
 			  for (i = 0; i < data.drinkDetails.length; i++) {
@@ -928,7 +931,7 @@ function processDrinks(requestUrl, showDetails) {
 			  
 			  }
 			  
-			  $("#list_wrapper").append("<li class=\"list_item " + data.drinkDetails[i].glass + "\" id=\"" + data.drinkDetails[i].id + "\"><span class=\"list_glass\">" + data.drinkDetails[i].drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
+			  $("#list_wrapper").append("<li isShared=\""+data.drinkDetails[i].custom+"\" class=\"list_item " + data.drinkDetails[i].glass + "\" id=\"" + data.drinkDetails[i].id + "\"><span class=\"list_glass\">" + data.drinkDetails[i].drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
 			  
 			  }
 			  }
@@ -946,7 +949,7 @@ function processDrinks(requestUrl, showDetails) {
 			  
 			  }
 			  
-			  $("#list_wrapper").append("<li class=\"list_item " + data.drinkDetails.glass + "\" id=\"" + data.drinkDetails.id + "\"><span class=\"list_glass\">" + data.drinkDetails.drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
+			  $("#list_wrapper").append("<li isShared=\""+data.drinkDetails.custom+"\"  class=\"list_item " + data.drinkDetails.glass + "\" id=\"" + data.drinkDetails.id + "\"><span class=\"list_glass\">" + data.drinkDetails.drinkName +"</span><span class=\"" + favoritesStar + "\"></span></li>");
 			  }
 			  
 			  
@@ -1151,9 +1154,9 @@ function showDetail(drinkId) {
 										$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 										}); //hide any other popups
 		
-		
+		console.log(IS_SHARED_DRINK);
         var sharedString = "";
-        if (IS_SHARED_DRINK) sharedString = "?detailTypeShared=true"
+        if (IS_SHARED_DRINK) sharedString = "?detailTypeShared="+IS_SHARED_DRINK
 			
 			var requestUrl = ROOT_URL + "drinks/details" + drinkId + sharedString;
 		
