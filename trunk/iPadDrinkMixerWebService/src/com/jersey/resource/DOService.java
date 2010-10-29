@@ -47,9 +47,10 @@ public class DOService extends SQL {
 			pstmt.setInt(1, glass);
 			pstmt.setString(2, drinkTitle);
 			pstmt.setString(3, instructions);
-			pstmt.setInt(4,category);
-			pstmt.setInt(5,drink_id);
-			pstmt.setString(6, img);
+			pstmt.setString(4, img);
+			pstmt.setInt(5,category);
+			pstmt.setInt(6,drink_id);
+			
 			
 			pstmt.executeUpdate();
 			
