@@ -663,7 +663,7 @@ public class DOService extends SQL {
 					drink.setGlassId(rs.getInt(COL_GLASS_ID));
 					drink.setCatId(rs.getInt(COL_CAT_ID));
 					
-					drink.setImg(detailTypeShared? rs.getString(COL_IMG): rs.getString(COL_IMG_LOC)); //either blob or url
+					drink.setImg(detailTypeShared? "data:image/jpeg;base64,"+rs.getString(COL_IMG): rs.getString(COL_IMG_LOC)); //either blob or url
 					
 
 				}
