@@ -45,8 +45,9 @@
 
 - (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingImage:(UIImage*)image editingInfo:(NSDictionary*)editingInfo;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker;
-
+-(UIImage*) resizeImage:(UIImage*)inImage recSize:(CGRect)thumbRect;
 - (void) dealloc;
+
 
 @end
 
