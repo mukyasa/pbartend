@@ -22,10 +22,17 @@ public class DrinkDetails {
 	private ArrayList<String> drinkNames = new ArrayList<String>();
 	private ArrayList<String> ings = new ArrayList<String>();
 	private String img;
-
+	private boolean isCustom=false;
 
 	
-	
+	public boolean isCustom() {
+		return isCustom;
+	}
+
+	public void setCustom(boolean isCustom) {
+		this.isCustom = isCustom;
+	}
+
 	public String getImg() {
 		return img;
 	}

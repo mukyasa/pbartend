@@ -316,7 +316,7 @@ public class DOService extends SQL {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
-			result = loopDrinks(rs, result);
+			result = loopDrinks(rs, result, true);
 			}
 	
 		} catch (Exception e) {
@@ -349,7 +349,7 @@ public class DOService extends SQL {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
-			result = loopDrinks(rs, result);
+			result = loopDrinks(rs, result,true);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -731,6 +731,11 @@ public class DOService extends SQL {
 		
 	}
 	
+	
+	private List<DrinkDetails> loopDrinks(ResultSet rs,List<DrinkDetails> result) throws Exception{
+		
+		return loopDrinks(rs, result, false);
+	}
 	/**
 	 * Builds a list of Drinks
 	 * 
@@ -740,7 +745,7 @@ public class DOService extends SQL {
 	 * @return
 	 * @throws Exception
 	 */
-	private List<DrinkDetails> loopDrinks(ResultSet rs,List<DrinkDetails> result) throws Exception {
+	private List<DrinkDetails> loopDrinks(ResultSet rs,List<DrinkDetails> result,boolean isSharedDrink) throws Exception {
 		
 		while (rs.next()) {
 			DrinkDetails drink = new DrinkDetails();
@@ -755,6 +760,7 @@ public class DOService extends SQL {
 			//drink.setFavorites(rs.getInt(COL_FAVORITE));
 			String drink_css = rs.getString(COL_GLASS_NAME).replace(" ","-");
 			drink.setGlass(drink_css);
+			drink.setCustom(isSharedDrink);
 
 			result.add(drink);
 		}
