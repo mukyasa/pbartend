@@ -29,6 +29,8 @@ public class DOService extends SQL {
 	private final int CAT_PUNCH = 6;
 	private final int CAT_SHOOTER = 7;
 	private final String LIMIT = "150";
+	private final String SITE_URL="http://192.168.1.107:8080";
+	private final String IMG_ROOT= SITE_URL + "/iPad/drinkimages/";
 	
 	public String updateDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,int drink_id,String img){
 		
@@ -663,7 +665,9 @@ public class DOService extends SQL {
 					drink.setGlassId(rs.getInt(COL_GLASS_ID));
 					drink.setCatId(rs.getInt(COL_CAT_ID));
 					
-					drink.setImg(detailTypeShared? "data:image/jpeg;base64,"+rs.getString(COL_IMG): rs.getString(COL_IMG_LOC)); //either blob or url
+					String img_loc=rs.getString(COL_IMG_LOC);
+					
+					drink.setImg(detailTypeShared? "data:image/jpeg;base64,"+rs.getString(COL_IMG): img_loc != null? IMG_ROOT+img_loc : null); //either blob or url
 					
 
 				}
