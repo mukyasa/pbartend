@@ -1,8 +1,8 @@
 var db;
 var favoritesArray = new Array();
 var selectedDrinkDetails;
-//var ROOT_IP = "http://192.168.1.107:8080";//home
-var ROOT_IP = "http://localhost:8080";//work
+var ROOT_IP = "http://192.168.1.107:8080";//home
+//var ROOT_IP = "http://localhost:8080";//work
 var ROOT_URL = ROOT_IP + "/iPad/rest/";
 var css_orientation = "port";
 var list_scroll = false;
