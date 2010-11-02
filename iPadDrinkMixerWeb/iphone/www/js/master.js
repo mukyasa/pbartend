@@ -544,7 +544,7 @@ function list_item_events() {
 										   e.preventDefault(); //prevent copy and mag from showing
 										   if (!list_scroll) //if not scrolling 
 										   {
-										   if (confirm("Are you sure you want change your favorite status?")) {
+										   if (showConfirm("Are you sure you want change your favorite status?")) {
 										   
 										   var drinkId = $(this).parent().attr("id");
 										   var isOn = $(this).hasClass("list_fav_selected");
@@ -1038,8 +1038,8 @@ function addEditButtonEvents() {
 									   });
 	
 	$(".delete-icon").unbind().bind(END_EVENT,function(e){
-									if(confirm("Did you want to delete this?"))
-									$(this).parent().remove();
+									if(showConfirm("Did you want to delete this?"))
+										$(this).parent().remove();
 									
 									});
 	
@@ -1318,14 +1318,41 @@ function deviceInfo() {
 function setClientIp(ip) {
     clientIp = ip;
 }
+
+
+function showConfirm(alertMessage){
+	
+	$("#alertMessage").text(alertMessage);
+	
+	$( "#dialog-modal" ).dialog({
+						resizable: false,
+						height:180,
+						modal: true,
+						buttons: {
+							Ok: function() {
+								$( this ).dialog( "close" );
+							},
+							Cancel: function() {
+								$( this ).dialog( "close" );
+							}
+						}
+			});
+	
+}
+
 function showAlert(alertMessage){
 
 	$("#alertMessage").text(alertMessage);
 	$( "#dialog" ).dialog( "destroy" );
 	
 	$( "#dialog-modal" ).dialog({
-		height: 140,
-		modal: true
+		height: 180,
+		modal: true,
+					buttons: {
+						Ok: function() {
+						$( this ).dialog( "close" );								
+						}
+					}
 		});
 }
 function setUpEdit() {
