@@ -1013,7 +1013,7 @@ function setUpFavorites() {
 	
 }
 
-function getAQuote() {
+function getAQuote() { 
 	
     var requestUrl = ROOT_URL + "quotes";
     //call to get details
