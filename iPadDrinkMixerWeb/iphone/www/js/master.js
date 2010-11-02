@@ -502,8 +502,7 @@ function list_item_events() {
     $(".ing-item").bind(START_EVENT, function () {
 						list_scroll = false;
 						
-						}).bind(END_EVENT, function () {
-								
+						}).bind(END_EVENT, function () {	
 								
 								
 								if (!list_scroll)
