@@ -665,14 +665,12 @@ public class DOService extends SQL {
 					drink.setGlassId(rs.getInt(COL_GLASS_ID));
 					drink.setCatId(rs.getInt(COL_CAT_ID));
 					
-					String img_loc=rs.getString(COL_IMG_LOC);
-					
-					drink.setImg(detailTypeShared? "data:image/jpeg;base64,"+rs.getString(COL_IMG): img_loc != null? IMG_ROOT+img_loc : null); //either blob or url
+					drink.setImg(detailTypeShared? "data:image/jpeg;base64,"+rs.getString(COL_IMG): (rs.getString(COL_IMG_LOC) != null? IMG_ROOT+rs.getString(COL_IMG_LOC) : null)); //either blob or url
 					
 
 				}
-
-				drink.setIngredients(ingredients.toString());
+				if(drink!=null)
+					drink.setIngredients(ingredients.toString());
 			}
 
 		} catch (Exception e) {
