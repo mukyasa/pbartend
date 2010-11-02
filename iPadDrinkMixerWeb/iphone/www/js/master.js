@@ -543,53 +543,9 @@ function list_item_events() {
     $(".list_fav,.list_fav_selected").bind(START_EVENT, function (e) {
 										   e.preventDefault(); //prevent copy and mag from showing
 										   if (!list_scroll) //if not scrolling 
-										   {
-										   if (showConfirm("Are you sure you want change your favorite status?")) {
-										   
-										   var drinkId = $(this).parent().attr("id");
-										   var isOn = $(this).hasClass("list_fav_selected");
-										   var that = this;
-										   var tmpfav = new Array();
-										   
-										   if (!isOn) //add favorite
-										   {
-										   db.transaction(
-														  
-														  function (transaction) {
-														  transaction.executeSql("INSERT INTO tblFavorites (drink_id) VALUES (?);", [drinkId], function () {
-																				 
-																				 $(that).addClass("list_fav_selected").removeClass("list_fav");
-																				 //add id
-																				 favoritesArray.push(drinkId);
-																				 $(".list_item").removeClass("list_item_down");
-																				 })
-														  });
-										   }
-										   else //remove favorite
-										   {
-										   db.transaction(
-														  
-														  function (transaction) {
-														  transaction.executeSql("DELETE FROM tblFavorites WHERE drink_id = (?);", [drinkId], function () {
-																				 
-																				 $(that).addClass("list_fav").removeClass("list_fav_selected");
-																				 //remove id
-																				 for (i = 0; i < favoritesArray.length; i++) {
-																				 if (favoritesArray[i] != drinkId) tmpfav.push(favoritesArray[i]);
-																				 }
-																				 //reset favoritesArray
-																				 favoritesArray = tmpfav;
-																				 
-																				 
-																				 $(".list_item").removeClass("list_item_down");
-																				 
-																				 })
-														  });
-										   }
-										   
-										   }
-										   }
-										   else list_scroll = false;
+												showConfirmFavorite("Are you sure you want change your favorite status?",this);
+										   else 
+												list_scroll = false;
 										   
 										   
 										   });
@@ -608,6 +564,51 @@ function list_item_events() {
 						processDrinks(requestUrl, true);
 						
 						});
+}
+
+function updateFavorite(that){
+
+	var drinkId = $(that).parent().attr("id");
+	var isOn = $(that).hasClass("list_fav_selected");
+
+	var tmpfav = new Array();
+	
+	if (!isOn) //add favorite
+	{
+		db.transaction(
+					   
+					   function (transaction) {
+					   transaction.executeSql("INSERT INTO tblFavorites (drink_id) VALUES (?);", [drinkId], function () {
+											  
+											  $(that).addClass("list_fav_selected").removeClass("list_fav");
+											  //add id
+											  favoritesArray.push(drinkId);
+											  $(".list_item").removeClass("list_item_down");
+											  })
+					   });
+	}
+	else //remove favorite
+	{
+		db.transaction(
+					   
+					   function (transaction) {
+					   transaction.executeSql("DELETE FROM tblFavorites WHERE drink_id = (?);", [drinkId], function () {
+											  
+											  $(that).addClass("list_fav").removeClass("list_fav_selected");
+											  //remove id
+											  for (i = 0; i < favoritesArray.length; i++) {
+												if (favoritesArray[i] != drinkId) tmpfav.push(favoritesArray[i]);
+											  }
+											  //reset favoritesArray
+											  favoritesArray = tmpfav;
+											  
+											  
+											  $(".list_item").removeClass("list_item_down");
+											  
+											  })
+					   });
+	}
+
 }
 
 function handleIngPop() {
@@ -1038,8 +1039,7 @@ function addEditButtonEvents() {
 									   });
 	
 	$(".delete-icon").unbind().bind(END_EVENT,function(e){
-									if(showConfirm("Did you want to delete this?"))
-										$(this).parent().remove();
+									showConfirmDelete("Did you want to delete this?",this);									
 									
 									});
 	
@@ -1320,7 +1320,29 @@ function setClientIp(ip) {
 }
 
 
-function showConfirm(alertMessage){
+function showConfirmFavorite(alertMessage,elm){
+	
+	$("#alertMessage").text(alertMessage);
+	
+	$( "#dialog-modal" ).dialog({
+								resizable: false,
+								height:180,
+								modal: true,
+								buttons: {
+									Ok: function() {
+										$( this ).dialog( "close" );
+										updateFavorite(elm);
+								},
+									Cancel: function() {
+										$( this ).dialog( "close" );
+								
+									}
+								}
+						});
+	
+}
+
+function showConfirmDelete(alertMessage,elm){
 	
 	$("#alertMessage").text(alertMessage);
 	
@@ -1331,9 +1353,11 @@ function showConfirm(alertMessage){
 						buttons: {
 							Ok: function() {
 								$( this ).dialog( "close" );
+								$(elm).parent().remove();
 							},
 							Cancel: function() {
 								$( this ).dialog( "close" );
+								
 							}
 						}
 			});
