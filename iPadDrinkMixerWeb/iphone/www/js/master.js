@@ -504,9 +504,13 @@ function list_item_events() {
 						
 						}).bind(END_EVENT, function () {
 								
-								$(this).parent().find(".ing-item").removeClass("list_item_down");
 								
-								if (!list_scroll) $(this).addClass("list_item_down");
+								
+								if (!list_scroll)
+								{
+									$(this).parent().find(".ing-item").removeClass("list_item_down");
+									$(this).addClass("list_item_down");
+								}
 								
 								}).bind(MOVE_EVENT, function () {
 										list_scroll = true;
