@@ -44,6 +44,7 @@
 		71CF78C012592138006989A1 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF78B812592138006989A1 /* SBJsonBase.m */; };
 		71CF78C112592138006989A1 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF78BA12592138006989A1 /* SBJsonParser.m */; };
 		71CF78C212592138006989A1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF78BC12592138006989A1 /* SBJsonWriter.m */; };
+		71DFA12C12768DC700E82A58 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DFA12B12768DC700E82A58 /* NSData+Base64.m */; };
 		824041C10E942F0E002F3376 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 824041C00E942F0E002F3376 /* Default.png */; };
 		825DFB5E0E464E6C000D0A5D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 825DFB5D0E464E6C000D0A5D /* README.md */; };
 		828B59CE0E520C7F0096DE8B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828B59CD0E520C7F0096DE8B /* AudioToolbox.framework */; };
@@ -106,6 +107,8 @@
 		71CF78BA12592138006989A1 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		71CF78BB12592138006989A1 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		71CF78BC12592138006989A1 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		71DFA12A12768DC700E82A58 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		71DFA12B12768DC700E82A58 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		824041C00E942F0E002F3376 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		825DFB5D0E464E6C000D0A5D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		828B59CD0E520C7F0096DE8B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -144,6 +147,8 @@
 				71CF78AF12592138006989A1 /* JSON */,
 				71CF77A51258F80E006989A1 /* DebugConsole.h */,
 				71CF77A61258F80E006989A1 /* DebugConsole.m */,
+				71DFA12A12768DC700E82A58 /* NSData+Base64.h */,
+				71DFA12B12768DC700E82A58 /* NSData+Base64.m */,
 				711ECBD812767F81001E6D8D /* Camera.h */,
 				711ECBD912767F81001E6D8D /* Camera.m */,
 				71CF777B1258F6AF006989A1 /* Device.h */,
@@ -366,6 +371,7 @@
 				71CF78C112592138006989A1 /* SBJsonParser.m in Sources */,
 				71CF78C212592138006989A1 /* SBJsonWriter.m in Sources */,
 				711ECBDA12767F81001E6D8D /* Camera.m in Sources */,
+				71DFA12C12768DC700E82A58 /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
