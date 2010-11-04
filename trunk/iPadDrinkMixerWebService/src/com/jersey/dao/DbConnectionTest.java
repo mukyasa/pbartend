@@ -15,7 +15,7 @@ import java.sql.Statement;
 		Class.forName(driverName);
 		
 		String serverName = "localhost";
-		String myDb = "drinkmixer";
+		String myDb = "drinkmixer";//mypocket_root
 		String url="jdbc:mysql://"+serverName + "/" + myDb;
 		
 		String user = "root";
