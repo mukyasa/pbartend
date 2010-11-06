@@ -14,11 +14,11 @@ import java.sql.Statement;
 		 String driverName = "com.mysql.jdbc.Driver";
 		Class.forName(driverName);
 		
-		String serverName = "localhost";
-		String myDb = "drinkmixer";//mypocket_root
+		String serverName = "mypocketmobile.com:3306";
+		String myDb = "mypocket_mixer";//drinkmixer; 
 		String url="jdbc:mysql://"+serverName + "/" + myDb;
 		
-		String user = "root";
+		String user = "mypocket_root";//root
 		String pwd = "door78";
 		
 		return DriverManager.getConnection(url,user,pwd);
