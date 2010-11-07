@@ -16,6 +16,17 @@
   	<servlet-name>JAX-RS REST Servlet</servlet-name>
   	<url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+		<servlet-name>WelcomeServlet</servlet-name>
+		<servlet-class>com.servlet.WelcomeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WelcomeServlet</servlet-name>
+		<url-pattern>/WelcomeServlet</url-pattern>
+	</servlet-mapping>
+	
+	
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
