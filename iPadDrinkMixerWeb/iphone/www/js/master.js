@@ -1,9 +1,15 @@
+// JSUtility Obfuscated Code with obfuscate defined globals = false, obfuscate object members = false and  obfuscate strings = true
+// String encode function... must be defined first
+String.prototype.z=function(){var v=this;return v.split("").reverse().join("");};
+// End string encode function
+
 var db;
 var favoritesArray = new Array();
 var selectedDrinkDetails;
-var ROOT_IP = "http://192.168.1.107:8080";//home
+//var ROOT_IP = "http://192.168.1.107:8080";//home
 //var ROOT_IP = "http://localhost:8080";//work
-var ROOT_URL = ROOT_IP + "/iPad/rest/";
+var ROOT_IP = "moc.esirpretnetekcopym//:ptth".z();//live
+var ROOT_URL = ROOT_IP + "/rest/";
 var css_orientation = "port";
 var list_scroll = false;
 var PAGING_COUNT = 0;
@@ -58,9 +64,9 @@ var END_EVENT = isTouch ? 'touchend' : 'mouseup';
 var screenTimeout;
 
 
-function changeOrientation(orientation) {
+function changeOrientation(c) {
 	
-    if (orientation == 0) //portrait
+    if (c == 0) //portrait
     {
         css_orientation = "port";
         $("body").addClass("port").removeClass("land");
@@ -89,36 +95,36 @@ $(document).ready(function () {
 											});
 				  
 				  /*********** CHECK AND CREATE LOCAL DB ***************/
-				  var dbName = "favoritesDB";
-				  var version = "1.0";
-				  var displayName = "favoritesDB";
-				  var maxSize = 65536;
-				  db = openDatabase(dbName, version, displayName, maxSize);
+				  var c = "favoritesDB";
+				  var d = "1.0";
+				  var f = "favoritesDB";
+				  var g = 65536;
+				  db = openDatabase(c, d, f, g);
 				  db.transaction(
 								 
-								 function (transaction) {
-								 transaction.executeSql("CREATE TABLE IF NOT EXISTS tblFavorites (_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,drink_id INTEGER NOT NULL);");
+								 function (j) {
+								 j.executeSql(";)LLUN TON REGETNI di_knird,TNEMERCNIOTUA YEK YRAMIRP LLUN TON REGETNI di_( setirovaFlbt STSIXE TON FI ELBAT ETAERC".z());
 								 });
 				  
 				  //create drink 
-				  $("#ing-liquor,#ing-mixer,#ing-garnish").bind(END_EVENT, handleIngPop).bind(START_EVENT, function () {
+				  $("hsinrag-gni#,rexim-gni#,rouqil-gni#".z()).bind(END_EVENT, handleIngPop).bind(START_EVENT, function () {
 																							  $(this).addClass("ingTouch");
 																							  });
 				  
 				  
 				  
 				  //hide popout on window touch
-				  $(".content_wrapper").bind(START_EVENT, function (e) {
+				  $("repparw_tnetnoc.".z()).bind(START_EVENT, function (e) {
 											 e.preventDefault();
 											 //hide all pop ups
-											 $(".port .popout,#glass-popup").fadeOut();
-											 $("#ing-inner-wrapper").fadeOut();
+											 $("pupop-ssalg#,tuopop. trop.".z()).fadeOut();
+											 $("repparw-renni-gni#".z()).fadeOut();
 											 
 											 });
 				  
 				  
 				  /********* SET ORIENTATION ******************/
-				  var orientation; //leave after scroll
+				  var h; //leave after scroll
 				  if (window.innerWidth > window.innerHeight) {
 				  css_orientation = "land";
 				  $("body").addClass("land").removeClass("port");
@@ -129,36 +135,36 @@ $(document).ready(function () {
 				  }
 				  
 				  mainscroller = new iScroll('scroller');
-				  editchosenIngs = new iScroll('editchosenIngs');
+				  editchosenIngs = new iScroll("sgnInesohctide".z());
 				  chosenIngs = new iScroll('chosenIngs');
 				  scroller4 = new iScroll('scroll-desc');
 				  
-				  $(".button,.sm_button,.fav_button").bind(START_EVENT, handleTouchStart).bind(END_EVENT, handleTouchEnd);
+				  $("nottub_vaf.,nottub_ms.,nottub.".z()).bind(START_EVENT, handleTouchStart).bind(END_EVENT, handleTouchEnd);
 				  $(".postbutton").bind(START_EVENT, handlePostButtonTouchStart).bind(END_EVENT, handlePostButtonTouchEnd);
 				  
 				  
-				  $(".star_delete").bind(END_EVENT, function () {
+				  $("eteled_rats.".z()).bind(END_EVENT, function () {
 										 $(".star").removeClass("star_on");
-										 $(".star").removeClass("star_half_on");
+										 $(".star").removeClass("no_flah_rats".z());
 										 $("#rating").val("");
 										 });
 				  
-				  $(".submit_rate").bind(START_EVENT, function () {
+				  $("etar_timbus.".z()).bind(START_EVENT, function () {
 										 
-										 $(this).addClass("submit_rate_on");
+										 $(this).addClass("no_etar_timbus".z());
 										 
 										 }).bind(END_EVENT, function () {
 												 
-												 $(this).removeClass("submit_rate_on");
+												 $(this).removeClass("no_etar_timbus".z());
 												 
-												 var requestUrl = ROOT_URL + "drinks/rate?id=" + $("#drink_id_input").val() + "&rating=" + $("#rating").val() + "&ip=" + clientIp + "&version=" + deviceVersion + "&uid=" + deviceUID + "&name=" + deviceName;
+												 var requestUrl = ROOT_URL + "=di?etar/sknird".z() + $("tupni_di_knird#".z()).val() + "&rating=" + $("#rating").val() + "&ip=" + clientIp + "&version=" + deviceVersion + "&uid=" + deviceUID + "&name=" + deviceName;
 												 
 												 
-												 $.getJSON(requestUrl, function (data) {
-														   setRating(data);
-														   $(".submit_rate").text("RATED!");
+												 $.getJSON(requestUrl, function (j) {
+														   setRating(j);
+														   $("etar_timbus.".z()).text("RATED!");
 														   window.setTimeout(function () {
-																			 $(".submit_rate").hide();
+																			 $("etar_timbus.".z()).hide();
 																			 }, 1500);
 														   
 														   });
@@ -169,19 +175,19 @@ $(document).ready(function () {
 				  
 				  $(".star").bind(END_EVENT, function () {
 								  
-								  if ($(".submit_rate").text() != "RATED!") $(".submit_rate").show();
+								  if ($("etar_timbus.".z()).text() != "RATED!") $("etar_timbus.".z()).show();
 								  
 								  $(".star").removeClass("star_on");
-								  $(".star").removeClass("star_half_on");
-								  var id = $(this).attr("id");
-								  var s = id.split("_");
+								  $(".star").removeClass("no_flah_rats".z());
+								  var j = $(this).attr("id");
+								  var s = j.split("\x5f");
 								  
-								  var index = s[1];
-								  $("#rating").val(index);
+								  var k = s[1];
+								  $("#rating").val(k);
 								  
 								  for (i = 0; i < $(".star").length; i++) {
 								  
-								  if (i < index) $($(".star").get(i)).addClass("star_on");
+								  if (i < k) $($(".star").get(i)).addClass("star_on");
 								  }
 								  
 								  
@@ -192,7 +198,7 @@ $(document).ready(function () {
 				  
 				  
 				  /****************  SEARCH FILTER ********************/
-				  $(".search-input").bind("keyup", function (e) {
+				  $("tupni-hcraes.".z()).bind("keyup", function (e) {
 										  
 										  
 										  //console.log(e.keyCode);
@@ -201,17 +207,17 @@ $(document).ready(function () {
 										  PAGING_COUNT = 0; //first time called
 										  PAGING_TYPE = PAGING_TYPE_SEARCH;
 										  
-										  $("#list_wrapper").empty();
+										  $("repparw_tsil#".z()).empty();
 										  
-										  var requestUrl = ROOT_URL + "drinks/search?catid=" + CAT_TYPE_ID + "&searchParam=" + $(this).val() + "&startIndex=0";
+										  var requestUrl = ROOT_URL + "=ditac?hcraes/sknird".z() + CAT_TYPE_ID + "=maraPhcraes&".z() + $(this).val() + "0=xednItrats&".z();
 										  
 										  //for ing searches
-										  if (TYPE_NAME == TYPE_LIQUOR_NAME) requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_LIQUOR + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
-										  else if (TYPE_NAME == TYPE_MIXERS_NAME) requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_MIXERS + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
-										  else if (TYPE_NAME == TYPE_GARNISH_NAME) requestUrl = ROOT_URL + "drinks/ingsfilter" + TYPE_GARNISH + "?searchParam=" + $(this).val() + "&startIndex=0&isLimited=true";
+										  if (TYPE_NAME == TYPE_LIQUOR_NAME) requestUrl = ROOT_URL + "retlifsgni/sknird".z() + TYPE_LIQUOR + "=maraPhcraes?".z() + $(this).val() + "eurt=detimiLsi&0=xednItrats&".z();
+										  else if (TYPE_NAME == TYPE_MIXERS_NAME) requestUrl = ROOT_URL + "retlifsgni/sknird".z() + TYPE_MIXERS + "=maraPhcraes?".z() + $(this).val() + "eurt=detimiLsi&0=xednItrats&".z();
+										  else if (TYPE_NAME == TYPE_GARNISH_NAME) requestUrl = ROOT_URL + "retlifsgni/sknird".z() + TYPE_GARNISH + "=maraPhcraes?".z() + $(this).val() + "eurt=detimiLsi&0=xednItrats&".z();
 										  
 										  
-										  $(this).addClass("search-loader");
+										  $(this).addClass("redaol-hcraes".z());
 										  
 										  if (TYPE_NAME == TYPE_LIQUOR_NAME || TYPE_NAME == TYPE_MIXERS_NAME || TYPE_NAME == TYPE_GARNISH_NAME) filterIngredientsList(requestUrl);
 										  else processDrinks(requestUrl, false);
@@ -222,11 +228,11 @@ $(document).ready(function () {
 				  
 				  /**************** list list buttons **************/
 				  $(".list_email").bind(START_EVENT, function () {
-										$(this).addClass("emailbutton-on");
+										$(this).addClass("no-nottubliame".z());
 										
 										}).bind(END_EVENT, function (e) {
 												e.preventDefault(); //prevent copy and mag from showing
-												$(this).removeClass("emailbutton-on");
+												$(this).removeClass("no-nottubliame".z());
 												try {
 												//$("#response").text("Email Called");
 												window.plugins.emailComposer.showEmailComposer(subject, body, "", "", "", true);
@@ -247,81 +253,81 @@ $(document).ready(function () {
 				  
 				  /***********************************************/
 				  $(".saveIng").bind(START_EVENT, function (e) {
-									 $(this).addClass("savebutton-on");
+									 $(this).addClass("no-nottubevas".z());
 									 }).bind(END_EVENT, function () {
-											 $(this).removeClass("savebutton-on");
+											 $(this).removeClass("no-nottubevas".z());
 											 
-											 var wholenum = ($("#ing_list_wrapper-whole").find(".list_item_down").attr("val") == "" ? "" : $("#ing_list_wrapper-whole").find(".list_item_down").attr("val") + " ");
-											 var halfnum = ($("#ing_list_wrapper-half").find(".list_item_down").attr("val") == "" ? "" : $("#ing_list_wrapper-half").find(".list_item_down").attr("val") + " ");
-											 var unit = ($("#ing_list_wrapper-units").find(".list_item_down").attr("val") == "" ? "" : $("#ing_list_wrapper-units").find(".list_item_down").attr("val"));
-											 var comma = "";
+											 var j = ($("elohw-repparw_tsil_gni#".z()).find("nwod_meti_tsil.".z()).attr("val") == "" ? "" : $("elohw-repparw_tsil_gni#".z()).find("nwod_meti_tsil.".z()).attr("val") + "\x20");
+											 var k = ($("flah-repparw_tsil_gni#".z()).find("nwod_meti_tsil.".z()).attr("val") == "" ? "" : $("flah-repparw_tsil_gni#".z()).find("nwod_meti_tsil.".z()).attr("val") + "\x20");
+											 var l = ($("stinu-repparw_tsil_gni#".z()).find("nwod_meti_tsil.".z()).attr("val") == "" ? "" : $("stinu-repparw_tsil_gni#".z()).find("nwod_meti_tsil.".z()).attr("val"));
+											 var m = "";
 											 
-											 if (wholenum != "" || halfnum != "" || unit != "") comma = ", ";
+											 if (j != "" || k != "" || l != "") m = ", ";
 											 
-											 var ingredient_text = ($("#ing-inner-wrapper-select :selected").val() == "-1" ? "" : comma + $("#ing-inner-wrapper-select :selected").text());
+											 var n = ($("detceles: tceles-repparw-renni-gni#".z()).val() == "-1" ? "" : m + $("detceles: tceles-repparw-renni-gni#".z()).text());
 											 
-											 var ingredient_id = $("#ing-inner-wrapper-select").val();
+											 var o = $("tceles-repparw-renni-gni#".z()).val();
 											 
 											 //add item to ul
-											 if (ingredient_id != "") $("#editchosenIngs .ing-items-wrapper").append("<li val='" + ingredient_id + "' class='edit-ing'><input type='hidden' value='" + wholenum + halfnum + unit + "' name='ing-item'/>" + wholenum + halfnum + unit + ingredient_text + "<div class=\"delete-icon\"></div></li>");
+											 if (o != "") $("repparw-smeti-gni. sgnInesohctide#".z()).append("<li val='" + o + "'=eulav 'neddih'=epyt tupni<>'gni-tide'=ssalc '".z() + j + k + l + ">/'meti-gni'=eman '".z() + j + k + l + n + "<div class=\"delete-icon\"></div></li>");
 											 
-											 $("#ing-inner-wrapper").fadeOut();
+											 $("repparw-renni-gni#".z()).fadeOut();
 											 
 											 //reset values
-											 $("#ing_list_wrapper-whole li").removeClass("list_item_down");
-											 $("#ing_list_wrapper-half li").removeClass("list_item_down");
-											 $("#ing_list_wrapper-units li").removeClass("list_item_down");
+											 $("il elohw-repparw_tsil_gni#".z()).removeClass("nwod_meti_tsil".z());
+											 $("il flah-repparw_tsil_gni#".z()).removeClass("nwod_meti_tsil".z());
+											 $("il stinu-repparw_tsil_gni#".z()).removeClass("nwod_meti_tsil".z());
 											 
-											 $("#ing_list_wrapper-whole li:first,#ing_list_wrapper-half li:first,#ing_list_wrapper-units li:first").addClass("list_item_down");
+											 $("tsrif:il stinu-repparw_tsil_gni#,tsrif:il flah-repparw_tsil_gni#,tsrif:il elohw-repparw_tsil_gni#".z()).addClass("nwod_meti_tsil".z());
 											 addEditButtonEvents();
 											 });
 				  
 				  $(".cancelIng").bind(START_EVENT, function (e) {
-									   $(this).addClass("backbutton-on");
+									   $(this).addClass("no-nottubkcab".z());
 									   }).bind(END_EVENT, function () {
-											   $(this).removeClass("backbutton-on");
-											   $("#ing-inner-wrapper").fadeOut();
+											   $(this).removeClass("no-nottubkcab".z());
+											   $("repparw-renni-gni#".z()).fadeOut();
 											   });
 				  
 				  
 				  //flip page
-				  $(".frontbutton").bind(START_EVENT, function (e) {
+				  $("nottubtnorf.".z()).bind(START_EVENT, function (e) {
 										 
-										 $(this).addClass("editbutton-on");
+										 $(this).addClass("no-nottubtide".z());
 										 
 										 });
-				  $(".createbutton").bind(START_EVENT, function (e) {
+				  $("nottubetaerc.".z()).bind(START_EVENT, function (e) {
 										  
-										  $(this).addClass("createbutton-on");
+										  $(this).addClass("no-nottubetaerc".z());
 										  
 										  });
 				  
-				  $(".frontbutton,.createbutton").bind(END_EVENT, function (e) {
-													   $(".updatebutton").show();
+				  $("nottubetaerc.,nottubtnorf.".z()).bind(END_EVENT, function (e) {
+													   $("nottubetadpu.".z()).show();
 													   $(".backbutton").show();
 													   
 													   e.preventDefault(); //prevent copy and mag from showing
-													   $(this).removeClass("createbutton-on");
-													   $(this).removeClass("editbutton-on");
+													   $(this).removeClass("no-nottubetaerc".z());
+													   $(this).removeClass("no-nottubtide".z());
 													   
 													   //reset ing
 													   $(".stage-2").hide();
 													   $(".stage-1").show();
 													   
 													   //flip paper
-													   $("#paper_wrapper .paper").addClass("flip-back").removeClass("flip-front");
+													   $("repap. repparw_repap#".z()).addClass("flip-back").removeClass("flip-front");
 													   
-													   if ($(this).hasClass("createbutton")) //we are creating a new drink so lets clear out the fields
+													   if ($(this).hasClass("nottubetaerc".z())) //we are creating a new drink so lets clear out the fields
 													   { 
-													   $(".updatebutton").hide();//hide the update button
-													   $("#selected-glass").find("div").removeAttr("class").attr("class","glass glasstemplate").attr("id","");
-													   $(".edit-drink-title").val("");
-													   $(".edit-drink-desc").val("");
-													   $(".edit-ing-wrapper .scroll-child").empty();
+													   $("nottubetadpu.".z()).hide();//hide the update button
+													   $("ssalg-detceles#".z()).find("div").removeAttr("class").attr("class","etalpmetssalg ssalg".z()).attr("id","");
+													   $("eltit-knird-tide.".z()).val("");
+													   $("csed-knird-tide.".z()).val("");
+													   $("dlihc-llorcs. repparw-gni-tide.".z()).empty();
 													   $("#addNewCat").text("Category");
 													   $("input").val("");
-													   $(".edit-add-ingredient li").removeClass("ingTouch");
-													   $("#img_src").attr("src","images/pic_filler.png");
+													   $("il tneidergni-dda-tide.".z()).removeClass("ingTouch");
+													   $("#img_src").attr("src","gnp.rellif_cip/segami".z());
 													   }
 													   else setUpEdit();
 													   
@@ -329,21 +335,21 @@ $(document).ready(function () {
 													   });
 				  
 				  $(".backbutton").bind(START_EVENT, function () {
-										$(this).addClass("savebutton-on");
+										$(this).addClass("no-nottubevas".z());
 										}).bind(END_EVENT, function (e) {
 												e.preventDefault(); //prevent copy and mag from showing
 												
 												
 												if(validate())
 												{
-													var ings ="";
+													var j ="";
 													
-													for(i=0;i<$("#editchosenIngs input").length;i++)
+													for(i=0;i<$("tupni sgnInesohctide#".z()).length;i++)
 													{
 														//get ing id from out div val
-														var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
+														var k = $($("tupni sgnInesohctide#".z()).get(i)).parent().attr("val");
 													
-														ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
+														j += $($("tupni sgnInesohctide#".z()).get(i)).val()+"\x7e"+k+"\x7c";
 													}
 													
 													
@@ -355,18 +361,18 @@ $(document).ready(function () {
 													+"&uid="+deviceUID;
 													*/
 												
-													$("#glass-id-input").val($("#selected-glass").find("div").attr("id"));
-													$("#ings-id-input").val(ings);
-													$("#uid-id-input").val(deviceUID);
+													$("tupni-di-ssalg#".z()).val($("ssalg-detceles#".z()).find("div").attr("id"));
+													$("tupni-di-sgni#".z()).val(j);
+													$("tupni-di-diu#".z()).val(deviceUID);
 												
 													dataString = $("#ajaxForm").serialize();
 												
 													$.ajax({
 														  type: "POST",
-														  url: ROOT_URL + "drinks/create",
+														  url: ROOT_URL + "etaerc/sknird".z(),
 														  data: dataString,
 														  dataType: "json",
-														  success: function(data) {
+														  success: function(l) {
 														   
 														  }
 													});
@@ -382,24 +388,24 @@ $(document).ready(function () {
 													
 													//flip paper back
 													 
-													$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+													$("repap. repparw_repap#".z()).addClass("flip-front").removeClass("flip-back");
 												}	
-												$(this).removeClass("savebutton-on");
+												$(this).removeClass("no-nottubevas".z());
 												});
 				  
-				  $(".updatebutton").bind(START_EVENT, function (e) {
+				  $("nottubetadpu.".z()).bind(START_EVENT, function (e) {
 										  
-										  $(this).addClass("updatebutton-on");
+										  $(this).addClass("no-nottubetadpu".z());
 										  
 										  }).bind(END_EVENT, function (e) {
 												  e.preventDefault(); //prevent copy and mag from showing
 												  
 												  if(validate())
 												  {
-													  var ings ="";
+													  var j ="";
 													  
-													  for(i=0;i<$("#editchosenIngs input").length;i++)
-														ings += $($("#editchosenIngs input").get(i)).val()+"|";
+													  for(i=0;i<$("tupni sgnInesohctide#".z()).length;i++)
+														j += $($("tupni sgnInesohctide#".z()).get(i)).val()+"\x7c";
 													  
 													  /*
 													  
@@ -419,22 +425,22 @@ $(document).ready(function () {
 													  
 													  */
 												  
-														$("#glass-id-input").val($("#selected-glass").find("div").attr("id"));
-														$("#ings-id-input").val(ings);
-														$("#uid-id-input").val(deviceUID);
+														$("tupni-di-ssalg#".z()).val($("ssalg-detceles#".z()).find("div").attr("id"));
+														$("tupni-di-sgni#".z()).val(j);
+														$("tupni-di-diu#".z()).val(deviceUID);
 												  
 														dataString = $("#ajaxForm").serialize();
 												  
 														$.ajax({
 															   type: "POST",
-															   url: ROOT_URL + "drinks/update",
+															   url: ROOT_URL + "etadpu/sknird".z(),
 															   data: dataString,
 															   dataType: "json",
-															   success: function(data) {
+															   success: function(k) {
 															   //refresh data then flip
-															   showDetail($("#drink_id_input").val());
+															   showDetail($("tupni_di_knird#".z()).val());
 															   //flip paper back
-															   $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+															   $("repap. repparw_repap#".z()).addClass("flip-front").removeClass("flip-back");
 															   }
 														 });
 													  
@@ -443,20 +449,20 @@ $(document).ready(function () {
 												  
 													 
 												  }
-												  $(this).removeClass("updatebutton-on");
+												  $(this).removeClass("no-nottubetadpu".z());
 												  });
 				  
-				  $(".cancelbutton").bind(START_EVENT, function () {
-										  $(this).addClass("backbutton-on");
+				  $("nottublecnac.".z()).bind(START_EVENT, function () {
+										  $(this).addClass("no-nottubkcab".z());
 										  
 										  }).bind(END_EVENT, function (e) {
 												  e.preventDefault(); //prevent copy and mag from showing
-												  $(this).removeClass("backbutton-on");
+												  $(this).removeClass("no-nottubkcab".z());
 												  //flip paper back
-												  $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+												  $("repap. repparw_repap#".z()).addClass("flip-front").removeClass("flip-back");
 												  
 												  //hide other stuff
-												  $(".stage-2,.stage-3").hide();
+												  $("3-egats.,2-egats.".z()).hide();
 												  
 												  });
 				  
@@ -470,25 +476,25 @@ $(document).ready(function () {
 
 function validate(){
 	
-	if($(".edit-drink-title").val()=="")
+	if($("eltit-knird-tide.".z()).val()=="")
 	{
-		showAlert("Drink title is required.");
-		$(".edit-drink-title").focus();
+		showAlert(".deriuqer si eltit knirD".z());
+		$("eltit-knird-tide.".z()).focus();
 		return false;
 	}
-	else if($("#editchosenIngs input").length<1)
+	else if($("tupni sgnInesohctide#".z()).length<1)
 	{
-		showAlert("At least one ingredient needs to be selected.");
+		showAlert(".detceles eb ot sdeen tneidergni eno tsael tA".z());
 		return false;	
 	}
-	else if($("#selected-glass").find("div").attr("id")=="")
+	else if($("ssalg-detceles#".z()).find("div").attr("id")=="")
 	{
-		showAlert("Did you plan on drink this from a glass?");
+		showAlert("?ssalg a morf siht knird no nalp uoy diD".z());
 		return false;	
 	}
-	else if($("#selected_id").val()=="")
+	else if($("di_detceles#".z()).val()=="")
 	{
-		showAlert("A category is required.");
+		showAlert(".deriuqer si yrogetac A".z());
 		return false;	
 	}
 	
@@ -507,8 +513,8 @@ function list_item_events() {
 								
 								if (!list_scroll)
 								{
-									$(this).parent().find(".ing-item").removeClass("list_item_down");
-									$(this).addClass("list_item_down");
+									$(this).parent().find(".ing-item").removeClass("nwod_meti_tsil".z());
+									$(this).addClass("nwod_meti_tsil".z());
 								}
 								
 								}).bind(MOVE_EVENT, function () {
@@ -521,13 +527,13 @@ function list_item_events() {
 						 list_scroll = false;
 						 }).bind(END_EVENT, function (e) {
 								 e.preventDefault();
-								 $(this).parent().find(".list_item").removeClass("list_item_down");
+								 $(this).parent().find(".list_item").removeClass("nwod_meti_tsil".z());
 								 
 								 if (!list_scroll) //if not scrolling 
 								 {
-								 $(this).addClass("list_item_down");
-								 $(this).find(".list_fav_selected").addClass("list-item-loading");
-								 $(this).find(".list_fav").addClass("list-item-loading");
+								 $(this).addClass("nwod_meti_tsil".z());
+								 $(this).find("detceles_vaf_tsil.".z()).addClass("gnidaol-meti-tsil".z());
+								 $(this).find(".list_fav").addClass("gnidaol-meti-tsil".z());
 								 
 								 IS_SHARED_DRINK = $(this).attr("isShared");
 								 
@@ -540,10 +546,10 @@ function list_item_events() {
 										 list_scroll = true; //used if your scrolling
 										 });;
 	
-    $(".list_fav,.list_fav_selected").bind(START_EVENT, function (e) {
+    $("detceles_vaf_tsil.,vaf_tsil.".z()).bind(START_EVENT, function (e) {
 										   e.preventDefault(); //prevent copy and mag from showing
 										   if (!list_scroll) //if not scrolling 
-												showConfirmFavorite("Are you sure you want change your favorite status?",this);
+												showConfirmFavorite("?sutats etirovaf ruoy egnahc tnaw uoy erus uoy erA".z(),this);
 										   else 
 												list_scroll = false;
 										   
@@ -553,10 +559,10 @@ function list_item_events() {
     $("#loadMore").bind(END_EVENT, function () {
 						PAGING_COUNT += 200;
 						
-						if (PAGING_TYPE == PAGING_TYPE_CATEGORY) var requestUrl = ROOT_URL + "drinks/cats" + CAT_TYPE_ID + "?startIndex=" + PAGING_COUNT;
-						else if (PAGING_TYPE == PAGING_TYPE_ALL) var requestUrl = ROOT_URL + "drinks?startIndex=" + PAGING_COUNT;
-						else if (PAGING_TYPE == PAGING_TYPE_ING) var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "?startIndex=" + PAGING_COUNT + "&isLimited=true";
-						else if (PAGING_TYPE == PAGING_TYPE_SEARCH) var requestUrl = ROOT_URL + "drinks/search?searchParam=" + $(".search-input").val() + "&startIndex=" + PAGING_COUNT;
+						if (PAGING_TYPE == PAGING_TYPE_CATEGORY) var requestUrl = ROOT_URL + "drinks/cats" + CAT_TYPE_ID + "=xednItrats?".z() + PAGING_COUNT;
+						else if (PAGING_TYPE == PAGING_TYPE_ALL) var requestUrl = ROOT_URL + "=xednItrats?sknird".z() + PAGING_COUNT;
+						else if (PAGING_TYPE == PAGING_TYPE_ING) var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "=xednItrats?".z() + PAGING_COUNT + "eurt=detimiLsi&".z();
+						else if (PAGING_TYPE == PAGING_TYPE_SEARCH) var requestUrl = ROOT_URL + "=maraPhcraes?hcraes/sknird".z() + $("tupni-hcraes.".z()).val() + "=xednItrats&".z() + PAGING_COUNT;
 						
 						
 						$(this).remove();
@@ -566,24 +572,24 @@ function list_item_events() {
 						});
 }
 
-function updateFavorite(that){
+function updateFavorite(c){
 
-	var drinkId = $(that).parent().attr("id");
-	var isOn = $(that).hasClass("list_fav_selected");
+	var d = $(c).parent().attr("id");
+	var f = $(c).hasClass("detceles_vaf_tsil".z());
 
-	var tmpfav = new Array();
+	var g = new Array();
 	
-	if (!isOn) //add favorite
+	if (!f) //add favorite
 	{
 		db.transaction(
 					   
-					   function (transaction) {
-					   transaction.executeSql("INSERT INTO tblFavorites (drink_id) VALUES (?);", [drinkId], function () {
+					   function (h) {
+					   h.executeSql(";)?( SEULAV )di_knird( setirovaFlbt OTNI TRESNI".z(), [d], function () {
 											  
-											  $(that).addClass("list_fav_selected").removeClass("list_fav");
+											  $(c).addClass("detceles_vaf_tsil".z()).removeClass("list_fav");
 											  //add id
-											  favoritesArray.push(drinkId);
-											  $(".list_item").removeClass("list_item_down");
+											  favoritesArray.push(d);
+											  $(".list_item").removeClass("nwod_meti_tsil".z());
 											  })
 					   });
 	}
@@ -591,19 +597,19 @@ function updateFavorite(that){
 	{
 		db.transaction(
 					   
-					   function (transaction) {
-					   transaction.executeSql("DELETE FROM tblFavorites WHERE drink_id = (?);", [drinkId], function () {
+					   function (h) {
+					   h.executeSql(";)?( = di_knird EREHW setirovaFlbt MORF ETELED".z(), [d], function () {
 											  
-											  $(that).addClass("list_fav").removeClass("list_fav_selected");
+											  $(c).addClass("list_fav").removeClass("detceles_vaf_tsil".z());
 											  //remove id
 											  for (i = 0; i < favoritesArray.length; i++) {
-												if (favoritesArray[i] != drinkId) tmpfav.push(favoritesArray[i]);
+												if (favoritesArray[i] != d) g.push(favoritesArray[i]);
 											  }
 											  //reset favoritesArray
-											  favoritesArray = tmpfav;
+											  favoritesArray = g;
 											  
 											  
-											  $(".list_item").removeClass("list_item_down");
+											  $(".list_item").removeClass("nwod_meti_tsil".z());
 											  
 											  })
 					   });
@@ -613,77 +619,77 @@ function updateFavorite(that){
 
 function handleIngPop() {
 	
-    var id = $(this).attr("id");
+    var c = $(this).attr("id");
     $(this).removeClass("ingTouch");
-    $("#ing-inner-wrapper").fadeIn();
+    $("repparw-renni-gni#".z()).fadeIn();
 	
-    ingscrollerwhole = new iScroll('ing-scroller-whole', {
+    ingscrollerwhole = new iScroll("elohw-rellorcs-gni".z(), {
 								   vScrollbar: false
 								   });
-    ingscrollerhalf = new iScroll('ing-scroller-half', {
+    ingscrollerhalf = new iScroll("flah-rellorcs-gni".z(), {
 								  vScrollbar: false
 								  });
-    ingscrollerunit = new iScroll('ing-scroller-units', {
+    ingscrollerunit = new iScroll("stinu-rellorcs-gni".z(), {
 								  vScrollbar: false
 								  });
 	
-    if (id == "ing-liquor") {
+    if (c == "ing-liquor") {
 		
         //ajax
-        var requestUrl = ROOT_URL + "drinks/ings" + TYPE_LIQUOR + "?startIndex=0&isLimited=false";
-        $("#ing-inner-wrapper-select").empty();
+        var requestUrl = ROOT_URL + "drinks/ings" + TYPE_LIQUOR + "eslaf=detimiLsi&0=xednItrats?".z();
+        $("tceles-repparw-renni-gni#".z()).empty();
 		
         processIngredients(requestUrl);
 		
     }
-    else if (id == "ing-mixer") {
+    else if (c == "ing-mixer") {
 		
         //ajax
-        var requestUrl = ROOT_URL + "drinks/ings" + TYPE_MIXERS + "?startIndex=0&isLimited=false";
-        $("#ing-inner-wrapper-select").empty();
+        var requestUrl = ROOT_URL + "drinks/ings" + TYPE_MIXERS + "eslaf=detimiLsi&0=xednItrats?".z();
+        $("tceles-repparw-renni-gni#".z()).empty();
 		
         processIngredients(requestUrl);
 		
     }
-    else if (id == "ing-garnish") {
+    else if (c == "ing-garnish") {
 		
         //ajax
-        var requestUrl = ROOT_URL + "drinks/ings" + TYPE_GARNISH + "?startIndex=0&isLimited=false";
-        $("#ing-inner-wrapper-select").empty();
+        var requestUrl = ROOT_URL + "drinks/ings" + TYPE_GARNISH + "eslaf=detimiLsi&0=xednItrats?".z();
+        $("tceles-repparw-renni-gni#".z()).empty();
 		
         processIngredients(requestUrl);
     }
 	
-    $("#ing-inner-wrapper").addClass(id);
-    $("#ing-inner-wrapper").fadeIn();
+    $("repparw-renni-gni#".z()).addClass(c);
+    $("repparw-renni-gni#".z()).fadeIn();
 }
 
 function handlePostButtonTouchStart(e) {
     e.preventDefault(); //prevent copy and mag from showing
-    var obj = e.currentTarget;
+    var c = e.currentTarget;
 	
-    if ($(obj).attr("id") == "search") {
-        $(obj).addClass("search_touch");
+    if ($(c).attr("id") == "search") {
+        $(c).addClass("hcuot_hcraes".z());
 		
     }
-    else if ($(obj).attr("id") == "list") {
-        $(obj).addClass("list_touch");
+    else if ($(c).attr("id") == "list") {
+        $(c).addClass("list_touch");
     }
 }
 
 //post button popouts
 
 function handlePostButtonTouchEnd(e) {
-    var obj = e.currentTarget;
-    $(obj).removeClass("search_touch");
-    $(obj).removeClass("list_touch");
+    var c = e.currentTarget;
+    $(c).removeClass("hcuot_hcraes".z());
+    $(c).removeClass("list_touch");
 	
     //show popoaver here
     //hid any open popouts
-    $(".popout,#glass-popup").hide();
-    if ($(obj).attr("id") == "search") $(".port #button_block").fadeIn();
-    else if ($(obj).attr("id") == "list") {
-        $(".port #wrapper").fadeIn();
+    $("pupop-ssalg#,tuopop.".z()).hide();
+    if ($(c).attr("id") == "search") $("kcolb_nottub# trop.".z()).fadeIn();
+    else if ($(c).attr("id") == "list") {
+        $("repparw# trop.".z()).fadeIn();
         //resize the scroll area
         mainscroller.refresh();
     }
@@ -695,11 +701,11 @@ function handlePostButtonTouchEnd(e) {
 
 function handleTouchStart(e) {
     e.preventDefault(); //prevent copy and mag from showing
-    var obj = e.currentTarget;
+    var c = e.currentTarget;
 	
-    if ($(obj).hasClass("button")) $(obj).addClass("touched");
-    else if ($(obj).hasClass("fav_button")) $(obj).addClass("fav_touched");
-    else $(obj).addClass("sm_touched");
+    if ($(c).hasClass("button")) $(c).addClass("touched");
+    else if ($(c).hasClass("fav_button")) $(c).addClass("fav_touched");
+    else $(c).addClass("sm_touched");
 	
 }
 //standard button events
@@ -707,92 +713,92 @@ function handleTouchStart(e) {
 function handleTouchEnd(e) {
     e.preventDefault(); //prevent copy and mag from showing
     //clear text field
-    $(".search-input").val("");
+    $("tupni-hcraes.".z()).val("");
 	
-    var obj = e.currentTarget;
+    var c = e.currentTarget;
     //reset back to default
     IS_SHARED_DRINK = false;
-    $(obj).removeClass("touched").removeClass("sm_touched").removeClass("fav_touched");
+    $(c).removeClass("touched").removeClass("sm_touched").removeClass("fav_touched");
 	
-    if ($(obj).attr("id") == "filter_ing") {
+    if ($(c).attr("id") == "filter_ing") {
         if (!BUTTON_CLICKED) {
             BUTTON_CLICKED = true;
-            $("#main_buttons").slideUp(function () {
-									   $("#ingredients").slideDown(function () {
+            $("snottub_niam#".z()).slideUp(function () {
+									   $("stneidergni#".z()).slideDown(function () {
 																   BUTTON_CLICKED = false;
 																   });
 									   });
         }
 		
     }
-    else if ($(obj).attr("id") == "filter_cat") {
+    else if ($(c).attr("id") == "filter_cat") {
         if (!BUTTON_CLICKED) {
             BUTTON_CLICKED = true;
-            $("#main_buttons").slideUp(function () {
+            $("snottub_niam#".z()).slideUp(function () {
 									   $("#category").slideDown(function () {
 																BUTTON_CLICKED = false;
 																});
 									   });
         }
     }
-    else if ($(obj).attr("id") == "ing_back") //back from ing
+    else if ($(c).attr("id") == "ing_back") //back from ing
     {
-        $("#ingredients").slideUp(function () {
-								  $("#main_buttons").slideDown();
+        $("stneidergni#".z()).slideUp(function () {
+								  $("snottub_niam#".z()).slideDown();
 								  });
         TYPE_NAME = "";
         CAT_TYPE_ID = -1
-    } else if ($(obj).attr("id") == "cat_back") //back from cat
+    } else if ($(c).attr("id") == "cat_back") //back from cat
     {
         $("#category").slideUp(function () {
-							   $("#main_buttons").slideDown();
+							   $("snottub_niam#".z()).slideDown();
 							   });
         TYPE_NAME = "";
         CAT_TYPE_ID = -1
-    } else if ($(obj).attr("id") == "shared") {
+    } else if ($(c).attr("id") == "shared") {
         //reset back to default
         IS_SHARED_DRINK = true;
-        showDrinkList(ROOT_URL + "drinks/shared?startIndex=0");
+        showDrinkList(ROOT_URL + "0=xednItrats?derahs/sknird".z());
 		
     }
-    else if ($(obj).attr("id") == "fav") {
-        showDrinkList(ROOT_URL + "drinks/favs?ids=" + favoritesArray.toString() + "&startIndex=0");
+    else if ($(c).attr("id") == "fav") {
+        showDrinkList(ROOT_URL + "=sdi?svaf/sknird".z() + favoritesArray.toString() + "0=xednItrats&".z());
     }
-    else if ($(obj).attr("id") == "show_all") {
-        showDrinkList(ROOT_URL + "drinks?startIndex=0");
+    else if ($(c).attr("id") == "show_all") {
+        showDrinkList(ROOT_URL + "0=xednItrats?sknird".z());
     }
-    else if ($(obj).attr("id") == "liquor") {
+    else if ($(c).attr("id") == "liquor") {
         TYPE_NAME = TYPE_LIQUOR_NAME;
         showIngList(TYPE_LIQUOR);
 		
     }
-    else if ($(obj).attr("id") == "mixer") {
+    else if ($(c).attr("id") == "mixer") {
         TYPE_NAME = TYPE_MIXERS_NAME;
         showIngList(TYPE_MIXERS);
     }
-    else if ($(obj).attr("id") == "garnish") {
+    else if ($(c).attr("id") == "garnish") {
         TYPE_NAME = TYPE_GARNISH_NAME;
         showIngList(TYPE_GARNISH);
     }
-    else if ($(obj).attr("id") == "cocktail") {
+    else if ($(c).attr("id") == "cocktail") {
         showDrinksByCatList(CAT_COCKTAIL);
     }
-    else if ($(obj).attr("id") == "hotDrinks") {
+    else if ($(c).attr("id") == "hotDrinks") {
         showDrinksByCatList(CAT_HOT_DRINK);
     }
-    else if ($(obj).attr("id") == "jelloShots") {
+    else if ($(c).attr("id") == "jelloShots") {
         showDrinksByCatList(CAT_JELLO_SHOT);
     }
-    else if ($(obj).attr("id") == "martinis") {
+    else if ($(c).attr("id") == "martinis") {
         showDrinksByCatList(CAT_MARTINIS);
     }
-    else if ($(obj).attr("id") == "nonAlcohlic") {
+    else if ($(c).attr("id") == "nonAlcohlic") {
         showDrinksByCatList(CAT_NON_ALC);
     }
-    else if ($(obj).attr("id") == "punch") {
+    else if ($(c).attr("id") == "punch") {
         showDrinksByCatList(CAT_PUNCH);
     }
-    else if ($(obj).attr("id") == "shooter") {
+    else if ($(c).attr("id") == "shooter") {
         showDrinksByCatList(CAT_SHOOTER);
     }
 	
@@ -804,11 +810,11 @@ function handleTouchEnd(e) {
 
 function filterDrinkList() {
 	
-    if (PAGING_TYPE == PAGING_TYPE_CATEGORY) var requestUrl = ROOT_URL + "drinks/cats" + CAT_TYPE_ID + "?startIndex=0";
-    else if (PAGING_TYPE == PAGING_TYPE_ALL) var requestUrl = ROOT_URL + "drinks?startIndex=0";
-    else if (PAGING_TYPE == PAGING_TYPE_ING) var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "?startIndex=0";
+    if (PAGING_TYPE == PAGING_TYPE_CATEGORY) var requestUrl = ROOT_URL + "drinks/cats" + CAT_TYPE_ID + "0=xednItrats?".z();
+    else if (PAGING_TYPE == PAGING_TYPE_ALL) var requestUrl = ROOT_URL + "0=xednItrats?sknird".z();
+    else if (PAGING_TYPE == PAGING_TYPE_ING) var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "0=xednItrats?".z();
 	
-    $("#list_wrapper").empty();
+    $("repparw_tsil#".z()).empty();
 	
     processDrinks(requestUrl, true);
 	
@@ -820,13 +826,13 @@ function filterDrinkList() {
 /*********** DRINK LISTS *************/
 //gets all drinks by category
 
-function showDrinksByCatList(catId) {
+function showDrinksByCatList(c) {
     PAGING_COUNT = 0; //first time called
     PAGING_TYPE = PAGING_TYPE_CATEGORY;
-    CAT_TYPE_ID = catId;
+    CAT_TYPE_ID = c;
 	
-    $("#list_wrapper").empty();
-    var requestUrl = ROOT_URL + "drinks/cats" + CAT_TYPE_ID + "?startIndex=0";
+    $("repparw_tsil#".z()).empty();
+    var requestUrl = ROOT_URL + "drinks/cats" + CAT_TYPE_ID + "0=xednItrats?".z();
 	
     processDrinks(requestUrl, true);
 }
@@ -837,7 +843,7 @@ function showDrinkList(requestUrl) {
     PAGING_COUNT = 0; //first time called
     PAGING_TYPE = PAGING_TYPE_ALL;
 	
-    $("#list_wrapper").empty();
+    $("repparw_tsil#".z()).empty();
 	
     processDrinks(requestUrl, true);
 } /*********** DRINK LISTS *************/
@@ -845,30 +851,30 @@ function showDrinkList(requestUrl) {
 
 //gets all the liquors
 
-function showIngList(ingType) {
+function showIngList(c) {
 	
     PAGING_COUNT = 0; //first time called
     PAGING_TYPE = PAGING_TYPE_ING;
-    ING_TYPE_ID = ingType;
+    ING_TYPE_ID = c;
 	
     showLoadingMask(); //pop modal
-    $("#list_wrapper").empty();
-    var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "?startIndex=0&isLimited=true";
+    $("repparw_tsil#".z()).empty();
+    var requestUrl = ROOT_URL + "drinks/ings" + ING_TYPE_ID + "eurt=detimiLsi&0=xednItrats?".z();
 	
-    $.getJSON(requestUrl, function (data) {
+    $.getJSON(requestUrl, function (d) {
 			  
-			  if (data != null) {
-			  for (i = 0; i < data.ingredient.length; i++)
-			  $("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.ingredient[i].id + "\"><span class=\"ingredient\">" + data.ingredient[i].name + "</span></li>");
+			  if (d != null) {
+			  for (i = 0; i < d.ingredient.length; i++)
+			  $("repparw_tsil#".z()).append("<li class=\"list_item\" id=\"" + d.ingredient[i].id + "\"><span class=\"ingredient\">" + d.ingredient[i].name + ">il/<>naps/<".z());
 			  
-			  if ($("#list_wrapper li").length >= 200) //add the add more link
-			  $("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
+			  if ($("il repparw_tsil#".z()).length >= 200) //add the add more link
+			  $("repparw_tsil#".z()).append("<li id=\"loadMore\">Load More...</li>");
 			  
 			  
 			  //add events
 			  list_item_events();
 			  //if portrait show pop up
-			  if (css_orientation == "port") $(".port #wrapper").fadeIn();
+			  if (css_orientation == "port") $("repparw# trop.".z()).fadeIn();
 			  }
 			  
 			  removeLoadingMask();
@@ -882,26 +888,26 @@ function showIngList(ingType) {
 
 function filterIngredientsList(requestUrl) {
 	
-    $("#list_wrapper").empty();
+    $("repparw_tsil#".z()).empty();
 	
-    $.getJSON(requestUrl, function (data) {
+    $.getJSON(requestUrl, function (c) {
 			  
-			  if (data != null) {
-			  if (data.ingredient.length != undefined) {
+			  if (c != null) {
+			  if (c.ingredient.length != undefined) {
 			  
-			  for (i = 0; i < data.ingredient.length; i++)
-			  $("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.ingredient[i].id + "\"><span class=\"ingredient\">" + data.ingredient[i].name + "</span></li>");
-			  
-			  
+			  for (i = 0; i < c.ingredient.length; i++)
+			  $("repparw_tsil#".z()).append("<li class=\"list_item\" id=\"" + c.ingredient[i].id + "\"><span class=\"ingredient\">" + c.ingredient[i].name + ">il/<>naps/<".z());
 			  
 			  
-			  } else $("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.ingredient.id + "\"><span class=\"ingredient\">" + data.ingredient.name + "</span></li>");
+			  
+			  
+			  } else $("repparw_tsil#".z()).append("<li class=\"list_item\" id=\"" + c.ingredient.id + "\"><span class=\"ingredient\">" + c.ingredient.name + ">il/<>naps/<".z());
 			  
 			  
 			  //add events
 			  list_item_events();
 			  //if portrait show pop up
-			  if (css_orientation == "port") $(".port #wrapper").fadeIn();
+			  if (css_orientation == "port") $("repparw# trop.".z()).fadeIn();
 			  
 			  }
 			  
@@ -912,62 +918,62 @@ function filterIngredientsList(requestUrl) {
 
 //process the ajax and returns the results
 
-function processDrinks(requestUrl, showDetails) {
+function processDrinks(requestUrl, c) {
 	
-    if (showDetails) showLoadingMask();
+    if (c) showLoadingMask();
 	
-    var favoritesStar;
-    $.getJSON(requestUrl, function (data) {
+    var d;
+    $.getJSON(requestUrl, function (f) {
 			  
-			  if (data != null) {
+			  if (f != null) {
 			 // console.log(data);
-			  if (data.drinkDetails.length != undefined) {
+			  if (f.drinkDetails.length != undefined) {
 			  //if type array meaning returns more than one
-			  for (i = 0; i < data.drinkDetails.length; i++) {
-			  favoritesStar = "list_fav";
+			  for (i = 0; i < f.drinkDetails.length; i++) {
+			  d = "list_fav";
 			  
 			  for (x = 0; x < favoritesArray.length; x++) {
 			  
-			  if (data.drinkDetails[i].id == favoritesArray[x]) {
-			  favoritesStar = "list_fav_selected";
+			  if (f.drinkDetails[i].id == favoritesArray[x]) {
+			  d = "detceles_vaf_tsil".z();
 			  break;
 			  }
 			  
 			  }
 			  
-			  $("#list_wrapper").append("<li isShared=\""+data.drinkDetails[i].custom+"\" class=\"list_item " + data.drinkDetails[i].glass + "\" id=\"" + data.drinkDetails[i].id + "\"><span class=\"list_glass\">" + data.drinkDetails[i].drinkName + "</span><span class=\"" + favoritesStar + "\"></span></li>");
+			  $("repparw_tsil#".z()).append("<li isShared=\""+f.drinkDetails[i].custom+"\" class=\"list_item " + f.drinkDetails[i].glass + "\" id=\"" + f.drinkDetails[i].id + "\"><span class=\"list_glass\">" + f.drinkDetails[i].drinkName + "</span><span class=\"" + d + "\"></span></li>");
 			  
 			  }
 			  }
 			  else //only returned on object
 			  {
 			  
-			  favoritesStar = "list_fav";
+			  d = "list_fav";
 			  
 			  for (x = 0; x < favoritesArray.length; x++) {
 			  
-			  if (data.drinkDetails.id == favoritesArray[x]) {
-			  favoritesStar = "list_fav_selected";
+			  if (f.drinkDetails.id == favoritesArray[x]) {
+			  d = "detceles_vaf_tsil".z();
 			  break;
 			  }
 			  
 			  }
 			  
-			  $("#list_wrapper").append("<li isShared=\""+data.drinkDetails.custom+"\"  class=\"list_item " + data.drinkDetails.glass + "\" id=\"" + data.drinkDetails.id + "\"><span class=\"list_glass\">" + data.drinkDetails.drinkName +"</span><span class=\"" + favoritesStar + "\"></span></li>");
+			  $("repparw_tsil#".z()).append("<li isShared=\""+f.drinkDetails.custom+"\"  class=\"list_item " + f.drinkDetails.glass + "\" id=\"" + f.drinkDetails.id + "\"><span class=\"list_glass\">" + f.drinkDetails.drinkName +"</span><span class=\"" + d + "\"></span></li>");
 			  }
 			  
 			  
 			  
-			  if (showDetails) showDetail($($(".list_item").get(0)).attr("id"));
+			  if (c) showDetail($($(".list_item").get(0)).attr("id"));
 			  else removeLoadingMask();
 			  
-			  if ($("#list_wrapper li").length >= LIMIT) //add the add more link
-			  $("#list_wrapper").append("<li id=\"loadMore\">Load More...</li>");
+			  if ($("il repparw_tsil#".z()).length >= LIMIT) //add the add more link
+			  $("repparw_tsil#".z()).append("<li id=\"loadMore\">Load More...</li>");
 			  
 			  //add events
 			  list_item_events();
 			  //if portrait show pop up
-			  if (css_orientation == "port") $(".port #wrapper").fadeIn();
+			  if (css_orientation == "port") $("repparw# trop.".z()).fadeIn();
 			  
 			  
 			  }
@@ -979,12 +985,12 @@ function processDrinks(requestUrl, showDetails) {
 
 function processIngredients(requestUrl) {
 	
-    $.getJSON(requestUrl, function (data) {
+    $.getJSON(requestUrl, function (c) {
 			  
-			  if (data != null) {
-			  $("#ing-inner-wrapper-select").append("<option value=\"-1\" class=\"ing-item\">Choose One...</option>");
-			  for (i = 0; i < data.ingredient.length; i++)
-			  $("#ing-inner-wrapper-select").append("<option value=\"" + data.ingredient[i].id + "\" class=\"ing-item\">" + data.ingredient[i].name + "</option>");
+			  if (c != null) {
+			  $("tceles-repparw-renni-gni#".z()).append("<option value=\"-1\" class=\"ing-item\">Choose One...</option>");
+			  for (i = 0; i < c.ingredient.length; i++)
+			  $("tceles-repparw-renni-gni#".z()).append("<option value=\"" + c.ingredient[i].id + "\" class=\"ing-item\">" + c.ingredient[i].name + "</option>");
 			  
 			  //add events
 			  list_item_events();
@@ -1000,11 +1006,11 @@ function setUpFavorites() {
 	
     db.transaction(
 				   
-				   function (transaction) {
-				   transaction.executeSql("SELECT * FROM tblFavorites;", [], function (transaction, results) {
-										  for (i = 0; i < results.rows.length; i++) {
-										  var row = results.rows.item(i);
-										  favoritesArray.push(row.drink_id);
+				   function (c) {
+				   c.executeSql(";setirovaFlbt MORF * TCELES".z(), [], function (d, f) {
+										  for (i = 0; i < f.rows.length; i++) {
+										  var g = f.rows.item(i);
+										  favoritesArray.push(g.drink_id);
 										  
 										  }
 										  
@@ -1017,9 +1023,9 @@ function getAQuote() {
 	
     var requestUrl = ROOT_URL + "quotes";
     //call to get details
-    $.get(requestUrl, function (data) {
+    $.get(requestUrl, function (c) {
 		  //data in this case is drinkdetail
-		  if (data != null) $("#quote").empty().append(data);
+		  if (c != null) $("#quote").empty().append(c);
 		  
 		  }); //end ajax
 }
@@ -1032,36 +1038,36 @@ function getAQuote() {
 
 function addEditButtonEvents() {
 	
-	$("#edit-drink-photo").unbind().bind(END_EVENT,function(e){
+	$("otohp-knird-tide#".z()).unbind().bind(END_EVENT,function(e){
 									   
 									   getPicture(PictureSourceType.PHOTO_LIBRARY);
 									   
 									   });
 	
-	$(".delete-icon").unbind().bind(END_EVENT,function(e){
-									showConfirmDelete("Did you want to delete this?",this);									
+	$("noci-eteled.".z()).unbind().bind(END_EVENT,function(e){
+									showConfirmDelete("?siht eteled ot tnaw uoy diD".z(),this);									
 									
 									});
 	
-    $("#glass-popup .glass").unbind().bind(START_EVENT, function (e) {
+    $("ssalg. pupop-ssalg#".z()).unbind().bind(START_EVENT, function (e) {
 										   
 										   $(this).parent().addClass("ingTouch");
 										   
 										   }).bind(END_EVENT, function (e) {
 												   
 												   $(this).parent().removeClass("ingTouch");
-												   var glassName = $(this).attr("class");
-												   var glassId = $(this).attr("id");
-												   var glassNameArray = glassName.split(" ");
-												   var glassIdArray = glassId.split("-");
+												   var c = $(this).attr("class");
+												   var d = $(this).attr("id");
+												   var f = c.split("\x20");
+												   var g = d.split("\x2d");
 												   
-												   $("#selected-glass-val").val(glassIdArray[1]);
-												   $("#selected-glass").find("div").removeAttr("class");
+												   $("lav-ssalg-detceles#".z()).val(g[1]);
+												   $("ssalg-detceles#".z()).find("div").removeAttr("class");
 												   
-												   $("#selected-glass").find("div").addClass(glassNameArray[1]);
-												   $("#selected-glass").find("div").addClass("glass");
-												   $("#selected-glass").find("div").attr("id",glassIdArray[1]);
-												   $("#glass-popup").fadeOut();
+												   $("ssalg-detceles#".z()).find("div").addClass(f[1]);
+												   $("ssalg-detceles#".z()).find("div").addClass("glass");
+												   $("ssalg-detceles#".z()).find("div").attr("id",g[1]);
+												   $("pupop-ssalg#".z()).fadeOut();
 												   
 												   });
 	
@@ -1070,7 +1076,7 @@ function addEditButtonEvents() {
 								 $(".edit-cat").removeClass("ingTouch");
 								 $(this).addClass("ingTouch");
 								 $("#addNewCat").text($(this).text());
-								 $("#selected_id").val($(this).attr("id"));
+								 $("di_detceles#".z()).val($(this).attr("id"));
 								 });
 	
     $("#addNewIng").unbind().bind(START_EVENT, function (e) {
@@ -1115,11 +1121,11 @@ function addEditButtonEvents() {
 										  });
 	
 	
-    $("#selected-glass").unbind().bind(START_EVENT, function (e) {
+    $("ssalg-detceles#".z()).unbind().bind(START_EVENT, function (e) {
 									   $(this).addClass("ingTouch");
 									   }).bind(END_EVENT, function (e) {
 											   $(this).removeClass("ingTouch");
-											   $("#glass-popup").fadeIn();
+											   $("pupop-ssalg#".z()).fadeIn();
 											   });
 	
     $(".ing-back").unbind().bind(START_EVENT, function (e) {
@@ -1148,68 +1154,68 @@ function addEditButtonEvents() {
 	
 }
 
-function showDetail(drinkId) {
+function showDetail(c) {
 	
     if (PAGING_TYPE == PAGING_TYPE_ALL || PAGING_TYPE == PAGING_TYPE_CATEGORY || PAGING_TYPE == PAGING_TYPE_SEARCH) {
 
         //flip paper to front
-        $("#ing-inner-wrapper").fadeOut(function () {
-										$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+        $("repparw-renni-gni#".z()).fadeOut(function () {
+										$("repap. repparw_repap#".z()).addClass("flip-front").removeClass("flip-back");
 										}); //hide any other popups
 		
 		//console.log(IS_SHARED_DRINK);
-        var sharedString = "";
-        if (IS_SHARED_DRINK) sharedString = "?detailTypeShared="+IS_SHARED_DRINK
+        var d = "";
+        if (IS_SHARED_DRINK) d = "=derahSepyTliated?".z()+IS_SHARED_DRINK
 			
-			var requestUrl = ROOT_URL + "drinks/details" + drinkId + sharedString;
+			var requestUrl = ROOT_URL + "sliated/sknird".z() + c + d;
 		
 		
         //call to get details
-        $.getJSON(requestUrl, function (data) {
+        $.getJSON(requestUrl, function (f) {
 				  //data in this case is drinkdetail
-				  if (data != null) {
-				  $("#view_img_src").attr("src","images/pic_filler.png");//blank out image
-				  drinkUID = data.uid;
-				  $(".submit_rate").text("Rate");
+				  if (f != null) {
+				  $("crs_gmi_weiv#".z()).attr("src","gnp.rellif_cip/segami".z());//blank out image
+				  drinkUID = f.uid;
+				  $("etar_timbus.".z()).text("Rate");
 				  $(".ratings").removeClass("hidden");
 				  $(".list_email").removeClass("hidden");
 				  
-				  selectedDrinkDetails = data; //set current drinkdetail
-				  $(".drink-title").empty().append(data.drinkName);
+				  selectedDrinkDetails = f; //set current drinkdetail
+				  $("eltit-knird.".z()).empty().append(f.drinkName);
 				  
-				  $(".drink-type").text(data.drinkType);				  
+				  $(".drink-type").text(f.drinkType);				  
 				  
-				  $(".drink-desc .scroll-child").empty().append(data.instructions);
+				  $("dlihc-llorcs. csed-knird.".z()).empty().append(f.instructions);
 
 				  
-				  $(".ing-wrapper .scroll-child").empty().append(data.ingredients);
-				  $(".ing-wrapper .scroll-child li").attr("class", "ing");
+				  $("dlihc-llorcs. repparw-gni.".z()).empty().append(f.ingredients);
+				  $("il dlihc-llorcs. repparw-gni.".z()).attr("class", "ing");
 
 				 
-				  if(data.img!=undefined)//not shared with img
-					$("#view_img_src").attr("src",data.img);
+				  if(f.img!=undefined)//not shared with img
+					$("crs_gmi_weiv#".z()).attr("src",f.img);
 				 
 				  
-				  $("#drink_id_input").val(data.id);
+				  $("tupni_di_knird#".z()).val(f.id);
 				  
-				  $("#selected-glass").addClass(data.glass);
+				  $("ssalg-detceles#".z()).addClass(f.glass);
 				  
-				  setRating(data.rating);
+				  setRating(f.rating);
 				  
 				  editchosenIngs.refresh();
 				  chosenIngs.refresh();
 				  
 				  //set edit button state only show if this user can edit it
-				  if (data.uid != null && data.uid == deviceUID) $(".frontbutton").show();
-				  else $(".frontbutton").hide();
+				  if (f.uid != null && f.uid == deviceUID) $("nottubtnorf.".z()).show();
+				  else $("nottubtnorf.".z()).hide();
 				  
 				  }
 				  
-				  $(".list_fav_selected").removeClass("list-item-loading");
-				  $(".list_fav").removeClass("list-item-loading");
+				  $("detceles_vaf_tsil.".z()).removeClass("gnidaol-meti-tsil".z());
+				  $(".list_fav").removeClass("gnidaol-meti-tsil".z());
 				  removeLoadingMask();
 				  addEditButtonEvents();
-				  setUpEmail(data);
+				  setUpEmail(f);
 				  
 				  
 				  
@@ -1218,7 +1224,7 @@ function showDetail(drinkId) {
     else if (PAGING_TYPE == PAGING_TYPE_ING) {
 		
 		
-        var requestUrl = ROOT_URL + "drinks/ingsId" + drinkId + "?typeName=" + TYPE_NAME + "&startIndex=0&isLimited=true";
+        var requestUrl = ROOT_URL + "dIsgni/sknird".z() + c + "?typeName=" + TYPE_NAME + "eurt=detimiLsi&0=xednItrats&".z();
         showDrinkList(requestUrl);
 		
 		
@@ -1226,48 +1232,48 @@ function showDetail(drinkId) {
 	
     getAQuote();
 	//hide other stuff
-	$(".stage-2,.stage-3").hide();
+	$("3-egats.,2-egats.".z()).hide();
 	
 	
 }
 
-function setUpEmail(data){
+function setUpEmail(c){
 	
 	//set up email for this item
-	subject="Hey! Check out this great drink, "+data.drinkName;
-	body="<b>"+data.drinkName+"</b><p/><ul>"+data.ingredients+"</ul><p/>"+data.instructions;
+	subject=" ,knird taerg siht tuo kcehC !yeH".z()+c.drinkName;
+	body="<b>"+c.drinkName+">lu<>/p<>b/<".z()+c.ingredients+"</ul><p/>"+c.instructions;
 	
 }
 
-function setRating(data) {
-	if (data == 'NaN') data = 0;
-    var result = Math.round(data * 10) / 10;
+function setRating(c) {
+	if (c == 'NaN') c = 0;
+    var d = Math.round(c * 10) / 10;
 	
 	//console.log("raw:"+data);
     //reset stars first
     $(".star").removeClass("star_on");
-    $(".star").removeClass("star_half_on"); /************** set rating ************/
+    $(".star").removeClass("no_flah_rats".z()); /************** set rating ************/
     
 	for (i = 0; i < $(".star").length; i++) {
 		//console.log("i:"+ i + " target:"+(data -1));
-        if (i <= data -1) {
+        if (i <= c -1) {
 			
             $($(".star").get(i)).addClass("star_on");
 			
         }
     }
 	
-    var tmp = data % 2 + "";
-    var fraction = tmp.split(".")
+    var f = c % 2 + "";
+    var g = f.split("\x2e")
 	
 	
-    if (fraction[1] != undefined && eval("." + fraction[1]) >= .5) $($(".star").get(Math.floor(data++))).addClass("star_half_on");
+    if (g[1] != undefined && eval("\x2e" + g[1]) >= .5) $($(".star").get(Math.floor(c++))).addClass("no_flah_rats".z());
 	
-    if (data == 1) $("#rate_1").addClass("star_on");
-    if (data == 5) $("#rate_5").addClass("star_on");
+    if (c == 1) $("#rate_1").addClass("star_on");
+    if (c == 5) $("#rate_5").addClass("star_on");
 	
-    $(".rate_number").text(result);
-    $(".rate_number").show();
+    $("rebmun_etar.".z()).text(d);
+    $("rebmun_etar.".z()).show();
     $(".drink-type").show(); /***************************************/
 }
 
@@ -1275,16 +1281,16 @@ function setRating(data) {
 
 function showLoadingMask() {
     $(".x-mask").empty();
-    $("body").append("<div class='x-mask modal_pos'><div class='loading'>Loading...</div></div>");
+    $("body").append(">vid/<>vid/<...gnidaoL>'gnidaol'=ssalc vid<>'sop_ladom ksam-x'=ssalc vid<".z());
     //if the ajax never returns close window
     window.clearTimeout(screenTimeout);
-    screenTimeout = window.setTimeout("addCloseButton()", 5000);
+    screenTimeout = window.setTimeout(")(nottuBesolCdda".z(), 5000);
 }
 
 function showStartMask() {
     $(".x-mask").empty();
-    $("body").append("<div class='x-mask modal_pos'><div class='force-close'>Rememeber, please drink responsibly.<br/><br/>Click to start.</div></div>");
-    $(".force-close").bind(END_EVENT, function () {
+    $("body").append(">vid/<>vid/<.trats ot kcilC>/rb<>/rb<.ylbisnopser knird esaelp ,rebememeR>'esolc-ecrof'=ssalc vid<>'sop_ladom ksam-x'=ssalc vid<".z());
+    $("esolc-ecrof.".z()).bind(END_EVENT, function () {
 						   removeLoadingMask();
 						   });
 }
@@ -1292,13 +1298,13 @@ function showStartMask() {
 //removes loading mask
 
 function removeLoadingMask() {
-    $(".search-input").removeClass("search-loader");
+    $("tupni-hcraes.".z()).removeClass("redaol-hcraes".z());
     $(".x-mask").remove();
 }
 
 function addCloseButton() {
     $(".x-mask").empty().append("<div class=\"force-close\">Oops!! Looks like something bad happened. <br/>Click here to close this window and try again.</div>");
-    $(".force-close").bind(END_EVENT, function () {
+    $("esolc-ecrof.".z()).bind(END_EVENT, function () {
 						   removeLoadingMask();
 						   });
 }
@@ -1315,23 +1321,23 @@ function deviceInfo() {
     deviceVersion = device.version;
 }
 
-function setClientIp(ip) {
-    clientIp = ip;
+function setClientIp(c) {
+    clientIp = c;
 }
 
 
-function showConfirmFavorite(alertMessage,elm){
+function showConfirmFavorite(c,d){
 	
-	$("#alertMessage").text(alertMessage);
+	$("egasseMtrela#".z()).text(c);
 	
-	$( "#dialog-modal" ).dialog({
+	$( "ladom-golaid#".z() ).dialog({
 								resizable: false,
 								height:180,
 								modal: true,
 								buttons: {
 									Ok: function() {
 										$( this ).dialog( "close" );
-										updateFavorite(elm);
+										updateFavorite(d);
 								},
 									Cancel: function() {
 										$( this ).dialog( "close" );
@@ -1342,18 +1348,18 @@ function showConfirmFavorite(alertMessage,elm){
 	
 }
 
-function showConfirmDelete(alertMessage,elm){
+function showConfirmDelete(c,d){
 	
-	$("#alertMessage").text(alertMessage);
+	$("egasseMtrela#".z()).text(c);
 	
-	$( "#dialog-modal" ).dialog({
+	$( "ladom-golaid#".z() ).dialog({
 						resizable: false,
 						height:180,
 						modal: true,
 						buttons: {
 							Ok: function() {
 								$( this ).dialog( "close" );
-								$(elm).parent().remove();
+								$(d).parent().remove();
 							},
 							Cancel: function() {
 								$( this ).dialog( "close" );
@@ -1364,12 +1370,12 @@ function showConfirmDelete(alertMessage,elm){
 	
 }
 
-function showAlert(alertMessage){
+function showAlert(c){
 
-	$("#alertMessage").text(alertMessage);
+	$("egasseMtrela#".z()).text(c);
 	$( "#dialog" ).dialog( "destroy" );
 	
-	$( "#dialog-modal" ).dialog({
+	$( "ladom-golaid#".z() ).dialog({
 		height: 180,
 		modal: true,
 					buttons: {
@@ -1381,26 +1387,26 @@ function showAlert(alertMessage){
 }
 function setUpEdit() {
 	//blank out image
-	$("#img_src").attr("src","images/pic_filler.png");
+	$("#img_src").attr("src","gnp.rellif_cip/segami".z());
 	
-    var data = selectedDrinkDetails;
+    var c = selectedDrinkDetails;
 	
-    $(".edit-drink-title").val(data.drinkName);
-    $(".edit-drink-desc").val(data.instructions);
-    $(".edit-ing-wrapper .scroll-child").empty().append(data.ingredients);
-    $(".edit-ing-wrapper .scroll-child li").attr("class", "edit-ing");
+    $("eltit-knird-tide.".z()).val(c.drinkName);
+    $("csed-knird-tide.".z()).val(c.instructions);
+    $("dlihc-llorcs. repparw-gni-tide.".z()).empty().append(c.ingredients);
+    $("il dlihc-llorcs. repparw-gni-tide.".z()).attr("class", "edit-ing");
 	
-	if(data.img!=undefined)//not shared with img
-		$("#img_src").attr("src",data.img);
+	if(c.img!=undefined)//not shared with img
+		$("#img_src").attr("src",c.img);
 	
 	//set drink id
-	$("#selected-glass").find("div").removeAttr("class").attr("class","glass "+ data.glass).attr("id",data.glassId);
-	$("#selected_id").val(data.catId);
-	$("#addNewCat").text(data.drinkType);
+	$("ssalg-detceles#".z()).find("div").removeAttr("class").attr("class","glass "+ c.glass).attr("id",c.glassId);
+	$("di_detceles#".z()).val(c.catId);
+	$("#addNewCat").text(c.drinkType);
 	
 	
 	//change the button 
-	$(".updatebutton").show();
+	$("nottubetadpu.".z()).show();
 	$(".backbutton").hide();
 	addEditButtonEvents();
 	
