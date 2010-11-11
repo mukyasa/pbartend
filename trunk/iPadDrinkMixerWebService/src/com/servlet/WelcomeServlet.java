@@ -51,7 +51,7 @@ out.println("<title> A very simple servlet example</title>");
 out.println("</head>");
 out.println("<body>");
 out.println("<h1>"+welcomeMessage+"</h1>");
-out.println("<a href='/servletexample/pages/form.html'>"+"Click here to go back to input page "+"</a>");
+out.println("<a href='hello.jsp'>"+"Click here to go back to input page "+"</a>");
 out.println("</body>");
 out.println("</html>");
 out.close();
