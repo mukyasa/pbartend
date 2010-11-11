@@ -46,6 +46,7 @@
     return obj;
 }
 
+
 /**
  * This is main kick off after the app inits, the views and Settings are setup here.
  */
@@ -73,11 +74,24 @@
   
 	[window makeKeyAndVisible];
 	
-	
+	/*
 	for (id subview in webView.subviews)
 		if ([[subview class] isSubclassOfClass: [UIScrollView class]])
 			((UIScrollView *)subview).bounces = NO;
-	 
+	*/ 
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+/* fixes a but where page shifts 20 px*/
+- (void)keyboardDidHide:(NSNotification *)note {
+    
+	//NSLog(@"keyboard hiden");
+	CGRect newBannerview = window.frame;
+	newBannerview.origin.x = 20;
+	
+	[UIView beginAnimations:@"MoveWindowView" context:NULL];
+	window.frame = newBannerview;
+	[UIView commitAnimations];
 }
 
 /**
