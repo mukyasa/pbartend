@@ -7,19 +7,27 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-
  public class DbConnectionTest {
- 
+
+	 private static boolean DEBUG=true;
+	 
 	 public static Connection getConnection() throws Exception{
 		 String driverName = "com.mysql.jdbc.Driver";
 		Class.forName(driverName);
 		
 		String serverName = "localhost";
 		String myDb = "mypocket_drinkmixer";//drinkmixer; 
-		String url="jdbc:mysql://"+serverName + "/" + myDb;
-		
 		String user = "mypocket_root";//root
 		String pwd = "c4tf34r33";
+		
+		if(DEBUG)
+		{
+			myDb = "drinkmixer"; 
+			user = "root";
+			pwd = "door78";
+		}
+		
+		String url="jdbc:mysql://"+serverName + "/" + myDb; 
 		
 		return DriverManager.getConnection(url,user,pwd);
 		 
