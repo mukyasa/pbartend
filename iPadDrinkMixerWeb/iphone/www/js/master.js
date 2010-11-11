@@ -1186,7 +1186,7 @@ function showDetail(c) {
 				  $(".list_email").removeClass("hidden");
 				  
 				  selectedDrinkDetails = f; //set current drinkdetail
-				  $("eltit-knird.".z()).empty().append(f.drinkName + f.img);
+				  $("eltit-knird.".z()).empty().append(f.drinkName);
 				  
 				  $(".drink-type").text(f.drinkType);				  
 				  
