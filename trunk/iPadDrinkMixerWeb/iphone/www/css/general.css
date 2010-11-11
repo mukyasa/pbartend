@@ -151,10 +151,10 @@ body {
 	background:url("../images/list_fav.png") no-repeat 0 0px;
 }
 .list_fav,.list_fav_selected{
-	width:21px;
-	height:20px;
+	width:41px;
+	height:30px;
 	float:right;
-	margin:15px 10px 10px 10px;
+	margin:12px 0;
 }
 #loadMore{
 	border-bottom: 1px solid #ccc;
