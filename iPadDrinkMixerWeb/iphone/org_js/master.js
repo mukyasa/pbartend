@@ -550,7 +550,6 @@ function list_item_events() {
 										   else 
 										   list_scroll = false;
 										   
-										   
 										   });
 	
     $("#loadMore").bind(END_EVENT, function () {
@@ -974,7 +973,10 @@ function processDrinks(requestUrl, showDetails) {
 			  
 			  
 			  }
-			  else removeLoadingMask();
+			  else{ 
+			  removeLoadingMask();
+			  showAlert("An error has occured. Your network may be down, check your settings.");
+			  }
 			  
 			  });
 	
@@ -1352,7 +1354,7 @@ function showConfirmDelete(alertMessage,elm){
 	
 	$( "#dialog-modal" ).dialog({
 								resizable: false,
-								height:180,
+								height:200,
 								modal: true,
 								buttons: {
 								Ok: function() {
