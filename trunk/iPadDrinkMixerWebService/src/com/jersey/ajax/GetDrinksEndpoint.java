@@ -57,37 +57,7 @@ public class GetDrinksEndpoint extends SQL {
 		dos.updateDrink(drinkTitle,glass,instructions,category,ingredients, drink_id_input,img);
 	}
 	
-	/*
-	@GET
-	@Path("create")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String createNew(@QueryParam("dt") String drinkTitle,
-			@QueryParam("g") int glass,
-			@QueryParam("in") String instructions,
-			@QueryParam("cat") int category,
-			@QueryParam("uid") String uid,
-			@QueryParam("ings") String ingredients){
 
-		DOService dos = new DOService();
-
-		return dos.createDrink(drinkTitle,glass,instructions,category,ingredients,uid);
-	}
-	
-	@GET
-	@Path("update")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String updateDrink(@QueryParam("dt") String drinkTitle,
-			@QueryParam("g") int glass,
-			@QueryParam("in") String instructions,
-			@QueryParam("cat") int category,
-			@QueryParam("ings") String ingredients,
-			@QueryParam("did") int drink_id_input){
-
-		DOService dos = new DOService();
-
-		return dos.updateDrink(drinkTitle,glass,instructions,category,ingredients, drink_id_input);
-	}
-	*/
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
