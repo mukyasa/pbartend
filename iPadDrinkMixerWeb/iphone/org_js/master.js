@@ -74,6 +74,7 @@ function changeOrientation(orientation) {
     }
     //hide any popouts
     $(".popout").hide();
+	refreshMainScroller();
 }
 
 function refreshMainScroller() {
@@ -200,7 +201,8 @@ $(document).ready(function () {
 										  if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode == 0) {
 										  
 										  PAGING_COUNT = 0; //first time called
-										  PAGING_TYPE = PAGING_TYPE_SEARCH;
+										  if(PAGING_TYPE != PAGING_TYPE_ING)
+										  PAGING_TYPE = PAGING_TYPE_SEARCH;//this is the problem
 										  
 										  $("#list_wrapper").empty();
 										  
@@ -337,53 +339,53 @@ $(document).ready(function () {
 												
 												if(validate())
 												{
-													var ings ="";
-													
-													for(i=0;i<$("#editchosenIngs input").length;i++)
-													{
-														//get ing id from out div val
-														var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
-													
-														ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
-													}
-													
-													
-													/*var queryString ="?dt="+$(".edit-drink-title").val()
-													+"&g="+$("#selected-glass").find("div").attr("id")
-													+"&in="+$("#edit-drink-desc").val()
-													+"&cat="+$("#selected_id").val()
-													+"&ings="+ings
-													+"&uid="+deviceUID;
-													*/
+												var ings ="";
 												
-													$("#glass-id-input").val($("#selected-glass").find("div").attr("id"));
-													$("#ings-id-input").val(ings);
-													$("#uid-id-input").val(deviceUID);
+												for(i=0;i<$("#editchosenIngs input").length;i++)
+												{
+												//get ing id from out div val
+												var ing_id = $($("#editchosenIngs input").get(i)).parent().attr("val");
 												
-													dataString = $("#ajaxForm").serialize();
+												ings += $($("#editchosenIngs input").get(i)).val()+"~"+ing_id+"|";
+												}
 												
-													$.ajax({
-														  type: "POST",
-														  url: ROOT_URL + "drinks/create",
-														  data: dataString,
-														  dataType: "json",
-														  success: function(data) {
-														   
-														  }
-													});
 												
-													/*
-													//console.log(ROOT_URL + "drinks/create"+queryString);
-													$.getJSON(ROOT_URL + "drinks/create"+queryString, function(data) {
-															  //$('.result').html(data);
-															  });
-													*/
-													
-													
-													
-													//flip paper back
-													 
-													$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+												/*var queryString ="?dt="+$(".edit-drink-title").val()
+												 +"&g="+$("#selected-glass").find("div").attr("id")
+												 +"&in="+$("#edit-drink-desc").val()
+												 +"&cat="+$("#selected_id").val()
+												 +"&ings="+ings
+												 +"&uid="+deviceUID;
+												 */
+												
+												$("#glass-id-input").val($("#selected-glass").find("div").attr("id"));
+												$("#ings-id-input").val(ings);
+												$("#uid-id-input").val(deviceUID);
+												
+												dataString = $("#ajaxForm").serialize();
+												
+												$.ajax({
+													   type: "POST",
+													   url: ROOT_URL + "drinks/create",
+													   data: dataString,
+													   dataType: "json",
+													   success: function(data) {
+													   
+													   }
+													   });
+												
+												/*
+												 //console.log(ROOT_URL + "drinks/create"+queryString);
+												 $.getJSON(ROOT_URL + "drinks/create"+queryString, function(data) {
+												 //$('.result').html(data);
+												 });
+												 */
+												
+												
+												
+												//flip paper back
+												
+												$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
 												}	
 												$(this).removeClass("savebutton-on");
 												});
@@ -397,52 +399,52 @@ $(document).ready(function () {
 												  
 												  if(validate())
 												  {
-													  var ings ="";
-													  
-													  for(i=0;i<$("#editchosenIngs input").length;i++)
-														ings += $($("#editchosenIngs input").get(i)).val()+"|";
-													  
-													  /*
-													  
-													  var queryString ="?dt="+$(".edit-drink-title").val()
-													  +"&g="+$("#selected-glass").find("div").attr("id")
-													  +"&in="+$("#edit-drink-desc").val()
-													  +"&cat="+$("#selected_id").val()
-													  +"&ings="+ings
-													  +"&uid="+deviceUID
-													  +"&did="+$("#drink_id_input").val();//used for update only
-													  
-													  // console.log(ROOT_URL + "drinks/update"+queryString);
-													  $.getJSON(ROOT_URL + "drinks/update"+queryString, function(data) {
-																//$('.result').html(data);
-																});
-													  
-													  
-													  */
+												  var ings ="";
 												  
-														$("#glass-id-input").val($("#selected-glass").find("div").attr("id"));
-														$("#ings-id-input").val(ings);
-														$("#uid-id-input").val(deviceUID);
+												  for(i=0;i<$("#editchosenIngs input").length;i++)
+												  ings += $($("#editchosenIngs input").get(i)).val()+"|";
 												  
-														dataString = $("#ajaxForm").serialize();
+												  /*
+												   
+												   var queryString ="?dt="+$(".edit-drink-title").val()
+												   +"&g="+$("#selected-glass").find("div").attr("id")
+												   +"&in="+$("#edit-drink-desc").val()
+												   +"&cat="+$("#selected_id").val()
+												   +"&ings="+ings
+												   +"&uid="+deviceUID
+												   +"&did="+$("#drink_id_input").val();//used for update only
+												   
+												   // console.log(ROOT_URL + "drinks/update"+queryString);
+												   $.getJSON(ROOT_URL + "drinks/update"+queryString, function(data) {
+												   //$('.result').html(data);
+												   });
+												   
+												   
+												   */
 												  
-														$.ajax({
-															   type: "POST",
-															   url: ROOT_URL + "drinks/update",
-															   data: dataString,
-															   dataType: "json",
-															   success: function(data) {
-															   //refresh data then flip
-															   showDetail($("#drink_id_input").val());
-															   //flip paper back
-															   $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
-															   }
+												  $("#glass-id-input").val($("#selected-glass").find("div").attr("id"));
+												  $("#ings-id-input").val(ings);
+												  $("#uid-id-input").val(deviceUID);
+												  
+												  dataString = $("#ajaxForm").serialize();
+												  
+												  $.ajax({
+														 type: "POST",
+														 url: ROOT_URL + "drinks/update",
+														 data: dataString,
+														 dataType: "json",
+														 success: function(data) {
+														 //refresh data then flip
+														 showDetail($("#drink_id_input").val());
+														 //flip paper back
+														 $("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
+														 }
 														 });
-													  
-														
 												  
 												  
-													 
+												  
+												  
+												  
 												  }
 												  $(this).removeClass("updatebutton-on");
 												  });
@@ -495,7 +497,7 @@ function validate(){
 	
 	return true;
 	
-
+	
 }
 
 function list_item_events() {
@@ -508,8 +510,8 @@ function list_item_events() {
 								
 								if (!list_scroll)
 								{
-									$(this).parent().find(".ing-item").removeClass("list_item_down");
-									$(this).addClass("list_item_down");
+								$(this).parent().find(".ing-item").removeClass("list_item_down");
+								$(this).addClass("list_item_down");
 								}
 								
 								}).bind(MOVE_EVENT, function () {
@@ -544,9 +546,9 @@ function list_item_events() {
     $(".list_fav,.list_fav_selected").bind(START_EVENT, function (e) {
 										   e.preventDefault(); //prevent copy and mag from showing
 										   if (!list_scroll) //if not scrolling 
-												showConfirmFavorite("Are you sure you want change your favorite status?",this);
+										   showConfirmFavorite("Are you sure you want change your favorite status?",this);
 										   else 
-												list_scroll = false;
+										   list_scroll = false;
 										   
 										   
 										   });
@@ -568,10 +570,10 @@ function list_item_events() {
 }
 
 function updateFavorite(that){
-
+	
 	var drinkId = $(that).parent().attr("id");
 	var isOn = $(that).hasClass("list_fav_selected");
-
+	
 	var tmpfav = new Array();
 	
 	if (!isOn) //add favorite
@@ -598,7 +600,7 @@ function updateFavorite(that){
 											  $(that).addClass("list_fav").removeClass("list_fav_selected");
 											  //remove id
 											  for (i = 0; i < favoritesArray.length; i++) {
-												if (favoritesArray[i] != drinkId) tmpfav.push(favoritesArray[i]);
+											  if (favoritesArray[i] != drinkId) tmpfav.push(favoritesArray[i]);
 											  }
 											  //reset favoritesArray
 											  favoritesArray = tmpfav;
@@ -609,7 +611,7 @@ function updateFavorite(that){
 											  })
 					   });
 	}
-
+	
 }
 
 function handleIngPop() {
@@ -921,7 +923,7 @@ function processDrinks(requestUrl, showDetails) {
     $.getJSON(requestUrl, function (data) {
 			  
 			  if (data != null) {
-			 // console.log(data);
+			  // console.log(data);
 			  if (data.drinkDetails.length != undefined) {
 			  //if type array meaning returns more than one
 			  for (i = 0; i < data.drinkDetails.length; i++) {
@@ -1034,10 +1036,10 @@ function getAQuote() {
 function addEditButtonEvents() {
 	
 	$("#edit-drink-photo").unbind().bind(END_EVENT,function(e){
-									   
-									   getPicture(PictureSourceType.PHOTO_LIBRARY);
-									   
-									   });
+										 
+										 getPicture(PictureSourceType.PHOTO_LIBRARY);
+										 
+										 });
 	
 	$(".delete-icon").unbind().bind(END_EVENT,function(e){
 									showConfirmDelete("Did you want to delete this?",this);									
@@ -1150,9 +1152,10 @@ function addEditButtonEvents() {
 }
 
 function showDetail(drinkId) {
+	//console.log(PAGING_TYPE);
 	
     if (PAGING_TYPE == PAGING_TYPE_ALL || PAGING_TYPE == PAGING_TYPE_CATEGORY || PAGING_TYPE == PAGING_TYPE_SEARCH) {
-
+		
         //flip paper to front
         $("#ing-inner-wrapper").fadeOut(function () {
 										$("#paper_wrapper .paper").addClass("flip-front").removeClass("flip-back");
@@ -1181,15 +1184,15 @@ function showDetail(drinkId) {
 				  $(".drink-type").text(data.drinkType);				  
 				  
 				  $(".drink-desc .scroll-child").empty().append(data.instructions);
-
+				  
 				  
 				  $(".ing-wrapper .scroll-child").empty().append(data.ingredients);
 				  $(".ing-wrapper .scroll-child li").attr("class", "ing");
-
-				 
+				  
+				  
 				  if(data.img!=undefined)//not shared with img
-					$("#view_img_src").attr("src",data.img);
-				 
+				  $("#view_img_src").attr("src",data.img);
+				  
 				  
 				  $("#drink_id_input").val(data.id);
 				  
@@ -1330,16 +1333,16 @@ function showConfirmFavorite(alertMessage,elm){
 								height:180,
 								modal: true,
 								buttons: {
-									Ok: function() {
-										$( this ).dialog( "close" );
-										updateFavorite(elm);
+								Ok: function() {
+								$( this ).dialog( "close" );
+								updateFavorite(elm);
 								},
-									Cancel: function() {
-										$( this ).dialog( "close" );
+								Cancel: function() {
+								$( this ).dialog( "close" );
 								
-									}
 								}
-						});
+								}
+								});
 	
 }
 
@@ -1348,37 +1351,37 @@ function showConfirmDelete(alertMessage,elm){
 	$("#alertMessage").text(alertMessage);
 	
 	$( "#dialog-modal" ).dialog({
-						resizable: false,
-						height:180,
-						modal: true,
-						buttons: {
-							Ok: function() {
+								resizable: false,
+								height:180,
+								modal: true,
+								buttons: {
+								Ok: function() {
 								$( this ).dialog( "close" );
 								$(elm).parent().remove();
-							},
-							Cancel: function() {
+								},
+								Cancel: function() {
 								$( this ).dialog( "close" );
 								
-							}
-						}
-			});
+								}
+								}
+								});
 	
 }
 
 function showAlert(alertMessage){
-
+	
 	$("#alertMessage").text(alertMessage);
 	$( "#dialog" ).dialog( "destroy" );
 	
 	$( "#dialog-modal" ).dialog({
-		height: 180,
-		modal: true,
-					buttons: {
-						Ok: function() {
-						$( this ).dialog( "close" );								
-						}
-					}
-		});
+								height: 180,
+								modal: true,
+								buttons: {
+								Ok: function() {
+								$( this ).dialog( "close" );								
+								}
+								}
+								});
 }
 function setUpEdit() {
 	//blank out image
