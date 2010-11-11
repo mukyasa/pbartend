@@ -145,16 +145,16 @@ body {
 	width:260px  !important;
 }
 .list_fav_selected{
-	background:url("../images/list_fav_selected.png") no-repeat 0 0px;
+	background:url("../images/list_fav_selected.png") no-repeat 0px 8px;
 }
 .list_fav{
-	background:url("../images/list_fav.png") no-repeat 0 0px;
+	background:url("../images/list_fav.png") no-repeat 0px 8px;
 }
 .list_fav,.list_fav_selected{
 	width:41px;
 	height:30px;
 	float:right;
-	margin:12px 0;
+	margin:10px 0;
 }
 #loadMore{
 	border-bottom: 1px solid #ccc;
