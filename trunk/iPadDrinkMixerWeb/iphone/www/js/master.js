@@ -555,7 +555,6 @@ function list_item_events() {
 											   else 
 											   list_scroll = false;
 											   
-											   
 											   });
 	
     $("#loadMore").bind(END_EVENT, function () {
@@ -979,7 +978,10 @@ function processDrinks(requestUrl, c) {
 			  
 			  
 			  }
-			  else removeLoadingMask();
+			  else{ 
+			  removeLoadingMask();
+			  showAlert(".sgnittes ruoy kcehc ,nwod eb yam krowten ruoY .derucco sah rorre nA".z());
+			  }
 			  
 			  });
 	
@@ -1357,7 +1359,7 @@ function showConfirmDelete(c,d){
 	
 	$( "ladom-golaid#".z() ).dialog({
 									resizable: false,
-									height:180,
+									height:200,
 									modal: true,
 									buttons: {
 									Ok: function() {
