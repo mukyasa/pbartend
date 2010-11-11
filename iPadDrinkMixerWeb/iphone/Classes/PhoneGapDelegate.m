@@ -151,18 +151,7 @@
 	webView = theWebView; 	
 }
 
-/**
- * Fail Loading With Error
- * Error - If the webpage failed to load display an error with the reson.
- *
- */
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    //NSLog(@"Failed to load webpage with error: %@", [error localizedDescription]);
-	/*
-    if ([error code] != NSURLErrorCancelled)
-		alert([error localizedDescription]);
-     */
-}
+
 
 -(NSString *)getIPAddress
 {
