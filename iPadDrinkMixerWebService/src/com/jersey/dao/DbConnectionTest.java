@@ -9,9 +9,10 @@ import java.sql.Statement;
 
  public class DbConnectionTest {
 
-	 private static boolean DEBUG=true;
+	 private static boolean DEBUG=false;
 	 
 	 public static final String SITE_URL = (DEBUG?"192.168.1.107" : "http://mypocketenterprise.com");
+	 public static final String ROOT = (DEBUG?"iPad" :"");
 		
 	 public static Connection getConnection() throws Exception{
 		 String driverName = "com.mysql.jdbc.Driver";
