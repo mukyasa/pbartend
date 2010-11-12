@@ -36,6 +36,8 @@ public class SQL{
 	public static final String COL_UID="uid";
 	public static final String COL_IMG="img";
 	public static final String COL_IMG_LOC="img_loc";
+	public static final String COL_VERSION="version";
+	public static final String COL_IP="ip_address";
 	
 
 	//table names

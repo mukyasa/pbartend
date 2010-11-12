@@ -788,6 +788,37 @@ public class DOService extends SQL {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
+			result = loopAdminDrinks(rs, result,false);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				closeStuff(conn, rs, stmt, null);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+	
+	public List<DrinkDetails> getAllRatingsAdmin() {
+
+		Statement stmt = null;
+		ResultSet rs = null;
+		Connection conn = null;
+		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
+
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			String sql = sqlGetAllRatingsAdmin;
+
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+
 			result = loopAdminDrinks(rs, result,true);
 
 		} catch (Exception e) {
@@ -804,7 +835,7 @@ public class DOService extends SQL {
 		return result;
 	}
 	
-private List<DrinkDetails> loopAdminDrinks(ResultSet rs,List<DrinkDetails> result,boolean isSharedDrink) throws Exception {
+	private List<DrinkDetails> loopAdminDrinks(ResultSet rs,List<DrinkDetails> result,boolean getIp) throws Exception {
 		
 		while (rs.next()) {
 			DrinkDetails drink = new DrinkDetails();
@@ -813,9 +844,20 @@ private List<DrinkDetails> loopAdminDrinks(ResultSet rs,List<DrinkDetails> resul
 			String sub_name = rs.getString(COL_NAME);
 
 			drink.setDrinkName(sub_name);
-			drink.setInstructions(rs.getString(COL_INSTUCTIONS));
+			
+			
 			drink.setUid(rs.getString(COL_UID));
-			drink.setImg("data:image/jpeg;base64,"+rs.getString(COL_IMG));
+			
+			if(getIp){
+				drink.setVersion(rs.getString(COL_VERSION));
+				drink.setIpAddress(rs.getString(COL_IP));	
+				drink.setDrinkId(rs.getInt(COL_DRINK_ID));
+			}
+			else
+			{
+				drink.setInstructions(rs.getString(COL_INSTUCTIONS));
+				drink.setImg("data:image/jpeg;base64,"+rs.getString(COL_IMG));
+			}
 
 			result.add(drink);
 		}

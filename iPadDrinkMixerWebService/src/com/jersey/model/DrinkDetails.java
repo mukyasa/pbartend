@@ -23,8 +23,35 @@ public class DrinkDetails {
 	private ArrayList<String> ings = new ArrayList<String>();
 	private String img;
 	private boolean isCustom=false;
-
+	private String ipAddress;
+	private String version;
+	private int drinkId;
 	
+	
+	public int getDrinkId() {
+		return drinkId;
+	}
+
+	public void setDrinkId(int drinkId) {
+		this.drinkId = drinkId;
+	}
+
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	public String getIpAddress() {
+		return ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+	}
+
 	public boolean isCustom() {
 		return isCustom;
 	}
