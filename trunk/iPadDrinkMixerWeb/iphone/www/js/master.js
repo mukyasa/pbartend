@@ -472,7 +472,7 @@ $(document).ready(function () {
 				  list_item_events();
 				  //load up the favorites in memory
 				  setUpFavorites();
-				  //showStartMask();
+				  showStartMask();
 				  addEditButtonEvents();
 				  });
 
@@ -980,6 +980,7 @@ function processDrinks(requestUrl, c) {
 			  }
 			  else{ 
 			  removeLoadingMask();
+			  if(PAGING_TYPE != PAGING_TYPE_SEARCH)
 			  showAlert(".sgnittes ruoy kcehc ,nwod eb yam krowten ruoY .derucco sah rorre nA".z());
 			  }
 			  
