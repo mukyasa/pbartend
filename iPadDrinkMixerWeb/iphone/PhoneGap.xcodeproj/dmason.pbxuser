@@ -38,7 +38,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 71AD1ED61256496600FB1054 /* PhoneGap */;
-		activeSDKPreference = iphoneos4.2;
+		activeSDKPreference = iphonesimulator4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PhoneGap */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PhoneGap */,
@@ -224,6 +224,20 @@
 			7195E72F128DA5D800E0A685 /* PBXTextBookmark */ = 7195E72F128DA5D800E0A685 /* PBXTextBookmark */;
 			7195E730128DA5D800E0A685 /* PBXTextBookmark */ = 7195E730128DA5D800E0A685 /* PBXTextBookmark */;
 			7195E731128DA5D800E0A685 /* PBXTextBookmark */ = 7195E731128DA5D800E0A685 /* PBXTextBookmark */;
+			7195E742128DA67700E0A685 /* PBXTextBookmark */ = 7195E742128DA67700E0A685 /* PBXTextBookmark */;
+			7195E746128DA6CB00E0A685 /* PBXTextBookmark */ = 7195E746128DA6CB00E0A685 /* PBXTextBookmark */;
+			7195E747128DA79500E0A685 /* PBXTextBookmark */ = 7195E747128DA79500E0A685 /* PBXTextBookmark */;
+			7195E74A128DB07700E0A685 /* PBXTextBookmark */ = 7195E74A128DB07700E0A685 /* PBXTextBookmark */;
+			7195E74B128DB07700E0A685 /* PBXTextBookmark */ = 7195E74B128DB07700E0A685 /* PBXTextBookmark */;
+			7195E74F128DB38900E0A685 /* PBXTextBookmark */ = 7195E74F128DB38900E0A685 /* PBXTextBookmark */;
+			7195E750128DB38900E0A685 /* PBXTextBookmark */ = 7195E750128DB38900E0A685 /* PBXTextBookmark */;
+			7195E751128DB38900E0A685 /* PBXTextBookmark */ = 7195E751128DB38900E0A685 /* PBXTextBookmark */;
+			7195E755128DD03B00E0A685 /* PBXTextBookmark */ = 7195E755128DD03B00E0A685 /* PBXTextBookmark */;
+			7195E756128DD03B00E0A685 /* PBXTextBookmark */ = 7195E756128DD03B00E0A685 /* PBXTextBookmark */;
+			7195E757128DD03B00E0A685 /* PBXTextBookmark */ = 7195E757128DD03B00E0A685 /* PBXTextBookmark */;
+			7195E758128DD05300E0A685 /* PBXTextBookmark */ = 7195E758128DD05300E0A685 /* PBXTextBookmark */;
+			7195E759128DD05300E0A685 /* PBXTextBookmark */ = 7195E759128DD05300E0A685 /* PBXTextBookmark */;
+			7195E75A128DD05300E0A685 /* PBXTextBookmark */ = 7195E75A128DD05300E0A685 /* PBXTextBookmark */;
 			719EA109128C89F3003153B2 = 719EA109128C89F3003153B2 /* PBXTextBookmark */;
 			71A9A693125AD68500E76AD7 = 71A9A693125AD68500E76AD7 /* PBXBookmark */;
 			71AA87A81266D20200AB6FDF = 71AA87A81266D20200AB6FDF /* PBXBookmark */;
@@ -497,6 +511,11 @@
 		name = master.js;
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/org_js/master.js;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1085, 18694}}";
+			sepNavSelRange = "{17289, 0}";
+			sepNavVisRange = "{16566, 1325}";
+		};
 	};
 	711F6173128C829E00250024 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -544,9 +563,9 @@
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/www/js/master.js;
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1085, 18083}}";
-			sepNavSelRange = "{17265, 12}";
-			sepNavVisRange = "{0, 1418}";
+			sepNavIntBoundsRect = "{{0, 0}, {1202, 18018}}";
+			sepNavSelRange = "{18054, 0}";
+			sepNavVisRange = "{17256, 1320}";
 		};
 	};
 	712CA34912711E30003326FA /* PBXTextBookmark */ = {
@@ -914,7 +933,7 @@
 		fRef = 711F60D0128C3E6200250024 /* master.js */;
 		name = "master.js: 926";
 		rLen = 42;
-		rLoc = 30187;
+		rLoc = 30189;
 		rType = 0;
 		vrLen = 2274;
 		vrLoc = 5833;
@@ -923,8 +942,8 @@
 		isa = PBXTextBookmark;
 		fRef = 71F593A1128CB2EF00F27D7D /* master.js */;
 		name = "master.js: 457";
-		rLen = 12;
-		rLoc = 17265;
+		rLen = 0;
+		rLoc = 3345;
 		rType = 0;
 		vrLen = 1536;
 		vrLoc = 16906;
@@ -933,8 +952,8 @@
 		isa = PBXTextBookmark;
 		fRef = 717C0B14128D0AFD00203121 /* master.js */;
 		name = "master.js: 457";
-		rLen = 12;
-		rLoc = 17265;
+		rLen = 0;
+		rLoc = 3345;
 		rType = 0;
 		vrLen = 1717;
 		vrLoc = 0;
@@ -1002,8 +1021,8 @@
 		isa = PBXTextBookmark;
 		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
 		name = "master.js: 457";
-		rLen = 12;
-		rLoc = 17265;
+		rLen = 0;
+		rLoc = 3345;
 		rType = 0;
 		vrLen = 1418;
 		vrLoc = 0;
@@ -1017,6 +1036,146 @@
 		rType = 0;
 		vrLen = 4301;
 		vrLoc = 0;
+	};
+	7195E742128DA67700E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71DFA06D127681C900E82A58 /* project.pbxproj */;
+		name = "project.pbxproj: 562";
+		rLen = 0;
+		rLoc = 34143;
+		rType = 0;
+		vrLen = 4019;
+		vrLoc = 0;
+	};
+	7195E746128DA6CB00E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71DFA06D127681C900E82A58 /* project.pbxproj */;
+		name = "project.pbxproj: 562";
+		rLen = 0;
+		rLoc = 34143;
+		rType = 0;
+		vrLen = 4019;
+		vrLoc = 0;
+	};
+	7195E747128DA79500E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71DFA06D127681C900E82A58 /* project.pbxproj */;
+		name = "project.pbxproj: 562";
+		rLen = 0;
+		rLoc = 34143;
+		rType = 0;
+		vrLen = 4019;
+		vrLoc = 0;
+	};
+	7195E74A128DB07700E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 71DFA06D127681C900E82A58 /* project.pbxproj */;
+		name = "project.pbxproj: 562";
+		rLen = 0;
+		rLoc = 34143;
+		rType = 0;
+		vrLen = 4019;
+		vrLoc = 0;
+	};
+	7195E74B128DB07700E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 457";
+		rLen = 0;
+		rLoc = 3345;
+		rType = 0;
+		vrLen = 1169;
+		vrLoc = 265;
+	};
+	7195E74F128DB38900E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 711F60D0128C3E6200250024 /* master.js */;
+		name = "master.js: 1";
+		rLen = 44418;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1613;
+		vrLoc = 31036;
+	};
+	7195E750128DB38900E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 457";
+		rLen = 0;
+		rLoc = 3345;
+		rType = 0;
+		vrLen = 1717;
+		vrLoc = 0;
+	};
+	7195E751128DB38900E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1585;
+		vrLoc = 132;
+	};
+	7195E755128DD03B00E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 711F60D0128C3E6200250024 /* master.js */;
+		name = "master.js: 985";
+		rLen = 0;
+		rLoc = 32098;
+		rType = 0;
+		vrLen = 1571;
+		vrLoc = 31036;
+	};
+	7195E756128DD03B00E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 46";
+		rLen = 1;
+		rLoc = 1576;
+		rType = 0;
+		vrLen = 1248;
+		vrLoc = 1034;
+	};
+	7195E757128DD03B00E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 46";
+		rLen = 1;
+		rLoc = 1576;
+		rType = 0;
+		vrLen = 1318;
+		vrLoc = 17256;
+	};
+	7195E758128DD05300E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 712C9DBF126BF86F00AA1F7C /* master.js */;
+		name = "master.js: 481";
+		rLen = 0;
+		rLoc = 18054;
+		rType = 0;
+		vrLen = 1320;
+		vrLoc = 17256;
+	};
+	7195E759128DD05300E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 711F60D0128C3E6200250024 /* master.js */;
+		name = "master.js: 985";
+		rLen = 0;
+		rLoc = 32098;
+		rType = 0;
+		vrLen = 1516;
+		vrLoc = 31090;
+	};
+	7195E75A128DD05300E0A685 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 711F60D0128C3E6200250024 /* master.js */;
+		name = "master.js: 470";
+		rLen = 0;
+		rLoc = 17289;
+		rType = 0;
+		vrLen = 1325;
+		vrLoc = 16566;
 	};
 	719EA109128C89F3003153B2 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1385,9 +1544,9 @@
 		path = /Users/dmason/IPHONE/MY_IPHONE_APPS/Drink_Mixer/iPadDrinkMixerWeb/iphone/PhoneGap.xcodeproj/project.pbxproj;
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1272, 6825}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 4301}";
+			sepNavIntBoundsRect = "{{0, 0}, {1272, 6864}}";
+			sepNavSelRange = "{34143, 0}";
+			sepNavVisRange = "{0, 4019}";
 		};
 	};
 	71DFA0B8127684D900E82A58 /* PBXTextBookmark */ = {
