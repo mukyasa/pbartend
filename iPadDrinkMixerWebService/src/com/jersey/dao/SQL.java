@@ -139,7 +139,8 @@ public class SQL{
 	public static final String sqlGetAllRatingsAdmin ="SELECT * FROM "+TABLE_RATINGS;
 	//delete
 	public static final String sqlDeleteRatingByUIDAdmin ="DELETE FROM "+TABLE_RATINGS +" WHERE "+ COL_UID +"=?";
-	public static final String sqlDeleteSharedByIdAdmin ="DELETE FROM "+TABLE_SHARED_DRINK +" WHERE "+ COL_ROW_ID +"=?";
+	//public static final String sqlDeleteSharedByIdAdmin ="DELETE FROM "+TABLE_SHARED_DRINK +" WHERE "+ COL_ROW_ID +"=?";
+	public static final String sqlDeleteSharedByIdAdmin ="DELETE si, s FROM "+TABLE_SHARED_DRINK+" AS s INNER JOIN "+TABLE_SHARED_DRINK_INGREDIENTS+" AS si ON s."+COL_ROW_ID+"=si."+ COL_DRINK_ID +" WHERE s."+COL_ROW_ID+"=?";
 	
 	
 	

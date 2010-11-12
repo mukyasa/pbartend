@@ -210,6 +210,18 @@ public class GetDrinksEndpoint extends SQL {
 
 		return dos.getAllRatingsAdmin();
 	}
+	
+	
+	@GET
+	@Path("deleteShared{drinkid}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Ingredient>  deleteSharedDrinkAdmin(
+			@PathParam("drinkid") String drinkid) {
+		DOService dos = new DOService();
+
+		dos.deleteSharedDrinkAdmin(drinkid);
+		return null;
+	}
 
 }
 
