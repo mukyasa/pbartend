@@ -974,8 +974,9 @@ function processDrinks(requestUrl, showDetails) {
 			  
 			  }
 			  else{ 
-			  removeLoadingMask();
-			  showAlert("An error has occured. Your network may be down, check your settings.");
+				removeLoadingMask();
+				if(PAGING_TYPE != PAGING_TYPE_SEARCH)
+					showAlert("An error has occured. Your network may be down, check your settings.");
 			  }
 			  
 			  });
