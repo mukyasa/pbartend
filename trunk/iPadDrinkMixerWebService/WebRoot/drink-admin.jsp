@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<%@page import="com.jersey.dao.DbConnectionTest"%><!DOCTYPE html>
 
 <html>
  <head>
@@ -7,7 +8,7 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
   <script>
   
-  var rootURL = "/iPad/rest/drinks/";
+  var rootURL = "<%=DbConnectionTest.ROOT%>/rest/drinks/";
   
 $(document).ready(function(){
 	
