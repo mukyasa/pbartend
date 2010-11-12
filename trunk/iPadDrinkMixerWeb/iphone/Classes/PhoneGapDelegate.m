@@ -80,18 +80,26 @@
 			((UIScrollView *)subview).bounces = NO;
 	*/ 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+	
 }
 
 /* fixes a but where page shifts 20 px*/
 - (void)keyboardDidHide:(NSNotification *)note {
-    
-	//NSLog(@"keyboard hiden");
-	CGRect newBannerview = window.frame;
-	newBannerview.origin.x = 20;
 	
-	[UIView beginAnimations:@"MoveWindowView" context:NULL];
-	window.frame = newBannerview;
-	[UIView commitAnimations];
+	//NSLog(@"web W:%f H:%f",webView.frame.size.width,webView.frame.size.height);
+	//NSLog(@"window W:%f H:%f",window.frame.size.width,window.frame.size.height);
+	
+	/*
+	if(webView.frame.size.width >900 && window.frame.origin.x<0)
+	{
+		//NSLog(@"keyboard hiden");
+		CGRect newBannerview = window.frame;
+		newBannerview.origin.x = 20;
+		
+		[UIView beginAnimations:@"MoveWindowView" context:NULL];
+		window.frame = newBannerview;
+		[UIView commitAnimations];
+	}*/
 }
 
 /**
