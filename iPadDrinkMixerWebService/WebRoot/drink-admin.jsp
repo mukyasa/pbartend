@@ -62,8 +62,16 @@ function eventHandlers(){
 
 	$(".list_item").click(function(){
 		var uid = $(this).find(".uid").text();
+		var id = $(this).attr("id");
 		var drinkName = $(this).find(".drinkName").text(); 
-		confirm(drinkName+"\n\nAre you sure you want to delete?");
+		if(confirm(drinkName+"\n\nAre you sure you want to delete?"))
+		{
+			var requestUrl = rootURL+"deleteShared"+id;
+
+			$.getJSON(requestUrl, function (data) {
+				
+			});
+		}
 	});
 
 }
