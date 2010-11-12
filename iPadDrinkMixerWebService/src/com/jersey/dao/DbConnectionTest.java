@@ -11,13 +11,15 @@ import java.sql.Statement;
 
 	 private static boolean DEBUG=true;
 	 
+	 public static final String SITE_URL = (DEBUG?"192.168.1.107" : "http://mypocketenterprise.com");
+		
 	 public static Connection getConnection() throws Exception{
 		 String driverName = "com.mysql.jdbc.Driver";
 		Class.forName(driverName);
 		
 		String serverName = "localhost";
-		String myDb = "mypocket_drinkmixer";//drinkmixer; 
-		String user = "mypocket_root";//root
+		String myDb = "mypocket_drinkmixer"; 
+		String user = "mypocket_root";
 		String pwd = "c4tf34r33";
 		
 		if(DEBUG)
