@@ -23,10 +23,10 @@ $(document).ready(function(){
 			  if (data.drinkDetails.length != undefined)
 			  {
 			  	for (i = 0; i < data.drinkDetails.length; i++)
-			 	 	$("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.drinkDetails[i].id + "\"><b>"+data.drinkDetails[i].drinkName+"</b>"+data.drinkDetails[i].drinkId+"<div>"+data.drinkDetails[i].version+"</div><div>"+data.drinkDetails[i].ipAddress+"</div><div class=\"uid\">"+data.drinkDetails[i].uid+"</div></li>");
+			 	 	$("#list_wrapper").append("<li class=\"rating-item\" id=\"" + data.drinkDetails[i].id + "\"><b>"+data.drinkDetails[i].drinkName+"</b>"+data.drinkDetails[i].drinkId+"<div>"+data.drinkDetails[i].version+"</div><div>"+data.drinkDetails[i].ipAddress+"</div><div class=\"uid\">"+data.drinkDetails[i].uid+"</div></li>");
 			 	
 			 	}else 	
-			 	 	$("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.drinkDetails.id + "\"><b>"+data.drinkDetails.drinkName+"</b> "+data.drinkDetails.drinkId+"<div>"+data.drinkDetails.version+"</div><div>"+data.drinkDetails.ipAddress+"</div><div class=\"uid\">"+data.drinkDetails.uid+"</div></li>");
+			 	 	$("#list_wrapper").append("<li class=\"rating-item\" id=\"" + data.drinkDetails.id + "\"><b>"+data.drinkDetails.drinkName+"</b> "+data.drinkDetails.drinkId+"<div>"+data.drinkDetails.version+"</div><div>"+data.drinkDetails.ipAddress+"</div><div class=\"uid\">"+data.drinkDetails.uid+"</div></li>");
 
 			 	 	eventHandlers();
 			  }
@@ -70,7 +70,7 @@ function eventHandlers(){
 			var requestUrl = rootURL+"deleteShared"+id;
 
 			$.getJSON(requestUrl, function (data) {
-				
+				$("#sharedDrinks").trigger("click");
 			});
 		}
 	});
