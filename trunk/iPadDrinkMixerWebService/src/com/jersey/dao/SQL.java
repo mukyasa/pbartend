@@ -51,9 +51,10 @@ public class SQL{
 	public static final String TABLE_GLASSES = "tblGlasses";
 	public static final String TABLE_INGREDIENTS_CAT ="tblIngredient_categories";
 	public static final String TABLE_INGREDIENTS_SUB_CAT ="tblIngredient_subcategories";
+	public static final String TABLE_RATINGS ="tblRating";
 	
 	/****** SHARED *******/
-	public static final String sqlSetRating = "INSERT INTO tblRating (drink_id, rating,ip_address,uid,version,name) VALUES (?,?,?,?,?,?)";
+	public static final String sqlSetRating = "INSERT INTO "+TABLE_RATINGS+" (drink_id, rating,ip_address,uid,version,name) VALUES (?,?,?,?,?,?)";
 	public static final String sqlGetAllSharedDrinksAndGlass ="SELECT g.name AS "+COL_GLASS_NAME+",d.name,d._id FROM "+TABLE_SHARED_DRINK+" d INNER JOIN "+TABLE_GLASSES+" g on g._id = d.glass_id";
 	public static final String sqlGetSharedDrinkDetailById ="SELECT d."+COL_IMG+", di."+COL_INGREDIENT_ID+" AS "+COL_SHARED_INGREDIENT_ID+", d.uid, d._id, d.name,d.instructions,dc.name  AS "+
 	COL_CAT_NAME+",di.amount,i.name AS "+COL_ING_NAME+",g.name AS "+
@@ -131,6 +132,13 @@ public class SQL{
 	public static final String sqlGetNewIngredientsIdByName ="SELECT "+COL_ROW_ID+" from "+TABLE_INGREDIENTS+" where name=?";
 	
 
+	/**** ADMIN SQL ***/
+	public static final String sqlGetAllSharedAdmin ="SELECT * FROM "+TABLE_SHARED_DRINK;
+	public static final String sqlGetAllRatingsAdmin ="SELECT * FROM "+TABLE_RATINGS;
+	//delete
+	public static final String sqlDeleteRatingByUIDAdmin ="DELETE FROM "+TABLE_RATINGS +" WHERE "+ COL_UID +"=?";
+	public static final String sqlDeleteSharedByIdAdmin ="DELETE FROM "+TABLE_SHARED_DRINK +" WHERE "+ COL_ROW_ID +"=?";
+	
 	
 	
 	

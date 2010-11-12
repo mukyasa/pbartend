@@ -188,5 +188,19 @@ public class GetDrinksEndpoint extends SQL {
 
 		return dos.filterDrinksList(startIndex, searchParam,catid);
 	}
+	
+	
+	/************
+	 * ADMIN *
+	/************/
+	@GET
+	@Path("adminShared")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<DrinkDetails> getAllSharedDrinksAdmin() {
+		DOService dos = new DOService();
+
+		return dos.getAllSharedDrinksAdmin();
+	}
 
 }
+

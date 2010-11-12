@@ -29,8 +29,7 @@ public class DOService extends SQL {
 	private final int CAT_PUNCH = 6;
 	private final int CAT_SHOOTER = 7;
 	private final String LIMIT = "150";
-	private final String SITE_URL="http://192.168.1.107:8080";
-	private final String IMG_ROOT= SITE_URL + "/iPad/drinkimages/";
+	private final String IMG_ROOT= DbConnectionTest.SITE_URL + "/drinkimages/";
 	
 	public String updateDrink(String drinkTitle,int glass,String instructions,int category,String ingredients,int drink_id,String img){
 		
@@ -399,7 +398,6 @@ public class DOService extends SQL {
 		return result;
 	}
 	
-	
 	public List<Ingredient> filterIngredientsList(int int_id,String startIndex,String searchParam) {
 
 		PreparedStatement stmt = null;
@@ -763,6 +761,61 @@ public class DOService extends SQL {
 			String drink_css = rs.getString(COL_GLASS_NAME).replace(" ","-");
 			drink.setGlass(drink_css);
 			drink.setCustom(isSharedDrink);
+
+			result.add(drink);
+		}
+
+		return result;
+
+	}
+	
+	/************
+	 * ADMIN *
+	/************/
+	
+	public List<DrinkDetails> getAllSharedDrinksAdmin() {
+
+		Statement stmt = null;
+		ResultSet rs = null;
+		Connection conn = null;
+		List<DrinkDetails> result = new ArrayList<DrinkDetails>();
+
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			String sql = sqlGetAllSharedAdmin;
+
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+
+			result = loopAdminDrinks(rs, result,true);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				closeStuff(conn, rs, stmt, null);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+	
+private List<DrinkDetails> loopAdminDrinks(ResultSet rs,List<DrinkDetails> result,boolean isSharedDrink) throws Exception {
+		
+		while (rs.next()) {
+			DrinkDetails drink = new DrinkDetails();
+			drink.setId(rs.getInt(COL_ROW_ID));
+
+			String sub_name = rs.getString(COL_NAME);
+
+			drink.setDrinkName(sub_name);
+			drink.setInstructions(rs.getString(COL_INSTUCTIONS));
+			drink.setUid(rs.getString(COL_UID));
+			drink.setImg("data:image/jpeg;base64,"+rs.getString(COL_IMG));
 
 			result.add(drink);
 		}
