@@ -472,7 +472,7 @@ $(document).ready(function () {
 				  list_item_events();
 				  //load up the favorites in memory
 				  setUpFavorites();
-				  showStartMask();
+				  //showStartMask();
 				  addEditButtonEvents();
 				  });
 
