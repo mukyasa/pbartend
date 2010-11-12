@@ -865,4 +865,37 @@ public class DOService extends SQL {
 		return result;
 
 	}
+	
+	public String deleteSharedDrinkAdmin(String drinkid){
+		
+		PreparedStatement pstmt = null;
+		Statement stmt=null;
+		Connection conn = null;
+		ResultSet rs = null;
+
+		try {
+			conn = DbConnectionTest.getConnection();
+
+			String sql = sqlDeleteSharedByIdAdmin;
+
+			//insert into tblShared
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, drinkid);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				closeStuff(conn, rs, stmt, pstmt);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return "";
+		
+	}
 }
