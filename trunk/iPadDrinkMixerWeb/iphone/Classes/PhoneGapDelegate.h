@@ -25,7 +25,7 @@
     UINavigationControllerDelegate
   >
 {
-	
+	IBOutlet UIButton *aboutbutton;
 	IBOutlet UIWindow *window;
 	IBOutlet UIWebView *webView;
 	IBOutlet PhoneGapViewController *viewController;
@@ -42,12 +42,15 @@
     NSURL *invokedURL;
 }
 
+@property (nonatomic,retain) UIButton *aboutbutton;
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) PhoneGapViewController *viewController;
 @property (nonatomic, retain) UIActivityIndicatorView *activityView;
 @property (nonatomic, retain) NSMutableDictionary *commandObjects;
 @property (nonatomic, retain) NSDictionary *settings;
 @property (nonatomic, retain) NSURL *invokedURL;
+
+-(IBAction)showInfo:(id)sender;
 
 -(NSString *)getIPAddress;
 - (id) getCommandInstance:(NSString*)className;
