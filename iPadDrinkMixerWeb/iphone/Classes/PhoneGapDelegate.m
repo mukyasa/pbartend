@@ -13,7 +13,7 @@
 @synthesize activityView;
 @synthesize commandObjects;
 @synthesize settings;
-@synthesize invokedURL;
+@synthesize invokedURL,aboutbutton;
 
 - (id) init
 {
@@ -22,6 +22,21 @@
         commandObjects = [[NSMutableDictionary alloc] initWithCapacity:4];
     }
     return self; 
+}
+
+-(IBAction)showInfo:(id)sender{
+	
+	NSString *title = NSLocalizedString(@"Tiki Drink Mixer", @"");
+	NSString *message = NSLocalizedString(@"myPocket technologies\nwww.mypocket-technologies.com\nVersion 1.0.0", @"");
+	
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+													message:message
+												   delegate:nil
+										  cancelButtonTitle:NSLocalizedString(@"Ok", @"")
+										  otherButtonTitles:nil];
+	
+	[alert show];
+	[alert release];
 }
 
 /**
@@ -159,8 +174,6 @@
 	webView = theWebView; 	
 }
 
-
-
 -(NSString *)getIPAddress
 {
 	NSString *address = @"error";
@@ -289,7 +302,8 @@
 
 - (void)dealloc
 {
-    [commandObjects release];
+	[aboutbutton release];
+	[commandObjects release];
 	[imageView release];
 	[viewController release];
     [activityView release];
