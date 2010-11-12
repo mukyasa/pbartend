@@ -201,6 +201,15 @@ public class GetDrinksEndpoint extends SQL {
 
 		return dos.getAllSharedDrinksAdmin();
 	}
+	
+	@GET
+	@Path("adminRatings")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<DrinkDetails> getAllRatingsAdmin() {
+		DOService dos = new DOService();
+
+		return dos.getAllRatingsAdmin();
+	}
 
 }
 
