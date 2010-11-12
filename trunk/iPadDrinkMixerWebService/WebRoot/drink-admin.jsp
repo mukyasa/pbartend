@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<meta name = "viewport" content = "width = device-width, user-scalable = no"/>
+
 <html>
  <head>
   <title>Form to create a new resource</title>
-  
+  <meta name = "viewport" content = "width = device-width, user-scalable = no"/>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
   <script>
   
@@ -11,7 +11,28 @@
   
 $(document).ready(function(){
 	
+	$("#ratings").click(function(){
 	
+	var requestUrl = rootURL+"adminRatings";
+	
+	   $.getJSON(requestUrl, function (data) {
+
+			  if (data != null) {
+			  $("#list_wrapper").empty();
+			  if (data.drinkDetails.length != undefined)
+			  {
+			  	for (i = 0; i < data.drinkDetails.length; i++)
+			 	 	$("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.drinkDetails[i].id + "\"><b>"+data.drinkDetails[i].drinkName+"</b>"+data.drinkDetails[i].drinkId+"<div>"+data.drinkDetails[i].version+"</div><div>"+data.drinkDetails[i].ipAddress+"</div><div class=\"uid\">"+data.drinkDetails[i].uid+"</div></li>");
+			 	
+			 	}else 	
+			 	 	$("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.drinkDetails.id + "\"><b>"+data.drinkDetails.drinkName+"</b> "+data.drinkDetails.drinkId+"<div>"+data.drinkDetails.version+"</div><div>"+data.drinkDetails.ipAddress+"</div><div class=\"uid\">"+data.drinkDetails.uid+"</div></li>");
+
+			 	 	eventHandlers();
+			  }
+			  
+		});
+  
+	});
 	
 	$("#sharedDrinks").click(function(){
 	
@@ -21,9 +42,15 @@ $(document).ready(function(){
 			  
 			  if (data != null) {
 			  $("#list_wrapper").empty();
+			  if (data.drinkDetails.length != undefined)
+			  {
+			  
+			  
 			  	for (i = 0; i < data.drinkDetails.length; i++)
 			 	 	$("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.drinkDetails[i].id + "\"><img src=\""+data.drinkDetails[i].img+"\" width=\"40\" height=\"40\"/><b class=\"drinkName\">"+data.drinkDetails[i].drinkName+"</b><div>"+data.drinkDetails[i].instructions+"</div><div class=\"uid\">"+data.drinkDetails[i].uid+"</div></li>");
-			 	 	
+			 	 }else
+			 	 	$("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.drinkDetails.id + "\"><img src=\""+data.drinkDetails.img+"\" width=\"40\" height=\"40\"/><b class=\"drinkName\">"+data.drinkDetails.drinkName+"</b><div>"+data.drinkDetails.instructions+"</div><div class=\"uid\">"+data.drinkDetails.uid+"</div></li>");
+			 	 
 			 	 	eventHandlers();
 			  }
 			  
@@ -68,14 +95,18 @@ function eventHandlers(){
  		background:#ccc;
  		text-align: center;
  		padding-top:10px;
+ 		margin-bottom:10px;
  		 -webkit-border-radius: 6px;
  	}
  </style>
  </head>
 <body>
 <div class="button" id="sharedDrinks">Get All Shared Drinks</div>
+
+
+<div class="button" id="ratings">Get All Ratings</div>
 	
-	<ul id="list_wrapper"></ul>
+<ul id="list_wrapper"></ul>
 	
 </body>
 </html>
