@@ -758,7 +758,11 @@ function handleTouchEnd(e) {
 		
     }
     else if ($(obj).attr("id") == "fav") {
-        showDrinkList(ROOT_URL + "drinks/favs?ids=" + favoritesArray.toString() + "&startIndex=0");
+		
+		if(favoritesArray.length > 0)
+			showDrinkList(ROOT_URL + "drinks/favs?ids=" + favoritesArray.toString() + "&startIndex=0");
+		else
+			showAlert("You have no favorites, click the star next to the drink name in the list.");
     }
     else if ($(obj).attr("id") == "show_all") {
         showDrinkList(ROOT_URL + "drinks?startIndex=0");
@@ -1377,7 +1381,7 @@ function showAlert(alertMessage){
 	$( "#dialog" ).dialog( "destroy" );
 	
 	$( "#dialog-modal" ).dialog({
-								height: 180,
+								height: 210,
 								modal: true,
 								buttons: {
 								Ok: function() {
