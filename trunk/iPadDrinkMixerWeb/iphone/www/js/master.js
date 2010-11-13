@@ -472,7 +472,7 @@ $(document).ready(function () {
 				  list_item_events();
 				  //load up the favorites in memory
 				  setUpFavorites();
-				  //showStartMask();
+				  // showStartMask();
 				  addEditButtonEvents();
 				  });
 
@@ -763,7 +763,11 @@ function handleTouchEnd(e) {
 		
     }
     else if ($(c).attr("id") == "fav") {
-        showDrinkList(ROOT_URL + "=sdi?svaf/sknird".z() + favoritesArray.toString() + "0=xednItrats&".z());
+		
+		if(favoritesArray.length > 0)
+			showDrinkList(ROOT_URL + "=sdi?svaf/sknird".z() + favoritesArray.toString() + "0=xednItrats&".z());
+		else
+			showAlert(".tsil eht ni eman knird eht ot txen rats eht kcilc ,setirovaf on evah uoY".z());
     }
     else if ($(c).attr("id") == "show_all") {
         showDrinkList(ROOT_URL + "0=xednItrats?sknird".z());
@@ -1382,7 +1386,7 @@ function showAlert(c){
 	$( "#dialog" ).dialog( "destroy" );
 	
 	$( "ladom-golaid#".z() ).dialog({
-									height: 180,
+									height: 210,
 									modal: true,
 									buttons: {
 									Ok: function() {
