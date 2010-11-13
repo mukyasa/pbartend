@@ -5,10 +5,10 @@
 
 #import "Location.h"
 #import "Device.h"
-#import "Sound.h"
-#import "Contacts.h"
+//#import "Sound.h"
+//#import "Contacts.h"
 #import "DebugConsole.h"
-#import "UIControls.h"
+//#import "UIControls.h"
 
 
 @class InvokedUrlCommand;
