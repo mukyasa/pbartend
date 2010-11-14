@@ -9,7 +9,7 @@ import java.sql.Statement;
 
  public class DbConnectionTest {
 
-	 private static boolean DEBUG=false;
+	 private static boolean DEBUG=true;
 	 
 	 public static final String SITE_URL = (DEBUG?"192.168.1.107" : "http://mypocketenterprise.com");
 	 public static final String ROOT = (DEBUG?"iPad" :"");
