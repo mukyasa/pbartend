@@ -23,10 +23,10 @@ $(document).ready(function(){
 			  if (data.drinkDetails.length != undefined)
 			  {
 			  	for (i = 0; i < data.drinkDetails.length; i++)
-			 	 	$("#list_wrapper").append("<li class=\"rating-item\" id=\"" + data.drinkDetails[i].id + "\"><b>"+data.drinkDetails[i].drinkName+"</b>"+data.drinkDetails[i].drinkId+"<div>"+data.drinkDetails[i].version+"</div><div>"+data.drinkDetails[i].ipAddress+"</div><div class=\"uid\">"+data.drinkDetails[i].uid+"</div></li>");
+			 	 	$("#list_wrapper").append("<li class=\"rating-item\" id=\"" + data.drinkDetails[i].drinkId + "\"><b>"+data.drinkDetails[i].drinkName+"</b> - Drink Id: "+data.drinkDetails[i].drinkId+"<div>"+data.drinkDetails[i].version+"</div><div>"+data.drinkDetails[i].ipAddress+"</div><div class=\"uid\">"+data.drinkDetails[i].uid+"</div></li>");
 			 	
 			 	}else 	
-			 	 	$("#list_wrapper").append("<li class=\"rating-item\" id=\"" + data.drinkDetails.id + "\"><b>"+data.drinkDetails.drinkName+"</b> "+data.drinkDetails.drinkId+"<div>"+data.drinkDetails.version+"</div><div>"+data.drinkDetails.ipAddress+"</div><div class=\"uid\">"+data.drinkDetails.uid+"</div></li>");
+			 	 	$("#list_wrapper").append("<li class=\"rating-item\" id=\"" + data.drinkDetails.drinkId + "\"><b>"+data.drinkDetails.drinkName+"</b> - Drink Id: "+data.drinkDetails.drinkId+"<div>"+data.drinkDetails.version+"</div><div>"+data.drinkDetails.ipAddress+"</div><div class=\"uid\">"+data.drinkDetails.uid+"</div></li>");
 
 			 	 	eventHandlers();
 			  }
@@ -74,6 +74,29 @@ function eventHandlers(){
 			});
 		}
 	});
+	
+	$(".rating-item").click(function(){
+
+		var id = $(this).attr("id");
+		var isShared=false;
+		if(id > 9636)
+			isShared=true;
+		
+		var requestUrl = rootURL+"details"+id+"?detailTypeShared="+isShared;
+
+		$.getJSON(requestUrl, function (data) {
+		
+		if (data != null) {
+		
+			  $("#list_wrapper").empty();
+			 	 $("#list_wrapper").append("<li class=\"list_item\" id=\"" + data.id + "\"><img src=\""+data.img+"\" width=\"40\" height=\"40\"/><b class=\"drinkName\">"+data.drinkName+"</b><div>"+data.instructions+"</div><div class=\"uid\">"+data.uid+"</div></li>");
+			 	 
+			  }
+			  
+		});
+	});
+	
+	 
 
 }
   
