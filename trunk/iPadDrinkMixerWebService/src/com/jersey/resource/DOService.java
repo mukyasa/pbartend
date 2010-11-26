@@ -852,6 +852,7 @@ public class DOService extends SQL {
 				drink.setVersion(rs.getString(COL_VERSION));
 				drink.setIpAddress(rs.getString(COL_IP));	
 				drink.setDrinkId(rs.getInt(COL_DRINK_ID));
+				drink.setRating(rs.getInt(COL_RATING));
 			}
 			else
 			{
