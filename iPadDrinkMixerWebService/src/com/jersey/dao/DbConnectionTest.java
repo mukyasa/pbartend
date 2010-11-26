@@ -12,7 +12,7 @@ import java.sql.Statement;
 	 private static boolean DEBUG=true;
 	 
 	 public static final String SITE_URL = (DEBUG?"192.168.1.107" : "http://mypocketenterprise.com");
-	 public static final String ROOT = (DEBUG?"iPad" :"");
+	 public static final String ROOT = (DEBUG?"/iPad" :"");
 		
 	 public static Connection getConnection() throws Exception{
 		 String driverName = "com.mysql.jdbc.Driver";
