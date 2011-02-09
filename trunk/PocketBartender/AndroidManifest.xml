@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.drinkmixer" android:versionName="1.3.5" android:versionCode="35">
+      package="com.drinkmixer" android:versionCode="36" android:versionName="1.3.5">
     <application android:label="@string/app_name" 
     android:debuggable="false" android:icon="@drawable/icon">
         <activity android:label="@string/app_name" android:name=".view.HomeScreenView" android:configChanges="orientation">
@@ -22,7 +22,7 @@
 <activity android:name=".view.AddNewLiquor"></activity>
 <activity android:name=".view.AddNewGarnish"></activity>
 <activity android:name=".view.AddNewMixer"></activity>
-<activity android:name=".view.BartenderKnowledgeActivity"></activity>
+<activity android:name=".view.BartenderKnowledgeActivity"></activity> 
 <activity android:name=".view.KnowledgeDetailActivity"></activity>
 <activity android:name=".view.IngredientsListView"></activity>
 <activity android:name=".view.IngredientsHomeView"></activity>
