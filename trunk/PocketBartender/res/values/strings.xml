@@ -29,8 +29,8 @@
 <string name="dblocation">Select your database location</string>
 <string name="setlocation">Set Location</string>
 <string name="delete">(Click and hold ingredient to delete.)</string>
-<string name="setNote">Warning, changing the database location will clear any new or favorite drinks. Do NOT rotate while building database.</string>
-<string name="buildingdb">Building the database, please be patient it only happens once. Do NOT rotate while building database.</string>
+<string name="setNote">Warning, changing the database location will clear any new or favorite drinks. Enjoy!</string>
+<string name="buildingdb">Building the database, please be patient it only happens once. Enjoy!</string>
 <string name="newCat">(Add new category)</string>
 <string name="newIng">(Add new ingredients)</string>
 
