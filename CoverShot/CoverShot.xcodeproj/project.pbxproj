@@ -38,6 +38,7 @@
 		712CB9FF1217872F008A4143 /* clearcover25.png in Resources */ = {isa = PBXBuildFile; fileRef = 712CB9FE1217872F008A4143 /* clearcover25.png */; };
 		7148D7091213037200B13094 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7148D7081213037200B13094 /* MessageUI.framework */; };
 		7158DB941322A4350047E410 /* cover25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7158DB931322A4350047E410 /* cover25.png */; };
+		7158DBB01322A4FF0047E410 /* clearcover26.png in Resources */ = {isa = PBXBuildFile; fileRef = 7158DBAF1322A4FF0047E410 /* clearcover26.png */; };
 		716D136C1207C55600430260 /* QuartzBlending.m in Sources */ = {isa = PBXBuildFile; fileRef = 716D136B1207C55600430260 /* QuartzBlending.m */; };
 		716D137B1207CDAA00430260 /* clearcover8.png in Resources */ = {isa = PBXBuildFile; fileRef = 716D13791207CDAA00430260 /* clearcover8.png */; };
 		716D137C1207CDAA00430260 /* cover8.png in Resources */ = {isa = PBXBuildFile; fileRef = 716D137A1207CDAA00430260 /* cover8.png */; };
@@ -132,6 +133,7 @@
 		712CB9FE1217872F008A4143 /* clearcover25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover25.png; sourceTree = "<group>"; };
 		7148D7081213037200B13094 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7158DB931322A4350047E410 /* cover25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover25.png; sourceTree = "<group>"; };
+		7158DBAF1322A4FF0047E410 /* clearcover26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover26.png; sourceTree = "<group>"; };
 		716D136A1207C55600430260 /* QuartzBlending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzBlending.h; sourceTree = "<group>"; };
 		716D136B1207C55600430260 /* QuartzBlending.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzBlending.m; sourceTree = "<group>"; };
 		716D13791207CDAA00430260 /* clearcover8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover8.png; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				71846C3512177D9F00634B20 /* clearcover23.png */,
 				712CB9E812178560008A4143 /* clearcover24.png */,
 				712CB9FE1217872F008A4143 /* clearcover25.png */,
+				7158DBAF1322A4FF0047E410 /* clearcover26.png */,
 				71887AED11F7EFF900F4C6D6 /* cover1.png */,
 				71887AEE11F7EFF900F4C6D6 /* cover2.png */,
 				710210BC1207ABD900F36BA0 /* cover3.png */,
@@ -482,6 +485,7 @@
 				71A25BC01224784B00F01762 /* blending@2x.png in Resources */,
 				71A25BC7122479F100F01762 /* book@2x.png in Resources */,
 				7158DB941322A4350047E410 /* cover25.png in Resources */,
+				7158DBB01322A4FF0047E410 /* clearcover26.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
