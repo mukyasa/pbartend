@@ -75,6 +75,11 @@
 		7148D6C11212FECD00B13094 /* appstoresm.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7148D6C01212FECD00B13094 /* appstoresm.gif */; };
 		7148D6D91213002000B13094 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7148D6D81213002000B13094 /* MessageUI.framework */; };
 		716D136C1207C55600430260 /* QuartzBlending.m in Sources */ = {isa = PBXBuildFile; fileRef = 716D136B1207C55600430260 /* QuartzBlending.m */; };
+		7175E3C31322BF7200EFCD1E /* cover25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7175E3C11322BF7200EFCD1E /* cover25.png */; };
+		7175E3C41322BF7200EFCD1E /* cover26.png in Resources */ = {isa = PBXBuildFile; fileRef = 7175E3C21322BF7200EFCD1E /* cover26.png */; };
+		7175E3C81322BF8600EFCD1E /* clearcover25.png in Resources */ = {isa = PBXBuildFile; fileRef = 7175E3C51322BF8600EFCD1E /* clearcover25.png */; };
+		7175E3C91322BF8600EFCD1E /* clearcover26.png in Resources */ = {isa = PBXBuildFile; fileRef = 7175E3C61322BF8600EFCD1E /* clearcover26.png */; };
+		7175E3CA1322BF8600EFCD1E /* clearcover27.png in Resources */ = {isa = PBXBuildFile; fileRef = 7175E3C71322BF8600EFCD1E /* clearcover27.png */; };
 		71887A9311F7E6D700F4C6D6 /* maghome.png in Resources */ = {isa = PBXBuildFile; fileRef = 71887A9211F7E6D700F4C6D6 /* maghome.png */; };
 		71887AD711F7ECA700F4C6D6 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71887AD611F7ECA700F4C6D6 /* iAd.framework */; };
 		71887B1611F7F15F00F4C6D6 /* CoverShotEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71887B1411F7F15F00F4C6D6 /* CoverShotEditorViewController.m */; };
@@ -171,6 +176,11 @@
 		7148D6D81213002000B13094 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		716D136A1207C55600430260 /* QuartzBlending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzBlending.h; sourceTree = "<group>"; };
 		716D136B1207C55600430260 /* QuartzBlending.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzBlending.m; sourceTree = "<group>"; };
+		7175E3C11322BF7200EFCD1E /* cover25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover25.png; sourceTree = "<group>"; };
+		7175E3C21322BF7200EFCD1E /* cover26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover26.png; sourceTree = "<group>"; };
+		7175E3C51322BF8600EFCD1E /* clearcover25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover25.png; sourceTree = "<group>"; };
+		7175E3C61322BF8600EFCD1E /* clearcover26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover26.png; sourceTree = "<group>"; };
+		7175E3C71322BF8600EFCD1E /* clearcover27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover27.png; sourceTree = "<group>"; };
 		71887A9211F7E6D700F4C6D6 /* maghome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maghome.png; sourceTree = "<group>"; };
 		71887AD611F7ECA700F4C6D6 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		71887B1311F7F15F00F4C6D6 /* CoverShotEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverShotEditorViewController.h; sourceTree = "<group>"; };
@@ -306,6 +316,9 @@
 				711F84821214F7D0000526FF /* clearcover22.png */,
 				711F84831214F7D0000526FF /* clearcover23.png */,
 				711F84841214F7D0000526FF /* clearcover24.png */,
+				7175E3C51322BF8600EFCD1E /* clearcover25.png */,
+				7175E3C61322BF8600EFCD1E /* clearcover26.png */,
+				7175E3C71322BF8600EFCD1E /* clearcover27.png */,
 				711F84851214F7D0000526FF /* cover1.png */,
 				711F84861214F7D0000526FF /* cover2.png */,
 				711F84871214F7D0000526FF /* cover3.png */,
@@ -330,6 +343,8 @@
 				711F849A1214F7D1000526FF /* cover22.png */,
 				711F849B1214F7D1000526FF /* cover23.png */,
 				711F849C1214F7D1000526FF /* cover24.png */,
+				7175E3C11322BF7200EFCD1E /* cover25.png */,
+				7175E3C21322BF7200EFCD1E /* cover26.png */,
 				710058C212138B41002DD799 /* iTunesArtwork */,
 				71887B2511F7F42E00F4C6D6 /* save.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -391,6 +406,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CoverShot" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -485,6 +501,11 @@
 				71A25BE112247A3D00F01762 /* blending@2x.png in Resources */,
 				71A25BE212247A3D00F01762 /* camera@2x.png in Resources */,
 				71A25BE312247A3D00F01762 /* save@2x.png in Resources */,
+				7175E3C31322BF7200EFCD1E /* cover25.png in Resources */,
+				7175E3C41322BF7200EFCD1E /* cover26.png in Resources */,
+				7175E3C81322BF8600EFCD1E /* clearcover25.png in Resources */,
+				7175E3C91322BF8600EFCD1E /* clearcover26.png in Resources */,
+				7175E3CA1322BF8600EFCD1E /* clearcover27.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +570,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.2;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
