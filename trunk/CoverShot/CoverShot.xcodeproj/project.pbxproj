@@ -34,6 +34,8 @@
 		710210CA1207ABD900F36BA0 /* cover7.png in Resources */ = {isa = PBXBuildFile; fileRef = 710210C01207ABD900F36BA0 /* cover7.png */; };
 		7103E97211FA1D250088BD9E /* blending.png in Resources */ = {isa = PBXBuildFile; fileRef = 7103E97111FA1D250088BD9E /* blending.png */; };
 		7103E9ED11FA35FD0088BD9E /* QuartzView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7103E9EC11FA35FD0088BD9E /* QuartzView.m */; };
+		7122D0141323220B0093F6DB /* clearcover27.png in Resources */ = {isa = PBXBuildFile; fileRef = 7122D0131323220B0093F6DB /* clearcover27.png */; };
+		7122D01B1323227D0093F6DB /* cover26.png in Resources */ = {isa = PBXBuildFile; fileRef = 7122D01A1323227D0093F6DB /* cover26.png */; };
 		712CB9E912178560008A4143 /* clearcover24.png in Resources */ = {isa = PBXBuildFile; fileRef = 712CB9E812178560008A4143 /* clearcover24.png */; };
 		712CB9FF1217872F008A4143 /* clearcover25.png in Resources */ = {isa = PBXBuildFile; fileRef = 712CB9FE1217872F008A4143 /* clearcover25.png */; };
 		7148D7091213037200B13094 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7148D7081213037200B13094 /* MessageUI.framework */; };
@@ -129,6 +131,8 @@
 		7103E97111FA1D250088BD9E /* blending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blending.png; sourceTree = "<group>"; };
 		7103E9EB11FA35FD0088BD9E /* QuartzView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzView.h; sourceTree = "<group>"; };
 		7103E9EC11FA35FD0088BD9E /* QuartzView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzView.m; sourceTree = "<group>"; };
+		7122D0131323220B0093F6DB /* clearcover27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover27.png; sourceTree = "<group>"; };
+		7122D01A1323227D0093F6DB /* cover26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover26.png; sourceTree = "<group>"; };
 		712CB9E812178560008A4143 /* clearcover24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover24.png; sourceTree = "<group>"; };
 		712CB9FE1217872F008A4143 /* clearcover25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover25.png; sourceTree = "<group>"; };
 		7148D7081213037200B13094 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -295,6 +299,7 @@
 				712CB9E812178560008A4143 /* clearcover24.png */,
 				712CB9FE1217872F008A4143 /* clearcover25.png */,
 				7158DBAF1322A4FF0047E410 /* clearcover26.png */,
+				7122D0131323220B0093F6DB /* clearcover27.png */,
 				71887AED11F7EFF900F4C6D6 /* cover1.png */,
 				71887AEE11F7EFF900F4C6D6 /* cover2.png */,
 				710210BC1207ABD900F36BA0 /* cover3.png */,
@@ -320,6 +325,7 @@
 				71846C2F12177D9400634B20 /* cover23.png */,
 				71846C3012177D9400634B20 /* cover24.png */,
 				7158DB931322A4350047E410 /* cover25.png */,
+				7122D01A1323227D0093F6DB /* cover26.png */,
 				71887B2411F7F42E00F4C6D6 /* camera.png */,
 				71A25BB5122477BD00F01762 /* camera@2x.png */,
 				71887C4011F80CB400F4C6D6 /* clearbg.png */,
@@ -486,6 +492,8 @@
 				71A25BC7122479F100F01762 /* book@2x.png in Resources */,
 				7158DB941322A4350047E410 /* cover25.png in Resources */,
 				7158DBB01322A4FF0047E410 /* clearcover26.png in Resources */,
+				7122D0141323220B0093F6DB /* clearcover27.png in Resources */,
+				7122D01B1323227D0093F6DB /* cover26.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
