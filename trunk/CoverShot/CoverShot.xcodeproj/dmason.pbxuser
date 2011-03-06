@@ -30,9 +30,9 @@
 	};
 	28D7ACF70DDB3853001CB0EB /* CoverShotViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1067, 2561}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1067, 2444}}";
 			sepNavSelRange = "{401, 0}";
-			sepNavVisRange = "{0, 1629}";
+			sepNavVisRange = "{2744, 1818}";
 			sepNavWindowFrame = "{{15, 200}, {1107, 823}}";
 		};
 	};
