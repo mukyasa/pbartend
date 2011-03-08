@@ -14,8 +14,8 @@
 
 const CGFloat kScrollObjWidth	= 240.0;
 const CGFloat kScrollObjHeight	= 360;
-const NSUInteger kNumImages		= 6;
-const int limited = 6;
+const NSUInteger kNumImages		= 8;
+const int limited = 8;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
