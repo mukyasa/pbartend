@@ -9,7 +9,7 @@
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>CFBundleDisplayName</key>
-	<string>Cover Shot</string>
+	<string>CoverShot</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
