@@ -14,7 +14,7 @@
 
 const CGFloat kScrollObjWidth	= 240;
 const CGFloat kScrollObjHeight	= 360;
-const NSUInteger kNumImages		= 26;//due to a bug in the last image duplicate the last mag and call it one more than is shown
+const NSUInteger kNumImages		= 30;//due to a bug in the last image duplicate the last mag and call it one more than is shown
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
