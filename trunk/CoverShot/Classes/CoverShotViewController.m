@@ -111,8 +111,8 @@ const NSUInteger kNumImages		= 30;//due to a bug in the last image duplicate the
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 	
-	CGFloat pageWidth = magizineScrollView.frame.size.width-10; 
-	int page = ((scrollView.contentOffset.x / pageWidth) + 1);
+	CGFloat pageWidth = magizineScrollView.frame.size.width; 
+	int page = ((scrollView.contentOffset.x / pageWidth) +1);
 	pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"clearcover%i.png",page] ];
 	
 	
