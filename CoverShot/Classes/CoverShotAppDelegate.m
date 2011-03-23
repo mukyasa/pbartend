@@ -12,7 +12,7 @@
 @implementation CoverShotAppDelegate
 
 @synthesize window;
-@synthesize viewController;
+@synthesize viewController,coverHolder;
 
 
 #pragma mark -

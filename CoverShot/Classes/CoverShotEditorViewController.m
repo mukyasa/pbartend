@@ -8,6 +8,7 @@
 
 #import "CoverShotEditorViewController.h"
 #import "QuartzBlending.h"
+#import "CoverShotAppDelegate.h"
 
 
 @implementation CoverShotEditorViewController
@@ -129,8 +130,9 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	[picker dismissModalViewControllerAnimated:YES];
 	previewImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-	
-	
+	CoverShotAppDelegate *appDelegate = (CoverShotAppDelegate *)[[UIApplication sharedApplication] delegate];
+	parentPreviewImageView.image = appDelegate.coverHolder.image;
+	//NSLog(@"THE IMAGE: %@",parentPreviewImageView.image);
 	[self applyDefaults];
 	
 	QuartzBlendingView *qbv = (QuartzBlendingView*)self.quartzView;

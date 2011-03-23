@@ -7,6 +7,7 @@
 //
 
 #import "CoverShotViewController.h"
+#import "CoverShotAppDelegate.h"
 
 @implementation CoverShotViewController
 
@@ -102,6 +103,10 @@ const NSUInteger kNumImages		= 30;//due to a bug in the last image duplicate the
 		[self presentModalViewController:coverShotEditorViewController animated:YES];
 		
 		coverShotEditorViewController.parentPreviewImageView.image = pickedCover;
+		CoverShotAppDelegate *appDelegate = (CoverShotAppDelegate *)[[UIApplication sharedApplication] delegate];
+		
+		appDelegate.coverHolder =  [[UIImageView alloc] initWithImage:pickedCover] ;
+	
 		//NSLog(@"CoverShotEditorViewController retain count: %i",[coverShotEditorViewController retainCount]);
 		//[coverShotEditorViewController release];
 	}
