@@ -55,7 +55,7 @@ const PAGING_TYPE_ING_LIQUOR = 5;
 const PAGING_TYPE_ING_MIXER = 6;
 const PAGING_TYPE_ING_GARNISH = 7;
 
-var isTouch = (/ipad/gi).test(navigator.appVersion),
+var isTouch = (/ipad/gi).test(navigator.appVersion);
 
 // Event sniffing
 var START_EVENT = isTouch ? 'touchstart' : 'mousedown';
