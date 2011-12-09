@@ -1,5 +1,0 @@
-<merge xmlns:android="http://schemas.android.com/apk/res/android" 
-android:layout_height="fill_parent">
-    <include layout="@layout/search_box" android:id="@+id/tfName"/>
-    <include layout="@layout/card_sets" android:id="@+id/tfName"/>
-</merge>

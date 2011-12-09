@@ -1,578 +1,0 @@
-TiPadDrinkMixer
-v7
-r0
-t304319027.699198
-cCheck dependencies
-cProcessInfoPlistFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/Info.plist" iPadDrinkMixer-Info.plist
-cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/MainWindow.xib"
-cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/DetailView.xib"
-cCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/detailbackground.png detailbackground.png
-cCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/Diego.ttf Diego.ttf
-cCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/editpaper.png editpaper.png
-cCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/list.png list.png
-cCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/paper.png paper.png
-cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.xib"
-cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.xib"
-cCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.xib"
-cCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/post.png post.png
-cCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/search.png search.png
-cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch.gch iPadDrinkMixer_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/main.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/iPadDrinkMixerAppDelegate.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/iPadDrinkMixerAppDelegate.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/RootViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/RootViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/DetailViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DetailViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/PageViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/EditDrinkViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/DrinkViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer" normal i386
-cGenerateDSYMFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app.dSYM" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer"
-cTouch "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app"
-
-N/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk
-c000000004C494D260000000000000110
-t1279872294
-s272
-
-N/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004BD1CD90000000000026F020
-t1272040848
-s2551840
-
-N/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004BD1FFC200000000002A96A0
-t1272053698
-s2791072
-
-N/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004BD1FF9E0000000000001355
-t1272053662
-s4949
-
-N/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004BD20412000000000000098F
-t1272054802
-s2447
-
-N/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004BD20471000000000222E640
-t1272054897
-s35841600
-
-N/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/usr/include/Availability.h
-c000000004BD1CFC10000000000001A1A
-t1272041409
-s6682
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DetailViewController.h
-c000000004C73459A0000000000000324
-t1282622874
-s804
-i<UIKit/UIKit.h>
-i"PageViewController.h"
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DetailViewController.m
-c000000004C734D7B0000000000000F69
-t1282624891
-s3945
-i"DetailViewController.h"
-i"RootViewController.h"
-i"PageViewController.h"
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.h
-c000000004C73461D00000000000000E4
-t1282623005
-s228
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.m
-c000000004C73461D000000000000059F
-t1282623005
-s1439
-i"DrinkViewController.h"
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.xib
-c000000004C734FAC00000000000044DF
-t1282625452
-s17631
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.h
-c000000004C73460000000000000000EC
-t1282622976
-s236
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.m
-c000000004C73460000000000000005AB
-t1282622976
-s1451
-i"EditDrinkViewController.h"
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.xib
-c000000004C73509000000000000044D5
-t1282625680
-s17621
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.h
-c000000004C7346790000000000000262
-t1282623097
-s610
-i<UIKit/UIKit.h>
-i"EditDrinkViewController.h"
-i"DrinkViewController.h"
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.m
-c000000004C734F430000000000001018
-t1282625347
-s4120
-i"PageViewController.h"
-i"EditDrinkViewController.h"
-i"DrinkViewController.h"
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.xib
-c000000004C7350530000000000004F8A
-t1282625619
-s20362
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/RootViewController.h
-c000000004C7343170000000000000187
-t1282622231
-s391
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/RootViewController.m
-c000000004C7352B000000000000012B6
-t1282626224
-s4790
-i"RootViewController.h"
-i"DetailViewController.h"
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/iPadDrinkMixerAppDelegate.h
-c000000004C7343170000000000000319
-t1282622231
-s793
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/iPadDrinkMixerAppDelegate.m
-c000000004C73431700000000000007D0
-t1282622231
-s2000
-i"iPadDrinkMixerAppDelegate.h"
-i"RootViewController.h"
-i"DetailViewController.h"
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/DetailView.xib
-c000000004C7352620000000000006A04
-t1282626146
-s27140
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Diego.ttf
-c000000004C6F03E1000000000000C330
-t1282343905
-s49968
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/MainWindow.xib
-c000000004C73431700000000000069E4
-t1282622231
-s27108
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app
-t1282626225
-s578
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app.dSYM
-t1282626225
-s102
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/DetailView.nib
-t1282626152
-s1832
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/Diego.ttf
-t1282622445
-s49968
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/DrinkViewController.nib
-t1282625482
-s1030
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/EditDrinkViewController.nib
-t1282625684
-s1034
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/Info.plist
-t1282622444
-s857
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/MainWindow.nib
-t1282622445
-s1941
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/PageViewController.nib
-t1282625623
-s1493
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/PkgInfo
-t1282622444
-s8
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/detailbackground.png
-t1282622445
-s1590732
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/editpaper.png
-t1282622445
-s300416
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer
-t1282626225
-s42184
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/list.png
-t1282622445
-s5727
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/paper.png
-t1282622445
-s301972
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/post.png
-t1282626152
-s164105
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/search.png
-t1282626152
-s8243
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/DetailViewController.o
-t1282624892
-s52100
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/DrinkViewController.o
-t1282623012
-s34104
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/EditDrinkViewController.o
-t1282623012
-s34188
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/PageViewController.o
-t1282625372
-s46788
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/RootViewController.o
-t1282626225
-s44736
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/iPadDrinkMixer.LinkFileList
-c000000004C73462300000000000004C3
-t1282623011
-s1219
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/iPadDrinkMixerAppDelegate.o
-t1282623097
-s50044
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/main.o
-t1282622446
-s6428
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/detailbackground.png
-c000000004C6F03E100000000001845CC
-t1282343905
-s1590732
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/editpaper.png
-c000000004C7144A60000000000049580
-t1282491558
-s300416
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/iPadDrinkMixer_Prefix.pch
-c000000004C734317000000000000014E
-t1282622231
-s334
-i<Availability.h>
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/list.png
-c000000004C6F03E1000000000000165F
-t1282343905
-s5727
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/main.m
-c000000004C7343170000000000000163
-t1282622231
-s355
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/paper.png
-c000000004C6F03E10000000000049B94
-t1282343905
-s301972
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/post.png
-c000000004C6F03E10000000000028109
-t1282343905
-s164105
-
-N/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/search.png
-c000000004C6F03E10000000000002033
-t1282343905
-s8243
-
-N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch.gch
-t1282622446
-s13825936
-
-NiPadDrinkMixer-Info.plist
-c000000004C73439200000000000004F1
-t1282622354
-s1265
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies304319027#304319027#0(0"0(0#1#0"8655403328#0"0#
-
-CCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/DetailViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DetailViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s304317691.939499
-e304317692.145123
-r1
-xCompileC
-xbuild/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/DetailViewController.o
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DetailViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@101"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DetailViewController.m304317691#304317692#0(0"0(0#0#93"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DetailViewController.m8615631904#2463"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources/i386" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DetailViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/DetailViewController.o"0#
-
-CCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/DrinkViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s304315812.126099
-e304315812.197981
-r1
-xCompileC
-xbuild/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/DrinkViewController.o
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@100"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.m304315812#304315812#0(0"0(0#0#92"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.m8619365568#2461"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources/i386" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/DrinkViewController.o"0#
-
-CCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/EditDrinkViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s304315812.098468
-e304315812.188676
-r1
-xCompileC
-xbuild/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/EditDrinkViewController.o
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@104"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.m304315812#304315812#0(0"0(0#0#96"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.m8608998016#2469"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources/i386" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/EditDrinkViewController.o"0#
-
-CCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/PageViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s304318172.486897
-e304318172.606825
-r1
-xCompileC
-xbuild/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/PageViewController.o
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@99"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.m304318172#304318172#0(0"0(0#0#91"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.m8609302624#2459"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources/i386" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/PageViewController.o"0#
-
-CCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/RootViewController.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/RootViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s304319025.166921
-e304319025.291491
-r1
-xCompileC
-xbuild/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/RootViewController.o
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/RootViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@99"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/RootViewController.m304319025#304319025#0(0"0(0#0#91"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/RootViewController.m8609137504#2459"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources/i386" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/RootViewController.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/RootViewController.o"0#
-
-CCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/iPadDrinkMixerAppDelegate.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/iPadDrinkMixerAppDelegate.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s304315897.501092
-e304315897.585913
-r1
-xCompileC
-xbuild/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/iPadDrinkMixerAppDelegate.o
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/iPadDrinkMixerAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@106"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/iPadDrinkMixerAppDelegate.m304315897#304315897#0(0"0(0#0#98"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/iPadDrinkMixerAppDelegate.m8609546016#2473"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources/i386" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/iPadDrinkMixerAppDelegate.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/iPadDrinkMixerAppDelegate.o"0#
-
-CCompileC build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/main.o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s304315246.116900
-e304315246.178558
-r1
-xCompileC
-xbuild/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/main.o
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@77"Compile /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/main.m304315246#304315246#0(0"0(0#0#69"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/main.m8623078720#2423"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources/i386" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources" -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/main.m" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/main.o"0#
-
-CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.xib"
-s304318281.965151
-e304318282.459741
-r1
-xCompileXIB
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.xib
-lSLF07#2@42"CompileXIB Classes/DrinkViewController.xib304318281#304318282#0(0"0(0#0#94"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.xib8604057120#757"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/DrinkViewController.nib" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/DrinkViewController.xib" --sdk /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk0#
-
-CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.xib"
-s304318484.080276
-e304318484.483521
-r1
-xCompileXIB
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.xib
-lSLF07#2@46"CompileXIB Classes/EditDrinkViewController.xib304318484#304318484#0(0"0(0#0#98"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.xib8606500896#765"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/EditDrinkViewController.nib" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/EditDrinkViewController.xib" --sdk /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk0#
-
-CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.xib"
-s304318423.526972
-e304318423.921727
-r1
-xCompileXIB
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.xib
-lSLF07#2@41"CompileXIB Classes/PageViewController.xib304318423#304318423#0(0"0(0#0#93"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.xib8608002688#755"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/PageViewController.nib" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Classes/PageViewController.xib" --sdk /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk0#
-
-CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/DetailView.xib"
-s304318952.219638
-e304318952.685797
-r1
-xCompileXIB
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/DetailView.xib
-lSLF07#2@25"CompileXIB DetailView.xib304318952#304318952#0(0"0(0#0#77"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/DetailView.xib8603250464#731"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/DetailView.nib" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/DetailView.xib" --sdk /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk0#
-
-CCompileXIB "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/MainWindow.xib"
-s304315244.860903
-e304315245.331851
-r1
-xCompileXIB
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib304315244#304315245#0(0"0(0#0#77"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/MainWindow.xib8620930048#731"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/MainWindow.nib" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/MainWindow.xib" --sdk /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk0#
-
-CCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/Diego.ttf Diego.ttf
-s304315245.282225
-e304315245.294235
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/iPadDrinkMixer.app/Diego.ttf
-xDiego.ttf
-lSLF07#2@14"Copy Diego.ttf304315245#304315245#0(0"0(0#0#72"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Diego.ttf8622274240#595"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/Diego.ttf" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app"0#
-
-CCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/detailbackground.png detailbackground.png
-s304315245.281079
-e304315245.294126
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/iPadDrinkMixer.app/detailbackground.png
-xdetailbackground.png
-lSLF07#2@25"Copy detailbackground.png304315245#304315245#0(0"0(0#0#83"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/detailbackground.png8623751616#606"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/detailbackground.png" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app"0#
-
-CCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/editpaper.png editpaper.png
-s304315245.286393
-e304315245.297926
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/iPadDrinkMixer.app/editpaper.png
-xeditpaper.png
-lSLF07#2@18"Copy editpaper.png304315245#304315245#0(0"0(0#0#76"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/editpaper.png8621818528#599"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/editpaper.png" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app"0#
-
-CCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/list.png list.png
-s304315245.287372
-e304315245.299213
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/iPadDrinkMixer.app/list.png
-xlist.png
-lSLF07#2@13"Copy list.png304315245#304315245#0(0"0(0#0#71"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/list.png8621002912#594"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/list.png" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app"0#
-
-CCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/paper.png paper.png
-s304315245.290267
-e304315245.299396
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/iPadDrinkMixer.app/paper.png
-xpaper.png
-lSLF07#2@14"Copy paper.png304315245#304315245#0(0"0(0#0#72"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/paper.png8617324896#595"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/paper.png" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app"0#
-
-CCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/post.png post.png
-s304318952.220859
-e304318952.243160
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/iPadDrinkMixer.app/post.png
-xpost.png
-lSLF07#2@13"Copy post.png304318952#304318952#0(0"0(0#0#71"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/post.png8619362720#594"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/post.png" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app"0#
-
-CCpResource build/Debug-iphonesimulator/iPadDrinkMixer.app/search.png search.png
-s304318952.221621
-e304318952.243297
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/iPadDrinkMixer.app/search.png
-xsearch.png
-lSLF07#2@15"Copy search.png304318952#304318952#0(0"0(0#0#73"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/search.png8606601952#596"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/search.png" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app"0#
-
-CGenerateDSYMFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app.dSYM" "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer"
-s304319025.317311
-e304319025.379143
-r1
-xGenerateDSYMFile
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app.dSYM
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer
-lSLF07#2@130"GenerateDSYMFile build/Debug-iphonesimulator/iPadDrinkMixer.app.dSYM build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer304319025#304319025#0(0"0(0#0#124"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer8618070112#539"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/usr/bin/dsymutil "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer" -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app.dSYM"0#
-
-CLd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer" normal i386
-s304319025.291580
-e304319025.317204
-r1
-xLd
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer
-xnormal
-xi386
-lSLF07#2@129"Link /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer304319025#304319025#0(0"0(0#0#0"8646494848#1141"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk "-L/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator" -filelist "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/Objects-normal/i386/iPadDrinkMixer.LinkFileList" -mmacosx-version-min=10.5 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/iPadDrinkMixer"0#
-
-CProcessInfoPlistFile "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/Info.plist" iPadDrinkMixer-Info.plist
-s304315244.856195
-e304315244.860833
-r1
-xProcessInfoPlistFile
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/Info.plist
-xiPadDrinkMixer-Info.plist
-lSLF07#2@33"Process iPadDrinkMixer-Info.plist304315244#304315244#0(0"0(0#0#88"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/iPadDrinkMixer-Info.plist8621188864#616"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility iPadDrinkMixer-Info.plist -genpkginfo "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/PkgInfo" -expandbuildsettings -format binary -platform iphonesimulator -o "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app/Info.plist"0#
-
-CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch.gch iPadDrinkMixer_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s304315245.331980
-e304315246.116643
-r1
-xProcessPCH
-x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch.gch
-xiPadDrinkMixer_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@36"Precompile iPadDrinkMixer_Prefix.pch304315245#304315246#0(0"0(0#0#88"/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/iPadDrinkMixer_Prefix.pch8623462880#2282"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-generated-files.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-own-target-headers.hmap" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-all-target-headers.hmap" -iquote "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/iPadDrinkMixer-project-headers.hmap" "-F/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/include" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources/i386" "-I/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/iPadDrinkMixer.build/Debug-iphonesimulator/iPadDrinkMixer.build/DerivedSources" -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/iPadDrinkMixer_Prefix.pch" -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/iPadDrinkMixer_Prefix-ahglrihqwhwzrfgpaljgesrvplrp/iPadDrinkMixer_Prefix.pch.gch0#
-
-CTouch "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app"
-s304319025.379236
-e304319025.381622
-r1
-xTouch
-x/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app
-lSLF07#2@115"Touch /Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app304319025#304319025#0(0"0(0#0#0"8617484928#375"    cd "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer"    setenv PATH "/Developer/Applications/3.2.4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/Applications/3.2.4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/dmason/IPHONE/MY IPHONE APPS/Drink Mixer/iPadDrinkMixer/build/Debug-iphonesimulator/iPadDrinkMixer.app"0#
-
