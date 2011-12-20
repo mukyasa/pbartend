@@ -1,1252 +1,0 @@
-TTorchTest
-v7
-r0
-t301285071.106028
-cCheck dependencies
-cCpResource build/Release-iphoneos/brighthand.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-cProcessInfoPlistFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/Info.plist TorchTest-Info.plist
-cCompileXIB /Users/dmason/IPHONE/HeadFirst/TorchTest/MainWindow.xib
-cCompileXIB /Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTestViewController.xib
-cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon114.png icon114.png
-cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/bevel.png bevel.png
-cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/scroller.png scroller.png
-cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/l_shadow.png l_shadow.png
-cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/r_shadow.png r_shadow.png
-cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/base_bg_off.png base_bg_off.png
-cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/base_bg_on.png base_bg_on.png
-cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon512.png icon512.png
-cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/Default.png Default.png
-cCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon.png icon.png
-cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fsbptaxbmxdpcgacvrbsqqwzbxib/TorchTest_Prefix.pch.gch TorchTest_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
-cProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ayypjbgduayprwcbpklkokwcuwmz/TorchTest_Prefix.pch.gch TorchTest_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/main.o /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTestAppDelegate.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTestViewController.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/AVCamDemoCaptureManager.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/main.o /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTestAppDelegate.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTestViewController.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/AVCamDemoCaptureManager.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/brighthand normal armv6
-cLd /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/brighthand normal armv7
-cCreateUniversalBinary /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/brighthand normal "armv6 armv7"
-cGenerateDSYMFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app.dSYM /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/brighthand
-cProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/D49B7DAB-20A6-4CE9-A380-12185EB68E6D.mobileprovision" /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/embedded.mobileprovision
-cTouch /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app
-cProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand.xcent
-cCodeSign /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app
-cValidate /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk
-c000000004C3671890000000000000110
-t1278636425
-s272
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
-c000000004C2A7DA700000000000001A7
-t1277853095
-s423
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-c000000004C2A7DA700000000000001E5
-t1277853095
-s485
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
-c000000004C0473C400000000001AA470
-t1275360196
-s1746032
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.h
-c000000004C0473B9000000000000065C
-t1275360185
-s1628
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
-c000000004C048296000000000001E310
-t1275363990
-s123664
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/AssetsLibrary.h
-c000000004C0482940000000000000133
-t1275363988
-s307
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004BFE06FA000000000034A850
-t1274939130
-s3450960
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004BFE07D200000000003E1EB0
-t1274939346
-s4071088
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004BFE07B10000000000001466
-t1274939313
-s5222
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/Headers/UTCoreTypes.h
-c000000004BFF3B78000000000000520D
-t1275018104
-s21005
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-c000000004BFF3B7800000000000A4890
-t1275018104
-s673936
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004C296E2A00000000000009CD
-t1277783594
-s2509
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004C296F120000000002D563E0
-t1277783826
-s47539168
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/iAd.framework/Headers/iAd.h
-c000000004C0482160000000000000071
-t1275363862
-s113
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/iAd.framework/iAd
-c000000004C04821B0000000000080FB0
-t1275363867
-s528304
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk
-c000000004C36F30B0000000000000110
-t1278669579
-s272
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
-c000000004C328E2700000000000001E5
-t1278381607
-s485
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
-c000000004C32B08400000000001C6550
-t1278390404
-s1860944
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.h
-c000000004C32B0790000000000000703
-t1278390393
-s1795
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
-c000000004C36A8CC000000000001E510
-t1278650572
-s124176
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/AssetsLibrary.h
-c000000004C36A8CA0000000000000133
-t1278650570
-s307
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004C329EED0000000000345EA0
-t1278385901
-s3432096
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004C32A2FE00000000003E1EB0
-t1278386942
-s4071088
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004C32A2E60000000000001466
-t1278386918
-s5222
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/MobileCoreServices.framework/Headers/UTCoreTypes.h
-c000000004C32A438000000000000520D
-t1278387256
-s21005
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-c000000004C32A4390000000000094780
-t1278387257
-s608128
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004C32ADED00000000000009CD
-t1278389741
-s2509
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004C32AEFC0000000002EAC930
-t1278390012
-s48941360
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/iAd.framework/Headers/iAd.h
-c000000004C354C260000000000000071
-t1278561318
-s113
-
-N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/iAd.framework/iAd
-c000000004C354C2F000000000008DA20
-t1278561327
-s580128
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.h
-c000000004C3698520000000000001316
-t1278646354
-s4886
-i<Foundation/Foundation.h>
-i<AVFoundation/AVFoundation.h>
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m
-c000000004C3698520000000000006487
-t1278646354
-s25735
-i"AVCamDemoCaptureManager.h"
-i<MobileCoreServices/UTCoreTypes.h>
-i<AssetsLibrary/AssetsLibrary.h>
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.h
-c000000004C36985200000000000001DD
-t1278646354
-s477
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m
-c000000004C3698520000000000000A87
-t1278646354
-s2695
-i"TorchTestAppDelegate.h"
-i"TorchTestViewController.h"
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.h
-c000000004C3F441C00000000000004A5
-t1279214620
-s1189
-i<UIKit/UIKit.h>
-i<AVFoundation/AVFoundation.h>
-i<iAd/iAd.h>
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m
-c000000004C44F0D800000000000015F6
-t1279586520
-s5622
-i"TorchTestViewController.h"
-i"AVCamDemoCaptureManager.h"
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/Default.png
-c000000004C38DCE600000000000995EE
-t1278794982
-s628206
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/MainWindow.xib
-c000000004C3698520000000000004E41
-t1278646354
-s20033
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTestViewController.xib
-c000000004C44F1A60000000000008B5E
-t1279586726
-s35678
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest_Prefix.pch
-c000000004C36985200000000000000BB
-t1278646354
-s187
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/base_bg_off.png
-c000000004C38B374000000000008F338
-t1278784372
-s586552
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/base_bg_on.png
-c000000004C38B348000000000008EE57
-t1278784328
-s585303
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/bevel.png
-c000000004C37BCD10000000000002015
-t1278721233
-s8213
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app
-t1278792557
-s646
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app.dSYM
-t1278792557
-s102
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/Info.plist
-t1278792549
-s774
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/MainWindow.nib
-t1278792550
-s1127
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/PkgInfo
-t1278792549
-s8
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/ResourceRules.plist
-t1278792549
-s485
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/TorchTest
-t1278792557
-s124532
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/TorchTestViewController.nib
-t1278792550
-s3358
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/base_bg_off.png
-t1278792552
-s863880
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/base_bg_on.png
-t1278792553
-s845722
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/bevel.png
-t1278792550
-s8744
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/embedded.mobileprovision
-t1278792557
-s7176
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/icon.png
-t1278792550
-s17042
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/icon512.png
-t1278792554
-s220074
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/l_shadow.png
-t1278792550
-s180
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/r_shadow.png
-t1278792550
-s186
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/scroller.png
-t1278792550
-s3897
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app
-t1279592271
-s714
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app.dSYM
-t1279592270
-s102
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/Default.png
-t1279592269
-s872900
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/Info.plist
-t1279592262
-s868
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/MainWindow.nib
-t1279592263
-s1127
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/PkgInfo
-t1279592262
-s8
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/ResourceRules.plist
-t1279592262
-s485
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/TorchTestViewController.nib
-t1279592263
-s3420
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/base_bg_off.png
-t1279592266
-s863880
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/base_bg_on.png
-t1279592266
-s845722
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/bevel.png
-t1279592263
-s8744
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/brighthand
-t1279592270
-s124532
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/default.png
-t1278793239
-s786209
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/embedded.mobileprovision
-t1279592270
-s7086
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon.png
-t1279592268
-s5827
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon114.png
-t1279592263
-s17042
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon512.png
-t1279592268
-s220074
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon57.png
-t1278796638
-s5827
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/l_shadow.png
-t1279592263
-s180
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/r_shadow.png
-t1279592263
-s186
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/screenshot.png
-t1278793315
-s786209
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/scroller.png
-t1279592263
-s3897
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/AVCamDemoCaptureManager.o
-t1279592270
-s73700
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTest
-t1278792556
-s59260
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTest.LinkFileList
-c000000004C38D3650000000000000226
-t1278792549
-s550
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTestAppDelegate.o
-t1279592269
-s48568
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTestViewController.o
-t1279592269
-s56140
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/brighthand
-t1279592270
-s59260
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/brighthand.LinkFileList
-c000000004C4507460000000000000226
-t1279592262
-s550
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/main.o
-t1279592269
-s6440
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/AVCamDemoCaptureManager.o
-t1279592270
-s72968
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTest
-t1278792557
-s58996
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTest.LinkFileList
-c000000004C38D3650000000000000226
-t1278792549
-s550
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTestAppDelegate.o
-t1279592269
-s48576
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTestViewController.o
-t1279592270
-s55616
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/brighthand
-t1279592270
-s58996
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/brighthand.LinkFileList
-c000000004C4507460000000000000226
-t1279592262
-s550
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/main.o
-t1279592269
-s6420
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv6/AVCamDemoCaptureManager.plist
-t1279592148
-s276
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv6/TorchTestAppDelegate.plist
-t1279592147
-s276
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv6/TorchTestViewController.plist
-t1279592147
-s8558
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv6/main.plist
-t1279592147
-s276
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv7/AVCamDemoCaptureManager.plist
-t1279592148
-s276
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv7/TorchTestAppDelegate.plist
-t1279592148
-s276
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv7/TorchTestViewController.plist
-t1279592148
-s8558
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv7/main.plist
-t1279592148
-s276
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/TorchTest.xcent
-t1278792557
-s442
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand.xcent
-t1279592270
-s445
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/com.apple.build-tools.platform.validate
-t2
-s0
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/default.png
-c000000004C38D7070000000000084AE0
-t1278793479
-s543456
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/icon.png
-c000000004C38E4050000000000001391
-t1278796805
-s5009
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/icon114.png
-c000000004C38E3FF0000000000003A1C
-t1278796799
-s14876
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/icon512.png
-c000000004C38D1F000000000000363B8
-t1278792176
-s222136
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/icon57.png
-c000000004C38E32A0000000000001391
-t1278796586
-s5009
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/l_shadow.png
-c000000004C37BD6200000000000000BA
-t1278721378
-s186
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/main.m
-c000000004C369852000000000000015D
-t1278646354
-s349
-i<UIKit/UIKit.h>
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/r_shadow.png
-c000000004C37BD6C00000000000000BC
-t1278721388
-s188
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/screenshot.png
-c000000004C38D6570000000000084AE0
-t1278793303
-s543456
-
-N/Users/dmason/IPHONE/HeadFirst/TorchTest/scroller.png
-c000000004C37B59B0000000000000CE9
-t1278719387
-s3305
-
-N/Users/dmason/Library/MobileDevice/Provisioning Profiles/D49B7DAB-20A6-4CE9-A380-12185EB68E6D.mobileprovision
-c000000004C38E2040000000000001BAE
-t1278796292
-s7086
-
-N/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision
-c000000004C2C271E0000000000001C08
-t1277962014
-s7176
-
-N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-anufoatsbgymdkfqeomatzjcuegz/TorchTest_Prefix.pch.gch
-t2
-s0
-
-N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-auzpoyzhswcgsycjhxzsiwmuyuyg/TorchTest_Prefix.pch.pth
-t1279592145
-s2604724
-
-N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ayypjbgduayprwcbpklkokwcuwmz/TorchTest_Prefix.pch.gch
-t1279592144
-s10090032
-
-N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ctofrejitizvvbepwjbjvievvfgz/TorchTest_Prefix.pch.pth
-t1279592145
-s2604896
-
-N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fdcqeverhedbmbhkcyhhsqbnluvh/TorchTest_Prefix.pch.gch
-t2
-s0
-
-N/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fsbptaxbmxdpcgacvrbsqqwzbxib/TorchTest_Prefix.pch.gch
-t1279592144
-s9631280
-
-NTorchTest-Info.plist
-c000000004C38E3F40000000000000422
-t1278796788
-s1058
-
-CAnalyze /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m
-s301284948.088430
-e301284948.203834
-r1
-xAnalyze
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m
-lSLF07#2@82"Analyze /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m301284948#301284948#0(0"0(0#0#74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m8609672160#1931"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ctofrejitizvvbepwjbjvievvfgz/TorchTest_Prefix.pch --analyze /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv7/AVCamDemoCaptureManager.plist0#
-
-CAnalyze /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m
-s301284948.007852
-e301284948.088274
-r1
-xAnalyze
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m
-lSLF07#2@79"Analyze /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m301284948#301284948#0(0"0(0#0#71"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m8614572096#1925"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ctofrejitizvvbepwjbjvievvfgz/TorchTest_Prefix.pch --analyze /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv7/TorchTestAppDelegate.plist0#
-
-CAnalyze /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m
-s301284948.055576
-e301284948.163584
-r1
-xAnalyze
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m
-o/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m:105:14: warning: Potential leak of an object allocated on line 105
-o         interval = [[[NSString alloc] initWithFormat:@"%.2f",screenScroll] floatValue];
-o                     ^
-o1 warning generated.
-lSLF07#2@82"Analyze /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301284948#301284948#0(275"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m:105:14: warning: Potential leak of an object allocated on line 105         interval = [[[NSString alloc] initWithFormat:@"%.2f",screenScroll] floatValue];                     ^1 warning generated.1(0@49"Potential leak of an object allocated on line 105301284948#18446744073709551615#0#8(17@0"301284948#18446744073709551615#0#0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#0"0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#1(3@6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#97#2#97#2#6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#98#2#98#2#17@0"301284948#18446744073709551615#0#0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#0"0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#1(3@6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#98#2#98#2#6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#100#2#100#2#17@0"301284948#18446744073709551615#0#0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#0"0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#1(3@6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#100#2#100#2#6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#103#2#103#2#17@0"301284948#18446744073709551615#0#0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#0"0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#1(3@6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#103#2#103#2#6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#105#2#105#2#17@0"301284948#18446744073709551615#0#0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#0"0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#1(3@6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#105#2#105#2#6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#105#14#105#67#21@78"Method returns an Objective-C object with a +1 retain count (owning reference)301284948#18446744073709551615#0#0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#105#14#0#0#0"1(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#105#14#105#67#78"Method returns an Objective-C object with a +1 retain count (owning reference)17@0"301284948#18446744073709551615#0#0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#0"0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#0#0#0#0#1(3@6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#105#14#105#67#6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#109#1#109#1#21@114"Object allocated on line 105 is no longer referenced after this point and has a retain count of +1 (object leaked)301284948#18446744073709551615#0#0(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#109#1#0#0#0"1(6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#109#1#109#1#114"Object allocated on line 105 is no longer referenced after this point and has a retain count of +1 (object leaked)6@74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301279320#109#1#0#0#36"Memory (Core Foundation/Objective-C)0(23"Leak of returned object0#0#74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m8614004672#1931"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ctofrejitizvvbepwjbjvievvfgz/TorchTest_Prefix.pch --analyze /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv7/TorchTestViewController.plist0#
-
-CAnalyze /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m
-s301284947.964381
-e301284948.007768
-r1
-xAnalyze
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/main.m
-lSLF07#2@55"Analyze /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m301284947#301284948#0(0"0(0#0#47"/Users/dmason/IPHONE/HeadFirst/TorchTest/main.m8615276832#1885"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ctofrejitizvvbepwjbjvievvfgz/TorchTest_Prefix.pch --analyze /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/StaticAnalyzer/normal/armv7/main.plist0#
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies301285062#301285062#0(0"0(0#1#0"8615506368#0"0#
-
-CCodeSign /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app
-s300485357.375238
-e300485357.602535
-r1
-xCodeSign
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app
-lSLF07#2@45"CodeSign build/Release-iphoneos/TorchTest.app300485357#300485357#0(0"0(0#0#77"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app8643608096#672"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Darren Mason (J4HX2LYKXS)" --resource-rules=/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/ResourceRules.plist --entitlements /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/TorchTest.xcent /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app0#
-
-CCodeSign /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app
-s301285070.888816
-e301285071.084258
-r1
-xCodeSign
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app
-lSLF07#2@46"CodeSign build/Release-iphoneos/brighthand.app301285070#301285071#0(0"0(0#0#78"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app8615207168#665"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Distribution: Darren Mason" --resource-rules=/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/ResourceRules.plist --entitlements /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand.xcent /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app0#
-
-CCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/AVCamDemoCaptureManager.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s301285069.405885
-e301285070.419308
-r1
-xCompileC
-xbuild/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/AVCamDemoCaptureManager.o
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m
-xnormal
-xarmv6
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m301285069#301285070#0(0"0(0#0#74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m8615027296#1902"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fsbptaxbmxdpcgacvrbsqqwzbxib/TorchTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/AVCamDemoCaptureManager.o0#
-
-CCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTestAppDelegate.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s301285069.215010
-e301285069.405786
-r1
-xCompileC
-xbuild/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTestAppDelegate.o
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m
-xnormal
-xarmv6
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@79"Compile /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m301285069#301285069#0(0"0(0#0#71"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m8615288160#1896"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fsbptaxbmxdpcgacvrbsqqwzbxib/TorchTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTestAppDelegate.o0#
-
-CCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTestViewController.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s301285069.285693
-e301285069.647154
-r1
-xCompileC
-xbuild/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTestViewController.o
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m
-xnormal
-xarmv6
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301285069#301285069#0(0"0(0#0#74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m8614691264#1902"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fsbptaxbmxdpcgacvrbsqqwzbxib/TorchTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTestViewController.o0#
-
-CCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/main.o /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
-s301285069.213789
-e301285069.285600
-r1
-xCompileC
-xbuild/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/main.o
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/main.m
-xnormal
-xarmv6
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@55"Compile /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m301285069#301285069#0(0"0(0#0#47"/Users/dmason/IPHONE/HeadFirst/TorchTest/main.m8615051648#1856"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fsbptaxbmxdpcgacvrbsqqwzbxib/TorchTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/main.o0#
-
-CCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/AVCamDemoCaptureManager.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s301285070.114944
-e301285070.765475
-r1
-xCompileC
-xbuild/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/AVCamDemoCaptureManager.o
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m301285070#301285070#0(0"0(0#0#74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m8614395648#1902"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ayypjbgduayprwcbpklkokwcuwmz/TorchTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/AVCamDemoCaptureManager.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/AVCamDemoCaptureManager.o0#
-
-CCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTestAppDelegate.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s301285069.710813
-e301285069.849819
-r1
-xCompileC
-xbuild/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTestAppDelegate.o
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@79"Compile /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m301285069#301285069#0(0"0(0#0#71"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m8614493248#1896"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ayypjbgduayprwcbpklkokwcuwmz/TorchTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestAppDelegate.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTestAppDelegate.o0#
-
-CCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTestViewController.o /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s301285069.849912
-e301285070.114808
-r1
-xCompileC
-xbuild/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTestViewController.o
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m301285069#301285070#0(0"0(0#0#74"/Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m8606484576#1902"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ayypjbgduayprwcbpklkokwcuwmz/TorchTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/TorchTest/Classes/TorchTestViewController.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTestViewController.o0#
-
-CCompileC build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/main.o /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
-s301285069.647247
-e301285069.710717
-r1
-xCompileC
-xbuild/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/main.o
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/main.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@55"Compile /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m301285069#301285069#0(0"0(0#0#47"/Users/dmason/IPHONE/HeadFirst/TorchTest/main.m8615234912#1856"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ayypjbgduayprwcbpklkokwcuwmz/TorchTest_Prefix.pch -c /Users/dmason/IPHONE/HeadFirst/TorchTest/main.m -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/main.o0#
-
-CCompileXIB /Users/dmason/IPHONE/HeadFirst/TorchTest/MainWindow.xib
-s301285062.898479
-e301285063.345920
-r1
-xCompileXIB
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib301285062#301285063#0(0"0(0#0#55"/Users/dmason/IPHONE/HeadFirst/TorchTest/MainWindow.xib8615098176#553"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/MainWindow.nib /Users/dmason/IPHONE/HeadFirst/TorchTest/MainWindow.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
-
-CCompileXIB /Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTestViewController.xib
-s301285062.899136
-e301285063.549869
-r1
-xCompileXIB
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTestViewController.xib
-lSLF07#2@38"CompileXIB TorchTestViewController.xib301285062#301285063#0(0"0(0#0#68"/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTestViewController.xib8614946016#579"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/TorchTestViewController.nib /Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTestViewController.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/base_bg_off.png base_bg_off.png
-s300485350.202322
-e300485352.846668
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/base_bg_off.png
-xbase_bg_off.png
-lSLF07#2@80"CopyPNGFile build/Release-iphoneos/TorchTest.app/base_bg_off.png base_bg_off.png300485350#300485352#0(0"0(0#0#56"/Users/dmason/IPHONE/HeadFirst/TorchTest/base_bg_off.png8640182432#580"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/base_bg_off.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/base_bg_off.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/base_bg_on.png base_bg_on.png
-s300485350.232088
-e300485353.138271
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/base_bg_on.png
-xbase_bg_on.png
-lSLF07#2@78"CopyPNGFile build/Release-iphoneos/TorchTest.app/base_bg_on.png base_bg_on.png300485350#300485353#0(0"0(0#0#55"/Users/dmason/IPHONE/HeadFirst/TorchTest/base_bg_on.png8639603424#578"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/base_bg_on.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/base_bg_on.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/bevel.png bevel.png
-s300485350.097611
-e300485350.193679
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/bevel.png
-xbevel.png
-lSLF07#2@68"CopyPNGFile build/Release-iphoneos/TorchTest.app/bevel.png bevel.png300485350#300485350#0(0"0(0#0#50"/Users/dmason/IPHONE/HeadFirst/TorchTest/bevel.png8641705536#568"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/bevel.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/bevel.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/icon.png icon.png
-s300485350.024264
-e300485350.125118
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/icon.png
-xicon.png
-lSLF07#2@66"CopyPNGFile build/Release-iphoneos/TorchTest.app/icon.png icon.png300485350#300485350#0(0"0(0#0#49"/Users/dmason/IPHONE/HeadFirst/TorchTest/icon.png8642008128#566"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/icon.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/icon.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/icon512.png icon512.png
-s300485352.846800
-e300485354.670650
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/icon512.png
-xicon512.png
-lSLF07#2@72"CopyPNGFile build/Release-iphoneos/TorchTest.app/icon512.png icon512.png300485352#300485354#0(0"0(0#0#52"/Users/dmason/IPHONE/HeadFirst/TorchTest/icon512.png8640950560#572"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/icon512.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/icon512.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/l_shadow.png l_shadow.png
-s300485350.165347
-e300485350.202227
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/l_shadow.png
-xl_shadow.png
-lSLF07#2@74"CopyPNGFile build/Release-iphoneos/TorchTest.app/l_shadow.png l_shadow.png300485350#300485350#0(0"0(0#0#53"/Users/dmason/IPHONE/HeadFirst/TorchTest/l_shadow.png8641284416#574"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/l_shadow.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/l_shadow.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/r_shadow.png r_shadow.png
-s300485350.193768
-e300485350.231965
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/r_shadow.png
-xr_shadow.png
-lSLF07#2@74"CopyPNGFile build/Release-iphoneos/TorchTest.app/r_shadow.png r_shadow.png300485350#300485350#0(0"0(0#0#53"/Users/dmason/IPHONE/HeadFirst/TorchTest/r_shadow.png8640819264#574"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/r_shadow.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/r_shadow.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/scroller.png scroller.png
-s300485350.125215
-e300485350.165258
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/scroller.png
-xscroller.png
-lSLF07#2@74"CopyPNGFile build/Release-iphoneos/TorchTest.app/scroller.png scroller.png300485350#300485350#0(0"0(0#0#53"/Users/dmason/IPHONE/HeadFirst/TorchTest/scroller.png8641483744#574"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/scroller.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/scroller.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/Default.png Default.png
-s301285066.458787
-e301285069.213450
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/Default.png
-xDefault.png
-lSLF07#2@73"CopyPNGFile build/Release-iphoneos/brighthand.app/Default.png Default.png301285066#301285069#0(0"0(0#0#52"/Users/dmason/IPHONE/HeadFirst/TorchTest/Default.png8614039264#573"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/Default.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/Default.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/base_bg_off.png base_bg_off.png
-s301285063.574894
-e301285066.366496
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/base_bg_off.png
-xbase_bg_off.png
-lSLF07#2@81"CopyPNGFile build/Release-iphoneos/brighthand.app/base_bg_off.png base_bg_off.png301285063#301285066#0(0"0(0#0#56"/Users/dmason/IPHONE/HeadFirst/TorchTest/base_bg_off.png8615242496#581"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/base_bg_off.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/base_bg_off.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/base_bg_on.png base_bg_on.png
-s301285063.597215
-e301285066.458698
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/base_bg_on.png
-xbase_bg_on.png
-lSLF07#2@79"CopyPNGFile build/Release-iphoneos/brighthand.app/base_bg_on.png base_bg_on.png301285063#301285066#0(0"0(0#0#55"/Users/dmason/IPHONE/HeadFirst/TorchTest/base_bg_on.png8615097504#579"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/base_bg_on.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/base_bg_on.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/bevel.png bevel.png
-s301285063.455178
-e301285063.538338
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/bevel.png
-xbevel.png
-lSLF07#2@69"CopyPNGFile build/Release-iphoneos/brighthand.app/bevel.png bevel.png301285063#301285063#0(0"0(0#0#50"/Users/dmason/IPHONE/HeadFirst/TorchTest/bevel.png8614617536#569"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/bevel.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/bevel.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/default.png default.png
-s300486037.227215
-e300486039.464889
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/default.png
-xdefault.png
-lSLF07#2@73"CopyPNGFile build/Release-iphoneos/brighthand.app/default.png default.png300486037#300486039#0(0"0(0#0#52"/Users/dmason/IPHONE/HeadFirst/TorchTest/default.png8642210752#573"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/default.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/default.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon.png icon.png
-s301285068.726387
-e301285068.766615
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon.png
-xicon.png
-lSLF07#2@67"CopyPNGFile build/Release-iphoneos/brighthand.app/icon.png icon.png301285068#301285068#0(0"0(0#0#49"/Users/dmason/IPHONE/HeadFirst/TorchTest/icon.png8615348000#567"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/icon.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon114.png icon114.png
-s301285063.346009
-e301285063.455093
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon114.png
-xicon114.png
-lSLF07#2@73"CopyPNGFile build/Release-iphoneos/brighthand.app/icon114.png icon114.png301285063#301285063#0(0"0(0#0#52"/Users/dmason/IPHONE/HeadFirst/TorchTest/icon114.png8614930208#573"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/icon114.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon114.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon512.png icon512.png
-s301285066.366676
-e301285068.726262
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon512.png
-xicon512.png
-lSLF07#2@73"CopyPNGFile build/Release-iphoneos/brighthand.app/icon512.png icon512.png301285066#301285068#0(0"0(0#0#52"/Users/dmason/IPHONE/HeadFirst/TorchTest/icon512.png8612462400#573"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/icon512.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon512.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon57.png icon57.png
-s300489438.302045
-e300489438.336294
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon57.png
-xicon57.png
-lSLF07#2@71"CopyPNGFile build/Release-iphoneos/brighthand.app/icon57.png icon57.png300489438#300489438#0(0"0(0#0#51"/Users/dmason/IPHONE/HeadFirst/TorchTest/icon57.png8611465536#571"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/icon57.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/icon57.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/l_shadow.png l_shadow.png
-s301285063.549959
-e301285063.572668
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/l_shadow.png
-xl_shadow.png
-lSLF07#2@75"CopyPNGFile build/Release-iphoneos/brighthand.app/l_shadow.png l_shadow.png301285063#301285063#0(0"0(0#0#53"/Users/dmason/IPHONE/HeadFirst/TorchTest/l_shadow.png8615556896#575"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/l_shadow.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/l_shadow.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/r_shadow.png r_shadow.png
-s301285063.572762
-e301285063.597130
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/r_shadow.png
-xr_shadow.png
-lSLF07#2@75"CopyPNGFile build/Release-iphoneos/brighthand.app/r_shadow.png r_shadow.png301285063#301285063#0(0"0(0#0#53"/Users/dmason/IPHONE/HeadFirst/TorchTest/r_shadow.png8615418048#575"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/r_shadow.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/r_shadow.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/screenshot.png screenshot.png
-s300486113.515039
-e300486115.582243
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/screenshot.png
-xscreenshot.png
-lSLF07#2@79"CopyPNGFile build/Release-iphoneos/brighthand.app/screenshot.png screenshot.png300486113#300486115#0(0"0(0#0#55"/Users/dmason/IPHONE/HeadFirst/TorchTest/screenshot.png8638955104#579"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/screenshot.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/screenshot.png0#
-
-CCopyPNGFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/scroller.png scroller.png
-s301285063.538425
-e301285063.574815
-r1
-xCopyPNGFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/scroller.png
-xscroller.png
-lSLF07#2@75"CopyPNGFile build/Release-iphoneos/brighthand.app/scroller.png scroller.png301285063#301285063#0(0"0(0#0#53"/Users/dmason/IPHONE/HeadFirst/TorchTest/scroller.png8615718848#575"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv COPY_COMMAND /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/dmason/IPHONE/HeadFirst/TorchTest/scroller.png /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/scroller.png0#
-
-CCpResource build/Release-iphoneos/TorchTest.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-s300485349.494360
-e300485349.503428
-r1
-xCpResource
-xbuild/Release-iphoneos/TorchTest.app/ResourceRules.plist
-x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist300485349#300485349#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist8639504160#509"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app0#
-
-CCpResource build/Release-iphoneos/brighthand.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-s301285062.892020
-e301285062.898411
-r1
-xCpResource
-xbuild/Release-iphoneos/brighthand.app/ResourceRules.plist
-x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist301285062#301285062#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist8612346048#510"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app0#
-
-CCpResource build/Release-iphoneos/brighthand.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
-r0
-
-CCreateUniversalBinary /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/TorchTest normal "armv6 armv7"
-s300485357.305004
-e300485357.312999
-r1
-xCreateUniversalBinary
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/TorchTest
-xnormal
-xarmv6 armv7
-lSLF07#2@89"CreateUniversalBinary build/Release-iphoneos/TorchTest.app/TorchTest normal "armv6 armv7"300485357#300485357#0(0"0(0#0#52"/Users/dmason/IPHONE/HeadFirst/TorchTest/armv6 armv78643969824#548"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTest /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTest -output /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/TorchTest0#
-
-CCreateUniversalBinary /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/brighthand normal "armv6 armv7"
-s301285070.800899
-e301285070.804017
-r1
-xCreateUniversalBinary
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/brighthand
-xnormal
-xarmv6 armv7
-lSLF07#2@91"CreateUniversalBinary build/Release-iphoneos/brighthand.app/brighthand normal "armv6 armv7"301285070#301285070#0(0"0(0#0#52"/Users/dmason/IPHONE/HeadFirst/TorchTest/armv6 armv78615247936#552"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/brighthand /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/brighthand -output /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/brighthand0#
-
-CGenerateDSYMFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app.dSYM /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/TorchTest
-s300485357.313115
-e300485357.348452
-r1
-xGenerateDSYMFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app.dSYM
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/TorchTest
-lSLF07#2@105"GenerateDSYMFile build/Release-iphoneos/TorchTest.app.dSYM build/Release-iphoneos/TorchTest.app/TorchTest300485357#300485357#0(0"0(0#0#87"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/TorchTest8642606432#378"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/TorchTest -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app.dSYM0#
-
-CGenerateDSYMFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app.dSYM /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/brighthand
-s301285070.804098
-e301285070.831702
-r1
-xGenerateDSYMFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app.dSYM
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/brighthand
-lSLF07#2@108"GenerateDSYMFile build/Release-iphoneos/brighthand.app.dSYM build/Release-iphoneos/brighthand.app/brighthand301285070#301285070#0(0"0(0#0#89"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/brighthand8614627072#381"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/brighthand -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app.dSYM0#
-
-CLd /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTest normal armv6
-s300485356.674256
-e300485356.710869
-r1
-xLd
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTest
-xnormal
-xarmv6
-lSLF07#2@131"Link /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTest300485356#300485356#0(0"0(0#0#0"8642307104#983"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -L/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -filelist /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTest.LinkFileList -dead_strip -miphoneos-version-min=4.0 -framework Foundation -framework UIKit -framework CoreGraphics -framework AVFoundation -framework MobileCoreServices -framework AssetsLibrary -framework iAd -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/TorchTest0#
-
-CLd /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/brighthand normal armv6
-s301285070.419498
-e301285070.580218
-r1
-xLd
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/brighthand
-xnormal
-xarmv6
-lSLF07#2@132"Link /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/brighthand301285070#301285070#0(0"0(0#0#0"8614182528#985"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -L/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -filelist /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/brighthand.LinkFileList -dead_strip -miphoneos-version-min=4.0 -framework Foundation -framework UIKit -framework CoreGraphics -framework AVFoundation -framework MobileCoreServices -framework AssetsLibrary -framework iAd -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv6/brighthand0#
-
-CLd /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTest normal armv7
-s300485357.236591
-e300485357.304730
-r1
-xLd
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTest
-xnormal
-xarmv7
-lSLF07#2@131"Link /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTest300485357#300485357#0(0"0(0#0#0"8631940896#983"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -L/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -filelist /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTest.LinkFileList -dead_strip -miphoneos-version-min=4.0 -framework Foundation -framework UIKit -framework CoreGraphics -framework AVFoundation -framework MobileCoreServices -framework AssetsLibrary -framework iAd -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/TorchTest0#
-
-CLd /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/brighthand normal armv7
-s301285070.765557
-e301285070.800798
-r1
-xLd
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/brighthand
-xnormal
-xarmv7
-lSLF07#2@132"Link /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/brighthand301285070#301285070#0(0"0(0#0#0"8615832224#985"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -L/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -filelist /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/brighthand.LinkFileList -dead_strip -miphoneos-version-min=4.0 -framework Foundation -framework UIKit -framework CoreGraphics -framework AVFoundation -framework MobileCoreServices -framework AssetsLibrary -framework iAd -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/Objects-normal/armv7/brighthand0#
-
-CProcessInfoPlistFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/Info.plist TorchTest-Info.plist
-s300485349.495493
-e300485349.516300
-r1
-xProcessInfoPlistFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/Info.plist
-xTorchTest-Info.plist
-lSLF07#2@28"Process TorchTest-Info.plist300485349#300485349#0(0"0(0#0#61"/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest-Info.plist8635671296#584"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility TorchTest-Info.plist -genpkginfo /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/ResourceRules.plist -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/Info.plist0#
-
-CProcessInfoPlistFile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/Info.plist TorchTest-Info.plist
-s301285062.892805
-e301285062.896998
-r1
-xProcessInfoPlistFile
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/Info.plist
-xTorchTest-Info.plist
-lSLF07#2@28"Process TorchTest-Info.plist301285062#301285062#0(0"0(0#0#61"/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest-Info.plist8609345792#587"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility TorchTest-Info.plist -genpkginfo /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/ResourceRules.plist -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/Info.plist0#
-
-CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-anufoatsbgymdkfqeomatzjcuegz/TorchTest_Prefix.pch.gch TorchTest_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
-r0
-
-CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-auzpoyzhswcgsycjhxzsiwmuyuyg/TorchTest_Prefix.pch.pth TorchTest_Prefix.pch normal armv6 objective-c com.apple.compilers.llvm.clang.1_0.analyzer
-s301284944.628673
-e301284945.299759
-r1
-xProcessPCH
-x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-auzpoyzhswcgsycjhxzsiwmuyuyg/TorchTest_Prefix.pch.pth
-xTorchTest_Prefix.pch
-xnormal
-xarmv6
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.analyzer
-lSLF07#2@31"Precompile TorchTest_Prefix.pch301284944#301284945#0(0"0(0#0#61"/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest_Prefix.pch8615209728#1759"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -c /Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-auzpoyzhswcgsycjhxzsiwmuyuyg/TorchTest_Prefix.pch.pth0#
-
-CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ayypjbgduayprwcbpklkokwcuwmz/TorchTest_Prefix.pch.gch TorchTest_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
-s301284942.296862
-e301284944.661065
-r1
-xProcessPCH
-x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ayypjbgduayprwcbpklkokwcuwmz/TorchTest_Prefix.pch.gch
-xTorchTest_Prefix.pch
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@31"Precompile TorchTest_Prefix.pch301284942#301284944#0(0"0(0#0#61"/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest_Prefix.pch8611002240#1748"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -c /Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ayypjbgduayprwcbpklkokwcuwmz/TorchTest_Prefix.pch.gch0#
-
-CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ctofrejitizvvbepwjbjvievvfgz/TorchTest_Prefix.pch.pth TorchTest_Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.analyzer
-s301284944.661396
-e301284945.211520
-r1
-xProcessPCH
-x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ctofrejitizvvbepwjbjvievvfgz/TorchTest_Prefix.pch.pth
-xTorchTest_Prefix.pch
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.analyzer
-lSLF07#2@31"Precompile TorchTest_Prefix.pch301284944#301284945#0(0"0(0#0#61"/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest_Prefix.pch8601061792#1759"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fasm-blocks -gdwarf-2 -fvisibility=hidden -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv7 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -c /Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-ctofrejitizvvbepwjbjvievvfgz/TorchTest_Prefix.pch.pth0#
-
-CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fdcqeverhedbmbhkcyhhsqbnluvh/TorchTest_Prefix.pch.gch TorchTest_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
-r0
-
-CProcessPCH /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fsbptaxbmxdpcgacvrbsqqwzbxib/TorchTest_Prefix.pch.gch TorchTest_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
-s301284942.294288
-e301284944.626393
-r1
-xProcessPCH
-x/var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fsbptaxbmxdpcgacvrbsqqwzbxib/TorchTest_Prefix.pch.gch
-xTorchTest_Prefix.pch
-xnormal
-xarmv6
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@31"Precompile TorchTest_Prefix.pch301284942#301284944#0(0"0(0#0#61"/Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest_Prefix.pch8612461568#1748"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-generated-files.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-own-target-headers.hmap -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-all-target-headers.hmap -iquote /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand-project-headers.hmap -F/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/include -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources/armv6 -I/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -c /Users/dmason/IPHONE/HeadFirst/TorchTest/TorchTest_Prefix.pch -o /var/folders/FF/FFzQNxf4Hu4WuSw95SEi-YITr4Q/-Caches-/com.apple.Xcode.1159715943/SharedPrecompiledHeaders/TorchTest_Prefix-fsbptaxbmxdpcgacvrbsqqwzbxib/TorchTest_Prefix.pch.gch0#
-
-CProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/D49B7DAB-20A6-4CE9-A380-12185EB68E6D.mobileprovision" /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/embedded.mobileprovision
-s301285070.831802
-e301285070.866362
-r1
-xProcessProductPackaging
-x/Users/dmason/Library/MobileDevice/Provisioning Profiles/D49B7DAB-20A6-4CE9-A380-12185EB68E6D.mobileprovision
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/embedded.mobileprovision
-lSLF07#2@198"ProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/D49B7DAB-20A6-4CE9-A380-12185EB68E6D.mobileprovision" build/Release-iphoneos/brighthand.app/embedded.mobileprovision301285070#301285070#0(0"0(0#0#103"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/embedded.mobileprovision8614335648#433"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/dmason/Library/MobileDevice/Provisioning Profiles/D49B7DAB-20A6-4CE9-A380-12185EB68E6D.mobileprovision" -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/embedded.mobileprovision0#
-
-CProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision" /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/embedded.mobileprovision
-s300485357.348565
-e300485357.351169
-r1
-xProcessProductPackaging
-x/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/embedded.mobileprovision
-lSLF07#2@197"ProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision" build/Release-iphoneos/TorchTest.app/embedded.mobileprovision300485357#300485357#0(0"0(0#0#102"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/embedded.mobileprovision8640795200#432"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision" -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app/embedded.mobileprovision0#
-
-CProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision" /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/embedded.mobileprovision
-s300489172.292647
-e300489172.294258
-r1
-xProcessProductPackaging
-x/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/embedded.mobileprovision
-lSLF07#2@198"ProcessProductPackaging "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision" build/Release-iphoneos/brighthand.app/embedded.mobileprovision300489172#300489172#0(0"0(0#0#103"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/embedded.mobileprovision8609434016#433"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/dmason/Library/MobileDevice/Provisioning Profiles/FEF7E3A1-F322-419B-A891-8988F3A67CF5.mobileprovision" -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app/embedded.mobileprovision0#
-
-CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/TorchTest.xcent
-s300485357.361317
-e300485357.375151
-r1
-xProcessProductPackaging
-x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/TorchTest.xcent
-lSLF07#2@183"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist build/TorchTest.build/Release-iphoneos/TorchTest.build/TorchTest.xcent300485357#300485357#0(0"0(0#0#111"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/TorchTest.xcent8644050496#444"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist -entitlements -format xml -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/TorchTest.xcent0#
-
-CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand.xcent
-s301285070.869830
-e301285070.888748
-r1
-xProcessProductPackaging
-x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand.xcent
-lSLF07#2@184"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand.xcent301285070#301285070#0(0"0(0#0#112"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand.xcent8615594752#445"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist -entitlements -format xml -o /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand.xcent0#
-
-CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist /Users/dmason/IPHONE/HeadFirst/TorchTest/build/TorchTest.build/Release-iphoneos/TorchTest.build/brighthand.xcent
-r0
-
-CTouch /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app
-s300485357.351230
-e300485357.361212
-r1
-xTouch
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app
-lSLF07#2@83"Touch /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app300485357#300485357#0(0"0(0#0#0"8643783328#272"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app0#
-
-CTouch /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app
-s301285070.866430
-e301285070.869743
-r1
-xTouch
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app
-lSLF07#2@84"Touch /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app301285070#301285070#0(0"0(0#0#0"8613893824#273"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app0#
-
-CValidate /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app
-s300485357.602737
-e300485357.713039
-r1
-xValidate
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app
-lSLF07#2@45"Validate build/Release-iphoneos/TorchTest.app300485357#300485357#0(0"0(0#0#77"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app8642816224#381"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv PRODUCT_TYPE com.apple.product-type.application    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/Validation /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/TorchTest.app0#
-
-CValidate /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app
-s301285071.084346
-e301285071.105986
-r1
-xValidate
-x/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app
-lSLF07#2@46"Validate build/Release-iphoneos/brighthand.app301285071#301285071#0(0"0(0#0#78"/Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app8605406272#382"    cd /Users/dmason/IPHONE/HeadFirst/TorchTest    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv PRODUCT_TYPE com.apple.product-type.application    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/Validation /Users/dmason/IPHONE/HeadFirst/TorchTest/build/Release-iphoneos/brighthand.app0#
-
