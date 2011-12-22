@@ -11,12 +11,30 @@
 
 @implementation CoverShotViewController
 
-@synthesize magizineScrollView,pickedCover,bannerView,coverShotEditorViewController,fullversion;
+@synthesize magizineScrollView,pickedCover,bannerView,coverShotEditorViewController,fullversion,bannerButton;
 
 const CGFloat kScrollObjWidth	= 240.0;
 const CGFloat kScrollObjHeight	= 360;
-const NSUInteger kNumImages		= 8;
-const int limited = 8;
+const NSUInteger kNumImages		= 10;
+const int limited = 10;
+
+
+-(IBAction)getGame:(id)sender{
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/terminal-velocity-lite-the/id491548703?ls=1&mt=8"]];	
+
+}
+-(IBAction)hideGameBanner:(id)sender{
+    
+    CGFloat viewHeight = self.view.frame.size.height;
+	CGRect newBannerview = self.bannerButton.frame;
+	newBannerview.origin.y = -viewHeight;
+
+    [UIView beginAnimations:@"BannerViewIntro" context:NULL];
+	self.bannerButton.frame = newBannerview;
+	[UIView commitAnimations];
+}
+
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -39,9 +57,46 @@ const int limited = 8;
 
 }
 
+- (void)rateApp {
+    
+    int launchCount = [[NSUserDefaults standardUserDefaults] integerForKey:@"launchCount"];
+    launchCount++;
+    [[NSUserDefaults standardUserDefaults] setInteger:launchCount forKey:@"launchCount"];
+    
+    BOOL neverRate = [[NSUserDefaults standardUserDefaults] boolForKey:@"neverRate"];
+    
+    if ((neverRate != YES) && (launchCount > 2)) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please rate Cover Shot Lite!"
+                                                        message:@"If you enjoyed using Cover Shot Lite and you would like others to enjoy it, please rate it!" 
+                                                       delegate:self 
+                                              cancelButtonTitle:nil 
+                                              otherButtonTitles:@"Rate now", @"Never ask again", @"Remind me later", nil];
+        alert.delegate = self;
+        [alert show];
+        [alert release];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"neverRate"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/cover-shot-lite-fake-magazine/id387311431?ls=1&mt=8"]];
+    }
+    
+    else if (buttonIndex == 1) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"neverRate"];
+    }
+    
+    else if (buttonIndex == 2) {
+        // Do nothing
+    }
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	
+    
+    [self rateApp];
+    [bannerButton setBackgroundColor: UIColor.clearColor];
 	[self moveBannerViewOffscreen];//hide banner
 	
 	pickedCover = [UIImage imageNamed:@"clearcover1.png"];
@@ -116,7 +171,7 @@ const int limited = 8;
 		}else{
 			
 			NSString *title = NSLocalizedString(@"Full Version Only", @"");
-			NSString *message = NSLocalizedString(@"Sorry you can only use this if you purchase the full version. Please buy it, I spend all my money on my iphone. It's only $.99", @"");
+			NSString *message = NSLocalizedString(@"Sorry you can only use this if you purchase the full version. Please buy it, I spend many hours making it. It's only $.99", @"");
 		
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
 															message:message

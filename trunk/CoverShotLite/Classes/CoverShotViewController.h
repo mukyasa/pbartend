@@ -18,9 +18,12 @@
 	IBOutlet ADBannerView *bannerView;
 	CoverShotEditorViewController *coverShotEditorViewController;
 	int liteCover;
+    IBOutlet UIView *bannerButton;
 	IBOutlet UIImageView *fullversion;
+
 	
 }
+@property(nonatomic,retain) IBOutlet UIView *bannerButton;
 @property(nonatomic,retain)UIImageView *fullversion;
 @property(nonatomic,retain) CoverShotEditorViewController *coverShotEditorViewController;
 @property(nonatomic,retain) ADBannerView *bannerView;
@@ -30,6 +33,8 @@
 -(void) moveBannerViewOffscreen;
 -(void) moveBannerViewOnscreen;
 -(IBAction)showInfo:(id)sender;
+-(IBAction)getGame:(id)sender;
+-(IBAction)hideGameBanner:(id)sender;
 
 @end
 

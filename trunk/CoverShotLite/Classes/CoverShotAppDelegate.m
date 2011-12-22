@@ -14,7 +14,6 @@
 @synthesize window;
 @synthesize viewController,coverHolder;
 
-
 #pragma mark -
 #pragma mark Application lifecycle
 
