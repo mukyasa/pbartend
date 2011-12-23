@@ -15,8 +15,43 @@
 
 const CGFloat kScrollObjWidth	= 240;
 const CGFloat kScrollObjHeight	= 360;
-const NSUInteger kNumImages		= 30;//due to a bug in the last image duplicate the last mag and call it one more than is shown
+const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the last mag and call it one more than is shown
 
+
+- (void)rateApp {
+    
+    int launchCount = [[NSUserDefaults standardUserDefaults] integerForKey:@"launchCount"];
+    launchCount++;
+    [[NSUserDefaults standardUserDefaults] setInteger:launchCount forKey:@"launchCount"];
+    
+    BOOL neverRate = [[NSUserDefaults standardUserDefaults] boolForKey:@"neverRate"];
+    
+    if ((neverRate != YES) && (launchCount > 2)) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please rate Cover Shot!"
+                                                        message:@"If you enjoyed using Cover Shot and you would like others to enjoy it, please rate it!" 
+                                                       delegate:self 
+                                              cancelButtonTitle:nil 
+                                              otherButtonTitles:@"Rate now", @"Never ask again", @"Remind me later", nil];
+        alert.delegate = self;
+        [alert show];
+        [alert release];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"neverRate"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/cover-shot-fake-magazine-cover/id387310371?ls=1&mt=8"]];
+    }
+    
+    else if (buttonIndex == 1) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"neverRate"];
+    }
+    
+    else if (buttonIndex == 2) {
+        // Do nothing
+    }
+}
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
