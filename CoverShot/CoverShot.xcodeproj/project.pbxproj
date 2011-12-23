@@ -104,6 +104,10 @@
 		71DCB54D120B914600C6B951 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DCB54B120B914600C6B951 /* FlipsideViewController.m */; };
 		71DCB5E3120B969C00C6B951 /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DCB5E2120B969C00C6B951 /* FlipsideView.xib */; };
 		71FCD1B6120B996700139C51 /* help_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FCD1B5120B996700139C51 /* help_bg.png */; };
+		9CC3093614A43A1B0097DC48 /* clearcover31.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CC3093414A43A1B0097DC48 /* clearcover31.png */; };
+		9CC3093714A43A1B0097DC48 /* clearcover32.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CC3093514A43A1B0097DC48 /* clearcover32.png */; };
+		9CC3093B14A43A2F0097DC48 /* cover32.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CC3093914A43A2F0097DC48 /* cover32.png */; };
+		9CC3093C14A43A2F0097DC48 /* cover33.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CC3093A14A43A2F0097DC48 /* cover33.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,6 +217,10 @@
 		71DCB5E2120B969C00C6B951 /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
 		71FCD1B5120B996700139C51 /* help_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_bg.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* CoverShot-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoverShot-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		9CC3093414A43A1B0097DC48 /* clearcover31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover31.png; sourceTree = "<group>"; };
+		9CC3093514A43A1B0097DC48 /* clearcover32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover32.png; sourceTree = "<group>"; };
+		9CC3093914A43A2F0097DC48 /* cover32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover32.png; sourceTree = "<group>"; };
+		9CC3093A14A43A2F0097DC48 /* cover33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover33.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +327,8 @@
 				71CB7A3A1325D18D00B17D67 /* clearcover28.png */,
 				71CB7A3B1325D18D00B17D67 /* clearcover29.png */,
 				71CB7A3C1325D18D00B17D67 /* clearcover30.png */,
+				9CC3093414A43A1B0097DC48 /* clearcover31.png */,
+				9CC3093514A43A1B0097DC48 /* clearcover32.png */,
 				71887AED11F7EFF900F4C6D6 /* cover1.png */,
 				71887AEE11F7EFF900F4C6D6 /* cover2.png */,
 				710210BC1207ABD900F36BA0 /* cover3.png */,
@@ -350,6 +360,8 @@
 				71CB7A421325D19E00B17D67 /* cover29.png */,
 				71CB7A431325D19E00B17D67 /* cover30.png */,
 				71CB7A481325D1DE00B17D67 /* cover31.png */,
+				9CC3093914A43A2F0097DC48 /* cover32.png */,
+				9CC3093A14A43A2F0097DC48 /* cover33.png */,
 				71887B2411F7F42E00F4C6D6 /* camera.png */,
 				71A25BB5122477BD00F01762 /* camera@2x.png */,
 				71887C4011F80CB400F4C6D6 /* clearbg.png */,
@@ -526,6 +538,10 @@
 				71CB7A461325D19E00B17D67 /* cover29.png in Resources */,
 				71CB7A471325D19E00B17D67 /* cover30.png in Resources */,
 				71CB7A491325D1DE00B17D67 /* cover31.png in Resources */,
+				9CC3093614A43A1B0097DC48 /* clearcover31.png in Resources */,
+				9CC3093714A43A1B0097DC48 /* clearcover32.png in Resources */,
+				9CC3093B14A43A2F0097DC48 /* cover32.png in Resources */,
+				9CC3093C14A43A2F0097DC48 /* cover33.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -589,6 +606,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				PRODUCT_NAME = covershot;
+				PROVISIONING_PROFILE = "29797D94-BCBB-40DC-A7B6-692EFFDD0142";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "348E1E0E-1EE8-4CFC-BE13-E2C73402FA18";
 				SDKROOT = iphoneos;
 			};
@@ -612,12 +630,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "348E1E0E-1EE8-4CFC-BE13-E2C73402FA18";
+				PROVISIONING_PROFILE = "29797D94-BCBB-40DC-A7B6-692EFFDD0142";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "29797D94-BCBB-40DC-A7B6-692EFFDD0142";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -626,12 +646,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Darren Mason (J4HX2LYKXS)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "29797D94-BCBB-40DC-A7B6-692EFFDD0142";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "348E1E0E-1EE8-4CFC-BE13-E2C73402FA18";
 				SDKROOT = iphoneos;
 			};
