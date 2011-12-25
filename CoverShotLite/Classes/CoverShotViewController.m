@@ -235,17 +235,7 @@ const int limited = 10;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
-/****banner view *****/
--(void) moveBannerViewOnscreen{
-	
-	CGRect newBannerview = self.bannerView.frame;
-	newBannerview.origin.y = self.view.frame.size.height-newBannerview.size.height;
-	
-	[UIView beginAnimations:@"BannerViewIntro" context:NULL];
-	self.bannerView.frame = newBannerview;
-	[UIView commitAnimations];
-	
-}
+
 
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
@@ -265,6 +255,17 @@ const int limited = 10;
 	[controller release];
 }
 
+/****banner view *****/
+-(void) moveBannerViewOnscreen{
+	
+	CGRect newBannerview = self.bannerView.frame;
+	newBannerview.origin.y = self.view.frame.size.height-newBannerview.size.height;
+	
+	[UIView beginAnimations:@"BannerViewIntro" context:NULL];
+	self.bannerView.frame = newBannerview;
+	[UIView commitAnimations];
+	
+}
 -(void) moveBannerViewOffscreen{
 	CGFloat viewHeight = self.view.frame.size.height;
 	CGRect newBannerview = self.bannerView.frame;
