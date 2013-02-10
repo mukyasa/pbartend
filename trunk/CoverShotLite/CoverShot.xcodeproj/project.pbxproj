@@ -57,7 +57,6 @@
 		71A25BE212247A3D00F01762 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A25BDE12247A3D00F01762 /* camera@2x.png */; };
 		71A25BE312247A3D00F01762 /* save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A25BDF12247A3D00F01762 /* save@2x.png */; };
 		71A665C01214A99700038AD8 /* fullversion.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A665BF1214A99700038AD8 /* fullversion.png */; };
-		71AB1F831211F1740063B455 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 71AB1F821211F1740063B455 /* Default.png */; };
 		71BD191812054A4F00BF15ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71BD191712054A4F00BF15ED /* QuartzCore.framework */; };
 		71DCB54D120B914600C6B951 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DCB54B120B914600C6B951 /* FlipsideViewController.m */; };
 		71DCB5E3120B969C00C6B951 /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DCB5E2120B969C00C6B951 /* FlipsideView.xib */; };
@@ -68,6 +67,9 @@
 		9C47ED9A14A3D6C700BCF39E /* clearcover10.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C47ED9814A3D6C700BCF39E /* clearcover10.png */; };
 		9C47ED9D14A3D6D200BCF39E /* cover9.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C47ED9B14A3D6D200BCF39E /* cover9.png */; };
 		9C47ED9E14A3D6D200BCF39E /* cover10.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C47ED9C14A3D6D200BCF39E /* cover10.png */; };
+		9C58AF0416C7FB040092CFEB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C58AF0216C7FB040092CFEB /* Default-568h@2x.png */; };
+		9C58AF0516C7FB040092CFEB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C58AF0316C7FB040092CFEB /* Default@2x.png */; };
+		9C58AF0716C7FB380092CFEB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C58AF0616C7FB380092CFEB /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,7 +130,6 @@
 		71A25BDE12247A3D00F01762 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
 		71A25BDF12247A3D00F01762 /* save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save@2x.png"; sourceTree = "<group>"; };
 		71A665BF1214A99700038AD8 /* fullversion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fullversion.png; sourceTree = "<group>"; };
-		71AB1F821211F1740063B455 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		71BD191712054A4F00BF15ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		71DCB54A120B914600C6B951 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		71DCB54B120B914600C6B951 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
@@ -141,6 +142,9 @@
 		9C47ED9814A3D6C700BCF39E /* clearcover10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearcover10.png; sourceTree = "<group>"; };
 		9C47ED9B14A3D6D200BCF39E /* cover9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover9.png; sourceTree = "<group>"; };
 		9C47ED9C14A3D6D200BCF39E /* cover10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover10.png; sourceTree = "<group>"; };
+		9C58AF0216C7FB040092CFEB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9C58AF0316C7FB040092CFEB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9C58AF0616C7FB380092CFEB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C58AF0616C7FB380092CFEB /* Default.png */,
+				9C58AF0216C7FB040092CFEB /* Default-568h@2x.png */,
+				9C58AF0316C7FB040092CFEB /* Default@2x.png */,
 				9C47ED9114A3C8FF00BCF39E /* closefullversion.png */,
 				9C47ED8F14A3C8ED00BCF39E /* promotional.png */,
 				71A25BDC12247A3D00F01762 /* book@2x.png */,
@@ -256,7 +263,6 @@
 				71887B2511F7F42E00F4C6D6 /* save.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* CoverShot-Info.plist */,
-				71AB1F821211F1740063B455 /* Default.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -346,7 +352,6 @@
 				7103E97211FA1D250088BD9E /* blending.png in Resources */,
 				71DCB5E3120B969C00C6B951 /* FlipsideView.xib in Resources */,
 				71FCD1B6120B996700139C51 /* help_bg.png in Resources */,
-				71AB1F831211F1740063B455 /* Default.png in Resources */,
 				7148D6C11212FECD00B13094 /* appstoresm.gif in Resources */,
 				710058C312138B41002DD799 /* Icon-72.png in Resources */,
 				710058C412138B41002DD799 /* Icon-Small.png in Resources */,
@@ -382,6 +387,9 @@
 				9C47ED9A14A3D6C700BCF39E /* clearcover10.png in Resources */,
 				9C47ED9D14A3D6D200BCF39E /* cover9.png in Resources */,
 				9C47ED9E14A3D6D200BCF39E /* cover10.png in Resources */,
+				9C58AF0416C7FB040092CFEB /* Default-568h@2x.png in Resources */,
+				9C58AF0516C7FB040092CFEB /* Default@2x.png in Resources */,
+				9C58AF0716C7FB380092CFEB /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +424,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = CoverShot_Prefix.pch;
 				INFOPLIST_FILE = "CoverShot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = covershotlite;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
@@ -430,6 +439,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = CoverShot_Prefix.pch;
 				INFOPLIST_FILE = "CoverShot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = covershotlite;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				VALIDATE_PRODUCT = YES;

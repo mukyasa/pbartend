@@ -53,7 +53,8 @@ const int limited = 10;
 */
 
 - (void)coverShotEditorViewControllerDidFinish:(CoverShotEditorViewController *)controller{
-	[controller dismissModalViewControllerAnimated:YES];
+	//[controller dismissModalViewControllerAnimated:YES];
+    [controller dismissViewControllerAnimated:YES completion:nil];
 
 }
 
@@ -160,7 +161,8 @@ const int limited = 10;
 			coverShotEditorViewController.delegate = self;
 			
 			coverShotEditorViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-			[self presentModalViewController:coverShotEditorViewController animated:YES];
+			//[self presentModalViewController:coverShotEditorViewController animated:YES];
+            [self presentViewController:coverShotEditorViewController animated:YES completion:nil];
 			
 			coverShotEditorViewController.parentPreviewImageView.image = pickedCover;
 			CoverShotAppDelegate *appDelegate = (CoverShotAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -240,7 +242,8 @@ const int limited = 10;
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
     
-	[self dismissModalViewControllerAnimated:YES];
+	//[self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -250,7 +253,8 @@ const int limited = 10;
 	controller.delegate = self;
 	
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	[self presentModalViewController:controller animated:YES];
+	//[self presentModalViewController:controller animated:YES];
+    [self presentViewController:controller animated:YES completion:nil];
 	//NSLog(@"FlipsideViewController retain count: %i",[controller retainCount]);
 	[controller release];
 }
