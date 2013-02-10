@@ -41,14 +41,16 @@
 	// [picker setToRecipients:[NSArray arrayWithObject:@"djmason9@yahoo.com"]];
 	[picker setMessageBody:body isHTML:NO];
 	
-	[self presentModalViewController:picker animated:NO];
+	//[self presentModalViewController:picker animated:NO];
+    [self presentViewController:picker animated:NO completion:nil];
 	[picker release];
 	
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-	[self dismissModalViewControllerAnimated:YES];
+	//[self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(IBAction) getFullVersion:(id)sender{
