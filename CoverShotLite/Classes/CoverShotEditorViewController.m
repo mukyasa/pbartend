@@ -77,7 +77,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 			imagePicker = [[UIImagePickerController alloc] init];
 			imagePicker.delegate = self;	
 			imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-			[self presentModalViewController:imagePicker animated:YES];
+			//[self presentModalViewController:imagePicker animated:YES];
+            [self presentViewController:imagePicker animated:YES completion:nil];
 		}
 		else 
 		{
@@ -89,7 +90,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 				camera.sourceType = UIImagePickerControllerSourceTypeCamera;	
 				camera.delegate = self;
 				
-				[self presentModalViewController:camera animated:YES];		
+				//[self presentModalViewController:camera animated:YES];
+                [self presentViewController:camera animated:YES completion:nil];
 				
 			}
 			if (buttonIndex == 1) //camera with over lay
@@ -106,7 +108,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 				camera.delegate = self;
 				camera.cameraOverlayView = imgView;
 				
-				[self presentModalViewController:camera animated:YES];
+				//[self presentModalViewController:camera animated:YES];
+                [self presentViewController:camera animated:YES completion:nil];
 				[imgView release];			
 				
 			}
@@ -115,7 +118,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 				imagePicker = [[UIImagePickerController alloc] init];
 				imagePicker.delegate = self;	
 				imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-				[self presentModalViewController:imagePicker animated:YES];
+				//[self presentModalViewController:imagePicker animated:YES];
+                [self presentViewController:imagePicker animated:YES completion:nil];
 				
 				
 			}
@@ -128,7 +132,8 @@ static NSInteger blendModeCount = sizeof(blendModes) / sizeof(blendModes[0]);
 
 /* the image after taken or picked */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	[picker dismissModalViewControllerAnimated:YES];
+	//[picker dismissModalViewControllerAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 	previewImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 	CoverShotAppDelegate *appDelegate = (CoverShotAppDelegate *)[[UIApplication sharedApplication] delegate];
 	parentPreviewImageView.image = appDelegate.coverHolder.image;
