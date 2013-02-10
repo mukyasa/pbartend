@@ -11,11 +11,48 @@
 
 @implementation CoverShotViewController
 
-@synthesize magizineScrollView,pickedCover,coverShotEditorViewController;
+@synthesize magizineScrollView,pickedCover,coverShotEditorViewController,categoryPicker,catButton,basicBackground;
 
 const CGFloat kScrollObjWidth	= 240;
 const CGFloat kScrollObjHeight	= 360;
-const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the last mag and call it one more than is shown
+
+//shows the picker
+-(IBAction)pickCategory:(id)sender{
+    if([catButton.titleLabel.text isEqual: @"Filter"]){
+        [self moveCatPickerOnScreen];
+    } else {
+        [self moveCatPickerOffScreen];
+    }
+}
+//filters the categories
+-(IBAction)filterCategories:(id)sender{
+    [self moveCatPickerOffScreen];
+}
+
+-(void)moveCatPickerOnScreen{
+    categoryPicker.hidden=NO;
+    [catButton setTitle:@"Close Filter" forState:UIControlStateNormal];
+	CGRect thePicker = categoryPicker.frame;
+	thePicker.origin.y = self.view.frame.size.height-thePicker.size.height;
+	
+	[UIView beginAnimations:@"pickerViewShow" context:NULL];
+	[UIView setAnimationDuration:.5];
+	self.categoryPicker.frame = thePicker;
+	[UIView commitAnimations];
+
+}
+
+-(void)moveCatPickerOffScreen{
+    
+    CGFloat viewHeight = self.view.frame.size.height;
+	CGRect thePicker = self.categoryPicker.frame;
+	thePicker.origin.y = viewHeight;
+	[catButton setTitle:@"Filter" forState:UIControlStateNormal];
+	[UIView beginAnimations:@"pickerViewShow" context:NULL];
+	[UIView setAnimationDuration:.3];
+    self.categoryPicker.frame = thePicker;
+	[UIView commitAnimations];
+}
 
 
 - (void)rateApp {
@@ -69,14 +106,22 @@ const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the
 */
 
 - (void)coverShotEditorViewControllerDidFinish:(CoverShotEditorViewController *)controller{
-	[controller dismissModalViewControllerAnimated:YES];
+	//[controller dismissModalViewControllerAnimated:YES];
+    [controller dismissViewControllerAnimated:YES completion:nil];
 
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	
-	
+    if ([[UIScreen mainScreen] bounds].size.height == 568){ //iphone 5
+        [basicBackground setImage:[UIImage imageNamed:@"maghome-568h@2x.png"]];
+    } else{
+        [basicBackground setImage:[UIImage imageNamed:@"maghome.png"]];
+    }
+    
+    categoryPicker.hidden=YES;
+	[self moveCatPickerOffScreen];
 	pickedCover = [UIImage imageNamed:@"clearcover1.png"];
 	
 	// 1. setup the scrollview for multiple images and add it to the view controller
@@ -93,28 +138,8 @@ const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the
 	// if you want free-flowing scroll, don't set this property.
 	magizineScrollView.pagingEnabled = YES;
 	
-	// load all the images from our bundle and add them to the scroll view
-	NSUInteger i;
-	for (i = 1; i <= kNumImages; i++)
-	{
-		NSString *imageName = [NSString stringWithFormat:@"cover%d.png", i];
-		UIImage *image = [UIImage imageNamed:imageName];
-		UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-		
-		// setup each frame to a default height and width, it will be properly placed when we call "updateScrollList"
-		CGRect rect = imageView.frame;
-		rect.size.height = kScrollObjHeight;
-		rect.size.width = kScrollObjWidth;
-		imageView.frame = rect;
-		imageView.tag = i;	// tag our images for later use when we place them in serial fashion
-		[magizineScrollView addSubview:imageView];
-		
-		[imageView release];
-		image=nil;
-		imageName=nil;
-	}
-	
-	[self layoutScrollImages];	// now place the photos in serial layout within the scrollview
+    //load all the covers
+    [self loadAll];
 	
 	
 	// do one time set-up of gesture recognizers
@@ -127,6 +152,151 @@ const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the
     [super viewDidLoad];
 }
 
+//called in a loop loads each cover
+-(void)loadEachCover:(int) i{
+    NSString *imageName = [NSString stringWithFormat:@"cover%d.png", i];
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    [imageView setTag:i];
+    
+    // setup each frame to a default height and width, it will be properly placed when we call "updateScrollList"
+    CGRect rect = imageView.frame;
+    rect.size.height = kScrollObjHeight;
+    rect.size.width = kScrollObjWidth;
+    imageView.frame = rect;
+    imageView.tag = i;	// tag our images for later use when we place them in serial fashion
+    [magizineScrollView addSubview:imageView];
+    
+    [imageView release];
+    image=nil;
+    imageName=nil;
+}
+
+-(void)loadAll{
+    //clean out subviews first
+    [magizineScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    // load all the images from our bundle and add them to the scroll view
+	NSUInteger i;
+    NSUInteger kNumImages = 33;
+	for (i = 1; i <= kNumImages; i++)
+	{
+		[self loadEachCover:i];
+	}
+	pickedCover = [UIImage imageNamed:@"clearcover1.png"];
+	[self layoutScrollImages:kNumImages];	// now place the photos in serial layout within the scrollview
+	
+}
+-(void)loadKids{
+    
+    NSArray *coversArray = [NSArray arrayWithObjects:
+                         @"10",
+                         @"27",
+                         nil];
+        //clean out subviews first
+    [magizineScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    for(NSString *coverId in coversArray) {
+        int i = [coverId intValue];
+    
+       [self loadEachCover:i];
+    
+    }
+    pickedCover = [UIImage imageNamed:@"clearcover10.png"];
+    [self layoutScrollImages:coversArray.count];
+}
+-(void)loadMens{
+    //clean out subviews first
+    [magizineScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    NSArray *coversArray = [NSArray arrayWithObjects:
+                            @"14",
+                            @"15",
+                            @"2",
+                            @"21",
+                            @"3",
+                            @"8",
+                            nil];
+	for(NSString *coverId in coversArray) {
+        int i = [coverId intValue];
+        
+        [self loadEachCover:i];
+        
+    }
+	pickedCover = [UIImage imageNamed:@"clearcover14.png"];
+	[self layoutScrollImages:coversArray.count];	// now place the photos in serial layout within the scrollview
+	
+}
+-(void)loadWomens{
+    //clean out subviews first
+    [magizineScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    NSArray *coversArray = [NSArray arrayWithObjects:
+                            @"1",
+                            @"12",
+                            @"16",
+                            @"17",
+                            @"18",
+                            @"19",
+                            @"22",
+                            @"4",
+                            @"5",
+                            @"7",
+                            nil];
+	for(NSString *coverId in coversArray) {
+        int i = [coverId intValue];
+        
+        [self loadEachCover:i];
+        
+    }
+	pickedCover = [UIImage imageNamed:@"clearcover1.png"];
+	[self layoutScrollImages:coversArray.count];	// now place the photos in serial layout within the scrollview
+
+}
+-(void)loadPets{
+    //clean out subviews first
+    [magizineScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    NSArray *coversArray = [NSArray arrayWithObjects:
+                            @"25",
+                            @"26",
+                            @"30",
+                            @"31",
+                            @"34",
+                            nil];
+	for(NSString *coverId in coversArray) {
+        int i = [coverId intValue];
+        
+        [self loadEachCover:i];
+        
+    }
+	pickedCover = [UIImage imageNamed:@"clearcover25.png"];
+	[self layoutScrollImages:coversArray.count];	// now place the photos in serial layout within the scrollview
+
+}
+-(void)loadOther{
+    //clean out subviews first
+    [magizineScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    NSArray *coversArray = [NSArray arrayWithObjects:
+                            @"11",
+                            @"13",
+                            @"20",
+                            @"23",
+                            @"24",
+                            @"28",
+                            @"29",
+                            @"32",
+                            @"6",
+                            @"9",
+                            nil];
+	for(NSString *coverId in coversArray) {
+        int i = [coverId intValue];
+        
+        [self loadEachCover:i];
+        
+    }
+	pickedCover = [UIImage imageNamed:@"clearcover11.png"];
+	[self layoutScrollImages:coversArray.count];	// now place the photos in serial layout within the scrollview
+
+}
+
+
 - (void)handleDoubleTapFrom:(UITapGestureRecognizer *)recognizer
 {
 	if (recognizer.state == UIGestureRecognizerStateEnded) {
@@ -135,7 +305,8 @@ const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the
 		coverShotEditorViewController.delegate = self;
 		
 		coverShotEditorViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-		[self presentModalViewController:coverShotEditorViewController animated:YES];
+		//[self presentModalViewController:coverShotEditorViewController animated:YES];
+        [self presentViewController:coverShotEditorViewController animated:YES completion:nil];
 		
 		coverShotEditorViewController.parentPreviewImageView.image = pickedCover;
 		CoverShotAppDelegate *appDelegate = (CoverShotAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -153,15 +324,87 @@ const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the
 	
 	CGFloat pageWidth = magizineScrollView.frame.size.width; 
 	int page = ((scrollView.contentOffset.x / pageWidth) +1);
-	pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"clearcover%i.png",page] ];
+    
+    if(page > 0){
+        page = (page-1);
+    }
+    
+    //get subview index then get the tag of that subview for the full cover
+    UIImageView *coverSelected = [scrollView.subviews objectAtIndex:page];
+	pickedCover = [UIImage imageNamed:[NSString stringWithFormat:@"clearcover%i.png",coverSelected.tag] ];
 	
+
 	
-	NSLog(@"SCROLL OFFSET: %d",page);
+	//NSLog(@"SCROLL OFFSET: %d",page);
 	
 	
 }
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+	return 1;
+}
 
-- (void)layoutScrollImages
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{
+    return [[self categories] objectAtIndex:row];
+}
+
+//did select category
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+   NSString *selected = [[self categories] objectAtIndex:row];
+    NSLog(@"Picked Item %@",selected);
+    if([selected isEqual: @"All"]){
+        [self loadAll];
+    }
+    else if([selected isEqual: @"Kids"]){
+        [self loadKids];
+    }
+    else if([selected isEqual: @"Mens"]){
+        [self loadMens];
+    }
+    else if([selected isEqual: @"Other"]){
+        [self loadOther];
+    }
+    else if([selected isEqual: @"Pets"]){
+        [self loadPets];
+    }
+    else if([selected isEqual: @"Womens"]){
+        [self loadWomens];
+    }
+
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+	NSInteger numComps = 0;
+	switch(component)
+	{
+		case 0:
+			numComps = [self.categories count];
+			break;
+	}
+	return numComps;
+}
+
+-(NSArray*)categories
+{
+
+    NSArray *catArray = [NSArray arrayWithObjects:
+                            @"All",
+								  @"Pets",
+                                  @"Kids",
+                                  @"Mens",
+                                  @"Other",
+                                  @"Womens",
+                                  nil];
+
+    return catArray;
+}
+
+- (void)layoutScrollImages:(int)imageCount
 {
 	UIImageView *view = nil;
 	NSArray *subviews = [magizineScrollView subviews];
@@ -181,7 +424,7 @@ const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the
 	}
 	
 	// set the content size so it can be scrollable
-	[magizineScrollView setContentSize:CGSizeMake((kNumImages * kScrollObjWidth), [magizineScrollView bounds].size.height)];
+	[magizineScrollView setContentSize:CGSizeMake((imageCount * kScrollObjWidth), [magizineScrollView bounds].size.height)];
 }
 
 
@@ -197,7 +440,8 @@ const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
     
-	[self dismissModalViewControllerAnimated:YES];
+	//[self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -207,7 +451,8 @@ const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the
 	controller.delegate = self;
 	
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	[self presentModalViewController:controller animated:YES];
+	//[self presentModalViewController:controller animated:YES];
+    [self presentViewController:controller animated:YES completion:nil];
 	//NSLog(@"FlipsideViewController retain count: %i",[controller retainCount]);
 	[controller release];
 }
@@ -230,7 +475,9 @@ const NSUInteger kNumImages		= 32;//due to a bug in the last image duplicate the
 
 - (void)dealloc {
 	[coverShotEditorViewController release];
-
+    [basicBackground release];
+    [catButton release];
+    [categoryPicker release];
 	[pickedCover release];
 	[magizineScrollView release];
     [super dealloc];
