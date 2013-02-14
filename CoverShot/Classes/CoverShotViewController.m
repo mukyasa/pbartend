@@ -11,18 +11,20 @@
 
 @implementation CoverShotViewController
 
-@synthesize magizineScrollView,pickedCover,coverShotEditorViewController,categoryPicker,catButton,basicBackground;
+@synthesize hiddenOffButton,magizineScrollView,pickedCover,coverShotEditorViewController,categoryPicker,catButton,basicBackground;
 
 const CGFloat kScrollObjWidth	= 240;
 const CGFloat kScrollObjHeight	= 360;
 
 //shows the picker
 -(IBAction)pickCategory:(id)sender{
-    if([catButton.titleLabel.text isEqual: @"Filter"]){
-        [self moveCatPickerOnScreen];
-    } else {
-        [self moveCatPickerOffScreen];
-    }
+    [self moveCatPickerOnScreen];
+    [hiddenOffButton setFrame:CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height)];
+}
+
+-(IBAction)moveCatPickerOffScreen:(id)sender{
+    [self moveCatPickerOffScreen];
+    [hiddenOffButton setFrame:CGRectMake(0,0, 0,0)];
 }
 //filters the categories
 -(IBAction)filterCategories:(id)sender{
@@ -31,7 +33,6 @@ const CGFloat kScrollObjHeight	= 360;
 
 -(void)moveCatPickerOnScreen{
     categoryPicker.hidden=NO;
-    [catButton setTitle:@"Close Filter" forState:UIControlStateNormal];
 	CGRect thePicker = categoryPicker.frame;
 	thePicker.origin.y = self.view.frame.size.height-thePicker.size.height;
 	
@@ -47,7 +48,6 @@ const CGFloat kScrollObjHeight	= 360;
     CGFloat viewHeight = self.view.frame.size.height;
 	CGRect thePicker = self.categoryPicker.frame;
 	thePicker.origin.y = viewHeight;
-	[catButton setTitle:@"Filter" forState:UIControlStateNormal];
 	[UIView beginAnimations:@"pickerViewShow" context:NULL];
 	[UIView setAnimationDuration:.3];
     self.categoryPicker.frame = thePicker;
@@ -476,6 +476,7 @@ const CGFloat kScrollObjHeight	= 360;
 - (void)dealloc {
 	[coverShotEditorViewController release];
     [basicBackground release];
+    [hiddenOffButton release];
     [catButton release];
     [categoryPicker release];
 	[pickedCover release];
