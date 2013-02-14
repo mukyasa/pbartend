@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Bright Hand Main View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="BrightHandMainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="brighthandbg_on-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="TDh-7e-lSh"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzM-5r-8bV">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="Ger-cr-4MF"/>
+                                    <constraint firstAttribute="height" constant="98" id="veL-XI-pRg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="button_off.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleTorch:" destination="2" eventType="touchUpInside" id="cKq-65-rKZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10">
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6" kind="modal" identifier="showAlternate" modalTransitionStyle="flipHorizontal" id="11"/>
+                                </connections>
+                            </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="XYb-kD-khg">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3Op-Cq-7cx"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="MGa-FB-t8g"/>
+                                </connections>
+                            </adBannerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="10" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="94" id="4g0-xr-bIP"/>
+                            <constraint firstItem="XYb-kD-khg" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="65F-8l-prj"/>
+                            <constraint firstItem="TDh-7e-lSh" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="6iv-TL-Zy7"/>
+                            <constraint firstItem="TDh-7e-lSh" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="9ld-Qy-t9t"/>
+                            <constraint firstItem="vzM-5r-8bV" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="105" id="CIZ-ap-CJY"/>
+                            <constraint firstAttribute="bottom" secondItem="vzM-5r-8bV" secondAttribute="bottom" constant="99" id="EUN-qO-xVl"/>
+                            <constraint firstItem="10" firstAttribute="top" secondItem="3" secondAttribute="top" constant="176" id="G9f-dr-BvV"/>
+                            <constraint firstItem="TDh-7e-lSh" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="HPg-md-WvV"/>
+                            <constraint firstItem="XYb-kD-khg" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="LlI-Hz-nRU"/>
+                            <constraint firstItem="TDh-7e-lSh" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="P3b-fH-XFK"/>
+                            <constraint firstItem="XYb-kD-khg" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="jYs-Jz-deS"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="background" destination="TDh-7e-lSh" id="4IH-TD-2M1"/>
+                        <outlet property="bannerView" destination="XYb-kD-khg" id="qKm-Oy-Pyw"/>
+                        <outlet property="mainButton" destination="vzM-5r-8bV" id="CCI-wn-PnF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-51" y="182"/>
+        </scene>
+        <!--Bright Hand Flipside View Controller-->
+        <scene sceneID="9">
+            <objects>
+                <viewController id="6" customClass="BrightHandFlipsideViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Default-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="UOk-oh-UOi"/>
+                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="12">
+                                <items>
+                                    <navigationItem title="Title" id="13">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="14">
+                                            <connections>
+                                                <action selector="done:" destination="6" id="16"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Tell a friend" id="u0m-vz-cTU">
+                                            <connections>
+                                                <action selector="tellAFriend:" destination="6" id="SZp-y8-yOm"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="version: 1.2.2" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvg-yj-pPc">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="CSS-VT-hNX"/>
+                                    <constraint firstAttribute="height" constant="21" id="dwD-99-bnv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwX-D8-akC">
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="ogi-SE-bLC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <size key="titleShadowOffset" width="-1" height="-2"/>
+                                <state key="normal" title="www.myPocket-technologies.com">
+                                    <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callWebsite:" destination="6" eventType="touchUpInside" id="lC7-9x-vhM"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sBX-tJ-Zr7">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="524" id="S7I-qR-jIA"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="6" id="5BJ-OZ-O3z"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UOk-oh-UOi" firstAttribute="top" secondItem="7" secondAttribute="top" type="default" id="0sb-Dp-aiF"/>
+                            <constraint firstItem="mvg-yj-pPc" firstAttribute="top" secondItem="7" secondAttribute="top" constant="109" id="66J-yb-aEV"/>
+                            <constraint firstItem="sBX-tJ-Zr7" firstAttribute="leading" secondItem="7" secondAttribute="leading" type="default" id="6kH-2m-MCA"/>
+                            <constraint firstItem="KwX-D8-akC" firstAttribute="leading" secondItem="7" secondAttribute="leading" type="default" id="Ami-kn-Cps"/>
+                            <constraint firstItem="KwX-D8-akC" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" type="default" id="GOs-Tp-bE4"/>
+                            <constraint firstItem="UOk-oh-UOi" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" type="default" id="L7i-Mh-YRN"/>
+                            <constraint firstItem="UOk-oh-UOi" firstAttribute="leading" secondItem="7" secondAttribute="leading" type="default" id="VaO-up-mxt"/>
+                            <constraint firstItem="mvg-yj-pPc" firstAttribute="leading" secondItem="7" secondAttribute="leading" constant="155" id="hQK-oo-bqz"/>
+                            <constraint firstItem="sBX-tJ-Zr7" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" type="default" id="ijb-CU-KzX"/>
+                            <constraint firstItem="12" firstAttribute="leading" secondItem="7" secondAttribute="leading" type="default" id="kyL-VC-rMY"/>
+                            <constraint firstItem="sBX-tJ-Zr7" firstAttribute="top" secondItem="7" secondAttribute="top" constant="568" id="lQs-EN-edk"/>
+                            <constraint firstAttribute="bottom" secondItem="KwX-D8-akC" secondAttribute="bottom" constant="115" id="lh9-Lg-26M"/>
+                            <constraint firstItem="12" firstAttribute="top" secondItem="7" secondAttribute="top" type="default" id="oQ7-QK-1Ab"/>
+                            <constraint firstItem="UOk-oh-UOi" firstAttribute="bottom" secondItem="7" secondAttribute="bottom" type="default" id="wHi-zg-xRi"/>
+                            <constraint firstItem="12" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" type="default" id="yf5-Bx-wHg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="sBX-tJ-Zr7" id="rZ6-dr-MJM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="368" y="182"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Default-568h@2x.png" width="640" height="1136"/>
+        <image name="brighthandbg_on-568h@2x.png" width="640" height="1136"/>
+        <image name="button_off.png" width="190" height="190"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
