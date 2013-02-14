@@ -19,8 +19,10 @@
     IBOutlet UIView *categoryPicker;
     IBOutlet UIButton *catButton;
     IBOutlet UIImageView *basicBackground;
+    IBOutlet UIButton *hiddenOffButton;
 	
 }
+@property(nonatomic,retain) UIButton *hiddenOffButton;
 @property(nonatomic,retain) UIImageView *basicBackground;
 @property(nonatomic,retain) UIButton *catButton;
 @property(nonatomic,retain) UIView *categoryPicker;
@@ -32,6 +34,7 @@
 -(IBAction)showInfo:(id)sender;
 -(IBAction)pickCategory:(id)sender;
 -(IBAction)filterCategories:(id)sender;
+-(IBAction)moveCatPickerOffScreen:(id)sender;
 
 -(void)moveCatPickerOnScreen;
 -(void)moveCatPickerOffScreen;
