@@ -21,7 +21,7 @@ colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-@synthesize  bannerView =_bannerView,mainButton = _mainButton, myTimer = _myTimer, timeLabel= _timeLabel,background =_background, strobeScroller= _strobeScroller,sliderView = _sliderView,myCustomFont=_myCustomFont;
+@synthesize  compassArrow=_compassArrow, locationManager=_locationManager,bannerView =_bannerView,mainButton = _mainButton, myTimer = _myTimer, timeLabel= _timeLabel,background =_background, strobeScroller= _strobeScroller,sliderView = _sliderView,myCustomFont=_myCustomFont;
 
 
 - (IBAction)toggleTorch:(id)sender {
@@ -53,6 +53,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 			isStrobing=NO;
 			_mainButton.tag = SEGMENT_BUTTON_ON;
 			[_background setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brighthandbg_off%@",backgroundprefix]]];
+            [_compassArrow setImage:[UIImage imageNamed:@"compass_off.png"]];
             [self turnOffLight];
             break;
         case SEGMENT_BUTTON_ON:
@@ -62,6 +63,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 			isStrobing=NO;
 			[_background setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brighthandbg_on%@",backgroundprefix]]];
 			_mainButton.tag = SEGMENT_BUTTON_OFF;
+            [_compassArrow setImage:[UIImage imageNamed:@"compass_on.png"]];
             [self  turnOnLight];
             break;
 		case SEGMENT_BUTTON_STROBE:
@@ -71,6 +73,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 			isStrobing=NO;
 			_mainButton.tag = SEGMENT_BUTTON_ON;
 			[_background setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brighthandbg_off%@",backgroundprefix]]];
+            [_compassArrow setImage:[UIImage imageNamed:@"compass_off.png"]];
             [self turnOffLight ];
 			break;
     }
@@ -109,7 +112,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 	isLightOn=YES;
 	_mainButton.tag = SEGMENT_BUTTON_STROBE;
 	[_background setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brighthandbg_on%@",backgroundprefix]]];
-    
+    [_compassArrow setImage:[UIImage imageNamed:@"compass_on.png"]];
 	
 	[self stopTimer];
 	_myTimer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(updateCounter:) userInfo:nil repeats:YES];
@@ -162,12 +165,24 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 - (void)viewDidLoad
 {
+    
+    CGRect scrollViewFrame;
+    
+    NSString *backgroundprefix =@".png";
+    if ([[UIScreen mainScreen] bounds].size.height == 568){ //iphone 5
+        backgroundprefix = @"-568h@2x.png";
+        scrollViewFrame = CGRectMake(115, 168, 80, 214);
+    } else if([[UIScreen mainScreen] bounds].size.height == 480){ //iphone 4/3
+        scrollViewFrame = CGRectMake(115, 76, 80, 214);
+    } 
+    
+    
     //set scroller height
     _sliderView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"slider.png"]];
     [_sliderView setFrame:CGRectMake(0, 0, 80, 320)];
     _sliderView.contentMode = UIViewContentModeScaleAspectFit;
     
-    CGRect scrollViewFrame = CGRectMake(115, 168, 80, 214);
+    
     _strobeScroller = [[UIScrollView alloc] initWithFrame:scrollViewFrame];
     
     [_strobeScroller addSubview:_sliderView];
@@ -178,13 +193,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
     [self.view addSubview:_strobeScroller];
     
-    NSString *backgroundprefix =@".png";
-    
-    if ([[UIScreen mainScreen] bounds].size.height == 568){ //iphone 5
-        backgroundprefix = @"-568h@2x.png";
-    }
     [_background setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brighthandbg_on%@",backgroundprefix]]];
-    
+    [_compassArrow setImage:[UIImage imageNamed:@"compass_on.png"]];
     _mainButton.tag = SEGMENT_BUTTON_ON;
     _myCustomFont = [UIFont fontWithName:@"digital-7" size:22];
 	
@@ -201,7 +211,31 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     
     [self doToggle];
 	isLightOn=YES;
-   
+    
+    // setup the location manager
+	_locationManager = [[CLLocationManager alloc] init];
+	
+	// check if the hardware has a compass
+	if ([CLLocationManager headingAvailable] == NO) {
+		// No compass is available. This application cannot function without a compass,
+        // so a dialog will be displayed and no magnetic data will be measured.
+        self.locationManager = nil;
+        UIAlertView *noCompassAlert = [[UIAlertView alloc] initWithTitle:@"No Compass!" message:@"This device does not have the ability to measure magnetic fields." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [noCompassAlert show];
+
+	} else {
+        // heading service configuration
+        _locationManager.headingFilter = kCLHeadingFilterNone;
+        
+        // setup delegate callbacks
+        _locationManager.delegate = self;
+        
+        // start the compass
+        [_locationManager startUpdatingHeading];
+    }
+
+    
+    
     
     
     [self moveBannerViewOffscreen];//hide banner
@@ -268,7 +302,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         isStrobing=NO;
         _mainButton.tag = SEGMENT_BUTTON_ON;
         [_background setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brighthandbg_off%@",backgroundprefix]]];
-        
+        [_compassArrow setImage:[UIImage imageNamed:@"compass_off.png"]];
         
         _strobeScroller.contentOffset = CGPointMake(0, 0);
         [_timeLabel setText:@"0.00"];
@@ -294,8 +328,32 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
     }
 }
 
+#pragma mark -
+#pragma mark Location 
 
-/****banner view *****/
+// This delegate method is invoked when the location manager has heading data.
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)heading {
+    // Update the labels with the raw x, y, and z values.
+    
+    float mHeading = heading.magneticHeading;
+    CGFloat radians = -mHeading / 180.0 * M_PI;
+//    NSLog(@"*****Radians %f",radians);
+    
+    _compassArrow.transform = CGAffineTransformMakeRotation(radians);
+}
+
+// This delegate method is invoked when the location managed encounters an error condition.
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    if ([error code] == kCLErrorDenied) {
+        // This error indicates that the user has denied the application's request to use location services.
+        [manager stopUpdatingHeading];
+    } else if ([error code] == kCLErrorHeadingFailure) {
+        // This error indicates that the heading could not be determined, most likely because of strong magnetic interference.
+    }
+}
+
+#pragma mark -
+#pragma mark iAd Banner
 -(void) moveBannerViewOnscreen{
 	
 	CGRect newBannerview = _bannerView.frame;
@@ -321,7 +379,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner{
 	[self moveBannerViewOnscreen];
 }
-
+#pragma mark -
 - (void)viewDidUnload {
     [self setBackground:nil];
     [self setStrobeScroller:nil];
