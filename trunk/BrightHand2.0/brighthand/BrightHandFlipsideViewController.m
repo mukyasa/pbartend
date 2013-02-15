@@ -12,14 +12,14 @@
 
 @implementation BrightHandFlipsideViewController
 
-@synthesize webView;
+@synthesize webView = _webView,navBar=_navBar;
 
 - (void)viewDidLoad {
 	CGFloat viewHeight = self.view.frame.size.height;
-	CGRect newWebViewFrame = self.webView.frame;
+	CGRect newWebViewFrame = _webView.frame;
 	newWebViewFrame.origin.y = viewHeight;
 	
-	self.webView.frame =newWebViewFrame;
+	_webView.frame =newWebViewFrame;
     
 	theURL = @"http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=381973252&mt=8";
     self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
@@ -67,15 +67,15 @@
 	NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 	
 	//Load the request in the UIWebView.
-	[webView loadRequest:requestObj];
+	[_webView loadRequest:requestObj];
 	
-	CGRect newBannerview = self.webView.frame;
-	newBannerview.origin.y = self.view.frame.size.height-newBannerview.size.height;
+	CGRect webViewFrame = self.webView.frame;
+	webViewFrame.origin.y = _navBar.frame.size.height;
 	
 	[UIView beginAnimations:@"BannerViewIntro" context:NULL];
 	[UIView setAnimationDuration:.5];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-	self.webView.frame = newBannerview;
+	_webView.frame = webViewFrame;
 	[UIView commitAnimations];
 	
 }

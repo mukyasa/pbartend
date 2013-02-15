@@ -24,7 +24,9 @@
     
 }
 
+@property(weak,nonatomic) IBOutlet UINavigationBar *navBar;
 @property (nonatomic, retain) UIWebView *webView;
+
 -(IBAction) tellAFriend:(id)sender;
 -(IBAction) callWebsite:(id)sender;
 -(IBAction) getFullVersion:(id)sender;

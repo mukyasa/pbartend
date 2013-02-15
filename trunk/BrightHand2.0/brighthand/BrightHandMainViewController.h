@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 #import <AVFoundation/AVFoundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "BrightHandFlipsideViewController.h"
 
 
 
-@interface BrightHandMainViewController : UIViewController <BrightHandFlipsideViewControllerDelegate, UIScrollViewDelegate>{
+@interface BrightHandMainViewController : UIViewController <CLLocationManagerDelegate,BrightHandFlipsideViewControllerDelegate, UIScrollViewDelegate>{
     
     NSTimer *myTimer;
     int toggle;
@@ -28,9 +29,10 @@
 @property (nonatomic,retain) IBOutlet UIImageView *sliderView;
 @property (nonatomic,retain) IBOutlet UIScrollView *strobeScroller;
 @property (weak, nonatomic) IBOutlet UIImageView *background;
+@property (strong, nonatomic) IBOutlet UIImageView *compassArrow;
 @property (weak, nonatomic) IBOutlet UIButton *mainButton;
 @property(nonatomic,retain) NSTimer *myTimer;
-
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @property(nonatomic,retain) UILabel *timeLabel;
 

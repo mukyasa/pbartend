@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -12,12 +12,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="brighthandbg_on-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="TDh-7e-lSh"/>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzM-5r-8bV">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="98" id="Ger-cr-4MF"/>
-                                    <constraint firstAttribute="height" constant="98" id="veL-XI-pRg"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="brighthandbg_on-568h@2x.png" id="TDh-7e-lSh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vzM-5r-8bV">
+                                <rect key="frame" x="106" y="370" width="98" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="button_off.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,7 +30,9 @@
                                     <action selector="toggleTorch:" destination="2" eventType="touchUpInside" id="cKq-65-rKZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="10">
+                                <rect key="frame" x="94" y="175" width="18" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,35 +45,29 @@
                                     <segue destination="6" kind="modal" identifier="showAlternate" modalTransitionStyle="flipHorizontal" id="11"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="XYb-kD-khg">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="3Op-Cq-7cx"/>
-                                </constraints>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XYb-kD-khg">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <connections>
                                     <outlet property="delegate" destination="2" id="MGa-FB-t8g"/>
                                 </connections>
                             </adBannerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="compass_on.png" id="VAg-6X-eH1">
+                                <rect key="frame" x="114" y="81" width="78" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="compass_arrow.png" id="47H-ag-rh3">
+                                <rect key="frame" x="145" y="109" width="16" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="10" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="94" id="4g0-xr-bIP"/>
-                            <constraint firstItem="XYb-kD-khg" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="65F-8l-prj"/>
-                            <constraint firstItem="TDh-7e-lSh" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="6iv-TL-Zy7"/>
-                            <constraint firstItem="TDh-7e-lSh" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="9ld-Qy-t9t"/>
-                            <constraint firstItem="vzM-5r-8bV" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="105" id="CIZ-ap-CJY"/>
-                            <constraint firstAttribute="bottom" secondItem="vzM-5r-8bV" secondAttribute="bottom" constant="99" id="EUN-qO-xVl"/>
-                            <constraint firstItem="10" firstAttribute="top" secondItem="3" secondAttribute="top" constant="176" id="G9f-dr-BvV"/>
-                            <constraint firstItem="TDh-7e-lSh" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="HPg-md-WvV"/>
-                            <constraint firstItem="XYb-kD-khg" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="LlI-Hz-nRU"/>
-                            <constraint firstItem="TDh-7e-lSh" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="P3b-fH-XFK"/>
-                            <constraint firstItem="XYb-kD-khg" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="jYs-Jz-deS"/>
-                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="background" destination="TDh-7e-lSh" id="4IH-TD-2M1"/>
                         <outlet property="bannerView" destination="XYb-kD-khg" id="qKm-Oy-Pyw"/>
+                        <outlet property="compassArrow" destination="VAg-6X-eH1" id="6RG-4x-Zpp"/>
                         <outlet property="mainButton" destination="vzM-5r-8bV" id="CCI-wn-PnF"/>
                     </connections>
                 </viewController>
@@ -87,10 +83,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Default-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="UOk-oh-UOi"/>
-                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="12">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Default-568h@2x.png" id="UOk-oh-UOi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            </imageView>
+                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="12">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="13">
+                                    <navigationItem title="Bright Hand" id="13">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="14">
                                             <connections>
                                                 <action selector="done:" destination="6" id="16"/>
@@ -104,22 +105,18 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="version: 1.2.2" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvg-yj-pPc">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="91" id="CSS-VT-hNX"/>
-                                    <constraint firstAttribute="height" constant="21" id="dwD-99-bnv"/>
-                                </constraints>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="version: 1.2.2" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" id="mvg-yj-pPc">
+                                <rect key="frame" x="155" y="109" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwX-D8-akC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KwX-D8-akC">
+                                <rect key="frame" x="0.0" y="431" width="320" height="22"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="ogi-SE-bLC"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <size key="titleShadowOffset" width="-1" height="-2"/>
                                 <state key="normal" title="www.myPocket-technologies.com">
@@ -133,36 +130,19 @@
                                     <action selector="callWebsite:" destination="6" eventType="touchUpInside" id="lC7-9x-vhM"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sBX-tJ-Zr7">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="sBX-tJ-Zr7">
+                                <rect key="frame" x="0.0" y="568" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="524" id="S7I-qR-jIA"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="6" id="5BJ-OZ-O3z"/>
                                 </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="UOk-oh-UOi" firstAttribute="top" secondItem="7" secondAttribute="top" type="default" id="0sb-Dp-aiF"/>
-                            <constraint firstItem="mvg-yj-pPc" firstAttribute="top" secondItem="7" secondAttribute="top" constant="109" id="66J-yb-aEV"/>
-                            <constraint firstItem="sBX-tJ-Zr7" firstAttribute="leading" secondItem="7" secondAttribute="leading" type="default" id="6kH-2m-MCA"/>
-                            <constraint firstItem="KwX-D8-akC" firstAttribute="leading" secondItem="7" secondAttribute="leading" type="default" id="Ami-kn-Cps"/>
-                            <constraint firstItem="KwX-D8-akC" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" type="default" id="GOs-Tp-bE4"/>
-                            <constraint firstItem="UOk-oh-UOi" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" type="default" id="L7i-Mh-YRN"/>
-                            <constraint firstItem="UOk-oh-UOi" firstAttribute="leading" secondItem="7" secondAttribute="leading" type="default" id="VaO-up-mxt"/>
-                            <constraint firstItem="mvg-yj-pPc" firstAttribute="leading" secondItem="7" secondAttribute="leading" constant="155" id="hQK-oo-bqz"/>
-                            <constraint firstItem="sBX-tJ-Zr7" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" type="default" id="ijb-CU-KzX"/>
-                            <constraint firstItem="12" firstAttribute="leading" secondItem="7" secondAttribute="leading" type="default" id="kyL-VC-rMY"/>
-                            <constraint firstItem="sBX-tJ-Zr7" firstAttribute="top" secondItem="7" secondAttribute="top" constant="568" id="lQs-EN-edk"/>
-                            <constraint firstAttribute="bottom" secondItem="KwX-D8-akC" secondAttribute="bottom" constant="115" id="lh9-Lg-26M"/>
-                            <constraint firstItem="12" firstAttribute="top" secondItem="7" secondAttribute="top" type="default" id="oQ7-QK-1Ab"/>
-                            <constraint firstItem="UOk-oh-UOi" firstAttribute="bottom" secondItem="7" secondAttribute="bottom" type="default" id="wHi-zg-xRi"/>
-                            <constraint firstItem="12" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" type="default" id="yf5-Bx-wHg"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="navBar" destination="12" id="tfN-g2-w3B"/>
                         <outlet property="webView" destination="sBX-tJ-Zr7" id="rZ6-dr-MJM"/>
                     </connections>
                 </viewController>
@@ -175,7 +155,34 @@
         <image name="Default-568h@2x.png" width="640" height="1136"/>
         <image name="brighthandbg_on-568h@2x.png" width="640" height="1136"/>
         <image name="button_off.png" width="190" height="190"/>
+        <image name="compass_arrow.png" width="36" height="43"/>
+        <image name="compass_on.png" width="154" height="154"/>
     </resources>
+    <classes>
+        <class className="BrightHandFlipsideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BrightHandFlipsideViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="callWebsite:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="getFullVersion:"/>
+                <relationship kind="action" name="tellAFriend:"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="BrightHandMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BrightHandMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="toggleTorch:"/>
+                <relationship kind="outlet" name="background" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bannerView" candidateClass="ADBannerView"/>
+                <relationship kind="outlet" name="compassArrow" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="mainButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sliderView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="strobeScroller" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
