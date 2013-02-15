@@ -222,6 +222,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
         self.locationManager = nil;
         UIAlertView *noCompassAlert = [[UIAlertView alloc] initWithTitle:@"No Compass!" message:@"This device does not have the ability to measure magnetic fields." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [noCompassAlert show];
+        
 
 	} else {
         // heading service configuration
