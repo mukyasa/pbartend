@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C6ABE7516CF2D5B00D40A99 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6ABE7416CF2D5B00D40A99 /* Icon.png */; };
+		9C6ABE7816CF2E4100D40A99 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6ABE7616CF2E4100D40A99 /* Icon-Small-50.png */; };
+		9C6ABE7A16CF2E5900D40A99 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6ABE7716CF2E4100D40A99 /* Icon@2x.png */; };
+		9C6ABE7C16CF2EA000D40A99 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6ABE7B16CF2EA000D40A99 /* Icon-72@2x.png */; };
 		9C6CA2BA16CC7AF500B2DFA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6CA2B916CC7AF500B2DFA5 /* UIKit.framework */; };
 		9C6CA2BC16CC7AF500B2DFA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6CA2BB16CC7AF500B2DFA5 /* Foundation.framework */; };
 		9C6CA2BE16CC7AF500B2DFA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6CA2BD16CC7AF500B2DFA5 /* CoreGraphics.framework */; };
@@ -35,17 +39,19 @@
 		9C6CA36E16CD86B900B2DFA5 /* compass_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6CA36D16CD86B900B2DFA5 /* compass_arrow.png */; };
 		9C8E585A16CDCCED0029EB23 /* compass_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E585816CDCCED0029EB23 /* compass_off.png */; };
 		9C8E585B16CDCCED0029EB23 /* compass_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E585916CDCCED0029EB23 /* compass_on.png */; };
-		9C8E586F16CEF9D00029EB23 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E586E16CEF9D00029EB23 /* Icon-72@2x.png */; };
 		9C8E587616CF16B00029EB23 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587016CF16B00029EB23 /* Icon-72.png */; };
 		9C8E587716CF16B00029EB23 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587116CF16B00029EB23 /* Icon-Small.png */; };
 		9C8E587816CF16B00029EB23 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587216CF16B00029EB23 /* Icon-Small@2x.png */; };
-		9C8E587916CF16B00029EB23 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587316CF16B00029EB23 /* Icon.png */; };
 		9C8E587A16CF16B00029EB23 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587416CF16B00029EB23 /* iTunesArtwork.png */; };
 		9C8E587B16CF16B00029EB23 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E587516CF16B00029EB23 /* iTunesArtwork@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9C6CA2B616CC7AF500B2DFA5 /* Bright Hand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bright Hand.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6ABE7416CF2D5B00D40A99 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		9C6ABE7616CF2E4100D40A99 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		9C6ABE7716CF2E4100D40A99 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9C6ABE7B16CF2EA000D40A99 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		9C6CA2B616CC7AF500B2DFA5 /* brighthand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brighthand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6CA2B916CC7AF500B2DFA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C6CA2BB16CC7AF500B2DFA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9C6CA2BD16CC7AF500B2DFA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,11 +85,9 @@
 		9C6CA36D16CD86B900B2DFA5 /* compass_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass_arrow.png; path = brighthand/compass_arrow.png; sourceTree = "<group>"; };
 		9C8E585816CDCCED0029EB23 /* compass_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass_off.png; path = brighthand/compass_off.png; sourceTree = "<group>"; };
 		9C8E585916CDCCED0029EB23 /* compass_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass_on.png; path = brighthand/compass_on.png; sourceTree = "<group>"; };
-		9C8E586E16CEF9D00029EB23 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		9C8E587016CF16B00029EB23 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		9C8E587116CF16B00029EB23 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		9C8E587216CF16B00029EB23 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
-		9C8E587316CF16B00029EB23 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		9C8E587416CF16B00029EB23 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		9C8E587516CF16B00029EB23 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +123,7 @@
 		9C6CA2B716CC7AF500B2DFA5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C6CA2B616CC7AF500B2DFA5 /* Bright Hand.app */,
+				9C6CA2B616CC7AF500B2DFA5 /* brighthand.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,13 +174,15 @@
 		9C6CA2DF16CC7B9A00B2DFA5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C6ABE7B16CF2EA000D40A99 /* Icon-72@2x.png */,
+				9C6ABE7616CF2E4100D40A99 /* Icon-Small-50.png */,
+				9C6ABE7716CF2E4100D40A99 /* Icon@2x.png */,
+				9C6ABE7416CF2D5B00D40A99 /* Icon.png */,
 				9C8E587016CF16B00029EB23 /* Icon-72.png */,
 				9C8E587116CF16B00029EB23 /* Icon-Small.png */,
 				9C8E587216CF16B00029EB23 /* Icon-Small@2x.png */,
-				9C8E587316CF16B00029EB23 /* Icon.png */,
 				9C8E587416CF16B00029EB23 /* iTunesArtwork.png */,
 				9C8E587516CF16B00029EB23 /* iTunesArtwork@2x.png */,
-				9C8E586E16CEF9D00029EB23 /* Icon-72@2x.png */,
 				9C8E585816CDCCED0029EB23 /* compass_off.png */,
 				9C8E585916CDCCED0029EB23 /* compass_on.png */,
 				9C6CA36D16CD86B900B2DFA5 /* compass_arrow.png */,
@@ -196,9 +202,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C6CA2B516CC7AF500B2DFA5 /* Bright Hand */ = {
+		9C6CA2B516CC7AF500B2DFA5 /* brighthand */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C6CA2DC16CC7AF600B2DFA5 /* Build configuration list for PBXNativeTarget "Bright Hand" */;
+			buildConfigurationList = 9C6CA2DC16CC7AF600B2DFA5 /* Build configuration list for PBXNativeTarget "brighthand" */;
 			buildPhases = (
 				9C6CA2B216CC7AF500B2DFA5 /* Sources */,
 				9C6CA2B316CC7AF500B2DFA5 /* Frameworks */,
@@ -208,9 +214,9 @@
 			);
 			dependencies = (
 			);
-			name = "Bright Hand";
+			name = brighthand;
 			productName = brighthand;
-			productReference = 9C6CA2B616CC7AF500B2DFA5 /* Bright Hand.app */;
+			productReference = 9C6CA2B616CC7AF500B2DFA5 /* brighthand.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -223,7 +229,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "mypocket technologies";
 			};
-			buildConfigurationList = 9C6CA2B116CC7AF500B2DFA5 /* Build configuration list for PBXProject "Bright Hand" */;
+			buildConfigurationList = 9C6CA2B116CC7AF500B2DFA5 /* Build configuration list for PBXProject "brighthand" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -235,7 +241,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C6CA2B516CC7AF500B2DFA5 /* Bright Hand */,
+				9C6CA2B516CC7AF500B2DFA5 /* brighthand */,
 			);
 		};
 /* End PBXProject section */
@@ -262,13 +268,15 @@
 				9C6CA36E16CD86B900B2DFA5 /* compass_arrow.png in Resources */,
 				9C8E585A16CDCCED0029EB23 /* compass_off.png in Resources */,
 				9C8E585B16CDCCED0029EB23 /* compass_on.png in Resources */,
-				9C8E586F16CEF9D00029EB23 /* Icon-72@2x.png in Resources */,
 				9C8E587616CF16B00029EB23 /* Icon-72.png in Resources */,
 				9C8E587716CF16B00029EB23 /* Icon-Small.png in Resources */,
 				9C8E587816CF16B00029EB23 /* Icon-Small@2x.png in Resources */,
-				9C8E587916CF16B00029EB23 /* Icon.png in Resources */,
 				9C8E587A16CF16B00029EB23 /* iTunesArtwork.png in Resources */,
 				9C8E587B16CF16B00029EB23 /* iTunesArtwork@2x.png in Resources */,
+				9C6ABE7516CF2D5B00D40A99 /* Icon.png in Resources */,
+				9C6ABE7816CF2E4100D40A99 /* Icon-Small-50.png in Resources */,
+				9C6ABE7A16CF2E5900D40A99 /* Icon@2x.png in Resources */,
+				9C6ABE7C16CF2EA000D40A99 /* Icon-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +378,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "brighthand/brighthand-Prefix.pch";
 				INFOPLIST_FILE = "brighthand/brighthand-Info.plist";
-				PRODUCT_NAME = "Bright Hand";
+				PRODUCT_NAME = brighthand;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -378,10 +386,14 @@
 		9C6CA2DE16CC7AF600B2DFA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Darren Mason";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Darren Mason";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "brighthand/brighthand-Prefix.pch";
 				INFOPLIST_FILE = "brighthand/brighthand-Info.plist";
-				PRODUCT_NAME = "Bright Hand";
+				PRODUCT_NAME = brighthand;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -389,7 +401,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C6CA2B116CC7AF500B2DFA5 /* Build configuration list for PBXProject "Bright Hand" */ = {
+		9C6CA2B116CC7AF500B2DFA5 /* Build configuration list for PBXProject "brighthand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C6CA2DA16CC7AF600B2DFA5 /* Debug */,
@@ -398,7 +410,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C6CA2DC16CC7AF600B2DFA5 /* Build configuration list for PBXNativeTarget "Bright Hand" */ = {
+		9C6CA2DC16CC7AF600B2DFA5 /* Build configuration list for PBXNativeTarget "brighthand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C6CA2DD16CC7AF600B2DFA5 /* Debug */,
