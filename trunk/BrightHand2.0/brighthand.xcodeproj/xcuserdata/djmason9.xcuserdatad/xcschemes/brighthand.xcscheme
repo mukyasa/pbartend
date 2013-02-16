@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C6CA2B516CC7AF500B2DFA5"
                BuildableName = "brighthand.app"
-               BlueprintName = "Bright Hand"
-               ReferencedContainer = "container:Bright Hand.xcodeproj">
+               BlueprintName = "brighthand"
+               ReferencedContainer = "container:brighthand.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C6CA2B516CC7AF500B2DFA5"
             BuildableName = "brighthand.app"
-            BlueprintName = "Bright Hand"
-            ReferencedContainer = "container:Bright Hand.xcodeproj">
+            BlueprintName = "brighthand"
+            ReferencedContainer = "container:brighthand.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C6CA2B516CC7AF500B2DFA5"
             BuildableName = "brighthand.app"
-            BlueprintName = "Bright Hand"
-            ReferencedContainer = "container:Bright Hand.xcodeproj">
+            BlueprintName = "brighthand"
+            ReferencedContainer = "container:brighthand.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C6CA2B516CC7AF500B2DFA5"
             BuildableName = "brighthand.app"
-            BlueprintName = "Bright Hand"
-            ReferencedContainer = "container:Bright Hand.xcodeproj">
+            BlueprintName = "brighthand"
+            ReferencedContainer = "container:brighthand.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
