@@ -25,9 +25,9 @@
 }
 
 @property (weak, nonatomic) IBOutlet ADBannerView *bannerView;
-@property(nonatomic,retain) UIFont *myCustomFont;
-@property (nonatomic,retain) IBOutlet UIImageView *sliderView;
-@property (nonatomic,retain) IBOutlet UIScrollView *strobeScroller;
+@property(nonatomic,strong) UIFont *myCustomFont;
+@property (nonatomic,strong) IBOutlet UIImageView *sliderView;
+@property (nonatomic,strong) IBOutlet UIScrollView *strobeScroller;
 @property (weak, nonatomic) IBOutlet UIImageView *background;
 @property (strong, nonatomic) IBOutlet UIImageView *compassArrow;
 @property (weak, nonatomic) IBOutlet UIButton *mainButton;
