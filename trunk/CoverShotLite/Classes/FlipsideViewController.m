@@ -10,7 +10,7 @@
 
 @implementation FlipsideViewController
 
-@synthesize delegate,webView;
+@synthesize delegate,webView,navBar=_navBar;
 
 
 - (void)viewDidLoad {
@@ -72,7 +72,7 @@
 	[webView loadRequest:requestObj];
 	
 	CGRect newBannerview = self.webView.frame;
-	newBannerview.origin.y = self.view.frame.size.height-newBannerview.size.height;
+	newBannerview.origin.y = _navBar.frame.size.height;
 	
 	[UIView beginAnimations:@"BannerViewIntro" context:NULL];
 	[UIView setAnimationDuration:.5];
