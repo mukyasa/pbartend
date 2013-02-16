@@ -19,6 +19,7 @@
 	NSString *theURL;
 }
 
+@property(nonatomic,retain) IBOutlet UINavigationBar *navBar;
 @property (nonatomic, retain) UIWebView *webView;
 -(IBAction) tellAFriend:(id)sender;
 -(IBAction) callWebsite:(id)sender;
