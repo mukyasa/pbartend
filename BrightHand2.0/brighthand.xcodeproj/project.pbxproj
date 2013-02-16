@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9C6ABE7516CF2D5B00D40A99 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6ABE7416CF2D5B00D40A99 /* Icon.png */; };
-		9C6ABE7816CF2E4100D40A99 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6ABE7616CF2E4100D40A99 /* Icon-Small-50.png */; };
 		9C6ABE7A16CF2E5900D40A99 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6ABE7716CF2E4100D40A99 /* Icon@2x.png */; };
 		9C6ABE7C16CF2EA000D40A99 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6ABE7B16CF2EA000D40A99 /* Icon-72@2x.png */; };
 		9C6CA2BA16CC7AF500B2DFA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6CA2B916CC7AF500B2DFA5 /* UIKit.framework */; };
@@ -48,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		9C6ABE7416CF2D5B00D40A99 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		9C6ABE7616CF2E4100D40A99 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		9C6ABE7716CF2E4100D40A99 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		9C6ABE7B16CF2EA000D40A99 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		9C6CA2B616CC7AF500B2DFA5 /* brighthand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brighthand.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				9C6ABE7B16CF2EA000D40A99 /* Icon-72@2x.png */,
-				9C6ABE7616CF2E4100D40A99 /* Icon-Small-50.png */,
 				9C6ABE7716CF2E4100D40A99 /* Icon@2x.png */,
 				9C6ABE7416CF2D5B00D40A99 /* Icon.png */,
 				9C8E587016CF16B00029EB23 /* Icon-72.png */,
@@ -274,7 +271,6 @@
 				9C8E587A16CF16B00029EB23 /* iTunesArtwork.png in Resources */,
 				9C8E587B16CF16B00029EB23 /* iTunesArtwork@2x.png in Resources */,
 				9C6ABE7516CF2D5B00D40A99 /* Icon.png in Resources */,
-				9C6ABE7816CF2E4100D40A99 /* Icon-Small-50.png in Resources */,
 				9C6ABE7A16CF2E5900D40A99 /* Icon@2x.png in Resources */,
 				9C6ABE7C16CF2EA000D40A99 /* Icon-72@2x.png in Resources */,
 			);
