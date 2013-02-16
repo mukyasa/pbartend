@@ -17,7 +17,6 @@
 		28D7ACF80DDB3853001CB0EB /* CoverShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* CoverShotViewController.m */; };
 		710058C312138B41002DD799 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 710058BC12138B41002DD799 /* Icon-72.png */; };
 		710058C412138B41002DD799 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 710058BD12138B41002DD799 /* Icon-Small.png */; };
-		710058C512138B41002DD799 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 710058BE12138B41002DD799 /* Icon-Small-50.png */; };
 		710058C612138B41002DD799 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 710058BF12138B41002DD799 /* Icon-Small@2x.png */; };
 		710058C712138B41002DD799 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 710058C012138B41002DD799 /* Icon.png */; };
 		710058C812138B41002DD799 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 710058C112138B41002DD799 /* Icon@2x.png */; };
@@ -87,7 +86,6 @@
 		32CA4F630368D1EE00C91783 /* CoverShot_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverShot_Prefix.pch; sourceTree = "<group>"; };
 		710058BC12138B41002DD799 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		710058BD12138B41002DD799 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
-		710058BE12138B41002DD799 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		710058BF12138B41002DD799 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		710058C012138B41002DD799 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		710058C112138B41002DD799 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 				71887C4011F80CB400F4C6D6 /* clearbg.png */,
 				710058BC12138B41002DD799 /* Icon-72.png */,
 				710058BD12138B41002DD799 /* Icon-Small.png */,
-				710058BE12138B41002DD799 /* Icon-Small-50.png */,
 				710058BF12138B41002DD799 /* Icon-Small@2x.png */,
 				710058C012138B41002DD799 /* Icon.png */,
 				710058C112138B41002DD799 /* Icon@2x.png */,
@@ -355,7 +352,6 @@
 				7148D6C11212FECD00B13094 /* appstoresm.gif in Resources */,
 				710058C312138B41002DD799 /* Icon-72.png in Resources */,
 				710058C412138B41002DD799 /* Icon-Small.png in Resources */,
-				710058C512138B41002DD799 /* Icon-Small-50.png in Resources */,
 				710058C612138B41002DD799 /* Icon-Small@2x.png in Resources */,
 				710058C712138B41002DD799 /* Icon.png in Resources */,
 				710058C812138B41002DD799 /* Icon@2x.png in Resources */,
