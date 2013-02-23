@@ -15,7 +15,6 @@
 
 	IBOutlet UIScrollView *magizineScrollView;
 	UIImage *pickedCover;
-	IBOutlet ADBannerView *bannerView;
 	CoverShotEditorViewController *coverShotEditorViewController;
 	int liteCover;
     IBOutlet UIView *bannerButton;
@@ -26,7 +25,7 @@
 @property(nonatomic,retain) IBOutlet UIView *bannerButton;
 @property(nonatomic,retain)UIImageView *fullversion;
 @property(nonatomic,retain) CoverShotEditorViewController *coverShotEditorViewController;
-@property(nonatomic,retain) ADBannerView *bannerView;
+@property(nonatomic,retain) IBOutlet ADBannerView *bannerView;
 @property(nonatomic,retain)UIImage *pickedCover;
 @property(nonatomic,retain) UIScrollView *magizineScrollView;
 -(void)layoutScrollImages;
@@ -34,7 +33,6 @@
 -(void) moveBannerViewOnscreen;
 -(IBAction)showInfo:(id)sender;
 -(IBAction)getGame:(id)sender;
--(IBAction)hideGameBanner:(id)sender;
 
 @end
 

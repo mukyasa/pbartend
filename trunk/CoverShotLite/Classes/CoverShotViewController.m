@@ -24,16 +24,6 @@ const int limited = 10;
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/terminal-velocity-lite-the/id491548703?ls=1&mt=8"]];	
 
 }
--(IBAction)hideGameBanner:(id)sender{
-    
-    CGFloat viewHeight = self.view.frame.size.height;
-	CGRect newBannerview = self.bannerButton.frame;
-	newBannerview.origin.y = -viewHeight;
-
-    [UIView beginAnimations:@"BannerViewIntro" context:NULL];
-	self.bannerButton.frame = newBannerview;
-	[UIView commitAnimations];
-}
 
 
 /*
@@ -271,6 +261,7 @@ const int limited = 10;
 	
 }
 -(void) moveBannerViewOffscreen{
+
 	CGFloat viewHeight = self.view.frame.size.height;
 	CGRect newBannerview = self.bannerView.frame;
 	newBannerview.origin.y = viewHeight;
@@ -280,7 +271,8 @@ const int limited = 10;
 }
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error;
 {
-	[self moveBannerViewOffscreen];
+    if (self.isViewLoaded && self.view.window)
+        [self moveBannerViewOffscreen];
 }
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner{
 	[self moveBannerViewOnscreen];
