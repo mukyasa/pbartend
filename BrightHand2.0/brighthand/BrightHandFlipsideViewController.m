@@ -31,18 +31,28 @@
 /*share via email*/
 -(IBAction)tellAFriend:(id)sender{
 	
-	//add link to store here via my site
+    @try {
+        //add link to store here via my site
+        
+        NSString* body = [NSString stringWithFormat:@"Hey I just thought you might want to try this app called Bright Hand looks pretty cool. - %@\n",theURL];
+        
+        MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+        picker.mailComposeDelegate = self;
+        [picker setSubject:@"Bright Hand - iPhone app"];
+        
+        // [picker setToRecipients:[NSArray arrayWithObject:@"djmason9@yahoo.com"]];
+        [picker setMessageBody:body isHTML:NO];
+        
+        [self presentViewController:picker animated:YES completion:nil];
+    }
+    @catch (NSException *exception) {
+        //
+    }
+    @finally {
+        //
+    }
 	
-	NSString* body = [NSString stringWithFormat:@"Hey I just thought you might want to try this app called Bright Hand looks pretty cool. - %@\n",theURL];
-	
-	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-	picker.mailComposeDelegate = self;
-	[picker setSubject:@"Bright Hand - iPhone app"];
-	
-	// [picker setToRecipients:[NSArray arrayWithObject:@"djmason9@yahoo.com"]];
-	[picker setMessageBody:body isHTML:NO];
-	
-    [self presentViewController:picker animated:YES completion:nil];
+   
 	
 }
 
