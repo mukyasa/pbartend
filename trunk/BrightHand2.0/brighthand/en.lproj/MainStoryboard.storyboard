@@ -173,7 +173,6 @@
         <class className="BrightHandMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BrightHandMainViewController.h"/>
             <relationships>
-                <relationship kind="action" name="toggleTorch:"/>
                 <relationship kind="outlet" name="background" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="bannerView" candidateClass="ADBannerView"/>
                 <relationship kind="outlet" name="compassArrow" candidateClass="UIImageView"/>
