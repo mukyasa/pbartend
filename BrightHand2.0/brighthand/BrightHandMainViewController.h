@@ -14,7 +14,7 @@
 
 
 
-@interface BrightHandMainViewController : UIViewController <CLLocationManagerDelegate,BrightHandFlipsideViewControllerDelegate, UIScrollViewDelegate>{
+@interface BrightHandMainViewController : UIViewController <CLLocationManagerDelegate,BrightHandFlipsideViewControllerDelegate, UIScrollViewDelegate,ADBannerViewDelegate>{
     
     NSTimer *myTimer;
     int toggle;
